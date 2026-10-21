@@ -1,5 +1,14 @@
 # Documentation history
 
+## 2026-10-21: native durable personal foundation resources
+
+- Added six bilingual native storage/first-use/theme/unavailable-favorite messages
+  requested by the independent Android personal foundation slice. Camel-case UI
+  keys generate the existing snake-case Android naming convention; no placeholders,
+  storage contract changes, automatic consumer adoption or native proof implied.
+- `npm run check` passed13 tests/deterministic generation and repository hygiene
+  passed40 tracked files; no schema drift or whitespace errors.
+
 ## 2026-10-21: explicit list sharing and copy feedback
 
 - Added two-locale messages for optional system link/file sharing, explicit

@@ -31,6 +31,7 @@
   <string name="fallback_label" formatted="false">ಬಳಕೆದಾರರ ಪರ್ಯಾಯ ಹೆಸರು (ಐಚ್ಛಿಕ; ತೆಗೆದುಹಾಕಲು ಖಾಲಿ ಬಿಡಿ)</string>
   <string name="favorites" formatted="false">ಮೆಚ್ಚಿನವು</string>
   <string name="fixture_notice" formatted="false">ಅಭಿವೃದ್ಧಿ ಪ್ರಾತ್ಯಕ್ಷಿಕೆ — ಕೃತಕ ಪರೀಕ್ಷಾ ದಾಖಲೆಗಳು; ಪರಿಶೀಲಿಸಿದ ಸಾಹಿತ್ಯ ಅಥವಾ ವೀಡಿಯೊ ವಿವರಗಳಲ್ಲ.</string>
+  <string name="follow_device" formatted="false">ಸಾಧನದಂತೆ</string>
   <string name="language" formatted="false">ಪರದೆಯ ಭಾಷೆ</string>
   <string name="language_name" formatted="false">ಕನ್ನಡ</string>
   <string name="library" formatted="false">ಗ್ರಂಥಾಲಯ</string>
@@ -57,7 +58,10 @@
   <string name="open" formatted="false">ಓದಿ</string>
   <string name="personal_capacity" formatted="false">ವೈಯಕ್ತಿಕ ಸಂಗ್ರಹ, ಪಟ್ಟಿಯ ರಫ್ತು ಅಥವಾ ಸಂಗ್ರಹಣೆಯ ಮಿತಿ ಮೀರುತ್ತದೆ. ನಮೂದು ಅಥವಾ ಪಟ್ಟಿಗಳನ್ನು ತೆಗೆದು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
   <string name="personal_failed" formatted="false">ವೈಯಕ್ತಿಕ ಸಂಗ್ರಹಣೆ ವಿಫಲವಾಗಿದೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ; ನಿಮ್ಮ ದತ್ತಾಂಶ ಅಳಿಸಬೇಡಿ.</string>
+  <string name="personal_future" formatted="false">ಈ ವೈಯಕ್ತಿಕ ದತ್ತಸಂಚಯಕ್ಕೆ ಹೊಸ ಆವೃತ್ತಿಯ ಆ್ಯಪ್ ಬೇಕು. ಆ್ಯಪ್ ನವೀಕರಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ; ನಿಮ್ಮ ದತ್ತಾಂಶ ಅಳಿಸಬೇಡಿ.</string>
   <string name="personal_invalid" formatted="false">ವೈಯಕ್ತಿಕ ದತ್ತಾಂಶದ ದಾಖಲೆ ಅಮಾನ್ಯವಾಗಿದೆ; ಹಿಂದಿನ ದತ್ತಾಂಶ ಬದಲಿಸಿಲ್ಲ.</string>
+  <string name="personal_loading" formatted="false">ವೈಯಕ್ತಿಕ ಸಂಗ್ರಹ ತೆರೆಯಲಾಗುತ್ತಿದೆ…</string>
+  <string name="personal_schema" formatted="false">ವೈಯಕ್ತಿಕ ಸಂಗ್ರಹ ಹಾನಿಗೊಂಡಿದೆ ಅಥವಾ ಬೆಂಬಲಿತವಾಗಿಲ್ಲ. ಇರುವ ದತ್ತಾಂಶ ಉಳಿಸಲಾಗಿದೆ. ಬೆಂಬಲಿತ ಆ್ಯಪ್‌ನಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ; ದತ್ತಾಂಶ ಅಳಿಸಬೇಡಿ.</string>
   <string name="personal_stale" formatted="false">ವೈಯಕ್ತಿಕ ದತ್ತಾಂಶ ಬದಲಾಗಿದೆ. ಪ್ರಸ್ತುತ ಪಟ್ಟಿಯನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
   <string name="personal_unavailable" formatted="false">ವೈಯಕ್ತಿಕ ಸಂಗ್ರಹಣೆ ಲಭ್ಯವಿಲ್ಲ. ಉಳಿಸುವ ಮೊದಲು ತೋರಿಸಿದ ದೋಷ ಸರಿಪಡಿಸಿ.</string>
   <string name="placeholder_text" formatted="false">ಪಠ್ಯ ನಮೂದಿನ ವಿವರ</string>
@@ -97,8 +101,10 @@
   <string name="transfer_too_large" formatted="false">ಪಟ್ಟಿಯ ಗಾತ್ರ ಇಳಿಸುವ ಮಿತಿಯನ್ನು ಮೀರಿದೆ. ಚಿಕ್ಕ ಪಟ್ಟಿಯನ್ನು ರಫ್ತುಮಾಡಿ; ಏನನ್ನೂ ಉಳಿಸಿಲ್ಲ.</string>
   <string name="transfer_unresolved" formatted="false">ಈ ಮುನ್ನೋಟ ಗುರುತು ಮತ್ತು ಬಳಕೆದಾರರ ಪಠ್ಯವನ್ನು ಮಾತ್ರ ತೋರಿಸುತ್ತದೆ; ಗ್ರಂಥಾಲಯದ ವಿವರ ಅಥವಾ ಆಫ್‌ಲೈನ್ ಸಿದ್ಧತೆಯನ್ನು ನಿರ್ಧರಿಸುವುದಿಲ್ಲ.</string>
   <string name="transfer_working" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿ ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…</string>
+  <string name="unavailable_favorite" formatted="false">ಲಭ್ಯವಿಲ್ಲದ ಕೃತಿ — ಮೆಚ್ಚಿನ ಪಟ್ಟಿಯಲ್ಲಿ ಉಳಿಸಲಾಗಿದೆ</string>
   <string name="unavailable_features" formatted="false">ಈ ಹಂತದಲ್ಲಿ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹ, ಪಠಣ ವಿಧಾನ, ಬ್ಯಾಕಪ್ ಅಥವಾ ಪರಿಶೀಲಿಸಿದ ಲಿಪ್ಯಂತರ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="unknown_route" formatted="false">ಈ ಪುಟ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="video_id" formatted="false">ಗ್ರಂಥಾಲಯದ ವೀಡಿಯೊ ಗುರುತು</string>
   <string name="view_lists" formatted="false">ಉಳಿಸಿದ ಪಟ್ಟಿಗಳನ್ನು ನೋಡಿ</string>
+  <string name="warm" formatted="false">ಬೆಚ್ಚಗಿನ</string>
 </resources>

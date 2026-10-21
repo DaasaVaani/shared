@@ -31,6 +31,7 @@
   <string name="fallback_label" formatted="false">User fallback label (optional; leave empty to remove)</string>
   <string name="favorites" formatted="false">Favorites</string>
   <string name="fixture_notice" formatted="false">Development demo — synthetic test records, not reviewed sahitya or verified video metadata.</string>
+  <string name="follow_device" formatted="false">Follow device</string>
   <string name="language" formatted="false">Interface language</string>
   <string name="language_name" formatted="false">English</string>
   <string name="library" formatted="false">Library</string>
@@ -57,7 +58,10 @@
   <string name="open" formatted="false">Read</string>
   <string name="personal_capacity" formatted="false">A personal collection, list export or storage limit would be exceeded. Remove entries or lists and try again.</string>
   <string name="personal_failed" formatted="false">Personal storage failed. Try again; do not delete your data.</string>
+  <string name="personal_future" formatted="false">This personal database needs a newer app. Update the app and retry; do not delete your data.</string>
   <string name="personal_invalid" formatted="false">Invalid personal database record; existing data was not replaced.</string>
+  <string name="personal_loading" formatted="false">Opening personal storage…</string>
+  <string name="personal_schema" formatted="false">Personal storage is damaged or unsupported. Existing data was preserved. Retry with a supported app; do not delete your data.</string>
   <string name="personal_stale" formatted="false">Personal data changed. Review the current list and try again.</string>
   <string name="personal_unavailable" formatted="false">Personal storage is unavailable. Resolve the reported error before saving.</string>
   <string name="placeholder_text" formatted="false">Placeholder text</string>
@@ -97,8 +101,10 @@
   <string name="transfer_too_large" formatted="false">The list exceeds a transfer byte limit. Export a smaller list; nothing has been saved.</string>
   <string name="transfer_unresolved" formatted="false">This preview shows identifiers and user text only; library details and offline readiness are not resolved.</string>
   <string name="transfer_working" formatted="false">Validating list snapshot…</string>
+  <string name="unavailable_favorite" formatted="false">Unavailable item — favorite retained</string>
   <string name="unavailable_features" formatted="false">This milestone does not yet implement offline snapshots, recitation mode, backups or reviewed transliteration.</string>
   <string name="unknown_route" formatted="false">This page is unavailable.</string>
   <string name="video_id" formatted="false">Library video identifier</string>
   <string name="view_lists" formatted="false">View saved lists</string>
+  <string name="warm" formatted="false">Warm</string>
 </resources>

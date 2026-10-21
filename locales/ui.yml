@@ -55,6 +55,12 @@ en:
   personalStale: Personal data changed. Review the current list and try again.
   personalFailed: Personal storage failed. Try again; do not delete your data.
   personalUnavailable: Personal storage is unavailable. Resolve the reported error before saving.
+  personalFuture: This personal database needs a newer app. Update the app and retry; do not delete your data.
+  personalSchema: Personal storage is damaged or unsupported. Existing data was preserved. Retry with a supported app; do not delete your data.
+  followDevice: Follow device
+  warm: Warm
+  personalLoading: Opening personal storage…
+  unavailableFavorite: Unavailable item — favorite retained
   settings: Settings
   search: Search lyrics or a title
   loadSearch: Load search
@@ -157,6 +163,12 @@ kn:
   personalStale: ವೈಯಕ್ತಿಕ ದತ್ತಾಂಶ ಬದಲಾಗಿದೆ. ಪ್ರಸ್ತುತ ಪಟ್ಟಿಯನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
   personalFailed: ವೈಯಕ್ತಿಕ ಸಂಗ್ರಹಣೆ ವಿಫಲವಾಗಿದೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ; ನಿಮ್ಮ ದತ್ತಾಂಶ ಅಳಿಸಬೇಡಿ.
   personalUnavailable: ವೈಯಕ್ತಿಕ ಸಂಗ್ರಹಣೆ ಲಭ್ಯವಿಲ್ಲ. ಉಳಿಸುವ ಮೊದಲು ತೋರಿಸಿದ ದೋಷ ಸರಿಪಡಿಸಿ.
+  personalFuture: ಈ ವೈಯಕ್ತಿಕ ದತ್ತಸಂಚಯಕ್ಕೆ ಹೊಸ ಆವೃತ್ತಿಯ ಆ್ಯಪ್ ಬೇಕು. ಆ್ಯಪ್ ನವೀಕರಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ; ನಿಮ್ಮ ದತ್ತಾಂಶ ಅಳಿಸಬೇಡಿ.
+  personalSchema: ವೈಯಕ್ತಿಕ ಸಂಗ್ರಹ ಹಾನಿಗೊಂಡಿದೆ ಅಥವಾ ಬೆಂಬಲಿತವಾಗಿಲ್ಲ. ಇರುವ ದತ್ತಾಂಶ ಉಳಿಸಲಾಗಿದೆ. ಬೆಂಬಲಿತ ಆ್ಯಪ್‌ನಲ್ಲಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ; ದತ್ತಾಂಶ ಅಳಿಸಬೇಡಿ.
+  followDevice: ಸಾಧನದಂತೆ
+  warm: ಬೆಚ್ಚಗಿನ
+  personalLoading: ವೈಯಕ್ತಿಕ ಸಂಗ್ರಹ ತೆರೆಯಲಾಗುತ್ತಿದೆ…
+  unavailableFavorite: ಲಭ್ಯವಿಲ್ಲದ ಕೃತಿ — ಮೆಚ್ಚಿನ ಪಟ್ಟಿಯಲ್ಲಿ ಉಳಿಸಲಾಗಿದೆ
   settings: ಆಯ್ಕೆಗಳು
   search: ಪಠ್ಯ ಅಥವಾ ಶೀರ್ಷಿಕೆ ಹುಡುಕಿ
   loadSearch: ಹುಡುಕಾಟ ಸಿದ್ಧಪಡಿಸಿ
