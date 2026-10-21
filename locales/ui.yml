@@ -90,6 +90,9 @@ en:
   transferPreview: Preview link
   transferWorking: Validating list snapshot…
   transferEmpty: This list has no entries.
+  transferCancelled: List operation cancelled. Nothing was saved.
+  transferPreviewOnly: Local preview and re-export only. Saving lists is not available yet.
+  transferFileSaved: List file written to the selected destination. Delivery is not confirmed.
   transferReference: Library reference
   transferPlaceholder: Intentional placeholder
   transferUnresolved: This preview shows identifiers and user text only; library details and offline readiness are not resolved.
@@ -200,6 +203,9 @@ kn:
   transferPreview: ಕೊಂಡಿಯ ಮುನ್ನೋಟ
   transferWorking: ಪಟ್ಟಿಯ ಪ್ರತಿ ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…
   transferEmpty: ಈ ಪಟ್ಟಿಯಲ್ಲಿ ನಮೂದುಗಳಿಲ್ಲ.
+  transferCancelled: ಪಟ್ಟಿಯ ಕಾರ್ಯ ರದ್ದಾಗಿದೆ. ಏನನ್ನೂ ಉಳಿಸಿಲ್ಲ.
+  transferPreviewOnly: ಸ್ಥಳೀಯ ಮುನ್ನೋಟ ಮತ್ತು ಮರು ರಫ್ತು ಮಾತ್ರ. ಪಟ್ಟಿಗಳನ್ನು ಉಳಿಸುವ ಸೌಲಭ್ಯ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.
+  transferFileSaved: ಆಯ್ಕೆಮಾಡಿದ ಸ್ಥಳಕ್ಕೆ ಪಟ್ಟಿಯ ಕಡತ ಬರೆಯಲಾಗಿದೆ. ತಲುಪಿದೆ ಎಂದು ದೃಢಪಡಿಸಿಲ್ಲ.
   transferReference: ಗ್ರಂಥಾಲಯದ ಉಲ್ಲೇಖ
   transferPlaceholder: ಉದ್ದೇಶಿತ ಪಠ್ಯ ನಮೂದು
   transferUnresolved: ಈ ಮುನ್ನೋಟ ಗುರುತು ಮತ್ತು ಬಳಕೆದಾರರ ಪಠ್ಯವನ್ನು ಮಾತ್ರ ತೋರಿಸುತ್ತದೆ; ಗ್ರಂಥಾಲಯದ ವಿವರ ಅಥವಾ ಆಫ್‌ಲೈನ್ ಸಿದ್ಧತೆಯನ್ನು ನಿರ್ಧರಿಸುವುದಿಲ್ಲ.

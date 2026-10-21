@@ -87,17 +87,20 @@
   <string name="skip_to_content" formatted="false">Skip to content</string>
   <string name="start_again" formatted="false">Return to preparation</string>
   <string name="tagline" formatted="false">A quiet space for reading</string>
+  <string name="transfer_cancelled" formatted="false">List operation cancelled. Nothing was saved.</string>
   <string name="transfer_create_link" formatted="false">Create snapshot link</string>
   <string name="transfer_download" formatted="false">Download list file</string>
   <string name="transfer_empty" formatted="false">This list has no entries.</string>
   <string name="transfer_failed" formatted="false">List processing failed. Try again or choose another file. Nothing has been saved.</string>
   <string name="transfer_file" formatted="false">Choose a list file</string>
+  <string name="transfer_file_saved" formatted="false">List file written to the selected destination. Delivery is not confirmed.</string>
   <string name="transfer_invalid" formatted="false">Invalid or unsupported list snapshot. Choose a valid list file or a complete DaasaVaani snapshot link.</string>
   <string name="transfer_link" formatted="false">List snapshot link</string>
   <string name="transfer_link_too_long" formatted="false">The complete link exceeds the sharing limit. Use the list file instead; no text or entries were dropped.</string>
   <string name="transfer_notice" formatted="false">Preview before saving a new independent local list. Nothing is uploaded or downloaded from the library. Shared links and files are readable and forwardable; do not include sensitive text.</string>
   <string name="transfer_placeholder" formatted="false">Intentional placeholder</string>
   <string name="transfer_preview" formatted="false">Preview link</string>
+  <string name="transfer_preview_only" formatted="false">Local preview and re-export only. Saving lists is not available yet.</string>
   <string name="transfer_reference" formatted="false">Library reference</string>
   <string name="transfer_title" formatted="false">List snapshot preview</string>
   <string name="transfer_too_large" formatted="false">The list exceeds a transfer byte limit. Export a smaller list; nothing has been saved.</string>

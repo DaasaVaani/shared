@@ -1,5 +1,14 @@
 # Documentation history
 
+## 2026-10-21: native preview-only transfer status resources
+
+- Added the native preview/re-export scope, cancellation and actual selected-
+  destination file-write status. Reused existing referenceKnown/referencePending/
+  lyricsUnavailable labels rather than duplicating catalog resolution wording.
+  No native Save, recipient-delivery or signed-link readiness claim.
+- `npm run check` passed13 tests/deterministic generation and40-file repository
+  hygiene/whitespace passed. Native interoperability remains a consumer check.
+
 ## 2026-10-21: complete browser search-result pagination resources
 
 - Added bilingual explicit Show more and named-placeholder result-count messages

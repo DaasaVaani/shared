@@ -87,17 +87,20 @@
   <string name="skip_to_content" formatted="false">ವಿಷಯಕ್ಕೆ ಹೋಗಿ</string>
   <string name="start_again" formatted="false">ಸಿದ್ಧತೆಗೆ ಹಿಂತಿರುಗಿ</string>
   <string name="tagline" formatted="false">ಓದಿಗಾಗಿ ಒಂದು ಶಾಂತ ತಾಣ</string>
+  <string name="transfer_cancelled" formatted="false">ಪಟ್ಟಿಯ ಕಾರ್ಯ ರದ್ದಾಗಿದೆ. ಏನನ್ನೂ ಉಳಿಸಿಲ್ಲ.</string>
   <string name="transfer_create_link" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ ರಚಿಸಿ</string>
   <string name="transfer_download" formatted="false">ಪಟ್ಟಿಯ ಕಡತ ಇಳಿಸಿ</string>
   <string name="transfer_empty" formatted="false">ಈ ಪಟ್ಟಿಯಲ್ಲಿ ನಮೂದುಗಳಿಲ್ಲ.</string>
   <string name="transfer_failed" formatted="false">ಪಟ್ಟಿಯ ಪರಿಶೀಲನೆ ವಿಫಲವಾಗಿದೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ ಅಥವಾ ಬೇರೆ ಕಡತ ಆಯ್ಕೆಮಾಡಿ. ಏನನ್ನೂ ಉಳಿಸಿಲ್ಲ.</string>
   <string name="transfer_file" formatted="false">ಪಟ್ಟಿಯ ಕಡತ ಆಯ್ಕೆಮಾಡಿ</string>
+  <string name="transfer_file_saved" formatted="false">ಆಯ್ಕೆಮಾಡಿದ ಸ್ಥಳಕ್ಕೆ ಪಟ್ಟಿಯ ಕಡತ ಬರೆಯಲಾಗಿದೆ. ತಲುಪಿದೆ ಎಂದು ದೃಢಪಡಿಸಿಲ್ಲ.</string>
   <string name="transfer_invalid" formatted="false">ಅಮಾನ್ಯ ಅಥವಾ ಬೆಂಬಲಿಸದ ಪಟ್ಟಿಯ ಪ್ರತಿ. ಸರಿಯಾದ ಪಟ್ಟಿಯ ಕಡತ ಅಥವಾ ಸಂಪೂರ್ಣ ದಾಸವಾಣಿ ಕೊಂಡಿ ಆಯ್ಕೆಮಾಡಿ.</string>
   <string name="transfer_link" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ</string>
   <string name="transfer_link_too_long" formatted="false">ಸಂಪೂರ್ಣ ಕೊಂಡಿ ಹಂಚುವ ಮಿತಿಯನ್ನು ಮೀರಿದೆ. ಬದಲಿಗೆ ಪಟ್ಟಿಯ ಕಡತ ಬಳಸಿ; ಪಠ್ಯ ಅಥವಾ ನಮೂದುಗಳನ್ನು ಕೈಬಿಟ್ಟಿಲ್ಲ.</string>
   <string name="transfer_notice" formatted="false">ಹೊಸ ಸ್ವತಂತ್ರ ಸ್ಥಳೀಯ ಪಟ್ಟಿಯಾಗಿ ಉಳಿಸುವ ಮೊದಲು ಮುನ್ನೋಟ ನೋಡಿ. ಯಾವುದನ್ನೂ ಅಪ್‌ಲೋಡ್ ಮಾಡುವುದಿಲ್ಲ ಅಥವಾ ಗ್ರಂಥಾಲಯದಿಂದ ಇಳಿಸುವುದಿಲ್ಲ. ಹಂಚಿದ ಕೊಂಡಿ ಮತ್ತು ಕಡತವನ್ನು ಇತರರು ಓದಬಹುದು ಮತ್ತು ಹಂಚಬಹುದು; ಖಾಸಗಿ ಪಠ್ಯ ಸೇರಿಸಬೇಡಿ.</string>
   <string name="transfer_placeholder" formatted="false">ಉದ್ದೇಶಿತ ಪಠ್ಯ ನಮೂದು</string>
   <string name="transfer_preview" formatted="false">ಕೊಂಡಿಯ ಮುನ್ನೋಟ</string>
+  <string name="transfer_preview_only" formatted="false">ಸ್ಥಳೀಯ ಮುನ್ನೋಟ ಮತ್ತು ಮರು ರಫ್ತು ಮಾತ್ರ. ಪಟ್ಟಿಗಳನ್ನು ಉಳಿಸುವ ಸೌಲಭ್ಯ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="transfer_reference" formatted="false">ಗ್ರಂಥಾಲಯದ ಉಲ್ಲೇಖ</string>
   <string name="transfer_title" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಮುನ್ನೋಟ</string>
   <string name="transfer_too_large" formatted="false">ಪಟ್ಟಿಯ ಗಾತ್ರ ಇಳಿಸುವ ಮಿತಿಯನ್ನು ಮೀರಿದೆ. ಚಿಕ್ಕ ಪಟ್ಟಿಯನ್ನು ರಫ್ತುಮಾಡಿ; ಏನನ್ನೂ ಉಳಿಸಿಲ್ಲ.</string>
