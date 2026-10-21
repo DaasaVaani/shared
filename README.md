@@ -1,5 +1,10 @@
 # DaasaVaani Shared
 
+The approved [lyric identity and optional media contract](docs/lyric-identity.md)
+defines stable video-independent lyric UUIDs, text-only publication eligibility
+and legacy-preserving references. It is a target contract, not an implemented
+production publisher, v2 codec or permission to migrate sources.
+
 Portable UI defaults and allowed choices follow
 [`schemas/ui-defaults.schema.json`](schemas/ui-defaults.schema.json).
 Appearance tokens are `light`, `dark`, `warm` and `device` (Follow device);

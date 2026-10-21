@@ -1,5 +1,10 @@
 # Minimal list transfer v1
 
+This remains the executable legacy contract. The approved
+[lyric identity and target v2 contract](lyric-identity.md#5-minimal-list-v2-and-legacy-compatibility)
+adds separately typed lyric and legacy references; it is not implemented here.
+Never place a lyric UUID in v1's `videoId` field or silently change v1 semantics.
+
 ## Scope and authority
 
 This is the structural JSON contract for portable minimal list snapshots under
@@ -36,7 +41,7 @@ Each entry is exactly one of:
 
 `videoId` is an opaque case-sensitive ASCII identifier of 1-128 characters from
 `A-Z`, `a-z`, `0-9`, `_` and `-`, consistent with the existing source/item identity
-contract. Never interpret it as a path or URL. Acceptance does not depend on
+legacy contract. Never interpret it as a path or URL. Acceptance does not depend on
 whether a current library contains that identifier. Unresolved references remain
 references, not intentional placeholders.
 

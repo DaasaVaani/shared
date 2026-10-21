@@ -7,6 +7,10 @@ implementation is authorized, not global production readiness.
 
 ## Contract surfaces
 
+- Approved [lyric identity/optional media contract](lyric-identity.md): permanent
+  lyric UUIDs, media-independent publication eligibility, typed legacy-preserving
+  personal references, target minimal-list v2 and staged non-writing adoption.
+  Executable fixture/v1 schemas remain unchanged; production adapters are pending.
 - Sources: restricted Markdown/strict YAML, one canonical fence, persisted line
   UUIDs, explicit verse-end metadata, literal Source Latin, grouped metadata,
   stable filenames, draft/hold/invalid distinctions and code-point range rules.

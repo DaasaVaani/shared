@@ -1,5 +1,26 @@
 # Documentation history
 
+## 2026-10-22: approved lyric-independent identity contract
+
+- Owner confirmed stable lyric UUIDv4 identity and optional images/YouTube
+  associations, preserving favorites/list/bookmark references when media arrives.
+  Documented the target contract, v2 typed lyric/legacy list entries, unchanged
+  v1 semantics, explicit legacy-mapping limits and staged acceptance/rollout.
+  No executable schema/type/codec, consumer pin, source file or personal record
+  was changed; ID assignment/source migration remain separately unauthorized.
+- Archived the preceding production direction: one flat file per video,
+  video ID as item identity and ASCII ranking tie-break, mandatory video-source
+  metadata, filename lowercase hex of original video-ID bytes plus `--` and
+  one-time ISO15919-derived ASCII slug (max60, fallback untitled, lowercase,
+  non-ASCII runs replaced/trimmed as hyphens, never regenerated on title/rule
+  changes). Existing fixture/v1 consumers still implement their legacy contract.
+  Current target filenames use lyric UUID alone and require no Latin slug.
+- Documentation batch validation: `npm run check` passed15 contract/generation
+  tests with no schema/generated drift; `python tools\check_repository.py`
+  passed43 tracked files. All5 GitHub YAML files passed the existing strict YAML
+  parser; Git whitespace passed. These unchanged fixture checks do not establish
+  target lyric-ID/v2 codec or production publication conformance.
+
 ## 2026-10-21: strict build-time publication safety settings
 
 - SET-01/02 audit found the Website used a hand-written publication-settings

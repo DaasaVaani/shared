@@ -76,7 +76,12 @@ limits are in sections7-10. Future changes require reviewed settings/compatibili
 
 ## 4. Sources, validation and identities
 
-One flat Markdown per video uses grouped frontmatter: root source-format/video
+The [lyric identity contract](lyric-identity.md) owns the approved primary
+`lyricId`, optional reviewed media, owner-supplied provenance, typed personal
+references and target minimal-list v2 compatibility/rollout. Current executable
+fixtures and v1 transports remain legacy and do not implement that target.
+
+One flat Markdown per lyric uses grouped frontmatter: root source-format/lyric
 identity and public/provenance/review sections. The selected parser is
 remark/unified plus yaml, restricted to the exact source grammar. Parser success
 does not establish domain validity. Required publication fields versus legitimate
@@ -96,7 +101,7 @@ occur mid-line and never automatically splits that line.
 
 An authoring tool may suggest boundaries for review; publisher uses persisted
 metadata. IDs are lowercase hyphenated UUIDv4, never nil/uppercase/duplicate within
-the video. Authoring assigns them; publication never manufactures missing IDs.
+the lyric. Authoring assigns them; publication never manufactures missing IDs.
 Corrections/moves retain logical identity; ambiguous splits/merges get fresh IDs.
 Missing personal locations are unresolved, not heuristically reanchored.
 
@@ -104,12 +109,12 @@ Accept LF/CRLF files; parsed literal text uses LF before validating code-point
 offsets. Never trim spaces, collapse blanks, rewrite words or mutate source files
 as parsing side effects. Exact fence/final-newline fixtures remain required.
 
-Video IDs preserve case: ASCII letters/digits/underscore/hyphen, length1-128.
-Source URL/identity must agree. Offline imports check syntax, not existence.
-Filename: lowercase hex of original video-ID bytes, then `--`, then one-time
-ISO15919-derived filename-only ASCII slug, max60 characters, fallback untitled.
-Lowercase slug, replace other runs with hyphens, trim; do not regenerate on title
-or rule changes. File-only rename must not change item identity/bytes.
+Primary identity is a persistent canonical UUIDv4; source filename is
+`<lyricId>.md`, independent of videos, titles and transliteration. Optional
+reviewed YouTube URL/ID metadata must agree when supplied; syntax validation is
+not existence checking. Legacy opaque video references retain their old domain
+only under the versioned adapters in the identity contract. File-only renaming
+does not change lyric identity. No source renaming/migration is authorized now.
 
 Incomplete valid drafts and otherwise complete items with nonempty publication-
 hold reasons remain unpublished. Malformed structure, duplicate identities and
@@ -118,10 +123,11 @@ status field. No authorized migration of unreviewed sibling sources.
 
 ## 5. Metadata, registries and discovery
 
-Use a closed public whitelist: video ID, reviewed public title, flat tags,
-registry IDs, optional context description/upload date/first-publication date/
-thumbnail reference, canonical/generated text and supplied Source Latin/status.
-Required source upload metadata is not permission to invent missing data.
+Use a closed public whitelist: lyric ID, reviewed public title, flat tags,
+registry IDs, optional context description/first-publication date, optional
+reviewed video associations/images, canonical/generated text and supplied Source Latin/status.
+Video upload/channel metadata belongs to the applicable association/provenance,
+not every lyric. Owner-supplied lyrics need no video/image; never invent missing data.
 Original title, raw description and other source-only evidence are excluded from
 public artifacts. Public source Git is not confidential storage.
 
@@ -202,7 +208,7 @@ Metadata-containing bucket always precedes lyrics-only. Sum the best field weigh
 per distinct term: title100; composer/ankita80; deity60; tags/form/category40;
 context labels20; context description10; lyrics5. No repeated alias/rendering/
 occurrence or cross-field bonus per term. Then worst term edits, total term edits,
-ASCII video ID. Quality uses minimum edits in that term's winning-weight field,
+ASCII canonical lyric ID. Quality uses minimum edits in that term's winning-weight field,
 never borrowed from a lower-weight field. No whole-word/prefix bonus.
 
 Index carries anchors, not all display-rendering excerpts. Selected-script text
@@ -331,6 +337,10 @@ Typed item/line/verse/occurrence references; independent UUIDv4 list occurrences
 repeats preserved. Recent50 distinct successful opens, disable stops writes, Clear
 separate. NFC/case-insensitive duplicate-name warning permits confirmed reuse.
 Navigation continuity is current-session only, not persistent search history.
+Target item references use `lyricId`, preserving typed legacy video references
+under [the identity contract](lyric-identity.md). Media additions never rewrite
+favorites, list occurrences, bookmarks or progress. Existing fixture databases
+remain unchanged until separately implemented/validated adapters are available.
 
 Forward tested non-destructive migrations; refuse newer database without reinstall/
 data-loss advice. Unresolved references retained, no guessed replacements.
