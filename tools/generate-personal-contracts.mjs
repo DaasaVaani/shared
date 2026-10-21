@@ -12,7 +12,8 @@ export function listTransferSchema(settings) {
   if (!validateSettings(settings)) throw new Error("Invalid personal-transfer settings: " + JSON.stringify(validateSettings.errors));
   if (settings.maxEntriesPerList > settings.maxTotalEntries ||
       settings.maxListEncodedBytes <= settings.maxListDecodedBytes ||
-      settings.maxBackupEncodedBytes <= settings.maxBackupDecodedBytes) {
+      settings.maxBackupEncodedBytes <= settings.maxBackupDecodedBytes ||
+      settings.maxPersonalStoredBytes > settings.maxBackupDecodedBytes) {
     throw new Error("Inconsistent personal-transfer collection or byte limits");
   }
   const singleLine = maxLength => ({

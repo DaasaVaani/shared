@@ -6,8 +6,16 @@
   <string name="back" formatted="false">Back to library</string>
   <string name="cancel" formatted="false">Cancel</string>
   <string name="canonical" formatted="false">Kannada · canonical test text</string>
+  <string name="confirm_delete" formatted="false">Confirm list deletion</string>
+  <string name="confirm_duplicate" formatted="false">Save with same name</string>
+  <string name="create_list" formatted="false">Create empty list</string>
   <string name="dark" formatted="false">Dark</string>
+  <string name="delete_list" formatted="false">Delete list</string>
+  <string name="delete_notice" formatted="false">Delete this local list only? Other lists and library content are unchanged.</string>
+  <string name="duplicate_list" formatted="false">Duplicate list</string>
+  <string name="duplicate_name" formatted="false">Another local list already uses this name. Save a separate list with the same name?</string>
   <string name="empty_favorites" formatted="false">No favorites yet. Open a record and add it to favorites.</string>
+  <string name="empty_lists" formatted="false">No saved lists yet. Create an empty list or preview a list file or link in Settings.</string>
   <string name="error" formatted="false">Unable to open the library</string>
   <string name="favorites" formatted="false">Favorites</string>
   <string name="fixture_notice" formatted="false">Development demo — synthetic test records, not reviewed sahitya or verified video metadata.</string>
@@ -15,15 +23,25 @@
   <string name="language_name" formatted="false">English</string>
   <string name="library" formatted="false">Library</string>
   <string name="light" formatted="false">Light</string>
+  <string name="list_name" formatted="false">List name</string>
+  <string name="list_saved" formatted="false">Saved as an independent local list.</string>
+  <string name="lists" formatted="false">Lists</string>
   <string name="load_search" formatted="false">Load search</string>
   <string name="loading" formatted="false">Validating library…</string>
   <string name="no_results" formatted="false">No matching records. Try another word.</string>
   <string name="open" formatted="false">Read</string>
+  <string name="personal_capacity" formatted="false">A personal collection, list export or storage limit would be exceeded. Remove entries or lists and try again.</string>
+  <string name="personal_failed" formatted="false">Personal storage failed. Try again; do not delete your data.</string>
+  <string name="personal_invalid" formatted="false">Invalid personal database record; existing data was not replaced.</string>
+  <string name="personal_stale" formatted="false">Personal data changed. Review the current list and try again.</string>
+  <string name="personal_unavailable" formatted="false">Personal storage is unavailable. Resolve the reported error before saving.</string>
   <string name="preparation_notice" formatted="false">Download and validate all synthetic records to begin. This demo holds prepared data in memory; persistent offline snapshots are not implemented.</string>
   <string name="prepare_library" formatted="false">Prepare reading library</string>
   <string name="ready" formatted="false">Verified fixture publication</string>
   <string name="remove_favorite" formatted="false">Remove from favorites</string>
+  <string name="rename_list" formatted="false">Rename list</string>
   <string name="retry" formatted="false">Try again</string>
+  <string name="save_list" formatted="false">Save to My Library</string>
   <string name="search" formatted="false">Search lyrics or a title</string>
   <string name="search_consent" formatted="false">Search downloads a verified index. Nothing is downloaded until you choose Load search.</string>
   <string name="settings" formatted="false">Settings</string>
@@ -38,7 +56,7 @@
   <string name="transfer_invalid" formatted="false">Invalid or unsupported list snapshot. Choose a valid list file or a complete DaasaVaani snapshot link.</string>
   <string name="transfer_link" formatted="false">List snapshot link</string>
   <string name="transfer_link_too_long" formatted="false">The complete link exceeds the sharing limit. Use the list file instead; no text or entries were dropped.</string>
-  <string name="transfer_notice" formatted="false">Preview only; saving lists is not implemented. Nothing is uploaded or downloaded from the library. Shared links and files are readable and forwardable; do not include sensitive text.</string>
+  <string name="transfer_notice" formatted="false">Preview before saving a new independent local list. Nothing is uploaded or downloaded from the library. Shared links and files are readable and forwardable; do not include sensitive text.</string>
   <string name="transfer_placeholder" formatted="false">Intentional placeholder</string>
   <string name="transfer_preview" formatted="false">Preview link</string>
   <string name="transfer_reference" formatted="false">Library reference</string>
@@ -46,6 +64,7 @@
   <string name="transfer_too_large" formatted="false">The list exceeds a transfer byte limit. Export a smaller list; nothing has been saved.</string>
   <string name="transfer_unresolved" formatted="false">This preview shows identifiers and user text only; library details and offline readiness are not resolved.</string>
   <string name="transfer_working" formatted="false">Validating list snapshot…</string>
-  <string name="unavailable_features" formatted="false">This milestone does not yet implement offline snapshots, recitation lists, backups or reviewed transliteration.</string>
+  <string name="unavailable_features" formatted="false">This milestone does not yet implement offline snapshots, recitation mode, backups or reviewed transliteration.</string>
   <string name="unknown_route" formatted="false">This page is unavailable.</string>
+  <string name="view_lists" formatted="false">View saved lists</string>
 </resources>

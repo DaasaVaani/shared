@@ -8,6 +8,7 @@ maxFavorites: 10000
 maxBookmarks: 50000
 maxLearningLabels: 10000
 maxRecents: 50
+maxPersonalStoredBytes: 67108864
 maxListEncodedBytes: 9437184
 maxListDecodedBytes: 8388608
 maxBackupEncodedBytes: 68157440

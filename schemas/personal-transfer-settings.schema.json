@@ -5,7 +5,7 @@
   "required": [
     "formatVersion", "maxLists", "maxListNameCodePoints", "maxEntryTextCodePoints",
     "maxEntriesPerList", "maxTotalEntries", "maxFavorites", "maxBookmarks",
-    "maxLearningLabels", "maxRecents", "maxListEncodedBytes", "maxListDecodedBytes",
+    "maxLearningLabels", "maxRecents", "maxPersonalStoredBytes", "maxListEncodedBytes", "maxListDecodedBytes",
     "maxBackupEncodedBytes", "maxBackupDecodedBytes", "maxSharedUrlAscii"
   ],
   "properties": {
@@ -19,6 +19,7 @@
     "maxBookmarks": { "$ref": "#/$defs/positiveInteger" },
     "maxLearningLabels": { "$ref": "#/$defs/positiveInteger" },
     "maxRecents": { "$ref": "#/$defs/positiveInteger" },
+    "maxPersonalStoredBytes": { "$ref": "#/$defs/positiveInteger" },
     "maxListEncodedBytes": { "$ref": "#/$defs/positiveInteger" },
     "maxListDecodedBytes": { "$ref": "#/$defs/positiveInteger" },
     "maxBackupEncodedBytes": { "$ref": "#/$defs/positiveInteger" },

@@ -6,8 +6,16 @@
   <string name="back" formatted="false">ಗ್ರಂಥಾಲಯಕ್ಕೆ ಹಿಂತಿರುಗಿ</string>
   <string name="cancel" formatted="false">ರದ್ದುಮಾಡಿ</string>
   <string name="canonical" formatted="false">ಕನ್ನಡ · ಮೂಲ ಪರೀಕ್ಷಾ ಪಠ್ಯ</string>
+  <string name="confirm_delete" formatted="false">ಪಟ್ಟಿ ಅಳಿಸುವುದನ್ನು ದೃಢಪಡಿಸಿ</string>
+  <string name="confirm_duplicate" formatted="false">ಅದೇ ಹೆಸರಿನಲ್ಲಿ ಉಳಿಸಿ</string>
+  <string name="create_list" formatted="false">ಖಾಲಿ ಪಟ್ಟಿ ರಚಿಸಿ</string>
   <string name="dark" formatted="false">ಗಾಢ</string>
+  <string name="delete_list" formatted="false">ಪಟ್ಟಿ ಅಳಿಸಿ</string>
+  <string name="delete_notice" formatted="false">ಈ ಸ್ಥಳೀಯ ಪಟ್ಟಿಯನ್ನು ಮಾತ್ರ ಅಳಿಸಬೇಕೆ? ಇತರ ಪಟ್ಟಿಗಳು ಮತ್ತು ಗ್ರಂಥಾಲಯದ ವಿಷಯ ಬದಲಾಗುವುದಿಲ್ಲ.</string>
+  <string name="duplicate_list" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿ ರಚಿಸಿ</string>
+  <string name="duplicate_name" formatted="false">ಈ ಹೆಸರು ಇನ್ನೊಂದು ಸ್ಥಳೀಯ ಪಟ್ಟಿಯಲ್ಲಿದೆ. ಅದೇ ಹೆಸರಿನ ಸ್ವತಂತ್ರ ಪಟ್ಟಿಯನ್ನು ಉಳಿಸಬೇಕೆ?</string>
   <string name="empty_favorites" formatted="false">ಮೆಚ್ಚಿನ ದಾಖಲೆಗಳಿಲ್ಲ. ದಾಖಲೆಯನ್ನು ತೆರೆದು ಸೇರಿಸಿ.</string>
+  <string name="empty_lists" formatted="false">ಉಳಿಸಿದ ಪಟ್ಟಿಗಳಿಲ್ಲ. ಖಾಲಿ ಪಟ್ಟಿ ರಚಿಸಿ ಅಥವಾ ಆಯ್ಕೆಗಳಲ್ಲಿ ಪಟ್ಟಿಯ ಕಡತ ಅಥವಾ ಕೊಂಡಿಯ ಮುನ್ನೋಟ ನೋಡಿ.</string>
   <string name="error" formatted="false">ಗ್ರಂಥಾಲಯ ತೆರೆಯಲಾಗಲಿಲ್ಲ</string>
   <string name="favorites" formatted="false">ಮೆಚ್ಚಿನವು</string>
   <string name="fixture_notice" formatted="false">ಅಭಿವೃದ್ಧಿ ಪ್ರಾತ್ಯಕ್ಷಿಕೆ — ಕೃತಕ ಪರೀಕ್ಷಾ ದಾಖಲೆಗಳು; ಪರಿಶೀಲಿಸಿದ ಸಾಹಿತ್ಯ ಅಥವಾ ವೀಡಿಯೊ ವಿವರಗಳಲ್ಲ.</string>
@@ -15,15 +23,25 @@
   <string name="language_name" formatted="false">ಕನ್ನಡ</string>
   <string name="library" formatted="false">ಗ್ರಂಥಾಲಯ</string>
   <string name="light" formatted="false">ತಿಳಿ</string>
+  <string name="list_name" formatted="false">ಪಟ್ಟಿಯ ಹೆಸರು</string>
+  <string name="list_saved" formatted="false">ಸ್ವತಂತ್ರ ಸ್ಥಳೀಯ ಪಟ್ಟಿಯಾಗಿ ಉಳಿಸಲಾಗಿದೆ.</string>
+  <string name="lists" formatted="false">ಪಟ್ಟಿಗಳು</string>
   <string name="load_search" formatted="false">ಹುಡುಕಾಟ ಸಿದ್ಧಪಡಿಸಿ</string>
   <string name="loading" formatted="false">ಗ್ರಂಥಾಲಯ ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…</string>
   <string name="no_results" formatted="false">ಹೊಂದುವ ದಾಖಲೆಗಳಿಲ್ಲ. ಬೇರೆ ಪದ ಪ್ರಯತ್ನಿಸಿ.</string>
   <string name="open" formatted="false">ಓದಿ</string>
+  <string name="personal_capacity" formatted="false">ವೈಯಕ್ತಿಕ ಸಂಗ್ರಹ, ಪಟ್ಟಿಯ ರಫ್ತು ಅಥವಾ ಸಂಗ್ರಹಣೆಯ ಮಿತಿ ಮೀರುತ್ತದೆ. ನಮೂದು ಅಥವಾ ಪಟ್ಟಿಗಳನ್ನು ತೆಗೆದು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
+  <string name="personal_failed" formatted="false">ವೈಯಕ್ತಿಕ ಸಂಗ್ರಹಣೆ ವಿಫಲವಾಗಿದೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ; ನಿಮ್ಮ ದತ್ತಾಂಶ ಅಳಿಸಬೇಡಿ.</string>
+  <string name="personal_invalid" formatted="false">ವೈಯಕ್ತಿಕ ದತ್ತಾಂಶದ ದಾಖಲೆ ಅಮಾನ್ಯವಾಗಿದೆ; ಹಿಂದಿನ ದತ್ತಾಂಶ ಬದಲಿಸಿಲ್ಲ.</string>
+  <string name="personal_stale" formatted="false">ವೈಯಕ್ತಿಕ ದತ್ತಾಂಶ ಬದಲಾಗಿದೆ. ಪ್ರಸ್ತುತ ಪಟ್ಟಿಯನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
+  <string name="personal_unavailable" formatted="false">ವೈಯಕ್ತಿಕ ಸಂಗ್ರಹಣೆ ಲಭ್ಯವಿಲ್ಲ. ಉಳಿಸುವ ಮೊದಲು ತೋರಿಸಿದ ದೋಷ ಸರಿಪಡಿಸಿ.</string>
   <string name="preparation_notice" formatted="false">ಪ್ರಾರಂಭಿಸಲು ಎಲ್ಲಾ ಕೃತಕ ದಾಖಲೆಗಳನ್ನು ಇಳಿಸಿ ಪರಿಶೀಲಿಸಿ. ಈ ಪ್ರಾತ್ಯಕ್ಷಿಕೆ ಸಿದ್ಧಪಡಿಸಿದ ದತ್ತಾಂಶವನ್ನು ಮೆಮೊರಿಯಲ್ಲಿ ಇಡುತ್ತದೆ; ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="prepare_library" formatted="false">ಓದುವ ಗ್ರಂಥಾಲಯ ಸಿದ್ಧಪಡಿಸಿ</string>
   <string name="ready" formatted="false">ಪರಿಶೀಲಿಸಿದ ಪರೀಕ್ಷಾ ಪ್ರಕಟಣೆ</string>
   <string name="remove_favorite" formatted="false">ಮೆಚ್ಚಿನವುಗಳಿಂದ ತೆಗೆದುಹಾಕಿ</string>
+  <string name="rename_list" formatted="false">ಪಟ್ಟಿಯ ಹೆಸರು ಬದಲಿಸಿ</string>
   <string name="retry" formatted="false">ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
+  <string name="save_list" formatted="false">ನನ್ನ ಗ್ರಂಥಾಲಯಕ್ಕೆ ಉಳಿಸಿ</string>
   <string name="search" formatted="false">ಪಠ್ಯ ಅಥವಾ ಶೀರ್ಷಿಕೆ ಹುಡುಕಿ</string>
   <string name="search_consent" formatted="false">ಹುಡುಕಾಟಕ್ಕಾಗಿ ಪರಿಶೀಲಿಸಿದ ಸೂಚಿಯನ್ನು ಇಳಿಸಲಾಗುತ್ತದೆ. ನೀವು ಆಯ್ಕೆ ಮಾಡುವವರೆಗೆ ಇಳಿಸುವುದಿಲ್ಲ.</string>
   <string name="settings" formatted="false">ಆಯ್ಕೆಗಳು</string>
@@ -38,7 +56,7 @@
   <string name="transfer_invalid" formatted="false">ಅಮಾನ್ಯ ಅಥವಾ ಬೆಂಬಲಿಸದ ಪಟ್ಟಿಯ ಪ್ರತಿ. ಸರಿಯಾದ ಪಟ್ಟಿಯ ಕಡತ ಅಥವಾ ಸಂಪೂರ್ಣ ದಾಸವಾಣಿ ಕೊಂಡಿ ಆಯ್ಕೆಮಾಡಿ.</string>
   <string name="transfer_link" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ</string>
   <string name="transfer_link_too_long" formatted="false">ಸಂಪೂರ್ಣ ಕೊಂಡಿ ಹಂಚುವ ಮಿತಿಯನ್ನು ಮೀರಿದೆ. ಬದಲಿಗೆ ಪಟ್ಟಿಯ ಕಡತ ಬಳಸಿ; ಪಠ್ಯ ಅಥವಾ ನಮೂದುಗಳನ್ನು ಕೈಬಿಟ್ಟಿಲ್ಲ.</string>
-  <string name="transfer_notice" formatted="false">ಇದು ಮುನ್ನೋಟ ಮಾತ್ರ; ಪಟ್ಟಿಗಳನ್ನು ಉಳಿಸುವ ಸೌಲಭ್ಯ ಇನ್ನೂ ಇಲ್ಲ. ಯಾವುದನ್ನೂ ಅಪ್‌ಲೋಡ್ ಮಾಡುವುದಿಲ್ಲ ಅಥವಾ ಗ್ರಂಥಾಲಯದಿಂದ ಇಳಿಸುವುದಿಲ್ಲ. ಹಂಚಿದ ಕೊಂಡಿ ಮತ್ತು ಕಡತವನ್ನು ಇತರರು ಓದಬಹುದು ಮತ್ತು ಹಂಚಬಹುದು; ಖಾಸಗಿ ಪಠ್ಯ ಸೇರಿಸಬೇಡಿ.</string>
+  <string name="transfer_notice" formatted="false">ಹೊಸ ಸ್ವತಂತ್ರ ಸ್ಥಳೀಯ ಪಟ್ಟಿಯಾಗಿ ಉಳಿಸುವ ಮೊದಲು ಮುನ್ನೋಟ ನೋಡಿ. ಯಾವುದನ್ನೂ ಅಪ್‌ಲೋಡ್ ಮಾಡುವುದಿಲ್ಲ ಅಥವಾ ಗ್ರಂಥಾಲಯದಿಂದ ಇಳಿಸುವುದಿಲ್ಲ. ಹಂಚಿದ ಕೊಂಡಿ ಮತ್ತು ಕಡತವನ್ನು ಇತರರು ಓದಬಹುದು ಮತ್ತು ಹಂಚಬಹುದು; ಖಾಸಗಿ ಪಠ್ಯ ಸೇರಿಸಬೇಡಿ.</string>
   <string name="transfer_placeholder" formatted="false">ಉದ್ದೇಶಿತ ಪಠ್ಯ ನಮೂದು</string>
   <string name="transfer_preview" formatted="false">ಕೊಂಡಿಯ ಮುನ್ನೋಟ</string>
   <string name="transfer_reference" formatted="false">ಗ್ರಂಥಾಲಯದ ಉಲ್ಲೇಖ</string>
@@ -46,6 +64,7 @@
   <string name="transfer_too_large" formatted="false">ಪಟ್ಟಿಯ ಗಾತ್ರ ಇಳಿಸುವ ಮಿತಿಯನ್ನು ಮೀರಿದೆ. ಚಿಕ್ಕ ಪಟ್ಟಿಯನ್ನು ರಫ್ತುಮಾಡಿ; ಏನನ್ನೂ ಉಳಿಸಿಲ್ಲ.</string>
   <string name="transfer_unresolved" formatted="false">ಈ ಮುನ್ನೋಟ ಗುರುತು ಮತ್ತು ಬಳಕೆದಾರರ ಪಠ್ಯವನ್ನು ಮಾತ್ರ ತೋರಿಸುತ್ತದೆ; ಗ್ರಂಥಾಲಯದ ವಿವರ ಅಥವಾ ಆಫ್‌ಲೈನ್ ಸಿದ್ಧತೆಯನ್ನು ನಿರ್ಧರಿಸುವುದಿಲ್ಲ.</string>
   <string name="transfer_working" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿ ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…</string>
-  <string name="unavailable_features" formatted="false">ಈ ಹಂತದಲ್ಲಿ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹ, ಪಠಣ ಪಟ್ಟಿಗಳು, ಬ್ಯಾಕಪ್ ಅಥವಾ ಪರಿಶೀಲಿಸಿದ ಲಿಪ್ಯಂತರ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
+  <string name="unavailable_features" formatted="false">ಈ ಹಂತದಲ್ಲಿ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹ, ಪಠಣ ವಿಧಾನ, ಬ್ಯಾಕಪ್ ಅಥವಾ ಪರಿಶೀಲಿಸಿದ ಲಿಪ್ಯಂತರ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="unknown_route" formatted="false">ಈ ಪುಟ ಲಭ್ಯವಿಲ್ಲ.</string>
+  <string name="view_lists" formatted="false">ಉಳಿಸಿದ ಪಟ್ಟಿಗಳನ್ನು ನೋಡಿ</string>
 </resources>

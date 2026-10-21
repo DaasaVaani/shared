@@ -1,5 +1,22 @@
 # Documentation history
 
+## 2026-10-21: transactional web-list prerequisites
+
+- Added a strict portable logical personal-storage byte ceiling, no greater than
+  the existing decoded-backup ceiling, for exact consumer-owned envelope
+  accounting. Physical database/index usage is not this logical metric; complete
+  backup adapters/exportability remain separate gates. Existing list schemas are
+  unchanged; independently pinned consumers are not silently updated.
+- Added matching English/Kannada list import/management/confirmation/storage-error
+  labels and updated the web-preview notice for the upcoming confirmed-save slice.
+  Generated resources accompany their catalog; no native list feature is implied.
+- The previously pending managed Website Actions analysis completed successfully;
+  removed its now-published temporary validation branch after verifying both
+  managed jobs and main deployment. No workflow or security setting was bypassed.
+- `npm run check` passed all13 Node tests and deterministic generation. The
+  40-file hygiene, existing list-schema stability, generated drift, staged
+  whitespace and strict Node parsing of all5 GitHub YAML files passed.
+
 ## 2026-10-21: logical list record structural contract
 
 - Continued with the prerequisite for transactional list persistence rather

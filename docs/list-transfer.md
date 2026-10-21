@@ -77,6 +77,12 @@ Generation also rejects per-list occurrence limits exceeding the total and
 encoded file ceilings that cannot exceed their corresponding decoded ceiling.
 All numeric product limits remain in the owning settings file; the generated
 schema materializes only list name/text/occurrence bounds.
+`maxPersonalStoredBytes` separately bounds the consumer's explicitly specified
+deterministic logical personal-storage envelope, not physical database/index
+bytes. It cannot exceed `maxBackupDecodedBytes`; full-backup exportability still
+requires exact backup-envelope accounting in the owning adapter. Consumers
+adopting these settings must validate this new required key; independently pinned
+older consumers are unchanged.
 
 Limits apply at consumer build/adoption time, not from untrusted incoming data.
 Changing them regenerates the schema and requires explicit consumer compatibility

@@ -88,6 +88,7 @@ test("contract limits are generated from strict settings without hidden defaults
     { ...settings, maxBackupEncodedBytes: settings.maxBackupDecodedBytes }]) {
     assert.throws(() => listTransferSchema(value), /personal-transfer/);
   }
+  assert.throws(() => listTransferSchema({ ...settings, maxPersonalStoredBytes: settings.maxBackupDecodedBytes + 1 }), /personal-transfer/);
 });
 
 test("logical list record fixtures preserve independent UUIDv4 identities without mutation", async () => {
