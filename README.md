@@ -11,8 +11,8 @@ commits generated Android/web UI resources with catalog/generator changes.
 Exact schemas, compatible pins and implementation remain pending; no generator
 or application is provided here.
 
-Start with the [recorded implementation design](docs/implementation-specification.md)
-for the approved review passes, settings ownership, cross-repository contracts,
+Start with [AGENTS.md](AGENTS.md) and the [current implementation specification](docs/implementation-specification.md)
+for settings ownership, cross-repository contracts,
 failure behavior, requirement traceability and remaining gates. Documentation
 is not final design approval or evidence of application implementation.
 
@@ -24,9 +24,16 @@ impact; updates are not forced into lockstep.
 
 Keep changes focused and obtain agreement before implementing open design choices.
 Use the issue forms and PR template. Never include secrets or private data.
-Run `python tools/check_repository.py` and `git diff --check` from this root.
+Run `python tools\check_repository.py` and `git --no-pager diff --check` from this root.
 The repository-hygiene workflow also parses YAML syntax. These checks are not
-application tests, contract conformance tests or a security audit.
+application tests, contract conformance tests or a security audit. Focused tests
+are incremental only; finalization/confirmation and every push require full
+applicable builds/all configured suites. Documentation-only work may use all
+available documentation/bootstrap checks while app tooling is absent; never
+report absent app checks as passed. See the [full gate](docs/data-contracts.md#validation-and-finalization).
+
+Keep current documentation synchronized with changes. Put past decisions,
+chronology and completed validation records only in [HISTORY.md](HISTORY.md).
 
 Project-authored software follows the existing DaasaVaani [Apache 2.0 license](LICENSE).
 Third-party lyrics, descriptions, images, recordings and trademarks are not
