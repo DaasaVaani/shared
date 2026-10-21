@@ -1,5 +1,19 @@
 # Documentation history
 
+## 2026-10-22: authorized owner-supplied draft header
+
+- User explicitly authorized separate draft conversion of supplied text files,
+  preserving every original and assigning stable lyric/line UUIDs. Confirmed
+  initial Kannada followed by literal supplied Source Latin, with exceptions held,
+  and approved the first Kannada lyric line as title for manual later correction.
+- Added a strict sourceFormat2 draft-header schema and negative fixtures. No media,
+  guessed owner/license/attribution or production publication permission is
+  fabricated; nonempty review holds remain required. Source/body parsing and
+  actual import are Library responsibilities, not a schema-validation claim.
+- `npm run check` passed16 tests/deterministic generation;44-file hygiene,
+  generated/schema drift, strict5 GitHub YAML files and Git whitespace passed.
+  No real lyric variant or production publication was generated.
+
 ## 2026-10-22: approved lyric-independent identity contract
 
 - Owner confirmed stable lyric UUIDv4 identity and optional images/YouTube

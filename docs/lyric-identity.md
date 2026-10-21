@@ -35,6 +35,14 @@ personal-data migration or legacy mapping is authorized by contract approval.
 
 ## 2. Publication eligibility and provenance
 
+The executable [source-draft header schema](../schemas/lyric-source-draft.schema.json)
+supports separately authorized owner-supplied draft authoring only. It fixes
+sourceFormat2/lyric UUID, reviewed title/tags, actual source basename/raw SHA256/
+explicit encoding and nonempty review holds. Library's parser additionally
+validates canonical line/layout and optional literal Source Latin fences.
+It requires no image/video or invented owner/attribution. It is not a production
+publication schema and cannot certify publication by accepting a draft.
+
 A structurally valid record needs its lyric identity, reviewed public title,
 canonical Kannada text, required provenance/rights evidence and no publication
 hold. Legitimate incomplete/held records remain unpublished; malformed structure,

@@ -21,6 +21,22 @@ test("fixture item contract rejects unknown fields and invalid identities", asyn
   assert.equal(validate({ ...item, videoId: "../unsafe" }), false);
   assert.equal(validate({ ...item, fixture: false }), false);
 });
+test("owner-supplied lyric draft headers have independent identity and mandatory review holds without media", async () => {
+  const schema = JSON.parse(await readFile(new URL("../schemas/lyric-source-draft.schema.json", import.meta.url), "utf8"));
+  const validate = new Ajv2020({ strict: true }).compile(schema);
+  const value = { sourceFormat: 2, lyricId: "10000000-0000-4000-8000-000000000001",
+    public: { title: "ಕನ್ನಡ", tags: [] },
+    provenance: { kind: "owner-supplied", sourceFile: "permitted.txt", sha256: "a".repeat(64), encoding: "utf-8" },
+    review: { holdReasons: ["source-import-review"] } };
+  assert.equal(validate(value), true);
+  for (const invalid of [{ ...value, videoId: "fabricated" }, { ...value, lyricId: "title-derived" },
+    { ...value, review: { holdReasons: [] } }, { ...value, public: { title: "bad\nline", tags: [] } },
+    { ...value, provenance: { ...value.provenance, sourceFile: "../outside.txt" } },
+    { ...value, provenance: { ...value.provenance, owner: "not-supplied" } },
+    { ...value, provenance: { ...value.provenance, encoding: "guessed" } }]) {
+    assert.equal(validate(invalid), false);
+  }
+});
 test("portable UI defaults and all appearance modes follow the strict schema and declared choices", async () => {
   const schema = JSON.parse(await readFile(new URL("../schemas/ui-defaults.schema.json", import.meta.url), "utf8"));
   const defaults = strictYaml(await readFile(new URL("../settings/defaults.yml", import.meta.url), "utf8"));
