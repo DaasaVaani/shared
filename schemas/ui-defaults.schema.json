@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["formatVersion", "uiLanguage", "lyricScript", "theme", "supportedUiLanguages", "supportedThemes"],
+  "properties": {
+    "formatVersion": { "const": 1 },
+    "uiLanguage": { "$ref": "#/$defs/language" },
+    "lyricScript": { "const": "kn" },
+    "theme": { "$ref": "#/$defs/theme" },
+    "supportedUiLanguages": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/language" } },
+    "supportedThemes": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/theme" } }
+  },
+  "allOf": [
+    { "if": { "properties": { "uiLanguage": { "const": "en" } } }, "then": { "properties": { "supportedUiLanguages": { "type": "array", "contains": { "const": "en" } } } } },
+    { "if": { "properties": { "uiLanguage": { "const": "kn" } } }, "then": { "properties": { "supportedUiLanguages": { "type": "array", "contains": { "const": "kn" } } } } },
+    { "if": { "properties": { "theme": { "const": "light" } } }, "then": { "properties": { "supportedThemes": { "type": "array", "contains": { "const": "light" } } } } },
+    { "if": { "properties": { "theme": { "const": "dark" } } }, "then": { "properties": { "supportedThemes": { "type": "array", "contains": { "const": "dark" } } } } },
+    { "if": { "properties": { "theme": { "const": "warm" } } }, "then": { "properties": { "supportedThemes": { "type": "array", "contains": { "const": "warm" } } } } },
+    { "if": { "properties": { "theme": { "const": "device" } } }, "then": { "properties": { "supportedThemes": { "type": "array", "contains": { "const": "device" } } } } }
+  ],
+  "$defs": {
+    "language": { "enum": ["en", "kn"] },
+    "theme": { "enum": ["light", "dark", "warm", "device"] }
+  }
+}

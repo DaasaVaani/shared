@@ -21,6 +21,21 @@ test("fixture item contract rejects unknown fields and invalid identities", asyn
   assert.equal(validate({ ...item, videoId: "../unsafe" }), false);
   assert.equal(validate({ ...item, fixture: false }), false);
 });
+test("portable UI defaults and all appearance modes follow the strict schema and declared choices", async () => {
+  const schema = JSON.parse(await readFile(new URL("../schemas/ui-defaults.schema.json", import.meta.url), "utf8"));
+  const defaults = strictYaml(await readFile(new URL("../settings/defaults.yml", import.meta.url), "utf8"));
+  const validate = new Ajv2020({ strict: true }).compile(schema);
+  assert.equal(validate(defaults), true);
+  assert.equal(defaults.theme, "light");
+  assert.deepEqual(defaults.supportedThemes, ["light", "dark", "warm", "device"]);
+  for (const theme of defaults.supportedThemes) assert.equal(validate({ ...defaults, theme }), true);
+  for (const invalid of [{ ...defaults, ignored: true }, { ...defaults, theme: "unknown" },
+    { ...defaults, supportedThemes: [] }, { ...defaults, supportedThemes: ["light", "light"] },
+    { ...defaults, theme: "warm", supportedThemes: ["light"] },
+    { ...defaults, uiLanguage: "kn", supportedUiLanguages: ["en"] }, { ...defaults, lyricScript: "en" }]) {
+    assert.equal(validate(invalid), false);
+  }
+});
 test("catalog generator is deterministic and includes both locales", async () => {
   await generate();
   const file = new URL("../generated/web/ui.json", import.meta.url);

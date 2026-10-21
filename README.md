@@ -1,5 +1,11 @@
 # DaasaVaani Shared
 
+Portable UI defaults and allowed choices follow
+[`schemas/ui-defaults.schema.json`](schemas/ui-defaults.schema.json).
+Appearance tokens are `light`, `dark`, `warm` and `device` (Follow device);
+the configured initial Website default remains `light`. Consumers validate the
+schema and independently adopt a compatible revision before exposing new modes.
+
 Language-neutral contracts for the independently developed DaasaVaani Website,
 Android app and Library publisher. This repository is a bootstrap, not a shared
 application runtime. It includes an initial executable, explicitly fixture-only

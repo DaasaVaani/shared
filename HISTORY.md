@@ -1,5 +1,19 @@
 # Documentation history
 
+## 2026-10-21: strict portable appearance choices
+
+- Extended declared portable appearance choices to light/dark/warm/device,
+  matching the approved four-mode UI and existing native schema tokens. Kept
+  configured initial theme light and canonical lyric script Kannada unchanged.
+  Added an exact defaults schema including default-membership checks and negative
+  fixtures; consumer validation/adoption remains independent.
+- Archived the preceding supportedThemes list `[light, dark]`; no existing
+  consumer pin or persisted personal record is automatically rewritten.
+- First strict validation rejected the conditional schema's missing array type;
+  made the conditional `contains` types explicit without relaxing strict mode.
+  `npm run check` then passed14 tests/deterministic generation;41-file tracked
+  repository hygiene and whitespace checks passed.
+
 ## 2026-10-21: native preview-only transfer status resources
 
 - Added the native preview/re-export scope, cancellation and actual selected-
