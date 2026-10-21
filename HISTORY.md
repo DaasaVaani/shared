@@ -1,5 +1,28 @@
 # Documentation history
 
+## Owner-reviewed text and complete authoring metadata
+
+- The owner confirmed review of the prepared lyrics and selected all approved
+  author-editable metadata fields. This supersedes the pending offline text-review
+  notice, not the held extraction cases or other production/release gates.
+  The replaced current text allowed release while offline review was pending
+  before public launch; it did not represent completed review.
+- Added optional backwards-compatible classification/context/verse/media,
+  provenance/rights and explicit unassessed Source Latin review fields. Unknown
+  text/collections remain empty; unknown review booleans are null, not fabricated
+  positive/negative assessments. Existing minimal headers remain valid. No real
+  media, dates, attribution, registries or generated variants are invented.
+- Replaced English/Kannada pending-text-review notice with neutral prelaunch
+  implementation/release wording. Canonical public artifact shapes are unchanged.
+- The owner selected official Unicode16 for portable list-name matching with
+  coordinated migration preserving stored names/IDs/records and no auto merging
+  or renaming. Implementation/conformance and consumer migration remain pending.
+- Metadata/notice validation: `npm run check` passed20 tests, zero failures/skips;
+  `python tools\check_repository.py` passed48 tracked files. Strict YAML parsed
+  all10 tracked YAML files; actionlint1.7.12 with ShellCheck0.11.0 and working-tree
+  whitespace checks passed. Generated labels explicitly explain complete-library
+  consent and memory-only preparation; no persistent offline readiness is claimed.
+
 ## 2026-10-21: owner-authorized prelaunch lyric publication
 
 - The owner authorized publishing prepared lyrics now and completing offline

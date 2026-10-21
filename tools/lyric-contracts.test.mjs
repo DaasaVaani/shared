@@ -33,6 +33,32 @@ test("real canonical lyric objects have UUID identities and explicit literal lay
     assert.equal(validate(invalid), false);
   }
 });
+test("optional authoring metadata has explicit empty values without fabricated facts or weakening old sources", () => {
+  const validate = new Ajv2020({ strict: true }).compile(source);
+  const value = {
+    sourceFormat: 2, lyricId: uuid,
+    public: { title: "Synthetic", tags: [], classification: {
+      composerIds: [], ankitaIds: [], deityIds: [], formIds: [], categoryIds: [], contextIds: [],
+    }, contextDescription: "", verses: [], youtube: [], images: [] },
+    provenance: { kind: "owner-supplied", sourceFile: "permitted.txt", sha256: "b".repeat(64), encoding: "utf-8",
+      sourceUrls: [], description: "", rights: { license: "", attribution: "", evidenceUrls: [] }, videos: [], images: [] },
+    review: { holdReasons: [], sourceLatin: { readable: null, searchable: null, alignment: [] } },
+  };
+  assert.equal(validate(value), true);
+  for (const patch of [
+    { youtube: [{}] }, { youtube: [{ videoId: "", url: "" }] },
+    { images: [{ asset: "", alt: "" }] }, { images: [{ asset: "assets/../private", alt: "" }] },
+    { classification: { ...value.public.classification, composerIds: ["unknown name"] } },
+    { classification: { ...value.public.classification, deityIds: ["one", "one"] } },
+    { verses: [{ id: uuid, endsAt: "" }] }, { raga: "" }, { addedOn: "" },
+  ]) assert.equal(validate({ ...value, public: { ...value.public, ...patch } }), false);
+  for (const patch of [
+    { sourceUrls: [""] }, { sourceUrls: ["javascript:alert(1)"] },
+    { rights: { license: "", attribution: "", evidenceUrls: [""] } },
+    { videos: [{ videoId: "00000000000", originalTitle: "", channelId: "", channelName: "", uploadedOn: "unknown", description: "" }] },
+  ]) assert.equal(validate({ ...value, provenance: { ...value.provenance, ...patch } }), false);
+  assert.equal(validate({ ...value, review: { ...value.review, sourceLatin: { readable: "", searchable: null, alignment: [] } } }), false);
+});
 test("prelaunch descriptors and catalog explicitly identify capabilities and bounded hash-addressed objects", () => {
   const ajv = new Ajv2020({ strict: true });
   const descriptor = ajv.compile(publication);

@@ -43,11 +43,56 @@ schema under its filename before compiling the draft schema. Library's parser
 also validates canonical line/layout and optional literal Source Latin fences.
 Neither schema requires images/videos or invented owner/attribution.
 
-Owner-authorized prelaunch publication may release the specific import-review
-hold while offline linguistic review remains pending before public launch.
-Other holds/ambiguous extraction remain excluded. This permission is not a claim
-of reviewed linguistic truth, a license declaration or production readiness.
+The owner has confirmed text review of the prepared records and authorized
+release of their specific import-review hold. Other holds/ambiguous extraction
+remain excluded. Owner review does not certify generated transliterations,
+Source Latin eligibility/alignment, a license declaration or production readiness.
 Record actual owner authorization separately; do not fabricate evidence.
+
+### Author-editable fields
+
+The common source header accepts optional additive metadata; older records remain
+valid without it. New authoring and explicitly authorized completion expose:
+
+- `public.classification`: `composerIds`, `ankitaIds`, `deityIds`, `formIds`,
+  `categoryIds`, `contextIds`, each an empty array until reviewed registry IDs
+  are available. IDs use lowercase ASCII words/numbers joined by hyphens; no
+  inferred authorship, invented registry entries or multiple uncertain alternatives.
+- `public.contextDescription`: empty text until a reviewed narrative description
+  is available. Not translated meaning or occasion/festival metadata.
+- `public.verses`: empty array or ordered `{id, endsAt}` declarations with existing
+  canonical line references and complete coverage. Never assign blank UUIDs.
+- `public.youtube`: empty array or reviewed `{videoId, url}` associations. An
+  association needs an actual supplied eleven-character ID; its URL may be empty
+  when unavailable, otherwise it must identify that exact video. No placeholder
+  association objects. Unknown channel/upload evidence belongs only to provenance.
+- `public.images`: empty array or `{asset, alt}` records. Asset references are
+  safe repository-relative paths below `assets/`; absence needs no dummy asset.
+  Real asset ingestion/validation/publication remains a separate production gate.
+- `provenance.sourceUrls`, `description`, `rights` (`license`, `attribution`,
+  `evidenceUrls`), `videos` and `images`. Unknown text is `""`, collections `[]`.
+  A video provenance record contains its actual associated `videoId`,
+  `originalTitle`, `channelId`, `channelName`, `uploadedOn` and `description`.
+  Unknown upload dates are empty; supplied dates are actual calendar dates
+  `YYYY-MM-DD`. An image provenance record contains `asset`, `sourceUrl`,
+  `creator`, `license`, `attribution`. Referenced video/asset must be declared.
+  URLs are absolute credential-free HTTPS. No empty URL array entries.
+- `review.sourceLatin`: `readable` and `searchable` are `null` until separately
+  assessed, not automatically true after Kannada review. `false` means an explicit
+  negative assessment. `alignment` is empty until reviewed code-point ranges
+  exist; records are `{lineId, ranges: [[start, end], ...]}`. Search eligibility
+  requires readable text and complete ordered nonoverlapping mapping.
+
+Retain known title, tags, original source evidence and every UUID. Public source
+Git is not private storage: use only public evidence references, never private
+correspondence. Unknown rights are not an invented license or permission waiver.
+Publication-maintained first-publication dates and generated script variants are
+not blank authoring fields. Structured raga/tala remains deferred.
+
+These are authoring fields, not an extension of the canonical-only public family.
+Library must reject populated unsupported public metadata before publication,
+rather than silently discard it, until its registry/media/verse adapters exist.
+Source-only provenance may be stored without exposing it in public artifacts.
 
 The [canonical-text publication schema](../schemas/lyric-publication.schema.json)
 defines descriptor, manifest and item families independently at version1, with
