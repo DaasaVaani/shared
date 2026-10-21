@@ -1,5 +1,17 @@
 # Documentation history
 
+## 2026-10-21: explicit list sharing and copy feedback
+
+- Added two-locale messages for optional system link/file sharing, explicit
+  clipboard copying, cancellation, permission failures and lossless browser
+  download/manual-link fallback. A successful share request is not a delivery
+  receipt; privacy wording does not promise secrecy or revocation.
+- Additive UI resources only; no list wire/settings/schema change, runtime
+  platform implementation or automatic native/Library consumer-pin update.
+- `npm run check` passed13 tests and deterministic generation;
+  `python tools\check_repository.py` passed40 tracked files and whitespace
+  checks passed. Application/platform acceptance remains a consumer obligation.
+
 ## 2026-10-21: truthful list catalog resolution and reader actions
 
 - Added English/Kannada messages for catalog-only details, unresolved-before-load

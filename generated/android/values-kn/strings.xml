@@ -15,6 +15,7 @@
   <string name="choose_list" formatted="false">ಉಳಿಸಿದ ಪಟ್ಟಿ ಆಯ್ಕೆಮಾಡಿ</string>
   <string name="confirm_delete" formatted="false">ಪಟ್ಟಿ ಅಳಿಸುವುದನ್ನು ದೃಢಪಡಿಸಿ</string>
   <string name="confirm_duplicate" formatted="false">ಅದೇ ಹೆಸರಿನಲ್ಲಿ ಉಳಿಸಿ</string>
+  <string name="copy_list_link" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ ನಕಲಿಸಿ</string>
   <string name="create_list" formatted="false">ಖಾಲಿ ಪಟ್ಟಿ ರಚಿಸಿ</string>
   <string name="dark" formatted="false">ಗಾಢ</string>
   <string name="delete_list" formatted="false">ಪಟ್ಟಿ ಅಳಿಸಿ</string>
@@ -34,10 +35,15 @@
   <string name="language_name" formatted="false">ಕನ್ನಡ</string>
   <string name="library" formatted="false">ಗ್ರಂಥಾಲಯ</string>
   <string name="light" formatted="false">ತಿಳಿ</string>
+  <string name="list_file_share_unsupported" formatted="false">ಈ ಬ್ರೌಸರ್ ಈ ಕಡತ ಹಂಚಲು ಸಾಧ್ಯವಿಲ್ಲ. ಬದಲಿಗೆ ಸಂಪೂರ್ಣ ಪಟ್ಟಿಯ ಕಡತ ಇಳಿಸಿ.</string>
   <string name="list_invalid" formatted="false">ಪಟ್ಟಿಯ ಹೆಸರು ಅಥವಾ ನಮೂದು ಅಮಾನ್ಯವಾಗಿದೆ. ತೋರಿಸಿದ ಮಿತಿಯೊಳಗೆ ಖಾಲಿಯಲ್ಲದ ಒಂದೇ ಸಾಲಿನ ಪಠ್ಯ ಬಳಸಿ.</string>
+  <string name="list_link_copied" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ ನಕಲಿಸಲಾಗಿದೆ. ಅದನ್ನು ಸ್ವೀಕರಿಸಿದವರು ಅದರ ವಿಷಯ ಓದಬಹುದು ಅಥವಾ ಮುಂದಕ್ಕೆ ಹಂಚಬಹುದು.</string>
   <string name="list_name" formatted="false">ಪಟ್ಟಿಯ ಹೆಸರು</string>
   <string name="list_name_hint" formatted="false">ಒಂದೇ ಸಾಲಿನಲ್ಲಿ 1-{limit} ಯುನಿಕೋಡ್ ಅಕ್ಷರ ಸ್ಥಾನಗಳನ್ನು ಬಳಸಿ. ಖಾಲಿ ಜಾಗಗಳನ್ನು ಹಾಗೆಯೇ ಉಳಿಸಲಾಗುತ್ತದೆ.</string>
   <string name="list_saved" formatted="false">ಸ್ವತಂತ್ರ ಸ್ಥಳೀಯ ಪಟ್ಟಿಯಾಗಿ ಉಳಿಸಲಾಗಿದೆ.</string>
+  <string name="list_share_cancelled" formatted="false">ಹಂಚಿಕೆಯನ್ನು ರದ್ದುಮಾಡಲಾಗಿದೆ. ಏನನ್ನೂ ಬದಲಿಸಿಲ್ಲ.</string>
+  <string name="list_share_failed" formatted="false">ಹಂಚಿಕೆ ಅಥವಾ ನಕಲು ವಿಫಲವಾಗಿದೆ. ತೋರಿಸಿದ ಕೊಂಡಿ ಬಳಸಿ ಅಥವಾ ಕಡತ ಇಳಿಸಿ.</string>
+  <string name="list_shared" formatted="false">ಸಾಧನದ ಹಂಚಿಕೆ ಪರದೆಗೆ ಕಳುಹಿಸಲಾಗಿದೆ. ತಲುಪಿದೆ ಎಂದು ದೃಢಪಡಿಸಿಲ್ಲ.</string>
   <string name="list_updated" formatted="false">ಸ್ಥಳೀಯ ಪಟ್ಟಿ ಬದಲಿಸಲಾಗಿದೆ.</string>
   <string name="lists" formatted="false">ಪಟ್ಟಿಗಳು</string>
   <string name="load_search" formatted="false">ಹುಡುಕಾಟ ಸಿದ್ಧಪಡಿಸಿ</string>
@@ -70,6 +76,8 @@
   <string name="search" formatted="false">ಪಠ್ಯ ಅಥವಾ ಶೀರ್ಷಿಕೆ ಹುಡುಕಿ</string>
   <string name="search_consent" formatted="false">ಹುಡುಕಾಟಕ್ಕಾಗಿ ಪರಿಶೀಲಿಸಿದ ಸೂಚಿಯನ್ನು ಇಳಿಸಲಾಗುತ್ತದೆ. ನೀವು ಆಯ್ಕೆ ಮಾಡುವವರೆಗೆ ಇಳಿಸುವುದಿಲ್ಲ.</string>
   <string name="settings" formatted="false">ಆಯ್ಕೆಗಳು</string>
+  <string name="share_list_file" formatted="false">ಪಟ್ಟಿಯ ಕಡತ ಹಂಚಿ</string>
+  <string name="share_list_link" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ ಹಂಚಿ</string>
   <string name="skip_to_content" formatted="false">ವಿಷಯಕ್ಕೆ ಹೋಗಿ</string>
   <string name="start_again" formatted="false">ಸಿದ್ಧತೆಗೆ ಹಿಂತಿರುಗಿ</string>
   <string name="tagline" formatted="false">ಓದಿಗಾಗಿ ಒಂದು ಶಾಂತ ತಾಣ</string>

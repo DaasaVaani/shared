@@ -15,6 +15,7 @@
   <string name="choose_list" formatted="false">Choose a saved list</string>
   <string name="confirm_delete" formatted="false">Confirm list deletion</string>
   <string name="confirm_duplicate" formatted="false">Save with same name</string>
+  <string name="copy_list_link" formatted="false">Copy snapshot link</string>
   <string name="create_list" formatted="false">Create empty list</string>
   <string name="dark" formatted="false">Dark</string>
   <string name="delete_list" formatted="false">Delete list</string>
@@ -34,10 +35,15 @@
   <string name="language_name" formatted="false">English</string>
   <string name="library" formatted="false">Library</string>
   <string name="light" formatted="false">Light</string>
+  <string name="list_file_share_unsupported" formatted="false">This browser cannot share this file. Download the complete list file instead.</string>
   <string name="list_invalid" formatted="false">List name or entry is invalid. Use nonempty single-line text within the displayed limits.</string>
+  <string name="list_link_copied" formatted="false">Snapshot link copied. Anyone receiving it can read or forward its contents.</string>
   <string name="list_name" formatted="false">List name</string>
   <string name="list_name_hint" formatted="false">Use 1-{limit} Unicode code points on one line. Spaces are preserved.</string>
   <string name="list_saved" formatted="false">Saved as an independent local list.</string>
+  <string name="list_share_cancelled" formatted="false">Sharing cancelled. Nothing was changed.</string>
+  <string name="list_share_failed" formatted="false">Sharing or copying failed. Use the displayed link or download the file instead.</string>
+  <string name="list_shared" formatted="false">Handed to the system sharing interface. Delivery is not confirmed.</string>
   <string name="list_updated" formatted="false">Local list updated.</string>
   <string name="lists" formatted="false">Lists</string>
   <string name="load_search" formatted="false">Load search</string>
@@ -70,6 +76,8 @@
   <string name="search" formatted="false">Search lyrics or a title</string>
   <string name="search_consent" formatted="false">Search downloads a verified index. Nothing is downloaded until you choose Load search.</string>
   <string name="settings" formatted="false">Settings</string>
+  <string name="share_list_file" formatted="false">Share list file</string>
+  <string name="share_list_link" formatted="false">Share snapshot link</string>
   <string name="skip_to_content" formatted="false">Skip to content</string>
   <string name="start_again" formatted="false">Return to preparation</string>
   <string name="tagline" formatted="false">A quiet space for reading</string>
