@@ -1,5 +1,16 @@
 # Documentation history
 
+## 2026-10-21: truthful list catalog resolution and reader actions
+
+- Added English/Kannada messages for catalog-only details, unresolved-before-load
+  references, explicit reader-to-list addition and list return. Known catalog
+  membership is deliberately not an offline-readiness claim.
+- Additive UI resources only: no wire-format/settings/schema change or automatic
+  native/Library pin update; runtime behavior belongs to the owning consumer.
+- `npm run check` passed13 tests and deterministic resource generation.
+  `python tools\check_repository.py` passed40 tracked files; Git whitespace
+  checks passed. No application/native parity is inferred from catalog tests.
+
 ## 2026-10-21: independent occurrence-management UI resources
 
 - Added bilingual controls for explicit reference/placeholder creation, editing,
