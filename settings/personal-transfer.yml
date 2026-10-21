@@ -1,0 +1,15 @@
+formatVersion: 1
+maxLists: 1000
+maxListNameCodePoints: 128
+maxEntryTextCodePoints: 512
+maxEntriesPerList: 10000
+maxTotalEntries: 50000
+maxFavorites: 10000
+maxBookmarks: 50000
+maxLearningLabels: 10000
+maxRecents: 50
+maxListEncodedBytes: 9437184
+maxListDecodedBytes: 8388608
+maxBackupEncodedBytes: 68157440
+maxBackupDecodedBytes: 67108864
+maxSharedUrlAscii: 2048

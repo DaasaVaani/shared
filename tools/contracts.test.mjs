@@ -38,3 +38,12 @@ test("search settings match their exact schema and reject oversized limits", asy
   assert.equal(validate({ ...policy, ignoredSetting: true }), false);
   assert.deepEqual(policy.editBands, [{ maxLength: 3, edits: 0 }, { maxLength: 8, edits: 1 }, { maxLength: 256, edits: 2 }]);
 });
+test("portable personal-transfer bounds are positive safe integers", async () => {
+  const settings = strictYaml(await readFile(new URL("../settings/personal-transfer.yml", import.meta.url), "utf8"));
+  assert.equal(settings.formatVersion, 1);
+  assert.equal(settings.maxFavorites, 10000);
+  assert.equal(settings.maxRecents, 50);
+  assert.ok(Object.values(settings).every(value => Number.isSafeInteger(value) && value > 0));
+  assert.ok(settings.maxListEncodedBytes > settings.maxListDecodedBytes);
+  assert.ok(settings.maxBackupEncodedBytes > settings.maxBackupDecodedBytes);
+});

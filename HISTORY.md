@@ -60,6 +60,13 @@ language autonyms, skip navigation and unavailable routes. Added executable
 search-settings schema/limit checks. This extends fixture scaffolding, not
 production language-table approval or offline-snapshot implementation.
 
+## 2026-10-21: authoritative portable personal limits
+
+Added settings/personal-transfer.yml with the selected collection, text, transfer
+and URL bounds, so platform builds consume portable limits instead of maintaining
+duplicate configurable defaults. This supplies configuration; it does not claim
+that lists, bookmarks or backups have been implemented.
+
 ## Snapshot: README.md
 
 # DaasaVaani Shared
