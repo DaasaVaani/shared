@@ -22,6 +22,11 @@
   all10 tracked YAML files; actionlint1.7.12 with ShellCheck0.11.0 and working-tree
   whitespace checks passed. Generated labels explicitly explain complete-library
   consent and memory-only preparation; no persistent offline readiness is claimed.
+- Integrated the separately validated Unicode16 implementation with this metadata
+  batch: `npm run check` passed25 tests, zero failures/skips, including exhaustive
+  folding and official normalization conformance. Repository hygiene passed64
+  tracked files; generated/schema drift, committed whitespace, all11 strict YAML
+  files and actionlint/ShellCheck passed. Consumer adoption remains independent.
 
 ## 2026-10-21: owner-authorized prelaunch lyric publication
 
