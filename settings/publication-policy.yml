@@ -1,0 +1,13 @@
+formatVersion: 1
+maxDescriptorBytes: 65536
+maxManifestEncodedBytes: 8388608
+maxManifestDecodedBytes: 33554432
+maxItemEncodedBytes: 2097152
+maxItemDecodedBytes: 8388608
+maxPolicyEncodedBytes: 2097152
+maxPolicyDecodedBytes: 8388608
+maxIndexEncodedBytes: 33554432
+maxIndexDecodedBytes: 134217728
+metadataTimeoutMs: 30000
+supportedRequiredCapabilities:
+  - fixture-catalog-v1

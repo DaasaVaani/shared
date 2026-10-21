@@ -2,14 +2,15 @@
 
 Language-neutral contracts for the independently developed DaasaVaani Website,
 Android app and Library publisher. This repository is a bootstrap, not a shared
-application runtime or an implemented contract.
+application runtime. It includes an initial executable, explicitly fixture-only
+contract and UI catalog generator, not the complete production contract.
 
 Future roots are `schemas/`, `specs/`, `fixtures/`, `settings/`, `locales/`, `docs/` and
 `.github/`: schemas, normative specifications, portable conformance fixtures and
 canonical reviewed YAML UI catalogs. Shared owns the catalog generator and
 commits generated Android/web UI resources with catalog/generator changes.
-Exact schemas, compatible pins and implementation remain pending; no generator
-or application is provided here.
+Production schemas, language tables and lifecycle protocols remain incomplete.
+The fixture contract must not be used to publish unreviewed production content.
 
 Start with [AGENTS.md](AGENTS.md) and the [current implementation specification](docs/implementation-specification.md)
 for settings ownership, cross-repository contracts,
@@ -25,6 +26,8 @@ impact; updates are not forced into lockstep.
 Keep changes focused and obtain agreement before implementing open design choices.
 Use the issue forms and PR template. Never include secrets or private data.
 Run `python tools\check_repository.py` and `git --no-pager diff --check` from this root.
+Run `npm ci` and `npm run check` for all configured Node checks and generation.
+Generated Android/web UI resources are committed together with their catalogs.
 The repository-hygiene workflow also parses YAML syntax. These checks are not
 application tests, contract conformance tests or a security audit. Focused tests
 are incremental only; finalization/confirmation and every push require full

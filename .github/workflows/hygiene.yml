@@ -20,6 +20,16 @@ jobs:
           persist-credentials: false
       - name: Check repository files
         run: python3 tools/check_repository.py
+      - name: Set up Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22.15.0'
+          cache: npm
+      - name: Validate contracts and generated resources
+        run: |
+          npm ci
+          npm run check
+          git diff --exit-code -- generated
       - name: Parse YAML configuration and issue forms
         run: |
           ruby -e 'require "yaml"; Dir.glob(".github/**/*.{yml,yaml}").each { |path| YAML.load_file(path); puts "Parsed #{path}" }'

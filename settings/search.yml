@@ -1,0 +1,22 @@
+formatVersion: 1
+maxQueryCodePoints: 256
+maxTerms: 16
+pageSize: 20
+debounceMs: 250
+maxExcerptLines: 16
+maxExcerptCodePoints: 240
+editBands:
+  - { maxLength: 3, edits: 0 }
+  - { maxLength: 8, edits: 1 }
+  - { maxLength: 256, edits: 2 }
+weights:
+  title: 100
+  composer: 80
+  ankita: 80
+  deity: 60
+  tags: 40
+  form: 40
+  category: 40
+  contextLabels: 20
+  description: 10
+  lyrics: 5

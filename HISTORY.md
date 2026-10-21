@@ -39,6 +39,20 @@ without PRs. Scope: current specification, AI instructions, README and history;
 no executable schema, app, workflow or consumer-pin update. Rerun all available
 documentation/bootstrap checks before publication; do not claim absent app tests.
 
+## 2026-10-21: staged implementation authorization and fixture foundation
+
+The owner authorized the recommended implementation sequence and decisions without
+further approval questions, including desktop/mobile web and native emulator
+demonstrations. This authorizes staged coding, not fabricated linguistic reviews,
+provider permission or a declaration that all153 requirements are implemented.
+Production gates still close before their owning slices.
+
+The initial fixture contract, settings, deterministic UI generator and committed
+web/Android resources establish a bounded first slice. Node22.15.0 is available.
+The first `npm install` completed with zero audit vulnerabilities; `npm run check`
+passed the generator and three Node tests before later foundation edits.
+No production source migration or live API access was performed.
+
 ## Snapshot: README.md
 
 # DaasaVaani Shared

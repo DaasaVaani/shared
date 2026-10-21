@@ -2,10 +2,11 @@
 
 ## 1. Status, authority and scope
 
-**Status: selected design directions, not globally implementation-ready.**
-Complete schemas/tables/protocols, overall final design approval and separate
-coding authorization remain required. No application, source migration, generated
-item variant, build, linguistic conformance or performance result is established.
+**Status: staged implementation authorized; production contracts remain incomplete.**
+Implement the selected directions in dependency order, closing each applicable
+schema/table/protocol gate before its owning production slice. The executable
+`fixture-catalog-v1` contract is isolated development scaffolding, not approval of
+production schemas, linguistic conformance, source migration or live ingestion.
 
 [Website requirements](https://github.com/DaasaVaani/DaasaVaani.github.io/blob/main/docs/requirements.md)
 own product behavior. This document owns the current portable design; operating
@@ -23,7 +24,8 @@ workflow. Past choices, chronology and evidence belong only in [HISTORY.md](../H
 
 Consumers pin Shared independently. Website/Android query validated published
 Library artifacts, never source Markdown or client-derived taxonomy. Source
-assessment/migration remains unauthorized. No application toolchain is implemented.
+assessment/migration remains unauthorized. Owning repositories document their
+actual commands and implementation coverage; selected directions are not evidence.
 
 Android uses ViewModels, Coroutines/StateFlow, Koin compiler DSL, typed Navigation3,
 OkHttp and kotlinx.serialization. Keep platform APIs out of core. Web uses React

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["formatVersion", "maxQueryCodePoints", "maxTerms", "pageSize", "debounceMs", "maxExcerptLines", "maxExcerptCodePoints", "editBands", "weights"],
+  "properties": {
+    "formatVersion": { "const": 1 },
+    "maxQueryCodePoints": { "type": "integer", "minimum": 1, "maximum": 256 },
+    "maxTerms": { "type": "integer", "minimum": 1, "maximum": 16 },
+    "pageSize": { "type": "integer", "minimum": 1, "maximum": 20 },
+    "debounceMs": { "type": "integer", "minimum": 0 },
+    "maxExcerptLines": { "type": "integer", "minimum": 1, "maximum": 16 },
+    "maxExcerptCodePoints": { "type": "integer", "minimum": 1, "maximum": 240 },
+    "editBands": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["maxLength", "edits"],
+        "properties": { "maxLength": { "type": "integer", "minimum": 1 }, "edits": { "type": "integer", "minimum": 0, "maximum": 2 } }
+      }
+    },
+    "weights": {
+      "type": "object", "minProperties": 10, "maxProperties": 10,
+      "propertyNames": { "enum": ["title", "composer", "ankita", "deity", "tags", "form", "category", "contextLabels", "description", "lyrics"] },
+      "additionalProperties": { "type": "integer", "minimum": 0 }
+    }
+  }
+}

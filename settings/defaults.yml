@@ -1,0 +1,6 @@
+formatVersion: 1
+uiLanguage: en
+lyricScript: kn
+theme: light
+supportedUiLanguages: [en, kn]
+supportedThemes: [light, dark]

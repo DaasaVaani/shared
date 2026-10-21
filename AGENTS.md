@@ -7,8 +7,9 @@ and [contract checklist](docs/data-contracts.md). The
 [Website requirements](https://github.com/DaasaVaani/DaasaVaani.github.io/blob/main/docs/requirements.md)
 define product scope; the Website testing guide defines the cross-project
 [validation policy](https://github.com/DaasaVaani/DaasaVaani.github.io/blob/main/docs/testing-and-release.md).
-Final overall design approval and separate application-coding authorization remain
-pending. Ask before resolving deferred contracts or changing approved behavior.
+Staged implementation of the recommended plan is authorized. Close each remaining
+production contract gate before its owning slice; do not claim global completeness
+or linguistic/provider approval. Preserve the selected product behavior.
 
 Shared owns portable schemas/specifications/fixtures, reviewed settings, canonical
 UI catalogs, their generator and committed Android/web UI resources. No app
@@ -46,8 +47,10 @@ never force lockstep updates or silently edit consumer pins.
 - Focused tests are allowed incrementally. Finalization/confirmation and every
   push require full applicable builds and all configured checks/tests of the final
   change set, including dependent conformance checks needed by compatibility claims.
-- Currently available: `python tools/check_repository.py`, workflow YAML parsing
-  and Git whitespace checks. These are bootstrap checks, not app/schema tests.
+- Currently available: `npm ci`, `npm run check`,
+  `python tools/check_repository.py`, workflow YAML parsing and Git whitespace
+  checks. Node checks cover the fixture contract and UI generator, not complete
+  production/language conformance.
   Follow [the checklist](docs/data-contracts.md#validation-and-finalization).
 - Documentation-only work may finalize/push after all available documentation/
   bootstrap checks pass while app tooling is absent. Explicitly report missing

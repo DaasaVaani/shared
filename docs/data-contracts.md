@@ -44,10 +44,17 @@ No real item variant generation/previews on source PRs.
 Current executable hygiene from this root:
 
 ```powershell
+npm ci
+npm run check
 python tools\check_repository.py
 git --no-pager diff --check
 git --no-pager diff --cached --check
 ```
+
+The Node suite generates and tests the two-locale UI catalogs and the initial
+fixture-only item contract. It is not full production-schema/language conformance.
+The fixture-only TypeScript contract is in types/publication.ts; settings and
+schemas have their owning roots. Consumers must reject unsupported capabilities.
 
 The workflow also parses every .github YAML file using Ruby YAML; use an existing
 Ruby installation or another already-available YAML parser and state the method.
