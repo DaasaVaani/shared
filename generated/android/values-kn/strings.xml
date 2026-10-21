@@ -93,6 +93,7 @@
   <string name="transfer_empty" formatted="false">ಈ ಪಟ್ಟಿಯಲ್ಲಿ ನಮೂದುಗಳಿಲ್ಲ.</string>
   <string name="transfer_failed" formatted="false">ಪಟ್ಟಿಯ ಪರಿಶೀಲನೆ ವಿಫಲವಾಗಿದೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ ಅಥವಾ ಬೇರೆ ಕಡತ ಆಯ್ಕೆಮಾಡಿ. ಏನನ್ನೂ ಉಳಿಸಿಲ್ಲ.</string>
   <string name="transfer_file" formatted="false">ಪಟ್ಟಿಯ ಕಡತ ಆಯ್ಕೆಮಾಡಿ</string>
+  <string name="transfer_file_failed" formatted="false">ರಫ್ತು ವಿಫಲವಾಗಿದೆ ಅಥವಾ ರದ್ದಾಗಿದೆ. ಆಯ್ಕೆಮಾಡಿದ ಸೇವೆಯಲ್ಲಿ ಅಪೂರ್ಣ ಕಡತ ಉಳಿದಿರಬಹುದು; ಆ ಪ್ರತಿಯನ್ನು ಅಳಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ. ವೈಯಕ್ತಿಕ ದತ್ತಾಂಶ ಬದಲಾಗಿಲ್ಲ.</string>
   <string name="transfer_file_saved" formatted="false">ಆಯ್ಕೆಮಾಡಿದ ಸ್ಥಳಕ್ಕೆ ಪಟ್ಟಿಯ ಕಡತ ಬರೆಯಲಾಗಿದೆ. ತಲುಪಿದೆ ಎಂದು ದೃಢಪಡಿಸಿಲ್ಲ.</string>
   <string name="transfer_invalid" formatted="false">ಅಮಾನ್ಯ ಅಥವಾ ಬೆಂಬಲಿಸದ ಪಟ್ಟಿಯ ಪ್ರತಿ. ಸರಿಯಾದ ಪಟ್ಟಿಯ ಕಡತ ಅಥವಾ ಸಂಪೂರ್ಣ ದಾಸವಾಣಿ ಕೊಂಡಿ ಆಯ್ಕೆಮಾಡಿ.</string>
   <string name="transfer_link" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ</string>

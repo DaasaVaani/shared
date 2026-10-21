@@ -93,6 +93,7 @@
   <string name="transfer_empty" formatted="false">This list has no entries.</string>
   <string name="transfer_failed" formatted="false">List processing failed. Try again or choose another file. Nothing has been saved.</string>
   <string name="transfer_file" formatted="false">Choose a list file</string>
+  <string name="transfer_file_failed" formatted="false">Export failed or was cancelled. The selected provider may retain an incomplete file; delete that copy and try again. Personal data is unchanged.</string>
   <string name="transfer_file_saved" formatted="false">List file written to the selected destination. Delivery is not confirmed.</string>
   <string name="transfer_invalid" formatted="false">Invalid or unsupported list snapshot. Choose a valid list file or a complete DaasaVaani snapshot link.</string>
   <string name="transfer_link" formatted="false">List snapshot link</string>

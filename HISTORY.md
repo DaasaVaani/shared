@@ -1,5 +1,13 @@
 # Documentation history
 
+## 2026-10-21: honest native document-provider failure feedback
+
+- Added explicit failed/cancelled file-export wording: an external document
+  provider may retain an incomplete destination, even though personal state is
+  unchanged. Do not reuse the no-save cancellation message for a partial SAF write.
+- `npm run check` passed14 tests/deterministic generation and41-file hygiene/
+  whitespace passed; actual native destination behavior is a consumer obligation.
+
 ## 2026-10-21: strict portable appearance choices
 
 - Extended declared portable appearance choices to light/dark/warm/device,
