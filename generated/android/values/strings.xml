@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="add_favorite" formatted="false">Add to favorites</string>
+  <string name="add_placeholder" formatted="false">Add placeholder</string>
+  <string name="add_reference" formatted="false">Add library reference</string>
   <string name="app_name" formatted="false">DaasaVaani</string>
   <string name="appearance" formatted="false">Appearance</string>
   <string name="back" formatted="false">Back to library</string>
@@ -14,9 +16,13 @@
   <string name="delete_notice" formatted="false">Delete this local list only? Other lists and library content are unchanged.</string>
   <string name="duplicate_list" formatted="false">Duplicate list</string>
   <string name="duplicate_name" formatted="false">Another local list already uses this name. Save a separate list with the same name?</string>
+  <string name="edit_entry" formatted="false">Edit entry</string>
   <string name="empty_favorites" formatted="false">No favorites yet. Open a record and add it to favorites.</string>
   <string name="empty_lists" formatted="false">No saved lists yet. Create an empty list or preview a list file or link in Settings.</string>
+  <string name="entry_number" formatted="false">Entry {position} of {total}</string>
+  <string name="entry_text_hint" formatted="false">Use 1-{limit} Unicode code points on one line when supplying text. Spaces are preserved.</string>
   <string name="error" formatted="false">Unable to open the library</string>
+  <string name="fallback_label" formatted="false">User fallback label (optional; leave empty to remove)</string>
   <string name="favorites" formatted="false">Favorites</string>
   <string name="fixture_notice" formatted="false">Development demo — synthetic test records, not reviewed sahitya or verified video metadata.</string>
   <string name="language" formatted="false">Interface language</string>
@@ -27,9 +33,13 @@
   <string name="list_name" formatted="false">List name</string>
   <string name="list_name_hint" formatted="false">Use 1-{limit} Unicode code points on one line. Spaces are preserved.</string>
   <string name="list_saved" formatted="false">Saved as an independent local list.</string>
+  <string name="list_updated" formatted="false">Local list updated.</string>
   <string name="lists" formatted="false">Lists</string>
   <string name="load_search" formatted="false">Load search</string>
   <string name="loading" formatted="false">Validating library…</string>
+  <string name="lyrics_unavailable" formatted="false">Lyrics unavailable in DaasaVaani.</string>
+  <string name="move_down" formatted="false">Move down</string>
+  <string name="move_up" formatted="false">Move up</string>
   <string name="no_results" formatted="false">No matching records. Try another word.</string>
   <string name="open" formatted="false">Read</string>
   <string name="personal_capacity" formatted="false">A personal collection, list export or storage limit would be exceeded. Remove entries or lists and try again.</string>
@@ -37,12 +47,16 @@
   <string name="personal_invalid" formatted="false">Invalid personal database record; existing data was not replaced.</string>
   <string name="personal_stale" formatted="false">Personal data changed. Review the current list and try again.</string>
   <string name="personal_unavailable" formatted="false">Personal storage is unavailable. Resolve the reported error before saving.</string>
+  <string name="placeholder_text" formatted="false">Placeholder text</string>
   <string name="preparation_notice" formatted="false">Download and validate all synthetic records to begin. This demo holds prepared data in memory; persistent offline snapshots are not implemented.</string>
   <string name="prepare_library" formatted="false">Prepare reading library</string>
   <string name="ready" formatted="false">Verified fixture publication</string>
+  <string name="remove_entry" formatted="false">Remove this occurrence</string>
   <string name="remove_favorite" formatted="false">Remove from favorites</string>
   <string name="rename_list" formatted="false">Rename list</string>
+  <string name="replace_entry" formatted="false">Replace with library reference</string>
   <string name="retry" formatted="false">Try again</string>
+  <string name="save_entry" formatted="false">Save entry</string>
   <string name="save_list" formatted="false">Save to My Library</string>
   <string name="search" formatted="false">Search lyrics or a title</string>
   <string name="search_consent" formatted="false">Search downloads a verified index. Nothing is downloaded until you choose Load search.</string>
@@ -68,5 +82,6 @@
   <string name="transfer_working" formatted="false">Validating list snapshot…</string>
   <string name="unavailable_features" formatted="false">This milestone does not yet implement offline snapshots, recitation mode, backups or reviewed transliteration.</string>
   <string name="unknown_route" formatted="false">This page is unavailable.</string>
+  <string name="video_id" formatted="false">Library video identifier</string>
   <string name="view_lists" formatted="false">View saved lists</string>
 </resources>

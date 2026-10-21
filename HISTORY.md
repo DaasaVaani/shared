@@ -1,5 +1,17 @@
 # Documentation history
 
+## 2026-10-21: independent occurrence-management UI resources
+
+- Added bilingual controls for explicit reference/placeholder creation, editing,
+  movement, removal and manual replacement, with configured text-limit hints
+  and independently identified occurrence groups.
+- Distinguished updates to an existing list from creation of an independent
+  list. These additive resources do not implement consumer behavior, change
+  list/record wire shapes or establish native parity.
+- `npm run check` passed all13 tests and deterministic generation;
+  `python tools\check_repository.py` passed40 tracked files. Git whitespace
+  checks passed. The existing consumer pins remain independently controlled.
+
 ## 2026-10-21: actionable list-input validation
 
 - Added bilingual configured code-point hints and a distinct invalid-list-input
