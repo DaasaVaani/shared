@@ -1,5 +1,16 @@
 # Documentation history
 
+## 2026-10-21: actionable list-input validation
+
+- Added bilingual configured code-point hints and a distinct invalid-list-input
+  message so invalid draft names are not misreported as corrupt stored data.
+  Catalog placeholder validation remains authoritative; no text is truncated.
+- Archived the superseded global wording "Compression, byte-bounded decoding,
+  preview/import, storage and cross-platform round-trip evidence remain
+  unimplemented": Shared supplies no runtime, but the published Website already
+  has codec/preview capability. Current Shared guides link consumer-owned
+  implementation status while preserving native/cross-platform/backup gates.
+
 ## 2026-10-21: transactional web-list prerequisites
 
 - Added a strict portable logical personal-storage byte ceiling, no greater than

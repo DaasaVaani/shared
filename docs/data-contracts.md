@@ -29,8 +29,9 @@ implementation is authorized, not global production readiness.
   recoverable replacement and truthful locale side effects.
   The [minimal-list v1 JSON shape](list-transfer.md), generated schema and
   [local logical list record](list-transfer.md#local-list-record-v1) and synthetic
-  structural/boundary fixtures exist; consumer codecs/import/export/storage,
-  enclosing personal/database schemas and backup/replacement protocols remain open.
+  structural/boundary fixtures exist. Consumer feature status belongs in the
+  owning roadmap; native parity, complete enclosing personal/database schemas
+  and backup/replacement protocols remain open.
 - Platform: independent UI/script preferences, system-font limitations, static
   routes/App Links, safe shell updates and verified local-signing handoff.
 

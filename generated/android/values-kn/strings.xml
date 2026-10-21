@@ -23,7 +23,9 @@
   <string name="language_name" formatted="false">ಕನ್ನಡ</string>
   <string name="library" formatted="false">ಗ್ರಂಥಾಲಯ</string>
   <string name="light" formatted="false">ತಿಳಿ</string>
+  <string name="list_invalid" formatted="false">ಪಟ್ಟಿಯ ಹೆಸರು ಅಥವಾ ನಮೂದು ಅಮಾನ್ಯವಾಗಿದೆ. ತೋರಿಸಿದ ಮಿತಿಯೊಳಗೆ ಖಾಲಿಯಲ್ಲದ ಒಂದೇ ಸಾಲಿನ ಪಠ್ಯ ಬಳಸಿ.</string>
   <string name="list_name" formatted="false">ಪಟ್ಟಿಯ ಹೆಸರು</string>
+  <string name="list_name_hint" formatted="false">ಒಂದೇ ಸಾಲಿನಲ್ಲಿ 1-{limit} ಯುನಿಕೋಡ್ ಅಕ್ಷರ ಸ್ಥಾನಗಳನ್ನು ಬಳಸಿ. ಖಾಲಿ ಜಾಗಗಳನ್ನು ಹಾಗೆಯೇ ಉಳಿಸಲಾಗುತ್ತದೆ.</string>
   <string name="list_saved" formatted="false">ಸ್ವತಂತ್ರ ಸ್ಥಳೀಯ ಪಟ್ಟಿಯಾಗಿ ಉಳಿಸಲಾಗಿದೆ.</string>
   <string name="lists" formatted="false">ಪಟ್ಟಿಗಳು</string>
   <string name="load_search" formatted="false">ಹುಡುಕಾಟ ಸಿದ್ಧಪಡಿಸಿ</string>

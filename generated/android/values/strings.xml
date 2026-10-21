@@ -23,7 +23,9 @@
   <string name="language_name" formatted="false">English</string>
   <string name="library" formatted="false">Library</string>
   <string name="light" formatted="false">Light</string>
+  <string name="list_invalid" formatted="false">List name or entry is invalid. Use nonempty single-line text within the displayed limits.</string>
   <string name="list_name" formatted="false">List name</string>
+  <string name="list_name_hint" formatted="false">Use 1-{limit} Unicode code points on one line. Spaces are preserved.</string>
   <string name="list_saved" formatted="false">Saved as an independent local list.</string>
   <string name="lists" formatted="false">Lists</string>
   <string name="load_search" formatted="false">Load search</string>

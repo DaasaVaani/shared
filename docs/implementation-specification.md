@@ -353,9 +353,11 @@ fallback or intentional single-line placeholder only. No ordinary titles, lyrics
 preferences or progress. Preview then save new independent list only, never merge/
 append/replace by name. Cancel/failure unchanged. Cross-platform lists supported.
 The executable [minimal-list v1 structural contract](list-transfer.md) fixes the
-envelope/entry keys, text invariants and settings-derived shape limits. Compression,
-byte-bounded decoding, preview/import, storage and cross-platform round-trip
-evidence remain unimplemented; schema acceptance alone is not transfer readiness.
+envelope/entry keys, text invariants and settings-derived shape limits. Shared
+supplies no runtime codec or database. Consumer implementation status is tracked
+in the [Website roadmap](https://github.com/DaasaVaani/DaasaVaani.github.io/blob/main/docs/implementation-roadmap.md)
+and owning native guide; complete cross-platform round-trip evidence remains a
+gate. Schema acceptance alone is not transfer readiness.
 The [local logical list-record shape](list-transfer.md#local-list-record-v1)
 separately fixes list/occurrence UUIDv4 fields without exporting them. Aggregate
 identity/capacity, enclosing personal metadata and transactional persistence still
