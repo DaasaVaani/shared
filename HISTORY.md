@@ -11,6 +11,12 @@
 - `npm run check` passed all13 tests and deterministic generation;
   `python tools\check_repository.py` passed40 tracked files. Git whitespace
   checks passed. The existing consumer pins remain independently controlled.
+- Preflight39623386267 passed before main publication at
+  `56f2cc2420dcb73fbcd28fd9c05fc2b3ad6239b1`. Main39623446372's sole
+  Bootstrap files and YAML syntax job completed successfully, but its aggregate
+  remained in progress. Cancellation was refused as completed and full rerun
+  refused as already running. This inconsistent aggregate is not recorded as a
+  completed main-workflow pass; Website has not adopted this revision.
 
 ## 2026-10-21: actionable list-input validation
 
