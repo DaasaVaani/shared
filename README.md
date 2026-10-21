@@ -4,10 +4,17 @@ Language-neutral contracts for the independently developed DaasaVaani Website,
 Android app and Library publisher. This repository is a bootstrap, not a shared
 application runtime or an implemented contract.
 
-Future roots are `schemas/`, `specs/`, `fixtures/`, `locales/`, `docs/` and
+Future roots are `schemas/`, `specs/`, `fixtures/`, `settings/`, `locales/`, `docs/` and
 `.github/`: schemas, normative specifications, portable conformance fixtures and
-canonical reviewed YAML UI catalogs. UI catalog generator ownership, schemas and
-toolchain choices remain open; no generator or application is provided here.
+canonical reviewed YAML UI catalogs. Shared owns the catalog generator and
+commits generated Android/web UI resources with catalog/generator changes.
+Exact schemas, compatible pins and implementation remain pending; no generator
+or application is provided here.
+
+Start with the [recorded implementation design](docs/implementation-specification.md)
+for the approved review passes, settings ownership, cross-repository contracts,
+failure behavior, requirement traceability and remaining gates. Documentation
+is not final design approval or evidence of application implementation.
 
 Consumers include this repository at `shared/` as a Git submodule and pin commits
 independently. Contract changes must describe compatibility and conformance
