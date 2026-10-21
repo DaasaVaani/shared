@@ -1,5 +1,25 @@
 # Documentation history
 
+## 2026-10-21: logical list record structural contract
+
+- Continued with the prerequisite for transactional list persistence rather
+  than treating preview/re-export as completed import. Added a generated local
+  logical list record with independent lowercase UUIDv4 list/occurrence IDs,
+  preserving the same settings-derived name/text/order/count rules as transfer.
+  No new dependency/default, consumer pin or database implementation was added.
+- Kept local identities out of minimal transfers and explicitly separated JSON
+  shape from cross-list uniqueness, aggregate byte/collection accounting,
+  duplicate-name confirmation, migration and revision/epoch transaction gates.
+- Added synthetic accepted/rejected fixtures and UUID/version/variant/case,
+  allowlist/no-mutation, reduced and actual occurrence-boundary tests.
+- `npm run check` passed all13 Node tests and deterministic generation.
+  `python tools\check_repository.py` passed40 tracked files. Generated catalogs
+  and the previously published transfer schema stayed unchanged. Working/staged
+  whitespace, generated drift, pinned actionlint1.7.12/ShellCheck0.11.0, strict
+  Node YAML parsing of all5 GitHub YAML files and5 changed Markdown
+  UTF8/newline/whitespace/fence/local-link/anchor checks passed.
+  No consumer/runtime/native or full personal/backup validation is claimed.
+
 ## 2026-10-21: list preview UI resources
 
 - Added matching English/Kannada list-preview, privacy, validation and export

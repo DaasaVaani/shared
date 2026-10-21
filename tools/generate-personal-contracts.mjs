@@ -52,9 +52,39 @@ export function listTransferSchema(settings) {
   };
 }
 
+export function listRecordSchema(settings) {
+  const transfer = listTransferSchema(settings);
+  const uuid = {
+    type: "string",
+    pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+  };
+  return {
+    $schema: transfer.$schema,
+    $id: "https://daasavaani.github.io/contracts/list-record-v1.schema.json",
+    $comment: transfer.$comment,
+    type: "object", additionalProperties: false,
+    required: ["id", "name", "entries"],
+    properties: {
+      id: uuid,
+      name: transfer.properties.name,
+      entries: {
+        ...transfer.properties.entries,
+        items: {
+          oneOf: transfer.properties.entries.items.oneOf.map(entry => ({
+            ...entry,
+            required: ["id", ...entry.required],
+            properties: { id: uuid, ...entry.properties },
+          })),
+        },
+      },
+    },
+  };
+}
+
 export async function generatePersonalContracts() {
   const settings = strictYaml(await readFile(resolve(root, "settings/personal-transfer.yml"), "utf8"));
   await writeFile(resolve(root, "schemas/list-transfer.schema.json"), JSON.stringify(listTransferSchema(settings), null, 2) + "\n");
+  await writeFile(resolve(root, "schemas/list-record.schema.json"), JSON.stringify(listRecordSchema(settings), null, 2) + "\n");
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await generatePersonalContracts();

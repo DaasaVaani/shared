@@ -1,0 +1,57 @@
+{
+  "accepted": [
+    {
+      "label": "empty independently identified list",
+      "value": {
+        "id": "00000000-0000-4000-8000-000000000001",
+        "name": "Synthetic empty list",
+        "entries": []
+      }
+    },
+    {
+      "label": "repeated references and placeholders have independent occurrence identities",
+      "value": {
+        "id": "00000000-0000-4000-8000-000000000001",
+        "name": "  Synthetic repeated list  ",
+        "entries": [
+          { "id": "00000000-0000-4000-8000-000000000002", "kind": "item", "videoId": "fixture_ref" },
+          { "id": "00000000-0000-4000-8000-000000000003", "kind": "item", "videoId": "fixture_ref", "fallback": "  User label  " },
+          { "id": "00000000-0000-4000-8000-000000000004", "kind": "placeholder", "text": "<b>Plain user text</b>" },
+          { "id": "00000000-0000-4000-8000-000000000005", "kind": "placeholder", "text": "<b>Plain user text</b>" }
+        ]
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "label": "transfer envelope is not a stored record",
+      "value": { "format": "daasavaani-list", "formatVersion": 1, "name": "Synthetic", "entries": [] }
+    },
+    {
+      "label": "list identity must be UUIDv4",
+      "value": { "id": "00000000-0000-1000-8000-000000000001", "name": "Synthetic", "entries": [] }
+    },
+    {
+      "label": "list identity must be canonical lowercase",
+      "value": { "id": "00000000-0000-4000-8000-00000000000A", "name": "Synthetic", "entries": [] }
+    },
+    {
+      "label": "occurrence identity is mandatory",
+      "value": {
+        "id": "00000000-0000-4000-8000-000000000001", "name": "Synthetic",
+        "entries": [{ "kind": "item", "videoId": "fixture_ref" }]
+      }
+    },
+    {
+      "label": "ordinary metadata cannot enter a stored fallback implicitly",
+      "value": {
+        "id": "00000000-0000-4000-8000-000000000001", "name": "Synthetic",
+        "entries": [{ "id": "00000000-0000-4000-8000-000000000002", "kind": "item", "videoId": "fixture_ref", "title": "Catalog metadata" }]
+      }
+    },
+    {
+      "label": "readiness is not personal list data",
+      "value": { "id": "00000000-0000-4000-8000-000000000001", "name": "Synthetic", "entries": [], "offlineReady": true }
+    }
+  ]
+}

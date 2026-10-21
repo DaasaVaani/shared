@@ -4,7 +4,8 @@ Language-neutral contracts for the independently developed DaasaVaani Website,
 Android app and Library publisher. This repository is a bootstrap, not a shared
 application runtime. It includes an initial executable, explicitly fixture-only
 contract and UI catalog generator, plus an executable
-[minimal-list JSON shape](docs/list-transfer.md), not the complete production contract.
+[minimal-list and local logical-record JSON shapes](docs/list-transfer.md), not
+the complete production contract.
 
 Owned roots include `schemas/`, `fixtures/`, `settings/`, `locales/`, `docs/` and
 `.github/`: schemas, normative specifications, portable conformance fixtures and
@@ -12,7 +13,7 @@ canonical reviewed YAML UI catalogs. Shared owns the catalog generator and
 commits generated Android/web UI resources with catalog/generator changes.
 Production schemas, language tables and lifecycle protocols remain incomplete.
 The fixture contract must not be used to publish unreviewed production content.
-The list schema is generated from portable settings; no list UI, compression,
+The list schemas are generated from portable settings; no list UI, compression,
 preview/import, persistence or full-backup implementation is supplied.
 
 Start with [AGENTS.md](AGENTS.md) and the [current implementation specification](docs/implementation-specification.md)

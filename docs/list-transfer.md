@@ -84,6 +84,40 @@ validation: a lower limit can reject a previously accepted snapshot. An unknown
 version is an error, not a default to v1. This addition changes no existing
 fixture publication capability, catalog resource or app behavior.
 
+## Local list record v1
+
+The generated [logical record schema](../schemas/list-record.schema.json) defines
+the list portion of personal persistence under LIB-08/09/10 and XFER-04. It is
+distinct from a portable transfer and from the full personal/backup envelopes.
+Platform database adapters may normalize tables; their logical list view must
+validate as exactly `{id, name, entries}`. A database schema/versioned adapter,
+not an incoming transfer version, identifies this record version.
+
+- `id` is a canonical lowercase UUIDv4 for the independent local list.
+- `name` and ordered entries have precisely the transfer text/type/count bounds.
+  Every entry additionally requires its own canonical lowercase UUIDv4 `id`.
+  Reference IDs remain opaque item identities; they are not occurrence IDs.
+- Generate list and occurrence IDs locally on explicit new-list/import commit,
+  using platform cryptographic UUIDv4 facilities. Never import local identities,
+  reuse an existing list by name or deduplicate repeated entries. Exports
+  construct the minimal allowlisted transfer, omitting local IDs.
+- List IDs are unique among lists; occurrence IDs are unique across all lists.
+  UUID syntax is structural; collection-wide identity uniqueness requires
+  transaction/database checks in addition to JSON Schema. Do not infer it from
+  `uniqueItems`, which compares whole objects rather than their ID fields.
+- No content/readiness/recitation fields, timestamps or revision/epoch metadata
+  are implicitly added to this logical record. Those have separate owners and
+  must be specified and accounted for in the enclosing personal contract.
+
+The [synthetic record fixtures](../fixtures/personal/list-record.json) and Node
+tests cover UUID/version/variant/case, required identities, allowlists, repeated
+references, no mutation, settings-derived bounds and deterministic generation.
+This addition closes only logical list shape. Full personal/backup envelopes,
+byte accounting including enclosing metadata, atomic aggregate capacity checks,
+duplicate-name confirmation, migrations, revision/epoch fencing and consumer
+storage/import implementations remain gates. Schema acceptance alone cannot
+authorize a write. An additive schema does not advance any consumer pin.
+
 ## Remaining decoder and application obligations
 
 Schema acceptance is only one step. The future file/link adapters must also

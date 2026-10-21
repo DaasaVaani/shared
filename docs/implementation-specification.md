@@ -356,6 +356,10 @@ The executable [minimal-list v1 structural contract](list-transfer.md) fixes the
 envelope/entry keys, text invariants and settings-derived shape limits. Compression,
 byte-bounded decoding, preview/import, storage and cross-platform round-trip
 evidence remain unimplemented; schema acceptance alone is not transfer readiness.
+The [local logical list-record shape](list-transfer.md#local-list-record-v1)
+separately fixes list/occurrence UUIDv4 fields without exporting them. Aggregate
+identity/capacity, enclosing personal metadata and transactional persistence still
+require consumer protocols; the record schema alone cannot authorize a write.
 
 Full backup is same-platform only, Android->Android or web/PWA->web/PWA; native
 font units, no cross-platform conversion. Logical envelope format/version/platform/
