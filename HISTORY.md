@@ -5,6 +5,9 @@
 - Added bilingual configured code-point hints and a distinct invalid-list-input
   message so invalid draft names are not misreported as corrupt stored data.
   Catalog placeholder validation remains authoritative; no text is truncated.
+- `npm run check` passed all13 tests and regenerated matching catalogs.
+  `python tools\check_repository.py` passed40 tracked files; generated drift and
+  staged whitespace checks passed. No dependency or list wire shape changed.
 - Archived the superseded global wording "Compression, byte-bounded decoding,
   preview/import, storage and cross-platform round-trip evidence remain
   unimplemented": Shared supplies no runtime, but the published Website already
