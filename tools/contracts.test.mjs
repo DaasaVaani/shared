@@ -23,7 +23,8 @@ test("fixture item contract rejects unknown fields and invalid identities", asyn
 });
 test("owner-supplied lyric draft headers have independent identity and mandatory review holds without media", async () => {
   const schema = JSON.parse(await readFile(new URL("../schemas/lyric-source-draft.schema.json", import.meta.url), "utf8"));
-  const validate = new Ajv2020({ strict: true }).compile(schema);
+  const source = JSON.parse(await readFile(new URL("../schemas/lyric-source.schema.json", import.meta.url), "utf8"));
+  const validate = new Ajv2020({ strict: true }).addSchema(source, "lyric-source.schema.json").compile(schema);
   const value = { sourceFormat: 2, lyricId: "10000000-0000-4000-8000-000000000001",
     public: { title: "ಕನ್ನಡ", tags: [] },
     provenance: { kind: "owner-supplied", sourceFile: "permitted.txt", sha256: "a".repeat(64), encoding: "utf-8" },

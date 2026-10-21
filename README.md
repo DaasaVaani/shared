@@ -5,6 +5,11 @@ defines stable video-independent lyric UUIDs, text-only publication eligibility
 and legacy-preserving references. It is a target contract, not an implemented
 production publisher, v2 codec or permission to migrate sources.
 
+Executable [source/publication schemas](docs/lyric-identity.md#2-publication-eligibility-and-provenance)
+also support owner-authorized, text-only prelaunch lyrics with stable UUIDs and
+explicit pending offline review. They are separate from fixture/v1 families.
+Drafts still require holds; accepting a header is not publication/launch approval.
+
 Portable UI defaults and allowed choices follow
 [`schemas/ui-defaults.schema.json`](schemas/ui-defaults.schema.json).
 Appearance tokens are `light`, `dark`, `warm` and `device` (Follow device);

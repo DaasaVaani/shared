@@ -9,6 +9,12 @@ en:
   appName: DaasaVaani
   tagline: A quiet space for reading
   library: Library
+  ownerLyrics: Owner-supplied lyrics
+  lyricPreviewNotice: "Prelaunch lyrics — offline text review is pending. This is not the public launch."
+  lyricPreviewLimits: "Canonical Kannada reading only. Personal lists, favorites, search profiles and persistent offline preparation for these lyric IDs are not implemented yet."
+  lyricTitleFilter: Filter lyric titles
+  lyricBack: Back to lyrics
+  lyricNoMedia: No video or image is needed to read this lyric.
   favorites: Favorites
   lists: Lists
   listName: List name
@@ -123,6 +129,12 @@ kn:
   appName: ದಾಸವಾಣಿ
   tagline: ಓದಿಗಾಗಿ ಒಂದು ಶಾಂತ ತಾಣ
   library: ಗ್ರಂಥಾಲಯ
+  ownerLyrics: ಸಾಹಿತ್ಯ
+  lyricPreviewNotice: "ಪೂರ್ವಪ್ರಕಟಣೆ — ಪಠ್ಯ ಪರಿಶೀಲನೆ ಬಾಕಿಯಿದೆ. ಸಾರ್ವಜನಿಕ ಬಿಡುಗಡೆಗೆ ಮುನ್ನ ಪರಿಶೀಲನೆ ಅಗತ್ಯ."
+  lyricPreviewLimits: "ಕನ್ನಡ ಪಠ್ಯವನ್ನು ಓದಲು ಮಾತ್ರ. ಈ ಸಾಹಿತ್ಯದ ವೈಯಕ್ತಿಕ ಪಟ್ಟಿಗಳು, ಮೆಚ್ಚಿನವುಗಳು, ಹುಡುಕಾಟ ಪ್ರೊಫೈಲ್‌ಗಳು ಮತ್ತು ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಸಿದ್ಧತೆ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ."
+  lyricTitleFilter: ಸಾಹಿತ್ಯದ ಶೀರ್ಷಿಕೆಗಳನ್ನು ಹುಡುಕಿ
+  lyricBack: ಸಾಹಿತ್ಯಕ್ಕೆ ಹಿಂತಿರುಗಿ
+  lyricNoMedia: ಈ ಸಾಹಿತ್ಯವನ್ನು ಓದಲು ವೀಡಿಯೊ ಅಥವಾ ಚಿತ್ರದ ಅಗತ್ಯವಿಲ್ಲ.
   favorites: ಮೆಚ್ಚಿನವು
   lists: ಪಟ್ಟಿಗಳು
   listName: ಪಟ್ಟಿಯ ಹೆಸರು

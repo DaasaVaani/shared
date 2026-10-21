@@ -1,5 +1,28 @@
 # Documentation history
 
+## 2026-10-21: owner-authorized prelaunch lyric publication
+
+- The owner authorized publishing prepared lyrics now and completing offline
+  review before the public launch. All767 extraction exceptions stay held under
+  the preceding owner decision; originals remain local-only. This supersedes the
+  source-batch instruction not to merge before linguistic review, not the public
+  launch review gate, other holds, provider restrictions or production gates.
+- Added a common sourceFormat2 header permitting explicitly released holds;
+  draft headers reference it while preserving mandatory holds. Added separate
+  prelaunch canonical Kannada descriptor/manifest/item schemas/types and localized
+  reading labels. Fixture/video formats, personal references and consumer pins
+  remain unchanged. No source text/variants or inferred metadata are added here.
+- Archived the replaced identity introduction: target schemas/adapters were all
+  unimplemented and no source import was authorized by contract approval alone.
+  The old draft-only header paragraph required nonempty holds for every source
+  header and did not cover publication. Separate owner authorization now permits
+  bounded source publication; full production contracts/release remain open.
+- `npm run check`: passed deterministic generated web/Android resources and all19
+  contract tests, zero failures/skips. `python tools\check_repository.py` passed48
+  staged tracked files; staged whitespace and actionlint1.7.12/ShellCheck0.11.0
+  passed. No consumer implementation, raw source, provider access or launch
+  approval is implied by these schema tests.
+
 ## 2026-10-22: authorized owner-supplied draft header
 
 - User explicitly authorized separate draft conversion of supplied text files,

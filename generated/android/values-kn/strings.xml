@@ -49,6 +49,11 @@
   <string name="lists" formatted="false">ಪಟ್ಟಿಗಳು</string>
   <string name="load_search" formatted="false">ಹುಡುಕಾಟ ಸಿದ್ಧಪಡಿಸಿ</string>
   <string name="loading" formatted="false">ಗ್ರಂಥಾಲಯ ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…</string>
+  <string name="lyric_back" formatted="false">ಸಾಹಿತ್ಯಕ್ಕೆ ಹಿಂತಿರುಗಿ</string>
+  <string name="lyric_no_media" formatted="false">ಈ ಸಾಹಿತ್ಯವನ್ನು ಓದಲು ವೀಡಿಯೊ ಅಥವಾ ಚಿತ್ರದ ಅಗತ್ಯವಿಲ್ಲ.</string>
+  <string name="lyric_preview_limits" formatted="false">ಕನ್ನಡ ಪಠ್ಯವನ್ನು ಓದಲು ಮಾತ್ರ. ಈ ಸಾಹಿತ್ಯದ ವೈಯಕ್ತಿಕ ಪಟ್ಟಿಗಳು, ಮೆಚ್ಚಿನವುಗಳು, ಹುಡುಕಾಟ ಪ್ರೊಫೈಲ್‌ಗಳು ಮತ್ತು ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಸಿದ್ಧತೆ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
+  <string name="lyric_preview_notice" formatted="false">ಪೂರ್ವಪ್ರಕಟಣೆ — ಪಠ್ಯ ಪರಿಶೀಲನೆ ಬಾಕಿಯಿದೆ. ಸಾರ್ವಜನಿಕ ಬಿಡುಗಡೆಗೆ ಮುನ್ನ ಪರಿಶೀಲನೆ ಅಗತ್ಯ.</string>
+  <string name="lyric_title_filter" formatted="false">ಸಾಹಿತ್ಯದ ಶೀರ್ಷಿಕೆಗಳನ್ನು ಹುಡುಕಿ</string>
   <string name="lyrics_unavailable" formatted="false">ದಾಸವಾಣಿಯಲ್ಲಿ ಸಾಹಿತ್ಯ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="move_down" formatted="false">ಕೆಳಕ್ಕೆ ಸರಿಸಿ</string>
   <string name="move_up" formatted="false">ಮೇಲಕ್ಕೆ ಸರಿಸಿ</string>
@@ -56,6 +61,7 @@
   <string name="no_results" formatted="false">ಹೊಂದುವ ದಾಖಲೆಗಳಿಲ್ಲ. ಬೇರೆ ಪದ ಪ್ರಯತ್ನಿಸಿ.</string>
   <string name="occurrence_added" formatted="false">ಆಯ್ಕೆಮಾಡಿದ ಪಟ್ಟಿಗೆ ಹೊಸ ಸ್ವತಂತ್ರ ನಮೂದು ಸೇರಿಸಲಾಗಿದೆ.</string>
   <string name="open" formatted="false">ಓದಿ</string>
+  <string name="owner_lyrics" formatted="false">ಸಾಹಿತ್ಯ</string>
   <string name="personal_capacity" formatted="false">ವೈಯಕ್ತಿಕ ಸಂಗ್ರಹ, ಪಟ್ಟಿಯ ರಫ್ತು ಅಥವಾ ಸಂಗ್ರಹಣೆಯ ಮಿತಿ ಮೀರುತ್ತದೆ. ನಮೂದು ಅಥವಾ ಪಟ್ಟಿಗಳನ್ನು ತೆಗೆದು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
   <string name="personal_failed" formatted="false">ವೈಯಕ್ತಿಕ ಸಂಗ್ರಹಣೆ ವಿಫಲವಾಗಿದೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ; ನಿಮ್ಮ ದತ್ತಾಂಶ ಅಳಿಸಬೇಡಿ.</string>
   <string name="personal_future" formatted="false">ಈ ವೈಯಕ್ತಿಕ ದತ್ತಸಂಚಯಕ್ಕೆ ಹೊಸ ಆವೃತ್ತಿಯ ಆ್ಯಪ್ ಬೇಕು. ಆ್ಯಪ್ ನವೀಕರಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ; ನಿಮ್ಮ ದತ್ತಾಂಶ ಅಳಿಸಬೇಡಿ.</string>

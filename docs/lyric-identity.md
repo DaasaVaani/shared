@@ -8,10 +8,10 @@ own product scope. This contract changes identity and media prerequisites, not
 the remaining content, rights, language, publication or release gates.
 
 The executable `fixture-catalog-v1`, minimal-list v1, local list-record v1 and
-current consumer databases remain unchanged. Their `videoId` fields retain their
-existing meaning. Target schemas, codecs, adapters and consumer support are not
-implemented by this document. No source import, ID assignment, file rename,
-personal-data migration or legacy mapping is authorized by contract approval.
+current consumer databases retain their existing meaning. Their `videoId` fields
+are never lyric UUIDs. Separately authorized owner-supplied authoring/publication
+uses the source and prelaunch canonical-text schemas below. Consumer adoption is
+independent; this does not authorize personal-data migration or legacy mapping.
 
 ## 1. Primary entity and identity
 
@@ -35,13 +35,35 @@ personal-data migration or legacy mapping is authorized by contract approval.
 
 ## 2. Publication eligibility and provenance
 
-The executable [source-draft header schema](../schemas/lyric-source-draft.schema.json)
-supports separately authorized owner-supplied draft authoring only. It fixes
-sourceFormat2/lyric UUID, reviewed title/tags, actual source basename/raw SHA256/
-explicit encoding and nonempty review holds. Library's parser additionally
-validates canonical line/layout and optional literal Source Latin fences.
-It requires no image/video or invented owner/attribution. It is not a production
-publication schema and cannot certify publication by accepting a draft.
+The executable [source header](../schemas/lyric-source.schema.json) fixes
+sourceFormat2/lyric UUID, title/tags, actual source basename/raw SHA256/explicit
+encoding and review holds. The [draft header](../schemas/lyric-source-draft.schema.json)
+references that schema and additionally requires nonempty holds. Load the source
+schema under its filename before compiling the draft schema. Library's parser
+also validates canonical line/layout and optional literal Source Latin fences.
+Neither schema requires images/videos or invented owner/attribution.
+
+Owner-authorized prelaunch publication may release the specific import-review
+hold while offline linguistic review remains pending before public launch.
+Other holds/ambiguous extraction remain excluded. This permission is not a claim
+of reviewed linguistic truth, a license declaration or production readiness.
+Record actual owner authorization separately; do not fabricate evidence.
+
+The [canonical-text publication schema](../schemas/lyric-publication.schema.json)
+defines descriptor, manifest and item families independently at version1, with
+`lyric-preview-v1` and explicit `prelaunch` stage. Published objects contain only
+lyric UUID/title/tags/canonical Kannada lines and explicit UUID-free layout.
+Source/provenance/private evidence and unreviewed Source Latin are excluded.
+Use existing portable encoded/decoded role bounds, deterministic gzip and encoded
+SHA256 references. Validate path/hash/size agreement, unique catalog identities,
+item-to-summary agreement, unique line identities and actual Kannada lines.
+Reader clients reject unknown required capabilities/future formats and preserve
+literal text/layout without assigning new identities.
+
+This initial text-only family contains no media, verse, generated variant, index
+or personal migration claims. Optional media will require additive compatible
+schemas/adapters without changing lyric/line IDs; absent media remains valid.
+Full production ledger/ZIP/offline/search/language/release gates remain open.
 
 A structurally valid record needs its lyric identity, reviewed public title,
 canonical Kannada text, required provenance/rights evidence and no publication
