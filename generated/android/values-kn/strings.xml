@@ -74,6 +74,7 @@
   <string name="remove_favorite" formatted="false">ಮೆಚ್ಚಿನವುಗಳಿಂದ ತೆಗೆದುಹಾಕಿ</string>
   <string name="rename_list" formatted="false">ಪಟ್ಟಿಯ ಹೆಸರು ಬದಲಿಸಿ</string>
   <string name="replace_entry" formatted="false">ಗ್ರಂಥಾಲಯದ ಉಲ್ಲೇಖದಿಂದ ಬದಲಿಸಿ</string>
+  <string name="result_count" formatted="false">{total} ಫಲಿತಾಂಶಗಳಲ್ಲಿ {shown} ತೋರಿಸಲಾಗಿದೆ</string>
   <string name="retry" formatted="false">ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
   <string name="save_entry" formatted="false">ನಮೂದು ಉಳಿಸಿ</string>
   <string name="save_list" formatted="false">ನನ್ನ ಗ್ರಂಥಾಲಯಕ್ಕೆ ಉಳಿಸಿ</string>
@@ -82,6 +83,7 @@
   <string name="settings" formatted="false">ಆಯ್ಕೆಗಳು</string>
   <string name="share_list_file" formatted="false">ಪಟ್ಟಿಯ ಕಡತ ಹಂಚಿ</string>
   <string name="share_list_link" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ ಹಂಚಿ</string>
+  <string name="show_more_results" formatted="false">ಇನ್ನಷ್ಟು ಫಲಿತಾಂಶ ತೋರಿಸಿ</string>
   <string name="skip_to_content" formatted="false">ವಿಷಯಕ್ಕೆ ಹೋಗಿ</string>
   <string name="start_again" formatted="false">ಸಿದ್ಧತೆಗೆ ಹಿಂತಿರುಗಿ</string>
   <string name="tagline" formatted="false">ಓದಿಗಾಗಿ ಒಂದು ಶಾಂತ ತಾಣ</string>

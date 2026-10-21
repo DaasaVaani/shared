@@ -1,5 +1,13 @@
 # Documentation history
 
+## 2026-10-21: complete browser search-result pagination resources
+
+- Added bilingual explicit Show more and named-placeholder result-count messages
+  for the Website's configured page boundary. No search wire/settings/default
+  change or automatic consumer-pin advancement.
+- `npm run check` passed13 tests/deterministic generation;40-file repository
+  hygiene and whitespace checks passed. Platform UI acceptance remains with consumers.
+
 ## 2026-10-21: native durable personal foundation resources
 
 - Added six bilingual native storage/first-use/theme/unavailable-favorite messages
