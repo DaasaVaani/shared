@@ -12,6 +12,11 @@
   future format, unknown key and empty/duplicate capability negatives.
   These are structural safety checks, not measured platform capacity or the
   complete production publication/offline contract.
+- Before consumer adoption, tightened timeout to the actual signed32-bit timer
+  boundary and capability declarations to implemented fixture support. A generic
+  positive-safe-integer/string-only candidate would still allow timer overflow
+  and a false capability advertisement; added actual ceiling/+1 and unknown-
+  capability cases without changing configured values.
 
 ## 2026-10-21: honest native document-provider failure feedback
 
