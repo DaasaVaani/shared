@@ -53,6 +53,13 @@ The first `npm install` completed with zero audit vulnerabilities; `npm run chec
 passed the generator and three Node tests before later foundation edits.
 No production source migration or live API access was performed.
 
+## 2026-10-21: platform fixture preparation labels
+
+Added complete English/Kannada labels for explicit native preparation/cancellation,
+language autonyms, skip navigation and unavailable routes. Added executable
+search-settings schema/limit checks. This extends fixture scaffolding, not
+production language-table approval or offline-snapshot implementation.
+
 ## Snapshot: README.md
 
 # DaasaVaani Shared

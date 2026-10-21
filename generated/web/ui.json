@@ -1,5 +1,12 @@
 {
   "en": {
+    "languageName": "English",
+    "skipToContent": "Skip to content",
+    "unknownRoute": "This page is unavailable.",
+    "prepareLibrary": "Prepare reading library",
+    "preparationNotice": "Download and validate all synthetic records to begin. This demo holds prepared data in memory; persistent offline snapshots are not implemented.",
+    "cancel": "Cancel",
+    "startAgain": "Return to preparation",
     "appName": "DaasaVaani",
     "tagline": "A quiet space for reading",
     "library": "Library",
@@ -27,6 +34,13 @@
     "unavailableFeatures": "This milestone does not yet implement offline snapshots, recitation lists, backups or reviewed transliteration."
   },
   "kn": {
+    "languageName": "ಕನ್ನಡ",
+    "skipToContent": "ವಿಷಯಕ್ಕೆ ಹೋಗಿ",
+    "unknownRoute": "ಈ ಪುಟ ಲಭ್ಯವಿಲ್ಲ.",
+    "prepareLibrary": "ಓದುವ ಗ್ರಂಥಾಲಯ ಸಿದ್ಧಪಡಿಸಿ",
+    "preparationNotice": "ಪ್ರಾರಂಭಿಸಲು ಎಲ್ಲಾ ಕೃತಕ ದಾಖಲೆಗಳನ್ನು ಇಳಿಸಿ ಪರಿಶೀಲಿಸಿ. ಈ ಪ್ರಾತ್ಯಕ್ಷಿಕೆ ಸಿದ್ಧಪಡಿಸಿದ ದತ್ತಾಂಶವನ್ನು ಮೆಮೊರಿಯಲ್ಲಿ ಇಡುತ್ತದೆ; ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.",
+    "cancel": "ರದ್ದುಮಾಡಿ",
+    "startAgain": "ಸಿದ್ಧತೆಗೆ ಹಿಂತಿರುಗಿ",
     "appName": "ದಾಸವಾಣಿ",
     "tagline": "ಓದಿಗಾಗಿ ಒಂದು ಶಾಂತ ತಾಣ",
     "library": "ಗ್ರಂಥಾಲಯ",

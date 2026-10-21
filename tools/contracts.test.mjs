@@ -29,3 +29,12 @@ test("catalog generator is deterministic and includes both locales", async () =>
   assert.equal(await readFile(file, "utf8"), first);
   assert.deepEqual(Object.keys(JSON.parse(first)), ["en", "kn"]);
 });
+test("search settings match their exact schema and reject oversized limits", async () => {
+  const schema = JSON.parse(await readFile(new URL("../schemas/search-policy.schema.json", import.meta.url), "utf8"));
+  const policy = strictYaml(await readFile(new URL("../settings/search.yml", import.meta.url), "utf8"));
+  const validate = new Ajv2020({ strict: true }).compile(schema);
+  assert.equal(validate(policy), true);
+  assert.equal(validate({ ...policy, maxQueryCodePoints: 257 }), false);
+  assert.equal(validate({ ...policy, ignoredSetting: true }), false);
+  assert.deepEqual(policy.editBands, [{ maxLength: 3, edits: 0 }, { maxLength: 8, edits: 1 }, { maxLength: 256, edits: 2 }]);
+});

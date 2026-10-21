@@ -4,6 +4,7 @@
   <string name="app_name" formatted="false">DaasaVaani</string>
   <string name="appearance" formatted="false">Appearance</string>
   <string name="back" formatted="false">Back to library</string>
+  <string name="cancel" formatted="false">Cancel</string>
   <string name="canonical" formatted="false">Kannada · canonical test text</string>
   <string name="dark" formatted="false">Dark</string>
   <string name="empty_favorites" formatted="false">No favorites yet. Open a record and add it to favorites.</string>
@@ -11,18 +12,24 @@
   <string name="favorites" formatted="false">Favorites</string>
   <string name="fixture_notice" formatted="false">Development demo — synthetic test records, not reviewed sahitya or verified video metadata.</string>
   <string name="language" formatted="false">Interface language</string>
+  <string name="language_name" formatted="false">English</string>
   <string name="library" formatted="false">Library</string>
   <string name="light" formatted="false">Light</string>
   <string name="load_search" formatted="false">Load search</string>
   <string name="loading" formatted="false">Validating library…</string>
   <string name="no_results" formatted="false">No matching records. Try another word.</string>
   <string name="open" formatted="false">Read</string>
+  <string name="preparation_notice" formatted="false">Download and validate all synthetic records to begin. This demo holds prepared data in memory; persistent offline snapshots are not implemented.</string>
+  <string name="prepare_library" formatted="false">Prepare reading library</string>
   <string name="ready" formatted="false">Verified fixture publication</string>
   <string name="remove_favorite" formatted="false">Remove from favorites</string>
   <string name="retry" formatted="false">Try again</string>
   <string name="search" formatted="false">Search lyrics or a title</string>
   <string name="search_consent" formatted="false">Search downloads a verified index. Nothing is downloaded until you choose Load search.</string>
   <string name="settings" formatted="false">Settings</string>
+  <string name="skip_to_content" formatted="false">Skip to content</string>
+  <string name="start_again" formatted="false">Return to preparation</string>
   <string name="tagline" formatted="false">A quiet space for reading</string>
   <string name="unavailable_features" formatted="false">This milestone does not yet implement offline snapshots, recitation lists, backups or reviewed transliteration.</string>
+  <string name="unknown_route" formatted="false">This page is unavailable.</string>
 </resources>
