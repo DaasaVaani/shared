@@ -30,6 +30,22 @@ en:
   retry: Try again
   emptyFavorites: No favorites yet. Open a record and add it to favorites.
   canonical: Kannada · canonical test text
+  transferTitle: List snapshot preview
+  transferNotice: Preview only; saving lists is not implemented. Nothing is uploaded or downloaded from the library. Shared links and files are readable and forwardable; do not include sensitive text.
+  transferFile: Choose a list file
+  transferLink: List snapshot link
+  transferPreview: Preview link
+  transferWorking: Validating list snapshot…
+  transferEmpty: This list has no entries.
+  transferReference: Library reference
+  transferPlaceholder: Intentional placeholder
+  transferUnresolved: This preview shows identifiers and user text only; library details and offline readiness are not resolved.
+  transferDownload: Download list file
+  transferCreateLink: Create snapshot link
+  transferInvalid: Invalid or unsupported list snapshot. Choose a valid list file or a complete DaasaVaani snapshot link.
+  transferTooLarge: The list exceeds a transfer byte limit. Export a smaller list; nothing has been saved.
+  transferLinkTooLong: The complete link exceeds the sharing limit. Use the list file instead; no text or entries were dropped.
+  transferFailed: List processing failed. Try again or choose another file. Nothing has been saved.
   unavailableFeatures: This milestone does not yet implement offline snapshots, recitation lists, backups or reviewed transliteration.
 kn:
   languageName: ಕನ್ನಡ
@@ -63,4 +79,20 @@ kn:
   retry: ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ
   emptyFavorites: ಮೆಚ್ಚಿನ ದಾಖಲೆಗಳಿಲ್ಲ. ದಾಖಲೆಯನ್ನು ತೆರೆದು ಸೇರಿಸಿ.
   canonical: ಕನ್ನಡ · ಮೂಲ ಪರೀಕ್ಷಾ ಪಠ್ಯ
+  transferTitle: ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಮುನ್ನೋಟ
+  transferNotice: ಇದು ಮುನ್ನೋಟ ಮಾತ್ರ; ಪಟ್ಟಿಗಳನ್ನು ಉಳಿಸುವ ಸೌಲಭ್ಯ ಇನ್ನೂ ಇಲ್ಲ. ಯಾವುದನ್ನೂ ಅಪ್‌ಲೋಡ್ ಮಾಡುವುದಿಲ್ಲ ಅಥವಾ ಗ್ರಂಥಾಲಯದಿಂದ ಇಳಿಸುವುದಿಲ್ಲ. ಹಂಚಿದ ಕೊಂಡಿ ಮತ್ತು ಕಡತವನ್ನು ಇತರರು ಓದಬಹುದು ಮತ್ತು ಹಂಚಬಹುದು; ಖಾಸಗಿ ಪಠ್ಯ ಸೇರಿಸಬೇಡಿ.
+  transferFile: ಪಟ್ಟಿಯ ಕಡತ ಆಯ್ಕೆಮಾಡಿ
+  transferLink: ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ
+  transferPreview: ಕೊಂಡಿಯ ಮುನ್ನೋಟ
+  transferWorking: ಪಟ್ಟಿಯ ಪ್ರತಿ ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…
+  transferEmpty: ಈ ಪಟ್ಟಿಯಲ್ಲಿ ನಮೂದುಗಳಿಲ್ಲ.
+  transferReference: ಗ್ರಂಥಾಲಯದ ಉಲ್ಲೇಖ
+  transferPlaceholder: ಉದ್ದೇಶಿತ ಪಠ್ಯ ನಮೂದು
+  transferUnresolved: ಈ ಮುನ್ನೋಟ ಗುರುತು ಮತ್ತು ಬಳಕೆದಾರರ ಪಠ್ಯವನ್ನು ಮಾತ್ರ ತೋರಿಸುತ್ತದೆ; ಗ್ರಂಥಾಲಯದ ವಿವರ ಅಥವಾ ಆಫ್‌ಲೈನ್ ಸಿದ್ಧತೆಯನ್ನು ನಿರ್ಧರಿಸುವುದಿಲ್ಲ.
+  transferDownload: ಪಟ್ಟಿಯ ಕಡತ ಇಳಿಸಿ
+  transferCreateLink: ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ ರಚಿಸಿ
+  transferInvalid: ಅಮಾನ್ಯ ಅಥವಾ ಬೆಂಬಲಿಸದ ಪಟ್ಟಿಯ ಪ್ರತಿ. ಸರಿಯಾದ ಪಟ್ಟಿಯ ಕಡತ ಅಥವಾ ಸಂಪೂರ್ಣ ದಾಸವಾಣಿ ಕೊಂಡಿ ಆಯ್ಕೆಮಾಡಿ.
+  transferTooLarge: ಪಟ್ಟಿಯ ಗಾತ್ರ ಇಳಿಸುವ ಮಿತಿಯನ್ನು ಮೀರಿದೆ. ಚಿಕ್ಕ ಪಟ್ಟಿಯನ್ನು ರಫ್ತುಮಾಡಿ; ಏನನ್ನೂ ಉಳಿಸಿಲ್ಲ.
+  transferLinkTooLong: ಸಂಪೂರ್ಣ ಕೊಂಡಿ ಹಂಚುವ ಮಿತಿಯನ್ನು ಮೀರಿದೆ. ಬದಲಿಗೆ ಪಟ್ಟಿಯ ಕಡತ ಬಳಸಿ; ಪಠ್ಯ ಅಥವಾ ನಮೂದುಗಳನ್ನು ಕೈಬಿಟ್ಟಿಲ್ಲ.
+  transferFailed: ಪಟ್ಟಿಯ ಪರಿಶೀಲನೆ ವಿಫಲವಾಗಿದೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ ಅಥವಾ ಬೇರೆ ಕಡತ ಆಯ್ಕೆಮಾಡಿ. ಏನನ್ನೂ ಉಳಿಸಿಲ್ಲ.
   unavailableFeatures: ಈ ಹಂತದಲ್ಲಿ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹ, ಪಠಣ ಪಟ್ಟಿಗಳು, ಬ್ಯಾಕಪ್ ಅಥವಾ ಪರಿಶೀಲಿಸಿದ ಲಿಪ್ಯಂತರ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.

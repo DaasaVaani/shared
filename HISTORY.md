@@ -1,5 +1,15 @@
 # Documentation history
 
+## 2026-10-21: list preview UI resources
+
+- Added matching English/Kannada list-preview, privacy, validation and export
+  labels with committed web/Android catalog output for the next Website slice.
+  Labels explicitly distinguish preview from saving, library resolution and
+  offline readiness; no native feature or consumer update is implied.
+- `npm run check` passed all10 Node tests and deterministic generation. The
+  owning hygiene, YAML, generated-output and whitespace gates apply before
+  publication. No dependencies, product defaults, schemas or provider access changed.
+
 ## 2026-10-21: minimal-list structural contract
 
 - The owner renewed direct-main publication for implementation work until the
