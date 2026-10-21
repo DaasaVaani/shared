@@ -1,0 +1,16 @@
+{
+  "formatVersion": 1,
+  "profile": "unicode16-default-full-nfc-v1",
+  "unicodeVersion": "16.0.0",
+  "data": {
+    "path": "unicode16.json",
+    "bytes": 84591,
+    "sha256": "0532495cb295b707e8f414167a4b768334504d8b0df957c976674dfe9ea58f8d"
+  },
+  "vectors": {
+    "path": "../../fixtures/unicode-name-matching.json",
+    "bytes": 5469,
+    "sha256": "bb71a12970fc4ecc09c6ae5a3c07b3d997321c2a3e5ef66c989b0d03f979adc1"
+  },
+  "license": "../../resources/unicode16/LICENSE.txt"
+}

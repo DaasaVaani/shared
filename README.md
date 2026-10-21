@@ -16,6 +16,12 @@ Appearance tokens are `light`, `dark`, `warm` and `device` (Follow device);
 the configured initial Website default remains `light`. Consumers validate the
 schema and independently adopt a compatible revision before exposing new modes.
 
+Personal-list name comparison uses the approved
+[portable Unicode16 profile](docs/unicode-name-matching.md), with hash-pinned
+official data, deterministic tables and independent cross-platform vectors.
+Consumers must adopt the profile and migrate derived keys explicitly without
+rewriting stored names/IDs or merging lists; this does not implement native lists.
+
 Build-time publication safety settings follow
 [`schemas/publication-policy-settings.schema.json`](schemas/publication-policy-settings.schema.json):
 every declared field is required, byte/time bounds are positive safe integers,

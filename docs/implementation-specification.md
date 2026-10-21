@@ -51,6 +51,7 @@ registries, UI catalogs, personal state and secrets retain their separate owners
 | Shared settings/search.yml | Normalization, matching signatures, weights, query/page/excerpt bounds; snapshot-pinned queries |
 | Shared settings/publication-policy.yml | Portable artifact/decoder/bundle/planner/date policy; publisher and compatible clients |
 | Shared settings/personal-transfer.yml | Personal text/collection/byte bounds and transfer policy; consumer build, not silent content-refresh replacement |
+| Shared settings/unicode.yml | Pinned official Unicode16 personal-name matching profile, pipeline and upstream byte provenance; consumer build and explicit key-profile migration |
 | Shared settings/ui-catalog.yml, defaults.yml | Catalog generation, supported UI languages, portable initial preferences and allowed choices |
 | Library settings/catalog.yml, ingestion.yml, images.yml, publication.yml | Branding/catalog/filter/profile selection, local import/extraction/network, image processing, hosting/publication |
 | Website settings/web.yml | Public bases/endpoints, routes, feature availability, UI tokens and platform worker/network/storage budgets |
@@ -336,6 +337,10 @@ practice location, learning labels, bookmarks and recents. Content/control separ
 Typed item/line/verse/occurrence references; independent UUIDv4 list occurrences,
 repeats preserved. Recent50 distinct successful opens, disable stops writes, Clear
 separate. NFC/case-insensitive duplicate-name warning permits confirmed reuse.
+Personal-name comparison follows the approved
+[Unicode16 full-default-fold/NFC profile](unicode-name-matching.md), not
+platform Unicode tables. Existing derived keys require explicit consumer
+adoption/migration; original names and identities remain unchanged.
 Navigation continuity is current-session only, not persistent search history.
 Target item references use `lyricId`, preserving typed legacy video references
 under [the identity contract](lyric-identity.md). Media additions never rewrite

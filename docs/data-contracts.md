@@ -17,6 +17,10 @@ implementation is authorized, not global production readiness.
 - Settings: strict owned YAML, complete type/unit/default/bounds/timing/
   compatibility/test inventory, no hidden defaults. Native dependency/toolchain
   manifests/locks hold pins. Personal state/secrets are separate.
+- Unicode personal-name matching: the [pinned official Unicode16 profile](unicode-name-matching.md)
+  owns full default fold/NFC tables, algorithm and cross-platform vectors.
+  Consumer key-profile migration and actual adapter conformance remain required;
+  host normalization or older Website keys are not substitutes.
 - Language: Kannada canonical, five Latin/nine non-Latin outputs, reviewed digit/
   approximation/alias/Unicode/technical-marker tables. Global corrections only.
 - Public artifacts: canonical JSON, encoded SHA256, capability/version semantics,
@@ -68,6 +72,12 @@ after generation with the intended generated outputs staged or committed.
 It is not full production-schema/language or transfer-codec conformance.
 The fixture-only TypeScript contract is in types/publication.ts; settings and
 schemas have their owning roots. Consumers must reject unsupported capabilities.
+
+The same build verifies vendored Unicode16 hashes and regenerates portable
+tables/manifest; the separate Unicode suite checks independent numeric vectors,
+all official NFC/NFD conformance equations and exhaustive scalar folding.
+No network is used during generation/tests. These checks do not establish
+consumer adapter or key-migration completion.
 
 The workflow also parses every .github YAML file using Ruby YAML; use an existing
 Ruby installation or another already-available YAML parser and state the method.

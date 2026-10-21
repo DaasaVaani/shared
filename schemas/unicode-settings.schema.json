@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://daasavaani.github.io/contracts/unicode-settings.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["formatVersion", "profile", "unicodeVersion", "normalization", "caseFolding", "pipeline", "sources"],
+  "properties": {
+    "formatVersion": { "const": 1 },
+    "profile": { "const": "unicode16-default-full-nfc-v1" },
+    "unicodeVersion": { "const": "16.0.0" },
+    "normalization": { "const": "NFC" },
+    "caseFolding": { "const": "default-full" },
+    "pipeline": { "const": ["NFC", "default-full-casefold", "NFC"] },
+    "sources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["CaseFolding.txt", "UnicodeData.txt", "DerivedNormalizationProps.txt", "NormalizationTest.txt", "ReadMe.txt", "LICENSE.txt"],
+      "properties": {
+        "CaseFolding.txt": { "$ref": "#/$defs/source" },
+        "UnicodeData.txt": { "$ref": "#/$defs/source" },
+        "DerivedNormalizationProps.txt": { "$ref": "#/$defs/source" },
+        "NormalizationTest.txt": { "$ref": "#/$defs/source" },
+        "ReadMe.txt": { "$ref": "#/$defs/source" },
+        "LICENSE.txt": { "$ref": "#/$defs/source" }
+      }
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["url", "sha256"],
+      "properties": {
+        "url": { "type": "string", "pattern": "^https://www\\.unicode\\.org/(Public/16\\.0\\.0/ucd/[A-Za-z]+\\.txt|license\\.txt)$" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+      }
+    }
+  }
+}

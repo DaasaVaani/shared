@@ -1,0 +1,4 @@
+# Unicode provenance and generated-resource hashes are over these exact LF bytes.
+resources/unicode16/* text eol=lf
+generated/unicode/* text eol=lf
+fixtures/unicode-name-matching.json text eol=lf

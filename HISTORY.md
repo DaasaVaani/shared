@@ -1553,3 +1553,77 @@ YouTube API ingestion is provisional and blocked pending provider clarification.
 Final design approval and separate application-implementation authorization remain
 required. The user requested recording findings through S57 before proceeding
 with final readiness; the overall readiness disposition remains not yet ready.
+
+## 2026-10-22: Portable Unicode16 personal-name prerequisite
+
+- Work was isolated on `work/portable-unicode` in the requested session worktree,
+  fast-forwarded from `1d588c3` to verified Shared main
+  `26a02b3423060d8efa7897cd92844a79ffdacc9c`. No primary worktree, source-metadata
+  files, locale messages, consumer repositories or pins were changed.
+- Initial investigation found no approved exact Unicode version in the then
+  current Shared settings/contracts. The owner subsequently explicitly selected
+  official Unicode16 and coordinated consumer key migration preserving exact
+  names, IDs, contents and independent lists, without automatic rename/merge.
+- The pre-existing Website stage order was NFC, `unicode-case-folding@1.1.2`,
+  NFC. Exhaustive comparison of all 1,112,064 scalar values with official C/F
+  mappings found 49 differences against Unicode16 and 21 against Unicode17.
+  Example: the installed package expanded U+1DF95 to `ss`; official Unicode16
+  leaves it unchanged. This is not an already-Unicode16 stored-key population.
+  Node22.15.0 reported Unicode16/ICU76.1; its NFC passed all 99,825 Unicode16
+  normalization equations examined and failed 68 of 100,170 Unicode17 NFC
+  equations. These observations motivated an explicit portable implementation,
+  not reliance on Node/browser/Android host normalization.
+- Added the fixed `unicode16-default-full-nfc-v1` settings/schema, unmodified
+  official16 UCD inputs and conformance corpus, exact source URL/SHA-256
+  provenance and preserved Unicode License V3. The downloaded license copy
+  carries its original 1991-2026 notice; its otherwise-unversioned URL is pinned
+  by the vendored byte hash. Scoped LF attributes preserve all hashed bytes.
+- Added a deterministic offline generator, committed scalar-array resource and
+  resource/vector SHA-256 manifest. Tables contain 934 nonzero combining classes,
+  2,081 canonical decompositions, 961 nonexcluded composition pairs and 1,557
+  full default folds; Hangul remains algorithmic. The 84,591-byte table hash is
+  `0532495cb295b707e8f414167a4b768334504d8b0df957c976674dfe9ea58f8d`.
+- Added standalone contract/reference tooling with no host normalization, locale
+  casing or Unicode property dependency; 33 synthetic scalar-array vectors,
+  10 comparison pairs and 6 invalid UTF-16 vectors; separate conformance tests
+  without changing existing source-schema tests. Coverage includes expansions,
+  sigma/I, supplementary scripts, canonical equivalence, stable reordering,
+  blocking/exclusions, recursive Kannada/Hangul, stage order, compatibility/
+  whitespace preservation and inactive newer-version mappings.
+- Initial targeted tests caught two synthetic-vector transcription mistakes
+  (overline vs macron and a missing Kannada recursive-decomposition scalar).
+  Official UnicodeData independently established the corrected expectations;
+  the algorithm passed the official corpus before and after those corrections.
+  A new exact-byte check also caught the existing Windows working-copy CRLF
+  fixture after LF attributes were staged. Only that already-staged synthetic
+  fixture was materialized with its exact indexed bytes; its source meaning
+  was unchanged. Final generated hashes match the staged Git bytes.
+- Requirement coverage: LIB-01..11 personal-name comparison; XFER-01..10
+  preservation/interoperability prerequisite; SET-01 settings ownership.
+  This does not establish production search/transliteration or linguistic review.
+- Final validation from the isolated root:
+  - `npm ci --quiet`: passed, 6 installed packages, zero audit vulnerabilities.
+  - `npm run check`: passed all generation and all 24 tests, zero failures,
+    skips or cancellations. The Unicode suite checked 19,965 official rows with
+    199,650 NFC/NFD equations, all omitted-scalar NFC/NFD invariants and full
+    default folding over all 1,112,064 scalars.
+  - `python tools\check_repository.py`: passed with all 64 tracked files,
+    including the staged new files.
+  - `git --no-pager diff --check` and
+    `git --no-pager diff --cached --check`: passed.
+  - `git --no-pager diff --exit-code -- generated schemas`: passed after
+    intended new generated outputs/schemas were staged.
+  - Workflow/issue YAML: parsed all 5 `.github` YAML files using the already
+    installed `yaml` package (`node --input-type=module`, recursive `readdir`,
+    `parseDocument`; rejected any parser errors), passed.
+  - Additional inline Python verification checked local Markdown file links,
+    anchors and balanced fences in README and the three changed current guides;
+    passed. An inline Node `execFileSync("git", ["show", ":" + path])` byte
+    comparison checked all six upstream files, two generated files and the
+    portable vector file against the Git index.
+- No Website/Android adapter or database migration was implemented or claimed
+  validated here. Consumers must independently adopt a published successful
+  Shared revision, run these same vectors against their actual bundled tables,
+  and invalidate/recompute old keys transactionally or derive them on demand
+  with explicit profile identity, preserving stored names and all personal data.
+  No downstream native lists, main push or consumer pin update was performed.
