@@ -2,8 +2,8 @@
 
 The [implementation specification](implementation-specification.md) defines
 current approved behavior. [Website requirements](https://github.com/DaasaVaani/DaasaVaani.github.io/blob/main/docs/requirements.md)
-own product scope. Exact executable schemas/tables and overall design approval
-remain open. This checklist is not implementation authorization.
+own product scope. Production schemas/tables remain incomplete; staged
+implementation is authorized, not global production readiness.
 
 ## Contract surfaces
 
@@ -27,6 +27,9 @@ remain open. This checklist is not implementation authorization.
 - Personal: independent occurrences/references, exact capacity, forward migration,
   portable minimal lists, same-platform logical full backups, revision-checked
   recoverable replacement and truthful locale side effects.
+  The [minimal-list v1 JSON shape](list-transfer.md), generated schema and
+  synthetic structural/boundary fixtures exist; codecs, actual import/export,
+  database schemas and backup/replacement protocols remain open.
 - Platform: independent UI/script preferences, system-font limitations, static
   routes/App Links, safe shell updates and verified local-signing handoff.
 
@@ -51,8 +54,11 @@ git --no-pager diff --check
 git --no-pager diff --cached --check
 ```
 
-The Node suite generates and tests the two-locale UI catalogs and the initial
-fixture-only item contract. It is not full production-schema/language conformance.
+The Node suite generates and tests the two-locale UI catalogs, fixture-only item
+and search contracts, strict personal-transfer settings and the generated
+minimal-list JSON schema/fixtures. Check `git diff --exit-code -- generated schemas`
+after generation with the intended generated outputs staged or committed.
+It is not full production-schema/language or transfer-codec conformance.
 The fixture-only TypeScript contract is in types/publication.ts; settings and
 schemas have their owning roots. Consumers must reject unsupported capabilities.
 

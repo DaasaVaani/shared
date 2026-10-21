@@ -352,6 +352,10 @@ Minimal list format: version/name/ordered typed references with optional user
 fallback or intentional single-line placeholder only. No ordinary titles, lyrics,
 preferences or progress. Preview then save new independent list only, never merge/
 append/replace by name. Cancel/failure unchanged. Cross-platform lists supported.
+The executable [minimal-list v1 structural contract](list-transfer.md) fixes the
+envelope/entry keys, text invariants and settings-derived shape limits. Compression,
+byte-bounded decoding, preview/import, storage and cross-platform round-trip
+evidence remain unimplemented; schema acceptance alone is not transfer readiness.
 
 Full backup is same-platform only, Android->Android or web/PWA->web/PWA; native
 font units, no cross-platform conversion. Logical envelope format/version/platform/
@@ -471,7 +475,7 @@ These are required coverage, not executed test results.
 | Sources/settings | Exact field/cardinality/parser/layout/range/terminal-label/registry schemas; complete settings inventory |
 | Language | Reviewed native/Latin/alias/Unicode/technical-marker/digit tables, independent expectations, permitted samples before Latin default |
 | Public/search | Exact packed postings/witnesses/signatures/envelopes/capabilities/hash exclusions/path rules and fixture/proof specification |
-| Personal | Exact logical schemas/references, migration/version matrix, preview/fence/postcommit locale protocol |
+| Personal | Minimal-list JSON shape exists; full personal/backup schemas, codecs, migration/version matrix and preview/fence/postcommit locale protocol remain |
 | Lifecycle/publication | State/receipt/journal/activation/GC lock order, crash boundaries and accounting schemas |
 | Ingestion | Exact extraction/channel/batch/quota/runbook plus external provider clarification |
 | UI/release | Owned UI/default/capability tokens, routing/shell/signing procedures and normal-protection restoration |

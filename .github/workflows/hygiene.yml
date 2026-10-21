@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - validation/**
 
 permissions:
   contents: read
@@ -29,7 +30,7 @@ jobs:
         run: |
           npm ci
           npm run check
-          git diff --exit-code -- generated
+          git diff --exit-code -- generated schemas
       - name: Parse YAML configuration and issue forms
         run: |
           ruby -e 'require "yaml"; Dir.glob(".github/**/*.{yml,yaml}").each { |path| YAML.load_file(path); puts "Parsed #{path}" }'

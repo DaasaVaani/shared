@@ -1,0 +1,60 @@
+{
+  "accepted": [
+    {
+      "label": "empty list",
+      "value": { "format": "daasavaani-list", "formatVersion": 1, "name": "Synthetic empty list", "entries": [] }
+    },
+    {
+      "label": "ordered repeated references and intentional placeholder",
+      "value": {
+        "format": "daasavaani-list",
+        "formatVersion": 1,
+        "name": "  Synthetic \u0c95 \ud83d\ude00  ",
+        "entries": [
+          { "kind": "item", "videoId": "unknown_fixture-1", "fallback": "  User-written test label  " },
+          { "kind": "placeholder", "text": "<b>Test only</b> https://example.invalid/" },
+          { "kind": "item", "videoId": "unknown_fixture-1" },
+          { "kind": "placeholder", "text": "<b>Test only</b> https://example.invalid/" }
+        ]
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "label": "newer version",
+      "value": { "format": "daasavaani-list", "formatVersion": 2, "name": "Test", "entries": [] }
+    },
+    {
+      "label": "backup is not a minimal list",
+      "value": { "format": "daasavaani-personal-backup", "formatVersion": 1, "name": "Test", "entries": [] }
+    },
+    {
+      "label": "personal state is excluded",
+      "value": { "format": "daasavaani-list", "formatVersion": 1, "name": "Test", "entries": [], "favorites": [] }
+    },
+    {
+      "label": "ordinary titles are excluded",
+      "value": { "format": "daasavaani-list", "formatVersion": 1, "name": "Test", "entries": [{ "kind": "item", "videoId": "fixture-one", "title": "Not user-written" }] }
+    },
+    {
+      "label": "lyric copies are excluded",
+      "value": { "format": "daasavaani-list", "formatVersion": 1, "name": "Test", "entries": [{ "kind": "item", "videoId": "fixture-one", "lyrics": "Synthetic test only" }] }
+    },
+    {
+      "label": "external URL field is excluded",
+      "value": { "format": "daasavaani-list", "formatVersion": 1, "name": "Test", "entries": [{ "kind": "placeholder", "text": "Test", "url": "https://example.invalid/" }] }
+    },
+    {
+      "label": "intentional placeholder cannot carry an item identifier",
+      "value": { "format": "daasavaani-list", "formatVersion": 1, "name": "Test", "entries": [{ "kind": "placeholder", "text": "Test", "videoId": "fixture-one" }] }
+    },
+    {
+      "label": "identifier is not a URL or path",
+      "value": { "format": "daasavaani-list", "formatVersion": 1, "name": "Test", "entries": [{ "kind": "item", "videoId": "../fixture-one" }] }
+    },
+    {
+      "label": "entry kind is explicit",
+      "value": { "format": "daasavaani-list", "formatVersion": 1, "name": "Test", "entries": [{ "videoId": "fixture-one" }] }
+    }
+  ]
+}

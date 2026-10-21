@@ -1,5 +1,38 @@
 # Documentation history
 
+## 2026-10-21: minimal-list structural contract
+
+- The owner renewed direct-main publication for implementation work until the
+  work is done. This uses the existing temporary admin PR exemption, not force
+  pushes, disabled checks or release readiness. Added validation-branch CI so
+  an exact new commit can pass hosted checks before direct-main publication
+  without creating a PR. Consumers remain independently pinned.
+- Added strict personal-transfer settings validation and generated minimal-list
+  v1 JSON Schema with ordered typed references/optional user fallback and
+  intentional placeholders. Numeric name/text/occurrence bounds come only from
+  settings; no new product defaults or dependencies were introduced.
+- Specified Unicode scalar single-line text rejection without mutation and
+  preservation of spaces/combining sequences/repeated occurrences. Added
+  synthetic accepted/rejected and exact/limit+1 tests for identifiers, names,
+  entry text/counts, allowlists, deterministic generation and settings errors.
+- This establishes structural validation only. No consumer pin, full personal/
+  backup schema, database, compression/link codec, byte-bounded decoder,
+  preview/import workflow, production content or provider access was added.
+- Archived replaced checklist wording: it said "This checklist is not
+  implementation authorization" and the README classified all checks as not
+  contract conformance tests. Current guides distinguish authorized staged work
+  and actual structural tests from still-unproven complete product conformance.
+- `npm run check`: passed all10 Node tests and regenerated the catalog/list
+  schema deterministically. `python tools\check_repository.py`: passed38 tracked
+  files including explicitly staged new contracts/fixtures/docs. Generated
+  Android/web resources stayed unchanged; `git diff --exit-code -- generated schemas`
+  and working/staged whitespace checks passed.
+- Pinned actionlint1.7.12 with ShellCheck0.11.0 passed. All5 .github YAML files
+  parsed using the existing strict Node YAML helper. Documentation checks passed
+  all5 changed Markdown files for UTF8/newlines/whitespace/fences/links/anchors.
+  No new toolchain/dependencies were installed. No consumer build or device
+  result is implied; the additive schema is not yet adopted by any consumer.
+
 ## Archive policy
 
 This is the sole archive for past decisions, superseded guidance, dated
