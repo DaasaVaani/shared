@@ -53,6 +53,29 @@ test("search settings match their exact schema and reject oversized limits", asy
   assert.equal(validate({ ...policy, ignoredSetting: true }), false);
   assert.deepEqual(policy.editBands, [{ maxLength: 3, edits: 0 }, { maxLength: 8, edits: 1 }, { maxLength: 256, edits: 2 }]);
 });
+test("publication safety settings require every typed field without coercion or unknown keys", async () => {
+  const schema = JSON.parse(await readFile(new URL("../schemas/publication-policy-settings.schema.json", import.meta.url), "utf8"));
+  const policy = strictYaml(await readFile(new URL("../settings/publication-policy.yml", import.meta.url), "utf8"));
+  const validate = new Ajv2020({ strict: true }).compile(schema);
+  assert.equal(validate(policy), true);
+  for (const key of Object.keys(policy)) {
+    const missing = { ...policy };
+    delete missing[key];
+    assert.equal(validate(missing), false, `Missing ${key}`);
+    if (key !== "formatVersion" && key !== "supportedRequiredCapabilities") {
+      for (const value of [0, -1, 1.5, "1", true, null, Number.MAX_SAFE_INTEGER + 1]) {
+        assert.equal(validate({ ...policy, [key]: value }), false, `Invalid ${key}: ${value}`);
+      }
+      assert.equal(validate({ ...policy, [key]: Number.MAX_SAFE_INTEGER }), true);
+    }
+  }
+  for (const invalid of [{ ...policy, formatVersion: 2 }, { ...policy, ignored: 1 },
+    { ...policy, supportedRequiredCapabilities: [] }, { ...policy, supportedRequiredCapabilities: [""] },
+    { ...policy, supportedRequiredCapabilities: [1] },
+    { ...policy, supportedRequiredCapabilities: ["fixture-catalog-v1", "fixture-catalog-v1"] }]) {
+    assert.equal(validate(invalid), false);
+  }
+});
 test("portable personal-transfer bounds are positive safe integers", async () => {
   const settings = strictYaml(await readFile(new URL("../settings/personal-transfer.yml", import.meta.url), "utf8"));
   assert.equal(settings.formatVersion, 1);

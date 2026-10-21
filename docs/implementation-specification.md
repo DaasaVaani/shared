@@ -59,6 +59,10 @@ registries, UI catalogs, personal state and secrets retain their separate owners
 Exact keys still require schemas. Inventory every key's type, unit, initial value,
 bounds, application time, compatibility effect and tests. Platform safety ceilings
 cannot be raised by untrusted fetched policy. Invalid/missing values fail explicitly.
+The fixture settings have executable UI-default, search, personal-transfer and
+publication-safety schemas. The publication-safety schema governs build-time
+artifact byte ceilings, request timeout and declared supported capabilities;
+it is not the complete production policy, journal or remote-artifact contract.
 
 Each snapshot contains a hash-verified policy artifact; the index binds to that
 identity. Use its exact rules, not newer app/remote defaults. Unsupported required

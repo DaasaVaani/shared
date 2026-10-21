@@ -57,7 +57,7 @@ git --no-pager diff --cached --check
 ```
 
 The Node suite generates and tests the two-locale UI catalogs, fixture-only item
-and search contracts, strict personal-transfer settings and the generated
+and search contracts, strict UI-default/publication-safety/personal-transfer settings and the generated
 minimal-list and logical list-record JSON schemas/fixtures. Check
 `git diff --exit-code -- generated schemas`
 after generation with the intended generated outputs staged or committed.

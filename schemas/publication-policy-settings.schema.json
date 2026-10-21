@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "formatVersion", "maxDescriptorBytes", "maxManifestEncodedBytes", "maxManifestDecodedBytes",
+    "maxItemEncodedBytes", "maxItemDecodedBytes", "maxPolicyEncodedBytes", "maxPolicyDecodedBytes",
+    "maxIndexEncodedBytes", "maxIndexDecodedBytes", "metadataTimeoutMs", "supportedRequiredCapabilities"
+  ],
+  "properties": {
+    "formatVersion": { "const": 1 },
+    "maxDescriptorBytes": { "$ref": "#/$defs/positiveSafeInteger" },
+    "maxManifestEncodedBytes": { "$ref": "#/$defs/positiveSafeInteger" },
+    "maxManifestDecodedBytes": { "$ref": "#/$defs/positiveSafeInteger" },
+    "maxItemEncodedBytes": { "$ref": "#/$defs/positiveSafeInteger" },
+    "maxItemDecodedBytes": { "$ref": "#/$defs/positiveSafeInteger" },
+    "maxPolicyEncodedBytes": { "$ref": "#/$defs/positiveSafeInteger" },
+    "maxPolicyDecodedBytes": { "$ref": "#/$defs/positiveSafeInteger" },
+    "maxIndexEncodedBytes": { "$ref": "#/$defs/positiveSafeInteger" },
+    "maxIndexDecodedBytes": { "$ref": "#/$defs/positiveSafeInteger" },
+    "metadataTimeoutMs": { "$ref": "#/$defs/positiveSafeInteger" },
+    "supportedRequiredCapabilities": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "$defs": {
+    "positiveSafeInteger": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 }
+  }
+}

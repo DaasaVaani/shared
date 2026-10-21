@@ -1,5 +1,18 @@
 # Documentation history
 
+## 2026-10-21: strict build-time publication safety settings
+
+- SET-01/02 audit found the Website used a hand-written publication-settings
+  guard that accepted missing fields, unknown numeric keys and future format
+  versions. Added an exact portable schema for all existing fields, positive
+  safe integers and nonempty unique capability strings, without changing any
+  configured values or independently pinned consumers.
+- `npm run check` passed15 tests/deterministic generation, including every
+  missing numeric field, invalid type/zero/negative/fraction/unsafe integer,
+  future format, unknown key and empty/duplicate capability negatives.
+  These are structural safety checks, not measured platform capacity or the
+  complete production publication/offline contract.
+
 ## 2026-10-21: honest native document-provider failure feedback
 
 - Added explicit failed/cancelled file-export wording: an external document

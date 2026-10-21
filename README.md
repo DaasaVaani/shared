@@ -6,6 +6,12 @@ Appearance tokens are `light`, `dark`, `warm` and `device` (Follow device);
 the configured initial Website default remains `light`. Consumers validate the
 schema and independently adopt a compatible revision before exposing new modes.
 
+Build-time publication safety settings follow
+[`schemas/publication-policy-settings.schema.json`](schemas/publication-policy-settings.schema.json):
+every declared field is required, byte/time bounds are positive safe integers,
+and capabilities are nonempty unique strings. This schema does not validate a
+fetched snapshot or supply the remaining production lifecycle/publication policy.
+
 Language-neutral contracts for the independently developed DaasaVaani Website,
 Android app and Library publisher. This repository is a bootstrap, not a shared
 application runtime. It includes an initial executable, explicitly fixture-only
