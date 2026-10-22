@@ -66,6 +66,23 @@ test("catalog generator is deterministic and includes both locales", async () =>
   assert.equal(await readFile(file, "utf8"), first);
   assert.deepEqual(Object.keys(JSON.parse(first)), ["en", "kn"]);
 });
+test("reading captions preserve distinct densities and native-unit placeholders in both platform resources", async () => {
+  const source = strictYaml(await readFile(new URL("../locales/ui.yml", import.meta.url), "utf8"));
+  const web = JSON.parse(await readFile(new URL("../generated/web/ui.json", import.meta.url), "utf8"));
+  const keys = ["readingPreferences", "lyricFontSize", "decreaseLyricFontSize", "increaseLyricFontSize",
+    "fontSizeValue", "readingDensity", "densityCompact", "densityNormal", "densityRelaxed"];
+  for (const [locale, messages] of Object.entries(source)) {
+    const xml = await readFile(new URL(`../generated/android/${locale === "en" ? "values" : `values-${locale}`}/strings.xml`, import.meta.url), "utf8");
+    for (const key of keys) {
+      assert.equal(typeof messages[key], "string"); assert.ok(messages[key].length);
+      assert.equal(web[locale][key], messages[key]);
+      assert.ok(xml.includes(`<string name="${key.replace(/[A-Z]/g, letter => "_" + letter.toLowerCase())}" formatted="false">`));
+    }
+    assert.equal(new Set([messages.densityCompact, messages.densityNormal, messages.densityRelaxed]).size, 3);
+    assert.deepEqual(messages.fontSizeValue.match(/\{[^}]+\}/gu)?.sort(), ["{size}", "{unit}"]);
+    assert.ok(xml.includes(`<string name="font_size_value" formatted="false">${messages.fontSizeValue}</string>`));
+  }
+});
 test("search settings match their exact schema and reject oversized limits", async () => {
   const schema = JSON.parse(await readFile(new URL("../schemas/search-policy.schema.json", import.meta.url), "utf8"));
   const policy = strictYaml(await readFile(new URL("../settings/search.yml", import.meta.url), "utf8"));

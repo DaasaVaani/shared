@@ -20,8 +20,12 @@
   <string name="copy_list_link" formatted="false">Copy snapshot link</string>
   <string name="create_list" formatted="false">Create empty list</string>
   <string name="dark" formatted="false">Dark</string>
+  <string name="decrease_lyric_font_size" formatted="false">Decrease lyric font size</string>
   <string name="delete_list" formatted="false">Delete list</string>
   <string name="delete_notice" formatted="false">Delete this local list only? Other lists and library content are unchanged.</string>
+  <string name="density_compact" formatted="false">Compact</string>
+  <string name="density_normal" formatted="false">Normal</string>
+  <string name="density_relaxed" formatted="false">Relaxed</string>
   <string name="duplicate_list" formatted="false">Duplicate list</string>
   <string name="duplicate_name" formatted="false">Another local list already uses this name. Save a separate list with the same name?</string>
   <string name="edit_entry" formatted="false">Edit entry</string>
@@ -35,6 +39,8 @@
   <string name="favorites" formatted="false">Favorites</string>
   <string name="fixture_notice" formatted="false">Development demo — synthetic test records, not reviewed sahitya or verified video metadata.</string>
   <string name="follow_device" formatted="false">Follow device</string>
+  <string name="font_size_value" formatted="false">{size} {unit}</string>
+  <string name="increase_lyric_font_size" formatted="false">Increase lyric font size</string>
   <string name="language" formatted="false">Interface language</string>
   <string name="language_name" formatted="false">English</string>
   <string name="legacy_reference" formatted="false">Legacy video reference</string>
@@ -56,6 +62,7 @@
   <string name="loading_cancelled" formatted="false">Loading cancelled.</string>
   <string name="lyric_back" formatted="false">Back to lyrics</string>
   <string name="lyric_catalog_pending" formatted="false">Prepare the reading library to resolve lyric references.</string>
+  <string name="lyric_font_size" formatted="false">Lyric font size</string>
   <string name="lyric_identifier" formatted="false">Lyric UUID</string>
   <string name="lyric_no_media" formatted="false">No video or image is needed to read this lyric.</string>
   <string name="lyric_online_catalog_pending" formatted="false">Open the lyric catalog to resolve lyric references.</string>
@@ -84,6 +91,8 @@
   <string name="placeholder_text" formatted="false">Placeholder text</string>
   <string name="preparation_notice" formatted="false">Download and validate all synthetic records to begin. This demo holds prepared data in memory; persistent offline snapshots are not implemented.</string>
   <string name="prepare_library" formatted="false">Prepare reading library</string>
+  <string name="reading_density" formatted="false">Reading density</string>
+  <string name="reading_preferences" formatted="false">Reading preferences</string>
   <string name="ready" formatted="false">Verified fixture publication</string>
   <string name="recent_history" formatted="false">Recently opened</string>
   <string name="recent_history_enabled" formatted="false">Record recently opened lyrics</string>

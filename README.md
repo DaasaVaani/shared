@@ -17,6 +17,12 @@ consented complete-library preparation. Consumers adopt these labels independent
 new labels do not change publication capabilities, native preparation requirements
 or establish persistent offline storage.
 
+Reading-preference captions cover independent lyric font controls and
+Compact/Normal/Relaxed density. They do not define numeric font bounds or spacing,
+add persisted fields or implement controls. Consumers retain native platform
+font units and must validate their owning settings and preserving personal-data
+adapters before exposing these preferences; adoption remains independent.
+
 Portable UI defaults and allowed choices follow
 [`schemas/ui-defaults.schema.json`](schemas/ui-defaults.schema.json).
 Appearance tokens are `light`, `dark`, `warm` and `device` (Follow device);

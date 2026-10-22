@@ -20,8 +20,12 @@
   <string name="copy_list_link" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ ನಕಲಿಸಿ</string>
   <string name="create_list" formatted="false">ಖಾಲಿ ಪಟ್ಟಿ ರಚಿಸಿ</string>
   <string name="dark" formatted="false">ಗಾಢ</string>
+  <string name="decrease_lyric_font_size" formatted="false">ಸಾಹಿತ್ಯದ ಅಕ್ಷರ ಗಾತ್ರ ಕಡಿಮೆ ಮಾಡಿ</string>
   <string name="delete_list" formatted="false">ಪಟ್ಟಿ ಅಳಿಸಿ</string>
   <string name="delete_notice" formatted="false">ಈ ಸ್ಥಳೀಯ ಪಟ್ಟಿಯನ್ನು ಮಾತ್ರ ಅಳಿಸಬೇಕೆ? ಇತರ ಪಟ್ಟಿಗಳು ಮತ್ತು ಗ್ರಂಥಾಲಯದ ವಿಷಯ ಬದಲಾಗುವುದಿಲ್ಲ.</string>
+  <string name="density_compact" formatted="false">ಕಡಿಮೆ ಅಂತರ</string>
+  <string name="density_normal" formatted="false">ಸಾಮಾನ್ಯ ಅಂತರ</string>
+  <string name="density_relaxed" formatted="false">ಹೆಚ್ಚಿನ ಅಂತರ</string>
   <string name="duplicate_list" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿ ರಚಿಸಿ</string>
   <string name="duplicate_name" formatted="false">ಈ ಹೆಸರು ಇನ್ನೊಂದು ಸ್ಥಳೀಯ ಪಟ್ಟಿಯಲ್ಲಿದೆ. ಅದೇ ಹೆಸರಿನ ಸ್ವತಂತ್ರ ಪಟ್ಟಿಯನ್ನು ಉಳಿಸಬೇಕೆ?</string>
   <string name="edit_entry" formatted="false">ನಮೂದು ತಿದ್ದಿ</string>
@@ -35,6 +39,8 @@
   <string name="favorites" formatted="false">ಮೆಚ್ಚಿನವು</string>
   <string name="fixture_notice" formatted="false">ಅಭಿವೃದ್ಧಿ ಪ್ರಾತ್ಯಕ್ಷಿಕೆ — ಕೃತಕ ಪರೀಕ್ಷಾ ದಾಖಲೆಗಳು; ಪರಿಶೀಲಿಸಿದ ಸಾಹಿತ್ಯ ಅಥವಾ ವೀಡಿಯೊ ವಿವರಗಳಲ್ಲ.</string>
   <string name="follow_device" formatted="false">ಸಾಧನದಂತೆ</string>
+  <string name="font_size_value" formatted="false">{size} {unit}</string>
+  <string name="increase_lyric_font_size" formatted="false">ಸಾಹಿತ್ಯದ ಅಕ್ಷರ ಗಾತ್ರ ಹೆಚ್ಚಿಸಿ</string>
   <string name="language" formatted="false">ಪರದೆಯ ಭಾಷೆ</string>
   <string name="language_name" formatted="false">ಕನ್ನಡ</string>
   <string name="legacy_reference" formatted="false">ಹಳೆಯ ವೀಡಿಯೊ ಉಲ್ಲೇಖ</string>
@@ -56,6 +62,7 @@
   <string name="loading_cancelled" formatted="false">ಲೋಡ್ ಮಾಡುವುದನ್ನು ರದ್ದುಮಾಡಲಾಗಿದೆ.</string>
   <string name="lyric_back" formatted="false">ಸಾಹಿತ್ಯಕ್ಕೆ ಹಿಂತಿರುಗಿ</string>
   <string name="lyric_catalog_pending" formatted="false">ಸಾಹಿತ್ಯದ ಉಲ್ಲೇಖಗಳನ್ನು ತಿಳಿಯಲು ಓದುವ ಗ್ರಂಥಾಲಯವನ್ನು ಸಿದ್ಧಪಡಿಸಿ.</string>
+  <string name="lyric_font_size" formatted="false">ಸಾಹಿತ್ಯದ ಅಕ್ಷರ ಗಾತ್ರ</string>
   <string name="lyric_identifier" formatted="false">ಸಾಹಿತ್ಯದ UUID</string>
   <string name="lyric_no_media" formatted="false">ಈ ಸಾಹಿತ್ಯವನ್ನು ಓದಲು ವೀಡಿಯೊ ಅಥವಾ ಚಿತ್ರದ ಅಗತ್ಯವಿಲ್ಲ.</string>
   <string name="lyric_online_catalog_pending" formatted="false">ಸಾಹಿತ್ಯದ ಉಲ್ಲೇಖಗಳನ್ನು ತಿಳಿಯಲು ಸಾಹಿತ್ಯದ ಪಟ್ಟಿಯನ್ನು ತೆರೆಯಿರಿ.</string>
@@ -84,6 +91,8 @@
   <string name="placeholder_text" formatted="false">ಪಠ್ಯ ನಮೂದಿನ ವಿವರ</string>
   <string name="preparation_notice" formatted="false">ಪ್ರಾರಂಭಿಸಲು ಎಲ್ಲಾ ಕೃತಕ ದಾಖಲೆಗಳನ್ನು ಇಳಿಸಿ ಪರಿಶೀಲಿಸಿ. ಈ ಪ್ರಾತ್ಯಕ್ಷಿಕೆ ಸಿದ್ಧಪಡಿಸಿದ ದತ್ತಾಂಶವನ್ನು ಮೆಮೊರಿಯಲ್ಲಿ ಇಡುತ್ತದೆ; ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="prepare_library" formatted="false">ಓದುವ ಗ್ರಂಥಾಲಯ ಸಿದ್ಧಪಡಿಸಿ</string>
+  <string name="reading_density" formatted="false">ಸಾಲುಗಳ ಅಂತರ</string>
+  <string name="reading_preferences" formatted="false">ಓದುವ ಆದ್ಯತೆಗಳು</string>
   <string name="ready" formatted="false">ಪರಿಶೀಲಿಸಿದ ಪರೀಕ್ಷಾ ಪ್ರಕಟಣೆ</string>
   <string name="recent_history" formatted="false">ಇತ್ತೀಚೆಗೆ ತೆರೆದವು</string>
   <string name="recent_history_enabled" formatted="false">ಇತ್ತೀಚೆಗೆ ತೆರೆದ ಸಾಹಿತ್ಯವನ್ನು ದಾಖಲಿಸಿ</string>

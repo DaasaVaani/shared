@@ -1,5 +1,24 @@
 # Documentation history
 
+## 2026-10-22: reading-preference UI prerequisites
+
+- Added nine bilingual captions for independent lyric font controls/current
+  native-unit values and Compact/Normal/Relaxed reading density, supporting
+  UX-02, UX-14 and SET-04. These are additive UI resources only, not implemented
+  consumer settings, a personal migration or full reading/accessibility parity.
+- Existing labels, all schema/settings/type/fixture contracts and independent
+  consumer pins remain unchanged. Numeric bounds/spacing and preserving
+  per-consumer preference protocols must be defined before consumer behavior.
+- Full `npm run check` passed29 tests, including distinct density captions,
+  exact native-unit placeholders and both platform outputs. Regeneration of
+  all three UI resources was byte-identical. Compatibility checks proved
+  exactly nine new keys per locale, every preceding web/Android caption
+  unchanged and no schema/settings/type/fixture diff.
+- `python tools\check_repository.py` passed72 tracked files; strict YAML passed
+  11 documents, actionlint/ShellCheck and staged/unstaged whitespace passed.
+  These are structural UI-resource checks, not implemented consumer preferences
+  or linguistic/device/release acceptance. Neither consumer pin was advanced.
+
 ## 2026-10-22: distinct online-reading UI resources
 
 - Added bilingual online catalog/item-loading limitations, unresolved-catalog
