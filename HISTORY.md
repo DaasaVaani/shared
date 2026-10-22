@@ -1,5 +1,18 @@
 # Documentation history
 
+## 2026-10-22: aligning the current contract inventory with typed v2
+
+- Archived the checklist/specification wording that named only executable list
+  v1/local-record v1 and described both list and backup files as version1.
+  Current guidance now links both frozen v1 and separate typed v2 families;
+  the full-backup family remains independently version1, not a list-v2 upgrade.
+- Shared contract7ad993c8362231aec95bb1b980ebd3b386059488 passed exact preflight
+  39706619174 and main39706731354. This follow-up changes documentation only;
+  consumer pins stay independent and no generated/schema/runtime bytes change.
+- `npm run check` again passed27 tests, `python tools\check_repository.py`
+  passed69 tracked files, actionlint1.7.12 with ShellCheck0.11.0 passed and
+  `git --no-pager diff --check` passed.
+
 ## 2026-10-22: typed personal references and minimal-list v2 contracts
 
 - Archived prior current statements that typed references/list v2 were only a

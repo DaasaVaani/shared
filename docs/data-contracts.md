@@ -9,8 +9,10 @@ implementation is authorized, not global production readiness.
 
 - Approved [lyric identity/optional media contract](lyric-identity.md): permanent
   lyric UUIDs, media-independent publication eligibility, typed legacy-preserving
-  personal references, target minimal-list v2 and staged non-writing adoption.
-  Executable fixture/v1 schemas remain unchanged; production adapters are pending.
+  personal references and minimal-list v2. Separate executable typed-reference,
+  v2 transfer and v2 local-record schemas/types/fixtures now exist; fixture/v1
+  schemas remain unchanged. Consumer structural upgrades require their own
+  preserving validation; no identity mapping is inferred or authorized.
 - Sources: restricted Markdown/strict YAML, one canonical fence, persisted line
   UUIDs, explicit verse-end metadata, literal Source Latin, grouped metadata,
   stable filenames, draft/hold/invalid distinctions and code-point range rules.
@@ -35,9 +37,9 @@ implementation is authorized, not global production readiness.
 - Personal: independent occurrences/references, exact capacity, forward migration,
   portable minimal lists, same-platform logical full backups, revision-checked
   recoverable replacement and truthful locale side effects.
-  The [minimal-list v1 JSON shape](list-transfer.md), generated schema and
-  [local logical list record](list-transfer.md#local-list-record-v1) and synthetic
-  structural/boundary fixtures exist. Consumer feature status belongs in the
+  The [typed-reference/v2 contracts](list-transfer.md#typed-reference-and-list-v2)
+  and frozen v1 JSON/local-record contracts have generated schemas and synthetic
+  structural/boundary fixtures. Consumer feature status belongs in the
   owning roadmap; native parity, complete enclosing personal/database schemas
   and backup/replacement protocols remain open.
 - Platform: independent UI/script preferences, system-font limitations, static

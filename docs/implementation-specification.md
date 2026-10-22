@@ -371,14 +371,15 @@ Minimal list format: version/name/ordered typed references with optional user
 fallback or intentional single-line placeholder only. No ordinary titles, lyrics,
 preferences or progress. Preview then save new independent list only, never merge/
 append/replace by name. Cancel/failure unchanged. Cross-platform lists supported.
-The executable [minimal-list v1 structural contract](list-transfer.md) fixes the
-envelope/entry keys, text invariants and settings-derived shape limits. Shared
+The executable [minimal-list contracts](list-transfer.md) fix independent frozen
+v1 and typed-reference v2 envelope/entry keys, text invariants and settings-derived
+shape limits. A UUID-looking v1 item remains a legacy reference. Shared
 supplies no runtime codec or database. Consumer implementation status is tracked
 in the [Website roadmap](https://github.com/DaasaVaani/DaasaVaani.github.io/blob/main/docs/implementation-roadmap.md)
 and owning native guide; complete cross-platform round-trip evidence remains a
 gate. Schema acceptance alone is not transfer readiness.
-The [local logical list-record shape](list-transfer.md#local-list-record-v1)
-separately fixes list/occurrence UUIDv4 fields without exporting them. Aggregate
+The [typed local-record v2 and frozen v1 shapes](list-transfer.md#typed-reference-and-list-v2)
+separately fix list/occurrence UUIDv4 fields without exporting them. Aggregate
 identity/capacity, enclosing personal metadata and transactional persistence still
 require consumer protocols; the record schema alone cannot authorize a write.
 
@@ -391,7 +392,8 @@ Offer current export; before commit failure/cancel changes nothing. OS locale
 postcommit failure reports restored data plus specific unapplied-language retry.
 
 Gzip UTF8 JSON files: .dvlist.json.gz / .dvbackup.json.gz, identifiers
-daasavaani-list / daasavaani-personal-backup, version1, full backup android/web.
+daasavaani-list v1/v2 / daasavaani-personal-backup independently version1, full
+backup android/web. Lyric-reference lists require v2, never silent downgrade.
 Encoded list/backup9/65MiB, decoded JSON8/64MiB. One valid gzip member/checksum/
 length, no trailing data or ratio cap; bounded off-UI decode/validation. Emit
 compact UTF8 without BOM, accept one leading BOM within decoded cap. Never strip
