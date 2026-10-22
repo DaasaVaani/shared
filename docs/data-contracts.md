@@ -54,7 +54,10 @@ implementation is authorized, not global production readiness.
   Additive Recite captions cover only explicit focused reading/control
   restoration and truthful lifecycle-scoped screen-awake adapter states; see
   [the platform contract](implementation-specification.md#11-reading-ui-localization-and-platform-adapters).
-  List navigation/resume and reviewed verse Practice remain separate surfaces.
+  Additive list captions distinguish ordered occurrence navigation, empty lists
+  and explicit start/end states without claiming Continue recitation or durable
+  offline lyrics. Consumer traversal/resume and reviewed verse Practice remain
+  separate implementation surfaces.
 
 ## Required fixtures
 

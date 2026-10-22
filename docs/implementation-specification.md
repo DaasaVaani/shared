@@ -456,6 +456,17 @@ preserve any pre-existing screen-awake state they do not own. Consumers adopt
 the additive UI captions independently; no personal/publication schema change
 or durable offline/complete recitation claim follows from caption generation.
 
+List Recite (REC-03) traverses ordered entry occurrences, including consecutive
+repeated references and intentional placeholders. Previous/next controls expose
+explicit start/end states, not wrapping or silently skipping unavailable entries.
+Use the existing localized entry-number message for the exact position/total;
+an empty list has an explicit empty state, not an invented entry. Preserve typed
+identity and show the existing unavailable-lyrics message with a placeholder or
+unavailable reference rather than inferring a match. The additive list captions
+are implementation prerequisites only: each consumer must validate its own
+available-content/offline lifecycle. They neither implement traversal nor add
+the REC-04 latest-list/occurrence record, full backups or durable offline lyrics.
+
 ## 12. Links, hosting and application updates
 
 Website base / and Library /library/ configurable. Canonical /open/ static hash

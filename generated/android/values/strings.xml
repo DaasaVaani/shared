@@ -39,6 +39,7 @@
   <string name="empty_learning" formatted="false">No lyrics have learning labels yet.</string>
   <string name="empty_lists" formatted="false">No saved lists yet. Create an empty list or preview a list file or link in Settings.</string>
   <string name="empty_recent_history" formatted="false">No recently opened lyrics.</string>
+  <string name="empty_recitation" formatted="false">This list has no entries to recite.</string>
   <string name="entry_number" formatted="false">Entry {position} of {total}</string>
   <string name="entry_text_hint" formatted="false">Use 1-{limit} Unicode code points on one line when supplying text. Spaces are preserved.</string>
   <string name="error" formatted="false">Unable to open the library</string>
@@ -72,6 +73,7 @@
   <string name="list_link_copied" formatted="false">Snapshot link copied. Anyone receiving it can read or forward its contents.</string>
   <string name="list_name" formatted="false">List name</string>
   <string name="list_name_hint" formatted="false">Use 1-{limit} Unicode code points on one line. Spaces are preserved.</string>
+  <string name="list_recite_notice" formatted="false">List order includes repeated entries and placeholders. Continue recitation and durable offline lyrics are not implemented yet.</string>
   <string name="list_saved" formatted="false">Saved as an independent local list.</string>
   <string name="list_share_cancelled" formatted="false">Sharing cancelled. Nothing was changed.</string>
   <string name="list_share_failed" formatted="false">Sharing or copying failed. Use the displayed link or download the file instead.</string>
@@ -96,6 +98,7 @@
   <string name="lyrics_unavailable" formatted="false">Lyrics unavailable in DaasaVaani.</string>
   <string name="move_down" formatted="false">Move down</string>
   <string name="move_up" formatted="false">Move up</string>
+  <string name="next_recitation_entry" formatted="false">Next entry</string>
   <string name="no_another_lyric" formatted="false">No other lyric is available in this catalog.</string>
   <string name="no_lists_for_item" formatted="false">Create a list before adding this reference.</string>
   <string name="no_results" formatted="false">No matching records. Try another word.</string>
@@ -113,13 +116,17 @@
   <string name="placeholder_text" formatted="false">Placeholder text</string>
   <string name="preparation_notice" formatted="false">Download and validate all synthetic records to begin. This demo holds prepared data in memory; persistent offline snapshots are not implemented.</string>
   <string name="prepare_library" formatted="false">Prepare reading library</string>
+  <string name="previous_recitation_entry" formatted="false">Previous entry</string>
   <string name="reading_density" formatted="false">Reading density</string>
   <string name="reading_preferences" formatted="false">Reading preferences</string>
   <string name="ready" formatted="false">Verified fixture publication</string>
   <string name="recent_history" formatted="false">Recently opened</string>
   <string name="recent_history_enabled" formatted="false">Record recently opened lyrics</string>
   <string name="recent_history_notice" formatted="false">History stays only on this device. Turning recording off keeps existing entries.</string>
+  <string name="recitation_end" formatted="false">End of list.</string>
+  <string name="recitation_start" formatted="false">Start of list.</string>
   <string name="recite" formatted="false">Recite</string>
+  <string name="recite_list" formatted="false">Recite list</string>
   <string name="recite_notice" formatted="false">Focused reading only. List recitation and Continue recitation are not implemented yet.</string>
   <string name="reference_known" formatted="false">In the available catalog. Offline readiness is not established.</string>
   <string name="reference_pending" formatted="false">Library details are not yet resolved. The identifier is preserved; its absence has not been established.</string>

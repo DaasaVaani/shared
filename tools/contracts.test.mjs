@@ -93,6 +93,25 @@ test("Recite captions distinguish lifecycle requests from full recitation and ma
   assert.match(source.en.reciteNotice, /not implemented/);
   assert.match(source.en.screenAwakeFailed, /retry/);
 });
+test("list Recite captions distinguish ordered entries and boundaries without claiming durable resume", async () => {
+  const source = strictYaml(await readFile(new URL("../locales/ui.yml", import.meta.url), "utf8"));
+  const web = JSON.parse(await readFile(new URL("../generated/web/ui.json", import.meta.url), "utf8"));
+  const keys = ["reciteList", "previousRecitationEntry", "nextRecitationEntry", "recitationStart",
+    "recitationEnd", "emptyRecitation", "listReciteNotice"];
+  for (const [locale, messages] of Object.entries(source)) {
+    const xml = await readFile(new URL(`../generated/android/${locale === "en" ? "values" : `values-${locale}`}/strings.xml`, import.meta.url), "utf8");
+    assert.equal(new Set(keys.map(key => messages[key])).size, keys.length);
+    for (const key of keys) {
+      assert.equal(typeof messages[key], "string"); assert.ok(messages[key].length);
+      assert.equal(web[locale][key], messages[key]);
+      assert.ok(xml.includes(`<string name="${key.replace(/[A-Z]/g, letter => "_" + letter.toLowerCase())}" formatted="false">`));
+    }
+  }
+  assert.match(source.en.listReciteNotice, /repeated entries and placeholders/);
+  assert.match(source.en.listReciteNotice, /Continue recitation and durable offline lyrics are not implemented/);
+  assert.match(source.kn.listReciteNotice, /\p{Script=Kannada}/u);
+  assert.equal(source.en.entryNumber, "Entry {position} of {total}");
+});
 test("learning captions retain all approved states and match both generated platform resources", async () => {
   const source = strictYaml(await readFile(new URL("../locales/ui.yml", import.meta.url), "utf8"));
   const web = JSON.parse(await readFile(new URL("../generated/web/ui.json", import.meta.url), "utf8"));

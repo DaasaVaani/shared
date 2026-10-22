@@ -1,5 +1,24 @@
 # Documentation history
 
+## 2026-10-22: ordered list Recite caption prerequisite
+
+- Added7 bilingual captions for explicit list Recite, previous/next entry,
+  start/end/empty states and a bounded list notice. Existing entry-number and
+  unavailable-lyrics messages are reused unchanged. All earlier captions,
+  settings/defaults, schemas, types and fixtures remain unchanged.
+- REC-03 remains independently implemented/validated by each consumer; this
+  prerequisite does not implement traversal, REC-04 durable resume, reviewed
+  verses, full backups or persistent offline lyrics. Neither consumer pin is
+  changed by this Shared work.
+- `npm run check` passed37 tests, zero failures/cancellations/skips.
+  `python tools\check_repository.py` passed75 tracked files; actionlint1.7.12
+  with ShellCheck0.11.0 and both Git whitespace checks passed. Inline Node
+  validation parsed11 tracked YAML files, verified exactly7 additive keys per
+  locale with all earlier captions/settings/schemas/types/fixtures unchanged,
+  and found all21 generated/schema outputs byte-identical after repeat
+  `npm run build`. These are prerequisite checks, not consumer implementation
+  or linguistic/release acceptance.
+
 ## 2026-10-22: focused Recite caption prerequisite
 
 - Added12 bilingual captions for explicit individual Recite, control restoration

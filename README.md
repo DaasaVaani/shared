@@ -36,6 +36,12 @@ promise against operating-system restrictions. Captions do not implement
 recitation, persist a mode, prepare content or establish list navigation/resume,
 reviewed verse Practice or durable offline readiness.
 
+Additive list Recite captions cover ordered entry controls and explicit empty/
+start/end states. Repeated references and placeholders remain separate entries;
+the existing entry-number and unavailable-lyrics messages retain their meanings.
+These resources do not implement consumer list navigation or the independent
+latest-list/occurrence persistence and backup contract.
+
 Reading-preference captions cover independent lyric font controls and
 Compact/Normal/Relaxed density. They do not define numeric font bounds or spacing,
 add persisted fields or implement controls. Consumers retain native platform

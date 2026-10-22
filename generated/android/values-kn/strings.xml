@@ -39,6 +39,7 @@
   <string name="empty_learning" formatted="false">ಇನ್ನೂ ಕಲಿಕೆಯ ಗುರುತು ನೀಡಿದ ಸಾಹಿತ್ಯ ಇಲ್ಲ.</string>
   <string name="empty_lists" formatted="false">ಉಳಿಸಿದ ಪಟ್ಟಿಗಳಿಲ್ಲ. ಖಾಲಿ ಪಟ್ಟಿ ರಚಿಸಿ ಅಥವಾ ಆಯ್ಕೆಗಳಲ್ಲಿ ಪಟ್ಟಿಯ ಕಡತ ಅಥವಾ ಕೊಂಡಿಯ ಮುನ್ನೋಟ ನೋಡಿ.</string>
   <string name="empty_recent_history" formatted="false">ಇತ್ತೀಚೆಗೆ ತೆರೆದ ಸಾಹಿತ್ಯವಿಲ್ಲ.</string>
+  <string name="empty_recitation" formatted="false">ಪಠಿಸಲು ಈ ಪಟ್ಟಿಯಲ್ಲಿ ಯಾವುದೇ ನಮೂದುಗಳಿಲ್ಲ.</string>
   <string name="entry_number" formatted="false">{total} ನಮೂದುಗಳಲ್ಲಿ {position}ನೆಯ ನಮೂದು</string>
   <string name="entry_text_hint" formatted="false">ಪಠ್ಯ ನೀಡುವಾಗ ಒಂದೇ ಸಾಲಿನಲ್ಲಿ 1-{limit} ಯುನಿಕೋಡ್ ಅಕ್ಷರ ಸ್ಥಾನಗಳನ್ನು ಬಳಸಿ. ಖಾಲಿ ಜಾಗಗಳನ್ನು ಹಾಗೆಯೇ ಉಳಿಸಲಾಗುತ್ತದೆ.</string>
   <string name="error" formatted="false">ಗ್ರಂಥಾಲಯ ತೆರೆಯಲಾಗಲಿಲ್ಲ</string>
@@ -72,6 +73,7 @@
   <string name="list_link_copied" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ ನಕಲಿಸಲಾಗಿದೆ. ಅದನ್ನು ಸ್ವೀಕರಿಸಿದವರು ಅದರ ವಿಷಯ ಓದಬಹುದು ಅಥವಾ ಮುಂದಕ್ಕೆ ಹಂಚಬಹುದು.</string>
   <string name="list_name" formatted="false">ಪಟ್ಟಿಯ ಹೆಸರು</string>
   <string name="list_name_hint" formatted="false">ಒಂದೇ ಸಾಲಿನಲ್ಲಿ 1-{limit} ಯುನಿಕೋಡ್ ಅಕ್ಷರ ಸ್ಥಾನಗಳನ್ನು ಬಳಸಿ. ಖಾಲಿ ಜಾಗಗಳನ್ನು ಹಾಗೆಯೇ ಉಳಿಸಲಾಗುತ್ತದೆ.</string>
+  <string name="list_recite_notice" formatted="false">ಪಟ್ಟಿಯ ಕ್ರಮದಲ್ಲಿ ಮರುಕಳಿಸುವ ನಮೂದುಗಳು ಮತ್ತು ಪಠ್ಯ ನಮೂದುಗಳೂ ಸೇರಿವೆ. ಪಠಣ ಮುಂದುವರಿಸುವಿಕೆ ಮತ್ತು ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಕೃತಿಗಳು ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="list_saved" formatted="false">ಸ್ವತಂತ್ರ ಸ್ಥಳೀಯ ಪಟ್ಟಿಯಾಗಿ ಉಳಿಸಲಾಗಿದೆ.</string>
   <string name="list_share_cancelled" formatted="false">ಹಂಚಿಕೆಯನ್ನು ರದ್ದುಮಾಡಲಾಗಿದೆ. ಏನನ್ನೂ ಬದಲಿಸಿಲ್ಲ.</string>
   <string name="list_share_failed" formatted="false">ಹಂಚಿಕೆ ಅಥವಾ ನಕಲು ವಿಫಲವಾಗಿದೆ. ತೋರಿಸಿದ ಕೊಂಡಿ ಬಳಸಿ ಅಥವಾ ಕಡತ ಇಳಿಸಿ.</string>
@@ -96,6 +98,7 @@
   <string name="lyrics_unavailable" formatted="false">ದಾಸವಾಣಿಯಲ್ಲಿ ಸಾಹಿತ್ಯ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="move_down" formatted="false">ಕೆಳಕ್ಕೆ ಸರಿಸಿ</string>
   <string name="move_up" formatted="false">ಮೇಲಕ್ಕೆ ಸರಿಸಿ</string>
+  <string name="next_recitation_entry" formatted="false">ಮುಂದಿನ ನಮೂದು</string>
   <string name="no_another_lyric" formatted="false">ಈ ಗ್ರಂಥಾಲಯದಲ್ಲಿ ಬೇರೆ ಸಾಹಿತ್ಯ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="no_lists_for_item" formatted="false">ಈ ಉಲ್ಲೇಖ ಸೇರಿಸುವ ಮೊದಲು ಪಟ್ಟಿ ರಚಿಸಿ.</string>
   <string name="no_results" formatted="false">ಹೊಂದುವ ದಾಖಲೆಗಳಿಲ್ಲ. ಬೇರೆ ಪದ ಪ್ರಯತ್ನಿಸಿ.</string>
@@ -113,13 +116,17 @@
   <string name="placeholder_text" formatted="false">ಪಠ್ಯ ನಮೂದಿನ ವಿವರ</string>
   <string name="preparation_notice" formatted="false">ಪ್ರಾರಂಭಿಸಲು ಎಲ್ಲಾ ಕೃತಕ ದಾಖಲೆಗಳನ್ನು ಇಳಿಸಿ ಪರಿಶೀಲಿಸಿ. ಈ ಪ್ರಾತ್ಯಕ್ಷಿಕೆ ಸಿದ್ಧಪಡಿಸಿದ ದತ್ತಾಂಶವನ್ನು ಮೆಮೊರಿಯಲ್ಲಿ ಇಡುತ್ತದೆ; ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="prepare_library" formatted="false">ಓದುವ ಗ್ರಂಥಾಲಯ ಸಿದ್ಧಪಡಿಸಿ</string>
+  <string name="previous_recitation_entry" formatted="false">ಹಿಂದಿನ ನಮೂದು</string>
   <string name="reading_density" formatted="false">ಸಾಲುಗಳ ಅಂತರ</string>
   <string name="reading_preferences" formatted="false">ಓದುವ ಆದ್ಯತೆಗಳು</string>
   <string name="ready" formatted="false">ಪರಿಶೀಲಿಸಿದ ಪರೀಕ್ಷಾ ಪ್ರಕಟಣೆ</string>
   <string name="recent_history" formatted="false">ಇತ್ತೀಚೆಗೆ ತೆರೆದವು</string>
   <string name="recent_history_enabled" formatted="false">ಇತ್ತೀಚೆಗೆ ತೆರೆದ ಸಾಹಿತ್ಯವನ್ನು ದಾಖಲಿಸಿ</string>
   <string name="recent_history_notice" formatted="false">ಇತಿಹಾಸವು ಈ ಸಾಧನದಲ್ಲಿ ಮಾತ್ರ ಉಳಿಯುತ್ತದೆ. ದಾಖಲಿಸುವುದನ್ನು ನಿಲ್ಲಿಸಿದರೂ ಹಿಂದಿನ ದಾಖಲೆಗಳು ಉಳಿಯುತ್ತವೆ.</string>
+  <string name="recitation_end" formatted="false">ಪಟ್ಟಿಯ ಅಂತ್ಯ.</string>
+  <string name="recitation_start" formatted="false">ಪಟ್ಟಿಯ ಆರಂಭ.</string>
   <string name="recite" formatted="false">ಪಠಣ</string>
+  <string name="recite_list" formatted="false">ಪಟ್ಟಿಯನ್ನು ಪಠಿಸಿ</string>
   <string name="recite_notice" formatted="false">ಏಕಾಗ್ರ ಓದು ಮಾತ್ರ. ಪಟ್ಟಿಯ ಪಠಣ ಮತ್ತು ಪಠಣ ಮುಂದುವರಿಸುವ ಸೌಲಭ್ಯಗಳು ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="reference_known" formatted="false">ಲಭ್ಯವಿರುವ ಸೂಚಿಯಲ್ಲಿದೆ. ಆಫ್‌ಲೈನ್ ಸಿದ್ಧತೆಯನ್ನು ಸೂಚಿಸುವುದಿಲ್ಲ.</string>
   <string name="reference_pending" formatted="false">ಗ್ರಂಥಾಲಯದ ವಿವರಗಳು ಇನ್ನೂ ನಿರ್ಧಾರವಾಗಿಲ್ಲ. ಗುರುತನ್ನು ಉಳಿಸಲಾಗಿದೆ; ಅದು ಇಲ್ಲ ಎಂದು ನಿರ್ಧರಿಸಿಲ್ಲ.</string>
