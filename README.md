@@ -12,6 +12,11 @@ also support owner-authorized, text-only prelaunch lyrics with stable UUIDs and
 explicit prelaunch stage. They are separate from fixture/v1 families.
 Drafts still require holds; accepting a header is not publication/launch approval.
 
+UI resources distinguish Website on-demand catalog/item loading from Android's
+consented complete-library preparation. Consumers adopt these labels independently;
+new labels do not change publication capabilities, native preparation requirements
+or establish persistent offline storage.
+
 Portable UI defaults and allowed choices follow
 [`schemas/ui-defaults.schema.json`](schemas/ui-defaults.schema.json).
 Appearance tokens are `light`, `dark`, `warm` and `device` (Follow device);

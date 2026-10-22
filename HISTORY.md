@@ -1,5 +1,20 @@
 # Documentation history
 
+## 2026-10-22: distinct online-reading UI resources
+
+- Added bilingual online catalog/item-loading limitations, unresolved-catalog
+  guidance and generic loading cancellation resources. Existing complete-library
+  preparation labels remain unchanged for independently pinned native consumers.
+  This supports the already-approved Website individual-reading direction without
+  authorizing automatic complete downloads, new lyric variants or offline claims.
+- Source/publication schemas, all personal schemas/settings and fixture contracts
+  remain unchanged. Consumer implementation and validation are separate.
+- `npm run check` passed all28 tests and generated both platform catalogs.
+  `python tools\check_repository.py` passed72 tracked files; whitespace passed.
+  A second generation was byte-identical; all schemas/settings/types/fixtures
+  remained unchanged. Strict YAML passed11 files and configured
+  actionlint1.7.12/ShellCheck0.11.0 passed.
+
 ## 2026-10-22: portable recently opened history
 
 - The owner selected initially enabled recording rather than opt-in recording.

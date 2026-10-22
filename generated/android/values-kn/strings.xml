@@ -53,10 +53,13 @@
   <string name="lists" formatted="false">ಪಟ್ಟಿಗಳು</string>
   <string name="load_search" formatted="false">ಹುಡುಕಾಟ ಸಿದ್ಧಪಡಿಸಿ</string>
   <string name="loading" formatted="false">ಗ್ರಂಥಾಲಯ ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…</string>
+  <string name="loading_cancelled" formatted="false">ಲೋಡ್ ಮಾಡುವುದನ್ನು ರದ್ದುಮಾಡಲಾಗಿದೆ.</string>
   <string name="lyric_back" formatted="false">ಸಾಹಿತ್ಯಕ್ಕೆ ಹಿಂತಿರುಗಿ</string>
   <string name="lyric_catalog_pending" formatted="false">ಸಾಹಿತ್ಯದ ಉಲ್ಲೇಖಗಳನ್ನು ತಿಳಿಯಲು ಓದುವ ಗ್ರಂಥಾಲಯವನ್ನು ಸಿದ್ಧಪಡಿಸಿ.</string>
   <string name="lyric_identifier" formatted="false">ಸಾಹಿತ್ಯದ UUID</string>
   <string name="lyric_no_media" formatted="false">ಈ ಸಾಹಿತ್ಯವನ್ನು ಓದಲು ವೀಡಿಯೊ ಅಥವಾ ಚಿತ್ರದ ಅಗತ್ಯವಿಲ್ಲ.</string>
+  <string name="lyric_online_catalog_pending" formatted="false">ಸಾಹಿತ್ಯದ ಉಲ್ಲೇಖಗಳನ್ನು ತಿಳಿಯಲು ಸಾಹಿತ್ಯದ ಪಟ್ಟಿಯನ್ನು ತೆರೆಯಿರಿ.</string>
+  <string name="lyric_online_limits" formatted="false">ಕನ್ನಡ ಪಠ್ಯವನ್ನು ಓದಲು ಮಾತ್ರ. ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಪಟ್ಟಿಯ ಮಾಹಿತಿಯನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತದೆ; ಸಾಹಿತ್ಯವನ್ನು ತೆರೆದಾಗ ಆ ಸಾಹಿತ್ಯ ಮಾತ್ರ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತದೆ. ಪರಿಶೀಲಿಸಿದ ಪಠ್ಯವು ಮೆಮೊರಿಯಲ್ಲಿ ಮಾತ್ರ ಉಳಿಯುತ್ತದೆ, ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹವಲ್ಲ. ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಈ ಸಾಧನದಲ್ಲೇ ಉಳಿಯುತ್ತದೆ; ಸಂಪೂರ್ಣ ಭಾಷಾಧಾರಿತ ಹುಡುಕಾಟ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="lyric_personal_limits" formatted="false">ಕನ್ನಡ ಪಠ್ಯವನ್ನು ಓದಲು ಮಾತ್ರ. ಎಲ್ಲ ಸಾಹಿತ್ಯವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ನಿಮ್ಮ ಒಪ್ಪಿಗೆ ಅಗತ್ಯ. ಸಿದ್ಧಪಡಿಸಿದ ಸಾಹಿತ್ಯವು ಮೆಮೊರಿಯಲ್ಲಿ ಮಾತ್ರ ಉಳಿಯುತ್ತದೆ; ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹವಲ್ಲ. ಮೆಚ್ಚಿನವುಗಳು ಮತ್ತು ವೈಯಕ್ತಿಕ ಪಟ್ಟಿಗಳು ಈ ಸಾಧನದಲ್ಲೇ ಉಳಿಯುತ್ತವೆ; ಸಂಪೂರ್ಣ ಭಾಷಾಧಾರಿತ ಹುಡುಕಾಟ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="lyric_preview_limits" formatted="false">ಕನ್ನಡ ಪಠ್ಯವನ್ನು ಓದಲು ಮಾತ್ರ. ಎಲ್ಲ ಸಾಹಿತ್ಯವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ನಿಮ್ಮ ಒಪ್ಪಿಗೆ ಅಗತ್ಯ. ಸಿದ್ಧಪಡಿಸಿದ ಸಾಹಿತ್ಯವು ಮೆಮೊರಿಯಲ್ಲಿ ಮಾತ್ರ ಉಳಿಯುತ್ತದೆ; ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹವಲ್ಲ. ಈ ಸಾಹಿತ್ಯಕ್ಕೆ ಮೆಚ್ಚಿನವುಗಳು, ವೈಯಕ್ತಿಕ ಪಟ್ಟಿಗಳು ಮತ್ತು ಸಂಪೂರ್ಣ ಹುಡುಕಾಟ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="lyric_preview_notice" formatted="false">ಪೂರ್ವಪ್ರಕಟಣೆ — ಅಪ್ಲಿಕೇಶನ್ ಅಭಿವೃದ್ಧಿ ಮತ್ತು ಬಿಡುಗಡೆ ಪರಿಶೀಲನೆಗಳು ಇನ್ನೂ ನಡೆಯುತ್ತಿವೆ. ಇದು ಸಾರ್ವಜನಿಕ ಬಿಡುಗಡೆಯಲ್ಲ.</string>

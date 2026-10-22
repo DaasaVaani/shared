@@ -53,10 +53,13 @@
   <string name="lists" formatted="false">Lists</string>
   <string name="load_search" formatted="false">Load search</string>
   <string name="loading" formatted="false">Validating library…</string>
+  <string name="loading_cancelled" formatted="false">Loading cancelled.</string>
   <string name="lyric_back" formatted="false">Back to lyrics</string>
   <string name="lyric_catalog_pending" formatted="false">Prepare the reading library to resolve lyric references.</string>
   <string name="lyric_identifier" formatted="false">Lyric UUID</string>
   <string name="lyric_no_media" formatted="false">No video or image is needed to read this lyric.</string>
+  <string name="lyric_online_catalog_pending" formatted="false">Open the lyric catalog to resolve lyric references.</string>
+  <string name="lyric_online_limits" formatted="false">Canonical Kannada only. Online browsing loads catalog metadata; opening a lyric downloads just that lyric. Verified content stays in memory, not persistent offline storage. Personal data stays on this device; full linguistic search is not implemented.</string>
   <string name="lyric_personal_limits" formatted="false">Canonical Kannada only. Complete-library download requires your consent. Prepared lyrics are kept only in memory, not persistent offline storage. Favorites and personal lists stay on this device; full linguistic search is not implemented.</string>
   <string name="lyric_preview_limits" formatted="false">Canonical Kannada only. Complete-library download requires your consent. Prepared lyrics are kept only in memory, not persistent offline storage. Favorites, lists and full search for these lyric IDs are not implemented yet.</string>
   <string name="lyric_preview_notice" formatted="false">Prelaunch lyrics — product implementation and release checks are still in progress. This is not the public launch.</string>
