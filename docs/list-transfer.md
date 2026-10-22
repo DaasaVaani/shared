@@ -1,8 +1,9 @@
-# Minimal list transfer v1
+# Minimal list transfer contracts
 
 This remains the executable legacy contract. The approved
 [lyric identity and target v2 contract](lyric-identity.md#5-minimal-list-v2-and-legacy-compatibility)
-adds separately typed lyric and legacy references; it is not implemented here.
+adds separately typed lyric and legacy references. Its executable v2 schemas
+and reference types are defined below; consumers adopt independently.
 Never place a lyric UUID in v1's `videoId` field or silently change v1 semantics.
 
 ## Scope and authority
@@ -128,6 +129,52 @@ byte accounting including enclosing metadata, atomic aggregate capacity checks,
 duplicate-name confirmation, migrations, revision/epoch fencing and consumer
 storage/import implementations remain gates. Schema acceptance alone cannot
 authorize a write. An additive schema does not advance any consumer pin.
+
+## Typed reference and list v2
+
+The generated [reference schema](../schemas/personal-reference.schema.json)
+accepts exactly `{kind: "lyric", lyricId}` or
+`{kind: "legacyVideo", videoId}`. Lyric identity is canonical UUIDv4;
+legacy identity retains the unchanged v1 domain and exact case. No automatic
+mapping is implied, even when a legacy value looks like a UUID or an associated
+video is present in a publication. Favorite/reference uniqueness compares both
+kind and value, never the raw identifier alone.
+
+[Minimal-list v2](../schemas/list-transfer-v2.schema.json) has the same
+allowlisted envelope with `formatVersion: 2`. Its ordered entries are those two
+reference kinds with optional user-written `fallback`, or the unchanged
+`{kind: "placeholder", text}`. No v1 `kind: "item"` is accepted in v2.
+The [local record v2](../schemas/list-record-v2.schema.json) retains exactly
+`{id, name, entries}`, adding each occurrence's independent UUID. Its version
+is selected by the owning database adapter, not a field on an incoming transfer.
+[TypeScript declarations](../types/personal.ts) describe these shapes without
+supplying an application runtime.
+
+All text/count/byte rules above apply unchanged to both families. V1 remains
+decodable and can be structurally adapted by replacing only `kind: "item"`
+with `kind: "legacyVideo"`; preserve its identifier, fallback, text and every
+repeated occurrence. Existing local list/occurrence IDs survive a structural
+database upgrade. Incoming confirmed imports still allocate new identities.
+No decoder or migration may infer lyric matches, rewrite IDs, merge lists,
+normalize text, discard unavailable entries or silently downgrade v2 for an old
+receiver. A codec may preserve an unchanged v1 snapshot when re-exporting it;
+exports containing lyric references must use v2.
+
+Before a structural personal-state upgrade, validate the complete legacy state
+with its actual old schema and exact collection bounds, construct the typed
+target, and validate its complete prospective logical UTF8 envelope including
+new discriminants and fresh writer fence. Commit all changes in one recoverable
+transaction only if every check succeeds. A capacity/validation/blocked/future
+version failure preserves the old database; a longer typed envelope is not
+permission to truncate or relax limits. New fences invalidate stale previews/
+writers. Platform database/control and full-backup versions remain independent
+of list transfer/reference versions. This is structural adaptation, not a
+reviewed legacy-to-lyric mapping or authorization to migrate Library sources.
+
+Fixtures and Node checks prove structural allowlists, actual scalar/count
+boundaries and deterministic generation. Consumer codecs, migrations, durable
+lists, exact envelope accounting and native/web interoperability still require
+their own complete validation before a feature is claimed.
 
 ## Remaining decoder and application obligations
 

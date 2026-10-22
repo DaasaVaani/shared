@@ -2,12 +2,14 @@
 
 The approved [lyric identity and optional media contract](docs/lyric-identity.md)
 defines stable video-independent lyric UUIDs, text-only publication eligibility
-and legacy-preserving references. It is a target contract, not an implemented
-production publisher, v2 codec or permission to migrate sources.
+and legacy-preserving references. Executable
+[typed reference/list v2 schemas and types](docs/list-transfer.md#typed-reference-and-list-v2)
+support independently adopted consumer adapters; they are not a production
+publisher, application codec or permission to map legacy identities or migrate sources.
 
 Executable [source/publication schemas](docs/lyric-identity.md#2-publication-eligibility-and-provenance)
 also support owner-authorized, text-only prelaunch lyrics with stable UUIDs and
-explicit pending offline review. They are separate from fixture/v1 families.
+explicit prelaunch stage. They are separate from fixture/v1 families.
 Drafts still require holds; accepting a header is not publication/launch approval.
 
 Portable UI defaults and allowed choices follow

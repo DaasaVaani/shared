@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="add_favorite" formatted="false">ಮೆಚ್ಚಿನವುಗಳಿಗೆ ಸೇರಿಸಿ</string>
+  <string name="add_lyric_reference" formatted="false">ಸಾಹಿತ್ಯದ ಉಲ್ಲೇಖ ಸೇರಿಸಿ</string>
   <string name="add_occurrence" formatted="false">ಈ ನಮೂದು ಸೇರಿಸಿ</string>
   <string name="add_placeholder" formatted="false">ಪಠ್ಯ ನಮೂದು ಸೇರಿಸಿ</string>
   <string name="add_reference" formatted="false">ಗ್ರಂಥಾಲಯದ ಉಲ್ಲೇಖ ಸೇರಿಸಿ</string>
@@ -34,6 +35,7 @@
   <string name="follow_device" formatted="false">ಸಾಧನದಂತೆ</string>
   <string name="language" formatted="false">ಪರದೆಯ ಭಾಷೆ</string>
   <string name="language_name" formatted="false">ಕನ್ನಡ</string>
+  <string name="legacy_reference" formatted="false">ಹಳೆಯ ವೀಡಿಯೊ ಉಲ್ಲೇಖ</string>
   <string name="library" formatted="false">ಗ್ರಂಥಾಲಯ</string>
   <string name="light" formatted="false">ತಿಳಿ</string>
   <string name="list_file_share_unsupported" formatted="false">ಈ ಬ್ರೌಸರ್ ಈ ಕಡತ ಹಂಚಲು ಸಾಧ್ಯವಿಲ್ಲ. ಬದಲಿಗೆ ಸಂಪೂರ್ಣ ಪಟ್ಟಿಯ ಕಡತ ಇಳಿಸಿ.</string>
@@ -50,9 +52,13 @@
   <string name="load_search" formatted="false">ಹುಡುಕಾಟ ಸಿದ್ಧಪಡಿಸಿ</string>
   <string name="loading" formatted="false">ಗ್ರಂಥಾಲಯ ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…</string>
   <string name="lyric_back" formatted="false">ಸಾಹಿತ್ಯಕ್ಕೆ ಹಿಂತಿರುಗಿ</string>
+  <string name="lyric_catalog_pending" formatted="false">ಸಾಹಿತ್ಯದ ಉಲ್ಲೇಖಗಳನ್ನು ತಿಳಿಯಲು ಓದುವ ಗ್ರಂಥಾಲಯವನ್ನು ಸಿದ್ಧಪಡಿಸಿ.</string>
+  <string name="lyric_identifier" formatted="false">ಸಾಹಿತ್ಯದ UUID</string>
   <string name="lyric_no_media" formatted="false">ಈ ಸಾಹಿತ್ಯವನ್ನು ಓದಲು ವೀಡಿಯೊ ಅಥವಾ ಚಿತ್ರದ ಅಗತ್ಯವಿಲ್ಲ.</string>
+  <string name="lyric_personal_limits" formatted="false">ಕನ್ನಡ ಪಠ್ಯವನ್ನು ಓದಲು ಮಾತ್ರ. ಎಲ್ಲ ಸಾಹಿತ್ಯವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ನಿಮ್ಮ ಒಪ್ಪಿಗೆ ಅಗತ್ಯ. ಸಿದ್ಧಪಡಿಸಿದ ಸಾಹಿತ್ಯವು ಮೆಮೊರಿಯಲ್ಲಿ ಮಾತ್ರ ಉಳಿಯುತ್ತದೆ; ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹವಲ್ಲ. ಮೆಚ್ಚಿನವುಗಳು ಮತ್ತು ವೈಯಕ್ತಿಕ ಪಟ್ಟಿಗಳು ಈ ಸಾಧನದಲ್ಲೇ ಉಳಿಯುತ್ತವೆ; ಸಂಪೂರ್ಣ ಭಾಷಾಧಾರಿತ ಹುಡುಕಾಟ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="lyric_preview_limits" formatted="false">ಕನ್ನಡ ಪಠ್ಯವನ್ನು ಓದಲು ಮಾತ್ರ. ಎಲ್ಲ ಸಾಹಿತ್ಯವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ನಿಮ್ಮ ಒಪ್ಪಿಗೆ ಅಗತ್ಯ. ಸಿದ್ಧಪಡಿಸಿದ ಸಾಹಿತ್ಯವು ಮೆಮೊರಿಯಲ್ಲಿ ಮಾತ್ರ ಉಳಿಯುತ್ತದೆ; ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹವಲ್ಲ. ಈ ಸಾಹಿತ್ಯಕ್ಕೆ ಮೆಚ್ಚಿನವುಗಳು, ವೈಯಕ್ತಿಕ ಪಟ್ಟಿಗಳು ಮತ್ತು ಸಂಪೂರ್ಣ ಹುಡುಕಾಟ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="lyric_preview_notice" formatted="false">ಪೂರ್ವಪ್ರಕಟಣೆ — ಅಪ್ಲಿಕೇಶನ್ ಅಭಿವೃದ್ಧಿ ಮತ್ತು ಬಿಡುಗಡೆ ಪರಿಶೀಲನೆಗಳು ಇನ್ನೂ ನಡೆಯುತ್ತಿವೆ. ಇದು ಸಾರ್ವಜನಿಕ ಬಿಡುಗಡೆಯಲ್ಲ.</string>
+  <string name="lyric_reference" formatted="false">ಸಾಹಿತ್ಯದ ಉಲ್ಲೇಖ</string>
   <string name="lyric_title_filter" formatted="false">ಸಾಹಿತ್ಯದ ಶೀರ್ಷಿಕೆಗಳನ್ನು ಹುಡುಕಿ</string>
   <string name="lyrics_unavailable" formatted="false">ದಾಸವಾಣಿಯಲ್ಲಿ ಸಾಹಿತ್ಯ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="move_down" formatted="false">ಕೆಳಕ್ಕೆ ಸರಿಸಿ</string>
@@ -80,6 +86,7 @@
   <string name="remove_favorite" formatted="false">ಮೆಚ್ಚಿನವುಗಳಿಂದ ತೆಗೆದುಹಾಕಿ</string>
   <string name="rename_list" formatted="false">ಪಟ್ಟಿಯ ಹೆಸರು ಬದಲಿಸಿ</string>
   <string name="replace_entry" formatted="false">ಗ್ರಂಥಾಲಯದ ಉಲ್ಲೇಖದಿಂದ ಬದಲಿಸಿ</string>
+  <string name="replace_with_lyric" formatted="false">ಸಾಹಿತ್ಯದ ಉಲ್ಲೇಖದಿಂದ ಬದಲಿಸಿ</string>
   <string name="result_count" formatted="false">{total} ಫಲಿತಾಂಶಗಳಲ್ಲಿ {shown} ತೋರಿಸಲಾಗಿದೆ</string>
   <string name="retry" formatted="false">ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
   <string name="save_entry" formatted="false">ನಮೂದು ಉಳಿಸಿ</string>

@@ -186,6 +186,11 @@ records. Full backup remains a separate same-platform version family.
 
 ## 5. Minimal-list v2 and legacy compatibility
 
+The [executable reference/list contracts](list-transfer.md#typed-reference-and-list-v2)
+now provide separate schemas/types/fixtures for this shape. Old v1 schemas remain
+unchanged. A consumer pin alone does not run a personal-state migration or enable
+its UI; each consumer must implement and validate its structural adapters/fences.
+
 The target envelope is exactly `format: "daasavaani-list"`, `formatVersion: 2`,
 `name` and ordered `entries`. Each entry is exactly one of:
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="add_favorite" formatted="false">Add to favorites</string>
+  <string name="add_lyric_reference" formatted="false">Add lyric reference</string>
   <string name="add_occurrence" formatted="false">Add this occurrence</string>
   <string name="add_placeholder" formatted="false">Add placeholder</string>
   <string name="add_reference" formatted="false">Add library reference</string>
@@ -34,6 +35,7 @@
   <string name="follow_device" formatted="false">Follow device</string>
   <string name="language" formatted="false">Interface language</string>
   <string name="language_name" formatted="false">English</string>
+  <string name="legacy_reference" formatted="false">Legacy video reference</string>
   <string name="library" formatted="false">Library</string>
   <string name="light" formatted="false">Light</string>
   <string name="list_file_share_unsupported" formatted="false">This browser cannot share this file. Download the complete list file instead.</string>
@@ -50,9 +52,13 @@
   <string name="load_search" formatted="false">Load search</string>
   <string name="loading" formatted="false">Validating library…</string>
   <string name="lyric_back" formatted="false">Back to lyrics</string>
+  <string name="lyric_catalog_pending" formatted="false">Prepare the reading library to resolve lyric references.</string>
+  <string name="lyric_identifier" formatted="false">Lyric UUID</string>
   <string name="lyric_no_media" formatted="false">No video or image is needed to read this lyric.</string>
+  <string name="lyric_personal_limits" formatted="false">Canonical Kannada only. Complete-library download requires your consent. Prepared lyrics are kept only in memory, not persistent offline storage. Favorites and personal lists stay on this device; full linguistic search is not implemented.</string>
   <string name="lyric_preview_limits" formatted="false">Canonical Kannada only. Complete-library download requires your consent. Prepared lyrics are kept only in memory, not persistent offline storage. Favorites, lists and full search for these lyric IDs are not implemented yet.</string>
   <string name="lyric_preview_notice" formatted="false">Prelaunch lyrics — product implementation and release checks are still in progress. This is not the public launch.</string>
+  <string name="lyric_reference" formatted="false">Lyric reference</string>
   <string name="lyric_title_filter" formatted="false">Filter lyric titles</string>
   <string name="lyrics_unavailable" formatted="false">Lyrics unavailable in DaasaVaani.</string>
   <string name="move_down" formatted="false">Move down</string>
@@ -80,6 +86,7 @@
   <string name="remove_favorite" formatted="false">Remove from favorites</string>
   <string name="rename_list" formatted="false">Rename list</string>
   <string name="replace_entry" formatted="false">Replace with library reference</string>
+  <string name="replace_with_lyric" formatted="false">Replace with a lyric reference</string>
   <string name="result_count" formatted="false">Showing {shown} of {total}</string>
   <string name="retry" formatted="false">Try again</string>
   <string name="save_entry" formatted="false">Save entry</string>

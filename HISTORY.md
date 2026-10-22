@@ -1,5 +1,28 @@
 # Documentation history
 
+## 2026-10-22: typed personal references and minimal-list v2 contracts
+
+- Archived prior current statements that typed references/list v2 were only a
+  target and not executable schemas. Added separate reference/list-transfer-v2/
+  local-record-v2 families and TypeScript types. Frozen v1 schema bytes and
+  meanings remain unchanged; no fixture capability gains implied lyric support.
+- Legacy values, including UUID-looking strings, remain typed legacy references.
+  Structural forward adaptation preserves all IDs/text/order and is distinct
+  from unauthorized legacy-to-lyric identity mapping. Consumer storage versions,
+  fencing, exact accounting and activation remain independently implemented.
+- Added permitted synthetic mixed/repeated/invalid fixtures and actual settings
+  boundary tests. Additive UI labels support explicit lyric versus legacy entry
+  creation and personal-enabled canonical readers without changing older labels.
+- `npm run check` passed27 tests with zero failures/cancellations/skips,
+  including deterministic UI/schema/Unicode generation and exhaustive existing
+  Unicode conformance. Independent Buffer comparison against Git HEAD proved
+  both frozen v1 schema files byte-identical. An initial generator bracket syntax
+  error was corrected before the complete successful run.
+- `python tools\check_repository.py` passed69 tracked files. Strict Node/YAML
+  parsing passed11 tracked YAML files; actionlint1.7.12 with ShellCheck0.11.0
+  and staged/unstaged whitespace checks passed. No app runtime/codec, personal
+  migration, source changes or consumer pin was supplied by this Shared batch.
+
 ## Owner-reviewed text and complete authoring metadata
 
 - The owner confirmed review of the prepared lyrics and selected all approved

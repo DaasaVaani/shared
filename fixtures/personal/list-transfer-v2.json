@@ -1,0 +1,33 @@
+{
+  "accepted": [
+    {
+      "label": "mixed typed references, repeated occurrences and exact scalar text",
+      "value": {
+        "format": "daasavaani-list", "formatVersion": 2, "name": "  Synthetic e\u0301 \ud83d\ude00  ",
+        "entries": [
+          { "kind": "lyric", "lyricId": "00000000-0000-4000-8000-000000000001", "fallback": "  User label  " },
+          { "kind": "legacyVideo", "videoId": "00000000-0000-4000-8000-000000000001" },
+          { "kind": "placeholder", "text": "<b>Plain synthetic text</b>" },
+          { "kind": "lyric", "lyricId": "00000000-0000-4000-8000-000000000001" },
+          { "kind": "legacyVideo", "videoId": "fixture_ref", "fallback": "e\u0301" }
+        ]
+      }
+    },
+    { "label": "empty list", "value": { "format": "daasavaani-list", "formatVersion": 2, "name": "Synthetic", "entries": [] } }
+  ],
+  "rejectedEntries": [
+    { "kind": "item", "videoId": "fixture_ref" },
+    { "kind": "lyric", "lyricId": "fixture_ref" },
+    { "kind": "lyric", "lyricId": "00000000-0000-5000-8000-000000000001" },
+    { "kind": "lyric", "lyricId": "00000000-0000-4000-7000-000000000001" },
+    { "kind": "lyric", "lyricId": "ABCDEF01-2345-4678-9ABC-DEF012345678" },
+    { "kind": "lyric", "lyricId": "00000000-0000-4000-8000-000000000001", "videoId": "fixture_ref" },
+    { "kind": "lyric", "lyricId": "00000000-0000-4000-8000-000000000001", "id": "00000000-0000-4000-8000-000000000002" },
+    { "kind": "legacyVideo", "videoId": "" },
+    { "kind": "legacyVideo", "videoId": "https://example.invalid/video" },
+    { "kind": "legacyVideo", "videoId": "fixture_ref", "lyricId": "00000000-0000-4000-8000-000000000001" },
+    { "kind": "legacyVideo", "videoId": "fixture_ref", "fallback": "" },
+    { "kind": "placeholder", "text": "Synthetic", "lyricId": "00000000-0000-4000-8000-000000000001" },
+    { "kind": "placeholder", "text": "\ud800" }
+  ]
+}
