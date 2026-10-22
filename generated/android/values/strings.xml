@@ -6,6 +6,7 @@
   <string name="add_placeholder" formatted="false">Add placeholder</string>
   <string name="add_reference" formatted="false">Add library reference</string>
   <string name="add_to_list" formatted="false">Add to a saved list</string>
+  <string name="another_lyric_notice" formatted="false">Chooses from this verified catalog, independently of the title filter. This is not a personalized recommendation.</string>
   <string name="app_name" formatted="false">DaasaVaani</string>
   <string name="app_shell" formatted="false">App interface and updates</string>
   <string name="app_shell_failed" formatted="false">App-interface caching or update checking failed. Retry without deleting personal data.</string>
@@ -80,6 +81,7 @@
   <string name="lyrics_unavailable" formatted="false">Lyrics unavailable in DaasaVaani.</string>
   <string name="move_down" formatted="false">Move down</string>
   <string name="move_up" formatted="false">Move up</string>
+  <string name="no_another_lyric" formatted="false">No other lyric is available in this catalog.</string>
   <string name="no_lists_for_item" formatted="false">Create a list before adding this reference.</string>
   <string name="no_results" formatted="false">No matching records. Try another word.</string>
   <string name="occurrence_added" formatted="false">A new independent occurrence was added to the selected list.</string>
@@ -118,6 +120,7 @@
   <string name="settings" formatted="false">Settings</string>
   <string name="share_list_file" formatted="false">Share list file</string>
   <string name="share_list_link" formatted="false">Share snapshot link</string>
+  <string name="show_another_lyric" formatted="false">Show another lyric</string>
   <string name="show_more_results" formatted="false">Show more results</string>
   <string name="skip_to_content" formatted="false">Skip to content</string>
   <string name="start_again" formatted="false">Return to preparation</string>

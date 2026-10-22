@@ -75,6 +75,20 @@ test("reading-density defaults require a declared supported mode without coercio
     assert.equal(validate(invalid), false);
   }
 });
+test("canonical discovery captions are distinct and equal in both generated platform resources", async () => {
+  const source = strictYaml(await readFile(new URL("../locales/ui.yml", import.meta.url), "utf8"));
+  const web = JSON.parse(await readFile(new URL("../generated/web/ui.json", import.meta.url), "utf8"));
+  const keys = ["showAnotherLyric", "anotherLyricNotice", "noAnotherLyric"];
+  for (const [locale, messages] of Object.entries(source)) {
+    const xml = await readFile(new URL(`../generated/android/${locale === "en" ? "values" : `values-${locale}`}/strings.xml`, import.meta.url), "utf8");
+    assert.equal(new Set(keys.map(key => messages[key])).size, keys.length);
+    for (const key of keys) {
+      assert.equal(typeof messages[key], "string"); assert.ok(messages[key].length);
+      assert.equal(web[locale][key], messages[key]);
+      assert.ok(xml.includes(`<string name="${key.replace(/[A-Z]/g, letter => "_" + letter.toLowerCase())}" formatted="false">`));
+    }
+  }
+});
 test("catalog generator is deterministic and includes both locales", async () => {
   await generate();
   const file = new URL("../generated/web/ui.json", import.meta.url);

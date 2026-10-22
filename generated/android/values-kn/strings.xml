@@ -6,6 +6,7 @@
   <string name="add_placeholder" formatted="false">ಪಠ್ಯ ನಮೂದು ಸೇರಿಸಿ</string>
   <string name="add_reference" formatted="false">ಗ್ರಂಥಾಲಯದ ಉಲ್ಲೇಖ ಸೇರಿಸಿ</string>
   <string name="add_to_list" formatted="false">ಉಳಿಸಿದ ಪಟ್ಟಿಗೆ ಸೇರಿಸಿ</string>
+  <string name="another_lyric_notice" formatted="false">ಶೀರ್ಷಿಕೆ ಹುಡುಕಾಟದಿಂದ ಸ್ವತಂತ್ರವಾಗಿ ಪರಿಶೀಲಿಸಿದ ಈ ಗ್ರಂಥಾಲಯದಿಂದ ಆಯ್ಕೆ ಮಾಡುತ್ತದೆ. ಇದು ವೈಯಕ್ತಿಕ ಶಿಫಾರಸು ಅಲ್ಲ.</string>
   <string name="app_name" formatted="false">ದಾಸವಾಣಿ</string>
   <string name="app_shell" formatted="false">ಅಪ್ಲಿಕೇಶನ್ ಪರದೆಗಳು ಮತ್ತು ನವೀಕರಣಗಳು</string>
   <string name="app_shell_failed" formatted="false">ಅಪ್ಲಿಕೇಶನ್ ಪರದೆಗಳನ್ನು ಸಂಗ್ರಹಿಸುವಿಕೆ ಅಥವಾ ನವೀಕರಣ ಪರಿಶೀಲನೆ ವಿಫಲವಾಗಿದೆ. ವೈಯಕ್ತಿಕ ದತ್ತಾಂಶವನ್ನು ಅಳಿಸದೆ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
@@ -80,6 +81,7 @@
   <string name="lyrics_unavailable" formatted="false">ದಾಸವಾಣಿಯಲ್ಲಿ ಸಾಹಿತ್ಯ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="move_down" formatted="false">ಕೆಳಕ್ಕೆ ಸರಿಸಿ</string>
   <string name="move_up" formatted="false">ಮೇಲಕ್ಕೆ ಸರಿಸಿ</string>
+  <string name="no_another_lyric" formatted="false">ಈ ಗ್ರಂಥಾಲಯದಲ್ಲಿ ಬೇರೆ ಸಾಹಿತ್ಯ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="no_lists_for_item" formatted="false">ಈ ಉಲ್ಲೇಖ ಸೇರಿಸುವ ಮೊದಲು ಪಟ್ಟಿ ರಚಿಸಿ.</string>
   <string name="no_results" formatted="false">ಹೊಂದುವ ದಾಖಲೆಗಳಿಲ್ಲ. ಬೇರೆ ಪದ ಪ್ರಯತ್ನಿಸಿ.</string>
   <string name="occurrence_added" formatted="false">ಆಯ್ಕೆಮಾಡಿದ ಪಟ್ಟಿಗೆ ಹೊಸ ಸ್ವತಂತ್ರ ನಮೂದು ಸೇರಿಸಲಾಗಿದೆ.</string>
@@ -118,6 +120,7 @@
   <string name="settings" formatted="false">ಆಯ್ಕೆಗಳು</string>
   <string name="share_list_file" formatted="false">ಪಟ್ಟಿಯ ಕಡತ ಹಂಚಿ</string>
   <string name="share_list_link" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ ಹಂಚಿ</string>
+  <string name="show_another_lyric" formatted="false">ಇನ್ನೊಂದು ಸಾಹಿತ್ಯವನ್ನು ತೋರಿಸಿ</string>
   <string name="show_more_results" formatted="false">ಇನ್ನಷ್ಟು ಫಲಿತಾಂಶ ತೋರಿಸಿ</string>
   <string name="skip_to_content" formatted="false">ವಿಷಯಕ್ಕೆ ಹೋಗಿ</string>
   <string name="start_again" formatted="false">ಸಿದ್ಧತೆಗೆ ಹಿಂತಿರುಗಿ</string>

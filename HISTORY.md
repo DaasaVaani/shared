@@ -1,5 +1,27 @@
 # Documentation history
 
+## 2026-10-22: canonical Show another lyric UI prerequisite
+
+- Added three bilingual discovery action/context/unavailable captions for EXP-02.
+  The context states that selection uses the verified catalog independently of
+  title filtering and is not a personalized recommendation. This UI-only
+  prerequisite implements no selector, content preparation, inferred taxonomy
+  or consumer runtime; clients still adopt independently after publication.
+- The preceding five-caption241158f9856d15cf7ff2d1c57c71e9eb4f2db035
+  passed full31 tests and exact preflight39739394210/main39739916707.
+  Website now independently pins241 atdd3ebb0; native334dab8 independently
+  retains44c21b9. New discovery captions do not change either pin automatically.
+- No existing caption/settings/schema/type/fixture or dependency is intentionally
+  changed. Added a distinct bilingual generated-platform-resource equality check;
+  all three generated resources accompany the source catalog.
+- Full `npm run check` passed32 tests, with no failures/cancellations/skips.
+  Hygiene passed72 tracked files; strict YAML11, actionlint/ShellCheck and
+  whitespace passed. `npm run build` regenerated all three UI outputs
+  byte-identically. Against Website241158f exactly3 keys per locale were added;
+  against Native44c21b9 exactly8 (including the preceding5 shell captions).
+  Every older caption and all settings/schema/type/fixture bytes remained
+  unchanged. This evidence does not substitute for independent consumer checks.
+
 ## 2026-10-22: app-interface and normal-update UI prerequisites
 
 - Added five bilingual captions for app-interface caching boundaries, unsupported

@@ -23,6 +23,12 @@ automatic content/personal replacement. They do not install a service worker,
 define a shell resource allowlist or establish complete offline-library support.
 Consumers independently implement and validate the selected normal lifecycle.
 
+Discovery captions cover an explicit Show another lyric action, its verified
+catalog scope independent of title filtering, and an honest no-other-candidate
+state. They do not implement selection, prepare content, infer classifications
+or authorize personalized recommendations. Consumers independently validate
+their own published/prepared-catalog and normal reader/history boundaries.
+
 Reading-preference captions cover independent lyric font controls and
 Compact/Normal/Relaxed density. They do not define numeric font bounds or spacing,
 add persisted fields or implement controls. Consumers retain native platform

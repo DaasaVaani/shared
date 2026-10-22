@@ -18,6 +18,9 @@ en:
   lyricPreviewNotice: "Prelaunch lyrics — product implementation and release checks are still in progress. This is not the public launch."
   lyricPreviewLimits: "Canonical Kannada only. Complete-library download requires your consent. Prepared lyrics are kept only in memory, not persistent offline storage. Favorites, lists and full search for these lyric IDs are not implemented yet."
   lyricTitleFilter: Filter lyric titles
+  showAnotherLyric: Show another lyric
+  anotherLyricNotice: Chooses from this verified catalog, independently of the title filter. This is not a personalized recommendation.
+  noAnotherLyric: No other lyric is available in this catalog.
   readingPreferences: Reading preferences
   lyricFontSize: Lyric font size
   decreaseLyricFontSize: Decrease lyric font size
@@ -167,6 +170,9 @@ kn:
   lyricPreviewNotice: "ಪೂರ್ವಪ್ರಕಟಣೆ — ಅಪ್ಲಿಕೇಶನ್ ಅಭಿವೃದ್ಧಿ ಮತ್ತು ಬಿಡುಗಡೆ ಪರಿಶೀಲನೆಗಳು ಇನ್ನೂ ನಡೆಯುತ್ತಿವೆ. ಇದು ಸಾರ್ವಜನಿಕ ಬಿಡುಗಡೆಯಲ್ಲ."
   lyricPreviewLimits: "ಕನ್ನಡ ಪಠ್ಯವನ್ನು ಓದಲು ಮಾತ್ರ. ಎಲ್ಲ ಸಾಹಿತ್ಯವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ನಿಮ್ಮ ಒಪ್ಪಿಗೆ ಅಗತ್ಯ. ಸಿದ್ಧಪಡಿಸಿದ ಸಾಹಿತ್ಯವು ಮೆಮೊರಿಯಲ್ಲಿ ಮಾತ್ರ ಉಳಿಯುತ್ತದೆ; ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹವಲ್ಲ. ಈ ಸಾಹಿತ್ಯಕ್ಕೆ ಮೆಚ್ಚಿನವುಗಳು, ವೈಯಕ್ತಿಕ ಪಟ್ಟಿಗಳು ಮತ್ತು ಸಂಪೂರ್ಣ ಹುಡುಕಾಟ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ."
   lyricTitleFilter: ಸಾಹಿತ್ಯದ ಶೀರ್ಷಿಕೆಗಳನ್ನು ಹುಡುಕಿ
+  showAnotherLyric: ಇನ್ನೊಂದು ಸಾಹಿತ್ಯವನ್ನು ತೋರಿಸಿ
+  anotherLyricNotice: ಶೀರ್ಷಿಕೆ ಹುಡುಕಾಟದಿಂದ ಸ್ವತಂತ್ರವಾಗಿ ಪರಿಶೀಲಿಸಿದ ಈ ಗ್ರಂಥಾಲಯದಿಂದ ಆಯ್ಕೆ ಮಾಡುತ್ತದೆ. ಇದು ವೈಯಕ್ತಿಕ ಶಿಫಾರಸು ಅಲ್ಲ.
+  noAnotherLyric: ಈ ಗ್ರಂಥಾಲಯದಲ್ಲಿ ಬೇರೆ ಸಾಹಿತ್ಯ ಲಭ್ಯವಿಲ್ಲ.
   readingPreferences: ಓದುವ ಆದ್ಯತೆಗಳು
   lyricFontSize: ಸಾಹಿತ್ಯದ ಅಕ್ಷರ ಗಾತ್ರ
   decreaseLyricFontSize: ಸಾಹಿತ್ಯದ ಅಕ್ಷರ ಗಾತ್ರ ಕಡಿಮೆ ಮಾಡಿ
