@@ -21,6 +21,18 @@ en:
   showAnotherLyric: Show another lyric
   anotherLyricNotice: Chooses from this verified catalog, independently of the title filter. This is not a personalized recommendation.
   noAnotherLyric: No other lyric is available in this catalog.
+  recite: Recite
+  exitRecite: Exit Recite
+  reciteNotice: Focused reading only. List recitation and Continue recitation are not implemented yet.
+  showReadingControls: Show reading controls
+  hideReadingControls: Hide reading controls
+  keepScreenAwake: Keep screen awake
+  screenAwakePending: Requesting screen awake.
+  screenAwakeActive: The screen-awake request is active. Operating-system restrictions still apply.
+  screenAwakeInactive: The screen-awake request is off.
+  screenAwakeReleased: The screen-awake request ended. Turn it on again if needed.
+  screenAwakeUnsupported: Screen-awake requests are unavailable here. Recite still works.
+  screenAwakeFailed: The screen-awake request failed. Recite still works; you can retry.
   readingPreferences: Reading preferences
   lyricFontSize: Lyric font size
   decreaseLyricFontSize: Decrease lyric font size
@@ -185,6 +197,18 @@ kn:
   showAnotherLyric: ಇನ್ನೊಂದು ಸಾಹಿತ್ಯವನ್ನು ತೋರಿಸಿ
   anotherLyricNotice: ಶೀರ್ಷಿಕೆ ಹುಡುಕಾಟದಿಂದ ಸ್ವತಂತ್ರವಾಗಿ ಪರಿಶೀಲಿಸಿದ ಈ ಗ್ರಂಥಾಲಯದಿಂದ ಆಯ್ಕೆ ಮಾಡುತ್ತದೆ. ಇದು ವೈಯಕ್ತಿಕ ಶಿಫಾರಸು ಅಲ್ಲ.
   noAnotherLyric: ಈ ಗ್ರಂಥಾಲಯದಲ್ಲಿ ಬೇರೆ ಸಾಹಿತ್ಯ ಲಭ್ಯವಿಲ್ಲ.
+  recite: ಪಠಣ
+  exitRecite: ಪಠಣದಿಂದ ನಿರ್ಗಮಿಸಿ
+  reciteNotice: ಏಕಾಗ್ರ ಓದು ಮಾತ್ರ. ಪಟ್ಟಿಯ ಪಠಣ ಮತ್ತು ಪಠಣ ಮುಂದುವರಿಸುವ ಸೌಲಭ್ಯಗಳು ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.
+  showReadingControls: ಓದುವ ನಿಯಂತ್ರಣಗಳನ್ನು ತೋರಿಸಿ
+  hideReadingControls: ಓದುವ ನಿಯಂತ್ರಣಗಳನ್ನು ಮರೆಮಾಡಿ
+  keepScreenAwake: ಪರದೆ ಆನ್ ಆಗಿರುವಂತೆ ಇರಿಸಿ
+  screenAwakePending: ಪರದೆ ಆನ್ ಆಗಿರಲು ವಿನಂತಿಸಲಾಗುತ್ತಿದೆ.
+  screenAwakeActive: ಪರದೆ ಆನ್ ಆಗಿರಲು ವಿನಂತಿ ಸಕ್ರಿಯವಾಗಿದೆ. ಕಾರ್ಯಾಚರಣಾ ವ್ಯವಸ್ಥೆಯ ನಿರ್ಬಂಧಗಳು ಇನ್ನೂ ಅನ್ವಯಿಸುತ್ತವೆ.
+  screenAwakeInactive: ಪರದೆ ಆನ್ ಆಗಿರಲು ವಿನಂತಿ ನಿಷ್ಕ್ರಿಯವಾಗಿದೆ.
+  screenAwakeReleased: ಪರದೆ ಆನ್ ಆಗಿರಲು ವಿನಂತಿ ಕೊನೆಗೊಂಡಿದೆ. ಅಗತ್ಯವಿದ್ದರೆ ಮತ್ತೆ ಆನ್ ಮಾಡಿ.
+  screenAwakeUnsupported: ಇಲ್ಲಿ ಪರದೆ ಆನ್ ಆಗಿರಲು ವಿನಂತಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ಪಠಣವನ್ನು ಇನ್ನೂ ಬಳಸಬಹುದು.
+  screenAwakeFailed: ಪರದೆ ಆನ್ ಆಗಿರಲು ವಿನಂತಿ ವಿಫಲವಾಗಿದೆ. ಪಠಣವನ್ನು ಇನ್ನೂ ಬಳಸಬಹುದು; ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಬಹುದು.
   readingPreferences: ಓದುವ ಆದ್ಯತೆಗಳು
   lyricFontSize: ಸಾಹಿತ್ಯದ ಅಕ್ಷರ ಗಾತ್ರ
   decreaseLyricFontSize: ಸಾಹಿತ್ಯದ ಅಕ್ಷರ ಗಾತ್ರ ಕಡಿಮೆ ಮಾಡಿ

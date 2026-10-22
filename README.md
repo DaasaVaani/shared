@@ -29,6 +29,13 @@ state. They do not implement selection, prepare content, infer classifications
 or authorize personalized recommendations. Consumers independently validate
 their own published/prepared-catalog and normal reader/history boundaries.
 
+Recite captions support focused individual reading, explicit exit/restorable
+controls and optional lifecycle-scoped screen-awake requests. Pending, active,
+off, released, unsupported and failure wording reflects adapter state, not a
+promise against operating-system restrictions. Captions do not implement
+recitation, persist a mode, prepare content or establish list navigation/resume,
+reviewed verse Practice or durable offline readiness.
+
 Reading-preference captions cover independent lyric font controls and
 Compact/Normal/Relaxed density. They do not define numeric font bounds or spacing,
 add persisted fields or implement controls. Consumers retain native platform

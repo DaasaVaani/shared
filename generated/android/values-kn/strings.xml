@@ -42,12 +42,15 @@
   <string name="entry_number" formatted="false">{total} ನಮೂದುಗಳಲ್ಲಿ {position}ನೆಯ ನಮೂದು</string>
   <string name="entry_text_hint" formatted="false">ಪಠ್ಯ ನೀಡುವಾಗ ಒಂದೇ ಸಾಲಿನಲ್ಲಿ 1-{limit} ಯುನಿಕೋಡ್ ಅಕ್ಷರ ಸ್ಥಾನಗಳನ್ನು ಬಳಸಿ. ಖಾಲಿ ಜಾಗಗಳನ್ನು ಹಾಗೆಯೇ ಉಳಿಸಲಾಗುತ್ತದೆ.</string>
   <string name="error" formatted="false">ಗ್ರಂಥಾಲಯ ತೆರೆಯಲಾಗಲಿಲ್ಲ</string>
+  <string name="exit_recite" formatted="false">ಪಠಣದಿಂದ ನಿರ್ಗಮಿಸಿ</string>
   <string name="fallback_label" formatted="false">ಬಳಕೆದಾರರ ಪರ್ಯಾಯ ಹೆಸರು (ಐಚ್ಛಿಕ; ತೆಗೆದುಹಾಕಲು ಖಾಲಿ ಬಿಡಿ)</string>
   <string name="favorites" formatted="false">ಮೆಚ್ಚಿನವು</string>
   <string name="fixture_notice" formatted="false">ಅಭಿವೃದ್ಧಿ ಪ್ರಾತ್ಯಕ್ಷಿಕೆ — ಕೃತಕ ಪರೀಕ್ಷಾ ದಾಖಲೆಗಳು; ಪರಿಶೀಲಿಸಿದ ಸಾಹಿತ್ಯ ಅಥವಾ ವೀಡಿಯೊ ವಿವರಗಳಲ್ಲ.</string>
   <string name="follow_device" formatted="false">ಸಾಧನದಂತೆ</string>
   <string name="font_size_value" formatted="false">{size} {unit}</string>
+  <string name="hide_reading_controls" formatted="false">ಓದುವ ನಿಯಂತ್ರಣಗಳನ್ನು ಮರೆಮಾಡಿ</string>
   <string name="increase_lyric_font_size" formatted="false">ಸಾಹಿತ್ಯದ ಅಕ್ಷರ ಗಾತ್ರ ಹೆಚ್ಚಿಸಿ</string>
+  <string name="keep_screen_awake" formatted="false">ಪರದೆ ಆನ್ ಆಗಿರುವಂತೆ ಇರಿಸಿ</string>
   <string name="language" formatted="false">ಪರದೆಯ ಭಾಷೆ</string>
   <string name="language_name" formatted="false">ಕನ್ನಡ</string>
   <string name="learning" formatted="false">ಕಲಿಕೆ</string>
@@ -116,6 +119,8 @@
   <string name="recent_history" formatted="false">ಇತ್ತೀಚೆಗೆ ತೆರೆದವು</string>
   <string name="recent_history_enabled" formatted="false">ಇತ್ತೀಚೆಗೆ ತೆರೆದ ಸಾಹಿತ್ಯವನ್ನು ದಾಖಲಿಸಿ</string>
   <string name="recent_history_notice" formatted="false">ಇತಿಹಾಸವು ಈ ಸಾಧನದಲ್ಲಿ ಮಾತ್ರ ಉಳಿಯುತ್ತದೆ. ದಾಖಲಿಸುವುದನ್ನು ನಿಲ್ಲಿಸಿದರೂ ಹಿಂದಿನ ದಾಖಲೆಗಳು ಉಳಿಯುತ್ತವೆ.</string>
+  <string name="recite" formatted="false">ಪಠಣ</string>
+  <string name="recite_notice" formatted="false">ಏಕಾಗ್ರ ಓದು ಮಾತ್ರ. ಪಟ್ಟಿಯ ಪಠಣ ಮತ್ತು ಪಠಣ ಮುಂದುವರಿಸುವ ಸೌಲಭ್ಯಗಳು ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="reference_known" formatted="false">ಲಭ್ಯವಿರುವ ಸೂಚಿಯಲ್ಲಿದೆ. ಆಫ್‌ಲೈನ್ ಸಿದ್ಧತೆಯನ್ನು ಸೂಚಿಸುವುದಿಲ್ಲ.</string>
   <string name="reference_pending" formatted="false">ಗ್ರಂಥಾಲಯದ ವಿವರಗಳು ಇನ್ನೂ ನಿರ್ಧಾರವಾಗಿಲ್ಲ. ಗುರುತನ್ನು ಉಳಿಸಲಾಗಿದೆ; ಅದು ಇಲ್ಲ ಎಂದು ನಿರ್ಧರಿಸಿಲ್ಲ.</string>
   <string name="remove_entry" formatted="false">ಈ ನಮೂದನ್ನು ಮಾತ್ರ ತೆಗೆದುಹಾಕಿ</string>
@@ -127,6 +132,12 @@
   <string name="retry" formatted="false">ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
   <string name="save_entry" formatted="false">ನಮೂದು ಉಳಿಸಿ</string>
   <string name="save_list" formatted="false">ನನ್ನ ಗ್ರಂಥಾಲಯಕ್ಕೆ ಉಳಿಸಿ</string>
+  <string name="screen_awake_active" formatted="false">ಪರದೆ ಆನ್ ಆಗಿರಲು ವಿನಂತಿ ಸಕ್ರಿಯವಾಗಿದೆ. ಕಾರ್ಯಾಚರಣಾ ವ್ಯವಸ್ಥೆಯ ನಿರ್ಬಂಧಗಳು ಇನ್ನೂ ಅನ್ವಯಿಸುತ್ತವೆ.</string>
+  <string name="screen_awake_failed" formatted="false">ಪರದೆ ಆನ್ ಆಗಿರಲು ವಿನಂತಿ ವಿಫಲವಾಗಿದೆ. ಪಠಣವನ್ನು ಇನ್ನೂ ಬಳಸಬಹುದು; ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಬಹುದು.</string>
+  <string name="screen_awake_inactive" formatted="false">ಪರದೆ ಆನ್ ಆಗಿರಲು ವಿನಂತಿ ನಿಷ್ಕ್ರಿಯವಾಗಿದೆ.</string>
+  <string name="screen_awake_pending" formatted="false">ಪರದೆ ಆನ್ ಆಗಿರಲು ವಿನಂತಿಸಲಾಗುತ್ತಿದೆ.</string>
+  <string name="screen_awake_released" formatted="false">ಪರದೆ ಆನ್ ಆಗಿರಲು ವಿನಂತಿ ಕೊನೆಗೊಂಡಿದೆ. ಅಗತ್ಯವಿದ್ದರೆ ಮತ್ತೆ ಆನ್ ಮಾಡಿ.</string>
+  <string name="screen_awake_unsupported" formatted="false">ಇಲ್ಲಿ ಪರದೆ ಆನ್ ಆಗಿರಲು ವಿನಂತಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ. ಪಠಣವನ್ನು ಇನ್ನೂ ಬಳಸಬಹುದು.</string>
   <string name="search" formatted="false">ಪಠ್ಯ ಅಥವಾ ಶೀರ್ಷಿಕೆ ಹುಡುಕಿ</string>
   <string name="search_consent" formatted="false">ಹುಡುಕಾಟಕ್ಕಾಗಿ ಪರಿಶೀಲಿಸಿದ ಸೂಚಿಯನ್ನು ಇಳಿಸಲಾಗುತ್ತದೆ. ನೀವು ಆಯ್ಕೆ ಮಾಡುವವರೆಗೆ ಇಳಿಸುವುದಿಲ್ಲ.</string>
   <string name="settings" formatted="false">ಆಯ್ಕೆಗಳು</string>
@@ -134,6 +145,7 @@
   <string name="share_list_link" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ ಹಂಚಿ</string>
   <string name="show_another_lyric" formatted="false">ಇನ್ನೊಂದು ಸಾಹಿತ್ಯವನ್ನು ತೋರಿಸಿ</string>
   <string name="show_more_results" formatted="false">ಇನ್ನಷ್ಟು ಫಲಿತಾಂಶ ತೋರಿಸಿ</string>
+  <string name="show_reading_controls" formatted="false">ಓದುವ ನಿಯಂತ್ರಣಗಳನ್ನು ತೋರಿಸಿ</string>
   <string name="skip_to_content" formatted="false">ವಿಷಯಕ್ಕೆ ಹೋಗಿ</string>
   <string name="start_again" formatted="false">ಸಿದ್ಧತೆಗೆ ಹಿಂತಿರುಗಿ</string>
   <string name="tagline" formatted="false">ಓದಿಗಾಗಿ ಒಂದು ಶಾಂತ ತಾಣ</string>

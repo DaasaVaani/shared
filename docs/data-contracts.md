@@ -51,6 +51,10 @@ implementation is authorized, not global production readiness.
   independent consumer implementation.
 - Platform: independent UI/script preferences, system-font limitations, static
   routes/App Links, safe shell updates and verified local-signing handoff.
+  Additive Recite captions cover only explicit focused reading/control
+  restoration and truthful lifecycle-scoped screen-awake adapter states; see
+  [the platform contract](implementation-specification.md#11-reading-ui-localization-and-platform-adapters).
+  List navigation/resume and reviewed verse Practice remain separate surfaces.
 
 ## Required fixtures
 

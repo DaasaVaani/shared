@@ -1,5 +1,21 @@
 # Documentation history
 
+## 2026-10-22: focused Recite caption prerequisite
+
+- Added12 bilingual captions for explicit individual Recite, control restoration
+  and pending/active/off/released/unsupported/failed screen-awake requests.
+  Existing captions, schemas, fixtures, settings and defaults remain unchanged.
+  Consumers adopt independently; this is not list recitation/resume, reviewed
+  verse Practice, persistent content or consumer implementation evidence.
+- `npm run check` passed36 tests. `python tools\check_repository.py` passed75
+  tracked files; strict YAML parsed11 tracked files, actionlint1.7.12 with
+  ShellCheck0.11.0 and both git whitespace checks passed. All21 generated/schema
+  outputs were byte-identical on repeat generation. Compatibility checks found
+  exactly12 added keys per locale and no changes to prior captions/settings/
+  schemas/types/fixtures. An ancillary Node probe initially imported `execSync`
+  from the filesystem module; corrected the probe to use the child-process
+  module and reran the complete strict-YAML/compatibility/determinism checks.
+
 ## 2026-10-22: self-assigned learning-label prerequisite
 
 - Added the bounded logical LEARN-04 collection, three explicit self-assigned

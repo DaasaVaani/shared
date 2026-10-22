@@ -75,6 +75,24 @@ test("reading-density defaults require a declared supported mode without coercio
     assert.equal(validate(invalid), false);
   }
 });
+test("Recite captions distinguish lifecycle requests from full recitation and match both platform resources", async () => {
+  const source = strictYaml(await readFile(new URL("../locales/ui.yml", import.meta.url), "utf8"));
+  const web = JSON.parse(await readFile(new URL("../generated/web/ui.json", import.meta.url), "utf8"));
+  const keys = ["recite", "exitRecite", "reciteNotice", "showReadingControls", "hideReadingControls", "keepScreenAwake",
+    "screenAwakePending", "screenAwakeActive", "screenAwakeInactive", "screenAwakeReleased", "screenAwakeUnsupported", "screenAwakeFailed"];
+  for (const [locale, messages] of Object.entries(source)) {
+    const xml = await readFile(new URL(`../generated/android/${locale === "en" ? "values" : `values-${locale}`}/strings.xml`, import.meta.url), "utf8");
+    assert.equal(new Set(keys.map(key => messages[key])).size, keys.length);
+    for (const key of keys) {
+      assert.equal(typeof messages[key], "string"); assert.ok(messages[key].length);
+      assert.equal(web[locale][key], messages[key]);
+      assert.ok(xml.includes(`<string name="${key.replace(/[A-Z]/g, letter => "_" + letter.toLowerCase())}" formatted="false">`));
+    }
+  }
+  assert.match(source.en.screenAwakeActive, /restrictions/);
+  assert.match(source.en.reciteNotice, /not implemented/);
+  assert.match(source.en.screenAwakeFailed, /retry/);
+});
 test("learning captions retain all approved states and match both generated platform resources", async () => {
   const source = strictYaml(await readFile(new URL("../locales/ui.yml", import.meta.url), "utf8"));
   const web = JSON.parse(await readFile(new URL("../generated/web/ui.json", import.meta.url), "utf8"));

@@ -440,6 +440,22 @@ without video or Wake Lock; release lifecycle requests on exit. Explicit Continu
 uses only latest recitation occurrence, not per-list/exact-scroll/auto entry.
 Practice/bookmarks use reviewed verse identity, unresolved on missing locations.
 
+Focused individual Recite (REC-01/02) can be implemented independently of list
+navigation/resume (REC-03/04). Entry is explicit for a successfully exposed
+reader, uses its existing script/font/density and never creates personal state
+or an additional successful-open event. Secondary details are hidden with an
+obvious way to restore controls or exit; leaving/replacing the reader ends that
+mode. No automatic full-screen/orientation, audio or video request is implied.
+Screen awake starts off, is requested explicitly only within Recite, and reports
+actual pending/active/off/released/unsupported/failure state. Release on exit,
+navigation or background lifecycle; late acquisition after departure must
+release rather than reactivate the mode. Returning to the foreground does not
+silently reacquire. Recite remains usable after unsupported/failed requests and
+does not promise to override operating-system restrictions. Native adapters
+preserve any pre-existing screen-awake state they do not own. Consumers adopt
+the additive UI captions independently; no personal/publication schema change
+or durable offline/complete recitation claim follows from caption generation.
+
 ## 12. Links, hosting and application updates
 
 Website base / and Library /library/ configurable. Canonical /open/ static hash

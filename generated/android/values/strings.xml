@@ -42,12 +42,15 @@
   <string name="entry_number" formatted="false">Entry {position} of {total}</string>
   <string name="entry_text_hint" formatted="false">Use 1-{limit} Unicode code points on one line when supplying text. Spaces are preserved.</string>
   <string name="error" formatted="false">Unable to open the library</string>
+  <string name="exit_recite" formatted="false">Exit Recite</string>
   <string name="fallback_label" formatted="false">User fallback label (optional; leave empty to remove)</string>
   <string name="favorites" formatted="false">Favorites</string>
   <string name="fixture_notice" formatted="false">Development demo — synthetic test records, not reviewed sahitya or verified video metadata.</string>
   <string name="follow_device" formatted="false">Follow device</string>
   <string name="font_size_value" formatted="false">{size} {unit}</string>
+  <string name="hide_reading_controls" formatted="false">Hide reading controls</string>
   <string name="increase_lyric_font_size" formatted="false">Increase lyric font size</string>
+  <string name="keep_screen_awake" formatted="false">Keep screen awake</string>
   <string name="language" formatted="false">Interface language</string>
   <string name="language_name" formatted="false">English</string>
   <string name="learning" formatted="false">Learning</string>
@@ -116,6 +119,8 @@
   <string name="recent_history" formatted="false">Recently opened</string>
   <string name="recent_history_enabled" formatted="false">Record recently opened lyrics</string>
   <string name="recent_history_notice" formatted="false">History stays only on this device. Turning recording off keeps existing entries.</string>
+  <string name="recite" formatted="false">Recite</string>
+  <string name="recite_notice" formatted="false">Focused reading only. List recitation and Continue recitation are not implemented yet.</string>
   <string name="reference_known" formatted="false">In the available catalog. Offline readiness is not established.</string>
   <string name="reference_pending" formatted="false">Library details are not yet resolved. The identifier is preserved; its absence has not been established.</string>
   <string name="remove_entry" formatted="false">Remove this occurrence</string>
@@ -127,6 +132,12 @@
   <string name="retry" formatted="false">Try again</string>
   <string name="save_entry" formatted="false">Save entry</string>
   <string name="save_list" formatted="false">Save to My Library</string>
+  <string name="screen_awake_active" formatted="false">The screen-awake request is active. Operating-system restrictions still apply.</string>
+  <string name="screen_awake_failed" formatted="false">The screen-awake request failed. Recite still works; you can retry.</string>
+  <string name="screen_awake_inactive" formatted="false">The screen-awake request is off.</string>
+  <string name="screen_awake_pending" formatted="false">Requesting screen awake.</string>
+  <string name="screen_awake_released" formatted="false">The screen-awake request ended. Turn it on again if needed.</string>
+  <string name="screen_awake_unsupported" formatted="false">Screen-awake requests are unavailable here. Recite still works.</string>
   <string name="search" formatted="false">Search lyrics or a title</string>
   <string name="search_consent" formatted="false">Search downloads a verified index. Nothing is downloaded until you choose Load search.</string>
   <string name="settings" formatted="false">Settings</string>
@@ -134,6 +145,7 @@
   <string name="share_list_link" formatted="false">Share snapshot link</string>
   <string name="show_another_lyric" formatted="false">Show another lyric</string>
   <string name="show_more_results" formatted="false">Show more results</string>
+  <string name="show_reading_controls" formatted="false">Show reading controls</string>
   <string name="skip_to_content" formatted="false">Skip to content</string>
   <string name="start_again" formatted="false">Return to preparation</string>
   <string name="tagline" formatted="false">A quiet space for reading</string>
