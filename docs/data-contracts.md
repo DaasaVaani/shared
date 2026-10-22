@@ -45,6 +45,10 @@ implementation is authorized, not global production readiness.
   The [recently opened logical record](recent-history.md) separately defines
   typed most-recent-first uniqueness, the configured50-entry window and the
   enabled initial preference. It is not a minimal transfer or backup format.
+  The [self-assigned learning-label record](learning-labels.md) separately fixes
+  three explicit states, typed uniqueness and preserving no-assignment upgrades;
+  aggregate identity checks, local view/persistence and Practice require
+  independent consumer implementation.
 - Platform: independent UI/script preferences, system-font limitations, static
   routes/App Links, safe shell updates and verified local-signing handoff.
 

@@ -55,6 +55,12 @@ distinct typed references, device-only enabled/clear behavior and the configured
 explicit preferences win. Schemas/fixtures do not implement consumer persistence
 or successful-open lifecycle handling.
 
+The [local learning-label contract](docs/learning-labels.md) fixes the three
+self-assigned states, exact typed identity, no-assignment default, preserving
+upgrade and local filtered-view rules. Its schema/types/synthetic fixtures and
+bilingual captions do not implement consumer persistence, verse Practice,
+offline content or full backups. Consumers adopt and validate independently.
+
 Build-time publication safety settings follow
 [`schemas/publication-policy-settings.schema.json`](schemas/publication-policy-settings.schema.json):
 every declared field is required, byte/time bounds are positive safe integers,

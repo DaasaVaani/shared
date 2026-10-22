@@ -36,6 +36,7 @@
   <string name="duplicate_name" formatted="false">Another local list already uses this name. Save a separate list with the same name?</string>
   <string name="edit_entry" formatted="false">Edit entry</string>
   <string name="empty_favorites" formatted="false">No favorites yet. Open a record and add it to favorites.</string>
+  <string name="empty_learning" formatted="false">No lyrics have learning labels yet.</string>
   <string name="empty_lists" formatted="false">No saved lists yet. Create an empty list or preview a list file or link in Settings.</string>
   <string name="empty_recent_history" formatted="false">No recently opened lyrics.</string>
   <string name="entry_number" formatted="false">Entry {position} of {total}</string>
@@ -49,6 +50,17 @@
   <string name="increase_lyric_font_size" formatted="false">Increase lyric font size</string>
   <string name="language" formatted="false">Interface language</string>
   <string name="language_name" formatted="false">English</string>
+  <string name="learning" formatted="false">Learning</string>
+  <string name="learning_all" formatted="false">All labels</string>
+  <string name="learning_comfortable_reciting" formatted="false">Comfortable reciting</string>
+  <string name="learning_filter" formatted="false">Filter learning labels</string>
+  <string name="learning_label" formatted="false">Learning label</string>
+  <string name="learning_none" formatted="false">No label</string>
+  <string name="learning_notice" formatted="false">Labels are self-assigned and stay on this device. They are not assessments or progress scores.</string>
+  <string name="learning_practice_unavailable" formatted="false">Reviewed verse-based Practice is not implemented yet. You can still read the full lyric.</string>
+  <string name="learning_practising" formatted="false">Practising</string>
+  <string name="learning_saved" formatted="false">Learning label saved.</string>
+  <string name="learning_want_to_learn" formatted="false">Want to learn</string>
   <string name="legacy_reference" formatted="false">Legacy video reference</string>
   <string name="library" formatted="false">Library</string>
   <string name="light" formatted="false">Light</string>

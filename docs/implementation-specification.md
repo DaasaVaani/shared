@@ -339,6 +339,9 @@ repeats preserved. Recent50 distinct successful opens, disable stops writes, Cle
 separate. The [recent-history record](recent-history.md) defines exact ordered
 typed references and portable initially-enabled recording, without activity
 timestamps or implicit preparation. Consumer persistence/adapters remain separate.
+The [learning-label record](learning-labels.md) fixes the three self-assigned
+states, no-assignment default, typed uniqueness, local filtering and preserving
+upgrade behavior independently of reviewed-verse Practice.
 NFC/case-insensitive duplicate-name warning permits confirmed reuse.
 Personal-name comparison follows the approved
 [Unicode16 full-default-fold/NFC profile](unicode-name-matching.md), not

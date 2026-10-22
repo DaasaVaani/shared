@@ -34,6 +34,18 @@ en:
   lyricNoMedia: No video or image is needed to read this lyric.
   favorites: Favorites
   recentHistory: Recently opened
+  learning: Learning
+  learningLabel: Learning label
+  learningNone: No label
+  learningWantToLearn: Want to learn
+  learningPractising: Practising
+  learningComfortableReciting: Comfortable reciting
+  learningAll: All labels
+  learningFilter: Filter learning labels
+  learningNotice: Labels are self-assigned and stay on this device. They are not assessments or progress scores.
+  emptyLearning: No lyrics have learning labels yet.
+  learningPracticeUnavailable: Reviewed verse-based Practice is not implemented yet. You can still read the full lyric.
+  learningSaved: Learning label saved.
   recentHistoryEnabled: Record recently opened lyrics
   recentHistoryNotice: "History stays only on this device. Turning recording off keeps existing entries."
   clearRecentHistory: Clear recently opened history
@@ -186,6 +198,18 @@ kn:
   lyricNoMedia: ಈ ಸಾಹಿತ್ಯವನ್ನು ಓದಲು ವೀಡಿಯೊ ಅಥವಾ ಚಿತ್ರದ ಅಗತ್ಯವಿಲ್ಲ.
   favorites: ಮೆಚ್ಚಿನವು
   recentHistory: ಇತ್ತೀಚೆಗೆ ತೆರೆದವು
+  learning: ಕಲಿಕೆ
+  learningLabel: ಕಲಿಕೆಯ ಗುರುತು
+  learningNone: ಗುರುತು ಇಲ್ಲ
+  learningWantToLearn: ಕಲಿಯಲು ಬಯಸುತ್ತೇನೆ
+  learningPractising: ಅಭ್ಯಾಸ ಮಾಡುತ್ತಿದ್ದೇನೆ
+  learningComfortableReciting: ಸುಲಭವಾಗಿ ಪಠಿಸಬಲ್ಲೆ
+  learningAll: ಎಲ್ಲ ಗುರುತುಗಳು
+  learningFilter: ಕಲಿಕೆಯ ಗುರುತುಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ
+  learningNotice: ಈ ಗುರುತುಗಳನ್ನು ನೀವೇ ಆಯ್ಕೆಮಾಡುತ್ತೀರಿ. ಅವು ಈ ಸಾಧನದಲ್ಲೇ ಉಳಿಯುತ್ತವೆ; ಅವು ಮೌಲ್ಯಮಾಪನ ಅಥವಾ ಪ್ರಗತಿ ಅಂಕಗಳಲ್ಲ.
+  emptyLearning: ಇನ್ನೂ ಕಲಿಕೆಯ ಗುರುತು ನೀಡಿದ ಸಾಹಿತ್ಯ ಇಲ್ಲ.
+  learningPracticeUnavailable: ಪರಿಶೀಲಿಸಿದ ಪದ್ಯಗಳ ಆಧಾರಿತ ಅಭ್ಯಾಸ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ. ಸಂಪೂರ್ಣ ಸಾಹಿತ್ಯವನ್ನು ಓದಬಹುದು.
+  learningSaved: ಕಲಿಕೆಯ ಗುರುತನ್ನು ಉಳಿಸಲಾಗಿದೆ.
   recentHistoryEnabled: ಇತ್ತೀಚೆಗೆ ತೆರೆದ ಸಾಹಿತ್ಯವನ್ನು ದಾಖಲಿಸಿ
   recentHistoryNotice: "ಇತಿಹಾಸವು ಈ ಸಾಧನದಲ್ಲಿ ಮಾತ್ರ ಉಳಿಯುತ್ತದೆ. ದಾಖಲಿಸುವುದನ್ನು ನಿಲ್ಲಿಸಿದರೂ ಹಿಂದಿನ ದಾಖಲೆಗಳು ಉಳಿಯುತ್ತವೆ."
   clearRecentHistory: ಇತ್ತೀಚೆಗೆ ತೆರೆದ ಇತಿಹಾಸವನ್ನು ಅಳಿಸಿ

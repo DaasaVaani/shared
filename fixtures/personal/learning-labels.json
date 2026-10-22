@@ -1,0 +1,28 @@
+{
+  "accepted": [
+    { "label": "no assignments", "value": { "entries": [] } },
+    { "label": "three explicit self-assigned states and distinct typed identities", "value": { "entries": [
+      { "kind": "lyric", "lyricId": "00000000-0000-4000-8000-000000000001", "label": "wantToLearn" },
+      { "kind": "legacyVideo", "videoId": "00000000-0000-4000-8000-000000000001", "label": "practising" },
+      { "kind": "legacyVideo", "videoId": "synthetic-only", "label": "comfortableReciting" }
+    ] } }
+  ],
+  "rejected": [
+    { "label": "missing entries", "value": {} },
+    { "label": "unknown collection field", "value": { "entries": [], "updatedAt": "not allowed" } },
+    { "label": "unknown state", "value": { "entries": [{ "kind": "legacyVideo", "videoId": "synthetic", "label": "learned" }] } },
+    { "label": "no persisted null state", "value": { "entries": [{ "kind": "legacyVideo", "videoId": "synthetic", "label": null }] } },
+    { "label": "no automatic score", "value": { "entries": [{ "kind": "legacyVideo", "videoId": "synthetic", "label": "practising", "score": 1 }] } },
+    { "label": "invalid identity", "value": { "entries": [{ "kind": "lyric", "lyricId": "not-a-uuid", "label": "wantToLearn" }] } }
+  ],
+  "rejectedSemantic": [
+    { "label": "identical duplicates", "value": { "entries": [
+      { "kind": "legacyVideo", "videoId": "synthetic", "label": "wantToLearn" },
+      { "kind": "legacyVideo", "videoId": "synthetic", "label": "wantToLearn" }
+    ] } },
+    { "label": "one typed identity cannot have conflicting labels", "value": { "entries": [
+      { "kind": "legacyVideo", "videoId": "synthetic", "label": "wantToLearn" },
+      { "kind": "legacyVideo", "videoId": "synthetic", "label": "comfortableReciting" }
+    ] } }
+  ]
+}

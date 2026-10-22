@@ -1,5 +1,25 @@
 # Documentation history
 
+## 2026-10-22: self-assigned learning-label prerequisite
+
+- Added the bounded logical LEARN-04 collection, three explicit self-assigned
+  states, typed reference identity, no-assignment default and preserving local
+  mutation/view/upgrade rules. Existing maxLearningLabels and aggregate personal
+  bounds are reused without changing settings or older schemas/fixtures.
+- Added synthetic structural/semantic fixtures, real configured ceiling/+1
+  tests, generated schema/types and twelve bilingual UI captions. Typed identity
+  uniqueness is an explicit required linear consumer check, not insufficient
+  whole-object equality or a quadratic array comparison on every personal read.
+- No consumer persistence, pin, source/verse metadata, Practice, durable offline
+  lifecycle or backup format is implemented by this additive prerequisite.
+  Current guides retain those independent gates; minimal transfers exclude labels.
+- Full `npm run check` passed35 tests, zero failures/cancellations/skips.
+  Hygiene75, strict YAML11, actionlint/ShellCheck and both whitespace checks
+  passed. Repeat generation kept all21 generated/schema outputs byte-identical.
+  All previous captions/settings/schemas/fixtures remained unchanged, with
+  exactly12 additive keys per locale. Existing consumers still independently
+  pinf4f8aec until explicit adoption of this published prerequisite.
+
 ## 2026-10-22: canonical Show another lyric UI prerequisite
 
 - Added three bilingual discovery action/context/unavailable captions for EXP-02.

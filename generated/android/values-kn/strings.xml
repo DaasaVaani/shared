@@ -36,6 +36,7 @@
   <string name="duplicate_name" formatted="false">ಈ ಹೆಸರು ಇನ್ನೊಂದು ಸ್ಥಳೀಯ ಪಟ್ಟಿಯಲ್ಲಿದೆ. ಅದೇ ಹೆಸರಿನ ಸ್ವತಂತ್ರ ಪಟ್ಟಿಯನ್ನು ಉಳಿಸಬೇಕೆ?</string>
   <string name="edit_entry" formatted="false">ನಮೂದು ತಿದ್ದಿ</string>
   <string name="empty_favorites" formatted="false">ಮೆಚ್ಚಿನ ದಾಖಲೆಗಳಿಲ್ಲ. ದಾಖಲೆಯನ್ನು ತೆರೆದು ಸೇರಿಸಿ.</string>
+  <string name="empty_learning" formatted="false">ಇನ್ನೂ ಕಲಿಕೆಯ ಗುರುತು ನೀಡಿದ ಸಾಹಿತ್ಯ ಇಲ್ಲ.</string>
   <string name="empty_lists" formatted="false">ಉಳಿಸಿದ ಪಟ್ಟಿಗಳಿಲ್ಲ. ಖಾಲಿ ಪಟ್ಟಿ ರಚಿಸಿ ಅಥವಾ ಆಯ್ಕೆಗಳಲ್ಲಿ ಪಟ್ಟಿಯ ಕಡತ ಅಥವಾ ಕೊಂಡಿಯ ಮುನ್ನೋಟ ನೋಡಿ.</string>
   <string name="empty_recent_history" formatted="false">ಇತ್ತೀಚೆಗೆ ತೆರೆದ ಸಾಹಿತ್ಯವಿಲ್ಲ.</string>
   <string name="entry_number" formatted="false">{total} ನಮೂದುಗಳಲ್ಲಿ {position}ನೆಯ ನಮೂದು</string>
@@ -49,6 +50,17 @@
   <string name="increase_lyric_font_size" formatted="false">ಸಾಹಿತ್ಯದ ಅಕ್ಷರ ಗಾತ್ರ ಹೆಚ್ಚಿಸಿ</string>
   <string name="language" formatted="false">ಪರದೆಯ ಭಾಷೆ</string>
   <string name="language_name" formatted="false">ಕನ್ನಡ</string>
+  <string name="learning" formatted="false">ಕಲಿಕೆ</string>
+  <string name="learning_all" formatted="false">ಎಲ್ಲ ಗುರುತುಗಳು</string>
+  <string name="learning_comfortable_reciting" formatted="false">ಸುಲಭವಾಗಿ ಪಠಿಸಬಲ್ಲೆ</string>
+  <string name="learning_filter" formatted="false">ಕಲಿಕೆಯ ಗುರುತುಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
+  <string name="learning_label" formatted="false">ಕಲಿಕೆಯ ಗುರುತು</string>
+  <string name="learning_none" formatted="false">ಗುರುತು ಇಲ್ಲ</string>
+  <string name="learning_notice" formatted="false">ಈ ಗುರುತುಗಳನ್ನು ನೀವೇ ಆಯ್ಕೆಮಾಡುತ್ತೀರಿ. ಅವು ಈ ಸಾಧನದಲ್ಲೇ ಉಳಿಯುತ್ತವೆ; ಅವು ಮೌಲ್ಯಮಾಪನ ಅಥವಾ ಪ್ರಗತಿ ಅಂಕಗಳಲ್ಲ.</string>
+  <string name="learning_practice_unavailable" formatted="false">ಪರಿಶೀಲಿಸಿದ ಪದ್ಯಗಳ ಆಧಾರಿತ ಅಭ್ಯಾಸ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ. ಸಂಪೂರ್ಣ ಸಾಹಿತ್ಯವನ್ನು ಓದಬಹುದು.</string>
+  <string name="learning_practising" formatted="false">ಅಭ್ಯಾಸ ಮಾಡುತ್ತಿದ್ದೇನೆ</string>
+  <string name="learning_saved" formatted="false">ಕಲಿಕೆಯ ಗುರುತನ್ನು ಉಳಿಸಲಾಗಿದೆ.</string>
+  <string name="learning_want_to_learn" formatted="false">ಕಲಿಯಲು ಬಯಸುತ್ತೇನೆ</string>
   <string name="legacy_reference" formatted="false">ಹಳೆಯ ವೀಡಿಯೊ ಉಲ್ಲೇಖ</string>
   <string name="library" formatted="false">ಗ್ರಂಥಾಲಯ</string>
   <string name="light" formatted="false">ತಿಳಿ</string>

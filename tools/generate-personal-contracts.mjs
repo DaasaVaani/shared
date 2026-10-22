@@ -54,6 +54,24 @@ export function recentHistorySchema(settings) {
   };
 }
 
+export function learningLabelsSchema(settings) {
+  validateLimits(settings);
+  return {
+    $schema: "https://json-schema.org/draft/2020-12/schema",
+    $id: "https://daasavaani.github.io/contracts/learning-labels-v1.schema.json",
+    $comment: comment,
+    type: "object", additionalProperties: false, required: ["entries"],
+    properties: {
+      entries: { type: "array", maxItems: settings.maxLearningLabels,
+        items: { oneOf: personalReferenceSchema().oneOf.map(reference => ({
+          ...reference, required: [...reference.required, "label"],
+          properties: { ...reference.properties,
+            label: { enum: ["wantToLearn", "practising", "comfortableReciting"] } },
+        })) } },
+    },
+  };
+}
+
 export function listTransferSchema(settings, version = 1) {
   if (version !== 1 && version !== 2) throw new Error("Unsupported list contract version");
   validateLimits(settings);
@@ -131,6 +149,7 @@ export async function generatePersonalContracts() {
   await writeFile(resolve(root, "schemas/list-transfer-v2.schema.json"), JSON.stringify(listTransferSchema(settings, 2), null, 2) + "\n");
   await writeFile(resolve(root, "schemas/list-record-v2.schema.json"), JSON.stringify(listRecordSchema(settings, 2), null, 2) + "\n");
   await writeFile(resolve(root, "schemas/recent-history.schema.json"), JSON.stringify(recentHistorySchema(settings), null, 2) + "\n");
+  await writeFile(resolve(root, "schemas/learning-labels.schema.json"), JSON.stringify(learningLabelsSchema(settings), null, 2) + "\n");
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await generatePersonalContracts();

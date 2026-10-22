@@ -3,13 +3,49 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import Ajv2020 from "ajv/dist/2020.js";
 import { strictYaml } from "./generate-catalog.mjs";
-import { listTransferSchema, listRecordSchema, personalReferenceSchema, recentHistorySchema, generatePersonalContracts } from "./generate-personal-contracts.mjs";
+import { listTransferSchema, listRecordSchema, personalReferenceSchema, recentHistorySchema, learningLabelsSchema, generatePersonalContracts } from "./generate-personal-contracts.mjs";
 
 const settings = strictYaml(await readFile(new URL("../settings/personal-transfer.yml", import.meta.url), "utf8"));
 const schemaFile = new URL("../schemas/list-transfer.schema.json", import.meta.url);
 const schema = JSON.parse(await readFile(schemaFile, "utf8"));
 const validate = new Ajv2020({ strict: true }).compile(schema);
 const list = entries => ({ format: "daasavaani-list", formatVersion: 1, name: "Synthetic test", entries });
+
+test("learning labels retain exactly three explicit states and typed reference identities", async () => {
+  const check = new Ajv2020({ strict: true }).compile(learningLabelsSchema(settings));
+  const fixtures = JSON.parse(await readFile(new URL("../fixtures/personal/learning-labels.json", import.meta.url), "utf8"));
+  for (const [group, expected] of [["accepted", true], ["rejected", false]]) {
+    for (const fixture of fixtures[group]) {
+      const before = structuredClone(fixture.value);
+      assert.equal(check(fixture.value), expected, fixture.label);
+      assert.deepEqual(fixture.value, before);
+    }
+  }
+  for (const fixture of fixtures.rejectedSemantic) {
+    assert.equal(check(fixture.value), true, "Typed uniqueness is a separate required linear consumer check");
+    const identities = fixture.value.entries.map(entry => `${entry.kind}:${entry.lyricId ?? entry.videoId}`);
+    assert.ok(new Set(identities).size < identities.length, fixture.label);
+  }
+  assert.deepEqual(JSON.parse(await readFile(new URL("../schemas/learning-labels.schema.json", import.meta.url), "utf8")),
+    learningLabelsSchema(settings));
+});
+
+test("learning-label collection enforces actual configured boundary without changing older contracts", () => {
+  const schema = learningLabelsSchema(settings), check = new Ajv2020({ strict: true }).compile(schema);
+  const labels = ["wantToLearn", "practising", "comfortableReciting"];
+  const entries = Array.from({ length: settings.maxLearningLabels }, (_, index) =>
+    ({ kind: "legacyVideo", videoId: `synthetic-${index}`, label: labels[index % labels.length] }));
+  assert.equal(check({ entries }), true);
+  assert.equal(check({ entries: [...entries, { kind: "legacyVideo", videoId: "extra", label: labels[0] }] }), false);
+  const reduced = new Ajv2020({ strict: true }).compile(learningLabelsSchema({ ...settings, maxLearningLabels: 1 }));
+  assert.equal(reduced({ entries: entries.slice(0, 1) }), true);
+  assert.equal(reduced({ entries: entries.slice(0, 2) }), false);
+  assert.throws(() => learningLabelsSchema({ ...settings, maxLearningLabels: 0 }), /personal-transfer/);
+  for (const version of [1, 2]) {
+    const transfer = new Ajv2020({ strict: true }).compile(listTransferSchema(settings, version));
+    assert.equal(transfer({ ...list([]), formatVersion: version, learning: { entries } }), false);
+  }
+});
 
 test("recent history preserves typed order, retained disabled entries and exact allowlists", async () => {
   const schema = recentHistorySchema(settings), check = new Ajv2020({ strict: true }).compile(schema);
