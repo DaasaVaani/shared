@@ -10,6 +10,9 @@ export type LearningLabel = "wantToLearn" | "practising" | "comfortableReciting"
 export interface LearningLabelsV1 {
   entries: (PersonalReference & { label: LearningLabel })[];
 }
+export interface RecitationPositionV1 {
+  position: { listId: string; entryId: string } | null;
+}
 export type ListEntryV2 =
   | (PersonalReference & { fallback?: string })
   | { kind: "placeholder"; text: string };

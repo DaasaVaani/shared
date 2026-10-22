@@ -389,6 +389,15 @@ separately fix list/occurrence UUIDv4 fields without exporting them. Aggregate
 identity/capacity, enclosing personal metadata and transactional persistence still
 require consumer protocols; the record schema alone cannot authorize a write.
 
+The [latest recitation-position record](recitation-position.md) separately fixes
+exactly `position:null` or one `{listId,entryId}` pair. These are local occurrence
+identities, not indexes, lyric references or per-list positions. Explicit
+nonempty list entry selection alone replaces it; an identical pair is a no-op.
+Preserving upgrades initialize only absence. Retain a missing pair for explicit
+unavailable recovery without silently picking another entry; reordered existing
+occurrences resolve by identity. Full byte accounting/migrations and same-platform
+backup inclusion remain independent consumer obligations. Minimal lists exclude it.
+
 Full backup is same-platform only, Android->Android or web/PWA->web/PWA; native
 font units, no cross-platform conversion. Logical envelope format/version/platform/
 exportedAt/data explicitly allowlists approved personal collections independently

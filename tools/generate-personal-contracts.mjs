@@ -72,6 +72,24 @@ export function learningLabelsSchema(settings) {
   };
 }
 
+export function recitationPositionSchema() {
+  return {
+    $schema: "https://json-schema.org/draft/2020-12/schema",
+    $id: "https://daasavaani.github.io/contracts/recitation-position-v1.schema.json",
+    $comment: comment,
+    type: "object", additionalProperties: false, required: ["position"],
+    properties: {
+      position: {
+        oneOf: [
+          { type: "null" },
+          { type: "object", additionalProperties: false, required: ["listId", "entryId"],
+            properties: { listId: uuid(), entryId: uuid() } },
+        ],
+      },
+    },
+  };
+}
+
 export function listTransferSchema(settings, version = 1) {
   if (version !== 1 && version !== 2) throw new Error("Unsupported list contract version");
   validateLimits(settings);
@@ -150,6 +168,7 @@ export async function generatePersonalContracts() {
   await writeFile(resolve(root, "schemas/list-record-v2.schema.json"), JSON.stringify(listRecordSchema(settings, 2), null, 2) + "\n");
   await writeFile(resolve(root, "schemas/recent-history.schema.json"), JSON.stringify(recentHistorySchema(settings), null, 2) + "\n");
   await writeFile(resolve(root, "schemas/learning-labels.schema.json"), JSON.stringify(learningLabelsSchema(settings), null, 2) + "\n");
+  await writeFile(resolve(root, "schemas/recitation-position.schema.json"), JSON.stringify(recitationPositionSchema(), null, 2) + "\n");
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await generatePersonalContracts();

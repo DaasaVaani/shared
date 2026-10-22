@@ -90,7 +90,7 @@ test("Recite captions distinguish lifecycle requests from full recitation and ma
     }
   }
   assert.match(source.en.screenAwakeActive, /restrictions/);
-  assert.match(source.en.reciteNotice, /not implemented/);
+  assert.match(source.en.reciteNotice, /current reading preferences/);
   assert.match(source.en.screenAwakeFailed, /retry/);
 });
 test("list Recite captions distinguish ordered entries and boundaries without claiming durable resume", async () => {
@@ -108,9 +108,28 @@ test("list Recite captions distinguish ordered entries and boundaries without cl
     }
   }
   assert.match(source.en.listReciteNotice, /repeated entries and placeholders/);
-  assert.match(source.en.listReciteNotice, /Continue recitation and durable offline lyrics are not implemented/);
+  assert.match(source.en.listReciteNotice, /actual content preparation/);
   assert.match(source.kn.listReciteNotice, /\p{Script=Kannada}/u);
   assert.equal(source.en.entryNumber, "Entry {position} of {total}");
+});
+test("Continue captions distinguish explicit exact occurrence recovery and never promise automatic entry", async () => {
+  const source = strictYaml(await readFile(new URL("../locales/ui.yml", import.meta.url), "utf8"));
+  const web = JSON.parse(await readFile(new URL("../generated/web/ui.json", import.meta.url), "utf8"));
+  const keys = ["continueRecitation", "savedRecitationPosition", "noRecitationPosition", "recitationListMissing",
+    "recitationEntryMissing", "recitationPositionNotice", "recitationPositionSaving"];
+  for (const [locale, messages] of Object.entries(source)) {
+    const xml = await readFile(new URL(`../generated/android/${locale === "en" ? "values" : `values-${locale}`}/strings.xml`, import.meta.url), "utf8");
+    assert.equal(new Set(keys.map(key => messages[key])).size, keys.length);
+    for (const key of keys) {
+      assert.equal(typeof messages[key], "string", `${locale}.${key}`);
+      assert.equal(web[locale][key], messages[key]);
+      assert.ok(xml.includes(`<string name="${key.replace(/[A-Z]/g, letter => "_" + letter.toLowerCase())}" formatted="false">`));
+    }
+  }
+  assert.match(source.en.recitationPositionNotice, /never starts automatically/);
+  assert.match(source.en.recitationListMissing, /Exact resume is unavailable/);
+  assert.match(source.en.recitationEntryMissing, /rather than starting at a different one automatically/);
+  assert.match(source.kn.continueRecitation, /\p{Script=Kannada}/u);
 });
 test("learning captions retain all approved states and match both generated platform resources", async () => {
   const source = strictYaml(await readFile(new URL("../locales/ui.yml", import.meta.url), "utf8"));

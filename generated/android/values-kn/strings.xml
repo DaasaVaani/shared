@@ -23,6 +23,7 @@
   <string name="clear_recent_history" formatted="false">ಇತ್ತೀಚೆಗೆ ತೆರೆದ ಇತಿಹಾಸವನ್ನು ಅಳಿಸಿ</string>
   <string name="confirm_delete" formatted="false">ಪಟ್ಟಿ ಅಳಿಸುವುದನ್ನು ದೃಢಪಡಿಸಿ</string>
   <string name="confirm_duplicate" formatted="false">ಅದೇ ಹೆಸರಿನಲ್ಲಿ ಉಳಿಸಿ</string>
+  <string name="continue_recitation" formatted="false">ಪಠಣ ಮುಂದುವರಿಸಿ</string>
   <string name="copy_list_link" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ ನಕಲಿಸಿ</string>
   <string name="create_list" formatted="false">ಖಾಲಿ ಪಟ್ಟಿ ರಚಿಸಿ</string>
   <string name="dark" formatted="false">ಗಾಢ</string>
@@ -73,7 +74,7 @@
   <string name="list_link_copied" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ ನಕಲಿಸಲಾಗಿದೆ. ಅದನ್ನು ಸ್ವೀಕರಿಸಿದವರು ಅದರ ವಿಷಯ ಓದಬಹುದು ಅಥವಾ ಮುಂದಕ್ಕೆ ಹಂಚಬಹುದು.</string>
   <string name="list_name" formatted="false">ಪಟ್ಟಿಯ ಹೆಸರು</string>
   <string name="list_name_hint" formatted="false">ಒಂದೇ ಸಾಲಿನಲ್ಲಿ 1-{limit} ಯುನಿಕೋಡ್ ಅಕ್ಷರ ಸ್ಥಾನಗಳನ್ನು ಬಳಸಿ. ಖಾಲಿ ಜಾಗಗಳನ್ನು ಹಾಗೆಯೇ ಉಳಿಸಲಾಗುತ್ತದೆ.</string>
-  <string name="list_recite_notice" formatted="false">ಪಟ್ಟಿಯ ಕ್ರಮದಲ್ಲಿ ಮರುಕಳಿಸುವ ನಮೂದುಗಳು ಮತ್ತು ಪಠ್ಯ ನಮೂದುಗಳೂ ಸೇರಿವೆ. ಪಠಣ ಮುಂದುವರಿಸುವಿಕೆ ಮತ್ತು ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಕೃತಿಗಳು ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
+  <string name="list_recite_notice" formatted="false">ಪಟ್ಟಿಯ ಕ್ರಮದಲ್ಲಿ ಮರುಕಳಿಸುವ ನಮೂದುಗಳು ಮತ್ತು ಪಠ್ಯ ನಮೂದುಗಳು ಪ್ರತ್ಯೇಕವಾಗಿರುತ್ತವೆ. ಸಾಹಿತ್ಯದ ಲಭ್ಯತೆಯು ನಿಜವಾದ ವಿಷಯ ಸಿದ್ಧತೆಯನ್ನು ಅವಲಂಬಿಸಿದೆ.</string>
   <string name="list_saved" formatted="false">ಸ್ವತಂತ್ರ ಸ್ಥಳೀಯ ಪಟ್ಟಿಯಾಗಿ ಉಳಿಸಲಾಗಿದೆ.</string>
   <string name="list_share_cancelled" formatted="false">ಹಂಚಿಕೆಯನ್ನು ರದ್ದುಮಾಡಲಾಗಿದೆ. ಏನನ್ನೂ ಬದಲಿಸಿಲ್ಲ.</string>
   <string name="list_share_failed" formatted="false">ಹಂಚಿಕೆ ಅಥವಾ ನಕಲು ವಿಫಲವಾಗಿದೆ. ತೋರಿಸಿದ ಕೊಂಡಿ ಬಳಸಿ ಅಥವಾ ಕಡತ ಇಳಿಸಿ.</string>
@@ -101,6 +102,7 @@
   <string name="next_recitation_entry" formatted="false">ಮುಂದಿನ ನಮೂದು</string>
   <string name="no_another_lyric" formatted="false">ಈ ಗ್ರಂಥಾಲಯದಲ್ಲಿ ಬೇರೆ ಸಾಹಿತ್ಯ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="no_lists_for_item" formatted="false">ಈ ಉಲ್ಲೇಖ ಸೇರಿಸುವ ಮೊದಲು ಪಟ್ಟಿ ರಚಿಸಿ.</string>
+  <string name="no_recitation_position" formatted="false">ಇನ್ನೂ ಯಾವುದೇ ಪಟ್ಟಿಯ ನಮೂದನ್ನು ನೆನಪಿಟ್ಟಿಲ್ಲ. ಪ್ರಾರಂಭಿಸಲು ಉಳಿಸಿದ ಪಟ್ಟಿ ಆಯ್ಕೆಮಾಡಿ.</string>
   <string name="no_results" formatted="false">ಹೊಂದುವ ದಾಖಲೆಗಳಿಲ್ಲ. ಬೇರೆ ಪದ ಪ್ರಯತ್ನಿಸಿ.</string>
   <string name="occurrence_added" formatted="false">ಆಯ್ಕೆಮಾಡಿದ ಪಟ್ಟಿಗೆ ಹೊಸ ಸ್ವತಂತ್ರ ನಮೂದು ಸೇರಿಸಲಾಗಿದೆ.</string>
   <string name="open" formatted="false">ಓದಿ</string>
@@ -124,10 +126,14 @@
   <string name="recent_history_enabled" formatted="false">ಇತ್ತೀಚೆಗೆ ತೆರೆದ ಸಾಹಿತ್ಯವನ್ನು ದಾಖಲಿಸಿ</string>
   <string name="recent_history_notice" formatted="false">ಇತಿಹಾಸವು ಈ ಸಾಧನದಲ್ಲಿ ಮಾತ್ರ ಉಳಿಯುತ್ತದೆ. ದಾಖಲಿಸುವುದನ್ನು ನಿಲ್ಲಿಸಿದರೂ ಹಿಂದಿನ ದಾಖಲೆಗಳು ಉಳಿಯುತ್ತವೆ.</string>
   <string name="recitation_end" formatted="false">ಪಟ್ಟಿಯ ಅಂತ್ಯ.</string>
+  <string name="recitation_entry_missing" formatted="false">ನೆನಪಿಟ್ಟ ನಮೂದನ್ನು ಅಳಿಸಲಾಗಿದೆ. ಅದೇ ಸ್ಥಾನದಿಂದ ಮುಂದುವರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ; ಬೇರೆ ನಮೂದಿನಿಂದ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಪ್ರಾರಂಭಿಸದೆ ನೀವೇ ನಮೂದು ಆಯ್ಕೆಮಾಡಿ.</string>
+  <string name="recitation_list_missing" formatted="false">ನೆನಪಿಟ್ಟ ಪಟ್ಟಿಯನ್ನು ಅಳಿಸಲಾಗಿದೆ. ಅದೇ ಸ್ಥಾನದಿಂದ ಮುಂದುವರಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ; ಮುಂದುವರಿಸಲು ಉಳಿಸಿದ ಪಟ್ಟಿ ಮತ್ತು ನಮೂದು ಆಯ್ಕೆಮಾಡಿ.</string>
+  <string name="recitation_position_notice" formatted="false">ಇತ್ತೀಚಿನ ಪಟ್ಟಿ ಮತ್ತು ಅದರ ನಿರ್ದಿಷ್ಟ ನಮೂದನ್ನು ಮಾತ್ರ ಈ ಸಾಧನದಲ್ಲಿ ನೆನಪಿಡಲಾಗುತ್ತದೆ. ಪಠಣ ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಪ್ರಾರಂಭವಾಗುವುದಿಲ್ಲ.</string>
+  <string name="recitation_position_saving" formatted="false">ಆಯ್ಕೆಮಾಡಿದ ನಮೂದನ್ನು ನೆನಪಿಡಲಾಗುತ್ತಿದೆ.</string>
   <string name="recitation_start" formatted="false">ಪಟ್ಟಿಯ ಆರಂಭ.</string>
   <string name="recite" formatted="false">ಪಠಣ</string>
   <string name="recite_list" formatted="false">ಪಟ್ಟಿಯನ್ನು ಪಠಿಸಿ</string>
-  <string name="recite_notice" formatted="false">ಏಕಾಗ್ರ ಓದು ಮಾತ್ರ. ಪಟ್ಟಿಯ ಪಠಣ ಮತ್ತು ಪಠಣ ಮುಂದುವರಿಸುವ ಸೌಲಭ್ಯಗಳು ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
+  <string name="recite_notice" formatted="false">ಏಕಾಗ್ರ ಓದು ನಿಮ್ಮ ಪ್ರಸ್ತುತ ಓದುವ ಆದ್ಯತೆಗಳನ್ನು ಬಳಸುತ್ತದೆ. ಪರದೆಯನ್ನು ಆನ್ ಆಗಿಡುವುದು ಐಚ್ಛಿಕ.</string>
   <string name="reference_known" formatted="false">ಲಭ್ಯವಿರುವ ಸೂಚಿಯಲ್ಲಿದೆ. ಆಫ್‌ಲೈನ್ ಸಿದ್ಧತೆಯನ್ನು ಸೂಚಿಸುವುದಿಲ್ಲ.</string>
   <string name="reference_pending" formatted="false">ಗ್ರಂಥಾಲಯದ ವಿವರಗಳು ಇನ್ನೂ ನಿರ್ಧಾರವಾಗಿಲ್ಲ. ಗುರುತನ್ನು ಉಳಿಸಲಾಗಿದೆ; ಅದು ಇಲ್ಲ ಎಂದು ನಿರ್ಧರಿಸಿಲ್ಲ.</string>
   <string name="remove_entry" formatted="false">ಈ ನಮೂದನ್ನು ಮಾತ್ರ ತೆಗೆದುಹಾಕಿ</string>
@@ -139,6 +145,7 @@
   <string name="retry" formatted="false">ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
   <string name="save_entry" formatted="false">ನಮೂದು ಉಳಿಸಿ</string>
   <string name="save_list" formatted="false">ನನ್ನ ಗ್ರಂಥಾಲಯಕ್ಕೆ ಉಳಿಸಿ</string>
+  <string name="saved_recitation_position" formatted="false">ನೆನಪಿಟ್ಟ ಪಟ್ಟಿಯ ನಮೂದು</string>
   <string name="screen_awake_active" formatted="false">ಪರದೆ ಆನ್ ಆಗಿರಲು ವಿನಂತಿ ಸಕ್ರಿಯವಾಗಿದೆ. ಕಾರ್ಯಾಚರಣಾ ವ್ಯವಸ್ಥೆಯ ನಿರ್ಬಂಧಗಳು ಇನ್ನೂ ಅನ್ವಯಿಸುತ್ತವೆ.</string>
   <string name="screen_awake_failed" formatted="false">ಪರದೆ ಆನ್ ಆಗಿರಲು ವಿನಂತಿ ವಿಫಲವಾಗಿದೆ. ಪಠಣವನ್ನು ಇನ್ನೂ ಬಳಸಬಹುದು; ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಬಹುದು.</string>
   <string name="screen_awake_inactive" formatted="false">ಪರದೆ ಆನ್ ಆಗಿರಲು ವಿನಂತಿ ನಿಷ್ಕ್ರಿಯವಾಗಿದೆ.</string>

@@ -3,13 +3,50 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import Ajv2020 from "ajv/dist/2020.js";
 import { strictYaml } from "./generate-catalog.mjs";
-import { listTransferSchema, listRecordSchema, personalReferenceSchema, recentHistorySchema, learningLabelsSchema, generatePersonalContracts } from "./generate-personal-contracts.mjs";
+import { listTransferSchema, listRecordSchema, personalReferenceSchema, recentHistorySchema, learningLabelsSchema, recitationPositionSchema, generatePersonalContracts } from "./generate-personal-contracts.mjs";
 
 const settings = strictYaml(await readFile(new URL("../settings/personal-transfer.yml", import.meta.url), "utf8"));
 const schemaFile = new URL("../schemas/list-transfer.schema.json", import.meta.url);
 const schema = JSON.parse(await readFile(schemaFile, "utf8"));
 const validate = new Ajv2020({ strict: true }).compile(schema);
 const list = entries => ({ format: "daasavaani-list", formatVersion: 1, name: "Synthetic test", entries });
+
+test("recitation position retains only one exact local list and occurrence or explicit absence", async () => {
+  const schema = recitationPositionSchema(), check = new Ajv2020({ strict: true }).compile(schema);
+  const fixtures = JSON.parse(await readFile(new URL("../fixtures/personal/recitation-position.json", import.meta.url), "utf8"));
+  for (const [group, expected] of [["accepted", true], ["rejected", false]]) {
+    for (const fixture of fixtures[group]) {
+      const before = structuredClone(fixture.value);
+      assert.equal(check(fixture.value), expected, fixture.label);
+      assert.deepEqual(fixture.value, before);
+    }
+  }
+  assert.deepEqual(JSON.parse(await readFile(new URL("../schemas/recitation-position.schema.json", import.meta.url), "utf8")), schema);
+  for (const version of [1, 2]) {
+    const transfer = new Ajv2020({ strict: true }).compile(listTransferSchema(settings, version));
+    for (const key of ["recitation", "recitationPosition", "resume", "position"]) {
+      assert.equal(transfer({ ...list([]), formatVersion: version, [key]: fixtures.accepted[1].value }), false);
+    }
+  }
+});
+
+test("recitation vectors resolve exact occurrence identities after reorder without guessing missing entries", async () => {
+  const fixtures = JSON.parse(await readFile(new URL("../fixtures/personal/recitation-position.json", import.meta.url), "utf8"));
+  const check = new Ajv2020({ strict: true }).compile(recitationPositionSchema());
+  const local = new Ajv2020({ strict: true }).compile(listRecordSchema(settings, 2));
+  for (const fixture of fixtures.resolution) {
+    const before = structuredClone(fixture);
+    assert.equal(check(fixture.value), true, fixture.label);
+    for (const record of fixture.lists) assert.equal(local(record), true, fixture.label);
+    const position = fixture.value.position;
+    const record = position && fixture.lists.find(value => value.id === position.listId);
+    const index = record ? record.entries.findIndex(entry => entry.id === position.entryId) : -1;
+    const actual = !position ? { kind: "none" } : !record ? { kind: "listMissing" }
+      : index < 0 ? { kind: "entryMissing" } : { kind: "available", index };
+    assert.deepEqual(actual, fixture.expected, fixture.label);
+    assert.deepEqual(fixture, before);
+  }
+});
 
 test("learning labels retain exactly three explicit states and typed reference identities", async () => {
   const check = new Ajv2020({ strict: true }).compile(learningLabelsSchema(settings));

@@ -42,6 +42,15 @@ the existing entry-number and unavailable-lyrics messages retain their meanings.
 These resources do not implement consumer list navigation or the independent
 latest-list/occurrence persistence and backup contract.
 
+The [latest exact recitation-position contract](docs/recitation-position.md)
+defines one nullable local list/occurrence pair, explicit Continue, exact-ID
+resolution after reorder, missing-location recovery without guessing and
+preserving transactional upgrades. Its schema/types/synthetic vectors and
+bilingual captions do not implement consumer persistence, native preparation,
+durable offline content or full same-platform backups. Two bounded Recite notices
+describe current reading/content behavior rather than unimplemented consumer
+milestones. Consumers adopt and validate independently.
+
 Reading-preference captions cover independent lyric font controls and
 Compact/Normal/Relaxed density. They do not define numeric font bounds or spacing,
 add persisted fields or implement controls. Consumers retain native platform

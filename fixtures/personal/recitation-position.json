@@ -1,0 +1,54 @@
+{
+  "accepted": [
+    { "label": "initial absence is explicit and has no invented selection", "value": { "position": null } },
+    { "label": "one exact local list and occurrence", "value": { "position": { "listId": "00000000-0000-4000-8000-000000000001", "entryId": "00000000-0000-4000-8000-000000000003" } } },
+    { "label": "unresolved identifiers remain structurally valid after removal", "value": { "position": { "listId": "ffffffff-ffff-4fff-bfff-ffffffffffff", "entryId": "abcdef01-2345-4678-9abc-def012345678" } } }
+  ],
+  "rejected": [
+    { "label": "missing position", "value": {} },
+    { "label": "root null is not the record", "value": null },
+    { "label": "per-list positions are not supported", "value": { "position": [] } },
+    { "label": "partial list pointer", "value": { "position": { "listId": "00000000-0000-4000-8000-000000000001" } } },
+    { "label": "partial occurrence pointer", "value": { "position": { "entryId": "00000000-0000-4000-8000-000000000003" } } },
+    { "label": "legacy video ID is not a local list UUID", "value": { "position": { "listId": "fixture-one", "entryId": "00000000-0000-4000-8000-000000000003" } } },
+    { "label": "non-v4 occurrence", "value": { "position": { "listId": "00000000-0000-4000-8000-000000000001", "entryId": "00000000-0000-5000-8000-000000000003" } } },
+    { "label": "uppercase UUIDs are not normalized", "value": { "position": { "listId": "FFFFFFFF-FFFF-4FFF-BFFF-FFFFFFFFFFFF", "entryId": "00000000-0000-4000-8000-000000000003" } } },
+    { "label": "invalid UUID variant", "value": { "position": { "listId": "00000000-0000-4000-8000-000000000001", "entryId": "00000000-0000-4000-7000-000000000003" } } },
+    { "label": "index is not occurrence identity", "value": { "position": { "listId": "00000000-0000-4000-8000-000000000001", "index": 1 } } },
+    { "label": "reference is not occurrence identity", "value": { "position": { "listId": "00000000-0000-4000-8000-000000000001", "lyricId": "00000000-0000-4000-8000-000000000003" } } },
+    { "label": "position has no scroll", "value": { "position": { "listId": "00000000-0000-4000-8000-000000000001", "entryId": "00000000-0000-4000-8000-000000000003", "scroll": 12 } } },
+    { "label": "record has no auto-entry preference", "value": { "position": null, "autoEnter": true } },
+    { "label": "record has no timestamp", "value": { "position": null, "updatedAt": "2026-01-01" } }
+  ],
+  "resolution": [
+    { "label": "no old activity is reconstructed", "value": { "position": null }, "lists": [], "expected": { "kind": "none" } },
+    { "label": "second equal lyric occurrence is not the first occurrence", "value": { "position": { "listId": "00000000-0000-4000-8000-000000000001", "entryId": "00000000-0000-4000-8000-000000000003" } }, "lists": [
+      { "id": "00000000-0000-4000-8000-000000000001", "name": "Synthetic repeated lyrics", "entries": [
+        { "id": "00000000-0000-4000-8000-000000000002", "kind": "lyric", "lyricId": "00000000-0000-4000-8000-000000000010" },
+        { "id": "00000000-0000-4000-8000-000000000003", "kind": "lyric", "lyricId": "00000000-0000-4000-8000-000000000010" }
+      ] }
+    ], "expected": { "kind": "available", "index": 1 } },
+    { "label": "reorder finds the same occurrence at its new position", "value": { "position": { "listId": "00000000-0000-4000-8000-000000000001", "entryId": "00000000-0000-4000-8000-000000000003" } }, "lists": [
+      { "id": "00000000-0000-4000-8000-000000000001", "name": "Renamed synthetic list", "entries": [
+        { "id": "00000000-0000-4000-8000-000000000003", "kind": "placeholder", "text": "  Repeated raw text  " },
+        { "id": "00000000-0000-4000-8000-000000000002", "kind": "placeholder", "text": "  Repeated raw text  " }
+      ] }
+    ], "expected": { "kind": "available", "index": 0 } },
+    { "label": "missing list is not replaced with another same-name list", "value": { "position": { "listId": "00000000-0000-4000-8000-000000000001", "entryId": "00000000-0000-4000-8000-000000000003" } }, "lists": [
+      { "id": "00000000-0000-4000-8000-000000000004", "name": "Synthetic repeated lyrics", "entries": [] }
+    ], "expected": { "kind": "listMissing" } },
+    { "label": "removed repetition never falls back to equal reference", "value": { "position": { "listId": "00000000-0000-4000-8000-000000000001", "entryId": "00000000-0000-4000-8000-000000000003" } }, "lists": [
+      { "id": "00000000-0000-4000-8000-000000000001", "name": "Synthetic repeated lyrics", "entries": [
+        { "id": "00000000-0000-4000-8000-000000000002", "kind": "lyric", "lyricId": "00000000-0000-4000-8000-000000000010" }
+      ] }
+    ], "expected": { "kind": "entryMissing" } },
+    { "label": "empty saved list has no invented occurrence", "value": { "position": { "listId": "00000000-0000-4000-8000-000000000001", "entryId": "00000000-0000-4000-8000-000000000003" } }, "lists": [
+      { "id": "00000000-0000-4000-8000-000000000001", "name": "Synthetic empty", "entries": [] }
+    ], "expected": { "kind": "entryMissing" } },
+    { "label": "existing occurrence remains exact after manual typed replacement", "value": { "position": { "listId": "00000000-0000-4000-8000-000000000001", "entryId": "00000000-0000-4000-8000-000000000003" } }, "lists": [
+      { "id": "00000000-0000-4000-8000-000000000001", "name": "Synthetic edited entry", "entries": [
+        { "id": "00000000-0000-4000-8000-000000000003", "kind": "legacyVideo", "videoId": "00000000-0000-4000-8000-000000000010", "fallback": "  User label  " }
+      ] }
+    ], "expected": { "kind": "available", "index": 0 } }
+  ]
+}

@@ -1,5 +1,33 @@
 # Documentation history
 
+## 2026-10-23: exact recitation-position prerequisite
+
+- Added an independently versioned logical record/schema/type and synthetic
+  structural/resolution vectors for exactly one nullable local list/occurrence
+  pair. REC-04 requires explicit Continue, no launch auto-entry or guessed
+  replacement, preserving absence-only upgrades, strict complete-byte/fenced
+  writes and minimal-transfer exclusion. Persisted pair resolution follows exact
+  occurrence identity through reorder/manual replacement; deleted references
+  remain valid unresolved state. Empty lists invent/replace no position.
+- Added7 bilingual Continue/empty/missing/saving/privacy captions and replaced
+  two superseded Recite notices which claimed list recitation/Continue were
+  categorically unimplemented. They now describe current preferences, independent
+  repetitions/placeholders and actual content preparation without claiming
+  consumer persistence/readiness. All other existing captions/settings/contracts
+  remain unchanged. The owning consumers retain independent pins/migrations.
+- This prerequisite does not implement app storage/Continue, same-platform full
+  backups, durable snapshots or complete REC-04/release acceptance. No source,
+  reviewed lyric, content capability or consumer pin is changed here.
+- `npm run check` passed40 tests, zero failures/cancellations/skips.
+  `python tools\check_repository.py` passed78 tracked files; actionlint1.7.12
+  with ShellCheck0.11.0 and both Git whitespace checks passed. Inline Node
+  validation parsed11 tracked YAML files, verified exactly7 additive/2 refreshed
+  captions per locale with every other caption and prior setting/schema unchanged,
+  and found22 generated/schema outputs byte-identical after full regeneration.
+  The initial prior-file comparison flagged an unchanged CRLF fixture schema
+  against Git's LF blob; repeated with Git EOL normalization before comparing
+  those prior contracts. No schema/validation rule was weakened.
+
 ## 2026-10-22: ordered list Recite caption prerequisite
 
 - Added7 bilingual captions for explicit list Recite, previous/next entry,

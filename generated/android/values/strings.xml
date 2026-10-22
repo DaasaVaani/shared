@@ -23,6 +23,7 @@
   <string name="clear_recent_history" formatted="false">Clear recently opened history</string>
   <string name="confirm_delete" formatted="false">Confirm list deletion</string>
   <string name="confirm_duplicate" formatted="false">Save with same name</string>
+  <string name="continue_recitation" formatted="false">Continue recitation</string>
   <string name="copy_list_link" formatted="false">Copy snapshot link</string>
   <string name="create_list" formatted="false">Create empty list</string>
   <string name="dark" formatted="false">Dark</string>
@@ -73,7 +74,7 @@
   <string name="list_link_copied" formatted="false">Snapshot link copied. Anyone receiving it can read or forward its contents.</string>
   <string name="list_name" formatted="false">List name</string>
   <string name="list_name_hint" formatted="false">Use 1-{limit} Unicode code points on one line. Spaces are preserved.</string>
-  <string name="list_recite_notice" formatted="false">List order includes repeated entries and placeholders. Continue recitation and durable offline lyrics are not implemented yet.</string>
+  <string name="list_recite_notice" formatted="false">List order keeps repeated entries and placeholders separate. Available lyrics depend on actual content preparation.</string>
   <string name="list_saved" formatted="false">Saved as an independent local list.</string>
   <string name="list_share_cancelled" formatted="false">Sharing cancelled. Nothing was changed.</string>
   <string name="list_share_failed" formatted="false">Sharing or copying failed. Use the displayed link or download the file instead.</string>
@@ -101,6 +102,7 @@
   <string name="next_recitation_entry" formatted="false">Next entry</string>
   <string name="no_another_lyric" formatted="false">No other lyric is available in this catalog.</string>
   <string name="no_lists_for_item" formatted="false">Create a list before adding this reference.</string>
+  <string name="no_recitation_position" formatted="false">No list entry has been remembered yet. Choose a saved list to begin.</string>
   <string name="no_results" formatted="false">No matching records. Try another word.</string>
   <string name="occurrence_added" formatted="false">A new independent occurrence was added to the selected list.</string>
   <string name="open" formatted="false">Read</string>
@@ -124,10 +126,14 @@
   <string name="recent_history_enabled" formatted="false">Record recently opened lyrics</string>
   <string name="recent_history_notice" formatted="false">History stays only on this device. Turning recording off keeps existing entries.</string>
   <string name="recitation_end" formatted="false">End of list.</string>
+  <string name="recitation_entry_missing" formatted="false">The remembered entry was removed. Exact resume is unavailable; choose an entry rather than starting at a different one automatically.</string>
+  <string name="recitation_list_missing" formatted="false">The remembered list was removed. Exact resume is unavailable; choose a saved list and entry to continue.</string>
+  <string name="recitation_position_notice" formatted="false">Only the latest list and exact entry are remembered on this device. Recite never starts automatically.</string>
+  <string name="recitation_position_saving" formatted="false">Remembering the selected entry.</string>
   <string name="recitation_start" formatted="false">Start of list.</string>
   <string name="recite" formatted="false">Recite</string>
   <string name="recite_list" formatted="false">Recite list</string>
-  <string name="recite_notice" formatted="false">Focused reading only. List recitation and Continue recitation are not implemented yet.</string>
+  <string name="recite_notice" formatted="false">Focused reading uses your current reading preferences. Screen awake is optional.</string>
   <string name="reference_known" formatted="false">In the available catalog. Offline readiness is not established.</string>
   <string name="reference_pending" formatted="false">Library details are not yet resolved. The identifier is preserved; its absence has not been established.</string>
   <string name="remove_entry" formatted="false">Remove this occurrence</string>
@@ -139,6 +145,7 @@
   <string name="retry" formatted="false">Try again</string>
   <string name="save_entry" formatted="false">Save entry</string>
   <string name="save_list" formatted="false">Save to My Library</string>
+  <string name="saved_recitation_position" formatted="false">Remembered list entry</string>
   <string name="screen_awake_active" formatted="false">The screen-awake request is active. Operating-system restrictions still apply.</string>
   <string name="screen_awake_failed" formatted="false">The screen-awake request failed. Recite still works; you can retry.</string>
   <string name="screen_awake_inactive" formatted="false">The screen-awake request is off.</string>

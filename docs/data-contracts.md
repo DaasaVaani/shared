@@ -49,6 +49,12 @@ implementation is authorized, not global production readiness.
   three explicit states, typed uniqueness and preserving no-assignment upgrades;
   aggregate identity checks, local view/persistence and Practice require
   independent consumer implementation.
+- The [latest exact recitation-position contract](recitation-position.md) has a
+  generated zero-or-one local list/occurrence schema, types and structural/
+  resolution vectors. It requires explicit Continue, preserving absence-only
+  upgrades, no guessed replacement for missing positions, complete personal
+  byte accounting and minimal-transfer exclusion. Consumer persistence and the
+  separately versioned full-backup/restore allowlist remain implementation gates.
 - Platform: independent UI/script preferences, system-font limitations, static
   routes/App Links, safe shell updates and verified local-signing handoff.
   Additive Recite captions cover only explicit focused reading/control
