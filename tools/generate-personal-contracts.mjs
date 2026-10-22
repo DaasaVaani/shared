@@ -29,8 +29,7 @@ export function personalReferenceSchema() {
   };
 }
 
-export function listTransferSchema(settings, version = 1) {
-  if (version !== 1 && version !== 2) throw new Error("Unsupported list contract version");
+function validateLimits(settings) {
   if (!validateSettings(settings)) throw new Error("Invalid personal-transfer settings: " + JSON.stringify(validateSettings.errors));
   if (settings.maxEntriesPerList > settings.maxTotalEntries ||
       settings.maxListEncodedBytes <= settings.maxListDecodedBytes ||
@@ -38,6 +37,26 @@ export function listTransferSchema(settings, version = 1) {
       settings.maxPersonalStoredBytes > settings.maxBackupDecodedBytes) {
     throw new Error("Inconsistent personal-transfer collection or byte limits");
   }
+}
+
+export function recentHistorySchema(settings) {
+  validateLimits(settings);
+  return {
+    $schema: "https://json-schema.org/draft/2020-12/schema",
+    $id: "https://daasavaani.github.io/contracts/recent-history-v1.schema.json",
+    $comment: comment,
+    type: "object", additionalProperties: false, required: ["enabled", "entries"],
+    properties: {
+      enabled: { type: "boolean" },
+      entries: { type: "array", maxItems: settings.maxRecents, uniqueItems: true,
+        items: { oneOf: personalReferenceSchema().oneOf } },
+    },
+  };
+}
+
+export function listTransferSchema(settings, version = 1) {
+  if (version !== 1 && version !== 2) throw new Error("Unsupported list contract version");
+  validateLimits(settings);
   const singleLine = maxLength => ({
     type: "string", minLength: 1, maxLength,
     pattern: "^[^\\u0000-\\u001f\\u007f-\\u009f\\u2028\\u2029\\ud800-\\udfff]*$",
@@ -111,6 +130,7 @@ export async function generatePersonalContracts() {
   await writeFile(resolve(root, "schemas/personal-reference.schema.json"), JSON.stringify(personalReferenceSchema(), null, 2) + "\n");
   await writeFile(resolve(root, "schemas/list-transfer-v2.schema.json"), JSON.stringify(listTransferSchema(settings, 2), null, 2) + "\n");
   await writeFile(resolve(root, "schemas/list-record-v2.schema.json"), JSON.stringify(listRecordSchema(settings, 2), null, 2) + "\n");
+  await writeFile(resolve(root, "schemas/recent-history.schema.json"), JSON.stringify(recentHistorySchema(settings), null, 2) + "\n");
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await generatePersonalContracts();

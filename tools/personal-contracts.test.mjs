@@ -3,13 +3,37 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import Ajv2020 from "ajv/dist/2020.js";
 import { strictYaml } from "./generate-catalog.mjs";
-import { listTransferSchema, listRecordSchema, personalReferenceSchema, generatePersonalContracts } from "./generate-personal-contracts.mjs";
+import { listTransferSchema, listRecordSchema, personalReferenceSchema, recentHistorySchema, generatePersonalContracts } from "./generate-personal-contracts.mjs";
 
 const settings = strictYaml(await readFile(new URL("../settings/personal-transfer.yml", import.meta.url), "utf8"));
 const schemaFile = new URL("../schemas/list-transfer.schema.json", import.meta.url);
 const schema = JSON.parse(await readFile(schemaFile, "utf8"));
 const validate = new Ajv2020({ strict: true }).compile(schema);
 const list = entries => ({ format: "daasavaani-list", formatVersion: 1, name: "Synthetic test", entries });
+
+test("recent history preserves typed order, retained disabled entries and exact allowlists", async () => {
+  const schema = recentHistorySchema(settings), check = new Ajv2020({ strict: true }).compile(schema);
+  const fixtures = JSON.parse(await readFile(new URL("../fixtures/personal/recent-history.json", import.meta.url), "utf8"));
+  for (const [group, expected] of [["accepted", true], ["rejected", false]]) {
+    for (const fixture of fixtures[group]) {
+      const before = structuredClone(fixture.value);
+      assert.equal(check(fixture.value), expected, fixture.label);
+      assert.deepEqual(fixture.value, before);
+    }
+  }
+  assert.deepEqual(JSON.parse(await readFile(new URL("../schemas/recent-history.schema.json", import.meta.url), "utf8")), schema);
+  for (const enabled of [true, false]) {
+    const entries = Array.from({ length: settings.maxRecents }, (_, index) => ({ kind: "lyric",
+      lyricId: `00000000-0000-4000-8000-${(index + 1).toString(16).padStart(12, "0")}` }));
+    assert.equal(check({ enabled, entries }), true);
+    assert.equal(check({ enabled, entries: [...entries, { kind: "legacyVideo", videoId: "extra" }] }), false);
+    assert.equal(check({ enabled, entries: [...entries.slice(0, -1), entries[0]] }), false);
+  }
+  const limited = new Ajv2020({ strict: true }).compile(recentHistorySchema({ ...settings, maxRecents: 1 }));
+  assert.equal(limited({ enabled: true, entries: fixtures.accepted[1].value.entries.slice(0, 1) }), true);
+  assert.equal(limited({ enabled: true, entries: fixtures.accepted[1].value.entries.slice(0, 2) }), false);
+  assert.throws(() => recentHistorySchema({ ...settings, maxRecents: 0 }), /personal-transfer/);
+});
 
 test("typed reference/list v2 schemas retain distinct UUID-looking legacy values and exact allowlists", async () => {
   const fixtures = JSON.parse(await readFile(new URL("../fixtures/personal/list-transfer-v2.json", import.meta.url), "utf8"));

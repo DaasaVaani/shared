@@ -1,0 +1,26 @@
+{
+  "accepted": [
+    { "label": "enabled empty history", "value": { "enabled": true, "entries": [] } },
+    { "label": "disabled retains ordered typed references", "value": { "enabled": false, "entries": [
+      { "kind": "lyric", "lyricId": "00000000-0000-4000-8000-000000000001" },
+      { "kind": "legacyVideo", "videoId": "00000000-0000-4000-8000-000000000001" },
+      { "kind": "legacyVideo", "videoId": "synthetic_reference" }
+    ] } }
+  ],
+  "rejected": [
+    { "label": "missing enabled", "value": { "entries": [] } },
+    { "label": "missing entries", "value": { "enabled": true } },
+    { "label": "wrong enabled type", "value": { "enabled": "true", "entries": [] } },
+    { "label": "duplicate reference", "value": { "enabled": true, "entries": [
+      { "kind": "lyric", "lyricId": "00000000-0000-4000-8000-000000000001" },
+      { "kind": "lyric", "lyricId": "00000000-0000-4000-8000-000000000001" }
+    ] } },
+    { "label": "old untyped reference", "value": { "enabled": true, "entries": [
+      { "kind": "item", "videoId": "synthetic_reference" }
+    ] } },
+    { "label": "no catalog text", "value": { "enabled": true, "entries": [
+      { "kind": "lyric", "lyricId": "00000000-0000-4000-8000-000000000001", "title": "Synthetic only" }
+    ] } },
+    { "label": "no event timestamp", "value": { "enabled": true, "entries": [], "openedAt": 1 } }
+  ]
+}

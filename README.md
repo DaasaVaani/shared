@@ -24,6 +24,12 @@ official data, deterministic tables and independent cross-platform vectors.
 Consumers must adopt the profile and migrate derived keys explicitly without
 rewriting stored names/IDs or merging lists; this does not implement native lists.
 
+The [local recently opened contract](docs/recent-history.md) defines ordered
+distinct typed references, device-only enabled/clear behavior and the configured
+50-entry window. Recording starts enabled in portable defaults; existing
+explicit preferences win. Schemas/fixtures do not implement consumer persistence
+or successful-open lifecycle handling.
+
 Build-time publication safety settings follow
 [`schemas/publication-policy-settings.schema.json`](schemas/publication-policy-settings.schema.json):
 every declared field is required, byte/time bounds are positive safe integers,

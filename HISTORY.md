@@ -1,5 +1,29 @@
 # Documentation history
 
+## 2026-10-22: portable recently opened history
+
+- The owner selected initially enabled recording rather than opt-in recording.
+  Archived the prior unspecified initial history preference: portable defaults
+  now require a boolean recentHistoryEnabled, initially true. Explicit saved
+  choices win; consumer adoption and preserving upgrades remain independent.
+- Added the local logical history schema/type, synthetic accepted/rejected
+  fixtures and bilingual generated labels. History is an ordered50-distinct
+  rolling window of exact typed references, not a timestamped activity log.
+  Disabling retains entries, Clear preserves the setting/other personal state,
+  failed/unavailable/background reads do not record and no network/transfer
+  inclusion is authorized. Consumers must implement transactional accounting,
+  successful-open handling, privacy, failure surfaces and non-destructive upgrades.
+- Requirements partially specified: LIB-06, SET-04 and QUAL-05. No consumer
+  runtime, full-backup format, offline readiness or complete requirement pass
+  is supplied by structural schemas. Source/original lyric files are untouched.
+- `npm run check` passed28 tests with no failed/skipped/cancelled cases, including
+  deterministic generation, actual50/+1/duplicate/settings boundaries, strict
+  default booleans and all existing Unicode tests. Independent Buffer comparison
+  against HEAD proved all five previously published personal schemas byte-identical.
+- `python tools\check_repository.py` passed72 tracked files; strict YAML passed11
+  files, actionlint1.7.12/ShellCheck0.11.0 and both Git whitespace checks passed.
+  Generated/schema working bytes matched their intended staged outputs.
+
 ## 2026-10-22: aligning the current contract inventory with typed v2
 
 - Archived the checklist/specification wording that named only executable list

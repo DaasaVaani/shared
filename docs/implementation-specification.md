@@ -336,7 +336,10 @@ favorites/lists/placeholders/fallback labels, one latest recitation list/occurre
 practice location, learning labels, bookmarks and recents. Content/control separate.
 Typed item/line/verse/occurrence references; independent UUIDv4 list occurrences,
 repeats preserved. Recent50 distinct successful opens, disable stops writes, Clear
-separate. NFC/case-insensitive duplicate-name warning permits confirmed reuse.
+separate. The [recent-history record](recent-history.md) defines exact ordered
+typed references and portable initially-enabled recording, without activity
+timestamps or implicit preparation. Consumer persistence/adapters remain separate.
+NFC/case-insensitive duplicate-name warning permits confirmed reuse.
 Personal-name comparison follows the approved
 [Unicode16 full-default-fold/NFC profile](unicode-name-matching.md), not
 platform Unicode tables. Existing derived keys require explicit consumer

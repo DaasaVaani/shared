@@ -2,5 +2,6 @@ formatVersion: 1
 uiLanguage: en
 lyricScript: kn
 theme: light
+recentHistoryEnabled: true
 supportedUiLanguages: [en, kn]
 supportedThemes: [light, dark, warm, device]

@@ -1,6 +1,10 @@
 export type PersonalReference =
   | { kind: "lyric"; lyricId: string }
   | { kind: "legacyVideo"; videoId: string };
+export interface RecentHistoryV1 {
+  enabled: boolean;
+  entries: PersonalReference[];
+}
 export type ListEntryV2 =
   | (PersonalReference & { fallback?: string })
   | { kind: "placeholder"; text: string };

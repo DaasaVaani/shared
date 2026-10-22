@@ -44,6 +44,11 @@ test("portable UI defaults and all appearance modes follow the strict schema and
   const validate = new Ajv2020({ strict: true }).compile(schema);
   assert.equal(validate(defaults), true);
   assert.equal(defaults.theme, "light");
+  assert.equal(defaults.recentHistoryEnabled, true);
+  assert.equal(validate({ ...defaults, recentHistoryEnabled: false }), true);
+  assert.equal(validate({ ...defaults, recentHistoryEnabled: "true" }), false);
+  const { recentHistoryEnabled, ...missingHistoryDefault } = defaults;
+  assert.equal(validate(missingHistoryDefault), false);
   assert.deepEqual(defaults.supportedThemes, ["light", "dark", "warm", "device"]);
   for (const theme of defaults.supportedThemes) assert.equal(validate({ ...defaults, theme }), true);
   for (const invalid of [{ ...defaults, ignored: true }, { ...defaults, theme: "unknown" },

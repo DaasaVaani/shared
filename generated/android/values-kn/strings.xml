@@ -14,6 +14,7 @@
   <string name="canonical" formatted="false">ಕನ್ನಡ · ಮೂಲ ಪರೀಕ್ಷಾ ಪಠ್ಯ</string>
   <string name="catalog_notice" formatted="false">ಪಟ್ಟಿಯ ವಿವರಗಳು ಲಭ್ಯವಿರುವ ಪರಿಶೀಲಿತ ಸೂಚಿಯನ್ನು ಮಾತ್ರ ಬಳಸುತ್ತವೆ. ಪಟ್ಟಿ ನೋಡುವುದು, ಉಳಿಸುವುದು ಅಥವಾ ಹಂಚುವುದು ಸಾಹಿತ್ಯವನ್ನು ಇಳಿಸುವುದಿಲ್ಲ ಮತ್ತು ಆಫ್‌ಲೈನ್ ಸಿದ್ಧತೆಯನ್ನು ಸೂಚಿಸುವುದಿಲ್ಲ.</string>
   <string name="choose_list" formatted="false">ಉಳಿಸಿದ ಪಟ್ಟಿ ಆಯ್ಕೆಮಾಡಿ</string>
+  <string name="clear_recent_history" formatted="false">ಇತ್ತೀಚೆಗೆ ತೆರೆದ ಇತಿಹಾಸವನ್ನು ಅಳಿಸಿ</string>
   <string name="confirm_delete" formatted="false">ಪಟ್ಟಿ ಅಳಿಸುವುದನ್ನು ದೃಢಪಡಿಸಿ</string>
   <string name="confirm_duplicate" formatted="false">ಅದೇ ಹೆಸರಿನಲ್ಲಿ ಉಳಿಸಿ</string>
   <string name="copy_list_link" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ ನಕಲಿಸಿ</string>
@@ -26,6 +27,7 @@
   <string name="edit_entry" formatted="false">ನಮೂದು ತಿದ್ದಿ</string>
   <string name="empty_favorites" formatted="false">ಮೆಚ್ಚಿನ ದಾಖಲೆಗಳಿಲ್ಲ. ದಾಖಲೆಯನ್ನು ತೆರೆದು ಸೇರಿಸಿ.</string>
   <string name="empty_lists" formatted="false">ಉಳಿಸಿದ ಪಟ್ಟಿಗಳಿಲ್ಲ. ಖಾಲಿ ಪಟ್ಟಿ ರಚಿಸಿ ಅಥವಾ ಆಯ್ಕೆಗಳಲ್ಲಿ ಪಟ್ಟಿಯ ಕಡತ ಅಥವಾ ಕೊಂಡಿಯ ಮುನ್ನೋಟ ನೋಡಿ.</string>
+  <string name="empty_recent_history" formatted="false">ಇತ್ತೀಚೆಗೆ ತೆರೆದ ಸಾಹಿತ್ಯವಿಲ್ಲ.</string>
   <string name="entry_number" formatted="false">{total} ನಮೂದುಗಳಲ್ಲಿ {position}ನೆಯ ನಮೂದು</string>
   <string name="entry_text_hint" formatted="false">ಪಠ್ಯ ನೀಡುವಾಗ ಒಂದೇ ಸಾಲಿನಲ್ಲಿ 1-{limit} ಯುನಿಕೋಡ್ ಅಕ್ಷರ ಸ್ಥಾನಗಳನ್ನು ಬಳಸಿ. ಖಾಲಿ ಜಾಗಗಳನ್ನು ಹಾಗೆಯೇ ಉಳಿಸಲಾಗುತ್ತದೆ.</string>
   <string name="error" formatted="false">ಗ್ರಂಥಾಲಯ ತೆರೆಯಲಾಗಲಿಲ್ಲ</string>
@@ -80,6 +82,9 @@
   <string name="preparation_notice" formatted="false">ಪ್ರಾರಂಭಿಸಲು ಎಲ್ಲಾ ಕೃತಕ ದಾಖಲೆಗಳನ್ನು ಇಳಿಸಿ ಪರಿಶೀಲಿಸಿ. ಈ ಪ್ರಾತ್ಯಕ್ಷಿಕೆ ಸಿದ್ಧಪಡಿಸಿದ ದತ್ತಾಂಶವನ್ನು ಮೆಮೊರಿಯಲ್ಲಿ ಇಡುತ್ತದೆ; ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="prepare_library" formatted="false">ಓದುವ ಗ್ರಂಥಾಲಯ ಸಿದ್ಧಪಡಿಸಿ</string>
   <string name="ready" formatted="false">ಪರಿಶೀಲಿಸಿದ ಪರೀಕ್ಷಾ ಪ್ರಕಟಣೆ</string>
+  <string name="recent_history" formatted="false">ಇತ್ತೀಚೆಗೆ ತೆರೆದವು</string>
+  <string name="recent_history_enabled" formatted="false">ಇತ್ತೀಚೆಗೆ ತೆರೆದ ಸಾಹಿತ್ಯವನ್ನು ದಾಖಲಿಸಿ</string>
+  <string name="recent_history_notice" formatted="false">ಇತಿಹಾಸವು ಈ ಸಾಧನದಲ್ಲಿ ಮಾತ್ರ ಉಳಿಯುತ್ತದೆ. ದಾಖಲಿಸುವುದನ್ನು ನಿಲ್ಲಿಸಿದರೂ ಹಿಂದಿನ ದಾಖಲೆಗಳು ಉಳಿಯುತ್ತವೆ.</string>
   <string name="reference_known" formatted="false">ಲಭ್ಯವಿರುವ ಸೂಚಿಯಲ್ಲಿದೆ. ಆಫ್‌ಲೈನ್ ಸಿದ್ಧತೆಯನ್ನು ಸೂಚಿಸುವುದಿಲ್ಲ.</string>
   <string name="reference_pending" formatted="false">ಗ್ರಂಥಾಲಯದ ವಿವರಗಳು ಇನ್ನೂ ನಿರ್ಧಾರವಾಗಿಲ್ಲ. ಗುರುತನ್ನು ಉಳಿಸಲಾಗಿದೆ; ಅದು ಇಲ್ಲ ಎಂದು ನಿರ್ಧರಿಸಿಲ್ಲ.</string>
   <string name="remove_entry" formatted="false">ಈ ನಮೂದನ್ನು ಮಾತ್ರ ತೆಗೆದುಹಾಕಿ</string>

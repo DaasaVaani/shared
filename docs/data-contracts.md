@@ -42,6 +42,9 @@ implementation is authorized, not global production readiness.
   structural/boundary fixtures. Consumer feature status belongs in the
   owning roadmap; native parity, complete enclosing personal/database schemas
   and backup/replacement protocols remain open.
+  The [recently opened logical record](recent-history.md) separately defines
+  typed most-recent-first uniqueness, the configured50-entry window and the
+  enabled initial preference. It is not a minimal transfer or backup format.
 - Platform: independent UI/script preferences, system-font limitations, static
   routes/App Links, safe shell updates and verified local-signing handoff.
 

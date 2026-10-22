@@ -14,6 +14,7 @@
   <string name="canonical" formatted="false">Kannada · canonical test text</string>
   <string name="catalog_notice" formatted="false">List details use only an available verified catalog. Viewing, saving and sharing a list never downloads lyrics or establishes offline readiness.</string>
   <string name="choose_list" formatted="false">Choose a saved list</string>
+  <string name="clear_recent_history" formatted="false">Clear recently opened history</string>
   <string name="confirm_delete" formatted="false">Confirm list deletion</string>
   <string name="confirm_duplicate" formatted="false">Save with same name</string>
   <string name="copy_list_link" formatted="false">Copy snapshot link</string>
@@ -26,6 +27,7 @@
   <string name="edit_entry" formatted="false">Edit entry</string>
   <string name="empty_favorites" formatted="false">No favorites yet. Open a record and add it to favorites.</string>
   <string name="empty_lists" formatted="false">No saved lists yet. Create an empty list or preview a list file or link in Settings.</string>
+  <string name="empty_recent_history" formatted="false">No recently opened lyrics.</string>
   <string name="entry_number" formatted="false">Entry {position} of {total}</string>
   <string name="entry_text_hint" formatted="false">Use 1-{limit} Unicode code points on one line when supplying text. Spaces are preserved.</string>
   <string name="error" formatted="false">Unable to open the library</string>
@@ -80,6 +82,9 @@
   <string name="preparation_notice" formatted="false">Download and validate all synthetic records to begin. This demo holds prepared data in memory; persistent offline snapshots are not implemented.</string>
   <string name="prepare_library" formatted="false">Prepare reading library</string>
   <string name="ready" formatted="false">Verified fixture publication</string>
+  <string name="recent_history" formatted="false">Recently opened</string>
+  <string name="recent_history_enabled" formatted="false">Record recently opened lyrics</string>
+  <string name="recent_history_notice" formatted="false">History stays only on this device. Turning recording off keeps existing entries.</string>
   <string name="reference_known" formatted="false">In the available catalog. Offline readiness is not established.</string>
   <string name="reference_pending" formatted="false">Library details are not yet resolved. The identifier is preserved; its absence has not been established.</string>
   <string name="remove_entry" formatted="false">Remove this occurrence</string>

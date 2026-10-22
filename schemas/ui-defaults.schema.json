@@ -2,12 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["formatVersion", "uiLanguage", "lyricScript", "theme", "supportedUiLanguages", "supportedThemes"],
+  "required": ["formatVersion", "uiLanguage", "lyricScript", "theme", "recentHistoryEnabled", "supportedUiLanguages", "supportedThemes"],
   "properties": {
     "formatVersion": { "const": 1 },
     "uiLanguage": { "$ref": "#/$defs/language" },
     "lyricScript": { "const": "kn" },
     "theme": { "$ref": "#/$defs/theme" },
+    "recentHistoryEnabled": { "type": "boolean" },
     "supportedUiLanguages": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/language" } },
     "supportedThemes": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/theme" } }
   },
