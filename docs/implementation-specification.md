@@ -424,6 +424,11 @@ No claimed automatic shaping detector. Data completeness differs from rendering.
 Responsive320CSSpx+, keyboard/touch/mouse, text scaling/orientation, accessible
 non-drag reorder; bounded wide columns. Light/Dark/Warm/Follow device, independent
 lyric font controls, Compact/Normal/Relaxed with preserved line/verse separation.
+Portable density choices/default come from `settings/defaults.yml` and its strict
+UI-defaults schema; the initial density is Normal. Native font sizes/bounds/steps
+and actual density spacing belong in each consumer's owning settings. Adoption
+requires preserving consumer preference/accounting adapters before controls;
+merely rendering defaults does not authorize a personal-data write.
 
 Search/My Library primary; Explore/Settings secondary. Platform player/share/
 copy/file/screen-awake adapters, explicit errors. YouTube player only after Play;

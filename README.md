@@ -26,7 +26,9 @@ adapters before exposing these preferences; adoption remains independent.
 Portable UI defaults and allowed choices follow
 [`schemas/ui-defaults.schema.json`](schemas/ui-defaults.schema.json).
 Appearance tokens are `light`, `dark`, `warm` and `device` (Follow device);
-the configured initial Website default remains `light`. Consumers validate the
+the configured initial Website default remains `light`. Reading density choices
+are `compact`, `normal` and `relaxed`, initially `normal`. These portable defaults
+do not define native font sizes or platform spacing. Consumers validate the
 schema and independently adopt a compatible revision before exposing new modes.
 
 Personal-list name comparison uses the approved

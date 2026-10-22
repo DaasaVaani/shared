@@ -1,5 +1,25 @@
 # Documentation history
 
+## 2026-10-22: portable reading-density defaults
+
+- Archived the previous portable-default scope: UI language, lyric script,
+  theme and recent recording had defaults, while reading density had none.
+  Added initially Normal and the supported Compact/Normal/Relaxed choices,
+  strict required/default-in-supported validation and the ReadingDensity type.
+  Native font units and numeric spacing/bounds remain consumer-owned.
+- Consumers must independently adopt and implement preserving preference/
+  accounting adapters before controls. No public/source/list/history format,
+  existing personal data, actual lyric layout or consumer pin was changed.
+- The preceding additive UI resources publisheda404e0a9a81407588870150b9f0fbc22a9cd605a
+  after successful exact preflight39731083818/main39731223346. All old captions
+  and contracts were independently proved unchanged; these new defaults are
+  a separate explicit source-configuration adoption, not a runtime fallback.
+- Full `npm run check` passed30 tests, including all three density defaults and
+  missing/unknown/coerced/empty/duplicate/default-not-supported refusal cases.
+  `python tools\check_repository.py` passed72 tracked files; strict YAML11,
+  actionlint/ShellCheck and staged/unstaged whitespace passed. Numeric consumer
+  settings, migrations, controls and dependent app checks remain separate.
+
 ## 2026-10-22: reading-preference UI prerequisites
 
 - Added nine bilingual captions for independent lyric font controls/current

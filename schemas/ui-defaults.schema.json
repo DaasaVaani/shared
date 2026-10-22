@@ -2,15 +2,17 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "additionalProperties": false,
-  "required": ["formatVersion", "uiLanguage", "lyricScript", "theme", "recentHistoryEnabled", "supportedUiLanguages", "supportedThemes"],
+  "required": ["formatVersion", "uiLanguage", "lyricScript", "theme", "readingDensity", "recentHistoryEnabled", "supportedUiLanguages", "supportedThemes", "supportedReadingDensities"],
   "properties": {
     "formatVersion": { "const": 1 },
     "uiLanguage": { "$ref": "#/$defs/language" },
     "lyricScript": { "const": "kn" },
     "theme": { "$ref": "#/$defs/theme" },
+    "readingDensity": { "$ref": "#/$defs/density" },
     "recentHistoryEnabled": { "type": "boolean" },
     "supportedUiLanguages": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/language" } },
-    "supportedThemes": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/theme" } }
+    "supportedThemes": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/theme" } },
+    "supportedReadingDensities": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/density" } }
   },
   "allOf": [
     { "if": { "properties": { "uiLanguage": { "const": "en" } } }, "then": { "properties": { "supportedUiLanguages": { "type": "array", "contains": { "const": "en" } } } } },
@@ -18,10 +20,14 @@
     { "if": { "properties": { "theme": { "const": "light" } } }, "then": { "properties": { "supportedThemes": { "type": "array", "contains": { "const": "light" } } } } },
     { "if": { "properties": { "theme": { "const": "dark" } } }, "then": { "properties": { "supportedThemes": { "type": "array", "contains": { "const": "dark" } } } } },
     { "if": { "properties": { "theme": { "const": "warm" } } }, "then": { "properties": { "supportedThemes": { "type": "array", "contains": { "const": "warm" } } } } },
-    { "if": { "properties": { "theme": { "const": "device" } } }, "then": { "properties": { "supportedThemes": { "type": "array", "contains": { "const": "device" } } } } }
+    { "if": { "properties": { "theme": { "const": "device" } } }, "then": { "properties": { "supportedThemes": { "type": "array", "contains": { "const": "device" } } } } },
+    { "if": { "properties": { "readingDensity": { "const": "compact" } } }, "then": { "properties": { "supportedReadingDensities": { "type": "array", "contains": { "const": "compact" } } } } },
+    { "if": { "properties": { "readingDensity": { "const": "normal" } } }, "then": { "properties": { "supportedReadingDensities": { "type": "array", "contains": { "const": "normal" } } } } },
+    { "if": { "properties": { "readingDensity": { "const": "relaxed" } } }, "then": { "properties": { "supportedReadingDensities": { "type": "array", "contains": { "const": "relaxed" } } } } }
   ],
   "$defs": {
     "language": { "enum": ["en", "kn"] },
-    "theme": { "enum": ["light", "dark", "warm", "device"] }
+    "theme": { "enum": ["light", "dark", "warm", "device"] },
+    "density": { "enum": ["compact", "normal", "relaxed"] }
   }
 }

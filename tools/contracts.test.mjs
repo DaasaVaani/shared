@@ -58,6 +58,23 @@ test("portable UI defaults and all appearance modes follow the strict schema and
     assert.equal(validate(invalid), false);
   }
 });
+test("reading-density defaults require a declared supported mode without coercion or missing fields", async () => {
+  const schema = JSON.parse(await readFile(new URL("../schemas/ui-defaults.schema.json", import.meta.url), "utf8"));
+  const defaults = strictYaml(await readFile(new URL("../settings/defaults.yml", import.meta.url), "utf8"));
+  const validate = new Ajv2020({ strict: true }).compile(schema);
+  assert.equal(defaults.readingDensity, "normal");
+  assert.deepEqual(defaults.supportedReadingDensities, ["compact", "normal", "relaxed"]);
+  for (const readingDensity of defaults.supportedReadingDensities) assert.equal(validate({ ...defaults, readingDensity }), true);
+  const { readingDensity, ...missingDefault } = defaults;
+  const { supportedReadingDensities, ...missingChoices } = defaults;
+  for (const invalid of [missingDefault, missingChoices, { ...defaults, readingDensity: true },
+    { ...defaults, readingDensity: "tight" }, { ...defaults, supportedReadingDensities: [] },
+    { ...defaults, supportedReadingDensities: ["normal", "normal"] },
+    { ...defaults, supportedReadingDensities: ["normal", "tight"] },
+    { ...defaults, readingDensity: "normal", supportedReadingDensities: ["compact"] }]) {
+    assert.equal(validate(invalid), false);
+  }
+});
 test("catalog generator is deterministic and includes both locales", async () => {
   await generate();
   const file = new URL("../generated/web/ui.json", import.meta.url);

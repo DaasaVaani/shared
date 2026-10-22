@@ -2,6 +2,8 @@ formatVersion: 1
 uiLanguage: en
 lyricScript: kn
 theme: light
+readingDensity: normal
 recentHistoryEnabled: true
 supportedUiLanguages: [en, kn]
 supportedThemes: [light, dark, warm, device]
+supportedReadingDensities: [compact, normal, relaxed]

@@ -1,3 +1,4 @@
+export type ReadingDensity = "compact" | "normal" | "relaxed";
 export type PersonalReference =
   | { kind: "lyric"; lyricId: string }
   | { kind: "legacyVideo"; videoId: string };
