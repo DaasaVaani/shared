@@ -7,6 +7,11 @@
   <string name="add_reference" formatted="false">Add library reference</string>
   <string name="add_to_list" formatted="false">Add to a saved list</string>
   <string name="app_name" formatted="false">DaasaVaani</string>
+  <string name="app_shell" formatted="false">App interface and updates</string>
+  <string name="app_shell_failed" formatted="false">App-interface caching or update checking failed. Retry without deleting personal data.</string>
+  <string name="app_shell_notice" formatted="false">App-interface caching does not download lyrics or make them available offline.</string>
+  <string name="app_shell_unsupported" formatted="false">Offline app-interface support is unavailable in this browser. Online features are unchanged.</string>
+  <string name="app_update_available" formatted="false">New app code is ready. Close all tabs for this website, then reopen it. Library content and personal data are not automatically replaced.</string>
   <string name="appearance" formatted="false">Appearance</string>
   <string name="back" formatted="false">Back to library</string>
   <string name="back_to_list" formatted="false">Back to list</string>

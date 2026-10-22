@@ -1,5 +1,28 @@
 # Documentation history
 
+## 2026-10-22: app-interface and normal-update UI prerequisites
+
+- Added five bilingual captions for app-interface caching boundaries, unsupported
+  browser support, explicit caching/update failure and normal code activation
+  after website tabs close. These support the selected Workbox shell direction
+  without claiming lyric downloads, forced activation/reload, content replacement
+  or implemented persistent offline snapshots.
+- The preceding portable-density44c21b9d139239e3003c293dfe8058ad80393fa6 passed
+  exact preflight39731901423/main39732154093. Independent Website1ee3dca adopted
+  it after92 unit/249 browser cases and successful main/Pages/CodeQL; native
+  33cd2eff independently adopted it after40 core/58 connected and successful
+  exact preflight39736253545/main39736619241. This UI-only prerequisite does not
+  update either consumer or alter those numeric/platform preference contracts.
+- No existing caption, settings/schema/type/fixture or source/publication contract
+  is intentionally changed. Generator outputs are committed with the source;
+  consuming build/runtime/lifecycle validation remains a separate gate.
+- Full `npm run check` passed31 tests; `python tools\check_repository.py`
+  passed72 tracked files. Strict YAML11, actionlint/ShellCheck and whitespace
+  passed. All three generated UI resources were byte-identical on regeneration;
+  exactly five keys were added per locale and every old web caption remained
+  unchanged. Schema/settings/type/fixture differences were empty.
+  No consumer pin, dependency, app build or shell runtime was changed here.
+
 ## 2026-10-22: portable reading-density defaults
 
 - Archived the previous portable-default scope: UI language, lyric script,

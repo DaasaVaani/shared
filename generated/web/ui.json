@@ -2,6 +2,11 @@
   "en": {
     "languageName": "English",
     "skipToContent": "Skip to content",
+    "appShell": "App interface and updates",
+    "appShellNotice": "App-interface caching does not download lyrics or make them available offline.",
+    "appShellFailed": "App-interface caching or update checking failed. Retry without deleting personal data.",
+    "appShellUnsupported": "Offline app-interface support is unavailable in this browser. Online features are unchanged.",
+    "appUpdateAvailable": "New app code is ready. Close all tabs for this website, then reopen it. Library content and personal data are not automatically replaced.",
     "unknownRoute": "This page is unavailable.",
     "prepareLibrary": "Prepare reading library",
     "preparationNotice": "Download and validate all synthetic records to begin. This demo holds prepared data in memory; persistent offline snapshots are not implemented.",
@@ -147,6 +152,11 @@
   "kn": {
     "languageName": "ಕನ್ನಡ",
     "skipToContent": "ವಿಷಯಕ್ಕೆ ಹೋಗಿ",
+    "appShell": "ಅಪ್ಲಿಕೇಶನ್ ಪರದೆಗಳು ಮತ್ತು ನವೀಕರಣಗಳು",
+    "appShellNotice": "ಅಪ್ಲಿಕೇಶನ್ ಪರದೆಗಳನ್ನು ಸಂಗ್ರಹಿಸುವುದರಿಂದ ಸಾಹಿತ್ಯ ಡೌನ್‌ಲೋಡ್ ಆಗುವುದಿಲ್ಲ ಅಥವಾ ಆಫ್‌ಲೈನ್ ಓದುವಿಕೆಗೆ ಲಭ್ಯವಾಗುವುದಿಲ್ಲ.",
+    "appShellFailed": "ಅಪ್ಲಿಕೇಶನ್ ಪರದೆಗಳನ್ನು ಸಂಗ್ರಹಿಸುವಿಕೆ ಅಥವಾ ನವೀಕರಣ ಪರಿಶೀಲನೆ ವಿಫಲವಾಗಿದೆ. ವೈಯಕ್ತಿಕ ದತ್ತಾಂಶವನ್ನು ಅಳಿಸದೆ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.",
+    "appShellUnsupported": "ಈ ಬ್ರೌಸರ್‌ನಲ್ಲಿ ಅಪ್ಲಿಕೇಶನ್ ಪರದೆಗಳ ಆಫ್‌ಲೈನ್ ಬೆಂಬಲ ಲಭ್ಯವಿಲ್ಲ. ಆನ್‌ಲೈನ್ ಸೌಲಭ್ಯಗಳು ಬದಲಾಗುವುದಿಲ್ಲ.",
+    "appUpdateAvailable": "ಅಪ್ಲಿಕೇಶನ್‌ನ ಹೊಸ ಆವೃತ್ತಿ ಸಿದ್ಧವಾಗಿದೆ. ಈ ಜಾಲತಾಣದ ಎಲ್ಲಾ ಟ್ಯಾಬ್‌ಗಳನ್ನು ಮುಚ್ಚಿ ಮತ್ತೆ ತೆರೆಯಿರಿ. ಸಾಹಿತ್ಯ ಅಥವಾ ವೈಯಕ್ತಿಕ ದತ್ತಾಂಶವನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಬದಲಾಯಿಸುವುದಿಲ್ಲ.",
     "unknownRoute": "ಈ ಪುಟ ಲಭ್ಯವಿಲ್ಲ.",
     "prepareLibrary": "ಓದುವ ಗ್ರಂಥಾಲಯ ಸಿದ್ಧಪಡಿಸಿ",
     "preparationNotice": "ಪ್ರಾರಂಭಿಸಲು ಎಲ್ಲಾ ಕೃತಕ ದಾಖಲೆಗಳನ್ನು ಇಳಿಸಿ ಪರಿಶೀಲಿಸಿ. ಈ ಪ್ರಾತ್ಯಕ್ಷಿಕೆ ಸಿದ್ಧಪಡಿಸಿದ ದತ್ತಾಂಶವನ್ನು ಮೆಮೊರಿಯಲ್ಲಿ ಇಡುತ್ತದೆ; ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.",

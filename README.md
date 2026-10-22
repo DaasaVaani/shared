@@ -17,6 +17,12 @@ consented complete-library preparation. Consumers adopt these labels independent
 new labels do not change publication capabilities, native preparation requirements
 or establish persistent offline storage.
 
+App-interface/update captions distinguish shell caching from lyric downloads,
+unavailable support from failed preparation, and normal code activation from
+automatic content/personal replacement. They do not install a service worker,
+define a shell resource allowlist or establish complete offline-library support.
+Consumers independently implement and validate the selected normal lifecycle.
+
 Reading-preference captions cover independent lyric font controls and
 Compact/Normal/Relaxed density. They do not define numeric font bounds or spacing,
 add persisted fields or implement controls. Consumers retain native platform

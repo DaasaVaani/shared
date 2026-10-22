@@ -100,6 +100,20 @@ test("reading captions preserve distinct densities and native-unit placeholders 
     assert.ok(xml.includes(`<string name="font_size_value" formatted="false">${messages.fontSizeValue}</string>`));
   }
 });
+test("app-shell captions remain distinct, bilingual and equal in both generated platform resources", async () => {
+  const source = strictYaml(await readFile(new URL("../locales/ui.yml", import.meta.url), "utf8"));
+  const web = JSON.parse(await readFile(new URL("../generated/web/ui.json", import.meta.url), "utf8"));
+  const keys = ["appShell", "appShellNotice", "appShellFailed", "appShellUnsupported", "appUpdateAvailable"];
+  for (const [locale, messages] of Object.entries(source)) {
+    const xml = await readFile(new URL(`../generated/android/${locale === "en" ? "values" : `values-${locale}`}/strings.xml`, import.meta.url), "utf8");
+    assert.equal(new Set(keys.map(key => messages[key])).size, keys.length);
+    for (const key of keys) {
+      assert.equal(typeof messages[key], "string"); assert.ok(messages[key].length);
+      assert.equal(web[locale][key], messages[key]);
+      assert.ok(xml.includes(`<string name="${key.replace(/[A-Z]/g, letter => "_" + letter.toLowerCase())}" formatted="false">${messages[key]}</string>`));
+    }
+  }
+});
 test("search settings match their exact schema and reject oversized limits", async () => {
   const schema = JSON.parse(await readFile(new URL("../schemas/search-policy.schema.json", import.meta.url), "utf8"));
   const policy = strictYaml(await readFile(new URL("../settings/search.yml", import.meta.url), "utf8"));
