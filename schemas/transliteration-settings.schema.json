@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://daasavaani.org/schemas/transliteration-settings.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["formatVersion", "rulesId", "revision", "status", "sourceScript", "unicodeProfile", "profiles", "alphabet", "unsupportedTargets"],
+  "properties": {
+    "formatVersion": { "const": 1 },
+    "rulesId": { "const": "kannada-latin-provisional-v1" },
+    "revision": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+    "status": { "const": "provisional-owner-review" },
+    "sourceScript": { "const": "kn" },
+    "unicodeProfile": { "const": "unicode16-default-full-nfc-v1" },
+    "profiles": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "label", "vowels", "consonants", "marks"],
+        "properties": {
+          "id": { "enum": ["iso15919", "iast-kn", "baraha-kn", "itrans-kn", "harvard-kyoto-kn"] },
+          "label": { "type": "string", "minLength": 1 },
+          "vowels": { "$ref": "#/$defs/vowels" },
+          "consonants": { "$ref": "#/$defs/consonants" },
+          "marks": { "$ref": "#/$defs/marks" }
+        }
+      }
+    },
+    "alphabet": {
+      "type": "object", "additionalProperties": false,
+      "required": ["vowels", "vowelSigns", "consonants", "marks", "virama", "digits", "asciiDigits", "passthrough"],
+      "properties": {
+        "vowels": { "$ref": "#/$defs/vowels" },
+        "vowelSigns": {
+          "type": "array", "minItems": 16, "maxItems": 16,
+          "items": { "type": ["string", "null"], "minLength": 1, "maxLength": 1 }
+        },
+        "consonants": { "$ref": "#/$defs/consonants" },
+        "marks": { "$ref": "#/$defs/marks" },
+        "virama": { "type": "string", "minLength": 1, "maxLength": 1 },
+        "digits": { "type": "string", "minLength": 10, "maxLength": 10 },
+        "asciiDigits": { "const": "0123456789" },
+        "passthrough": { "type": "string", "minLength": 1 }
+      }
+    },
+    "unsupportedTargets": { "const": ["deva", "telu", "taml", "mlym", "gujr", "beng", "asam", "guru", "orya"] }
+  },
+  "$defs": {
+    "token": { "type": "string", "minLength": 1 },
+    "vowels": { "type": "array", "minItems": 16, "maxItems": 16, "items": { "$ref": "#/$defs/token" } },
+    "consonants": { "type": "array", "minItems": 34, "maxItems": 34, "items": { "$ref": "#/$defs/token" } },
+    "marks": { "type": "array", "minItems": 4, "maxItems": 4, "items": { "$ref": "#/$defs/token" } }
+  }
+}

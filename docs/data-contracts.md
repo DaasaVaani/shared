@@ -25,6 +25,10 @@ implementation is authorized, not global production readiness.
   host normalization or older Website keys are not substitutes.
 - Language: Kannada canonical, five Latin/nine non-Latin outputs, reviewed digit/
   approximation/alias/Unicode/technical-marker tables. Global corrections only.
+  The [provisional Kannada-to-five-Latin prerequisite](transliteration.md) has
+  strict global settings, a portable tooling reference, generated provenance and
+  synthetic tests; nine native directions are explicitly unsupported. This is
+  not approved linguistic evidence or complete multi-script conformance.
 - Public artifacts: canonical JSON, encoded SHA256, capability/version semantics,
   descriptor/manifest/object maps, shared line/profile layout, exact sizes and
   policy binding. Producers strict, compatible optional-field consumers.
@@ -100,6 +104,13 @@ tables/manifest; the separate Unicode suite checks independent numeric vectors,
 all official NFC/NFD conformance equations and exhaustive scalar folding.
 No network is used during generation/tests. These checks do not establish
 consumer adapter or key-migration completion.
+
+The build also validates `settings/transliteration.yml` and generates provisional
+global rules/provenance only (no real lyric variants). The transliteration suite
+tests synthetic five-Latin vectors, layout/identity/digit/marker preservation,
+explicit unsupported failures and deterministic rules generation. It does not
+provide linguistic approval, native-script coverage or Library/consumer adoption.
+Focused command after generation: `node --test tools\transliteration.test.mjs`.
 
 The workflow also parses every .github YAML file using Ruby YAML; use an existing
 Ruby installation or another already-available YAML parser and state the method.

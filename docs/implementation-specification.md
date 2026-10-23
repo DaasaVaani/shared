@@ -165,6 +165,14 @@ to target-script digits, Latin ASCII; preserve numerical value, never renumber.
 Label letters transliterate and punctuation remains. Full mapping/digit/alias/
 technical-marker tables and independent expected fixtures are still open.
 
+The isolated [provisional global transliteration prerequisite](transliteration.md)
+supplies executable Kannada-to-five-Latin reference tables, strict generation
+and synthetic regression vectors for owner review. It does not close the
+reviewed-table gate or replace Library's selected production stack. All outputs
+carry provisional identity/revision/status; native directions and unknown
+characters fail explicitly. No consumer capability, Source Latin contract,
+recitation-position contract or real source/variant is changed.
+
 Publish raw supplied Source Latin/status even if unsuitable. Suitable complete
 corresponding text may be read whole without alignment. Search/helpers/anchors
 require reviewed mapping for every canonical lyric line: ordered nonoverlapping

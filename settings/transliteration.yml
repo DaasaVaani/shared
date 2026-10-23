@@ -1,0 +1,42 @@
+formatVersion: 1
+rulesId: kannada-latin-provisional-v1
+revision: 1
+status: provisional-owner-review
+sourceScript: kn
+unicodeProfile: unicode16-default-full-nfc-v1
+profiles:
+  - id: iso15919
+    label: ISO15919:2001 direction (provisional)
+    vowels: [a, ā, i, ī, u, ū, r̥, r̥̄, l̥, l̥̄, e, ē, ai, o, ō, au]
+    consonants: [k, kh, g, gh, ṅ, c, ch, j, jh, ñ, ṭ, ṭh, ḍ, ḍh, ṇ, t, th, d, dh, n, p, ph, b, bh, m, y, r, l, v, ś, ṣ, s, h, ḷ]
+    marks: [ṁ, ḥ, m̐, "'"]
+  - id: iast-kn
+    label: IAST Kannada direction (provisional)
+    vowels: [a, ā, i, ī, u, ū, ṛ, ṝ, l̥, l̥̄, e, ē, ai, o, ō, au]
+    consonants: [k, kh, g, gh, ṅ, c, ch, j, jh, ñ, ṭ, ṭh, ḍ, ḍh, ṇ, t, th, d, dh, n, p, ph, b, bh, m, y, r, l, v, ś, ṣ, s, h, ḷ]
+    marks: [ṃ, ḥ, m̐, "'"]
+  - id: baraha-kn
+    label: Baraha Kannada direction (provisional)
+    vowels: [a, A, i, I, u, U, Ru, RU, "~lu", "~lU", e, E, ai, o, O, au]
+    consonants: [k, kh, g, gh, "~g", ch, Ch, j, jh, "~j", T, Th, D, Dh, N, t, th, d, dh, n, p, ph, b, bh, m, y, r, l, v, sh, Sh, s, h, L]
+    marks: [M, H, "~M", "'"]
+  - id: itrans-kn
+    label: ITRANS Kannada direction (provisional)
+    vowels: [a, A, i, I, u, U, RRi, RRI, LLi, LLI, e, E, ai, o, O, au]
+    consonants: [k, kh, g, gh, "~N", ch, Ch, j, jh, "~n", T, Th, D, Dh, N, t, th, d, dh, n, p, ph, b, bh, m, y, r, l, v, sh, Sh, s, h, L]
+    marks: [M, H, ".N", ".a"]
+  - id: harvard-kyoto-kn
+    label: Harvard-Kyoto Kannada direction (provisional)
+    vowels: [a, A, i, I, u, U, R, RR, lR, lRR, e, E, ai, o, O, au]
+    consonants: [k, kh, g, gh, G, c, ch, j, jh, J, T, Th, D, Dh, N, t, th, d, dh, n, p, ph, b, bh, m, y, r, l, v, z, S, s, h, L]
+    marks: [M, H, "~M", "'"]
+alphabet:
+  vowels: [ಅ, ಆ, ಇ, ಈ, ಉ, ಊ, ಋ, ೠ, ಌ, ೡ, ಎ, ಏ, ಐ, ಒ, ಓ, ಔ]
+  vowelSigns: [null, ಾ, ಿ, ೀ, ು, ೂ, ೃ, ೄ, ೢ, ೣ, ೆ, ೇ, ೈ, ೊ, ೋ, ೌ]
+  consonants: [ಕ, ಖ, ಗ, ಘ, ಙ, ಚ, ಛ, ಜ, ಝ, ಞ, ಟ, ಠ, ಡ, ಢ, ಣ, ತ, ಥ, ದ, ಧ, ನ, ಪ, ಫ, ಬ, ಭ, ಮ, ಯ, ರ, ಲ, ವ, ಶ, ಷ, ಸ, ಹ, ಳ]
+  marks: [ಂ, ಃ, ಁ, ಽ]
+  virama: ್
+  digits: "೦೧೨೩೪೫೬೭೮೯"
+  asciiDigits: "0123456789"
+  passthrough: " \t\n!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~।॥"
+unsupportedTargets: [deva, telu, taml, mlym, gujr, beng, asam, guru, orya]

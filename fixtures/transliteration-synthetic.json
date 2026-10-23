@@ -1,0 +1,51 @@
+{
+  "formatVersion": 1,
+  "status": "provisional-owner-review",
+  "evidence": "Synthetic hand-written expectations for algorithm regression; not independently reviewed linguistic evidence.",
+  "vectors": [
+    {
+      "id": "independent-vowels",
+      "input": "ಅ ಆ ಇ ಈ ಉ ಊ ಋ ೠ ಌ ೡ ಎ ಏ ಐ ಒ ಓ ಔ",
+      "expected": {
+        "iso15919": "a ā i ī u ū r̥ r̥̄ l̥ l̥̄ e ē ai o ō au",
+        "iast-kn": "a ā i ī u ū ṛ ṝ l̥ l̥̄ e ē ai o ō au",
+        "baraha-kn": "a A i I u U Ru RU ~lu ~lU e E ai o O au",
+        "itrans-kn": "a A i I u U RRi RRI LLi LLI e E ai o O au",
+        "harvard-kyoto-kn": "a A i I u U R RR lR lRR e E ai o O au"
+      }
+    },
+    {
+      "id": "dependent-vowels",
+      "input": "ಕ ಕಾ ಕಿ ಕೀ ಕು ಕೂ ಕೃ ಕೄ ಕೢ ಕೣ ಕೆ ಕೇ ಕೈ ಕೊ ಕೋ ಕೌ",
+      "expected": {
+        "iso15919": "ka kā ki kī ku kū kr̥ kr̥̄ kl̥ kl̥̄ ke kē kai ko kō kau",
+        "iast-kn": "ka kā ki kī ku kū kṛ kṝ kl̥ kl̥̄ ke kē kai ko kō kau",
+        "baraha-kn": "ka kA ki kI ku kU kRu kRU k~lu k~lU ke kE kai ko kO kau",
+        "itrans-kn": "ka kA ki kI ku kU kRRi kRRI kLLi kLLI ke kE kai ko kO kau",
+        "harvard-kyoto-kn": "ka kA ki kI ku kU kR kRR klR klRR ke kE kai ko kO kau"
+      }
+    },
+    {
+      "id": "dead-consonant-inventory",
+      "input": "ಕ್ ಖ್ ಗ್ ಘ್ ಙ್ ಚ್ ಛ್ ಜ್ ಝ್ ಞ್ ಟ್ ಠ್ ಡ್ ಢ್ ಣ್ ತ್ ಥ್ ದ್ ಧ್ ನ್ ಪ್ ಫ್ ಬ್ ಭ್ ಮ್ ಯ್ ರ್ ಲ್ ವ್ ಶ್ ಷ್ ಸ್ ಹ್ ಳ್",
+      "expected": {
+        "iso15919": "k kh g gh ṅ c ch j jh ñ ṭ ṭh ḍ ḍh ṇ t th d dh n p ph b bh m y r l v ś ṣ s h ḷ",
+        "iast-kn": "k kh g gh ṅ c ch j jh ñ ṭ ṭh ḍ ḍh ṇ t th d dh n p ph b bh m y r l v ś ṣ s h ḷ",
+        "baraha-kn": "k kh g gh ~g ch Ch j jh ~j T Th D Dh N t th d dh n p ph b bh m y r l v sh Sh s h L",
+        "itrans-kn": "k kh g gh ~N ch Ch j jh ~n T Th D Dh N t th d dh n p ph b bh m y r l v sh Sh s h L",
+        "harvard-kyoto-kn": "k kh g gh G c ch j jh J T Th D Dh N t th d dh n p ph b bh m y r l v z S s h L"
+      }
+    },
+    {
+      "id": "clusters-marks-labels",
+      "input": "ಕ್ಕ ಕ್ತ್ರ ಕಂ ಕಃ ಕಁ ಽ |(ಕ) ೦೧೨೩೪೫೬೭೮೯/0123456789॥",
+      "expected": {
+        "iso15919": "kka ktra kaṁ kaḥ kam̐ ' |(ka) 0123456789/0123456789॥",
+        "iast-kn": "kka ktra kaṃ kaḥ kam̐ ' |(ka) 0123456789/0123456789॥",
+        "baraha-kn": "kka ktra kaM kaH ka~M ' |(ka) 0123456789/0123456789॥",
+        "itrans-kn": "kka ktra kaM kaH ka.N .a |(ka) 0123456789/0123456789॥",
+        "harvard-kyoto-kn": "kka ktra kaM kaH ka~M ' |(ka) 0123456789/0123456789॥"
+      }
+    }
+  ]
+}

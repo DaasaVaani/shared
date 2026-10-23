@@ -1,5 +1,54 @@
 # Documentation history
 
+## 2026-10-23: provisional global Kannada-to-Latin prerequisite
+
+- Starting from published `c386bf8f4d7568350bb0e30bf342290b47e4b885`,
+  implemented a bounded Shared-only review surface: strict global settings/schema,
+  deterministic generated rules/provenance, a portable pure tooling reference,
+  TypeScript declarations and synthetic regression fixtures/tests. Five Latin
+  directions are executable; all mappings/outputs are explicitly
+  `provisional-owner-review`, not reviewed linguistic or scheme-conformance
+  evidence. No production converter, native-script coverage, search aliases,
+  Source Latin alignment, real lyric source/variant/preview or default Latin
+  recommendation is claimed. The selected Library/Sanscript production direction
+  remains unchanged. Nine native directions, Hunterian and unsupported scalars
+  fail explicitly instead of silently falling back.
+- This supplies prerequisites for LANG-01..04, LANG-06..08, LANG-10 and LANG-12,
+  not acceptance of those requirements. Source text/identities/layout are never
+  rewritten; generated digits preserve numeric values, labels retain punctuation,
+  and UI language remains independent. Existing recitation-position contracts,
+  all UI captions/resources, other repositories and consumer pins are unchanged.
+  Owner review must cover every global table/technical extension/rare vowel/mark,
+  permitted independent expectations, native approximations and production
+  integration. Device/browser/font/HTTP/server checks were neither requested nor
+  run; no corresponding compatibility or release claim is made.
+- `npm ci --ignore-scripts --no-audit --no-fund` passed, restoring six existing
+  pinned packages with no dependency changes; the exact documented `npm ci`
+  also passed (six packages, zero reported audit vulnerabilities).
+  Initial focused generation plus
+  `node --test tools\transliteration.test.mjs` passed28 tests. The subsequent
+  provenance guard correctly rejected CRLF settings on Windows; after restoring
+  the owned staged settings through their new LF attribute, full
+  `npm run check` passed68 tests (zero failures/cancellations/skips), including
+  all existing40 tests and28 provisional transliteration tests. The latter
+  include20 hand-written synthetic profile expectations,2,720 consonant/sign
+  consistency assertions and170 cluster assertions; none are independent
+  linguistic approval.
+- `python tools\check_repository.py` passed87 tracked files. Inline Node using
+  the existing `yaml` dependency parsed all12 tracked YAML files, including every
+  `.github` YAML. Inline Python checked balanced Markdown fences in14 tracked
+  Markdown files and30 local heading links. `git --no-pager diff --exit-code --
+  generated schemas`, both working/staged Git whitespace checks and an exact
+  baseline diff over recitation-position contracts/UI captions/generated UI
+  resources passed. Generation is offline and byte-stable with intended new
+  resources staged; settings/generated-rule LF pins prevent checkout-dependent
+  provenance. A separate `npm run build` passed after the full check; SHA256
+  comparisons confirmed all24 tracked generated/schema paths byte-identical.
+  The complete final batch passed the full check/hygiene again before commit.
+- No app build/consumer integration, Sanscript parity, independently reviewed
+  language conformance or complete approved multi-script implementation is
+  supplied. No push is authorized/performed by this batch.
+
 ## 2026-10-23: exact recitation-position prerequisite
 
 - Added an independently versioned logical record/schema/type and synthetic
