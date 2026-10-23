@@ -45,8 +45,8 @@ implementation is authorized, not global production readiness.
   The [typed-reference/v2 contracts](list-transfer.md#typed-reference-and-list-v2)
   and frozen v1 JSON/local-record contracts have generated schemas and synthetic
   structural/boundary fixtures. Consumer feature status belongs in the
-  owning roadmap; native parity, complete enclosing personal/database schemas
-  and backup/replacement protocols remain open.
+  owning roadmap; complete enclosing personal/database migration schemas and
+  consumer backup/replacement protocols remain independent gates.
   The [recently opened logical record](recent-history.md) separately defines
   typed most-recent-first uniqueness, the configured50-entry window and the
   enabled initial preference. It is not a minimal transfer or backup format.
@@ -59,7 +59,15 @@ implementation is authorized, not global production readiness.
   resolution vectors. It requires explicit Continue, preserving absence-only
   upgrades, no guessed replacement for missing positions, complete personal
   byte accounting and minimal-transfer exclusion. Consumer persistence and the
-  separately versioned full-backup/restore allowlist remain implementation gates.
+  separately versioned consumer full-backup/restore adapters remain implementation gates.
+- The [same-platform current-state backup v1](full-personal-backup.md) fixes the
+  complete implemented Website v8/Android Room7 logical allowlists, strict
+  preference presence/font domains, preserved IDs/unresolved positions,
+  collection/aggregate-byte semantics and replacement/recovery protocol.
+  Generated schema/types/fixtures, bounded Node-only reference gzip/JSON codec
+  and captions are prerequisites, not consumer implementation or release proof.
+  No future bookmark/Practice/setup reservations exist; new stored features
+  require a new backup version and preserving adapters.
 - Platform: independent UI/script preferences, system-font limitations, static
   routes/App Links, safe shell updates and verified local-signing handoff.
   Additive Recite captions cover only explicit focused reading/control
@@ -96,7 +104,13 @@ and search contracts, strict UI-default/publication-safety/personal-transfer set
 minimal-list and logical list-record JSON schemas/fixtures. Check
 `git diff --exit-code -- generated schemas`
 after generation with the intended generated outputs staged or committed.
-It is not full production-schema/language or transfer-codec conformance.
+It is not full production-schema/language or consumer transfer-codec conformance.
+The full-backup suite additionally validates both complete current logical
+platform allowlists, collection/identity/byte boundaries, single-member gzip/
+fatal UTF8/duplicate JSON rejection and exact synthetic round trips using
+Node-only conformance tooling. Consumer transactional replacement, crash/quota/
+stale-writer/postcommit-locale and browser/native transport interoperability
+remain independent required evidence.
 The fixture-only TypeScript contract is in types/publication.ts; settings and
 schemas have their owning roots. Consumers must reject unsupported capabilities.
 

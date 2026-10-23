@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["formatVersion", "web", "android"],
+  "properties": {
+    "formatVersion": { "const": 1 },
+    "web": { "$ref": "#/$defs/profile" },
+    "android": { "$ref": "#/$defs/profile" }
+  },
+  "$defs": {
+    "profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceModel", "fontUnit", "fontMin", "fontMax", "fontStep"],
+      "properties": {
+        "sourceModel": { "enum": ["webv8", "nativeRoom7"] },
+        "fontUnit": { "enum": ["cssPx", "sp"] },
+        "fontMin": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+        "fontMax": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+        "fontStep": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 }
+      }
+    }
+  }
+}

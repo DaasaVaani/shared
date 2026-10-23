@@ -27,3 +27,35 @@ export interface ListRecordV2 {
   name: string;
   entries: (ListEntryV2 & { id: string })[];
 }
+export interface BackupCollectionsV1 {
+  favorites: PersonalReference[];
+  lists: ListRecordV2[];
+  learning: LearningLabelsV1;
+  recitation: RecitationPositionV1;
+}
+export interface WebBackupDataV1 extends BackupCollectionsV1 {
+  preferences: {
+    language: "en" | "kn";
+    theme: "light" | "dark" | "warm" | "device";
+    fontSizePx: number;
+    density: ReadingDensity;
+  } | null;
+  history: RecentHistoryV1;
+}
+export interface AndroidBackupDataV1 extends BackupCollectionsV1 {
+  preferences: {
+    language: "device" | "en" | "kn";
+    theme: "light" | "dark" | "warm" | "device";
+    lyricFontSizeSp: number;
+    readingDensity: ReadingDensity;
+  };
+  recentHistory: RecentHistoryV1;
+}
+export type FullPersonalBackupV1 = {
+  format: "daasavaani-personal-backup";
+  formatVersion: 1;
+  exportedAt: string;
+} & (
+  | { platform: "web"; data: WebBackupDataV1 }
+  | { platform: "android"; data: AndroidBackupDataV1 }
+);

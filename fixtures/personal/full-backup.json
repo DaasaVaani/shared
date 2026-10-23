@@ -1,0 +1,82 @@
+{
+  "accepted": [
+    {
+      "label": "web absent saved preferences, retained disabled history and unresolved exact pair",
+      "value": {
+        "format": "daasavaani-personal-backup",
+        "formatVersion": 1,
+        "platform": "web",
+        "exportedAt": "2026-10-23T00:00:00.000Z",
+        "data": {
+          "preferences": null,
+          "favorites": [],
+          "lists": [],
+          "history": { "enabled": false, "entries": [{ "kind": "legacyVideo", "videoId": "synthetic-unresolved" }] },
+          "learning": { "entries": [] },
+          "recitation": { "position": { "listId": "11111111-1111-4111-8111-111111111111", "entryId": "22222222-2222-4222-8222-222222222222" } }
+        }
+      }
+    },
+    {
+      "label": "web saved preferences, typed distinction, repetitions, raw text and equal-name independent lists",
+      "value": {
+        "format": "daasavaani-personal-backup",
+        "formatVersion": 1,
+        "platform": "web",
+        "exportedAt": "2026-10-23T00:00:00.000Z",
+        "data": {
+          "preferences": { "language": "kn", "theme": "warm", "fontSizePx": 17, "density": "relaxed" },
+          "favorites": [
+            { "kind": "lyric", "lyricId": "33333333-3333-4333-8333-333333333333" },
+            { "kind": "legacyVideo", "videoId": "33333333-3333-4333-8333-333333333333" }
+          ],
+          "lists": [
+            {
+              "id": "11111111-1111-4111-8111-111111111111",
+              "name": "Straße",
+              "entries": [
+                { "id": "22222222-2222-4222-8222-222222222222", "kind": "lyric", "lyricId": "33333333-3333-4333-8333-333333333333", "fallback": "  é ಕನ್ನಡ  " },
+                { "id": "44444444-4444-4444-8444-444444444444", "kind": "lyric", "lyricId": "33333333-3333-4333-8333-333333333333" },
+                { "id": "55555555-5555-4555-8555-555555555555", "kind": "placeholder", "text": "  synthetic 😀  " },
+                { "id": "66666666-6666-4666-8666-666666666666", "kind": "legacyVideo", "videoId": "unresolved-legacy" }
+              ]
+            },
+            { "id": "77777777-7777-4777-8777-777777777777", "name": "STRASSE", "entries": [] }
+          ],
+          "history": { "enabled": true, "entries": [{ "kind": "legacyVideo", "videoId": "unresolved-legacy" }] },
+          "learning": { "entries": [{ "kind": "lyric", "lyricId": "33333333-3333-4333-8333-333333333333", "label": "comfortableReciting" }] },
+          "recitation": { "position": { "listId": "11111111-1111-4111-8111-111111111111", "entryId": "44444444-4444-4444-8444-444444444444" } }
+        }
+      }
+    },
+    {
+      "label": "native device sentinels and native sp are not web defaults",
+      "value": {
+        "format": "daasavaani-personal-backup",
+        "formatVersion": 1,
+        "platform": "android",
+        "exportedAt": "2026-10-23T00:00:00.000Z",
+        "data": {
+          "preferences": { "language": "device", "theme": "device", "lyricFontSizeSp": 28, "readingDensity": "normal" },
+          "favorites": [{ "kind": "legacyVideo", "videoId": "native-unresolved" }],
+          "lists": [],
+          "recentHistory": { "enabled": false, "entries": [{ "kind": "legacyVideo", "videoId": "native-unresolved" }] },
+          "learning": { "entries": [{ "kind": "legacyVideo", "videoId": "native-unresolved", "label": "wantToLearn" }] },
+          "recitation": { "position": null }
+        }
+      }
+    }
+  ],
+  "rejected": [
+    { "label": "future format", "base": 0, "path": ["formatVersion"], "value": 2 },
+    { "label": "wrong identifier", "base": 0, "path": ["format"], "value": "daasavaani-list" },
+    { "label": "cross-platform conversion", "base": 2, "path": ["platform"], "value": "web" },
+    { "label": "no impossible saved favorites without web preference row", "base": 0, "path": ["data", "favorites"], "value": [{ "kind": "legacyVideo", "videoId": "synthetic" }] },
+    { "label": "native odd sp", "base": 2, "path": ["data", "preferences", "lyricFontSizeSp"], "value": 15 },
+    { "label": "native missing preferences", "base": 2, "path": ["data", "preferences"], "value": null },
+    { "label": "invalid calendar date", "base": 0, "path": ["exportedAt"], "value": "2026-02-30T00:00:00.000Z" },
+    { "label": "no future Practice reservation", "base": 0, "path": ["data", "practice"], "value": null },
+    { "label": "no writer epoch", "base": 0, "path": ["data", "epoch"], "value": "11111111-1111-4111-8111-111111111111" },
+    { "label": "no local control row", "base": 0, "path": ["data", "control"], "value": { "formatVersion": 8, "revision": 0 } }
+  ]
+}

@@ -109,8 +109,17 @@ canonical reviewed YAML UI catalogs. Shared owns the catalog generator and
 commits generated Android/web UI resources with catalog/generator changes.
 Production schemas, language tables and lifecycle protocols remain incomplete.
 The fixture contract must not be used to publish unreviewed production content.
-The list schemas are generated from portable settings; no list UI, compression,
-preview/import, persistence or full-backup implementation is supplied.
+The list schemas are generated from portable settings; no list UI, consumer
+compression/preview/import or persistence implementation is supplied.
+
+The [current-state same-platform backup v1 prerequisite](docs/full-personal-backup.md)
+defines strict logical allowlists for all implemented Website v8/Android Room7
+personal state, separately preserving absent web preferences, native device
+sentinels/font units and the latest exact recitation pair. Generated schemas,
+types, synthetic fixtures, bilingual captions and bounded Node-only conformance
+codec are supplied, not consumer backup UI/transactions. Future personal features
+require a new version/adapter; v1 invents no bookmark/Practice/setup records.
+Consumer pins and adoption remain independent.
 
 Start with [AGENTS.md](AGENTS.md) and the [current implementation specification](docs/implementation-specification.md)
 for settings ownership, cross-repository contracts,

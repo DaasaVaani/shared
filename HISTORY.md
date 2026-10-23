@@ -1,5 +1,59 @@
 # Documentation history
 
+## 2026-10-23: owner-approved all-current-state full-backup v1 prerequisite
+
+- After the earlier complete-future-state allowlist blocker, the owner explicitly
+  selected **current-state-v1**: all currently implemented Website v8/Android
+  staged Room7 personal state, same-platform only; new personal features require
+  a new backup version and preserving adapter. No reserved bookmark/Practice/
+  setup records were approved. The subsequent pause instruction permits finishing
+  only this active Shared batch, full checks and eligible guarded publication;
+  consumer implementation and follow-on work remain queued for explicit resume.
+- Derived exact logical projections by read-only inspection of Website
+  `src/personal-model.ts`/`settings/web.yml` and native `PersonalStore.kt`,
+  `Personal.kt`, `ReadingPreferences.kt`/`settings/android.yml`. Web preserves
+  absent saved preferences as null, favorites empty in that case, and valid
+  integer CSS pixels16..80 (not only the UI step). Native preserves device
+  sentinels and sp14..48 step2. Native owner confirmed that Kotlin null fallback
+  means absence; present-empty/null wire fallback is invalid under its existing
+  transfer validator. No consumer source/pin/runtime/device/browser changes.
+- Added generated strict platform schema, typed logical allowlists, profile
+  settings/schema, synthetic fixtures and Node-only conformance codec using
+  existing Ajv and Node zlib. Independent single-member gzip framing/CRC/ISIZE,
+  optional-header CRC, fatal UTF8, duplicate decoded JSON keys, complete
+  collection/aggregate bounds, exact IDs/raw text/order and unavailable latest
+  recitation pairs are validated without mutation/trim/merge. Source Latin,
+  transliteration settings/rules/fixtures and their provisional status unchanged.
+- Added17 bilingual `backup*` captions and generated web/Android catalogs.
+  Authoritative current guide describes exact webv8/nativeRoom7 projections,
+  preview/explicit replacement, fresh fencing, target metadata-byte validation,
+  preservation on error/cancel/stale/quota and postcommit-only language retry.
+  Captions and reference tooling do not implement consumer restore transactions,
+  transport interoperability, locale adapters or offline lyrics.
+- Archived replaced current statements: the contract checklist previously left
+  the separately versioned full-backup allowlist wholly open; the specification
+  remaining-gates table listed full personal/backup schemas and codecs together
+  as unimplemented; README stated that no full-backup implementation was supplied
+  without distinguishing reference tooling from consumer adapters. The new
+  current-state schema/reference prerequisite closes only its owned logical
+  surface; consumer database migration/replacement and later-feature versioning
+  remain explicit gates in current guides.
+- Validation: `npm ci --quiet` passed (six existing packages, zero reported
+  vulnerabilities). `npm run check` passed all generation and125 tests with zero
+  failures/cancellations/skips, including10 new backup conformance tests and the
+  actual64MiB decoded boundary/+1. Installed actionlint1.7.12 with explicitly
+  selected ShellCheck0.11.0 passed `.github/workflows/hygiene.yml`; working-tree
+  whitespace passed. `python tools\check_repository.py` passed97 tracked files;
+  both working/staged Git whitespace checks and generated/schema drift checks
+  passed. Inline Node using the existing strict YAML parser passed all13 tracked
+  YAML files; a separate complete `npm run build` was byte-identical over all26
+  generated/schema paths. Inline Python checked all15 Markdown documents,
+  balanced fences, local file links and31 local anchors. Git baseline comparison
+  confirmed unchanged source/transliteration resources/rules. Full final-tree
+  checks were repeated before commit/publication. These are Shared checks, not
+  consumer or linguistic/release acceptance. Independent consumer pins remain
+  unchanged; consumer backup integration is paused pending explicit resume.
+
 ## 2026-10-23: provisional nine-native global-rule extension
 
 - Extended the published `e409162f9b844915ed4b782c6ce3b89115ffd97e`

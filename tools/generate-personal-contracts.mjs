@@ -7,6 +7,8 @@ import { strictYaml } from "./generate-catalog.mjs";
 const root = fileURLToPath(new URL("../", import.meta.url));
 const settingsSchema = JSON.parse(await readFile(resolve(root, "schemas/personal-transfer-settings.schema.json"), "utf8"));
 const validateSettings = new Ajv2020({ strict: true }).compile(settingsSchema);
+const backupSettingsSchema = JSON.parse(await readFile(resolve(root, "schemas/full-backup-settings.schema.json"), "utf8"));
+const validateBackupSettings = new Ajv2020({ strict: true }).compile(backupSettingsSchema);
 
 const uuid = () => ({
   type: "string",
@@ -159,8 +161,62 @@ export function listRecordSchema(settings, version = 1) {
   };
 }
 
+export function fullBackupSchema(settings, profiles) {
+  validateLimits(settings);
+  if (!validateBackupSettings(profiles)) throw new Error("Invalid full-backup settings");
+  for (const [platform, model, unit] of [["web", "webv8", "cssPx"], ["android", "nativeRoom7", "sp"]]) {
+    const profile = profiles[platform];
+    if (profile.sourceModel !== model || profile.fontUnit !== unit ||
+        profile.fontMin > profile.fontMax || profile.fontStep > profile.fontMax - profile.fontMin ||
+        profile.fontMin % profile.fontStep !== 0 ||
+        (profile.fontMax - profile.fontMin) % profile.fontStep !== 0) throw new Error("Inconsistent full-backup profile");
+  }
+  const embedded = ({ $schema, $id, $comment, ...shape }) => shape;
+  const object = properties => ({ type: "object", additionalProperties: false,
+    required: Object.keys(properties), properties });
+  const references = maxItems => ({ type: "array", maxItems,
+    items: { oneOf: personalReferenceSchema().oneOf } });
+  const choice = enumValues => ({ enum: enumValues });
+  return {
+    $schema: "https://json-schema.org/draft/2020-12/schema",
+    $id: "https://daasavaani.github.io/contracts/full-personal-backup-v1.schema.json",
+    $comment: comment + " Platform profiles: settings/full-backup.yml.",
+    oneOf: ["web", "android"].map(platform => {
+      const profile = profiles[platform];
+      const preferences = object({
+        language: choice(platform === "web" ? ["en", "kn"] : ["device", "en", "kn"]),
+        theme: choice(["light", "dark", "warm", "device"]),
+        [platform === "web" ? "fontSizePx" : "lyricFontSizeSp"]: {
+          type: "integer", minimum: profile.fontMin, maximum: profile.fontMax, multipleOf: profile.fontStep,
+        },
+        [platform === "web" ? "density" : "readingDensity"]: choice(["compact", "normal", "relaxed"]),
+      });
+      const data = object({
+        preferences: platform === "web" ? { oneOf: [{ type: "null" }, preferences] } : preferences,
+        favorites: references(settings.maxFavorites),
+        lists: { type: "array", maxItems: settings.maxLists, items: embedded(listRecordSchema(settings, 2)) },
+        [platform === "web" ? "history" : "recentHistory"]: embedded(recentHistorySchema(settings)),
+        learning: embedded(learningLabelsSchema(settings)),
+        recitation: embedded(recitationPositionSchema()),
+      });
+      if (platform === "web") data.allOf = [{
+        if: { properties: { preferences: { type: "null" } } },
+        then: { properties: { favorites: { type: "array", maxItems: 0 } } },
+      }];
+      return object({
+        format: { const: "daasavaani-personal-backup" },
+        formatVersion: { const: 1 },
+        platform: { const: platform },
+        exportedAt: { type: "string", pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}Z$" },
+        data,
+      });
+    }),
+  };
+}
+
 export async function generatePersonalContracts() {
   const settings = strictYaml(await readFile(resolve(root, "settings/personal-transfer.yml"), "utf8"));
+  const profiles = strictYaml(await readFile(resolve(root, "settings/full-backup.yml"), "utf8"));
   await writeFile(resolve(root, "schemas/list-transfer.schema.json"), JSON.stringify(listTransferSchema(settings), null, 2) + "\n");
   await writeFile(resolve(root, "schemas/list-record.schema.json"), JSON.stringify(listRecordSchema(settings), null, 2) + "\n");
   await writeFile(resolve(root, "schemas/personal-reference.schema.json"), JSON.stringify(personalReferenceSchema(), null, 2) + "\n");
@@ -169,6 +225,7 @@ export async function generatePersonalContracts() {
   await writeFile(resolve(root, "schemas/recent-history.schema.json"), JSON.stringify(recentHistorySchema(settings), null, 2) + "\n");
   await writeFile(resolve(root, "schemas/learning-labels.schema.json"), JSON.stringify(learningLabelsSchema(settings), null, 2) + "\n");
   await writeFile(resolve(root, "schemas/recitation-position.schema.json"), JSON.stringify(recitationPositionSchema(), null, 2) + "\n");
+  await writeFile(resolve(root, "schemas/full-personal-backup.schema.json"), JSON.stringify(fullBackupSchema(settings, profiles), null, 2) + "\n");
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await generatePersonalContracts();

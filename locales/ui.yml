@@ -187,6 +187,23 @@ en:
   transferTooLarge: The list exceeds a transfer byte limit. Export a smaller list; nothing has been saved.
   transferLinkTooLong: The complete link exceeds the sharing limit. Use the list file instead; no text or entries were dropped.
   transferFailed: List processing failed. Try again or choose another file. Nothing has been saved.
+  backupTitle: Personal backup
+  backupExport: Export personal backup
+  backupChoose: Choose a personal backup file
+  backupPrivacy: This gzip file is not encrypted. Anyone receiving it can read your personal settings, lists and activity.
+  backupSamePlatform: Restore only on the same platform. Android font sizes and website font sizes are not interchangeable.
+  backupPreview: Review the complete backup before replacing personal data.
+  backupOfferExport: Export your current personal data before replacing it.
+  backupReplace: Confirm replacement of all personal data
+  backupReplacementNotice: Replacement does not merge lists. Existing personal data will be replaced only after a successful commit.
+  backupCancelled: Backup restore cancelled. Existing personal data was not changed.
+  backupInvalid: Invalid or unsupported personal backup. Existing personal data was not changed.
+  backupTooLarge: The backup exceeds a collection or byte limit. Nothing was trimmed or restored.
+  backupStale: Personal data changed after the preview. Review a new preview before confirming replacement.
+  backupFailed: Restore failed. Your previous personal data is preserved. Try again.
+  backupRestored: Personal data restored. Lyrics and offline readiness were not restored.
+  backupLanguageRetry: Personal data was restored, but the interface language could not be applied. Retry applying the language.
+  backupRetryLanguage: Retry applying the restored language
   unavailableFeatures: This milestone does not yet implement offline snapshots, recitation mode, backups or reviewed transliteration.
 kn:
   languageName: ಕನ್ನಡ
@@ -377,4 +394,21 @@ kn:
   transferTooLarge: ಪಟ್ಟಿಯ ಗಾತ್ರ ಇಳಿಸುವ ಮಿತಿಯನ್ನು ಮೀರಿದೆ. ಚಿಕ್ಕ ಪಟ್ಟಿಯನ್ನು ರಫ್ತುಮಾಡಿ; ಏನನ್ನೂ ಉಳಿಸಿಲ್ಲ.
   transferLinkTooLong: ಸಂಪೂರ್ಣ ಕೊಂಡಿ ಹಂಚುವ ಮಿತಿಯನ್ನು ಮೀರಿದೆ. ಬದಲಿಗೆ ಪಟ್ಟಿಯ ಕಡತ ಬಳಸಿ; ಪಠ್ಯ ಅಥವಾ ನಮೂದುಗಳನ್ನು ಕೈಬಿಟ್ಟಿಲ್ಲ.
   transferFailed: ಪಟ್ಟಿಯ ಪರಿಶೀಲನೆ ವಿಫಲವಾಗಿದೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ ಅಥವಾ ಬೇರೆ ಕಡತ ಆಯ್ಕೆಮಾಡಿ. ಏನನ್ನೂ ಉಳಿಸಿಲ್ಲ.
+  backupTitle: ವೈಯಕ್ತಿಕ ಬ್ಯಾಕಪ್
+  backupExport: ವೈಯಕ್ತಿಕ ಬ್ಯಾಕಪ್ ರಫ್ತುಮಾಡಿ
+  backupChoose: ವೈಯಕ್ತಿಕ ಬ್ಯಾಕಪ್ ಕಡತ ಆಯ್ಕೆಮಾಡಿ
+  backupPrivacy: ಈ gzip ಕಡತವನ್ನು ಗೂಢಲಿಪೀಕರಿಸಿಲ್ಲ. ಇದನ್ನು ಪಡೆಯುವವರು ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಸೆಟ್ಟಿಂಗ್‌ಗಳು, ಪಟ್ಟಿಗಳು ಮತ್ತು ಚಟುವಟಿಕೆಯನ್ನು ಓದಬಹುದು.
+  backupSamePlatform: ಅದೇ ವೇದಿಕೆಯಲ್ಲಿ ಮಾತ್ರ ಮರುಸ್ಥಾಪಿಸಿ. Android ಮತ್ತು ಜಾಲತಾಣದ ಅಕ್ಷರ ಗಾತ್ರಗಳನ್ನು ಪರಸ್ಪರ ಬದಲಾಯಿಸಲಾಗುವುದಿಲ್ಲ.
+  backupPreview: ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ಬದಲಿಸುವ ಮೊದಲು ಸಂಪೂರ್ಣ ಬ್ಯಾಕಪ್ ಪರಿಶೀಲಿಸಿ.
+  backupOfferExport: ಬದಲಿಸುವ ಮೊದಲು ಈಗಿನ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ರಫ್ತುಮಾಡಿ.
+  backupReplace: ಎಲ್ಲ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯ ಬದಲಾವಣೆಯನ್ನು ದೃಢಪಡಿಸಿ
+  backupReplacementNotice: ಈ ಬದಲಾವಣೆ ಪಟ್ಟಿಗಳನ್ನು ವಿಲೀನಗೊಳಿಸುವುದಿಲ್ಲ. ಯಶಸ್ವಿಯಾಗಿ ಉಳಿಸಿದ ನಂತರವೇ ಹಳೆಯ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಬದಲಾಗುತ್ತದೆ.
+  backupCancelled: ಬ್ಯಾಕಪ್ ಮರುಸ್ಥಾಪನೆ ರದ್ದಾಗಿದೆ. ಹಳೆಯ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಬದಲಾಗಿಲ್ಲ.
+  backupInvalid: ಅಮಾನ್ಯ ಅಥವಾ ಬೆಂಬಲವಿಲ್ಲದ ವೈಯಕ್ತಿಕ ಬ್ಯಾಕಪ್. ಹಳೆಯ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಬದಲಾಗಿಲ್ಲ.
+  backupTooLarge: ಬ್ಯಾಕಪ್ ಸಂಗ್ರಹ ಅಥವಾ ಗಾತ್ರದ ಮಿತಿಯನ್ನು ಮೀರಿದೆ. ಏನನ್ನೂ ಕಡಿತಗೊಳಿಸಿಲ್ಲ ಅಥವಾ ಮರುಸ್ಥಾಪಿಸಿಲ್ಲ.
+  backupStale: ಮುನ್ನೋಟದ ನಂತರ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಬದಲಾಗಿದೆ. ಬದಲಾವಣೆಯನ್ನು ದೃಢಪಡಿಸುವ ಮೊದಲು ಹೊಸ ಮುನ್ನೋಟ ಪರಿಶೀಲಿಸಿ.
+  backupFailed: ಮರುಸ್ಥಾಪನೆ ವಿಫಲವಾಗಿದೆ. ಹಿಂದಿನ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಉಳಿದಿದೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+  backupRestored: ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಮರುಸ್ಥಾಪಿಸಲಾಗಿದೆ. ಸಾಹಿತ್ಯ ಅಥವಾ ಆಫ್‌ಲೈನ್ ಸಿದ್ಧತೆಯನ್ನು ಮರುಸ್ಥಾಪಿಸಿಲ್ಲ.
+  backupLanguageRetry: ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಮರುಸ್ಥಾಪಿಸಲಾಗಿದೆ, ಆದರೆ ಪರದೆಯ ಭಾಷೆಯನ್ನು ಅನ್ವಯಿಸಲಾಗಿಲ್ಲ. ಭಾಷೆಯನ್ನು ಅನ್ವಯಿಸಲು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.
+  backupRetryLanguage: ಮರುಸ್ಥಾಪಿಸಿದ ಭಾಷೆಯನ್ನು ಮತ್ತೆ ಅನ್ವಯಿಸಿ
   unavailableFeatures: ಈ ಹಂತದಲ್ಲಿ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹ, ಪಠಣ ವಿಧಾನ, ಬ್ಯಾಕಪ್ ಅಥವಾ ಪರಿಶೀಲಿಸಿದ ಲಿಪ್ಯಂತರ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.

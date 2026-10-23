@@ -16,6 +16,23 @@
   <string name="appearance" formatted="false">Appearance</string>
   <string name="back" formatted="false">Back to library</string>
   <string name="back_to_list" formatted="false">Back to list</string>
+  <string name="backup_cancelled" formatted="false">Backup restore cancelled. Existing personal data was not changed.</string>
+  <string name="backup_choose" formatted="false">Choose a personal backup file</string>
+  <string name="backup_export" formatted="false">Export personal backup</string>
+  <string name="backup_failed" formatted="false">Restore failed. Your previous personal data is preserved. Try again.</string>
+  <string name="backup_invalid" formatted="false">Invalid or unsupported personal backup. Existing personal data was not changed.</string>
+  <string name="backup_language_retry" formatted="false">Personal data was restored, but the interface language could not be applied. Retry applying the language.</string>
+  <string name="backup_offer_export" formatted="false">Export your current personal data before replacing it.</string>
+  <string name="backup_preview" formatted="false">Review the complete backup before replacing personal data.</string>
+  <string name="backup_privacy" formatted="false">This gzip file is not encrypted. Anyone receiving it can read your personal settings, lists and activity.</string>
+  <string name="backup_replace" formatted="false">Confirm replacement of all personal data</string>
+  <string name="backup_replacement_notice" formatted="false">Replacement does not merge lists. Existing personal data will be replaced only after a successful commit.</string>
+  <string name="backup_restored" formatted="false">Personal data restored. Lyrics and offline readiness were not restored.</string>
+  <string name="backup_retry_language" formatted="false">Retry applying the restored language</string>
+  <string name="backup_same_platform" formatted="false">Restore only on the same platform. Android font sizes and website font sizes are not interchangeable.</string>
+  <string name="backup_stale" formatted="false">Personal data changed after the preview. Review a new preview before confirming replacement.</string>
+  <string name="backup_title" formatted="false">Personal backup</string>
+  <string name="backup_too_large" formatted="false">The backup exceeds a collection or byte limit. Nothing was trimmed or restored.</string>
   <string name="cancel" formatted="false">Cancel</string>
   <string name="canonical" formatted="false">Kannada · canonical test text</string>
   <string name="catalog_notice" formatted="false">List details use only an available verified catalog. Viewing, saving and sharing a list never downloads lyrics or establishes offline readiness.</string>

@@ -1,0 +1,13 @@
+formatVersion: 1
+web:
+  sourceModel: webv8
+  fontUnit: cssPx
+  fontMin: 16
+  fontMax: 80
+  fontStep: 1
+android:
+  sourceModel: nativeRoom7
+  fontUnit: sp
+  fontMin: 14
+  fontMax: 48
+  fontStep: 2

@@ -16,6 +16,23 @@
   <string name="appearance" formatted="false">ನೋಟ</string>
   <string name="back" formatted="false">ಗ್ರಂಥಾಲಯಕ್ಕೆ ಹಿಂತಿರುಗಿ</string>
   <string name="back_to_list" formatted="false">ಪಟ್ಟಿಗೆ ಹಿಂತಿರುಗಿ</string>
+  <string name="backup_cancelled" formatted="false">ಬ್ಯಾಕಪ್ ಮರುಸ್ಥಾಪನೆ ರದ್ದಾಗಿದೆ. ಹಳೆಯ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಬದಲಾಗಿಲ್ಲ.</string>
+  <string name="backup_choose" formatted="false">ವೈಯಕ್ತಿಕ ಬ್ಯಾಕಪ್ ಕಡತ ಆಯ್ಕೆಮಾಡಿ</string>
+  <string name="backup_export" formatted="false">ವೈಯಕ್ತಿಕ ಬ್ಯಾಕಪ್ ರಫ್ತುಮಾಡಿ</string>
+  <string name="backup_failed" formatted="false">ಮರುಸ್ಥಾಪನೆ ವಿಫಲವಾಗಿದೆ. ಹಿಂದಿನ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಉಳಿದಿದೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
+  <string name="backup_invalid" formatted="false">ಅಮಾನ್ಯ ಅಥವಾ ಬೆಂಬಲವಿಲ್ಲದ ವೈಯಕ್ತಿಕ ಬ್ಯಾಕಪ್. ಹಳೆಯ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಬದಲಾಗಿಲ್ಲ.</string>
+  <string name="backup_language_retry" formatted="false">ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಮರುಸ್ಥಾಪಿಸಲಾಗಿದೆ, ಆದರೆ ಪರದೆಯ ಭಾಷೆಯನ್ನು ಅನ್ವಯಿಸಲಾಗಿಲ್ಲ. ಭಾಷೆಯನ್ನು ಅನ್ವಯಿಸಲು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
+  <string name="backup_offer_export" formatted="false">ಬದಲಿಸುವ ಮೊದಲು ಈಗಿನ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ರಫ್ತುಮಾಡಿ.</string>
+  <string name="backup_preview" formatted="false">ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ಬದಲಿಸುವ ಮೊದಲು ಸಂಪೂರ್ಣ ಬ್ಯಾಕಪ್ ಪರಿಶೀಲಿಸಿ.</string>
+  <string name="backup_privacy" formatted="false">ಈ gzip ಕಡತವನ್ನು ಗೂಢಲಿಪೀಕರಿಸಿಲ್ಲ. ಇದನ್ನು ಪಡೆಯುವವರು ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಸೆಟ್ಟಿಂಗ್‌ಗಳು, ಪಟ್ಟಿಗಳು ಮತ್ತು ಚಟುವಟಿಕೆಯನ್ನು ಓದಬಹುದು.</string>
+  <string name="backup_replace" formatted="false">ಎಲ್ಲ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯ ಬದಲಾವಣೆಯನ್ನು ದೃಢಪಡಿಸಿ</string>
+  <string name="backup_replacement_notice" formatted="false">ಈ ಬದಲಾವಣೆ ಪಟ್ಟಿಗಳನ್ನು ವಿಲೀನಗೊಳಿಸುವುದಿಲ್ಲ. ಯಶಸ್ವಿಯಾಗಿ ಉಳಿಸಿದ ನಂತರವೇ ಹಳೆಯ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಬದಲಾಗುತ್ತದೆ.</string>
+  <string name="backup_restored" formatted="false">ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಮರುಸ್ಥಾಪಿಸಲಾಗಿದೆ. ಸಾಹಿತ್ಯ ಅಥವಾ ಆಫ್‌ಲೈನ್ ಸಿದ್ಧತೆಯನ್ನು ಮರುಸ್ಥಾಪಿಸಿಲ್ಲ.</string>
+  <string name="backup_retry_language" formatted="false">ಮರುಸ್ಥಾಪಿಸಿದ ಭಾಷೆಯನ್ನು ಮತ್ತೆ ಅನ್ವಯಿಸಿ</string>
+  <string name="backup_same_platform" formatted="false">ಅದೇ ವೇದಿಕೆಯಲ್ಲಿ ಮಾತ್ರ ಮರುಸ್ಥಾಪಿಸಿ. Android ಮತ್ತು ಜಾಲತಾಣದ ಅಕ್ಷರ ಗಾತ್ರಗಳನ್ನು ಪರಸ್ಪರ ಬದಲಾಯಿಸಲಾಗುವುದಿಲ್ಲ.</string>
+  <string name="backup_stale" formatted="false">ಮುನ್ನೋಟದ ನಂತರ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಬದಲಾಗಿದೆ. ಬದಲಾವಣೆಯನ್ನು ದೃಢಪಡಿಸುವ ಮೊದಲು ಹೊಸ ಮುನ್ನೋಟ ಪರಿಶೀಲಿಸಿ.</string>
+  <string name="backup_title" formatted="false">ವೈಯಕ್ತಿಕ ಬ್ಯಾಕಪ್</string>
+  <string name="backup_too_large" formatted="false">ಬ್ಯಾಕಪ್ ಸಂಗ್ರಹ ಅಥವಾ ಗಾತ್ರದ ಮಿತಿಯನ್ನು ಮೀರಿದೆ. ಏನನ್ನೂ ಕಡಿತಗೊಳಿಸಿಲ್ಲ ಅಥವಾ ಮರುಸ್ಥಾಪಿಸಿಲ್ಲ.</string>
   <string name="cancel" formatted="false">ರದ್ದುಮಾಡಿ</string>
   <string name="canonical" formatted="false">ಕನ್ನಡ · ಮೂಲ ಪರೀಕ್ಷಾ ಪಠ್ಯ</string>
   <string name="catalog_notice" formatted="false">ಪಟ್ಟಿಯ ವಿವರಗಳು ಲಭ್ಯವಿರುವ ಪರಿಶೀಲಿತ ಸೂಚಿಯನ್ನು ಮಾತ್ರ ಬಳಸುತ್ತವೆ. ಪಟ್ಟಿ ನೋಡುವುದು, ಉಳಿಸುವುದು ಅಥವಾ ಹಂಚುವುದು ಸಾಹಿತ್ಯವನ್ನು ಇಳಿಸುವುದಿಲ್ಲ ಮತ್ತು ಆಫ್‌ಲೈನ್ ಸಿದ್ಧತೆಯನ್ನು ಸೂಚಿಸುವುದಿಲ್ಲ.</string>

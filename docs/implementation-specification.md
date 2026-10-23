@@ -51,6 +51,7 @@ registries, UI catalogs, personal state and secrets retain their separate owners
 | Shared settings/search.yml | Normalization, matching signatures, weights, query/page/excerpt bounds; snapshot-pinned queries |
 | Shared settings/publication-policy.yml | Portable artifact/decoder/bundle/planner/date policy; publisher and compatible clients |
 | Shared settings/personal-transfer.yml | Personal text/collection/byte bounds and transfer policy; consumer build, not silent content-refresh replacement |
+| Shared settings/full-backup.yml | Frozen v1 webv8/nativeRoom7 adapter font units and stored acceptance domains; no new runtime defaults |
 | Shared settings/unicode.yml | Pinned official Unicode16 personal-name matching profile, pipeline and upstream byte provenance; consumer build and explicit key-profile migration |
 | Shared settings/ui-catalog.yml, defaults.yml | Catalog generation, supported UI languages, portable initial preferences and allowed choices |
 | Library settings/catalog.yml, ingestion.yml, images.yml, publication.yml | Branding/catalog/filter/profile selection, local import/extraction/network, image processing, hosting/publication |
@@ -414,6 +415,13 @@ of tables, with versioned adapters. No raw database/content/readiness/journal/
 fencing dump. Full replacement is recoverable, not merge; newer formats refused.
 Offer current export; before commit failure/cancel changes nothing. OS locale
 postcommit failure reports restored data plus specific unapplied-language retry.
+The executable [current-state-v1 prerequisite](full-personal-backup.md) fixes all
+currently implemented Website v8/Android Room7 logical fields, independent of
+database wrappers, and includes the exact latest recitation pair. Preserve absent
+web saved preferences and native device sentinels/font domains. Unimplemented
+bookmark/Practice/setup records have no reserved fields; introducing them needs a
+new backup version/adapter, not silent omission. Node-only reference conformance
+does not implement consumer replacement or establish interoperability.
 
 Gzip UTF8 JSON files: .dvlist.json.gz / .dvbackup.json.gz, identifiers
 daasavaani-list v1/v2 / daasavaani-personal-backup independently version1, full
@@ -558,7 +566,7 @@ These are required coverage, not executed test results.
 | Sources/settings | Exact field/cardinality/parser/layout/range/terminal-label/registry schemas; complete settings inventory |
 | Language | Reviewed native/Latin/alias/Unicode/technical-marker/digit tables, independent expectations, permitted samples before Latin default |
 | Public/search | Exact packed postings/witnesses/signatures/envelopes/capabilities/hash exclusions/path rules and fixture/proof specification |
-| Personal | Minimal-list JSON shape exists; full personal/backup schemas, codecs, migration/version matrix and preview/fence/postcommit locale protocol remain |
+| Personal | Minimal-list and current-state full-backup logical schemas/reference tooling exist; consumer codecs/adapters, database migration/version matrix and actual preview/fence/postcommit locale implementation remain |
 | Lifecycle/publication | State/receipt/journal/activation/GC lock order, crash boundaries and accounting schemas |
 | Ingestion | Exact extraction/channel/batch/quota/runbook plus external provider clarification |
 | UI/release | Owned UI/default/capability tokens, routing/shell/signing procedures and normal-protection restoration |
