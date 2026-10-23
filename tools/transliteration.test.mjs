@@ -13,7 +13,7 @@ const unicodeBytes = await read("generated/unicode/unicode16.json");
 const unicode = JSON.parse(unicodeBytes);
 const reference = createTransliterationReference(rules, unicode);
 const fixtures = JSON.parse(await read("fixtures/transliteration-synthetic.json"));
-const ids = rules.profiles.map(p => p.id);
+const ids = rules.profiles.filter(p => p.kind === "latin").map(p => p.id);
 const hash = bytes => createHash("sha256").update(bytes).digest("hex");
 const convert = (text, id = "iast-kn") => reference.convertText(text, id).text;
 const error = (action, code) => assert.throws(action, e => e instanceof TransliterationError && e.code === code);
@@ -57,7 +57,7 @@ test("pinned normalization accepts canonically decomposed Kannada; significant L
 
 test("all consonant/sign combinations and clusters follow the explicit positional tables", () => {
   let count = 0;
-  for (const profile of rules.profiles) {
+  for (const profile of rules.profiles.filter(p => p.kind === "latin")) {
     for (let c = 0; c < rules.alphabet.consonants.length; c++) {
       const consonant = rules.alphabet.consonants[c];
       for (let v = 0; v < rules.alphabet.vowels.length; v++) {
@@ -73,7 +73,7 @@ test("all consonant/sign combinations and clusters follow the explicit positiona
   assert.equal(count, 2720);
 });
 
-test("unknown profiles, all native directions, Kannada identity and deferred Hunterian fail explicitly", () => {
+test("unknown profiles, Kannada identity and deferred Hunterian fail explicitly", () => {
   for (const id of [...rules.unsupportedTargets, "kn", "hunterian", "IAST", "", null, undefined]) {
     error(() => reference.convertText("ಕ", id), "UNSUPPORTED_PROFILE");
   }

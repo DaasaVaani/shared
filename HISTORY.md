@@ -1,5 +1,77 @@
 # Documentation history
 
+## 2026-10-23: provisional nine-native global-rule extension
+
+- Extended the published `e409162f9b844915ed4b782c6ce3b89115ffd97e`
+  prerequisite with explicit Devanagari/Telugu/Tamil/Malayalam/Gujarati/Bengali/
+  Assamese/Gurmukhi/Odia tables, target digits/viramas and ordered per-use
+  approximation diagnostics. The current identity is now
+  `kannada-multiscript-provisional-v1`, revision1; the narrower
+  `kannada-latin-provisional-v1` identity is rejected by the new factory, not
+  silently promoted. Five Latin text tables and all original Latin synthetic
+  expectations remain unchanged. All outputs/rules remain owner-review
+  provisional, never approved linguistic evidence.
+- Archived the former current statement that all nine native directions were
+  wholly unsupported: they now have bounded declared-inventory implementations.
+  Across native profiles600 vowel/sign/consonant/mark cells map;21 reject
+  explicitly (Tamil11, Gurmukhi10), excluding nine structural inherent-sign slots.
+  There are38 declared native approximation rules. Tamil/Gurmukhi vocalic r/l
+  vowels/signs, Tamil visarga and both profiles' candrabindu/avagraha remain
+  unsupported. No invented vowel/nasal superscripts, foreign fallback, empty
+  mapping, contextual nasal/tonal/chillu rewrite or item override is introduced.
+  Seven profiles cover the whole existing69-cell source inventory, not all
+  Kannada Unicode or production/linguistic conformance.
+- Native choices are explicit global guesses: short e/o mergers, Bengali b/v and
+  Bengali/Assamese lateral mergers, Gurmukhi sibilant merger, Tamil Grantha/
+  consonant superscripts after vowel/pulli, Devanagari extended short vowels,
+  Malayalam U+0D4C dependent au, Odia va and Gurmukhi virama/nukta forms all need
+  owner/font/shaping review. The initial Malayalam hand-written expectation used
+  the alternative U+0D57-only au spelling; corrected it to the explicitly chosen
+  global U+0D4C rule without calling that choice independent proof. Initial strict
+  Ajv conditional-required compilation was corrected without disabling strictness.
+- Added36 hand-written synthetic native expectations plus algorithm, failure,
+  range/assigned-Unicode, diagnostic, digit, layout/verse/identity and preserving
+  source tests. Derived table-consistency checks cover4,624 successful and272
+  explicitly rejected consonant/sign combinations,306 dead clusters and every
+  independent vowel/mark cell; all38 declared approximations are exercised.
+  Such expectations/checks are synthetic regression evidence only. This supplies
+  further LANG-01..04/LANG-06..08/LANG-10/LANG-12 prerequisites, not acceptance.
+  No real lyric generation/preview, consumer edit/pin adoption, recitation
+  contract/caption change, provider/content access or device/browser/server use.
+- Validation: `npm ci` passed (six existing packages, zero reported audit
+  vulnerabilities); `npm run check` passed115 tests, zero failures/cancellations/
+  skips. Focused `node --test tools\transliteration.test.mjs
+  tools\native-transliteration.test.mjs` passed75 tests. A separate
+  `npm run build` passed and SHA256 comparisons proved all24 tracked generated/
+  schema paths byte-identical; `git --no-pager diff --exit-code -- generated
+  schemas` passed with intended resources staged.
+- `python tools\check_repository.py` passed89 tracked files; installed
+  actionlint1.7.12 with explicitly selected ShellCheck0.11.0 passed the hygiene
+  workflow (ShellCheck's directory prepended to PATH in the same process).
+  Inline Node/existing yaml parsed all12 tracked YAML files; inline Python
+  checked Markdown fences in14 files and30 local anchors. Both staged/working
+  Git whitespace checks passed. Existing recitation-position/UI contracts and
+  generated captions have no diff against the published prerequisite.
+  Full final-tree checks are repeated before committing/publication. Linguistic,
+  font/device, publisher and consumer integration/release evidence remain absent.
+
+### Prior prerequisite publication evidence
+
+- The preceding exact `e409162f9b844915ed4b782c6ce3b89115ffd97e`,
+  tree `ce5a2dff5d07b4451c6af2428e2844522e6da57d`, was normally fast-forwarded
+  from `c386bf8f4d7568350bb0e30bf342290b47e4b885` under the owner's standing
+  manual-admin exception. Fresh actor `poornapragnaTS` was admin; active main
+  PR/check25526641 retained RepositoryRole5/always and force/delete25526636
+  remained active with no bypass. No rule/pin changes or force push occurred.
+- Exact preflight39877825105/job/check120167646771 and
+  main39878234941/job/check120169038507 both succeeded: one job/all10 actual
+  steps,68/68 tests, zero failures/cancellations/skips. Fresh no-cache REST
+  pagination and job logs verified the results; the owned no-PR validation ref
+  was deleted only after containment/success proof. Installed actionlint1.7.12/
+  ShellCheck0.11.0 were located and passed before main publication. Capturing
+  ANSI-bearing logs required the CLI's explicit allow-escape-sequences flag;
+  only filtered test summaries were output. The tested tree remained clean.
+
 ## 2026-10-23: provisional global Kannada-to-Latin prerequisite
 
 - Starting from published `c386bf8f4d7568350bb0e30bf342290b47e4b885`,

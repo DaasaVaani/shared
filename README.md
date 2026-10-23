@@ -1,9 +1,10 @@
 # DaasaVaani Shared
 
 An isolated [provisional global transliteration prerequisite](docs/transliteration.md)
-provides Kannada-to-five-Latin reference tables/conversion and synthetic tests.
-All rules/outputs remain explicitly owner-review provisional; nine native
-directions, linguistic evidence and production integration remain open.
+provides Kannada-to-five-Latin and nine-native reference tables/conversion,
+explicit approximation diagnostics/unsupported cells and synthetic tests.
+All rules/outputs remain owner-review provisional; linguistic evidence,
+unsupported native cells and production integration remain open.
 
 The approved [lyric identity and optional media contract](docs/lyric-identity.md)
 defines stable video-independent lyric UUIDs, text-only publication eligibility
