@@ -64,7 +64,10 @@ cannot be raised by untrusted fetched policy. Invalid/missing values fail explic
 The fixture settings have executable UI-default, search, personal-transfer and
 publication-safety schemas. The publication-safety schema governs build-time
 artifact byte ceilings, request timeout and declared supported capabilities;
-it is not the complete production policy, journal or remote-artifact contract.
+its strict `transferPlanning` object additionally owns bundle limits and
+request-cost/extra-budget values. The [planner inventory](download-planning.md#settings-and-compatibility)
+defines their types, units, initial values, domains, timing and compatibility.
+It is not the complete production policy, journal or remote-artifact contract.
 
 Each snapshot contains a hash-verified policy artifact; the index binds to that
 identity. Use its exact rules, not newer app/remote defaults. Unsupported required
@@ -272,9 +275,15 @@ objects within role bounds. Distinguish artifact gzip from HTTP Content-Encoding
 
 Planner cost = encoded bytes +128KiB/request. Select positive-gain bundles by
 savings/extra byte, then gain/hash, exact comparisons; zero-extra gains first.
-Disjoint bundles plus remaining individual objects cover requirements. Overall
+Candidate bundles may overlap, but selected bundles are disjoint over **all
+members**, including verified/unneeded ones; greedily skip overlaps. Selected
+bundles plus remaining individual objects cover missing requirements exactly once. Overall
 extra<=min(8MiB,25% missing required encoded bytes), including ZIP overhead/reused
 members. Show selected transfer size before consent; no global-optimality claim.
+The [portable planner prerequisite](download-planning.md) defines exact metadata
+shapes/accounting, settings and a Node-only conformance reference. It does not
+verify physical archives, pack/publish, transfer, reserve storage or activate
+content; production integration remains separate.
 
 | Role | Encoded | Decoded JSON |
 | --- | --- | --- |
@@ -567,7 +576,7 @@ These are required coverage, not executed test results.
 | Language | Reviewed native/Latin/alias/Unicode/technical-marker/digit tables, independent expectations, permitted samples before Latin default |
 | Public/search | Exact packed postings/witnesses/signatures/envelopes/capabilities/hash exclusions/path rules and fixture/proof specification |
 | Personal | Minimal-list and current-state full-backup logical schemas/reference tooling exist; consumer codecs/adapters, database migration/version matrix and actual preview/fence/postcommit locale implementation remain |
-| Lifecycle/publication | State/receipt/journal/activation/GC lock order, crash boundaries and accounting schemas |
+| Lifecycle/publication | Planner metadata/reference prerequisite exists; actual packing/manifest/policy adapters, state/receipt/journal/activation/GC lock order, crash boundaries and storage accounting schemas remain |
 | Ingestion | Exact extraction/channel/batch/quota/runbook plus external provider clarification |
 | UI/release | Owned UI/default/capability tokens, routing/shell/signing procedures and normal-protection restoration |
 

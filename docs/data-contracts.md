@@ -39,6 +39,11 @@ implementation is authorized, not global production readiness.
 - Publication/offline: durable state/receipts/sequence, deterministic ZIP planner,
   host/resource bounds, current-only remote, complete atomic activation, safe
   pins/fences/GC, resume/degradation/repair and explicit manual refresh.
+  The [download-planning prerequisite](download-planning.md) supplies strict
+  portable metadata/types, owned settings, exact-integer Node reference and
+  synthetic conformance vectors. Selected bundles are fully member-disjoint,
+  including verified/unneeded members. Actual archive/manifest/policy validation,
+  packing, transfer and lifecycle/storage adapters remain separate gates.
 - Personal: independent occurrences/references, exact capacity, forward migration,
   portable minimal lists, same-platform logical full backups, revision-checked
   recoverable replacement and truthful locale side effects.
@@ -105,6 +110,13 @@ minimal-list and logical list-record JSON schemas/fixtures. Check
 `git diff --exit-code -- generated schemas`
 after generation with the intended generated outputs staged or committed.
 It is not full production-schema/language or consumer transfer-codec conformance.
+The download-planner suite additionally checks metadata coverage/cost identities,
+full-member disjointness, configured count/byte/extra boundaries, percentage
+flooring, deterministic exact-ratio ordering, reuse, invalid/overflow refusal
+and small exhaustive oracle comparisons including a non-optimal greedy example.
+Run `node --test tools\download-planner.test.mjs` incrementally. These metadata
+vectors do not establish physical ZIP/gzip integrity, real transfer/storage
+admission, consumer adoption or complete ALG-08 lifecycle conformance.
 The full-backup suite additionally validates both complete current logical
 platform allowlists, collection/identity/byte boundaries, single-member gzip/
 fatal UTF8/duplicate JSON rejection and exact synthetic round trips using

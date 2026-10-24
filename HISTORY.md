@@ -1,5 +1,69 @@
 # Documentation history
 
+## 2026-10-24: deterministic download-planning prerequisite
+
+- Implemented the bounded ALG-08/GEN-03 prerequisite with strict portable
+  input/output schemas/types, an owned `transferPlanning` settings object,
+  synthetic golden/rejection fixture and Node-only exact-integer reference.
+  No production capability, consumer pin, publisher, actual archive byte or
+  runtime/storage/lifecycle behavior changed.
+- Owner selected **selected-members-disjoint**: input candidates may overlap,
+  but chosen bundles share no member, even one verified or not required.
+  Greedy skips overlaps; possible missed savings are accepted. Replaced section8
+  wording "Disjoint bundles plus remaining individual objects cover requirements"
+  was underspecified about reused/unneeded members. The current guide now fixes
+  the complete member domain and exactly-once missing coverage.
+- Archived replaced current wording: README described all byte/time bounds as
+  positive without distinguishing new zero-allowed planner costs/budgets.
+  Section3 described only artifact bytes, timeout and capabilities; the
+  lifecycle/publication remaining-gates row listed state/receipt/journal/
+  activation/GC/accounting with no separate planner prerequisite.
+  Those production gates remain open; only metadata arithmetic is implemented.
+- Initial focused `node --test tools\download-planner.test.mjs` passed12/12,
+  with no failures/cancellations/skips, before additional zero-budget and strict
+  input vectors. The first full `npm run check` generated successfully and
+  passed137/138 tests, with one failure: the existing settings test assumed every
+  non-version/non-capability root property admitted a numeric ceiling, including
+  the new nested object. Scoped that scalar-ceiling assertion to numeric
+  properties, preserving all existing invalid-value and missing-key checks.
+- Final implementation validation: `npm run check` passed generation and all
+  138/138 tests (including13 planner tests), with zero failures/cancellations/
+  skips. A subsequent `npm run build` passed; inline Python SHA256 comparison
+  established identical bytes/path sets over all27 generated/schema files.
+  `git diff --exit-code -- generated` passed; selected committed provisional
+  language resources were unchanged. These are metadata arithmetic/conformance
+  checks, not real ZIP byte, consumer, linguistic or release acceptance.
+- `python tools\check_repository.py` passed97 tracked files. An additional
+  inline Python check included all103 tracked/new text paths, all16 Markdown
+  documents and34 local anchors: UTF8, final newlines, whitespace, local links,
+  anchors and fences passed. Inline Node using existing `strictYaml` parsed
+  all13 tracked/new YAML files successfully. Installed
+  `C:\Users\pots\AppData\Local\DaasaVaani\toolchains\actionlint-1.7.12\actionlint.exe`
+  with `-shellcheck C:\Users\pots\AppData\Local\DaasaVaani\toolchains\shellcheck-0.11.0\shellcheck.exe .github\workflows\hygiene.yml`
+  passed. Working/staged `git --no-pager diff --check` checks passed.
+- The138-test full-run log is retained in the session workspace as
+  `shared-download-planner-full.log`. Shared remains uncommitted at
+  `b9ed5321791bfc69f466caa4cd46c58f2c60631f`; no staged work, commit, push or
+  consumer pin changes. Publication needs fresh authorization. Android remains
+  owner-paused with its emulator stopped; Library's independent ZIP prerequisite
+  is not finalized because its complete check remains blocked by unresolved
+  Windows EBUSY. Neither blocker is represented as a pass.
+- The owner subsequently authorized **Publish Shared prerequisite only**.
+  This authorization applies to this planner batch, not consumer pin updates,
+  Library changes or an Android restart. Fresh complete local validation,
+  exact-commit remote preflight and live actor/protection checks precede any
+  main publication; existing repository protections are not changed.
+- Authorized publication revalidation: `npm run check` again passed138/138
+  tests with zero failed/cancelled/skipped; `python tools\check_repository.py`
+  now passed all103 tracked paths after explicitly staging only the14 owned
+  files. `git diff --exit-code -- generated schemas`, working/staged whitespace,
+  strict parsing of13 YAML files and the same installed actionlint/ShellCheck
+  command all passed. Log: `shared-download-planner-publish-full.log` in the
+  session workspace. Live baseline remained `b9ed532`; actor
+  `poornapragnaTS` had admin permission. Rules25526641 retained its temporary
+  role5 exception and required hygiene check; rules25526636 retained active
+  no-bypass force/deletion protection. No rule or permission was changed.
+
 ## 2026-10-23: owner-approved all-current-state full-backup v1 prerequisite
 
 - After the earlier complete-future-state allowlist blocker, the owner explicitly

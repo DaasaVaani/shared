@@ -222,9 +222,11 @@ test("publication safety settings require every typed field without coercion or 
       for (const value of [0, -1, 1.5, "1", true, null, Number.MAX_SAFE_INTEGER + 1]) {
         assert.equal(validate({ ...policy, [key]: value }), false, `Invalid ${key}: ${value}`);
       }
-      const ceiling = key === "metadataTimeoutMs" ? 2147483647 : Number.MAX_SAFE_INTEGER;
-      assert.equal(validate({ ...policy, [key]: ceiling }), true);
-      assert.equal(validate({ ...policy, [key]: ceiling + 1 }), false);
+      if (typeof policy[key] === "number") {
+        const ceiling = key === "metadataTimeoutMs" ? 2147483647 : Number.MAX_SAFE_INTEGER;
+        assert.equal(validate({ ...policy, [key]: ceiling }), true);
+        assert.equal(validate({ ...policy, [key]: ceiling + 1 }), false);
+      }
     }
   }
   for (const invalid of [{ ...policy, formatVersion: 2 }, { ...policy, ignored: 1 },

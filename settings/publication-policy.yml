@@ -9,5 +9,11 @@ maxPolicyDecodedBytes: 8388608
 maxIndexEncodedBytes: 33554432
 maxIndexDecodedBytes: 134217728
 metadataTimeoutMs: 30000
+transferPlanning:
+  maxBundleMembers: 100
+  maxBundleEncodedBytes: 33554432
+  requestCostBytes: 131072
+  maxExtraBytes: 8388608
+  maxExtraPercent: 25
 supportedRequiredCapabilities:
   - fixture-catalog-v1

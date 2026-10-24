@@ -1,0 +1,51 @@
+{
+  "description": "Synthetic metadata arithmetic, not encoded ZIP/gzip files or an offline-ready snapshot.",
+  "policy": {
+    "maxBundleMembers": 4, "maxBundleEncodedBytes": 10000,
+    "requestCostBytes": 100, "maxExtraBytes": 40, "maxExtraPercent": 25
+  },
+  "input": {
+    "formatVersion": 1,
+    "objects": [
+      { "sha256": "0000000000000000000000000000000000000000000000000000000000000001", "encodedBytes": 100 },
+      { "sha256": "0000000000000000000000000000000000000000000000000000000000000002", "encodedBytes": 100 }
+    ],
+    "required": [
+      "0000000000000000000000000000000000000000000000000000000000000001",
+      "0000000000000000000000000000000000000000000000000000000000000002"
+    ],
+    "verified": [],
+    "bundles": [{
+      "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "encodedBytes": 210,
+      "members": [
+        "0000000000000000000000000000000000000000000000000000000000000001",
+        "0000000000000000000000000000000000000000000000000000000000000002"
+      ]
+    }]
+  },
+  "expected": {
+    "formatVersion": 1,
+    "requests": [{
+      "kind": "bundle",
+      "sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+      "encodedBytes": 210,
+      "covers": [
+        "0000000000000000000000000000000000000000000000000000000000000001",
+        "0000000000000000000000000000000000000000000000000000000000000002"
+      ]
+    }],
+    "requestCount": 1, "missingEncodedBytes": 200, "transferEncodedBytes": 210,
+    "extraEncodedBytes": 10, "extraBudgetBytes": 40,
+    "baselineCostBytes": 400, "costBytes": 310, "savedCostBytes": 90
+  },
+  "rejected": [
+    { "path": ["formatVersion"], "value": 2 },
+    { "path": ["objects", 0, "encodedBytes"], "value": 0 },
+    { "path": ["objects", 0, "encodedBytes"], "value": 1.5 },
+    { "path": ["objects", 0, "sha256"], "value": "../outside" },
+    { "path": ["bundles", 0, "members"], "value": [] },
+    { "path": ["bundles", 0, "encodedBytes"], "value": 199 },
+    { "path": ["bundles", 0, "decodedBytes"], "value": 200 }
+  ]
+}

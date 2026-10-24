@@ -5,7 +5,7 @@
   "required": [
     "formatVersion", "maxDescriptorBytes", "maxManifestEncodedBytes", "maxManifestDecodedBytes",
     "maxItemEncodedBytes", "maxItemDecodedBytes", "maxPolicyEncodedBytes", "maxPolicyDecodedBytes",
-    "maxIndexEncodedBytes", "maxIndexDecodedBytes", "metadataTimeoutMs", "supportedRequiredCapabilities"
+    "maxIndexEncodedBytes", "maxIndexDecodedBytes", "metadataTimeoutMs", "transferPlanning", "supportedRequiredCapabilities"
   ],
   "properties": {
     "formatVersion": { "const": 1 },
@@ -19,12 +19,25 @@
     "maxIndexEncodedBytes": { "$ref": "#/$defs/positiveSafeInteger" },
     "maxIndexDecodedBytes": { "$ref": "#/$defs/positiveSafeInteger" },
     "metadataTimeoutMs": { "type": "integer", "minimum": 1, "maximum": 2147483647 },
+    "transferPlanning": { "$ref": "#/$defs/transferPlanning" },
     "supportedRequiredCapabilities": {
       "type": "array", "minItems": 1, "uniqueItems": true,
       "items": { "const": "fixture-catalog-v1" }
     }
   },
   "$defs": {
+    "transferPlanning": {
+      "type": "object", "additionalProperties": false,
+      "required": ["maxBundleMembers", "maxBundleEncodedBytes", "requestCostBytes", "maxExtraBytes", "maxExtraPercent"],
+      "properties": {
+        "maxBundleMembers": { "$ref": "#/$defs/positiveSafeInteger" },
+        "maxBundleEncodedBytes": { "$ref": "#/$defs/positiveSafeInteger" },
+        "requestCostBytes": { "$ref": "#/$defs/nonNegativeSafeInteger" },
+        "maxExtraBytes": { "$ref": "#/$defs/nonNegativeSafeInteger" },
+        "maxExtraPercent": { "type": "integer", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "nonNegativeSafeInteger": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
     "positiveSafeInteger": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 }
   }
 }

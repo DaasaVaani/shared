@@ -91,8 +91,13 @@ offline content or full backups. Consumers adopt and validate independently.
 
 Build-time publication safety settings follow
 [`schemas/publication-policy-settings.schema.json`](schemas/publication-policy-settings.schema.json):
-every declared field is required, byte/time bounds are positive safe integers,
-and capabilities name only implemented fixture support. Request timeout cannot
+every declared field is required, artifact/time bounds are positive safe integers,
+and capabilities name only implemented fixture support. The separate strict
+[download-planning prerequisite](docs/download-planning.md) adds configurable
+request cost/extra budgets (which may be zero), portable metadata schemas/types,
+synthetic vectors and a Node-only exact-integer reference. It does not implement
+packing, transfers, storage, activation or a new production capability.
+Request timeout cannot
 exceed the platform timer's signed32-bit millisecond ceiling. This schema does not validate a
 fetched snapshot or supply the remaining production lifecycle/publication policy.
 
