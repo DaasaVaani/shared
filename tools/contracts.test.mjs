@@ -161,6 +161,32 @@ test("canonical discovery captions are distinct and equal in both generated plat
     }
   }
 });
+test("backup captions distinguish personal export and complete read-only preview in both generated resources", async () => {
+  const source = strictYaml(await readFile(new URL("../locales/ui.yml", import.meta.url), "utf8"));
+  const web = JSON.parse(await readFile(new URL("../generated/web/ui.json", import.meta.url), "utf8"));
+  const keys = ["backupExported", "backupExportCancelled", "backupPlatform", "backupExportedAt",
+    "backupCounts", "backupListId", "backupOccurrenceId", "backupReference", "backupFallback",
+    "backupPosition", "backupNoPosition", "backupDuplicateNames"];
+  for (const [locale, messages] of Object.entries(source)) {
+    const xml = await readFile(new URL(`../generated/android/${locale === "en" ? "values" : `values-${locale}`}/strings.xml`, import.meta.url), "utf8");
+    assert.equal(new Set(keys.map(key => messages[key])).size, keys.length);
+    for (const key of keys) {
+      assert.equal(typeof messages[key], "string", `${locale}.${key}`);
+      assert.ok(messages[key].length);
+      assert.equal(web[locale][key], messages[key]);
+      assert.ok(xml.includes(`<string name="${key.replace(/[A-Z]/g, letter => "_" + letter.toLowerCase())}" formatted="false">${messages[key]}</string>`));
+      if (locale === "kn") assert.match(messages[key], /\p{Script=Kannada}/u);
+    }
+    assert.deepEqual([...messages.backupCounts.matchAll(/\{([^}]+)\}/g)].map(match => match[1]),
+      ["favorites", "lists", "occurrences", "recents", "learning"]);
+    assert.notEqual(messages.backupDuplicateNames, messages.duplicateName);
+    assert.notEqual(messages.backupExportCancelled, messages.backupCancelled);
+  }
+  assert.match(source.en.backupExported, /^Personal backup file written/);
+  assert.match(source.en.backupExported, /Delivery is not confirmed/);
+  assert.match(source.en.backupExportCancelled, /may retain an incomplete file/);
+  assert.match(source.en.backupDuplicateNames, /remain separate lists with their original IDs/);
+});
 test("catalog generator is deterministic and includes both locales", async () => {
   await generate();
   const file = new URL("../generated/web/ui.json", import.meta.url);

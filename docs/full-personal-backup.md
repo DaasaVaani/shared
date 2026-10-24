@@ -156,7 +156,14 @@ logical serialization; whitespace/BOM cannot evade the decoded input bound.
 
 Generated `backup*` captions cover preview, explicit replacement, old-data
 preservation, same-platform/privacy limitations, stale preview and postcommit
-language retry. Display success only from real adapter outcomes. Caption/schema
+language retry. Personal-export completion is distinct from list-file completion
+and does not confirm delivery. Export cancellation warns that the provider may
+retain an incomplete file; it does not describe a cancelled restore. Complete
+read-only preview captions label platform, UTC export date, collection counts,
+original list/occurrence IDs, saved references/fallbacks and the exact latest
+position or its absence. The duplicate-name notice preserves separate lists and
+their IDs, without offering a list-save action or implying a merge.
+Display success only from real adapter outcomes. Caption/schema
 availability does not establish consumer backup UI, persistence or release
 readiness. Consumers need independent transaction/crash/quota/stale-writer/
 postcommit-locale and actual transport interoperability tests before enabling UI.

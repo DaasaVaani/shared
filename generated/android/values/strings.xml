@@ -18,13 +18,25 @@
   <string name="back_to_list" formatted="false">Back to list</string>
   <string name="backup_cancelled" formatted="false">Backup restore cancelled. Existing personal data was not changed.</string>
   <string name="backup_choose" formatted="false">Choose a personal backup file</string>
+  <string name="backup_counts" formatted="false">Favorites: {favorites}; lists: {lists}; occurrences: {occurrences}; recent entries: {recents}; learning labels: {learning}.</string>
+  <string name="backup_duplicate_names" formatted="false">Some lists have equivalent names under Unicode16 comparison. They remain separate lists with their original IDs.</string>
   <string name="backup_export" formatted="false">Export personal backup</string>
+  <string name="backup_export_cancelled" formatted="false">Backup export cancelled. Personal data is unchanged. The selected provider may retain an incomplete file.</string>
+  <string name="backup_exported" formatted="false">Personal backup file written to the selected destination. Delivery is not confirmed.</string>
+  <string name="backup_exported_at" formatted="false">Export date (UTC)</string>
   <string name="backup_failed" formatted="false">Restore failed. Your previous personal data is preserved. Try again.</string>
+  <string name="backup_fallback" formatted="false">Saved fallback text</string>
   <string name="backup_invalid" formatted="false">Invalid or unsupported personal backup. Existing personal data was not changed.</string>
   <string name="backup_language_retry" formatted="false">Personal data was restored, but the interface language could not be applied. Retry applying the language.</string>
+  <string name="backup_list_id" formatted="false">List ID</string>
+  <string name="backup_no_position" formatted="false">No saved recitation position</string>
+  <string name="backup_occurrence_id" formatted="false">Occurrence ID</string>
   <string name="backup_offer_export" formatted="false">Export your current personal data before replacing it.</string>
+  <string name="backup_platform" formatted="false">Platform</string>
+  <string name="backup_position" formatted="false">Latest exact recitation position</string>
   <string name="backup_preview" formatted="false">Review the complete backup before replacing personal data.</string>
   <string name="backup_privacy" formatted="false">This gzip file is not encrypted. Anyone receiving it can read your personal settings, lists and activity.</string>
+  <string name="backup_reference" formatted="false">Saved reference</string>
   <string name="backup_replace" formatted="false">Confirm replacement of all personal data</string>
   <string name="backup_replacement_notice" formatted="false">Replacement does not merge lists. Existing personal data will be replaced only after a successful commit.</string>
   <string name="backup_restored" formatted="false">Personal data restored. Lyrics and offline readiness were not restored.</string>

@@ -1,5 +1,36 @@
 # Documentation history
 
+## 2026-10-25: native personal-backup caption prerequisite
+
+- Continued the owner's approved next implementation slice after the native
+  REC-04/search-replay review branch. The native manual-backup implementation
+  identified missing UI captions; this additive prerequisite does not change
+  the approved v1 wire shape, settings, capabilities or personal acceptance
+  domains. Main merges/deployment remain unauthorized; delivery is review-only.
+- Added12 English/Kannada captions for personal-backup export completion and
+  cancellation, read-only platform/UTC date/counts, original list/occurrence
+  identifiers, saved references/fallbacks, exact position/absence and equivalent
+  names that remain independent lists. The existing `transferFileFailed` is a
+  generic provider error and remains reusable. `transferFileSaved` describes a
+  list file, `backupCancelled` describes restore, and `duplicateName` offers
+  interactive separate-list saving; none was repurposed.
+- Added a catalog regression requiring both generated platform resources to
+  retain every caption, Kannada text, the five exact count placeholders and
+  distinct export/restore/duplicate semantics. Current guides link the owning
+  caption scope without claiming consumer UI/transaction implementation.
+- `npm run check` passed generation and139/139 tests, zero failures,
+  cancellations or skips; full log `shared-native-backup-captions-full.log` in
+  the session workspace. `npm run build` followed by
+  `git diff --exit-code -- generated schemas` passed repeat-generation checks.
+  `python tools\check_repository.py` passed103 tracked files, both Git whitespace
+  checks passed, and the installed actionlint1.7.12 with explicit
+  ShellCheck0.11.0 passed `.github\workflows\hygiene.yml`.
+- Strict Node/YAML parsing of every YAML file under `.github`, `settings` and
+  `locales` passed13 files using `parseDocument` with unique keys and refusal
+  of parser errors/warnings. Native runtime/transport/transaction conformance
+  remains the consumer's separate unfinished implementation and validation
+  obligation; no consumer success is inferred from these catalog checks.
+
 ## 2026-10-25: owner-requested publication of retained evidence
 
 - The owner requested committing and pushing all pending changes, then explicitly

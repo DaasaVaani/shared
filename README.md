@@ -135,6 +135,11 @@ Consumers include this repository at `shared/` as a Git submodule and pin commit
 independently. Contract changes must describe compatibility and conformance
 impact; updates are not forced into lockstep.
 
+Personal-backup export-status and complete read-only preview captions are
+distinct from list transfer and restore outcomes. Their
+[scope and identity-preservation wording](docs/full-personal-backup.md#consumer-implementation-and-recoverable-replacement)
+do not activate consumer backup UI or change the v1 wire format.
+
 ## Contributing and validation
 
 Keep changes focused and obtain agreement before implementing open design choices.
