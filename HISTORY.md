@@ -1,5 +1,24 @@
 # Documentation history
 
+## 2026-10-25: owner-requested publication of retained evidence
+
+- The owner requested committing and pushing all pending changes, then explicitly
+  selected renewed blocker investigation and full validation across all four
+  repositories, including a non-wiping Android emulator restart. This includes
+  the previously retained Shared publication record below; it does not authorize
+  skipping failed checks or silently updating independent consumer pins.
+- Fresh `npm run check` passed generation and138/138 tests with zero failures,
+  cancellations or skips. `git diff --exit-code -- generated schemas`,
+  `python tools\check_repository.py` (103 tracked paths), working/staged Git
+  whitespace, installed actionlint1.7.12 with ShellCheck0.11.0, strict parsing of
+  all13 YAML files and documentation UTF8/newline/whitespace/link/fence checks
+  (16 Markdown files,34 local anchors) passed.
+  Full log: `commit-all-20261025-shared-full.log` in the session workspace.
+- This batch changes only this history file. Planner implementation, generated
+  resources, settings, capabilities and consumer pins are unchanged. Website,
+  Library and native publication each retain their own independent validation
+  gates; their success is not inferred from the Shared checks.
+
 ## 2026-10-24: deterministic download-planning prerequisite
 
 - Implemented the bounded ALG-08/GEN-03 prerequisite with strict portable
@@ -63,6 +82,32 @@
   `poornapragnaTS` had admin permission. Rules25526641 retained its temporary
   role5 exception and required hygiene check; rules25526636 retained active
   no-bypass force/deletion protection. No rule or permission was changed.
+- Published commit `aedabc882a9165890698d7b663c261e3afa8691b`,
+  tree `85e65c469f2b5c0e8a504e8828a86e1008b244fc`, as an ordinary fast-forward
+  from `b9ed532`. Exact-commit validation run
+  [40119632237](https://github.com/DaasaVaani/shared/actions/runs/40119632237)
+  passed before main. The owner-authorized batch used the existing temporary
+  admin pull-request exception; the required check was already successful and
+  no checks or protections were disabled. Main run
+  [40119734847](https://github.com/DaasaVaani/shared/actions/runs/40119734847)
+  passed at the identical commit.
+- For each run, verified the exact branch/SHA, one successful job and all10
+  actual setup/execution/cleanup step conclusions. Authentic downloaded logs
+  confirmed generation, all138 tests passing, zero failed/cancelled/skipped,
+  103-file hygiene, all five GitHub YAML inputs, generated/schema drift and
+  committed whitespace. GitHub commit metadata independently matched the exact
+  tree and single baseline parent. CI annotations noted existing action-runtime
+  Node24 enforcement and the ubuntu-latest migration; no action/toolchain pins
+  changed. Evidence is retained as `shared-planner-{preflight,main}.{json,log}`
+  and `shared-download-planner-final-tree.log` in the session workspace.
+- After main success and exact containment/no-open-PR/ref-identity checks,
+  removed only owned `validation/download-planner-aedabc8-20261024` and verified
+  its absence. Local main and origin/main matched `aedabc8`, with a clean
+  worktree before this post-publication record. Website/Library/Android Shared
+  pins remained respectively `b9ed532`/`8bd8793a`/`c386bf8`; native staging
+  remained tree `52465b9a3a6c2dc695c5cf2e59d231797691d486`.
+  This final evidence record is retained locally for the next coherent batch,
+  not a separate housekeeping push. Runtime integration remains unimplemented.
 
 ## 2026-10-23: owner-approved all-current-state full-backup v1 prerequisite
 
