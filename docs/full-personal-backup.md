@@ -167,3 +167,20 @@ Display success only from real adapter outcomes. Caption/schema
 availability does not establish consumer backup UI, persistence or release
 readiness. Consumers need independent transaction/crash/quota/stale-writer/
 postcommit-locale and actual transport interoperability tests before enabling UI.
+
+## System-backup privacy captions
+
+For XFER-09/10, `systemBackupNotice` discloses that Android Auto Backup may copy
+personal data to the user's Google account when enabled in device settings.
+System backup and device transfer are best effort and personal-only: lyrics,
+media, download state and offline readiness are excluded.
+`systemBackupManualNotice` explains that quotas, settings and scheduling may
+prevent backup, recommends an explicit personal backup file, and distinguishes
+manual export from actual system-backup evidence.
+
+These captions do not enable Android backup or define file allowlists, platform
+callbacks, restore transactions or quota eligibility. Consumers must independently
+validate legacy/cloud/device-transfer scope, restore integrity and fresh local
+fencing without restoring content/control/readiness. The selected
+[system-backup direction](implementation-specification.md#10-personal-data-backup-and-transfers)
+does not guarantee cloud/device transport or full platform/OEM coverage.

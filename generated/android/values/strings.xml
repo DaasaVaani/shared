@@ -191,6 +191,8 @@
   <string name="show_reading_controls" formatted="false">Show reading controls</string>
   <string name="skip_to_content" formatted="false">Skip to content</string>
   <string name="start_again" formatted="false">Return to preparation</string>
+  <string name="system_backup_manual_notice" formatted="false">Cloud quotas, device settings and scheduling can prevent backup. Keep an explicit personal backup file; exporting a file does not confirm system backup.</string>
+  <string name="system_backup_notice" formatted="false">Android Auto Backup may copy your personal data to your Google account when device backup is enabled. System backup and device transfer are best effort and include personal data only, not lyrics, media, download state or offline readiness.</string>
   <string name="tagline" formatted="false">A quiet space for reading</string>
   <string name="transfer_cancelled" formatted="false">List operation cancelled. Nothing was saved.</string>
   <string name="transfer_create_link" formatted="false">Create snapshot link</string>

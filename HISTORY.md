@@ -1,5 +1,30 @@
 # Documentation history
 
+## 2026-10-25: system-backup privacy caption prerequisite
+
+- After the native manual-backup review slice, continued the approved XFER-09/10
+  system-backup slice with two English/Kannada privacy captions and committed
+  generated resources for both platforms. Google-account copying is conditional
+  on device backup settings; system/device transfer is personal-only and best
+  effort. Quotas/settings/scheduling may prevent backup, and manual file export
+  is not proof of system backup.
+- Added a catalog regression for both generated resource values and Kannada
+  presence, account/privacy/excluded-content wording and the distinct manual
+  recommendation. No backup wire/schema/settings/capability or consumer runtime
+  change is supplied by this Shared prerequisite. Native adoption and platform
+  allowlist/restore validation remain separate. Publication remains review-only;
+  no main merge/deployment or other consumer repin is authorized by these labels.
+- `npm run check` passed generation and140/140 tests, zero failures,
+  cancellations or skips; log `shared-system-backup-privacy-full.log` in the
+  session workspace. `npm run build` plus before/after SHA256 checks proved
+  byte-identical generation across all27 generated/schema files.
+- `python tools\check_repository.py` passed103 tracked files.
+  Strict Node/YAML `parseDocument` with unique keys and errors/warnings refused
+  passed all13 YAML files under `.github`, `settings` and `locales`.
+  Installed actionlint1.7.12 with explicit ShellCheck0.11.0 passed
+  `.github\workflows\hygiene.yml`; working Git whitespace passed.
+  These are catalog/contract checks, not native platform/transport success.
+
 ## 2026-10-25: native personal-backup caption prerequisite
 
 - Continued the owner's approved next implementation slice after the native

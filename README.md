@@ -139,6 +139,9 @@ Personal-backup export-status and complete read-only preview captions are
 distinct from list transfer and restore outcomes. Their
 [scope and identity-preservation wording](docs/full-personal-backup.md#consumer-implementation-and-recoverable-replacement)
 do not activate consumer backup UI or change the v1 wire format.
+Separate [system-backup privacy captions](docs/full-personal-backup.md#system-backup-privacy-captions)
+disclose Google-account copying and best-effort personal-only scope without
+enabling Android backup or claiming transport success.
 
 ## Contributing and validation
 
