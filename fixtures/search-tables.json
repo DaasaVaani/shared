@@ -1,0 +1,40 @@
+{
+  "input": {
+    "policySha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "profiles": [{ "id": "synthetic-v1", "signature": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" }],
+    "items": ["10000000-0000-4000-8000-000000000001", "10000000-0000-4000-8000-000000000002"],
+    "lines": [
+      { "lyricId": "10000000-0000-4000-8000-000000000001", "lineId": "20000000-0000-4000-8000-000000000001" },
+      { "lyricId": "10000000-0000-4000-8000-000000000002", "lineId": "20000000-0000-4000-8000-000000000002" }
+    ],
+    "occurrences": [
+      { "lyricId": "10000000-0000-4000-8000-000000000001", "profileId": "synthetic-v1", "field": "title", "lineId": null, "text": "aaaa" },
+      { "lyricId": "10000000-0000-4000-8000-000000000001", "profileId": "synthetic-v1", "field": "lyrics", "lineId": "20000000-0000-4000-8000-000000000001", "text": "aaaa" },
+      { "lyricId": "10000000-0000-4000-8000-000000000002", "profileId": "synthetic-v1", "field": "lyrics", "lineId": "20000000-0000-4000-8000-000000000002", "text": "ba" }
+    ]
+  },
+  "tables": {
+    "format": "daasavaani-search-tables",
+    "formatVersion": 1,
+    "policySha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "profiles": [{ "id": "synthetic-v1", "signature": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" }],
+    "items": ["10000000-0000-4000-8000-000000000001", "10000000-0000-4000-8000-000000000002"],
+    "lines": [
+      { "item": 0, "lineId": "20000000-0000-4000-8000-000000000001" },
+      { "item": 1, "lineId": "20000000-0000-4000-8000-000000000002" }
+    ],
+    "tokens": [
+      { "profile": 0, "text": "aaaa", "witnessOffset": 0, "witnessCount": 2 },
+      { "profile": 0, "text": "ba", "witnessOffset": 2, "witnessCount": 1 }
+    ],
+    "witnesses": [0, 0, 0, 0, 9, 1, 1, 9, 2],
+    "grams": [
+      { "text": "a", "postingOffset": 0, "postingCount": 2 },
+      { "text": "b", "postingOffset": 2, "postingCount": 1 },
+      { "text": "aa", "postingOffset": 3, "postingCount": 1 },
+      { "text": "ba", "postingOffset": 4, "postingCount": 1 },
+      { "text": "aaa", "postingOffset": 5, "postingCount": 1 }
+    ],
+    "postings": [0, 4, 1, 1, 1, 1, 0, 3, 1, 1, 0, 2]
+  }
+}

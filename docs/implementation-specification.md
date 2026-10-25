@@ -212,7 +212,11 @@ signatures agree across every declared matching profile/context, independent of
 an item's available matches. A technical distinction prevents merging.
 
 Publisher builds one global compact JSON/gzip index with multiset code-point
-1/2/3-gram counted postings, no boundary sentinels. For length n/edit allowance k,
+1/2/3-gram counted postings, no boundary sentinels. The
+[flat integer table contract](search-tables.md) fixes dictionaries, contiguous
+offset/count regions, line-level witnesses and exact gram multiplicities for
+already-normalized input; it does not supply reviewed normalization or the full
+production index/query engine. For length n/edit allowance k,
 apply positive necessary overlap bounds n-k, n-1-3k, n-2-4k. Whole-token extra grams
 only broaden candidates. Then exact token-internal fragment OSA verification.
 Formalize completeness and scan-oracle parity; no lossy cutoff, production full

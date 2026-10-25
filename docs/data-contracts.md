@@ -40,6 +40,10 @@ implementation is authorized, not global production readiness.
 - Search: global publisher-counted q-gram accelerator plus exact OSA fragments,
   AND, metadata-first best-field-per-term weights, deterministic edit/ID ties,
   all-profile dedup, selected-script bounded item reads and honest errors.
+  The [flat integer table contract](search-tables.md) fixes dictionary IDs,
+  line-level witnesses, exact offset/count regions and counted gram pairs for
+  declared normalized tokens. Its independent gram-count oracle is not the
+  remaining OSA/candidate/ranking/linguistic or real-memory proof.
 - Publication/offline: durable state/receipts/sequence, deterministic ZIP planner,
   host/resource bounds, current-only remote, complete atomic activation, safe
   pins/fences/GC, resume/degradation/repair and explicit manual refresh.
@@ -130,6 +134,11 @@ compatibility. See [the exact contract](snapshot-publication.md).
 It also checks the metadata-to-existing-planner bridge, policy-object completeness,
 exact expected cost/coverage totals, complete reuse and snapshot-policy changes.
 This bridge does not make unverified input hashes trustworthy.
+The flat-table suite checks the complete portable vector, code-point multiset
+counts against an independent window oracle, literal/profile distinctions,
+exact witness/reference/extent semantics and malformed safe-integer inputs.
+Run `node --test tools\search-tables.test.mjs` incrementally. Source normalization,
+OSA candidate completeness, actual budgets and consumer adapters remain open.
 The full-backup suite additionally validates both complete current logical
 platform allowlists, collection/identity/byte boundaries, single-member gzip/
 fatal UTF8/duplicate JSON rejection and exact synthetic round trips using

@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/tables",
+  "$defs": {
+    "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "uuid": { "type": "string", "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+    "integer": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+    "count": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+    "text": { "type": "string", "minLength": 1 },
+    "profileId": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+    "profiles": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["id", "signature"],
+        "properties": { "id": { "$ref": "#/$defs/profileId" }, "signature": { "$ref": "#/$defs/hash" } }
+      }
+    },
+    "items": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/uuid" } },
+    "input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["policySha256", "profiles", "items", "lines", "occurrences"],
+      "properties": {
+        "policySha256": { "$ref": "#/$defs/hash" },
+        "profiles": { "$ref": "#/$defs/profiles" },
+        "items": { "$ref": "#/$defs/items" },
+        "lines": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false, "required": ["lyricId", "lineId"],
+            "properties": { "lyricId": { "$ref": "#/$defs/uuid" }, "lineId": { "$ref": "#/$defs/uuid" } }
+          }
+        },
+        "occurrences": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["lyricId", "profileId", "field", "lineId", "text"],
+            "properties": {
+              "lyricId": { "$ref": "#/$defs/uuid" },
+              "profileId": { "$ref": "#/$defs/profileId" },
+              "field": { "enum": ["title", "composer", "ankita", "deity", "tags", "form", "category", "contextLabels", "description", "lyrics"] },
+              "lineId": { "anyOf": [{ "type": "null" }, { "$ref": "#/$defs/uuid" }] },
+              "text": { "$ref": "#/$defs/text" }
+            }
+          }
+        }
+      }
+    },
+    "tables": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "formatVersion", "policySha256", "profiles", "items", "lines", "tokens", "witnesses", "grams", "postings"],
+      "properties": {
+        "format": { "const": "daasavaani-search-tables" },
+        "formatVersion": { "const": 1 },
+        "policySha256": { "$ref": "#/$defs/hash" },
+        "profiles": { "$ref": "#/$defs/profiles" },
+        "items": { "$ref": "#/$defs/items" },
+        "lines": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false, "required": ["item", "lineId"],
+            "properties": { "item": { "$ref": "#/$defs/integer" }, "lineId": { "$ref": "#/$defs/uuid" } }
+          }
+        },
+        "tokens": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["profile", "text", "witnessOffset", "witnessCount"],
+            "properties": {
+              "profile": { "$ref": "#/$defs/integer" }, "text": { "$ref": "#/$defs/text" },
+              "witnessOffset": { "$ref": "#/$defs/integer" }, "witnessCount": { "$ref": "#/$defs/count" }
+            }
+          }
+        },
+        "witnesses": { "type": "array", "items": { "$ref": "#/$defs/integer" } },
+        "grams": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["text", "postingOffset", "postingCount"],
+            "properties": {
+              "text": { "$ref": "#/$defs/text" }, "postingOffset": { "$ref": "#/$defs/integer" },
+              "postingCount": { "$ref": "#/$defs/count" }
+            }
+          }
+        },
+        "postings": { "type": "array", "items": { "$ref": "#/$defs/integer" } }
+      }
+    }
+  }
+}

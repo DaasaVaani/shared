@@ -1,5 +1,31 @@
 # Documentation history
 
+## 2026-10-25: owner-selected flat counted search-table representation
+
+- After both snapshot/planning batches were published, presented the remaining
+  exact representation choice: flat integer tables with offsets/counts;
+  delta-coded integer tables; or base64-packed binary inside JSON. Owner chose
+  `flat-integer-tables`. Simpler strict validation/independent clients outweighed
+  possible larger parsed representation; no waiver of actual existing byte/
+  retained/peak budgets was granted.
+- Implemented a distinct portable normalized-token table component, not a live
+  index: sorted item/line/profile/token/gram dictionaries, flat witness triples
+  and counted posting pairs with exact record offsets/counts. Fixed field codes
+  preserve all ten selected fields; no synthetic linguistic pipeline or source
+  mapping is inferred.
+- Added complete manual golden fixture, strict semantic reconstruction,
+  independent exhaustive small gram/window oracle and hostile extent/reference/
+  count tests. Token/line declarations, profile signatures and policy hashes
+  remain caller-authenticated evidence; full search/OSA/normalization/ranking/
+  index publication/adapters and realistic memory proof remain open.
+- Focused12/12 cases passed. Full `npm run check` passed generation and160/160
+  tests, zero failures/cancellations/skips. Hygiene passed117 tracked paths;
+  working/staged whitespace, generated/schema stability, strict YAML13 and
+  actionlint1.7.12 with explicit ShellCheck0.11.0 passed. Full log:
+  `shared-flat-search-tables-full-validation.log`. Consumer pins remain unchanged
+  by this search prerequisite; Library retains its separately tested snapshot
+  planner pin until an applicable search adapter is implemented and validated.
+
 ## 2026-10-25: snapshot-to-reference-planner binding
 
 - Continued the owner-authorized Shared/Library batch after the public envelope

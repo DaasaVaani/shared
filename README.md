@@ -1,5 +1,11 @@
 # DaasaVaani Shared
 
+The [flat counted search-table prerequisite](docs/search-tables.md) defines exact
+dictionary IDs, contiguous integer witness/posting regions and complete overlapping
+code-point gram multiplicities for declared normalized tokens. It is not a
+production normalizer/query engine/index publication or linguistic evidence;
+scan/OSA completeness, adapters and real memory budgets remain separate gates.
+
 The [staged canonical snapshot envelope](docs/snapshot-publication.md) defines
 strict public descriptor/sequence, manifest object/date/bundle maps and exact
 transfer-policy binding for the existing canonical text-only projection.
