@@ -246,7 +246,10 @@ implementations, not universal browser heap guarantees.
 JSON Schema2020-12, strict non-mutating producers; consumers tolerate unknown
 optional fields within supported major, reject unsupported major/required
 capabilities. Independent initial version1 families: source/settings/published
-artifacts/minimal list/each platform full backup. Exact capability names remain open.
+artifacts/minimal list/each platform full backup. The
+[staged canonical snapshot envelope](snapshot-publication.md) fixes its narrow
+descriptor/manifest/policy capabilities and metadata validation. Full production
+multilingual/search/index capability names and contracts remain open.
 
 RFC8785 canonical JSON for generated JSON/logical hashes, initially safe integers
 only in [-9007199254740991,9007199254740991], no floats. Preserve string values,

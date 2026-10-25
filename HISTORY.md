@@ -1,5 +1,27 @@
 # Documentation history
 
+## 2026-10-25: staged canonical snapshot contracts
+
+- Owner authorized Shared review-branch contracts and only Library's independently
+  validated pin/integration. Website/Android pins, PRs, main merges, real state
+  initialization and deployment remain unauthorized.
+- Added exact public descriptor/sequence, canonical-prelaunch manifest object/
+  date/bundle maps and transfer-policy families, strict schemas/types, metadata
+  reference and synthetic boundary/rejection vectors. No full multilingual/
+  index contract or runtime capability is claimed. Existing live/fixture formats,
+  build safety settings and generated UI resources remain unchanged.
+- Archived wording from specification section8: "Exact capability names remain
+  open." The canonical-envelope subset is now defined; all other production
+  families remain open in the current guide.
+- Validation: `npm run check` passed generation and146/146 tests, zero failed,
+  cancelled or skipped. `python tools\check_repository.py` passed110 tracked
+  files; working/staged `git diff --check`, `git diff --exit-code -- generated
+  schemas`, strict parsing of all13 tracked YAML files and installed
+  actionlint1.7.12 with explicit ShellCheck0.11.0 passed. Full log is retained as
+  `shared-snapshot-envelope-full-validation.log` in the session workspace.
+  No consumer/runtime, actual production artifact, device or linguistic
+  conformance is inferred from this metadata prerequisite.
+
 ## 2026-10-25: owner-requested publication of retained evidence
 
 - The owner requested committing and pushing all pending changes, then explicitly

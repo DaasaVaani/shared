@@ -1,0 +1,82 @@
+{
+  "policy": {
+    "format": "daasavaani-snapshot-policy",
+    "formatVersion": 1,
+    "logicalProjection": "canonical-prelaunch-v1",
+    "transferPlanning": {
+      "maxBundleMembers": 100,
+      "maxBundleEncodedBytes": 33554432,
+      "requestCostBytes": 131072,
+      "maxExtraBytes": 8388608,
+      "maxExtraPercent": 25
+    }
+  },
+  "descriptor": {
+    "format": "daasavaani-snapshot-feed",
+    "formatVersion": 1,
+    "sequence": 1,
+    "manifest": {
+      "sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+      "path": "objects/dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd.json.gz",
+      "encodedBytes": 400,
+      "decodedBytes": 2000
+    }
+  },
+  "manifest": {
+    "format": "daasavaani-snapshot",
+    "formatVersion": 1,
+    "stage": "prelaunch",
+    "logicalProjection": "canonical-prelaunch-v1",
+    "requiredCapabilities": ["snapshot-envelope-v1", "lyric-preview-v1", "snapshot-policy-v1"],
+    "policy": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+    "objects": {
+      "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa": {
+        "role": "item",
+        "path": "objects/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.json.gz",
+        "encodedBytes": 40,
+        "decodedBytes": 80,
+        "requiredCapabilities": ["lyric-preview-v1"]
+      },
+      "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb": {
+        "role": "item",
+        "path": "objects/bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.json.gz",
+        "encodedBytes": 50,
+        "decodedBytes": 100,
+        "requiredCapabilities": ["lyric-preview-v1"]
+      },
+      "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc": {
+        "role": "policy",
+        "path": "objects/cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc.json.gz",
+        "encodedBytes": 60,
+        "decodedBytes": 120,
+        "requiredCapabilities": ["snapshot-policy-v1"]
+      }
+    },
+    "catalog": [
+      {
+        "lyricId": "10000000-0000-4000-8000-000000000001",
+        "title": "Synthetic A",
+        "tags": [],
+        "item": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "firstPublishedAt": "2026-01-01T00:00:00.000Z",
+        "changedAt": "2026-01-01T00:00:00.000Z"
+      },
+      {
+        "lyricId": "10000000-0000-4000-8000-000000000002",
+        "title": "Synthetic B",
+        "tags": [],
+        "item": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "firstPublishedAt": "2026-01-01T00:00:00.000Z",
+        "changedAt": "2026-01-01T00:00:00.000Z"
+      }
+    ],
+    "bundles": {
+      "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee": {
+        "path": "bundles/eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.zip",
+        "encodedBytes": 400,
+        "changedAt": "2026-01-01T00:00:00.000Z",
+        "members": ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"]
+      }
+    }
+  }
+}

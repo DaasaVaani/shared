@@ -1,5 +1,12 @@
 # DaasaVaani Shared
 
+The [staged canonical snapshot envelope](docs/snapshot-publication.md) defines
+strict public descriptor/sequence, manifest object/date/bundle maps and exact
+transfer-policy binding for the existing canonical text-only projection.
+Types, metadata schemas, synthetic vectors and Node-only producer checks are
+prerequisites, not complete multilingual/search contracts, consumer capability
+activation or a replacement of the current prelaunch feed.
+
 An isolated [provisional global transliteration prerequisite](docs/transliteration.md)
 provides Kannada-to-five-Latin and nine-native reference tables/conversion,
 explicit approximation diagnostics/unsupported cells and synthetic tests.

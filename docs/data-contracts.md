@@ -33,6 +33,10 @@ implementation is authorized, not global production readiness.
 - Public artifacts: canonical JSON, encoded SHA256, capability/version semantics,
   descriptor/manifest/object maps, shared line/profile layout, exact sizes and
   policy binding. Producers strict, compatible optional-field consumers.
+  The [staged canonical snapshot envelope](snapshot-publication.md) supplies
+  descriptor/sequence, role/hash/path/date/bundle maps and transfer-policy
+  schema/types/producer semantic checks. It preserves existing item/feed formats;
+  full multilingual/registry/search-index contracts and client adapters remain open.
 - Search: global publisher-counted q-gram accelerator plus exact OSA fragments,
   AND, metadata-first best-field-per-term weights, deterministic edit/ID ties,
   all-profile dedup, selected-script bounded item reads and honest errors.
@@ -117,6 +121,12 @@ and small exhaustive oracle comparisons including a non-optimal greedy example.
 Run `node --test tools\download-planner.test.mjs` incrementally. These metadata
 vectors do not establish physical ZIP/gzip integrity, real transfer/storage
 admission, consumer adoption or complete ALG-08 lifecycle conformance.
+The snapshot suite checks the staged canonical producer envelope, exact
+role/hash/path lookups, sequence domains, historical date/order/cohort semantics,
+complete policy and100/101,32MiB/+1 metadata bounds. Run
+`node --test tools\snapshot.test.mjs` incrementally. Its synthetic metadata vector
+does not prove actual encoded bytes, authenticated receipts, activation or client
+compatibility. See [the exact contract](snapshot-publication.md).
 The full-backup suite additionally validates both complete current logical
 platform allowlists, collection/identity/byte boundaries, single-member gzip/
 fatal UTF8/duplicate JSON rejection and exact synthetic round trips using
