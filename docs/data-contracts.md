@@ -127,6 +127,9 @@ complete policy and100/101,32MiB/+1 metadata bounds. Run
 `node --test tools\snapshot.test.mjs` incrementally. Its synthetic metadata vector
 does not prove actual encoded bytes, authenticated receipts, activation or client
 compatibility. See [the exact contract](snapshot-publication.md).
+It also checks the metadata-to-existing-planner bridge, policy-object completeness,
+exact expected cost/coverage totals, complete reuse and snapshot-policy changes.
+This bridge does not make unverified input hashes trustworthy.
 The full-backup suite additionally validates both complete current logical
 platform allowlists, collection/identity/byte boundaries, single-member gzip/
 fatal UTF8/duplicate JSON rejection and exact synthetic round trips using

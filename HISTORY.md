@@ -1,5 +1,23 @@
 # Documentation history
 
+## 2026-10-25: snapshot-to-reference-planner binding
+
+- Continued the owner-authorized Shared/Library batch after the public envelope
+  and Library producer publication. Added a typed Node-only adapter from the
+  strict canonical manifest/policy maps to the existing download planner, not
+  another optimization algorithm. Policy is a required individual object and
+  exact supplied snapshot policy governs all transfer choices.
+- Added independently calculated complete request/cost/extra totals, verified
+  reuse, policy completeness and policy-change vectors. Metadata/reference
+  success does not verify actual content, reusable-cache claims or client
+  consent/storage/lifecycle behavior; these remain current explicit boundaries.
+- Full `npm run check` passed generation and148/148 tests, zero failures,
+  cancellations/skips. `python tools\check_repository.py` passed110 paths;
+  working/staged whitespace, generated/schema stability, strict YAML13 and
+  actionlint1.7.12 with explicit ShellCheck0.11.0 passed. Log:
+  `shared-snapshot-planning-full-validation.log`. No consumer pin/runtime,
+  source generation, real state initialization or deployment was performed here.
+
 ## 2026-10-25: staged canonical snapshot contracts
 
 - Owner authorized Shared review-branch contracts and only Library's independently

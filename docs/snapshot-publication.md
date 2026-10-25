@@ -67,6 +67,19 @@ Library's actual archive verifier must. Candidate bundles may overlap; the
 Singletons/oversize members remain individual objects within their role ceilings.
 Policy is an individual required object, not assigned a fabricated semantic date.
 
+`planSnapshotDownload(manifest, policy, verified)` validates this metadata and
+delegates to the existing exact-integer planner with every object (including the
+policy) required, declared bundles and the exact supplied snapshot transfer
+policy. It never rereads newer settings. `verified` is a caller attestation of
+independently verified reusable hashes, not proof established by this function.
+The caller must first authenticate/decode/hash-bind policy and manifest bytes.
+The plan covers remaining object/archive requests only: descriptor/manifest/
+already-fetched policy acquisition, HTTP headers, retries, storage and app shell
+are not invented as zero-cost or counted as content-download totals.
+Passing the verified policy hash avoids counting that already-fetched object
+again. Invalid/duplicate verified hashes fail in the existing planner; unknown
+valid hashes are harmless reusable-cache entries.
+
 ## Producer and consumer obligations
 
 Producers use strict schemas plus semantic validation; no coercion, silent

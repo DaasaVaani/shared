@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import Ajv2020 from "ajv/dist/2020.js";
+import { createDownloadPlanner } from "./download-planner-reference.mjs";
 
 const load = async name => JSON.parse(await readFile(new URL("../schemas/" + name, import.meta.url), "utf8"));
 const schema = await load("snapshot-publication.schema.json");
@@ -61,4 +62,18 @@ export function assertSnapshotManifest(value, policy) {
     }
     if (BigInt(bundle.encodedBytes) <= bytes) fail("STORE bundle must include archive overhead");
   }
+}
+
+export function planSnapshotDownload(manifest, policy, verified) {
+  assertSnapshotManifest(manifest, policy);
+  const required = Object.keys(manifest.objects).sort();
+  return createDownloadPlanner(policy.transferPlanning)({
+    formatVersion: 1,
+    objects: required.map(sha256 => ({ sha256, encodedBytes: manifest.objects[sha256].encodedBytes })),
+    required,
+    verified,
+    bundles: Object.keys(manifest.bundles).sort().map(sha256 => ({
+      sha256, encodedBytes: manifest.bundles[sha256].encodedBytes, members: [...manifest.bundles[sha256].members]
+    }))
+  });
 }

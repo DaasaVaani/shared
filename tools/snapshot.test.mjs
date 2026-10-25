@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { assertSnapshotDescriptor, assertSnapshotManifest, assertSnapshotPolicy } from "./snapshot-reference.mjs";
+import { assertSnapshotDescriptor, assertSnapshotManifest, assertSnapshotPolicy, planSnapshotDownload } from "./snapshot-reference.mjs";
 
 const fixture = JSON.parse(await readFile(new URL("../fixtures/snapshot.json", import.meta.url), "utf8"));
 const a = "a".repeat(64), b = "b".repeat(64), c = "c".repeat(64), e = "e".repeat(64);
@@ -102,4 +102,40 @@ test("policy is complete with no implicit defaults, widened runtime claims or un
   }
   reject(m => { m.objects[a].encodedBytes = 0; });
   reject(m => { m.objects[a].decodedBytes = Number.MAX_SAFE_INTEGER + 1; });
+});
+test("snapshot planning includes the exact policy object and delegates all byte/request arithmetic to the existing planner", () => {
+  const { manifest, policy } = structuredClone(fixture);
+  manifest.objects[a].encodedBytes = 1000;
+  manifest.objects[b].encodedBytes = 1000;
+  manifest.bundles[e].encodedBytes = 2400;
+  const before = structuredClone({ manifest, policy }), plan = planSnapshotDownload(manifest, policy, []);
+  assert.deepEqual({ manifest, policy }, before);
+  assert.deepEqual(plan.requests, [
+    { kind: "bundle", sha256: e, encodedBytes: 2400, covers: [a, b] },
+    { kind: "object", sha256: c, encodedBytes: 60, covers: [c] }
+  ]);
+  assert.equal(plan.requestCount, 2);
+  assert.equal(plan.missingEncodedBytes, 2060);
+  assert.equal(plan.transferEncodedBytes, 2460);
+  assert.equal(plan.extraEncodedBytes, 400);
+  assert.equal(plan.extraBudgetBytes, 515);
+  assert.equal(plan.baselineCostBytes, 2060 + 3 * 131072);
+  assert.equal(plan.costBytes, 2460 + 2 * 131072);
+  assert.equal(plan.savedCostBytes, 130672);
+});
+test("planning reuse never makes the policy optional and applies the exact supplied snapshot policy", () => {
+  const { manifest, policy } = structuredClone(fixture);
+  manifest.objects[a].encodedBytes = 1000;
+  manifest.objects[b].encodedBytes = 1000;
+  manifest.bundles[e].encodedBytes = 2400;
+  assert.equal(planSnapshotDownload(manifest, policy, [a, b, c]).requestCount, 0);
+  assert.deepEqual(planSnapshotDownload(manifest, policy, [a, b]).requests,
+    [{ kind: "object", sha256: c, encodedBytes: 60, covers: [c] }]);
+  assert.equal(planSnapshotDownload(manifest, policy, [c]).requestCount, 1);
+  policy.transferPlanning.maxExtraBytes = 0;
+  assert.deepEqual(planSnapshotDownload(manifest, policy, [c]).requests.map(request => request.sha256), [a, b]);
+  assert.throws(() => planSnapshotDownload(manifest, policy, [a, a]));
+  assert.throws(() => planSnapshotDownload(manifest, policy, ["not-a-hash"]));
+  delete manifest.objects[c];
+  assert.throws(() => planSnapshotDownload(manifest, policy, [a, b, c]), /missing policy/);
 });
