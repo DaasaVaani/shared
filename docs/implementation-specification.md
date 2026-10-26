@@ -55,7 +55,7 @@ registries, UI catalogs, personal state and secrets retain their separate owners
 | Shared settings/unicode.yml | Pinned official Unicode16 personal-name matching profile, pipeline and upstream byte provenance; consumer build and explicit key-profile migration |
 | Shared settings/graphemes.yml | Independently approved Unicode16 default extended-grapheme data/profile and official byte identities; consumer boundary-profile adoption |
 | Shared settings/normalization-provenance.yml | Independently approved Unicode16 NFC-only per-code-point source mapping and existing resource/manifest binding; bounded excerpt tooling, no alias/cross-script approval |
-| Shared settings/technical-token-vocabularies.yml | Exact reviewed literal-search atoms per profile;54 ITRANS atoms only, build-time strict validation; no complete matching signature or transliteration approval |
+| Shared settings/technical-token-vocabularies.yml | Exact reviewed literal-search atoms: five Latin directions/275 declarations, explicit compatibility/adaptation scopes, build-time validation; no complete matching signature or transliteration approval |
 | Shared settings/ui-catalog.yml, defaults.yml | Catalog generation, supported UI languages, portable initial preferences and allowed choices |
 | Library settings/catalog.yml, ingestion.yml, images.yml, publication.yml | Branding/catalog/filter/profile selection, local import/extraction/network, image processing, hosting/publication |
 | Website settings/web.yml | Public bases/endpoints, routes, feature availability, UI tokens and platform worker/network/storage budgets |
@@ -213,8 +213,8 @@ Technical recognition uses [reviewed literal vocabularies](technical-tokens.md)
 per profile, accepting a whole unchanged token if any complete atom sequence
 covers it. Neither a unique phonetic parse nor greedy longest-prefix recognition
 is required. The isolated trie/reachability reference has synthetic conformance
-vectors and owned settings for54 explicitly approved ITRANS search atoms.
-Other inventories, independent linguistic expectations, complete profile rules,
+vectors and owned settings for275 approved declarations across five Latin directions.
+Independent attested linguistic expectations, complete profile rules,
 raw boundaries/classification and unsupported-input integration remain gates,
 not inferred from provisional tables.
 The [reference audit](latin-reference-audit.md) supplies independent pinned

@@ -43,7 +43,7 @@ implementation is authorized, not global production readiness.
   The [Latin reference audit](latin-reference-audit.md) separately checks270
   independent basic cells and2,720 derived sign contexts against pinned licensed
   external maps, preserving explicit primary/secondary disagreements. Discrepancy
-  tests are not successful conformance or pending-inventory approval.
+  tests are not successful conversion conformance or normative certification.
 - Public artifacts: canonical JSON, encoded SHA256, capability/version semantics,
   descriptor/manifest/object maps, shared line/profile layout, exact sizes and
   policy binding. Producers strict, compatible optional-field consumers.
@@ -78,9 +78,10 @@ implementation is authorized, not global production readiness.
   trusted complete inventories and enclosing query integration remain required.
   The [literal technical-token prerequisite](technical-tokens.md) separately
   implements any-complete-atom-sequence coverage of exact whole tokens, without
-  guessed parsing or marker/case rewriting. Other reviewed vocabularies, complete
+  guessed parsing or marker/case rewriting. Complete
   profile rules, raw-query boundaries/classification and production adoption remain open.
-  Its owned settings additionally fix exactly54 approved ITRANS atom strings;
+  Its owned settings fix275 approved declarations across five Latin directions;
+  explicit compatibility spellings and Kannada adaptation remain scoped to input.
   this does not promote transliteration or close complete-profile/linguistic gates.
   The [contiguous excerpt-window contract](search-excerpt-windows.md) fixes
   quality-first fitting focus, centered grapheme-boundary geometry, complete
@@ -226,8 +227,11 @@ Run `node --test tools\technical-tokens.test.mjs` incrementally. These are
 recognition mechanics, not approved vocabulary entries or source alignment.
 The build separately validates `settings/technical-token-vocabularies.yml` with
 `node tools\check-technical-vocabularies.mjs`. The suite fixes exact equality to
-the54 approved ITRANS search atoms, every atom, marker/case refusal, strict
-inventory/identity failures and independent loads. No complete production
+all275 approved declarations and54/57/55/55/54 profile counts, every atom's
+NFC/recognition preservation, compatibility/case/marker refusal, strict
+inventory/identity failures and independent loads. Complete term signatures
+retain recognized spelling differences rather than manufacturing aliases.
+No complete production
 matching signature or linguistic/source-conversion proof is manufactured.
 The offline reference audit additionally verifies11 original source/license
 byte identities, all five54-cell comparisons, derived consonant/sign contexts,

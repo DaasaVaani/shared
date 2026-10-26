@@ -1,0 +1,45 @@
+{
+  "formatVersion": 1,
+  "profiles": [
+    {
+      "id": "itrans-kn", "count": 54,
+      "vowels": ["a", "A", "i", "I", "u", "U", "RRi", "RRI", "LLi", "LLI", "e", "E", "ai", "o", "O", "au"],
+      "consonants": ["k", "kh", "g", "gh", "~N", "ch", "Ch", "j", "jh", "~n", "T", "Th", "D", "Dh", "N", "t", "th", "d", "dh", "n", "p", "ph", "b", "bh", "m", "y", "r", "l", "v", "sh", "Sh", "s", "h", "L"],
+      "marks": ["M", "H", ".N", ".a"], "compatibility": [],
+      "accepted": ["RRi", "LLI", "~N~n", ".N.a"],
+      "unsupported": ["^e", "^o", "R^i", "~M", "'", "&"]
+    },
+    {
+      "id": "baraha-kn", "count": 57,
+      "vowels": ["a", "A", "i", "I", "u", "U", "Ru", "RU", "~lu", "~lU", "e", "E", "ai", "o", "O", "au"],
+      "consonants": ["k", "kh", "g", "gh", "~g", "ch", "Ch", "j", "jh", "~j", "T", "Th", "D", "Dh", "N", "t", "th", "d", "dh", "n", "p", "ph", "b", "bh", "m", "y", "r", "l", "v", "sh", "Sh", "s", "h", "L"],
+      "marks": ["M", "H", "~M", "'"], "compatibility": ["~ru", "~rU", "@av"],
+      "accepted": ["Ru", "RU", "~ru", "~rU", "'", "@av", "Ru~ru@av"],
+      "unsupported": ["&", "~", "@", "@a", "~r", "’"]
+    },
+    {
+      "id": "harvard-kyoto-kn", "count": 55,
+      "vowels": ["a", "A", "i", "I", "u", "U", "R", "RR", "lR", "lRR", "e", "E", "ai", "o", "O", "au"],
+      "consonants": ["k", "kh", "g", "gh", "G", "c", "ch", "j", "jh", "J", "T", "Th", "D", "Dh", "N", "t", "th", "d", "dh", "n", "p", "ph", "b", "bh", "m", "y", "r", "l", "v", "z", "S", "s", "h", "L"],
+      "marks": ["M", "H", "~M", "'"], "compatibility": ["~"],
+      "accepted": ["~", "~M", "G", "g", "RR", "lRR", "~M~"],
+      "unsupported": [".N", ".a", "@av", "&", "’"]
+    },
+    {
+      "id": "iso15919", "count": 55,
+      "vowels": ["a", "ā", "i", "ī", "u", "ū", "r̥", "r̥̄", "l̥", "l̥̄", "e", "ē", "ai", "o", "ō", "au"],
+      "consonants": ["k", "kh", "g", "gh", "ṅ", "c", "ch", "j", "jh", "ñ", "ṭ", "ṭh", "ḍ", "ḍh", "ṇ", "t", "th", "d", "dh", "n", "p", "ph", "b", "bh", "m", "y", "r", "l", "v", "ś", "ṣ", "s", "h", "ḷ"],
+      "marks": ["ṁ", "ḥ", "m̐", "'"], "compatibility": ["’"],
+      "accepted": ["r̥", "r̥̄", "l̥", "l̥̄", "ṁ", "m̐", "'", "’", "'’"],
+      "unsupported": ["ṛ", "ṝ", "ṃ", "‘", "@av", "A"]
+    },
+    {
+      "id": "iast-kn", "count": 54,
+      "vowels": ["a", "ā", "i", "ī", "u", "ū", "ṛ", "ṝ", "l̥", "l̥̄", "e", "ē", "ai", "o", "ō", "au"],
+      "consonants": ["k", "kh", "g", "gh", "ṅ", "c", "ch", "j", "jh", "ñ", "ṭ", "ṭh", "ḍ", "ḍh", "ṇ", "t", "th", "d", "dh", "n", "p", "ph", "b", "bh", "m", "y", "r", "l", "v", "ś", "ṣ", "s", "h", "ḷ"],
+      "marks": ["ṃ", "ḥ", "m̐", "'"], "compatibility": [],
+      "accepted": ["ṛ", "ṝ", "l̥", "l̥̄", "ḷ", "ṃ", "m̐", "eēoō"],
+      "unsupported": ["è", "ò", "ḹ", "ḻ", "~", "ṁ", "’"]
+    }
+  ]
+}

@@ -12,8 +12,8 @@ source alignment or permission to promote provisional linguistic tables.
 [synthetic vectors](../fixtures/technical-tokens.json) implement only this
 mechanical validation prerequisite. The
 [owned atom inventory](../settings/technical-token-vocabularies.yml) supplies
-the54 explicitly approved ITRANS search atoms only, not complete production
-matching profiles or approved transliteration rules.
+275 explicitly approved atom declarations across five Latin directions, not
+complete production matching profiles or approved transliteration rules.
 The [reference audit](latin-reference-audit.md) independently checks five Latin
 directions and identifies unresolved primary/secondary convention disagreements.
 Its passing discrepancy checks are not linguistic approval.
@@ -36,7 +36,7 @@ are allowed. Atom declaration order is irrelevant. Duplicate declarations are
 invalid rather than silently repaired. Case/diacritics/markers are exact scalar
 distinctions. A composed/decomposed representation is not silently substituted.
 
-Actual entries outside the approved inventory, meaningful-marker placement,
+Entries outside the approved inventory, meaningful-marker placement in raw queries,
 rare extensions and profile eligibility still require review, pinned complete
 rules and independent permitted expectations before production use.
 The [provisional transliteration tables](transliteration.md) are not implicitly
@@ -54,7 +54,22 @@ inventory, signature/compatibility rules and conformance cases.
 | `profiles[].id` | existing lowercase profile-ID syntax | identifies an atom inventory, not a complete matching contract |
 | `profiles[].atoms` | nonempty array of unique nonempty scalar strings; no whitespace/C0/C1 | exact literal values; no default, coercion or inferred atom |
 
-The current `itrans-kn` inventory is exactly:
+The current inventories are:
+
+| ID | Recognition convention | Atoms |
+| --- | --- | --- |
+| `itrans-kn` | Explicit Kannada/Dravidian-direction input units | 54 |
+| `baraha-kn` | Project units plus documented `~ru`, `~rU`, `@av`; not secondary-only `&` | 57 |
+| `harvard-kyoto-kn` | Kannada/Dravidian-direction units accepting both `~M` and `~` | 55 |
+| `iso15919` | ISO-direction units accepting ASCII apostrophe and U+2019; no normative certification | 55 |
+| `iast-kn` | Explicit Kannada adaptation, not generic IAST table parity | 54 |
+
+There are275 declarations across profiles, not275 globally distinct spellings.
+Settings are authoritative; the [approved vectors](../fixtures/technical-token-approved.json)
+independently mirror every exact declaration and its category/compatibility scope.
+No profile is selected as a Latin default.
+
+The unchanged `itrans-kn` base is:
 
 ```text
 Vowels: a A i I u U RRi RRI LLi LLI e E ai o O au
@@ -62,10 +77,31 @@ Consonants: k kh g gh ~N ch Ch j jh ~n T Th D Dh N t th d dh n p ph b bh m y r l
 Marks: M H .N .a
 ```
 
-These54 strings are owner-approved for literal technical search recognition.
-No Latin default, phonetic interpretation, linguistic standard compliance or
-corresponding source-conversion rule is approved by that inventory. Other
-profiles are absent, not silently populated from provisional settings.
+Every inventory is approved for literal technical search recognition only.
+No phonetic interpretation, linguistic standard compliance or corresponding
+source-conversion rule is approved by these declarations.
+
+### Exact convention distinctions
+
+- Baraha retains `Ru`, `RU`, and ASCII apostrophe as project input units while
+  also recognizing primary-documented `~ru`, `~rU`, `@av`. These are accepted
+  spellings, not automatic aliases or instructions to change generated output.
+  Bare `~`, incomplete `@a` and secondary-only `&` remain unsupported.
+- Harvard-Kyoto recognizes bare `~` and `~M`. Because any complete atom sequence
+  is allowed, a spelling can also have multiple decompositions. No distinct
+  phonetic interpretation or source alignment is supplied.
+- ISO direction keeps ring-below vocalic `r̥`/`l̥` and their long forms,
+  dot-above anusvara `ṁ`, and short `e`/`o` versus long `ē`/`ō`.
+  U+0027 and RIGHT SINGLE QUOTATION MARK U+2019 are both recognition atoms.
+  They remain different text and term signatures; do not fold one into the
+  other or accept LEFT SINGLE QUOTATION MARK U+2018 by analogy.
+- Kannada-adapted IAST direction keeps `ṛ`/`ṝ`, ring-below vocalic `l̥`/`l̥̄`,
+  dot-below lateral `ḷ`, dot-below anusvara `ṃ`, candrabindu `m̐` and short/long
+  `e`/`ē`, `o`/`ō`. It does not adopt generic-map `è`, `ò`, `ḹ`, `ḻ` or bare `~`.
+  This intentionally named adaptation must not be presented as universal IAST.
+
+The [reference audit](latin-reference-audit.md) records external disagreements
+and the still-provisional conversion outputs separately from these input choices.
 
 `loadTechnicalTokenInventory()` reads strict YAML and applies the exported
 `assertTechnicalTokenInventory` shape/scalar/duplicate-ID checks. Each load
@@ -134,7 +170,7 @@ that the synthetic ordinary mapping is a reviewed alias.
 NFC-origin projection remains [separately defined](normalization-provenance.md);
 technical acceptance creates no new correspondence.
 
-Other approved atom inventories, complete production profiles, independent
+Complete production profiles, independently attested/permitted
 linguistic expectations, ordinary Unicode letter/mark/digit classification,
 raw token boundaries, alias tables, complete reviewed profile packaging,
 consumer errors/cancellation and independent client adoption remain open.
@@ -153,10 +189,12 @@ supplementary points, actual offsets beyond65,535, malformed inputs and
 independent capture. All32,258 small vocabulary/word combinations and atom
 permutations agree with independent bounded whole-word generation. Actual
 NFC/acceptance/term-equivalence/indexed-verification composition is exercised.
-Settings checks independently fix the exact54 approved atoms, exercise every
-atom and marker/case refusals, reject malformed inventories/duplicate IDs and
-verify independent loads. Their synthetic enclosing profile identity is not
-a claim that complete production ITRANS matching rules exist.
+Settings checks independently fix all275 declarations and each profile count,
+exercise every atom and pinned-NFC preservation, compatibility/case/marker refusals,
+reject malformed inventories/duplicate IDs and verify independent loads.
+Actual term deduplication keeps distinct recognized spellings distinct.
+The synthetic enclosing profile identities used by these checks are not
+a claim that complete production Latin matching profiles exist.
 Finalization uses [all configured checks](data-contracts.md#validation-and-finalization).
 
 For A total vocabulary code points, N token code points and maximum atom length

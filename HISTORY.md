@@ -1,5 +1,41 @@
 # Documentation history
 
+## 2026-10-26: resolved five-profile literal-recognition inventories
+
+- After the reference audit, owner chose documented-plus-approved-project Baraha
+  units: preserve the54 approved atoms and add `~ru`, `~rU`, `@av`, for57.
+  Secondary-only `&` was not adopted. Owner then chose Harvard-Kyoto compatibility:
+  preserve54 units including `~M` and add bare `~`, for55.
+- During the IAST convention question, owner directed: "for all atoms
+  clarifications go with recommended one". Applied the recommended explicit
+  Kannada-adapted IAST-direction54 units, not wholesale generic IAST parity.
+  Applied ISO-direction54 base units plus U+2019 recognition compatibility,
+  retaining U+0027 for55. ITRANS remains exactly54: five profiles/275 declarations.
+- These decisions approve literal input recognition only. They do not approve
+  phonetic interpretation, automatic alias equivalence, a canonical generated
+  output change, normative ISO option selection, full-profile signatures,
+  attested linguistic fixtures or production/client activation.
+- Archived replaced audit status: Baraha/HK exact54 approvals had awaited
+  discrepancy resolution and a settings batch; ISO/IAST inventories were
+  unapproved. Current inventories now persist the selected input conventions.
+  Reference disagreements about provisional conversion outputs and normative
+  standards remain documented rather than hidden or changed automatically.
+- Added exact approval vectors for all275 atoms, accepted/unsupported compatibility
+  examples and pinned-NFC preservation. Actual complete-profile deduplication
+  keeps straight/curly apostrophes distinct; no automatic folding/equivalence.
+- Focused `node tools\check-technical-vocabularies.mjs` passed five profiles/275
+  atoms. `node --test tools\technical-tokens.test.mjs tools\latin-reference-audit.test.mjs`
+  passed28/28, including unchanged270 basic reference comparisons and2,720
+  derived contexts. The preserved discrepancies are not conformance passes.
+- Final `npm run check` passed generation/owned-settings validation and261/261
+  registered tests, zero failed, cancelled or skipped. Full log:
+  `shared-reviewed-latin-search-atoms-full-validation.log`.
+  `python tools\check_repository.py` passed197 tracked paths; strict YAML16,
+  actionlint1.7.12 with explicit ShellCheck0.11.0, working/staged whitespace and
+  generated/schema stability passed. Only existing LF/CRLF warnings occurred.
+  No dependency/toolchain, actual source/conversion rule, consumer pin/runtime,
+  main merge, production publication state or deployment changed.
+
 ## 2026-10-26: reference-backed Latin inventory audit
 
 - Owner approved the recommended workflow: verify identifiable references,

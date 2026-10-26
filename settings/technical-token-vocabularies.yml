@@ -56,3 +56,19 @@ profiles:
       - H
       - ".N"
       - ".a"
+  - id: baraha-kn
+    atoms: [a, A, i, I, u, U, Ru, RU, "~lu", "~lU", e, E, ai, o, O, au,
+      k, kh, g, gh, "~g", ch, Ch, j, jh, "~j", T, Th, D, Dh, N, t, th, d, dh, n, p, ph, b, bh, m, y, r, l, v, sh, Sh, s, h, L,
+      M, H, "~M", "'", "~ru", "~rU", "@av"]
+  - id: harvard-kyoto-kn
+    atoms: [a, A, i, I, u, U, R, RR, lR, lRR, e, E, ai, o, O, au,
+      k, kh, g, gh, G, c, ch, j, jh, J, T, Th, D, Dh, N, t, th, d, dh, n, p, ph, b, bh, m, y, r, l, v, z, S, s, h, L,
+      M, H, "~M", "'", "~"]
+  - id: iso15919
+    atoms: [a, ā, i, ī, u, ū, r̥, r̥̄, l̥, l̥̄, e, ē, ai, o, ō, au,
+      k, kh, g, gh, ṅ, c, ch, j, jh, ñ, ṭ, ṭh, ḍ, ḍh, ṇ, t, th, d, dh, n, p, ph, b, bh, m, y, r, l, v, ś, ṣ, s, h, ḷ,
+      ṁ, ḥ, m̐, "'", "’"]
+  - id: iast-kn
+    atoms: [a, ā, i, ī, u, ū, ṛ, ṝ, l̥, l̥̄, e, ē, ai, o, ō, au,
+      k, kh, g, gh, ṅ, c, ch, j, jh, ñ, ṭ, ṭh, ḍ, ḍh, ṇ, t, th, d, dh, n, p, ph, b, bh, m, y, r, l, v, ś, ṣ, s, h, ḷ,
+      ṃ, ḥ, m̐, "'"]

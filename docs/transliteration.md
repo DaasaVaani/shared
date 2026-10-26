@@ -81,8 +81,9 @@ complete upstream parity, approved native approximation/loss evidence, search
 aliases or production technical-token vocabularies exist here. The separately
 selected [literal technical-token reference](technical-tokens.md) validates
 explicit vocabularies mechanically; it does not promote these provisional
-entries or define raw-query boundaries. The separately approved54 ITRANS search
-atoms cover literal recognition only, not source-to-Latin conversion.
+entries or define raw-query boundaries. The separately approved275 declarations
+across five Latin search inventories cover literal recognition and explicit
+compatibility/adaptation only, not source-to-Latin conversion.
 Unsupported historical letters, nukta, jihvamuliya/upadhmaniya and join controls require a future reviewed
 global decision, not silent deletion. Linguistic review, permitted side-by-side
 samples and font/device coverage remain release gates.

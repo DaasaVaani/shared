@@ -7,6 +7,7 @@ import { buildFlatSearchTables, createFlatSearchWitnesses } from "./search-table
 import { nfcWithProvenance } from "./normalization-provenance.mjs";
 
 const fixture = JSON.parse(await readFile(new URL("../fixtures/technical-tokens.json", import.meta.url), "utf8"));
+const approved = JSON.parse(await readFile(new URL("../fixtures/technical-token-approved.json", import.meta.url), "utf8"));
 const vocabulary = atoms => ({ id: "synthetic-technical", signature: "a".repeat(64), atoms });
 const approvedAtoms = "a A i I u U RRi RRI LLi LLI e E ai o O au k kh g gh ~N ch Ch j jh ~n T Th D Dh N t th d dh n p ph b bh m y r l v sh Sh s h L M H .N .a".split(" ");
 function generatedWords(atoms, limit) {
@@ -32,13 +33,61 @@ test("portable synthetic literal vocabulary gives complete exact checks without 
 });
 test("owned settings contain exactly the54 approved ITRANS search atoms, independently of provisional transliteration promotion", async () => {
   const inventory = await loadTechnicalTokenInventory();
-  assert.deepEqual(inventory, { formatVersion: 1, profiles: [{ id: "itrans-kn", atoms: approvedAtoms }] });
-  const check = createTechnicalTokenValidator({ ...vocabulary(inventory.profiles[0].atoms), id: "synthetic-approved-itrans-atoms" });
+  const profile = inventory.profiles.find(profile => profile.id === "itrans-kn");
+  assert.deepEqual(profile, { id: "itrans-kn", atoms: approvedAtoms });
+  const check = createTechnicalTokenValidator({ ...vocabulary(profile.atoms), id: "synthetic-approved-itrans-atoms" });
   for (const atom of approvedAtoms) assert.equal(check(atom).status, "accepted");
   for (const word of ["RRi", "RRI", "LLi", "LLI", "~N~n", ".N.a", "shSh"]) assert.equal(check(word).status, "accepted");
   for (const word of ["R", "Rri", "~M", ".", ".A", "c"]) assert.equal(check(word).status, "no-complete-atom-sequence");
-  inventory.profiles[0].atoms[0] = "changed";
-  assert.deepEqual((await loadTechnicalTokenInventory()).profiles[0].atoms, approvedAtoms);
+  profile.atoms[0] = "changed";
+  assert.deepEqual((await loadTechnicalTokenInventory()).profiles.find(profile => profile.id === "itrans-kn").atoms, approvedAtoms);
+});
+test("all five reviewed inventories exactly match275 approved atom declarations and preserve every literal through NFC/recognition", async () => {
+  const inventory = await loadTechnicalTokenInventory();
+  assert.deepEqual(inventory, { formatVersion: 1, profiles: approved.profiles.map(profile => ({
+    id: profile.id, atoms: [...profile.vowels, ...profile.consonants, ...profile.marks, ...profile.compatibility]
+  })) });
+  assert.equal(inventory.profiles.reduce((count, profile) => count + profile.atoms.length, 0), 275);
+  for (const profile of approved.profiles) {
+    const actual = inventory.profiles.find(candidate => candidate.id === profile.id);
+    assert.equal(actual.atoms.length, profile.count);
+    assert.equal(profile.vowels.length, 16);
+    assert.equal(profile.consonants.length, 34);
+    assert.equal(profile.marks.length, 4);
+    const check = createTechnicalTokenValidator({ ...actual, id: "synthetic-approved-" + actual.id, signature: "a".repeat(64) });
+    for (const atom of actual.atoms) {
+      assert.equal(nfcWithProvenance(atom).normalizedText, atom);
+      const result = check(atom);
+      assert.equal(result.text, atom);
+      assert.equal(result.status, "accepted");
+    }
+    assert.equal("signature" in actual, false);
+  }
+});
+for (const profile of approved.profiles) {
+  test(`approved ${profile.id} recognition distinguishes accepted compatibility from unsupported conventions without rewriting`, async () => {
+    const inventory = await loadTechnicalTokenInventory(), actual = inventory.profiles.find(candidate => candidate.id === profile.id);
+    const check = createTechnicalTokenValidator({ ...actual, id: "synthetic-approved-" + actual.id, signature: "a".repeat(64) });
+    for (const [samples, status] of [[profile.accepted, "accepted"], [profile.unsupported, "no-complete-atom-sequence"]]) {
+      for (const text of samples) {
+        const result = check(text);
+        assert.equal(result.status, status, `${profile.id}: ${text}`);
+        assert.equal(result.text, text);
+      }
+    }
+  });
+}
+test("recognized cross-profile conventions remain distinct complete signatures rather than implicit aliases", async () => {
+  const inventory = await loadTechnicalTokenInventory();
+  const profile = inventory.profiles.find(profile => profile.id === "iso15919");
+  const check = createTechnicalTokenValidator({ ...profile, id: "synthetic-approved-iso15919", signature: "a".repeat(64) });
+  const texts = ["'", "’"];
+  for (const text of texts) assert.equal(check(text).status, "accepted");
+  const input = { policySha256: "b".repeat(64), profiles: [{ id: "synthetic-approved-iso15919", signature: "a".repeat(64) }],
+    terms: texts.map(text => ({ profiles: [{ profileId: "synthetic-approved-iso15919", tokens: [{ text, edits: 0 }] }] })) };
+  assert.deepEqual(deduplicateSearchTerms(input, { maxTerms: 16 }).inputToTerm, [0, 1]);
+  assert.equal(nfcWithProvenance(texts[0]).normalizedText, "'");
+  assert.equal(nfcWithProvenance(texts[1]).normalizedText, "’");
 });
 test("inventory schema/scalar/identity failures cannot silently alter the approved settings contract", () => {
   for (const value of [

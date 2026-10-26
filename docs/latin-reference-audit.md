@@ -84,7 +84,11 @@ which has214 differences: six changed vowel choices affect34 consonants each,
 plus10 additional lateral-consonant combinations. These are consequences of the
 basic choices, not214 independent questions.
 
-## Findings requiring choices, not automatic corrections
+## Reference differences and current recognition conventions
+
+The following basic tables compare the **provisional converter**, not the
+expanded input-recognition inventory. Recognition compatibility deliberately
+does not replace canonical output or erase these differences.
 
 ### 1. Baraha: primary documentation differs from both implementations
 
@@ -94,15 +98,11 @@ basic choices, not214 independent questions.
 | ೠ | `RU` | `~rU` | `RU` |
 | ಽ | `'` | `@av` | `&` |
 
-Recommendation: use primary documented spellings as canonical recognition units;
-if retaining older project spellings is desirable, review them explicitly as
-compatibility alternatives rather than calling them equivalent standard output.
+The current57-atom recognition inventory accepts all54 project units plus
+primary-documented `~ru`, `~rU`, `@av`. The secondary-only `&` is not adopted.
+These are explicit input compatibility choices, not equivalent standard output.
 Do not change source conversion or aliases automatically. Input recognition and
 canonical generated output remain different decisions.
-
-The prior exact54-atom Baraha approval remains a limited search-recognition
-approval, not rescinded or persisted as broader mapping approval. Resolution of
-this discrepancy is pending before its settings batch.
 
 ### 2. Harvard-Kyoto: candrabindu and the named variant
 
@@ -113,8 +113,9 @@ prove the intended phonetic interpretation. No primary Harvard-Kyoto definition
 was obtained, so the secondary map is not enough to declare our spelling wrong.
 
 The e/E and o/O distinction matches `hk_dravidian`, not the generic map.
-Keep the previously approved54 search atoms pending explicit variant/marker
-resolution; do not silently replace `~M` or label the complete profile standard.
+The current55-atom recognition inventory retains the54 project units and adds
+`~` for compatibility. It does not replace `~M`, prove its phonetic meaning or
+label the complete profile standard.
 
 ### 3. IAST: project-specific Kannada adaptation must stay explicit
 
@@ -130,9 +131,10 @@ These include deliberate-looking distinctions, not merely Unicode encoding
 variants. The primary ITRANS table's IAST column also differs from common_maps
 on lateral notation and candrabindu, so wholesale adoption of one external map
 would not resolve all reference disagreement.
-Recommendation: explicitly name/define the Kannada-adapted convention after
-review, keeping short/long vowels and vocalic-l versus lateral-l distinct.
-IAST atom approval and conversion-rule approval remain pending and separate.
+The current54-atom inventory is explicitly Kannada-adapted IAST direction,
+keeping the proposed short/long vowels and vocalic-l versus lateral-l distinct.
+It does not merge incompatible generic-map spellings or assert generic IAST
+parity. Input recognition is approved; source conversion remains provisional.
 
 ### 4. ISO direction: good reference agreement is not full ISO certification
 
@@ -143,9 +145,11 @@ ITRANS table's ISO output uses RIGHT SINGLE QUOTATION MARK U+2019.
 They are not NFC-equivalent. The public ISO abstract does not resolve the
 normative table/options. Do not claim standards compliance based on agreement
 with the software table or silently turn all apostrophes into the same atom.
-Recommendation: retain an explicitly identified ISO-direction project convention
-until normative option/punctuation review is available. Inventory approval remains
-pending; this audit does not supply it.
+The current55-atom ISO-direction project inventory contains the54 base units
+plus U+2019, retaining U+0027 as explicit recognition compatibility.
+Neither punctuation is rewritten or implicitly deduplicated into the other.
+Normative option/punctuation compliance and canonical conversion remain separate
+review gates; recognition approval does not certify the complete standard.
 
 ### 5. ITRANS: identify the Dravidian scope and do not invent alias completeness
 
@@ -166,15 +170,14 @@ still require their own reviewed complete contract.
 
 ## Approval state and next actions
 
-- ITRANS: exact54 search atoms are approved and committed; source conversion
-  remains provisional. No complete matching-profile signature is fabricated.
-- Baraha and Harvard-Kyoto: exact54 search atoms received limited owner approval;
-  their pending settings batch must account for the newly exposed discrepancies.
-- ISO and IAST: atom inventories remain unapproved; no implicit approval follows
-  from requesting this audit or from an audit test passing.
-- Present the above substantive choices one at a time. Document final rules and
-  update settings/fixtures after each applicable final approval, preserving
-  superseded material in HISTORY before replacement.
+- All five literal-recognition inventories are explicitly selected and persisted:
+  ITRANS54, Baraha57, Harvard-Kyoto55, ISO direction55, Kannada-adapted IAST54.
+  The [owning contract](technical-tokens.md) defines exact recognition scope.
+- Source conversion remains provisional; no complete matching-profile signature
+  is fabricated. Reference disagreements and normative gaps are not silently
+  resolved by recognition compatibility.
+- Before any later conversion/alias/output decision, present genuine unresolved
+  choices or evidence gaps; do not infer them from the atom approval.
 - Independent attested/permitted language examples, complete linguistic review,
   rare characters, context-sensitive behavior, fonts, full profile packaging,
   source-span projection and production client integration remain open.
@@ -185,5 +188,5 @@ node --test tools\latin-reference-audit.test.mjs
 
 Finalization/push requires
 [all configured checks](data-contracts.md#validation-and-finalization).
-This audit adds no runtime/public capability, actual lyric variants, consumer
+The evidence audit itself adds no runtime/public capability, actual lyric variants, consumer
 pin, production publication state or deployment.
