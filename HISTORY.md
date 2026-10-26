@@ -1,5 +1,41 @@
 # Documentation history
 
+## 2026-10-26: complete-profile query-term equivalence prerequisite
+
+- Implemented the already-approved SEARCH-02/03 rule over explicit complete
+  normalization/tokenization/edit-allowance matrices for every declared matching
+  profile/context. No additional product/linguistic choice, actual normalizer,
+  alias table or consumer pin was inferred.
+- Added strict schema/types, complete synthetic vector and Node-only partition
+  reference retaining every original input index, exact policy/profile identity
+  and first representative. Technical distinctions, exact token order/count/
+  text/allowance differences and explicit inactive contexts remain significant.
+  Missing/duplicate contexts, all-inactive admitted terms and distinct-term
+  overflow fail explicitly. The16-term setting applies after complete grouping.
+- Reused the existing flat-table token validator through a declared export;
+  existing table/candidate/witness behavior remains unchanged. The exported
+  guard additionally rejects nonstrings/empty strings independently of its
+  callers' schemas.
+- Archived replaced limitation: ranking/overview guides left complete signature
+  equivalence wholly upstream. Mechanical grouping now has explicit tooling;
+  trustworthy complete context inventories, reviewed grammar/normalization/
+  alias results, multi-token query semantics, enclosing policy/capability
+  integration, real cancellation/resource evidence and client adoption remain open.
+- Focused `node --test tools\search-term-equivalence.test.mjs tools\search-tables.test.mjs`
+  passed21/21, including1,000 independently pairwise-compared matrices and their
+  context/query permutations, complete portable results, strict malformed cases,
+  exact16/17 distinct-term admission, repeated-input counting and actual
+  multi-profile indexed-witness-to-AND-ranking composition. An item's ordinary
+  collision never overrides a global technical distinction.
+- Final `npm run check` passed generation and233/233 registered tests, zero
+  failed, cancelled or skipped. Full log:
+  `shared-search-term-equivalence-full-validation.log`.
+  `python tools\check_repository.py` passed173 tracked paths; strict YAML15,
+  actionlint1.7.12 with explicit ShellCheck0.11.0, working/staged whitespace and
+  generated/schema stability passed. Only existing LF/CRLF warnings occurred.
+  No dependency/toolchain, consumer pin, source content, main merge, publication
+  activation or deployment changed.
+
 ## 2026-10-26: owner-selected per-code-point NFC provenance
 
 - Owner selected exact per-normalized-code-point original source range lists

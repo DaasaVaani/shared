@@ -212,6 +212,12 @@ declared ending lines; no annotation means no inferred exclusion.
 Deduplicate query terms only if complete normalization/tokenization/edit-allowance
 signatures agree across every declared matching profile/context, independent of
 an item's available matches. A technical distinction prevents merging.
+The [complete-profile term-equivalence contract](search-term-equivalence.md)
+supplies strict complete context matrices, exact ordered token/allowance equality,
+first-occurrence groups and every input-to-distinct reference. It enforces the
+distinct-term cap after grouping, never using per-item evidence to merge terms.
+Callers must bind the entire trusted context inventory and produce reviewed
+normalization results; the helper does not infer either.
 
 Publisher builds one global compact JSON/gzip index with multiset code-point
 1/2/3-gram counted postings, no boundary sentinels. The

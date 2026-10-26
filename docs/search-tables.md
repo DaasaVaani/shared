@@ -35,6 +35,10 @@ bytes, eligible fields, tokenization, normalization, label exclusions and
 complete item/line scope. Unknown/unreviewed production rules cannot be replaced
 by the synthetic profile. A declared catalog may have zero searchable occurrences;
 no fake token is emitted.
+The separately specified [term-equivalence reference](search-term-equivalence.md)
+uses the same identity and literal-token domains for complete query signature
+matrices. It requires every trusted matching context independently of item
+occurrences; it does not derive reviewed profile signatures from these tables.
 
 ## Exact dictionaries and flat records
 

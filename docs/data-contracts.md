@@ -67,6 +67,11 @@ implementation is authorized, not global production readiness.
   complete AND admission, best-weight per-term edit quality, duplicate-invariant
   scores and metadata/score/worst/total/ASCII ordering. It does not supply
   reviewed term equivalence, actual evidence, previews or client integration.
+  The [complete-profile term-equivalence contract](search-term-equivalence.md)
+  separately supplies exact complete-matrix grouping and original-input mapping,
+  preserving all technical/token/allowance distinctions and applying the distinct
+  term cap independently of item matches. Actual reviewed profile normalization,
+  trusted complete inventories and enclosing query integration remain required.
   The [contiguous excerpt-window contract](search-excerpt-windows.md) fixes
   quality-first fitting focus, centered grapheme-boundary geometry, complete
   ellipsis accounting and explicit omitted/unavailable results over verified
@@ -196,6 +201,13 @@ large offsets and the actual normalized-index-to-literal-window pipeline. Run
 `node --test tools\normalization-provenance.test.mjs` incrementally. This supplies
 NFC-stage provenance only, not alias/transliteration/source alignment, enclosing
 index/capability integration or measured consumer memory/cancellation behavior.
+The term-equivalence suite checks complete matrices against an independent
+pairwise oracle, context permutations, exact text/allowance/token-order/count
+distinctions, inactive contexts, all strict failures, complete input references,
+16/17 distinct-term boundaries and actual indexed-witness/AND-ranking composition.
+Run `node --test tools\search-term-equivalence.test.mjs tools\search-tables.test.mjs`
+incrementally. These are asserted signature results, not reviewed linguistic
+normalization, item-dependent deduplication or production query integration.
 The full-backup suite additionally validates both complete current logical
 platform allowlists, collection/identity/byte boundaries, single-member gzip/
 fatal UTF8/duplicate JSON rejection and exact synthetic round trips using

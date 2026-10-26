@@ -11,8 +11,9 @@ export const searchFieldCodes = Object.freeze([
 const fail = message => { throw new Error("Invalid flat search tables: " + message); };
 const compare = (a, b) => a < b ? -1 : a > b ? 1 : 0;
 const lineKey = (item, id) => `${item}:${id}`;
-function tokenText(text) {
-  if (!text.isWellFormed() || /[\s\u0000-\u001f\u007f-\u009f]/u.test(text)) fail("invalid normalized token text");
+export function assertNormalizedSearchToken(text) {
+  if (typeof text !== "string" || !text.length || !text.isWellFormed() ||
+      /[\s\u0000-\u001f\u007f-\u009f]/u.test(text)) fail("invalid normalized token text");
 }
 function ordered(values, key) {
   for (let i = 1; i < values.length; i++) if (compare(key(values[i - 1]), key(values[i])) >= 0) fail("dictionary order/duplicate");
@@ -23,7 +24,7 @@ function profileIdentities(profiles) {
 function gramTables(tokens) {
   const grams = new Map();
   tokens.forEach((token, tokenId) => {
-    tokenText(token.text);
+    assertNormalizedSearchToken(token.text);
     const text = [...token.text], counts = new Map();
     for (let length = 1; length <= 3; length++) {
       for (let start = 0; start + length <= text.length; start++) {
@@ -59,7 +60,7 @@ export function assertFlatSearchTables(value) {
   if (value.witnesses.length % 3 || value.postings.length % 2) fail("flat record arity");
   let offset = 0, priorProfile = -1, priorText = "";
   for (const token of value.tokens) {
-    tokenText(token.text);
+    assertNormalizedSearchToken(token.text);
     if (token.profile >= value.profiles.length || token.profile < priorProfile ||
         (token.profile === priorProfile && token.text <= priorText)) fail("token dictionary");
     priorProfile = token.profile;
@@ -106,7 +107,7 @@ export function buildFlatSearchTables(input) {
   });
   const dictionary = new Map();
   for (const occurrence of input.occurrences) {
-    tokenText(occurrence.text);
+    assertNormalizedSearchToken(occurrence.text);
     const item = itemIds.get(occurrence.lyricId), profile = profileIds.get(occurrence.profileId);
     if (item === undefined || profile === undefined) fail("unknown occurrence item/profile");
     const field = searchFieldCodes.indexOf(occurrence.field);
@@ -144,7 +145,7 @@ function candidateLookup(snapshot) {
   snapshot.tokens.forEach((token, id) => profileTokens[token.profile].push(id));
   return query => {
     if (!queryShape(query)) fail("query schema");
-    tokenText(query.text);
+    assertNormalizedSearchToken(query.text);
     const profile = profiles.get(query.profileId);
     if (profile === undefined) fail("unknown query profile");
     const text = [...query.text], bounds = [text.length - query.edits,

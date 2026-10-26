@@ -14,6 +14,9 @@ not a client search engine or evidence of linguistic/profile correctness.
 - `termCount`: the established distinct-term count. The caller must deduplicate
   only complete normalization/tokenization/edit-allowance signatures across every
   declared matching profile/context, never an item's available matches.
+  The [term-equivalence prerequisite](search-term-equivalence.md) supplies this
+  partition over explicitly complete reviewed-profile results, without inferring
+  the normalizers or trusted context inventory.
 - `items`: unique canonical lyric UUIDs in the admitted catalog/filter scope.
   Input order is not a tie-breaker. No legacy video identity or implicit mapping.
 - `evidence`: eligible verified `{lyricId,term,field,edits}` matches. Every item

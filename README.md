@@ -24,6 +24,12 @@ metadata/score/winning-field edit/ASCII ordering without duplicate bonuses.
 It takes explicit compatible policy and eligible verified evidence; it does not
 infer term equivalence, profile/source mappings or display previews.
 
+The [complete-profile term-equivalence contract](docs/search-term-equivalence.md)
+partitions explicit complete normalization/tokenization/edit-allowance matrices,
+preserving technical distinctions independently of item matches. It keeps every
+input reference and enforces the distinct-term cap without inventing normalizers,
+reviewed aliases or packaged query integration.
+
 The [contiguous excerpt-window contract](docs/search-excerpt-windows.md) chooses
 best-fitting edits/leftmost/shortest focus over explicit verified display ranges
 and grapheme boundaries. Its single-window geometry counts ellipses inside the
