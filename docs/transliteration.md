@@ -164,16 +164,16 @@ All values are build-time global configuration, never personal preferences.
 | formatVersion/rulesId/status/sourceScript/unicodeProfile | Fixed protocol identity, mandatory provisional label, Kannada input and pinned Unicode profile |
 | revision | Required positive safe integer; increment for any output-affecting global correction; no implicit default |
 | profiles | Exactly14 distinct IDs with kind latin/native; five Latin profiles retain their tokens and nine native profiles declare native-only fields |
-| profiles native fields |16 vowels/signs,34 consonants,4 marks; null cells explicitly unsupported except inherent sign0. Nonempty in-block tokens, virama and ten distinct target digits. Tamil alone has34 consonant suffix slots (empty means no suffix), restricted to²/³/⁴ |
+| profiles native fields |16 vowels/signs,34 consonants,4 marks; null cells explicitly unsupported except inherent sign0. Nonempty in-block tokens, virama and ten distinct in-block Unicode16 Nd digits with decimal values0..9 in order. Tamil alone has34 consonant suffix slots (empty means no suffix), restricted to²/³/⁴ |
 | profiles.approximations | Native-only category/index/reason records; unique valid non-null cells, no empty reason; every used record produces a diagnostic and every distinction merger must be declared |
 | alphabet.vowels/vowelSigns/consonants/marks/virama | Distinct single NFC source scalars; fixed dimensions16/16/34/4; only first sign is null |
-| alphabet.digits/asciiDigits | Exactly ten distinct source digits and fixed ASCII target ordering |
+| alphabet.digits/asciiDigits | Exactly ten Kannada Unicode16 Nd source digits with decimal values0..9 in order; fixed ASCII source/Latin target ordering. Latin profiles cannot declare their own digits field |
 | alphabet.passthrough | Explicit distinct source-scalar allowlist, disjoint from alphabet/digits; no arbitrary untrusted pass-through |
 | unsupportedTargets | Empty: all nine directions now have bounded implementations; per-cell nulls remain authoritative failures |
 
 `npm run build` generates
 [`generated/transliteration/rules.json`](../generated/transliteration/rules.json)
-after Unicode generation. No lyric variants are generated. Changes to algorithm,
+after Unicode generation. No lyric variants are generated. Changes to the conversion algorithm,
 tables, digit/marker policy or normalization require a rules revision and
 regenerated provenance plus regression fixtures; incompatible envelope/algorithm
 changes require a new rules identity/version. The current identity is
@@ -185,9 +185,48 @@ implicit upgrade. Approved promotion is a separate
 explicit contract/review, never achieved by changing the status string.
 Consumers/publishers adopt independently; no existing capability/pin changes.
 
+### Source-backed decimal invariants
+
+The [decimal validator](../tools/transliteration-decimals.mjs) reuses the existing
+[verified Unicode16 source loader](unicode-name-matching.md) and strict
+UnicodeData/general-category parser. It reads original licensed
+[UnicodeData.txt](../resources/unicode16/UnicodeData.txt) offline, checks Nd
+decimal/digit/numeric fields agree on one value0..9, and captures exact decimal
+values plus the official Kannada-digit identity. Missing, malformed, conflicting,
+compressed decimal ranges or surrogate digit assignments fail explicitly.
+No host Unicode API, compatibility normalization or block-offset value guess is
+used. Target block membership remains required separately.
+
+The publisher-tooling reference now needs those already-vendored pinned original
+sources at module import, not only its caller-supplied generated normalization
+object. Source bytes/license retain their existing ownership and hashes; this
+adds no downloaded package, runtime client converter or new source authority.
+Existing generated Unicode provenance already binds the original source pins.
+
+Both direct factory construction and build/settings validation enforce:
+
+- Canonical input digit declarations are Kannada and have values0..9 in order.
+- ASCII input and Latin output use the declared fixed ASCII digits.
+- Every native digit declaration consists of ten assigned in-block Nd scalars
+  whose actual decimal values are0..9 in order, not merely ten distinct glyphs.
+- A Latin profile's own `digits` property is invalid, including null/undefined,
+  rather than an override or an availability-based fallback.
+- Conversion explicitly selects the native or ASCII digit string by profile kind.
+
+Invalid declarations fail before producing a converter/output. Schema shape
+alone cannot establish Unicode numeric values. The converter still accepts only
+its declared Kannada/ASCII source digits: knowing other Unicode decimal values
+does not admit them or broaden query/script scope.
+
+This enforces the existing preserve-numeric-value contract without changing
+successful committed mappings, the conversion policy or generated rule bytes.
+Validation-only rejection of previously inadmissible configurations does not
+advance the rules revision. Any output-affecting correction still requires the
+reviewed revision/provenance/regression process above.
+
 ## Validation and remaining gates
 
-`node --test tools\transliteration.test.mjs tools\native-transliteration.test.mjs`
+`node --test tools\transliteration-decimals.test.mjs tools\transliteration.test.mjs tools\native-transliteration.test.mjs`
 is the focused suite after a build.
 The full [validation gate](data-contracts.md#validation-and-finalization) includes
 generation, all suites and hygiene. The checked-in synthetic vectors spell out
@@ -202,3 +241,9 @@ clusters, all vowel/mark cells,38 approximation declarations, assigned Unicode16
 target characters and explicit unsupported rules. These table-consistency counts
 are not independent linguistic proof. These are not real lyric samples, consumer integration,
 full approved multi-script coverage, a Sanscript parity test or release evidence.
+The [decimal suite](../tools/transliteration-decimals.test.mjs) additionally
+compares all numeric code points against an independent parser of the original
+Unicode data, rejects digit permutations and Latin overrides at both factory/
+build surfaces, and checks bounded numeric sequences plus long exact labels,
+layout/verse identity and unchanged foreign-digit refusal. These independently
+verify decimal values and source scope, not phonetic or linguistic correctness.

@@ -1,4 +1,5 @@
 import { createUnicodeReference } from "./unicode-reference.mjs";
+import { decimalDigitValue, isKannadaDecimalDigit } from "./transliteration-decimals.mjs";
 
 export class TransliterationError extends Error {
   constructor(code, message, offset) {
@@ -16,6 +17,10 @@ const scalarString = value => {
     return cp >= 0xd800 && cp <= 0xdfff;
   })) fail("INVALID_TEXT", "Expected a Unicode scalar string");
   return value;
+};
+const orderedDecimalDigits = text => {
+  const chars = Array.from(text);
+  return chars.length === 10 && chars.every((char, index) => decimalDigitValue(char) === index);
 };
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
 const latinIds = ["iso15919", "iast-kn", "baraha-kn", "itrans-kn", "harvard-kyoto-kn"];
@@ -54,9 +59,14 @@ export function createTransliterationReference(input, unicodeData) {
       Array.from(alphabet.digits).length !== 10 || alphabet.asciiDigits !== "0123456789") {
     fail("INVALID_RULES", "Alphabet must have distinct NFC scalars and ten digits");
   }
+  if (!orderedDecimalDigits(alphabet.digits) || !Array.from(alphabet.digits).every(isKannadaDecimalDigit) ||
+      !orderedDecimalDigits(alphabet.asciiDigits)) {
+    fail("INVALID_RULES", "Source digits must have ordered Unicode16 Kannada/ASCII decimal values 0..9");
+  }
   for (const profile of rules.profiles) {
     const native = Object.hasOwn(nativeRanges, profile.id);
     if (profile.kind !== (native ? "native" : "latin")) fail("INVALID_RULES", "Profile kind mismatch");
+    if (!native && Object.hasOwn(profile, "digits")) fail("INVALID_RULES", "Latin profiles use only the declared ASCII digits");
     const targetScalar = char => {
       const cp = char.codePointAt(0), [low, high] = nativeRanges[profile.id];
       return cp >= low && cp <= high;
@@ -74,7 +84,8 @@ export function createTransliterationReference(input, unicodeData) {
       if (profile.vowelSigns[0] !== null || !scalarString(profile.virama).length ||
           !Array.from(profile.virama).every(targetScalar) ||
           Array.from(scalarString(profile.digits)).length !== 10 ||
-          new Set(profile.digits).size !== 10 || !Array.from(profile.digits).every(targetScalar)) {
+          new Set(profile.digits).size !== 10 || !Array.from(profile.digits).every(targetScalar) ||
+          !orderedDecimalDigits(profile.digits)) {
         fail("INVALID_RULES", "Invalid native inherent sign, virama or digits");
       }
       if (profile.id === "taml") {
@@ -154,7 +165,7 @@ export function createTransliterationReference(input, unicodeData) {
         if (profile.consonantSuffixes) out.push(profile.consonantSuffixes[index]);
       } else if (vowels.has(char)) out.push(token("vowels", vowels.get(char), i));
       else if (marks.has(char)) out.push(token("marks", marks.get(char), i));
-      else if (digits.has(char)) out.push((profile.digits ?? alphabet.asciiDigits)[digits.get(char)]);
+      else if (digits.has(char)) out.push((profile.kind === "latin" ? alphabet.asciiDigits : profile.digits)[digits.get(char)]);
       else if (passthrough.has(char)) out.push(char);
       else fail(signs.has(char) || char === alphabet.virama ? "ORPHAN_SIGN" : "UNSUPPORTED_SCALAR",
         `Cannot convert U+${char.codePointAt(0).toString(16).toUpperCase()}`, i);

@@ -126,6 +126,10 @@ provides Kannada-to-five-Latin and nine-native reference tables/conversion,
 explicit approximation diagnostics/unsupported cells and synthetic tests.
 All rules/outputs remain owner-review provisional; linguistic evidence,
 unsupported native cells and production integration remain open.
+Its source-backed decimal validator now enforces Kannada/native Nd values0..9
+in order and forbids Latin digit overrides, rather than trusting glyph position
+or distinctness alone. Committed outputs/provenance remain unchanged; numeric
+correctness does not promote the provisional linguistic mappings.
 
 The approved [lyric identity and optional media contract](docs/lyric-identity.md)
 defines stable video-independent lyric UUIDs, text-only publication eligibility

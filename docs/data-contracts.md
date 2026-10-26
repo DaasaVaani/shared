@@ -354,7 +354,15 @@ tests synthetic five-Latin/nine-native vectors, layout/identity/digit/marker pre
 explicit unsupported failures and deterministic rules generation. It does not
 provide linguistic approval, complete native-script coverage or Library/consumer adoption.
 Focused command after generation:
-`node --test tools\transliteration.test.mjs tools\native-transliteration.test.mjs`.
+`node --test tools\transliteration-decimals.test.mjs tools\transliteration.test.mjs tools\native-transliteration.test.mjs`.
+The decimal suite uses original pinned Unicode16 numeric assignments, not local
+positional tables, to check all-code-point facts, invalid source/native ordering,
+nondecimal glyphs and Latin override refusal at both construction surfaces.
+It checks complete bounded numeric sequences, leading zeros/long exact labels,
+layout/verse preservation and unchanged foreign-digit input rejection.
+The same source-backed guard runs inside the direct factory and therefore during
+generation; successful committed rule/provenance bytes remain unchanged.
+These are numeric/structural guarantees, not linguistic approval or client adoption.
 
 The workflow also parses every .github YAML file using Ruby YAML; use an existing
 Ruby installation or another already-available YAML parser and state the method.

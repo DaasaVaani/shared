@@ -177,6 +177,13 @@ superscripts, not extra vocalic/nasal superscripts. Generated decimal digits map
 to target-script digits, Latin ASCII; preserve numerical value, never renumber.
 Label letters transliterate and punctuation remains. Full mapping/digit/alias/
 technical-marker tables and independent expected fixtures are still open.
+The provisional converter's [decimal guard](transliteration.md#source-backed-decimal-invariants)
+checks original pinned Unicode16 Nd values before accepting source/native digit
+declarations. Kannada input and each native target must preserve0..9 ordering;
+Latin uses only declared ASCII digits. Rotated values, nondecimal glyphs and
+Latin digit overrides fail at both direct-factory and build validation.
+This preserves committed outputs and does not approve broader source/query scope
+or resolve the remaining linguistic/production profile gates.
 
 The isolated [provisional global transliteration prerequisite](transliteration.md)
 supplies executable Kannada-to-five-Latin/nine-native reference tables, strict generation

@@ -1,5 +1,46 @@
 # Documentation history
 
+## 2026-10-26: source-backed transliteration decimal-value invariants
+
+- Verified the prior parsed-field commit
+  `30062400214a0d08354d6c04e31cf444a0eaaeac` was already published at its
+  exact remote SHA, with clean Shared and Website worktrees.
+- Reproduced a genuine numeric corruption gap with synthetic single digits:
+  rotating the configured Kannada source digits made canonical zero become
+  ASCII9; rotating Devanagari target digits made ASCII0 become U+0967 (one).
+  Previous distinctness/block checks admitted both invalid configurations.
+  Direct-factory Latin digit overrides also bypassed the schema's prohibition.
+- Added original-pinned-UnicodeData Nd value validation using the existing
+  verified source loader and strict general-category parser. Both direct and
+  build construction now require ordered source/native decimal values0..9,
+  Kannada source identity and no Latin digits property. Conversion chooses
+  native versus ASCII digits explicitly by profile kind, never availability.
+- Archived the guide's limited "ten distinct source/target digits" validation
+  description and clarified "conversion algorithm" in its revision warning.
+  The stronger validator enforces the already-approved numeric-value rule;
+  no successful mapping/output, source schema, source scope or rule revision
+  changed. Output-affecting corrections still require reviewed revisions.
+  No production/linguistic promotion, consumer pin or actual item generation.
+- The first focused numeric run passed5/6. One assertion expected a schema-layer
+  error for an own JavaScript `digits: undefined` property; Ajv treats undefined
+  as absent while the factory explicitly rejects property presence with its
+  standard INVALID_RULES error. Corrected the expected error layer, not validation.
+- Focused `node --test tools\transliteration-decimals.test.mjs tools\transliteration.test.mjs tools\native-transliteration.test.mjs`
+  passed82/82. New checks compare all1,114,112 code points/760 Nd assignments
+  with an independent original-source parser, reject450 transpositions and90
+  rotations at both construction surfaces, check31,108 bounded numeric outputs,
+  and retain10,360 refusals for740 other decimal digits across14 profiles.
+  Long beyond-safe-integer labels, leading zeros and literal line/verse/layout
+  identity remain exact. Numeric source facts are not linguistic evidence.
+- Full `npm run check` passed366/366 with no failed, skipped or cancelled tests.
+  `python tools\check_repository.py` passed285 tracked files; strict YAML parsing
+  passed all22 tracked YAML files. Actionlint1.7.12 with ShellCheck0.11.0,
+  `git diff --check`, `git diff --cached --check` and generated/schema stability
+  checks passed. `git diff --exit-code HEAD -- generated settings resources`
+  confirmed no committed mapping, settings, Unicode source or generated resource
+  changes. These checks cover Shared tooling; consumer pins remain unchanged,
+  and no Website/Android application or production publication claim is made.
+
 ## 2026-10-26: explicit parsed-field structural lexical composition
 
 - Verified the prior Source Latin commit
