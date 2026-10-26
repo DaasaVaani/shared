@@ -4,7 +4,9 @@ The [flat counted search-table prerequisite](docs/search-tables.md) defines exac
 dictionary IDs, contiguous integer witness/posting regions and complete overlapping
 code-point gram multiplicities for declared normalized tokens. It is not a
 production normalizer/query engine/index publication or linguistic evidence;
-scan/OSA completeness, adapters and real memory budgets remain separate gates.
+Its indexed candidate reference checks conservative counted-overlap completeness
+against an independent bounded fragment-OSA oracle. Production exact verification,
+normalization/ranking, adapters and real memory budgets remain separate gates.
 
 The [staged canonical snapshot envelope](docs/snapshot-publication.md) defines
 strict public descriptor/sequence, manifest object/date/bundle maps and exact

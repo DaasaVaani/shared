@@ -43,7 +43,10 @@ implementation is authorized, not global production readiness.
   The [flat integer table contract](search-tables.md) fixes dictionary IDs,
   line-level witnesses, exact offset/count regions and counted gram pairs for
   declared normalized tokens. Its independent gram-count oracle is not the
-  remaining OSA/candidate/ranking/linguistic or real-memory proof.
+  remaining production OSA/ranking/linguistic or real-memory proof. Its indexed
+  candidate reference applies all positive multiset overlap bounds and supplies
+  bounded exhaustive independent fragment-OSA completeness checks; it is not
+  an exact verifier or client query engine.
 - Publication/offline: durable state/receipts/sequence, deterministic ZIP planner,
   host/resource bounds, current-only remote, complete atomic activation, safe
   pins/fences/GC, resume/degradation/repair and explicit manual refresh.
@@ -138,7 +141,14 @@ The flat-table suite checks the complete portable vector, code-point multiset
 counts against an independent window oracle, literal/profile distinctions,
 exact witness/reference/extent semantics and malformed safe-integer inputs.
 Run `node --test tools\search-tables.test.mjs` incrementally. Source normalization,
-OSA candidate completeness, actual budgets and consumer adapters remain open.
+full production completeness, actual budgets and consumer adapters remain open.
+The candidate suite separately checks all23,436 bounded query/token/edit-allowance
+combinations against an independent complete-fragment OSA oracle, profile/literal
+boundaries and immutable capture, plus positive bigram/trigram bounds at longer
+one-/two-edit boundary lengths. Run
+`node --test tools\search-candidates.test.mjs` incrementally. This conservative
+candidate evidence does not establish production exact-match witnesses, reviewed
+normalization/ranking or realistic retained/peak memory.
 The full-backup suite additionally validates both complete current logical
 platform allowlists, collection/identity/byte boundaries, single-member gzip/
 fatal UTF8/duplicate JSON rejection and exact synthetic round trips using

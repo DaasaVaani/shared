@@ -1,5 +1,40 @@
 # Documentation history
 
+## 2026-10-26: resuming indexed candidate validation
+
+- Owner resumed the paused work. Confirmed the candidate branch's retained work
+  and Library's clean published planner branch; no intervening source/pin change
+  was overwritten. Added independent fragment-OSA cases at positive bigram/
+  trigram one-/two-edit threshold lengths, including supplementary code points,
+  repeated grams and containing fragments.
+- Full `npm run check` passed generation and165/165 tests, zero failures,
+  cancellations or skips. Log:
+  `shared-flat-search-candidates-full-validation.log` in the session workspace.
+  This is synthetic candidate-completeness evidence, not production exact
+  verification, linguistic validation, real-memory or app/device conformance.
+- `python tools\check_repository.py` passed118 tracked files; working/staged
+  whitespace, generated/schema stability, strict parsing of13 YAML files and
+  actionlint1.7.12 with explicit ShellCheck0.11.0 passed. No main merge,
+  deployment, state initialization or consumer pin change was performed.
+
+## 2026-10-25: indexed counted-gram candidate completeness
+
+- Continued immediately after publishing the owner-selected flat table
+  representation at `9eee4cde46a82f6457df825aaaa0df33c340e789`.
+  Added one-time validated/copied lookup preparation and per-profile indexed
+  candidate generation using every positive selected1/2/3-gram multiset bound,
+  with exact multiplicity caps, deterministic IDs and no lossy limits.
+- Added conservative per-edit disruption reasoning and independent bounded
+  exhaustive complete-fragment restricted-OSA oracle tests:62 queries,126 tokens,
+  three explicit allowances =23,436 comparisons, plus transposition, containing
+  fragment, Unicode, profile/mutation and invalid input vectors. Focused16/16
+  table/candidate tests passed. No reviewed normalizer, exact production verifier,
+  ranking, app adapter, real index generation or memory-budget pass is claimed.
+- Archived prior "next gates" wording that left all necessary-overlap candidate
+  generation/proof future. The current guide now defines this Node-only indexed
+  reference and bounded evidence while retaining all production/linguistic/
+  adapter/resource gates. Existing consumer pins remain unchanged.
+
 ## 2026-10-25: owner-selected flat counted search-table representation
 
 - After both snapshot/planning batches were published, presented the remaining

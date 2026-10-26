@@ -4,6 +4,7 @@ import Ajv2020 from "ajv/dist/2020.js";
 const schema = JSON.parse(await readFile(new URL("../schemas/search-tables.schema.json", import.meta.url), "utf8"));
 const ajv = new Ajv2020({ strict: true });
 const inputShape = ajv.compile({ ...schema, $ref: "#/$defs/input" }), tableShape = ajv.compile(schema);
+const queryShape = ajv.compile({ ...schema, $ref: "#/$defs/query" });
 export const searchFieldCodes = Object.freeze([
   "title", "composer", "ankita", "deity", "tags", "form", "category", "contextLabels", "description", "lyrics"
 ]);
@@ -129,4 +130,43 @@ export function buildFlatSearchTables(input) {
     profiles, items, lines, tokens, witnesses, ...gramTables(tokens) };
   assertFlatSearchTables(value);
   return value;
+}
+
+export function createFlatSearchCandidates(tables) {
+  assertFlatSearchTables(tables);
+  const snapshot = structuredClone(tables);
+  const profiles = new Map(snapshot.profiles.map((profile, id) => [profile.id, id]));
+  const grams = new Map(snapshot.grams.map(gram => [gram.text, gram]));
+  const profileTokens = snapshot.profiles.map(() => []);
+  snapshot.tokens.forEach((token, id) => profileTokens[token.profile].push(id));
+  return query => {
+    if (!queryShape(query)) fail("query schema");
+    tokenText(query.text);
+    const profile = profiles.get(query.profileId);
+    if (profile === undefined) fail("unknown query profile");
+    const text = [...query.text], bounds = [text.length - query.edits,
+      text.length - 1 - 3 * query.edits, text.length - 2 - 4 * query.edits];
+    let candidates;
+    for (let width = 1; width <= 3; width++) {
+      const bound = bounds[width - 1];
+      if (bound <= 0) continue;
+      const counts = new Map(), overlaps = new Map();
+      for (let start = 0; start + width <= text.length; start++) {
+        const gram = text.slice(start, start + width).join("");
+        counts.set(gram, (counts.get(gram) ?? 0) + 1);
+      }
+      for (const [text, count] of counts) {
+        const gram = grams.get(text);
+        if (!gram) continue;
+        for (let record = gram.postingOffset; record < gram.postingOffset + gram.postingCount; record++) {
+          const token = snapshot.postings[record * 2], occurrences = snapshot.postings[record * 2 + 1];
+          if (snapshot.tokens[token].profile !== profile || (candidates && !candidates.has(token))) continue;
+          overlaps.set(token, (overlaps.get(token) ?? 0) + Math.min(count, occurrences));
+        }
+      }
+      candidates = new Set([...overlaps].filter(([, overlap]) => overlap >= bound).map(([token]) => token));
+      if (!candidates.size) return [];
+    }
+    return [...(candidates ?? profileTokens[profile])].sort((a, b) => a - b);
+  };
 }
