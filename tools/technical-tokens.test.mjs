@@ -1,13 +1,14 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
-import { createTechnicalTokenValidator } from "./technical-tokens.mjs";
+import { assertTechnicalTokenInventory, createTechnicalTokenValidator, loadTechnicalTokenInventory } from "./technical-tokens.mjs";
 import { deduplicateSearchTerms } from "./search-term-equivalence.mjs";
 import { buildFlatSearchTables, createFlatSearchWitnesses } from "./search-tables-reference.mjs";
 import { nfcWithProvenance } from "./normalization-provenance.mjs";
 
 const fixture = JSON.parse(await readFile(new URL("../fixtures/technical-tokens.json", import.meta.url), "utf8"));
 const vocabulary = atoms => ({ id: "synthetic-technical", signature: "a".repeat(64), atoms });
+const approvedAtoms = "a A i I u U RRi RRI LLi LLI e E ai o O au k kh g gh ~N ch Ch j jh ~n T Th D Dh N t th d dh n p ph b bh m y r l v sh Sh s h L M H .N .a".split(" ");
 function generatedWords(atoms, limit) {
   const found = new Set([""]), queue = [""];
   for (let index = 0; index < queue.length; index++) {
@@ -28,6 +29,26 @@ test("portable synthetic literal vocabulary gives complete exact checks without 
       profile: { id: input.id, signature: input.signature }, ...vector });
   }
   assert.deepEqual(input, before);
+});
+test("owned settings contain exactly the54 approved ITRANS search atoms, independently of provisional transliteration promotion", async () => {
+  const inventory = await loadTechnicalTokenInventory();
+  assert.deepEqual(inventory, { formatVersion: 1, profiles: [{ id: "itrans-kn", atoms: approvedAtoms }] });
+  const check = createTechnicalTokenValidator({ ...vocabulary(inventory.profiles[0].atoms), id: "synthetic-approved-itrans-atoms" });
+  for (const atom of approvedAtoms) assert.equal(check(atom).status, "accepted");
+  for (const word of ["RRi", "RRI", "LLi", "LLI", "~N~n", ".N.a", "shSh"]) assert.equal(check(word).status, "accepted");
+  for (const word of ["R", "Rri", "~M", ".", ".A", "c"]) assert.equal(check(word).status, "no-complete-atom-sequence");
+  inventory.profiles[0].atoms[0] = "changed";
+  assert.deepEqual((await loadTechnicalTokenInventory()).profiles[0].atoms, approvedAtoms);
+});
+test("inventory schema/scalar/identity failures cannot silently alter the approved settings contract", () => {
+  for (const value of [
+    {}, { formatVersion: 2, profiles: [] }, { formatVersion: 1, profiles: [] },
+    { formatVersion: 1, profiles: [{ id: "itrans-kn", atoms: ["a", "a"] }] },
+    { formatVersion: 1, profiles: [{ id: "itrans-kn", atoms: ["a"] }, { id: "itrans-kn", atoms: ["b"] }] },
+    { formatVersion: 1, profiles: [{ id: "itrans-kn", atoms: ["a b"] }] },
+    { formatVersion: 1, profiles: [{ id: "itrans-kn", atoms: ["\ud800"] }] },
+    { formatVersion: 1, profiles: [{ id: "itrans-kn", atoms: ["a"], signature: "invented" }] }
+  ]) assert.throws(() => assertTechnicalTokenInventory(value), /Invalid|Duplicate/);
 });
 test("any complete sequence succeeds when greedy longest-prefix would fail; prefixes and partial coverage do not", () => {
   const check = createTechnicalTokenValidator(vocabulary(["a", "ab", "bc"]));

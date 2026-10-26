@@ -32,9 +32,10 @@ reviewed aliases or packaged query integration.
 
 The [literal technical-token prerequisite](docs/technical-tokens.md) validates
 whole tokens against explicit profile vocabularies using any complete atom
-sequence, preserving case/markers without a guessed phonetic parse. Only
-synthetic vocabularies are supplied; actual entries, query boundaries and
-production integration remain review gates.
+sequence, preserving case/markers without a guessed phonetic parse. Owned
+settings contain exactly54 approved ITRANS search atoms. Other inventories,
+independent linguistic evidence, full profile rules, query boundaries and
+production integration remain gates; provisional transliteration is not promoted.
 
 The [contiguous excerpt-window contract](docs/search-excerpt-windows.md) chooses
 best-fitting edits/leftmost/shortest focus over explicit verified display ranges

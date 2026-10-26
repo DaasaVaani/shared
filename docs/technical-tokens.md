@@ -10,7 +10,10 @@ source alignment or permission to promote provisional linguistic tables.
 [strict schema](../schemas/technical-tokens.schema.json),
 [Node-only reference](../tools/technical-tokens.mjs) and
 [synthetic vectors](../fixtures/technical-tokens.json) implement only this
-mechanical validation prerequisite. No actual production vocabulary is supplied.
+mechanical validation prerequisite. The
+[owned atom inventory](../settings/technical-token-vocabularies.yml) supplies
+the54 explicitly approved ITRANS search atoms only, not complete production
+matching profiles or approved transliteration rules.
 
 ## Vocabulary and trust boundary
 
@@ -30,13 +33,49 @@ are allowed. Atom declaration order is irrelevant. Duplicate declarations are
 invalid rather than silently repaired. Case/diacritics/markers are exact scalar
 distinctions. A composed/decomposed representation is not silently substituted.
 
-Actual entries, meaningful-marker placement, rare extensions and profile
-eligibility still require reviewed owning `settings/` data, pinned complete
-rules and independent permitted expectations before production use. There is no
-production vocabulary setting/default yet; the only supplied atoms are synthetic
-test data. The [provisional transliteration tables](transliteration.md) are not
-implicitly approved search vocabularies. A future settings change must include
-its schema, inventory, signature/compatibility rules and conformance cases.
+Actual entries outside the approved inventory, meaningful-marker placement,
+rare extensions and profile eligibility still require review, pinned complete
+rules and independent permitted expectations before production use.
+The [provisional transliteration tables](transliteration.md) are not implicitly
+approved search vocabularies. A settings change must include its schema,
+inventory, signature/compatibility rules and conformance cases.
+
+## Approved atom inventory and settings
+
+`settings/technical-token-vocabularies.yml` has these strict domains:
+
+| Key | Type / bounds | Application / compatibility |
+| --- | --- | --- |
+| `formatVersion` | integer, exactly1 | build/explicit consumer adoption; unsupported versions fail |
+| `profiles` | nonempty array, unique profile IDs | reviewed complete inventory for this settings component |
+| `profiles[].id` | existing lowercase profile-ID syntax | identifies an atom inventory, not a complete matching contract |
+| `profiles[].atoms` | nonempty array of unique nonempty scalar strings; no whitespace/C0/C1 | exact literal values; no default, coercion or inferred atom |
+
+The current `itrans-kn` inventory is exactly:
+
+```text
+Vowels: a A i I u U RRi RRI LLi LLI e E ai o O au
+Consonants: k kh g gh ~N ch Ch j jh ~n T Th D Dh N t th d dh n p ph b bh m y r l v sh Sh s h L
+Marks: M H .N .a
+```
+
+These54 strings are owner-approved for literal technical search recognition.
+No Latin default, phonetic interpretation, linguistic standard compliance or
+corresponding source-conversion rule is approved by that inventory. Other
+profiles are absent, not silently populated from provisional settings.
+
+`loadTechnicalTokenInventory()` reads strict YAML and applies the exported
+`assertTechnicalTokenInventory` shape/scalar/duplicate-ID checks. Each load
+returns independent data. `npm run build` runs
+`node tools\check-technical-vocabularies.mjs`; missing/invalid settings fail the
+build without fallback or generation of lyric text.
+
+The inventory intentionally carries **no fabricated complete profile signature**.
+A future producer must bind it with the other reviewed normalization,
+tokenization, alias and edit rules into the complete matching contract before
+calling the validator with that contract's trusted signature. Atom changes
+therefore require a new compatible enclosing profile/policy identity on adoption,
+not silent replacement inside an active snapshot. No consumer pin is updated.
 
 ## Whole-token coverage
 
@@ -92,7 +131,8 @@ that the synthetic ordinary mapping is a reviewed alias.
 NFC-origin projection remains [separately defined](normalization-provenance.md);
 technical acceptance creates no new correspondence.
 
-Production vocabularies, ordinary Unicode letter/mark/digit classification,
+Other approved atom inventories, complete production profiles, independent
+linguistic expectations, ordinary Unicode letter/mark/digit classification,
 raw token boundaries, alias tables, complete reviewed profile packaging,
 consumer errors/cancellation and independent client adoption remain open.
 No public capability, actual source variant, global index or consumer pin changes.
@@ -101,6 +141,7 @@ No public capability, actual source variant, global index or consumer pin change
 
 ```powershell
 node --test tools\technical-tokens.test.mjs
+node tools\check-technical-vocabularies.mjs
 ```
 
 Checks cover complete portable results, the greedy counterexample, ambiguity
@@ -109,6 +150,10 @@ supplementary points, actual offsets beyond65,535, malformed inputs and
 independent capture. All32,258 small vocabulary/word combinations and atom
 permutations agree with independent bounded whole-word generation. Actual
 NFC/acceptance/term-equivalence/indexed-verification composition is exercised.
+Settings checks independently fix the exact54 approved atoms, exercise every
+atom and marker/case refusals, reject malformed inventories/duplicate IDs and
+verify independent loads. Their synthetic enclosing profile identity is not
+a claim that complete production ITRANS matching rules exist.
 Finalization uses [all configured checks](data-contracts.md#validation-and-finalization).
 
 For A total vocabulary code points, N token code points and maximum atom length

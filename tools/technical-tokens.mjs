@@ -1,11 +1,29 @@
 import { readFile } from "node:fs/promises";
 import Ajv2020 from "ajv/dist/2020.js";
 import { assertNormalizedSearchToken } from "./search-tables-reference.mjs";
+import { strictYaml } from "./generate-catalog.mjs";
 
 const schema = JSON.parse(await readFile(new URL("../schemas/technical-tokens.schema.json", import.meta.url), "utf8"));
 const tablesSchema = JSON.parse(await readFile(new URL("../schemas/search-tables.schema.json", import.meta.url), "utf8"));
 const ajv = new Ajv2020({ strict: true }).addSchema(tablesSchema, "search-tables");
 const vocabularyShape = ajv.compile(schema), resultShape = ajv.compile({ ...schema, $ref: "#/$defs/result" });
+const inventoryShape = ajv.compile({ ...schema, $ref: "#/$defs/inventory" });
+
+export function assertTechnicalTokenInventory(value) {
+  if (!inventoryShape(value)) throw new Error("Invalid technical token inventory");
+  const ids = new Set();
+  for (const profile of value.profiles) {
+    if (ids.has(profile.id)) throw new Error("Duplicate technical token inventory profile");
+    ids.add(profile.id);
+    for (const atom of profile.atoms) assertNormalizedSearchToken(atom);
+  }
+}
+
+export async function loadTechnicalTokenInventory() {
+  const value = strictYaml(await readFile(new URL("../settings/technical-token-vocabularies.yml", import.meta.url), "utf8"));
+  assertTechnicalTokenInventory(value);
+  return value;
+}
 
 export function createTechnicalTokenValidator(vocabulary) {
   if (!vocabularyShape(vocabulary)) throw new Error("Invalid technical token vocabulary");

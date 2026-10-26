@@ -1,5 +1,34 @@
 # Documentation history
 
+## 2026-10-26: exact ITRANS literal-search atom approval
+
+- Owner explicitly approved the presented54 ITRANS Kannada atoms for technical
+  literal search recognition only:16 vowel atoms,34 consonant atoms and four
+  marks `M H .N .a`. This is not transliteration/standard-compliance approval,
+  independent linguistic evidence, raw-query grammar or production activation.
+- Recorded exactly that inventory in owned strict settings; added schema/types,
+  an explicit loader/assertion and build-time checker without inventing the
+  future complete matching-profile signature. Tests use an explicitly synthetic
+  profile identity to exercise these real approved atoms.
+- Archived replaced limitation: the literal-token guide/overview supplied only
+  synthetic atoms and left every actual inventory unapproved. Only these54
+  ITRANS atom strings are now approved; all other profile inventories and the
+  existing transliteration mappings remain provisional. The complete normalizer,
+  boundaries, aliases, independent permitted expectations and adapters remain gates.
+- `node tools\check-technical-vocabularies.mjs` passed one profile/54 atoms.
+  Focused `node --test tools\technical-tokens.test.mjs` passed9/9, including exact
+  owner-list equality, every approved atom, significant marker/case negatives,
+  independent settings loads, malformed inventory/duplicate identity rejection
+  and the existing full synthetic oracle/composition cases.
+- Final `npm run check` passed generation, the new owned-settings check and
+  242/242 registered tests with zero failed, cancelled or skipped. Full log:
+  `shared-itrans-atoms-full-validation.log`.
+  `python tools\check_repository.py` passed182 tracked paths; strict YAML16,
+  actionlint1.7.12 with explicit ShellCheck0.11.0, working/staged whitespace and
+  generated/schema stability passed. Only existing LF/CRLF warnings occurred.
+  No dependency/toolchain, actual source/conversion rule, consumer pin/runtime,
+  main merge, publication activation or deployment changed.
+
 ## 2026-10-26: selected literal technical-token recognition
 
 - Owner selected reviewed literal-atom vocabularies per profile over structural

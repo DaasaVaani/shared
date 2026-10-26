@@ -55,6 +55,7 @@ registries, UI catalogs, personal state and secrets retain their separate owners
 | Shared settings/unicode.yml | Pinned official Unicode16 personal-name matching profile, pipeline and upstream byte provenance; consumer build and explicit key-profile migration |
 | Shared settings/graphemes.yml | Independently approved Unicode16 default extended-grapheme data/profile and official byte identities; consumer boundary-profile adoption |
 | Shared settings/normalization-provenance.yml | Independently approved Unicode16 NFC-only per-code-point source mapping and existing resource/manifest binding; bounded excerpt tooling, no alias/cross-script approval |
+| Shared settings/technical-token-vocabularies.yml | Exact reviewed literal-search atoms per profile;54 ITRANS atoms only, build-time strict validation; no complete matching signature or transliteration approval |
 | Shared settings/ui-catalog.yml, defaults.yml | Catalog generation, supported UI languages, portable initial preferences and allowed choices |
 | Library settings/catalog.yml, ingestion.yml, images.yml, publication.yml | Branding/catalog/filter/profile selection, local import/extraction/network, image processing, hosting/publication |
 | Website settings/web.yml | Public bases/endpoints, routes, feature availability, UI tokens and platform worker/network/storage budgets |
@@ -211,9 +212,11 @@ declared ending lines; no annotation means no inferred exclusion.
 Technical recognition uses [reviewed literal vocabularies](technical-tokens.md)
 per profile, accepting a whole unchanged token if any complete atom sequence
 covers it. Neither a unique phonetic parse nor greedy longest-prefix recognition
-is required. The isolated trie/reachability reference has synthetic vectors only;
-actual vocabulary entries, raw boundaries/classification and unsupported-input
-integration remain unapproved/unimplemented, not inferred from provisional tables.
+is required. The isolated trie/reachability reference has synthetic conformance
+vectors and owned settings for54 explicitly approved ITRANS search atoms.
+Other inventories, independent linguistic expectations, complete profile rules,
+raw boundaries/classification and unsupported-input integration remain gates,
+not inferred from provisional tables.
 
 Deduplicate query terms only if complete normalization/tokenization/edit-allowance
 signatures agree across every declared matching profile/context, independent of
