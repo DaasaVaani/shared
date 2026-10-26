@@ -1,5 +1,44 @@
 # Documentation history
 
+## 2026-10-26: normalized query-token edit allowances
+
+- Continued SEARCH-02/12/13 with an additive helper in the existing flat-search
+  reference/types/declarations, reusing the scalar-token guard and owning
+  search-policy edit-band schema. Explicit compatible policy bands supply
+  thresholds; malformed/unsafe/nonincreasing bands and incompatible allowance
+  order fail. No new setting, copied numeric threshold, dependency or artifact
+  family was introduced.
+- The count uses the fully normalized token's Unicode code points, not original
+  text, UTF16/UTF8 length, grapheme clusters or linguistic atoms. Terminal
+  allowance remains the already-selected9+ rule. Demonstrated256 source
+  U+0344 points becoming512 pinned-NFC points, still assigned two edits.
+  No normalized-length cap, original-query limit change, truncation, disabled
+  profile, case folding or raw tokenizer was added.
+- Archived the previous future-only allowance-derivation status in the flat
+  reference guide: the isolated derivation is now executable, while generic
+  candidate/match/witness APIs still accept explicit supplied allowances for
+  independent mathematical-oracle tests. Complete raw admission, profile
+  normalization and authenticated policy binding remain separate obligations.
+- `node --test tools\search-tables.test.mjs tools\search-term-equivalence.test.mjs`
+  passed29/29. New coverage includes3,072 scalar-alphabet/length combinations,
+  exact1/3/4/8/9 cutovers, long tokens beyond65,535 points, malformed policies/
+  tokens, configured thresholds, actual NFC contraction/expansion, indexed OSA
+  and NFC-to-derived-allowance-to-complete-signature grouping composition.
+- `npm run check` passed all generators and278/278 registered tests, no
+  failures, cancellations or skips. Evidence:
+  `shared-normalized-query-edit-bands-full-validation.log`.
+  `python tools\check_repository.py` passed209 tracked files; Node strictYaml
+  parsed17 tracked YAML files. actionlint1.7.12 with explicit ShellCheck0.11.0
+  passed. `git --no-pager diff --check`,
+  `git --no-pager diff --cached --check` and
+  `git --no-pager diff --exit-code -- generated schemas` passed.
+  Only existing LF/CRLF conversion warnings occurred.
+- Updated the specification, flat-table/term-equivalence/check guides and README.
+  No source/conversion output, consumer pin/runtime, main merge, deployment,
+  publication-state activation or production capability changed. Multi-token
+  profile-result combination/ranking, raw technical boundaries, reviewed
+  normalization/aliases and complete consumer/resource evidence remain open.
+
 ## 2026-10-26: exact Unicode16 search-character prerequisite
 
 - Continued the already-selected SEARCH-02/08/12/13 ordinary L*/M*/Nd

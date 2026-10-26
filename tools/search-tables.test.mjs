@@ -2,9 +2,12 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { gzipSync, gunzipSync } from "node:zlib";
-import { buildFlatSearchTables, assertFlatSearchTables, searchFieldCodes } from "./search-tables-reference.mjs";
+import { buildFlatSearchTables, assertFlatSearchTables, searchFieldCodes, normalizedSearchEditAllowance, createFlatSearchMatches } from "./search-tables-reference.mjs";
+import { strictYaml } from "./generate-catalog.mjs";
+import { nfcWithProvenance } from "./normalization-provenance.mjs";
 
 const fixture = JSON.parse(await readFile(new URL("../fixtures/search-tables.json", import.meta.url), "utf8"));
+const policy = strictYaml(await readFile(new URL("../settings/search.yml", import.meta.url), "utf8"));
 const fresh = () => structuredClone(fixture);
 function reject(change) {
   const { tables } = fresh();
@@ -18,6 +21,70 @@ function inputReject(change) {
 }
 const canonical = value => Array.isArray(value) ? value.map(canonical)
   : value && typeof value === "object" ? Object.fromEntries(Object.keys(value).sort().map(key => [key, canonical(value[key])])) : value;
+
+test("configured normalized edit bands include exact1/3/4/8/9 boundaries and an open-ended terminal allowance", () => {
+  for (const [length, expected] of [[1, 0], [3, 0], [4, 1], [8, 1], [9, 2], [256, 2], [257, 2], [65537, 2]]) {
+    assert.equal(normalizedSearchEditAllowance("x".repeat(length), policy.editBands), expected, String(length));
+  }
+});
+test("every length1..1024 agrees with the independent approved threshold oracle across BMP and supplementary scalars", () => {
+  for (const char of ["x", "\u00e9", "\u{10400}"]) {
+    for (let length = 1; length <= 1024; length++) {
+      const expected = length < 4 ? 0 : length < 9 ? 1 : 2;
+      assert.equal(normalizedSearchEditAllowance(char.repeat(length), policy.editBands), expected);
+    }
+  }
+});
+test("allowances count post-normalization code points, not UTF16/UTF8, graphemes or original-input length", () => {
+  const raw = "e\u0301e\u0301", nfc = nfcWithProvenance(raw);
+  assert.equal(normalizedSearchEditAllowance(raw, policy.editBands), 1);
+  assert.equal(normalizedSearchEditAllowance(nfc.normalizedText, policy.editBands), 0);
+  assert.equal(normalizedSearchEditAllowance("\u{10400}".repeat(3), policy.editBands), 0);
+  assert.equal(normalizedSearchEditAllowance("\u00e9".repeat(8), policy.editBands), 1);
+  assert.equal(normalizedSearchEditAllowance(("a\u0301").repeat(4), policy.editBands), 1);
+  const expanding = nfcWithProvenance("\u0344".repeat(policy.maxQueryCodePoints));
+  assert.equal(expanding.sourceCodePoints, 256);
+  assert.equal([...expanding.normalizedText].length, 512);
+  assert.equal(normalizedSearchEditAllowance(expanding.normalizedText, policy.editBands), 2);
+});
+test("allowance calculation reuses the literal scalar-token guard and never admits empty/malformed input as zero edits", () => {
+  for (const text of [null, undefined, 1, "", "\ud800", "\udfff", "a b", "a\nb", "a\u0000b", "a\u0085b"]) {
+    assert.throws(() => normalizedSearchEditAllowance(text, policy.editBands), /Invalid flat search tables/);
+  }
+});
+test("malformed, unsafe, unordered, incomplete or incompatible edit bands fail instead of supplying a default", () => {
+  for (const bands of [null, {}, [], policy.editBands.slice(0, 2), [...policy.editBands, { maxLength: 512, edits: 2 }],
+    [{ maxLength: 3, edits: 0 }, { maxLength: 3, edits: 1 }, { maxLength: 256, edits: 2 }],
+    [{ maxLength: 8, edits: 0 }, { maxLength: 3, edits: 1 }, { maxLength: 256, edits: 2 }],
+    [{ maxLength: 3, edits: 1 }, { maxLength: 8, edits: 0 }, { maxLength: 256, edits: 2 }],
+    [{ maxLength: 3, edits: 0 }, { maxLength: 8, edits: 1 }, { maxLength: Number.MAX_SAFE_INTEGER + 1, edits: 2 }],
+    [{ maxLength: 3, edits: 0 }, { maxLength: 8.5, edits: 1 }, { maxLength: 256, edits: 2 }],
+    [{ maxLength: 3, edits: 0, extra: true }, ...policy.editBands.slice(1)],
+    [{ maxLength: "3", edits: 0 }, ...policy.editBands.slice(1)]]) {
+    assert.throws(() => normalizedSearchEditAllowance("x", bands), /invalid edit bands/);
+  }
+});
+test("edit thresholds come from explicit compatible policy bands, without mutating text or caller data", () => {
+  const bands = [{ maxLength: 2, edits: 0 }, { maxLength: 4, edits: 1 }, { maxLength: 16, edits: 2 }];
+  const before = structuredClone(bands), text = "Xa.a";
+  assert.equal(normalizedSearchEditAllowance(text, bands), 1);
+  assert.equal(normalizedSearchEditAllowance(text, policy.editBands), 1);
+  assert.equal(normalizedSearchEditAllowance("xxx", bands), 1);
+  assert.equal(normalizedSearchEditAllowance("xxx", policy.editBands), 0);
+  assert.equal(normalizedSearchEditAllowance("x".repeat(17), bands), 2);
+  assert.deepEqual(bands, before);
+  assert.equal(text, "Xa.a");
+});
+test("derived allowances drive actual indexed OSA verification without enabling fuzzy expansion for short terms", () => {
+  for (const [text, stored, expected] of [["ABC", "ABX", []], ["ABCD", "ABXD", [{ token: 0, edits: 1 }]],
+    ["ABCDEFGHI", "ABXDEFYHI", [{ token: 0, edits: 2 }]]]) {
+    const { input } = fresh(), occurrence = input.occurrences[0];
+    input.occurrences = [{ ...occurrence, text: stored }];
+    const tables = buildFlatSearchTables(input);
+    assert.deepEqual(createFlatSearchMatches(tables)({ profileId: occurrence.profileId, text,
+      edits: normalizedSearchEditAllowance(text, policy.editBands) }), expected);
+  }
+});
 
 // Deliberately scans every token/window for each independently collected gram.
 function oracle(tables) {

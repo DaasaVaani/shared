@@ -43,6 +43,10 @@ reinterpretation happens here. Structural acceptance is not reviewed token
 grammar or permission to substitute unapproved strings for a missing normalizer.
 The separate [NFC provenance stage](normalization-provenance.md) is not the
 complete profile normalizer.
+The [normalized edit-allowance helper](search-tables.md#normalized-code-point-edit-allowance)
+derives each already-normalized token's allowance from explicit compatible
+policy bands before matrix construction. Raw counts cannot replace normalized
+counts; the terminal9+ allowance covers normalization-expanded tokens as well.
 The [technical vocabulary checker](technical-tokens.md) can validate a declared
 whole technical literal without changing it. Its synthetic mechanics supply
 neither actual reviewed atom entries nor raw-query boundary discovery.

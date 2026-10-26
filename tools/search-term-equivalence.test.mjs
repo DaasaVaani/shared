@@ -3,7 +3,8 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { strictYaml } from "./generate-catalog.mjs";
 import { deduplicateSearchTerms } from "./search-term-equivalence.mjs";
-import { assertNormalizedSearchToken, buildFlatSearchTables, createFlatSearchWitnesses, searchFieldCodes } from "./search-tables-reference.mjs";
+import { assertNormalizedSearchToken, buildFlatSearchTables, createFlatSearchWitnesses, searchFieldCodes, normalizedSearchEditAllowance } from "./search-tables-reference.mjs";
+import { nfcWithProvenance } from "./normalization-provenance.mjs";
 import { rankSearchEvidence } from "./search-ranking.mjs";
 
 const fixture = JSON.parse(await readFile(new URL("../fixtures/search-term-equivalence.json", import.meta.url), "utf8"));
@@ -27,6 +28,18 @@ function oracle(input) {
   return { format: "daasavaani-search-term-equivalence", formatVersion: 1, policySha256: input.policySha256,
     profiles: structuredClone(input.profiles).sort((a, b) => a.id < b.id ? -1 : a.id > b.id ? 1 : 0), inputToTerm, terms };
 }
+
+test("actual NFC and policy-derived allowances produce complete signatures before term grouping", () => {
+  const profile = { id: "synthetic-nfc", signature: "d".repeat(64) };
+  const sources = ["e\u0301e\u0301", "\u00e9\u00e9", "\u00e9".repeat(4)];
+  const input = { policySha256: "a".repeat(64), profiles: [profile], terms: sources.map(source => {
+    const text = nfcWithProvenance(source).normalizedText;
+    return { profiles: [{ profileId: profile.id, tokens: [{ text, edits: normalizedSearchEditAllowance(text, settings.editBands) }] }] };
+  }) };
+  assert.deepEqual(input.terms.map(term => term.profiles[0].tokens[0].edits), [0, 0, 1]);
+  assert.deepEqual(deduplicateSearchTerms(input, policy).inputToTerm, [0, 0, 1]);
+  assert.equal(sources[0], "e\u0301e\u0301");
+});
 
 test("complete portable vector preserves a technical distinction despite an ordinary-profile collision", () => {
   const input = fresh(), before = structuredClone(input);

@@ -9,6 +9,10 @@ export interface SearchCandidateQuery {
   text: string;
   edits: 0 | 1 | 2;
 }
+export interface SearchEditBand {
+  maxLength: number;
+  edits: 0 | 1 | 2;
+}
 export interface SearchTokenMatch {
   token: number;
   edits: 0 | 1 | 2;

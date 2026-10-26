@@ -112,6 +112,55 @@ budgets, truncating postings, sharding or substituting full scans.
 
 ## Validation and next gates
 
+### Normalized code-point edit allowance
+
+`normalizedSearchEditAllowance(text, editBands)` supplies the SEARCH-13
+calculation before complete-profile term grouping or indexed queries.
+Pass the **fully normalized literal token for that context**, not raw query
+text, plus the exact compatible snapshot policy's explicit
+[`editBands`](../settings/search.yml). There is no copied default or selected
+reading-script dependency. The current policy gives lengths1-3 zero edits,
+4-8 one edit and9+ two edits.
+
+The helper reuses the literal scalar-token guard and existing edit-band schema.
+It additionally requires three strictly increasing safe-integer `maxLength`
+values with allowances0/1/2 in order. Invalid/empty token text or malformed
+bands throw explicitly; no zero-edit success-shaped error fallback exists.
+It counts Unicode code points directly without UTF16/UTF8, grapheme or
+linguistic-atom counting, normalization, case folding, rewriting or mutation.
+O(L) work for L token code points and constant auxiliary counting/band state
+do not establish client cancellation or latency budgets.
+
+The final allowance is **open-ended**. Its finite `maxLength` in the existing
+settings representation does not introduce a normalized-token rejection cap:
+the approved rule is9+, not9..256. Raw query admission remains independently
+bounded. For example,256 source U+0344 points normalize to512 points under
+pinned Unicode16 NFC. They still receive two edits after normalization; this
+does not authorize a512-point original query, truncate the token, drop a
+profile or disable its fuzzy allowance. It is a structural Unicode case,
+not permission to admit arbitrary text under the future raw query grammar.
+
+Compute each context's allowance after all of that context's approved
+transformations, include it in the complete ordered token signatures, then
+[deduplicate terms](search-term-equivalence.md). A pre-NFC count can be wrong
+in either direction: `e\u0301e\u0301` has four original points, but its NFC
+token has two and must get zero edits. Alias/technical rules, script admission
+and complete profile identity must still be supplied/verified by the caller.
+Shape checks cannot authenticate a supplied policy or certify normalization.
+
+Incremental checks:
+
+```powershell
+node --test tools\search-tables.test.mjs tools\search-term-equivalence.test.mjs
+```
+
+They cover every length1..1024 across ASCII, BMP and supplementary scalars,
+all cutovers, long normalized tokens, invalid inputs/policies, configured
+thresholds, actual pinned NFC expansion/contraction, and real indexed OSA
+and complete-profile grouping composition. Existing generic candidate/match
+APIs still take explicit allowances, including independently supplied values
+for their exhaustive mathematical oracles; they do not silently derive one.
+
 ### Indexed candidate reference
 
 `createFlatSearchCandidates(tables)` fully validates and captures a separate
@@ -120,7 +169,8 @@ with an explicit known profile, already-normalized well-formed token and integer
 edit allowance0/1/2. There is no query normalization, default edit allowance,
 result limit, heuristic cutoff or cross-profile equivalence. The future caller
 must derive the allowance from the exact snapshot policy's approved edit bands;
-this generic reference does not change them.
+the normalized-token helper above supplies that calculation without changing
+this generic API or implementing production normalization.
 
 For query length n and supplied allowance k, apply every positive necessary
 overlap bound: width1 n-k, width2 n-1-3k, width3 n-2-4k.

@@ -2,9 +2,11 @@ import { readFile } from "node:fs/promises";
 import Ajv2020 from "ajv/dist/2020.js";
 
 const schema = JSON.parse(await readFile(new URL("../schemas/search-tables.schema.json", import.meta.url), "utf8"));
+const policySchema = JSON.parse(await readFile(new URL("../schemas/search-policy.schema.json", import.meta.url), "utf8"));
 const ajv = new Ajv2020({ strict: true });
 const inputShape = ajv.compile({ ...schema, $ref: "#/$defs/input" }), tableShape = ajv.compile(schema);
 const queryShape = ajv.compile({ ...schema, $ref: "#/$defs/query" });
+const editBandShape = ajv.compile(policySchema.properties.editBands);
 export const searchFieldCodes = Object.freeze([
   "title", "composer", "ankita", "deity", "tags", "form", "category", "contextLabels", "description", "lyrics"
 ]);
@@ -14,6 +16,19 @@ const lineKey = (item, id) => `${item}:${id}`;
 export function assertNormalizedSearchToken(text) {
   if (typeof text !== "string" || !text.length || !text.isWellFormed() ||
       /[\s\u0000-\u001f\u007f-\u009f]/u.test(text)) fail("invalid normalized token text");
+}
+export function normalizedSearchEditAllowance(text, editBands) {
+  assertNormalizedSearchToken(text);
+  if (!editBandShape(editBands) || editBands.some((band, index) =>
+    !Number.isSafeInteger(band.maxLength) || band.edits !== index ||
+    (index > 0 && band.maxLength <= editBands[index - 1].maxLength))) fail("invalid edit bands");
+  let length = 0;
+  for (const char of text) length++;
+  for (let index = 0; index < editBands.length - 1; index++) {
+    if (length <= editBands[index].maxLength) return editBands[index].edits;
+  }
+  // Raw admission bounds do not cap normalized expansion; the terminal band is open-ended.
+  return editBands.at(-1).edits;
 }
 function ordered(values, key) {
   for (let i = 1; i < values.length; i++) if (compare(key(values[i - 1]), key(values[i])) >= 0) fail("dictionary order/duplicate");

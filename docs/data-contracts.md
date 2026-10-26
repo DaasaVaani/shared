@@ -186,6 +186,11 @@ counts against an independent window oracle, literal/profile distinctions,
 exact witness/reference/extent semantics and malformed safe-integer inputs.
 Run `node --test tools\search-tables.test.mjs` incrementally. Source normalization,
 full production completeness, actual budgets and consumer adapters remain open.
+Its normalized edit-band helper additionally checks exact scalar-length
+cutovers and every length1..1024 across three scalar alphabets, malformed
+policies/tokens, actual NFC contraction/256-to512 expansion and indexed OSA
+composition. The terminal allowance remains9+ rather than a hidden normalized
+cap; raw query admission and normalization correctness are separate obligations.
 The candidate suite separately checks all23,436 bounded query/token/edit-allowance
 combinations against an independent complete-fragment OSA oracle, profile/literal
 boundaries and immutable capture, plus positive bigram/trigram bounds at longer

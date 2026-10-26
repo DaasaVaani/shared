@@ -47,6 +47,10 @@ Unicode16 general categories and ordinary letter/mark/decimal membership,
 checked against an independent official derived-property oracle over every
 code point. It does not decide raw technical punctuation, control/joiner handling,
 script eligibility or activate a tokenizer/client capability.
+The [normalized edit-band calculation](docs/search-tables.md#normalized-code-point-edit-allowance)
+uses explicit compatible policy bands after normalization, including the
+open-ended9+ allowance for normalization-expanded tokens. It does not admit raw
+queries or supply missing profile rules.
 
 The [contiguous excerpt-window contract](docs/search-excerpt-windows.md) chooses
 best-fitting edits/leftmost/shortest focus over explicit verified display ranges
