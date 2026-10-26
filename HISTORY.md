@@ -1,5 +1,46 @@
 # Documentation history
 
+## 2026-10-26: complete reviewed Source Latin alignment reference
+
+- Verified the previous exclusion commit
+  `d6ad19701c8a1c838f3defe2b74015320329c5b7` was already published at its exact
+  remote SHA with a clean worktree. Started the next independent approved
+  LANG-08/11 and SEARCH-02/08/09 mapping prerequisite.
+- Reused the existing canonical/source schemas/types and Library's current
+  complete ordered code-point mapping semantics. Added a portable input,
+  captured line/segment reference and explicitly synthetic vectors; no Library
+  parser, source field, independent pin or actual source text was changed.
+  The reference requires readable review and complete global ordered ranges.
+  Null/false/true search approval remains explicit and unchanged.
+- Preserve full supplied text and the exact review-range ledger. Coalesce only
+  adjacent source intervals within one canonical line using the existing exact
+  range union; gaps and different canonical identities remain separate.
+  Line correspondence does not imply canonical-character correspondence or
+  authorize transferring a canonical label exclusion/highlight proportionally.
+- Extracted the exclusion reference's unchanged numeric capture/projection into
+  one internal helper shared by both APIs, avoiding duplicate guards/capture
+  logic. It stores only numeric ranges, with no extra retained text copy.
+- Focused `node --test tools\source-latin-alignment.test.mjs tools\search-exclusions.test.mjs`
+  passed14/14. The new seven tests cover strict review/mapping failures,
+  all67 selected unsupported parsed-source control/surrogate values in both
+  supplied and canonical text, immutable capture and global line boundaries.
+  Independent maximal-run/position oracles cover494 nonempty bounded selections
+  and2,582 exact projected spans. Indexed OSA rejects gap-invented words;
+  actual case/NFC provenance maps back to original supplied-text positions.
+- Full `npm run check` passed generation and351/351 tests without failures,
+  skips or cancellations. `python tools\check_repository.py` passed275 tracked
+  files. `node --input-type=module` with the existing strictYaml helper over
+  `git ls-files -z` passed all21 tracked YAML files.
+  Installed actionlint1.7.12 with its explicit ShellCheck0.11.0 path passed.
+  `git --no-pager diff --check`, `git --no-pager diff --cached --check` and
+  `git --no-pager diff --exit-code -- generated schemas` passed.
+  Evidence: `shared-source-latin-alignment-focused-validation.log` and
+  `shared-source-latin-alignment-full-validation.log`.
+- No consumer pin, actual Source Latin text/annotation, source/publication schema,
+  default Latin choice, main merge, deployment or publication-state changes.
+  These portable mechanics do not close linguistic suitability, review
+  authentication, production adapters or full release conformance.
+
 ## 2026-10-26: explicit reviewed terminal-label exclusion prerequisite
 
 - Published the script-property prerequisite at

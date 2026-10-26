@@ -192,6 +192,13 @@ require reviewed mapping for every canonical lyric line: ordered nonoverlapping
 half-open Unicode-code-point range(s) in exact parsed supplied text. No UTF16/byte
 offsets, invented alignment or generated filling. Unsuitable text is not selectable/
 indexed. Absence does not block canonical/generated publication.
+The isolated [complete Source Latin alignment reference](source-latin-alignment.md)
+reuses the existing source review/canonical schemas, requires positive readable
+review and complete ordered globally nonoverlapping ranges, and preserves the
+explicit nullable/boolean search approval. Adjacent ranges on the same canonical
+line coalesce for processing; gaps and different line identities stay separate.
+Captured projection supplies original supplied-text coordinates, not invented
+canonical-character mappings or production eligibility/capability activation.
 
 ## 7. Search semantics, ranking and excerpts
 

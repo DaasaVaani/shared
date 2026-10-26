@@ -87,6 +87,9 @@ ranges. Shift each through `project`, then use the existing exact
 positions, or turn discontinuous origins into a gap-filled envelope.
 No direct Source Latin or generated-script exclusion projection is supplied:
 those need reviewed alignment and complete compatible transformation maps.
+The separate [Source Latin line reference](source-latin-alignment.md) supplies
+only canonical-line-to-supplied-range correspondence, not character mapping
+needed to carry a canonical exclusion into that text.
 
 ## Checks, complexity and remaining work
 

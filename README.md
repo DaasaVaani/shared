@@ -83,6 +83,12 @@ separate literal kept segments with captured original-line projection. It never
 infers labels or concatenates across excluded text. Source/publisher adapters,
 review authentication and cross-rendering alignment remain separate gates.
 
+The [complete Source Latin alignment reference](docs/source-latin-alignment.md)
+validates positively reviewed readable line mappings, preserves explicit
+search approval/status and supplies disjoint literal segments with captured
+supplied-text projection. It never invents missing alignment, joins gaps or
+claims canonical-character correspondence; production adapters remain open.
+
 The [contiguous excerpt-window contract](docs/search-excerpt-windows.md) chooses
 best-fitting edits/leftmost/shortest focus over explicit verified display ranges
 and grapheme boundaries. Its single-window geometry counts ellipses inside the

@@ -252,6 +252,14 @@ It covers exact source/layout retention, ending/coverage/range failures,
 independent bounded position/span oracles, captured projection and actual indexed
 nonbridging/NFC source composition. It does not authenticate review or provide
 source/publisher adapters, cross-rendering alignment or linguistic eligibility.
+The [complete Source Latin alignment suite](source-latin-alignment.md) runs with
+`node --test tools\source-latin-alignment.test.mjs tools\search-exclusions.test.mjs`
+incrementally and in the full check. It checks complete readable review/mapping,
+unchanged raw text and nullable search approval, all parsed-source controls,
+global ordered bounds, exact adjacency/gap handling, captured projection,
+independent bounded position oracles and actual indexed/NFC composition.
+Line correspondence does not establish canonical-character alignment,
+linguistic suitability, source-review authentication or client adoption.
 The [protected-marker lexical stage](search-lexing.md) validates owning settings/
 resource identity during `npm run build`. Run
 `node --test tools\search-lexing.test.mjs` incrementally. Portable inventory cases,

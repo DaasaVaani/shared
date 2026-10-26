@@ -83,6 +83,12 @@ valid without it. New authoring and explicitly authorized completion expose:
   exist; records are `{lineId, ranges: [[start, end], ...]}`. Search eligibility
   requires readable text and complete ordered nonoverlapping mapping.
 
+The [isolated alignment reference](source-latin-alignment.md) validates the
+complete readable subset and captures literal supplied-text segments/projection,
+preserving null/false/true search approval. It does not replace Library source
+review, change the legitimacy of partial authoring states, infer character alignment or
+extend the canonical-only public family.
+
 Retain known title, tags, original source evidence and every UUID. Public source
 Git is not private storage: use only public evidence references, never private
 correspondence. Unknown rights are not an invented license or permission waiver.

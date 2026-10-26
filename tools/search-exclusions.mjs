@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import Ajv2020 from "ajv/dist/2020.js";
+import { captureSearchSegmentProjection } from "./search-segment-projection.mjs";
 
 const ajv = new Ajv2020({ strict: true });
 for (const name of ["lyric-publication", "lyric-source"]) {
@@ -55,17 +56,5 @@ export function prepareSearchExclusions(input) {
 
 export function createSearchExclusionReference(input) {
   const data = prepareSearchExclusions(input);
-  const captured = new Map(data.lines.filter(line => line.kind === "line")
-    .map(line => [line.lineId, line.segments.map(({ start, end }) => ({ start, end }))]));
-  return {
-    data,
-    project(lineId, segmentIndex, start, end) {
-      const segments = captured.get(lineId);
-      if (!segments || !Number.isSafeInteger(segmentIndex) || segmentIndex < 0 || segmentIndex >= segments.length) fail("line/segment reference");
-      const segment = segments[segmentIndex];
-      if (!Number.isSafeInteger(start) || !Number.isSafeInteger(end) ||
-          start < 0 || start >= end || end > segment.end - segment.start) fail("segment span");
-      return [segment.start + start, segment.start + end];
-    },
-  };
+  return { data, project: captureSearchSegmentProjection(data.lines.filter(line => line.kind === "line"), fail) };
 }

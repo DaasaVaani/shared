@@ -1,0 +1,25 @@
+{
+  "input": {
+    "format": "daasavaani-source-latin-alignment",
+    "formatVersion": 1,
+    "lyricId": "10000000-0000-4000-8000-000000000001",
+    "canonicalLines": [
+      { "kind": "line", "lineId": "20000000-0000-4000-8000-000000000001", "text": "Synthetic first line" },
+      { "kind": "layout", "text": " \t" },
+      { "kind": "line", "lineId": "20000000-0000-4000-8000-000000000002", "text": "Synthetic second line" }
+    ],
+    "sourceLatin": "𐐀 é GAP X\nsecond  ",
+    "review": {
+      "readable": true,
+      "searchable": null,
+      "alignment": [
+        { "lineId": "20000000-0000-4000-8000-000000000001", "ranges": [[2, 3], [3, 4], [9, 10]] },
+        { "lineId": "20000000-0000-4000-8000-000000000002", "ranges": [[11, 19]] }
+      ]
+    }
+  },
+  "firstSegments": [
+    { "start": 2, "end": 4, "text": "é" },
+    { "start": 9, "end": 10, "text": "X" }
+  ]
+}

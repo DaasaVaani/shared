@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/input",
+  "$defs": {
+    "input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "formatVersion", "lyricId", "canonicalLines", "sourceLatin", "review"],
+      "properties": {
+        "format": { "const": "daasavaani-source-latin-alignment" },
+        "formatVersion": { "const": 1 },
+        "lyricId": { "$ref": "lyric-publication#/$defs/uuid" },
+        "canonicalLines": { "$ref": "lyric-publication#/$defs/item/properties/lines" },
+        "sourceLatin": { "type": "string", "minLength": 1 },
+        "review": { "$ref": "lyric-source#/properties/review/properties/sourceLatin" }
+      }
+    }
+  }
+}
