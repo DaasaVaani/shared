@@ -35,6 +35,7 @@ def main():
         for number, line in enumerate(text.splitlines(), 1):
             # Preserve original whitespace in exact, hash-verified upstream sources.
             if line.rstrip() != line and name not in (
+                "resources/unicode16/PropertyValueAliases.txt",
                 "resources/graphemes16/emoji-data.txt",
                 "resources/latin-reference-audit/baraha.toml",
                 "resources/latin-reference-audit/iso.toml",

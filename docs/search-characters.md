@@ -107,6 +107,10 @@ Examples:
 No normalization, case conversion, transliteration, query trimming or text
 rewriting occurs. A category value cannot establish a word's language,
 Source Latin eligibility or meaningful correspondence to a displayed lyric.
+The separate [Script/Script_Extensions resource](search-scripts.md) now supplies
+pinned script properties and canonical IDs. General category, primary script
+and explicit script sets remain distinct facts; none alone establishes a
+whole word's language or eligible matching context.
 
 ## Integration boundary
 

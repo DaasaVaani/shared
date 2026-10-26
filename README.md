@@ -72,6 +72,10 @@ The explicit [ASCII-only case stage](docs/search-case.md) folds A-Z only for
 common/compact roles, preserves technical literals, protects recognized marked
 terms and retains exact post-fold NFC source correspondence. It is not a
 common/compact alias mapping or complete eligible matching profile.
+The [pinned script properties](docs/search-scripts.md) now supply exact Unicode16
+Script and Script_Extensions values, canonical property IDs and normative
+missing-value semantics with exhaustive source-parser comparisons. They do not
+decide whole-query script/field/profile eligibility or broaden Kannada/Latin scope.
 
 The [contiguous excerpt-window contract](docs/search-excerpt-windows.md) chooses
 best-fitting edits/leftmost/shortest focus over explicit verified display ranges

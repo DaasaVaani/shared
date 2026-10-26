@@ -1,0 +1,36 @@
+{
+  "formatVersion": 1,
+  "profile": "unicode16-search-scripts-v1",
+  "unicodeVersion": "16.0.0",
+  "data": {
+    "path": "unicode16.json",
+    "bytes": 31251,
+    "sha256": "12da9aa5071759b57a6b21255a3fc2c955beb737c875d63c4f2be46f85408e0b"
+  },
+  "sources": {
+    "Scripts.txt": {
+      "path": "resources/unicode16/Scripts.txt",
+      "url": "https://www.unicode.org/Public/16.0.0/ucd/Scripts.txt",
+      "bytes": 189588,
+      "sha256": "9e88f0a677df47311106340be8ede2ecdacd9c1c931831218d2be6d5508e0039"
+    },
+    "ScriptExtensions.txt": {
+      "path": "resources/unicode16/ScriptExtensions.txt",
+      "url": "https://www.unicode.org/Public/16.0.0/ucd/ScriptExtensions.txt",
+      "bytes": 20576,
+      "sha256": "049117ce26b9769fe2749b06eef51a50a89faef4a97764dd2d81daa715980700"
+    },
+    "PropertyValueAliases.txt": {
+      "path": "resources/unicode16/PropertyValueAliases.txt",
+      "url": "https://www.unicode.org/Public/16.0.0/ucd/PropertyValueAliases.txt",
+      "bytes": 80773,
+      "sha256": "440fd3e5460b9bfe31da67b6f923992e1989d31fe2ed91e091c4b8f8e2620bf9"
+    }
+  },
+  "license": {
+    "path": "resources/unicode16/LICENSE.txt",
+    "url": "https://www.unicode.org/license.txt",
+    "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+    "bytes": 1995
+  }
+}

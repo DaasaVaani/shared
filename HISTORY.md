@@ -1,5 +1,58 @@
 # Documentation history
 
+## 2026-10-26: pinned Unicode16 Script and Script_Extensions prerequisite
+
+- Verified the previous case/source projection branch was clean and already
+  published at `2a7ee5ca9897cb8defc542c309961c61859dac11`. Continued under
+  existing recommended-options authority, without guessing script/field/profile
+  eligibility or changing the initial Kannada/Latin lyric-query scope.
+- Added unmodified original Unicode16 sources under the existing Unicode
+  license/notice ownership:
+  - Scripts.txt189,588 bytes,
+    SHA256 `9e88f0a677df47311106340be8ede2ecdacd9c1c931831218d2be6d5508e0039`.
+  - ScriptExtensions.txt20,576 bytes,
+    SHA256 `049117ce26b9769fe2749b06eef51a50a89faef4a97764dd2d81daa715980700`.
+  - PropertyValueAliases.txt80,773 bytes,
+    SHA256 `440fd3e5460b9bfe31da67b6f923992e1989d31fe2ed91e091c4b8f8e2620bf9`.
+- Added strict owning settings/schema/types, offline source validation/generator,
+  original-byte/resource/license manifest, portable property vectors and a
+  captured numeric code-point reference. Compiled172 canonical property values,
+  979 primary ranges and174 explicit extension ranges into31,251 bytes,
+  SHA256 `12da9aa5071759b57a6b21255a3fc2c955beb737c875d63c4f2be46f85408e0b`.
+  Normative missing primary values are Unknown; absent extension rows use
+  the singleton primary script, never an empty/error-shaped fallback.
+- Preserved Common/Inherited distinctions and exact multiscript sets.
+  Kannada digits explicitly have Knda/Nand/Tutg extensions in the original
+  data; that does not approve any additional product query language.
+  Property aliases only canonicalize UCD values, not lyric spellings.
+- Focused `node --test tools\search-scripts.test.mjs` passed9/9, including both
+  properties over every1,114,112 numeric code points against independently
+  parsed official assignments, exact generation/manifest/source bytes, strict
+  malformed/default/alias/set failures and captured-data independence.
+  Actual query/NFC/joiner/case composition preserves technical punctuation,
+  rejects invalid joiners and retains original source ranges. The oracle
+  independently verifies parsing/lookup, not a second linguistic dataset.
+  Evidence: `shared-unicode16-search-scripts-focused-validation.log`.
+- The first hygiene run identified original trailing spaces on lines29/32 of
+  PropertyValueAliases.txt. Preserved the pinned original bytes and added only
+  that source to the existing exact-upstream whitespace exceptions in Git and
+  repository hygiene. New generated resources are explicitly LF for stable hashes.
+- Full `npm run check` passed generation and337/337 tests, with no failures,
+  skips or cancellations. Evidence:
+  `shared-unicode16-search-scripts-full-validation.log`.
+  `python tools\check_repository.py` passed260 tracked files. Strict parsing
+  with the existing `strictYaml` helper passed all21 tracked YAML files.
+  `actionlint.exe -shellcheck <installed-shellcheck.exe>` passed using the
+  existing pinned1.7.12/0.11.0 tools. `git --no-pager diff --check`,
+  `git --no-pager diff --cached --check` and
+  `git --no-pager diff --exit-code -- generated schemas` passed.
+  Independent Node Buffer/crypto checks confirmed all three staged source files
+  equal worktree bytes and their exact original lengths/SHA256 pins.
+- This publishes only the property-data prerequisite on a review branch.
+  No consumer pin, production eligibility/profile signature, main merge,
+  deployment or Library/source publication state changes. Exhaustive property
+  verification is not linguistic, device or complete search/release conformance.
+
 ## 2026-10-26: explicit ASCII-only search case and post-fold provenance
 
 - Verified the previous query-budget branch was already published at

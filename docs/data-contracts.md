@@ -281,6 +281,15 @@ Its bound parent projector additionally checks actual lexical term membership/
 text/spans, strict shared source-range union and all26,494 exact span compositions
 over1,555 bounded words against a separate original-position membership oracle.
 This closes the case/NFC/joiner composition only, not alias/cross-script alignment.
+The [Script/Script_Extensions prerequisite](search-scripts.md) generates strict
+canonical property values/ranges from three hash-pinned official16 sources.
+Run `node --test tools\search-scripts.test.mjs` incrementally. It compares both
+properties for every1,114,112 numeric code points with a separate official-source
+parser, including normative defaults, Common/Inherited and explicit multiscript
+sets, and checks exact source/manifest bytes, deterministic generation, strict
+failure/capture cases and actual query/NFC/joiner/case composition.
+This is property compilation/lookup evidence, not word-language classification,
+query/field eligibility, alias truth, complete matching signatures or client adoption.
 The literal-vocabulary suite checks complete synthetic results, all32,258 bounded
 vocabulary/word combinations against independent whole-word generation, greedy
 failure/ambiguous coverage, exact scalar/case/marker handling, malformed inputs,

@@ -60,6 +60,7 @@ registries, UI catalogs, personal state and secrets retain their separate owners
 | Shared settings/search-lexing.yml | Pinned NFC/category lexical stage, maximal ordinary/marker candidates, protected whole technical readings and ordinary fallback; explicit unsupported categories, no production query/alias activation |
 | Shared settings/search-joiners.yml | Exact source-backed Unicode16 Kannada consonants, original-adjacency joiner deletion ledger and NFC/lexical original-span composition; build/reference adoption, no source rewrite or production activation |
 | Shared settings/search-case.yml | Explicit common/compact ASCII-only folding, technical preservation and post-fold NFC token-local provenance; no alias, full-profile or consumer activation |
+| Shared settings/search-scripts.yml | Pinned Unicode16 Script/Script_Extensions and canonical UCD value aliases, exact source/license provenance and normative missing defaults; property data only, no query-language eligibility activation |
 | Shared settings/ui-catalog.yml, defaults.yml | Catalog generation, supported UI languages, portable initial preferences and allowed choices |
 | Library settings/catalog.yml, ingestion.yml, images.yml, publication.yml | Branding/catalog/filter/profile selection, local import/extraction/network, image processing, hosting/publication |
 | Website settings/web.yml | Public bases/endpoints, routes, feature availability, UI tokens and platform worker/network/storage budgets |
@@ -239,6 +240,11 @@ The [pinned Unicode16 character component](search-characters.md) supplies exact
 general categories and the L*/M*/Nd ordinary-membership predicate. It is checked
 against all official derived-property assignments; category lookup alone does
 not implement raw boundaries, control/joiner handling or script eligibility.
+The separate [Script/Script_Extensions component](search-scripts.md) supplies
+exact Unicode16 primary assignments, explicit script sets and canonical property
+IDs. Missing extensions use the primary-script singleton, not empty/all-script
+eligibility. Common/Inherited/multiscript values are property evidence, not a
+whole-word language, metadata/lyric eligibility or additional query-scope decision.
 Technical recognition uses [reviewed literal vocabularies](technical-tokens.md)
 per profile, accepting a whole unchanged token if any complete atom sequence
 covers it. Neither a unique phonetic parse nor greedy longest-prefix recognition

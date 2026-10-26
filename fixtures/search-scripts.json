@@ -1,0 +1,26 @@
+{
+  "profile": "unicode16-search-scripts-v1",
+  "vectors": [
+    ["0000", "Zyyy", ["Zyyy"]],
+    ["0020", "Zyyy", ["Zyyy"]],
+    ["0030", "Zyyy", ["Zyyy"]],
+    ["0041", "Latn", ["Latn"]],
+    ["00E9", "Latn", ["Latn"]],
+    ["0300", "Zinh", ["Cher", "Copt", "Cyrl", "Grek", "Latn", "Perm", "Sunu", "Tale"]],
+    ["0301", "Zinh", ["Cher", "Cyrl", "Grek", "Latn", "Osge", "Sunu", "Tale", "Todr"]],
+    ["0323", "Zinh", ["Cher", "Dupl", "Kana", "Latn", "Syrc"]],
+    ["0342", "Zinh", ["Grek"]],
+    ["0378", "Zzzz", ["Zzzz"]],
+    ["0C80", "Knda", ["Knda"]],
+    ["0C95", "Knda", ["Knda"]],
+    ["0CCD", "Knda", ["Knda"]],
+    ["0CE6", "Knda", ["Knda", "Nand", "Tutg"]],
+    ["200D", "Zinh", ["Zinh"]],
+    ["30FC", "Zyyy", ["Hira", "Kana"]],
+    ["D800", "Zzzz", ["Zzzz"]],
+    ["10400", "Dsrt", ["Dsrt"]],
+    ["11380", "Tutg", ["Tutg"]],
+    ["1E5D0", "Onao", ["Onao"]],
+    ["10FFFF", "Zzzz", ["Zzzz"]]
+  ]
+}
