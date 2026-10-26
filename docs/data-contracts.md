@@ -46,7 +46,8 @@ implementation is authorized, not global production readiness.
   remaining production OSA/ranking/linguistic or real-memory proof. Its indexed
   candidate reference applies all positive multiset overlap bounds and supplies
   bounded exhaustive independent fragment-OSA completeness checks; it is not
-  an exact verifier or client query engine.
+  a client query engine. The separate exact verifier checks accepted minimum
+  fragment edits with three query-length rows and complete indexed/scan parity.
 - Publication/offline: durable state/receipts/sequence, deterministic ZIP planner,
   host/resource bounds, current-only remote, complete atomic activation, safe
   pins/fences/GC, resume/degradation/repair and explicit manual refresh.
@@ -149,6 +150,12 @@ one-/two-edit boundary lengths. Run
 `node --test tools\search-candidates.test.mjs` incrementally. This conservative
 candidate evidence does not establish production exact-match witnesses, reviewed
 normalization/ranking or realistic retained/peak memory.
+The exact-match suite compares complete indexed match sets and minimum edits
+with the independent full-matrix/all-fragment oracle across those23,436 cases,
+plus false positives, later better fragments, restricted transpositions,
+Unicode and working-row boundaries. Run
+`node --test tools\search-matches.test.mjs` incrementally. This is not display
+span/representative-witness selection, linguistic or platform conformance.
 The full-backup suite additionally validates both complete current logical
 platform allowlists, collection/identity/byte boundaries, single-member gzip/
 fatal UTF8/duplicate JSON rejection and exact synthetic round trips using

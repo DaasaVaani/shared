@@ -5,8 +5,10 @@ dictionary IDs, contiguous integer witness/posting regions and complete overlapp
 code-point gram multiplicities for declared normalized tokens. It is not a
 production normalizer/query engine/index publication or linguistic evidence;
 Its indexed candidate reference checks conservative counted-overlap completeness
-against an independent bounded fragment-OSA oracle. Production exact verification,
-normalization/ranking, adapters and real memory budgets remain separate gates.
+against an independent bounded fragment-OSA oracle. Its exact verifier then checks
+minimum internal-fragment edits using three query-length working rows and complete
+indexed-versus-scan parity. Production normalization/ranking/span projection,
+adapters and real memory budgets remain separate gates.
 
 The [staged canonical snapshot envelope](docs/snapshot-publication.md) defines
 strict public descriptor/sequence, manifest object/date/bundle maps and exact

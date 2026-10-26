@@ -1,5 +1,32 @@
 # Documentation history
 
+## 2026-10-26: exact indexed restricted-OSA fragment reference
+
+- Continued after candidate publication `9196cc53a3ab9c08ae0c26ec0ca304a52a19cbe2`.
+  Reused the Website fixture's existing semiglobal recurrence as prior art in a
+  separate Shared Node-only contract reference; did not import app runtime,
+  change Website/Android pins or invent normalization/linguistic rules.
+- Added candidate-filtered exact minimum fragment verification with three capped
+  query-length byte rows, code-point target iteration and zero-only early exit.
+  Results preserve token IDs and exact accepted edit quality, not character
+  spans, ranking or a representative-line tie choice. Shared candidate setup
+  avoids a second retained copy for exact verification.
+- Extracted the independent full-matrix/all-substring test oracle and binary
+  word generator for reuse, keeping it separate from indexed/row algorithms.
+  Added complete exact-result/edit equality over23,436 combinations, false-
+  positive rejection, later better fragments, restricted transposition evidence,
+  literal/supplementary Unicode, profile/mutation and256-position cases.
+- Focused candidate/exact checks passed11/11. Archived prior guide scope that
+  left every exact verifier future: the isolated Node reference now exists;
+  production span/witness projection, normalization/ranking, consumer adapters,
+  real-memory/cancellation and publication gates remain open.
+- Full `npm run check` passed generation and171/171 tests, zero failures,
+  cancellations/skips. Hygiene passed120 tracked files; working/staged Git
+  whitespace, generated/schema stability, strict YAML13 and actionlint1.7.12
+  with explicit ShellCheck0.11.0 passed. Full log:
+  `shared-exact-search-fragments-full-validation.log`. This does not establish
+  client adoption or a full production search/index/publication release.
+
 ## 2026-10-26: resuming indexed candidate validation
 
 - Owner resumed the paused work. Confirmed the candidate branch's retained work

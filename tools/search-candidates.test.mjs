@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { buildFlatSearchTables, createFlatSearchCandidates } from "./search-tables-reference.mjs";
+import { binaryWordsThrough, fragmentDistance } from "./search-test-oracle.mjs";
 
 const fixture = JSON.parse(await readFile(new URL("../fixtures/search-tables.json", import.meta.url), "utf8"));
 const profileId = fixture.input.profiles[0].id;
@@ -9,38 +10,6 @@ function tablesFor(words) {
   const input = structuredClone(fixture.input);
   input.occurrences = words.map(text => ({ ...input.occurrences[0], text }));
   return buildFlatSearchTables(input);
-}
-function wordsThrough(maximum) {
-  const result = [];
-  for (let length = 1; length <= maximum; length++) {
-    for (let bits = 0; bits < 2 ** length; bits++) {
-      result.push(Array.from({ length }, (_, bit) => bits & 2 ** bit ? "a" : "b").join(""));
-    }
-  }
-  return result;
-}
-function osa(query, target) {
-  const rows = Array.from({ length: query.length + 1 }, () => Array(target.length + 1).fill(0));
-  for (let i = 0; i <= query.length; i++) rows[i][0] = i;
-  for (let j = 0; j <= target.length; j++) rows[0][j] = j;
-  for (let i = 1; i <= query.length; i++) {
-    for (let j = 1; j <= target.length; j++) {
-      rows[i][j] = Math.min(rows[i - 1][j] + 1, rows[i][j - 1] + 1,
-        rows[i - 1][j - 1] + (query[i - 1] === target[j - 1] ? 0 : 1));
-      if (i > 1 && j > 1 && query[i - 1] === target[j - 2] && query[i - 2] === target[j - 1]) {
-        rows[i][j] = Math.min(rows[i][j], rows[i - 2][j - 2] + 1);
-      }
-    }
-  }
-  return rows[query.length][target.length];
-}
-function fragmentDistance(query, token) {
-  const q = [...query], t = [...token];
-  let best = q.length;
-  for (let start = 0; start < t.length; start++) {
-    for (let end = start + 1; end <= t.length; end++) best = Math.min(best, osa(q, t.slice(start, end)));
-  }
-  return best;
 }
 test("candidate reference applies counted overlap, exact fragments and deterministic token IDs", () => {
   const candidates = createFlatSearchCandidates(fixture.tables);
@@ -86,9 +55,9 @@ test("adjacent transpositions and supplementary code points are conservatively c
   }
 });
 test("every bounded exhaustive fragment-OSA match survives all positive counted-gram bounds", () => {
-  const tables = tablesFor(wordsThrough(6)), candidates = createFlatSearchCandidates(tables);
+  const tables = tablesFor(binaryWordsThrough(6)), candidates = createFlatSearchCandidates(tables);
   let comparisons = 0, matches = 0;
-  for (const text of wordsThrough(5)) {
+  for (const text of binaryWordsThrough(5)) {
     const distances = tables.tokens.map(token => fragmentDistance(text, token.text));
     for (const edits of [0, 1, 2]) {
       const ids = candidates({ profileId, text, edits }), actual = new Set(ids);

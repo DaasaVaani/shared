@@ -134,7 +134,10 @@ export function buildFlatSearchTables(input) {
 
 export function createFlatSearchCandidates(tables) {
   assertFlatSearchTables(tables);
-  const snapshot = structuredClone(tables);
+  return candidateLookup(structuredClone(tables));
+}
+
+function candidateLookup(snapshot) {
   const profiles = new Map(snapshot.profiles.map((profile, id) => [profile.id, id]));
   const grams = new Map(snapshot.grams.map(gram => [gram.text, gram]));
   const profileTokens = snapshot.profiles.map(() => []);
@@ -168,5 +171,44 @@ export function createFlatSearchCandidates(tables) {
       if (!candidates.size) return [];
     }
     return [...(candidates ?? profileTokens[profile])].sort((a, b) => a - b);
+  };
+}
+
+function boundedFragmentDistance(query, token, edits) {
+  const ceiling = edits + 1;
+  let previous = new Uint8Array(query.length + 1), earlier = new Uint8Array(query.length + 1),
+    current = new Uint8Array(query.length + 1), best = Math.min(query.length, ceiling), previousPoint;
+  for (let i = 0; i <= query.length; i++) previous[i] = Math.min(i, ceiling);
+  for (const point of token) {
+    current[0] = 0;
+    for (let i = 1; i <= query.length; i++) {
+      let cost = Math.min(ceiling, previous[i] + 1, current[i - 1] + 1,
+        previous[i - 1] + (query[i - 1] === point ? 0 : 1));
+      if (i > 1 && previousPoint !== undefined && query[i - 1] === previousPoint && query[i - 2] === point) {
+        cost = Math.min(cost, earlier[i - 2] + 1);
+      }
+      current[i] = cost;
+    }
+    best = Math.min(best, current[query.length]);
+    if (best === 0) return 0;
+    const reusable = earlier;
+    earlier = previous;
+    previous = current;
+    current = reusable;
+    previousPoint = point;
+  }
+  return best;
+}
+
+export function createFlatSearchMatches(tables) {
+  assertFlatSearchTables(tables);
+  const snapshot = structuredClone(tables), candidates = candidateLookup(snapshot);
+  return query => {
+    const ids = candidates(query), points = [...query.text], matches = [];
+    for (const token of ids) {
+      const edits = boundedFragmentDistance(points, snapshot.tokens[token].text, query.edits);
+      if (edits <= query.edits) matches.push({ token, edits });
+    }
+    return matches;
   };
 }
