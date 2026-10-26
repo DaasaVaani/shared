@@ -1,0 +1,21 @@
+{
+  "vocabulary": {
+    "id": "synthetic-technical-atoms",
+    "signature": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "atoms": ["a", "ab", "bc", "X~", "~x", "é", "😀"]
+  },
+  "checks": [
+    { "text": "abc", "status": "accepted" },
+    { "text": "aabca", "status": "accepted" },
+    { "text": "ab", "status": "accepted" },
+    { "text": "ac", "status": "no-complete-atom-sequence" },
+    { "text": "Ab", "status": "no-complete-atom-sequence" },
+    { "text": "X~a", "status": "accepted" },
+    { "text": "X", "status": "no-complete-atom-sequence" },
+    { "text": "~", "status": "no-complete-atom-sequence" },
+    { "text": "~xa", "status": "accepted" },
+    { "text": "é", "status": "accepted" },
+    { "text": "é", "status": "no-complete-atom-sequence" },
+    { "text": "😀😀", "status": "accepted" }
+  ]
+}

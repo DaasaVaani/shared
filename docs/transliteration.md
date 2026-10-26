@@ -75,7 +75,10 @@ nasals, avagraha, long vowels, ISO combining marks, technical case/punctuation
 and cluster-token ambiguities. ASCII schemes are not promised to be reversible.
 No independent permitted language fixtures, upstream version/parity assessment,
 approved native approximation/loss evidence, search
-aliases or technical search-token grammar exist here. Unsupported historical
+aliases or production technical-token vocabularies exist here. The separately
+selected [literal technical-token reference](technical-tokens.md) validates
+explicit vocabularies mechanically; it does not promote these provisional
+entries or define raw-query boundaries. Unsupported historical
 letters, nukta, jihvamuliya/upadhmaniya and join controls require a future reviewed
 global decision, not silent deletion. Linguistic review, permitted side-by-side
 samples and font/device coverage remain release gates.

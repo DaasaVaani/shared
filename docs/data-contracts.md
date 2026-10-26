@@ -72,6 +72,10 @@ implementation is authorized, not global production readiness.
   preserving all technical/token/allowance distinctions and applying the distinct
   term cap independently of item matches. Actual reviewed profile normalization,
   trusted complete inventories and enclosing query integration remain required.
+  The [literal technical-token prerequisite](technical-tokens.md) separately
+  implements any-complete-atom-sequence coverage of exact whole tokens, without
+  guessed parsing or marker/case rewriting. Actual reviewed vocabularies,
+  raw-query boundaries/classification and production adoption remain open.
   The [contiguous excerpt-window contract](search-excerpt-windows.md) fixes
   quality-first fitting focus, centered grapheme-boundary geometry, complete
   ellipsis accounting and explicit omitted/unavailable results over verified
@@ -208,6 +212,12 @@ distinctions, inactive contexts, all strict failures, complete input references,
 Run `node --test tools\search-term-equivalence.test.mjs tools\search-tables.test.mjs`
 incrementally. These are asserted signature results, not reviewed linguistic
 normalization, item-dependent deduplication or production query integration.
+The literal-vocabulary suite checks complete synthetic results, all32,258 bounded
+vocabulary/word combinations against independent whole-word generation, greedy
+failure/ambiguous coverage, exact scalar/case/marker handling, malformed inputs,
+independent capture and actual NFC/dedup/indexed-verification composition.
+Run `node --test tools\technical-tokens.test.mjs` incrementally. These are
+recognition mechanics, not approved vocabulary entries or source alignment.
 The full-backup suite additionally validates both complete current logical
 platform allowlists, collection/identity/byte boundaries, single-member gzip/
 fatal UTF8/duplicate JSON rejection and exact synthetic round trips using

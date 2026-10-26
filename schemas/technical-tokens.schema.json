@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/vocabulary",
+  "$defs": {
+    "vocabulary": {
+      "type": "object", "additionalProperties": false, "required": ["id", "signature", "atoms"],
+      "properties": {
+        "id": { "$ref": "search-tables#/$defs/profileId" },
+        "signature": { "$ref": "search-tables#/$defs/hash" },
+        "atoms": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "search-tables#/$defs/text" } }
+      }
+    },
+    "result": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "formatVersion", "profile", "text", "status"],
+      "properties": {
+        "format": { "const": "daasavaani-technical-token-check" },
+        "formatVersion": { "const": 1 },
+        "profile": { "$ref": "search-tables#/$defs/profiles/items" },
+        "text": { "$ref": "search-tables#/$defs/text" },
+        "status": { "enum": ["accepted", "no-complete-atom-sequence"] }
+      }
+    }
+  }
+}

@@ -208,6 +208,12 @@ reviewed Kannada consonant, search-only. Common/compact ASCII alias branches fol
 A-Z only; technical branches preserve case. Display/source text stays unchanged.
 Exclude terminal verse labels/numbers only through explicit reviewed ranges on
 declared ending lines; no annotation means no inferred exclusion.
+Technical recognition uses [reviewed literal vocabularies](technical-tokens.md)
+per profile, accepting a whole unchanged token if any complete atom sequence
+covers it. Neither a unique phonetic parse nor greedy longest-prefix recognition
+is required. The isolated trie/reachability reference has synthetic vectors only;
+actual vocabulary entries, raw boundaries/classification and unsupported-input
+integration remain unapproved/unimplemented, not inferred from provisional tables.
 
 Deduplicate query terms only if complete normalization/tokenization/edit-allowance
 signatures agree across every declared matching profile/context, independent of

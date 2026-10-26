@@ -43,6 +43,9 @@ reinterpretation happens here. Structural acceptance is not reviewed token
 grammar or permission to substitute unapproved strings for a missing normalizer.
 The separate [NFC provenance stage](normalization-provenance.md) is not the
 complete profile normalizer.
+The [technical vocabulary checker](technical-tokens.md) can validate a declared
+whole technical literal without changing it. Its synthetic mechanics supply
+neither actual reviewed atom entries nor raw-query boundary discovery.
 
 Callers must validate the complete inventory, rule bytes and policy identity
 against the compatible index before grouping, including contexts absent from

@@ -1,5 +1,38 @@
 # Documentation history
 
+## 2026-10-26: selected literal technical-token recognition
+
+- Owner selected reviewed literal-atom vocabularies per profile over structural
+  marker grammar or deferral, then any-complete-sequence acceptance of the
+  unchanged whole token over unique-only or greedy longest-prefix parsing.
+  These choices approve mechanics, not provisional spellings or phonetic/source
+  alignment. Actual production vocabulary entries remain unreviewed.
+- Added strict vocabulary/result schema/types, synthetic portable vectors and a
+  captured scalar-trie/forward-reachability Node reference. It preserves all
+  literal case/markers, allows ambiguity without exposing a guessed parse,
+  reports explicit unsupported complete coverage and throws on malformed input.
+  Reused the existing shared literal-token guard; no dependency or default added.
+- Archived replaced limitation: the transliteration guide said technical search
+  grammar was wholly absent. Only separately selected mechanical recognition
+  now has tooling; the existing provisional mappings are not promoted to approved
+  atom settings, raw-query classification or production matching profiles.
+- Focused `node --test tools\technical-tokens.test.mjs` passed7/7. All32,258
+  bounded vocabulary/word pairs and atom permutations matched independent
+  whole-word generation. Complete golden results, greedy counterexample,
+  ambiguous coverage, preserved case/markers/canonical forms, supplementary and
+  large positions, strict failures, independent capture and actual
+  NFC/acceptance/complete-profile-dedup/indexed-verification composition passed.
+- A documentation patch applied its new guide and first two updates before
+  an unmatched checklist context. Retried only the unapplied hunks successfully.
+- Final `npm run check` passed generation and240/240 registered tests with zero
+  failed, cancelled or skipped. Full log:
+  `shared-technical-token-vocabulary-full-validation.log`.
+  `python tools\check_repository.py` passed180 tracked paths; strict YAML15,
+  actionlint1.7.12 with explicit ShellCheck0.11.0, working/staged whitespace and
+  generated/schema stability passed. Only existing LF/CRLF warnings occurred.
+  No actual production atom setting, dependency/toolchain, consumer pin/source,
+  main merge, publication activation or deployment changed.
+
 ## 2026-10-26: complete-profile query-term equivalence prerequisite
 
 - Implemented the already-approved SEARCH-02/03 rule over explicit complete

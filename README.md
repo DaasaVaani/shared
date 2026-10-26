@@ -30,6 +30,12 @@ preserving technical distinctions independently of item matches. It keeps every
 input reference and enforces the distinct-term cap without inventing normalizers,
 reviewed aliases or packaged query integration.
 
+The [literal technical-token prerequisite](docs/technical-tokens.md) validates
+whole tokens against explicit profile vocabularies using any complete atom
+sequence, preserving case/markers without a guessed phonetic parse. Only
+synthetic vocabularies are supplied; actual entries, query boundaries and
+production integration remain review gates.
+
 The [contiguous excerpt-window contract](docs/search-excerpt-windows.md) chooses
 best-fitting edits/leftmost/shortest focus over explicit verified display ranges
 and grapheme boundaries. Its single-window geometry counts ellipses inside the
