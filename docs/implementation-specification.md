@@ -249,8 +249,11 @@ changing ranking. Its isolated selector preserves all chosen anchors and reports
 visible-cap omissions. The [contiguous excerpt-window selector](search-excerpt-windows.md)
 then chooses best-fitting edits/leftmost/shortest focus over verified display
 ranges and grapheme boundaries, counting edge ellipses within the code-point cap
-and preserving omitted matches. Actual projection, portable grapheme segmentation,
-text rendering/highlighting and client error/navigation handling remain open.
+and preserving omitted matches. The separately approved
+[Unicode16 default extended-grapheme profile](graphemes.md) supplies official
+hash-pinned data and a conformant tooling reference, not host segmentation.
+Actual projection, packaged profile/client adoption, text rendering/highlighting
+and client error/navigation handling remain open.
 
 Unprepared PWA requires explicit Load search with size before missing/new index
 transfer; Search entry/typing is not consent. Reuse matching verified cache.

@@ -1,5 +1,38 @@
 # Documentation history
 
+## 2026-10-26: independently approved Unicode16 grapheme boundaries
+
+- Owner approved separate `unicode16-extended-graphemes-v1` default extended
+  segmentation under UAX #29 revision45. This does not silently extend the
+  existing personal-name profile, approve source/language mappings or adopt
+  any consumer pin. The official stable revision was verified at Unicode.org.
+- Vendored four original Unicode16 property/conformance sources with exact
+  owning SHA256/URL settings and the existing preserved Unicode License V3.
+  Retained two original trailing comment spaces in `emoji-data.txt` with
+  exact-file hygiene/attribute exceptions; full byte-hash checking still applies.
+- Added strict data/settings types/schemas, deterministic offline generation,
+  manifest and scalar/code-point Node reference using GCB/Hangul, Indic GB9c,
+  pictographic GB11 and RI parity context. The generated data is40,352 bytes:
+  1,376 coalesced GCB,78 pictographic and403 InCB ranges. This is encoded
+  resource size, not app retained/peak-memory evidence.
+- Focused `node --test tools\graphemes.test.mjs` passed9/9, including all1,093
+  official conformance rows, independent original assignments over all1,114,112
+  code points, all2,048 unpaired-surrogate units, source/license/data identities
+  and actual grapheme-to-window composition with literal emoji/decomposed text.
+- Archived replaced limitation: actual portable segmentation had remained open
+  in the window/line guides. Only the independently versioned tooling profile
+  now supplies it; real source projection, compatible packaging/adapters,
+  platform fonts, rendering/navigation and release evidence remain open.
+- One documentation batch partially applied its new guide before an unmatched
+  update context. Retried only the unapplied updates; no duplicate guide was added.
+- Final `npm run check` passed all generation and217/217 tests with zero failed,
+  cancelled or skipped. Full log: `shared-unicode16-graphemes-full-validation.log`.
+  `python tools\check_repository.py` passed158 tracked paths; strict YAML14,
+  actionlint1.7.12 with explicit ShellCheck0.11.0, working/staged whitespace,
+  repeated grapheme generation and generated/schema stability passed.
+  Only existing Windows LF/CRLF warnings occurred. No dependencies/toolchains,
+  actual owner-source variants, client runtime, main merge or deployment changed.
+
 ## 2026-10-26: approved contiguous excerpt-window geometry
 
 - Owner selected one contiguous match-centered excerpt over multiple same-line

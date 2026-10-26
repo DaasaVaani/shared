@@ -23,6 +23,11 @@ implementation is authorized, not global production readiness.
   owns full default fold/NFC tables, algorithm and cross-platform vectors.
   Consumer key-profile migration and actual adapter conformance remain required;
   host normalization or older Website keys are not substitutes.
+- The separately approved [Unicode16 default extended-grapheme profile](graphemes.md)
+  supplies pinned official GCB/emoji/InCB data, strict portable tables and a
+  complete upstream-conformant Node reference for preview boundary production.
+  It neither changes personal-name matching nor approves linguistic mappings,
+  font shaping or packaged consumer adapters.
 - Language: Kannada canonical, five Latin/nine non-Latin outputs, reviewed digit/
   approximation/alias/Unicode/technical-marker tables. Global corrections only.
   The [provisional multi-script prerequisite](transliteration.md) has

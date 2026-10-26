@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["formatVersion", "profile", "unicodeVersion", "algorithm", "license", "sources"],
+  "properties": {
+    "formatVersion": { "const": 1 },
+    "profile": { "const": "unicode16-extended-graphemes-v1" },
+    "unicodeVersion": { "const": "16.0.0" },
+    "algorithm": { "const": "uax29-45-extended" },
+    "license": {
+      "type": "object", "additionalProperties": false, "required": ["path", "url", "sha256"],
+      "properties": {
+        "path": { "const": "resources/unicode16/LICENSE.txt" },
+        "url": { "const": "https://www.unicode.org/license.txt" },
+        "sha256": { "$ref": "#/$defs/hash" }
+      }
+    },
+    "sources": {
+      "type": "object", "additionalProperties": false,
+      "required": ["GraphemeBreakProperty.txt", "emoji-data.txt", "DerivedCoreProperties.txt", "GraphemeBreakTest.txt"],
+      "properties": {
+        "GraphemeBreakProperty.txt": { "$ref": "#/$defs/source" },
+        "emoji-data.txt": { "$ref": "#/$defs/source" },
+        "DerivedCoreProperties.txt": { "$ref": "#/$defs/source" },
+        "GraphemeBreakTest.txt": { "$ref": "#/$defs/source" }
+      }
+    }
+  },
+  "$defs": {
+    "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "source": {
+      "type": "object", "additionalProperties": false, "required": ["url", "sha256"],
+      "properties": { "url": { "type": "string" }, "sha256": { "$ref": "#/$defs/hash" } }
+    }
+  }
+}

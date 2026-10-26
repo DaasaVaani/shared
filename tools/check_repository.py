@@ -33,7 +33,8 @@ def main():
         if text and not text.endswith("\n"):
             errors.append(f"{name}: missing final newline")
         for number, line in enumerate(text.splitlines(), 1):
-            if line.rstrip() != line:
+            # Preserve the two upstream comment spaces in hash-verified emoji data.
+            if line.rstrip() != line and name != "resources/graphemes16/emoji-data.txt":
                 errors.append(f"{name}:{number}: trailing whitespace")
         if path.suffix == ".md":
             for target in re.findall(r"\[[^\]]*\]\(([^)\s]+)\)", text):

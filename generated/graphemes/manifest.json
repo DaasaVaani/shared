@@ -1,0 +1,21 @@
+{
+  "formatVersion": 1,
+  "profile": "unicode16-extended-graphemes-v1",
+  "unicodeVersion": "16.0.0",
+  "algorithm": "uax29-45-extended",
+  "data": {
+    "path": "unicode16.json",
+    "bytes": 40352,
+    "sha256": "bfcff154102829cb7306be99dfa45c0a6bc6f5d7acb93f9f83fab89cff82f2e7"
+  },
+  "conformance": {
+    "path": "resources/graphemes16/GraphemeBreakTest.txt",
+    "bytes": 171927,
+    "sha256": "ee2b9354d270ac061b29f09662cafea06341d77e704b8cc6bd72aaeeda363cb5"
+  },
+  "license": {
+    "path": "resources/unicode16/LICENSE.txt",
+    "url": "https://www.unicode.org/license.txt",
+    "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+  }
+}

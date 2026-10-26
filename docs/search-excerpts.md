@@ -79,7 +79,8 @@ No lyric text is returned or changed. Grapheme-safe clipping to the configured
 [contiguous window-coordinate contract](search-excerpt-windows.md) over verified
 display ranges/boundaries, with best-fitting edit quality then leftmost/shortest
 focus and explicit omissions/unavailability. Actual selected-script projection,
-reviewed grapheme segmentation, highlighting, caption/error handling and
+consumer adoption of the separate [Unicode16 grapheme profile](graphemes.md),
+highlighting, caption/error handling and
 layout-aware rendering remain separate gates. Neither structural helper is a
 complete preview feature.
 

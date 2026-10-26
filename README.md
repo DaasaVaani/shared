@@ -30,6 +30,12 @@ and grapheme boundaries. Its single-window geometry counts ellipses inside the
 code-point budget and preserves every omitted anchor; it does not infer mappings,
 segment real graphemes or implement consumer rendering/navigation.
 
+The independently approved [Unicode16 extended-grapheme profile](docs/graphemes.md)
+now supplies actual default UAX #29 boundaries using hash-pinned official
+GCB/emoji/InCB data and the complete upstream corpus. It composes with the
+window reference without host Unicode drift. Personal-name matching stays
+unchanged; linguistic source projection and packaged client adoption remain open.
+
 The [staged canonical snapshot envelope](docs/snapshot-publication.md) defines
 strict public descriptor/sequence, manifest object/date/bundle maps and exact
 transfer-policy binding for the existing canonical text-only projection.
