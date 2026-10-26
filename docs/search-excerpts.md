@@ -75,9 +75,13 @@ selection and caller's original match evidence remain intact; the helper does
 not truncate the underlying index, query matches or item anchors.
 
 No lyric text is returned or changed. Grapheme-safe clipping to the configured
-240-code-point limit, selected-script projection/highlighting, truthful
-preview-unavailable/Open match behavior and layout-aware rendering remain
-separate gates. This helper must not be presented as a complete preview feature.
+240-code-point limit now has a separate
+[contiguous window-coordinate contract](search-excerpt-windows.md) over verified
+display ranges/boundaries, with best-fitting edit quality then leftmost/shortest
+focus and explicit omissions/unavailability. Actual selected-script projection,
+reviewed grapheme segmentation, highlighting, caption/error handling and
+layout-aware rendering remain separate gates. Neither structural helper is a
+complete preview feature.
 
 ## Validation and complexity
 

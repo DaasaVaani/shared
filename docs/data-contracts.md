@@ -57,6 +57,10 @@ implementation is authorized, not global production readiness.
   complete AND admission, best-weight per-term edit quality, duplicate-invariant
   scores and metadata/score/worst/total/ASCII ordering. It does not supply
   reviewed term equivalence, actual evidence, previews or client integration.
+  The [contiguous excerpt-window contract](search-excerpt-windows.md) fixes
+  quality-first fitting focus, centered grapheme-boundary geometry, complete
+  ellipsis accounting and explicit omitted/unavailable results over verified
+  display evidence; it does not obtain projections or segment/render real text.
 - Publication/offline: durable state/receipts/sequence, deterministic ZIP planner,
   host/resource bounds, current-only remote, complete atomic activation, safe
   pins/fences/GC, resume/degradation/repair and explicit manual refresh.

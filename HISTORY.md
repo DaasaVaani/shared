@@ -1,5 +1,35 @@
 # Documentation history
 
+## 2026-10-26: approved contiguous excerpt-window geometry
+
+- Owner selected one contiguous match-centered excerpt over multiple same-line
+  fragments, then best fitting edits/leftmost/shortest focus over earliest-only
+  or maximum-distinct-term coverage. Skip unrepresentable anchors, preserve all
+  omissions and show explicit unavailable/Open match if none fits.
+- Added independent strict coordinate-only types/schema, Node reference and
+  synthetic golden vector. Inputs explicitly assert exact selected-script
+  projected ranges and grapheme boundaries; no identity/UTF-16/host segmentation
+  fallback, source text normalization or inferred linguistic mapping exists.
+- Full lines that fit stay whole; other windows maximize complete rendered
+  budget then balance context/earliest start, counting each U+2026 edge marker.
+  Discontinuous source ranges retain their identities; their gap is not a
+  fabricated match. Invalid input throws; valid unrepresentability is distinct.
+- Archived replaced limitation: the line guide left all240-point clipping future.
+  Only explicit-boundary geometry now has a portable reference; true projection,
+  segmentation, selected-script rendering/highlighting/navigation and consumer
+  adapters remain open. No capability, real source/feed/state or app pin changed.
+- Focused `node --test tools\search-excerpt-windows.test.mjs` passed13/13
+  before the added actual ranking/line/window composition case. Final
+  `npm run check` passed all generation and208/208 tests, zero failed, cancelled
+  or skipped. This includes16,911 independent exhaustive all-window comparisons
+  and1,000 multi-match/discontinuous/permuted cases plus real literal
+  supplementary/decomposed-text code-point rendering checks.
+  Log: `shared-search-excerpt-windows-full-validation.log`.
+- `python tools\check_repository.py` passed143 tracked paths. Strict YAML13,
+  actionlint1.7.12 with explicit ShellCheck0.11.0, working/staged whitespace and
+  generated/schema stability passed. Only existing Windows LF/CRLF warnings
+  occurred. No dependencies, toolchains, actual source variants or app changes.
+
 ## 2026-10-26: explicit verified-evidence AND ranking
 
 - Continued the already-approved SEARCH-02/03 ranking prerequisite after

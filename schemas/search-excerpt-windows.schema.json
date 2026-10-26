@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/input",
+  "$defs": {
+    "integer": { "$ref": "search-excerpts#/$defs/integer" },
+    "count": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+    "edits": { "$ref": "search-excerpts#/$defs/edits" },
+    "indices": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/integer" } },
+    "policy": {
+      "type": "object", "additionalProperties": false, "required": ["maxTerms", "maxExcerptCodePoints"],
+      "properties": {
+        "maxTerms": { "$ref": "search-policy#/properties/maxTerms" },
+        "maxExcerptCodePoints": { "$ref": "search-policy#/properties/maxExcerptCodePoints" }
+      }
+    },
+    "input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["termCount", "codePointLength", "graphemeBoundaries", "matches"],
+      "properties": {
+        "termCount": { "$ref": "#/$defs/count" }, "codePointLength": { "$ref": "#/$defs/count" },
+        "graphemeBoundaries": { "type": "array", "minItems": 2, "items": { "$ref": "#/$defs/integer" } },
+        "matches": {
+          "type": "array", "minItems": 1, "items": {
+            "type": "object", "additionalProperties": false, "required": ["term", "edits", "ranges"],
+            "properties": {
+              "term": { "$ref": "#/$defs/integer" }, "edits": { "$ref": "#/$defs/edits" },
+              "ranges": {
+                "type": "array", "minItems": 1, "items": {
+                  "type": "array", "minItems": 2, "maxItems": 2,
+                  "prefixItems": [{ "$ref": "#/$defs/integer" }, { "$ref": "#/$defs/count" }]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "focus": {
+      "type": "object", "additionalProperties": false, "required": ["start", "end", "edits"],
+      "properties": {
+        "start": { "$ref": "#/$defs/integer" }, "end": { "$ref": "#/$defs/count" }, "edits": { "$ref": "#/$defs/edits" }
+      }
+    },
+    "ready": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "formatVersion", "status", "start", "end", "leadingEllipsis", "trailingEllipsis", "renderedCodePoints", "focus", "visibleMatchIndices", "omittedMatchIndices"],
+      "properties": {
+        "format": { "const": "daasavaani-search-excerpt-window" }, "formatVersion": { "const": 1 },
+        "status": { "const": "ready" },
+        "start": { "$ref": "#/$defs/integer" }, "end": { "$ref": "#/$defs/count" },
+        "leadingEllipsis": { "type": "boolean" }, "trailingEllipsis": { "type": "boolean" },
+        "renderedCodePoints": { "$ref": "#/$defs/count" }, "focus": { "$ref": "#/$defs/focus" },
+        "visibleMatchIndices": { "$ref": "#/$defs/indices" }, "omittedMatchIndices": { "$ref": "#/$defs/indices" }
+      }
+    },
+    "unavailable": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "formatVersion", "status", "reason", "visibleMatchIndices", "omittedMatchIndices"],
+      "properties": {
+        "format": { "const": "daasavaani-search-excerpt-window" }, "formatVersion": { "const": 1 },
+        "status": { "const": "unavailable" }, "reason": { "const": "no-safe-match-window" },
+        "visibleMatchIndices": { "type": "array", "maxItems": 0 },
+        "omittedMatchIndices": { "$ref": "#/$defs/indices" }
+      }
+    },
+    "window": { "oneOf": [{ "$ref": "#/$defs/ready" }, { "$ref": "#/$defs/unavailable" }] }
+  }
+}
