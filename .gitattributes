@@ -10,3 +10,9 @@ resources/graphemes16/* text eol=lf
 resources/graphemes16/emoji-data.txt whitespace=-blank-at-eol
 generated/graphemes/* text eol=lf
 settings/graphemes.yml text eol=lf
+# Preserve exact licensed reference snapshots, including upstream whitespace.
+resources/latin-reference-audit/* text eol=lf
+resources/latin-reference-audit/baraha.toml whitespace=-blank-at-eol
+resources/latin-reference-audit/iso.toml whitespace=-blank-at-eol
+resources/latin-reference-audit/ITRANS-DEFAULT.tsv -text whitespace=-blank-at-eol
+resources/latin-reference-audit/kannada.toml whitespace=-blank-at-eof

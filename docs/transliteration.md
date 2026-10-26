@@ -73,8 +73,11 @@ Before promotion, the owner must review every positional table and synthetic
 expectation, especially Baraha/ITRANS/HK Kannada extensions, rare vocalic vowels,
 nasals, avagraha, long vowels, ISO combining marks, technical case/punctuation
 and cluster-token ambiguities. ASCII schemes are not promised to be reversible.
-No independent permitted language fixtures, upstream version/parity assessment,
-approved native approximation/loss evidence, search
+The [Latin reference audit](latin-reference-audit.md) supplies pinned independent
+character-table comparisons and derived vowel-sign cases for all five Latin
+directions, exposing unresolved reference disagreements rather than approving
+these provisional rules. Independent attested/permitted language fixtures,
+complete upstream parity, approved native approximation/loss evidence, search
 aliases or production technical-token vocabularies exist here. The separately
 selected [literal technical-token reference](technical-tokens.md) validates
 explicit vocabularies mechanically; it does not promote these provisional

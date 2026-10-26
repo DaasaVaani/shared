@@ -36,6 +36,10 @@ sequence, preserving case/markers without a guessed phonetic parse. Owned
 settings contain exactly54 approved ITRANS search atoms. Other inventories,
 independent linguistic evidence, full profile rules, query boundaries and
 production integration remain gates; provisional transliteration is not promoted.
+The [Latin reference audit](docs/latin-reference-audit.md) pins licensed independent
+sources and checks270 basic cells plus2,720 derived vowel-sign contexts. It records
+primary/secondary disagreements explicitly; passing an audit is not a claim
+that discrepant profiles conform or their pending inventories are approved.
 
 The [contiguous excerpt-window contract](docs/search-excerpt-windows.md) chooses
 best-fitting edits/leftmost/shortest focus over explicit verified display ranges

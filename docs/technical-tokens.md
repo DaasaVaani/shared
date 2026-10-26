@@ -14,6 +14,9 @@ mechanical validation prerequisite. The
 [owned atom inventory](../settings/technical-token-vocabularies.yml) supplies
 the54 explicitly approved ITRANS search atoms only, not complete production
 matching profiles or approved transliteration rules.
+The [reference audit](latin-reference-audit.md) independently checks five Latin
+directions and identifies unresolved primary/secondary convention disagreements.
+Its passing discrepancy checks are not linguistic approval.
 
 ## Vocabulary and trust boundary
 

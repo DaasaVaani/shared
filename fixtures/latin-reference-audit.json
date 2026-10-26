@@ -1,0 +1,46 @@
+{
+  "formatVersion": 1,
+  "commonMapsRevision": "714af472cbe091982be71120e502d049c86a63f8",
+  "itransRevision": "7a0e282e8b6a0b53f46311a010e5bf3ae0063c3e",
+  "primaryBaraha": {
+    "url": "https://baraha.com/help/Keyboards/kan-phonetic.htm",
+    "differences": [
+      { "input": "ಋ", "actual": "Ru", "reference": "~ru" },
+      { "input": "ೠ", "actual": "RU", "reference": "~rU" },
+      { "input": "ಽ", "actual": "'", "reference": "@av" }
+    ]
+  },
+  "sources": [
+    { "file": "baraha.toml", "bytes": 1904, "sha256": "49ee29af1be8a8dfe4127d938cac821ae3b68ba2b5a695672bf78c74ce210ad6" },
+    { "file": "COMMON-MAPS-LICENSE.txt", "bytes": 1106, "sha256": "c4765e8fcd16018d6ef1fa0ea28ec80b060db5b462b2d83f65e0a5aa0888a07a" },
+    { "file": "hk_dravidian.toml", "bytes": 1093, "sha256": "0995362381a1e51de434d8fd1cf790a2abf43bd5333b8f0152519fa26f87a91c" },
+    { "file": "hk.toml", "bytes": 1095, "sha256": "bd73f81ae6fe7c43bc94584352e9b548d69b768ad664f943a10c58374b02bb57" },
+    { "file": "iast.toml", "bytes": 2317, "sha256": "54aba0088528e6101a1b42c2893fc154c7849ca4abf5bdc984389da7f5ab8cbb" },
+    { "file": "iso.toml", "bytes": 3319, "sha256": "c1e2b9e323fc5ca651ec9aef56145051f670ccabc3a19e965f6b782b819a07b1" },
+    { "file": "itrans_dravidian.toml", "bytes": 1689, "sha256": "2f7b42e8844cecf576d75e7048931751a0954986d2bb6ec4b6d84d94293c0c57" },
+    { "file": "ITRANS-DEFAULT.tsv", "bytes": 21053, "sha256": "e1ad83552fd883225501d25dbc62437ec4729e80568fcf8164fb8079db124c04" },
+    { "file": "ITRANS-LICENSE.txt", "bytes": 1073, "sha256": "bf4b3b7b3721dd10ae38facc870b6951b52f2b9ae5f4cc2a4573457c4878d03a" },
+    { "file": "itrans.toml", "bytes": 1678, "sha256": "4b55e6ed3eb59598f309bcafbc575794c74b9d21a88faac93b19140305bda064" },
+    { "file": "kannada.toml", "bytes": 1632, "sha256": "2a8d2e3e788fb719cd03dda4fe5ba9833f5240b204a7b650666132efe787c5a5" }
+  ],
+  "comparisons": [
+    { "profile": "itrans-kn", "source": "itrans_dravidian.toml", "differences": [] },
+    { "profile": "baraha-kn", "source": "baraha.toml", "differences": [
+      { "input": "ಽ", "actual": "'", "reference": "&" }
+    ] },
+    { "profile": "harvard-kyoto-kn", "source": "hk_dravidian.toml", "differences": [
+      { "input": "ಁ", "actual": "~M", "reference": "~" }
+    ] },
+    { "profile": "iso15919", "source": "iso.toml", "differences": [] },
+    { "profile": "iast-kn", "source": "iast.toml", "differences": [
+      { "input": "ಌ", "actual": "l̥", "reference": "ḷ" },
+      { "input": "ೡ", "actual": "l̥̄", "reference": "ḹ" },
+      { "input": "ಎ", "actual": "e", "reference": "è" },
+      { "input": "ಏ", "actual": "ē", "reference": "e" },
+      { "input": "ಒ", "actual": "o", "reference": "ò" },
+      { "input": "ಓ", "actual": "ō", "reference": "o" },
+      { "input": "ಳ್", "actual": "ḷ", "reference": "ḻ" },
+      { "input": "ಁ", "actual": "m̐", "reference": "~" }
+    ] }
+  ]
+}

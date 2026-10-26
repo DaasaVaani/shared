@@ -1,5 +1,55 @@
 # Documentation history
 
+## 2026-10-26: reference-backed Latin inventory audit
+
+- Owner approved the recommended workflow: verify identifiable references,
+  add independently justified cases and bring only discrepancies/project-specific
+  choices back one at a time. Existing ITRANS/Baraha/Harvard-Kyoto approvals remain
+  limited literal-recognition decisions; ISO/IAST were not approved.
+- Baraha and Harvard-Kyoto had each received exact54-atom approval during the
+  preceding interview, pending a batched settings update. No inventory/mapping
+  was silently changed after the new reference discrepancies appeared.
+- Pinned original MIT-licensed common_maps sources at714af472 and the author's
+  ITRANS table at7a0e282, with both notices and all11 exact byte hashes/lengths.
+  Preserved original whitespace through three exact-file exceptions, following
+  existing Unicode-source practice. No new dependency/toolchain or runtime fetch.
+- ISO's public catalogue confirms Kannada coverage, but no complete normative
+  table/options were obtained. Primary Baraha HTML includes avagraha `@av` in
+  an Others row omitted by simplified extraction; raw HTML was checked. The
+  primary page differs from both provisional tables and secondary maps, so
+  source precedence is unresolved rather than hidden behind a software parity claim.
+- Archived replaced limitation: provisional transliteration documentation had
+  no independent reference comparisons. The new audit provides basic character
+  and derived sign evidence, not attested lyric truth, full linguistic approval,
+  native-script conformance, licensed normative ISO text or production readiness.
+- Focused `node --test tools\latin-reference-audit.test.mjs` initially passed10/10
+  before adding explicit transcribed Baraha and primary lateral/candrabindu checks.
+  All270 basic cells exposed10 disagreements with selected secondary variants;
+  2,720 derived sign contexts exposed214 IAST differences from six vowel and
+  one lateral choice. Known mismatches are asserted as unresolved evidence, not
+  counted as successful profile conformance.
+- External discovery used official Baraha/ISO/ITRANS pages and immutable public
+  repositories. Two guessed historical ITRANS manual URLs returned404 and were
+  not used as evidence; current author-linked repository/table supplied the
+  available primary implementation evidence. No private source/payload was sent.
+- First full `npm run check` passed253/253, but tracked hygiene correctly blocked
+  on the original ITRANS TSV's missing final newline. Git also exposed its CRLF
+  conversion risk. Kept original bytes: a single-file `-text` attribute and
+  exact missing-newline exception now accompany its original whitespace exception;
+  added a framing/attribute regression rather than rewriting the upstream source.
+- Staged-byte checks then passed all11 identities; Git whitespace exposed the
+  Kannada map's original final blank line. Preserved that hash-verified line with
+  a single-file `blank-at-eof` attribute exception and a regression assertion.
+- Final `npm run check` passed generation/owned-settings validation and254/254
+  registered tests, zero failed, cancelled or skipped. Full log:
+  `shared-latin-reference-audit-full-validation.log`.
+  `python tools\check_repository.py` passed196 tracked paths; strict YAML16,
+  actionlint1.7.12 with explicit ShellCheck0.11.0, working/staged whitespace,
+  generated/schema stability and all11 staged original byte identities passed.
+  Existing generated-file LF/CRLF warnings were unchanged.
+  No actual atom inventory, provisional conversion rule, dependency/toolchain,
+  consumer pin/runtime, source lyric, main merge, publication state or deployment changed.
+
 ## 2026-10-26: exact ITRANS literal-search atom approval
 
 - Owner explicitly approved the presented54 ITRANS Kannada atoms for technical

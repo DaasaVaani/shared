@@ -217,6 +217,10 @@ vectors and owned settings for54 explicitly approved ITRANS search atoms.
 Other inventories, independent linguistic expectations, complete profile rules,
 raw boundaries/classification and unsupported-input integration remain gates,
 not inferred from provisional tables.
+The [reference audit](latin-reference-audit.md) supplies independent pinned
+character/sign comparisons and documents primary/secondary disagreements for
+explicit resolution. Neither reference agreement nor passing mismatch-preservation
+tests approves a profile or certifies ISO/IAST/keyboard-standard compliance.
 
 Deduplicate query terms only if complete normalization/tokenization/edit-allowance
 signatures agree across every declared matching profile/context, independent of

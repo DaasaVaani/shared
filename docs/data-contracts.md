@@ -40,6 +40,10 @@ implementation is authorized, not global production readiness.
   synthetic tests; nine native directions now have bounded mappings with declared
   approximation diagnostics and21 explicitly unsupported Tamil/Gurmukhi cells. This is
   not approved linguistic evidence or complete multi-script conformance.
+  The [Latin reference audit](latin-reference-audit.md) separately checks270
+  independent basic cells and2,720 derived sign contexts against pinned licensed
+  external maps, preserving explicit primary/secondary disagreements. Discrepancy
+  tests are not successful conformance or pending-inventory approval.
 - Public artifacts: canonical JSON, encoded SHA256, capability/version semantics,
   descriptor/manifest/object maps, shared line/profile layout, exact sizes and
   policy binding. Producers strict, compatible optional-field consumers.
@@ -225,6 +229,13 @@ The build separately validates `settings/technical-token-vocabularies.yml` with
 the54 approved ITRANS search atoms, every atom, marker/case refusal, strict
 inventory/identity failures and independent loads. No complete production
 matching signature or linguistic/source-conversion proof is manufactured.
+The offline reference audit additionally verifies11 original source/license
+byte identities, all five54-cell comparisons, derived consonant/sign contexts,
+generic-versus-Dravidian variants, primary ITRANS code/output distinctions and
+transcribed primary Baraha discrepancies. Run
+`node --test tools\latin-reference-audit.test.mjs` incrementally. Known mismatches
+are asserted as unresolved evidence, not silently replaced expectations or
+linguistic passes. The linked live Baraha/ISO pages are not revalidated offline.
 The full-backup suite additionally validates both complete current logical
 platform allowlists, collection/identity/byte boundaries, single-member gzip/
 fatal UTF8/duplicate JSON rejection and exact synthetic round trips using

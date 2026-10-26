@@ -30,11 +30,16 @@ def main():
         except UnicodeError:
             errors.append(f"{name}: expected UTF-8 bootstrap text")
             continue
-        if text and not text.endswith("\n"):
+        if text and not text.endswith("\n") and name != "resources/latin-reference-audit/ITRANS-DEFAULT.tsv":
             errors.append(f"{name}: missing final newline")
         for number, line in enumerate(text.splitlines(), 1):
-            # Preserve the two upstream comment spaces in hash-verified emoji data.
-            if line.rstrip() != line and name != "resources/graphemes16/emoji-data.txt":
+            # Preserve original whitespace in exact, hash-verified upstream sources.
+            if line.rstrip() != line and name not in (
+                "resources/graphemes16/emoji-data.txt",
+                "resources/latin-reference-audit/baraha.toml",
+                "resources/latin-reference-audit/iso.toml",
+                "resources/latin-reference-audit/ITRANS-DEFAULT.tsv",
+            ):
                 errors.append(f"{name}:{number}: trailing whitespace")
         if path.suffix == ".md":
             for target in re.findall(r"\[[^\]]*\]\(([^)\s]+)\)", text):
