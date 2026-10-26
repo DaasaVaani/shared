@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/provenance",
+  "$defs": {
+    "integer": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+    "range": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "prefixItems": [{ "$ref": "#/$defs/integer" }, { "$ref": "#/$defs/integer" }]
+    },
+    "settings": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formatVersion", "profile", "unicodeVersion", "operation", "mapping", "resource", "manifest"],
+      "properties": {
+        "formatVersion": { "const": 1 }, "profile": { "const": "unicode16-nfc-provenance-v1" },
+        "unicodeVersion": { "const": "16.0.0" }, "operation": { "const": "NFC" },
+        "mapping": { "const": "per-codepoint-source-ranges" },
+        "resource": { "const": "generated/unicode/unicode16.json" },
+        "manifest": { "const": "generated/unicode/manifest.json" }
+      }
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "formatVersion", "profile", "normalizationDataSha256", "sourceCodePoints", "normalizedText", "origins"],
+      "properties": {
+        "format": { "const": "daasavaani-normalization-provenance" }, "formatVersion": { "const": 1 },
+        "profile": { "$ref": "#/$defs/settings/properties/profile" },
+        "normalizationDataSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "sourceCodePoints": { "$ref": "#/$defs/integer" }, "normalizedText": { "type": "string" },
+        "origins": {
+          "type": "array", "items": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/range" } }
+        }
+      }
+    }
+  }
+}

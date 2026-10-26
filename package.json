@@ -6,7 +6,7 @@
   "engines": { "node": ">=22.12.0" },
   "scripts": {
     "build": "node tools/generate-catalog.mjs && node tools/generate-personal-contracts.mjs && node tools/generate-unicode.mjs && node tools/generate-transliteration.mjs && node tools/generate-graphemes.mjs",
-    "test": "node --test tools/contracts.test.mjs tools/personal-contracts.test.mjs tools/full-backup.test.mjs tools/download-planner.test.mjs tools/snapshot.test.mjs tools/search-tables.test.mjs tools/search-candidates.test.mjs tools/search-matches.test.mjs tools/search-witnesses.test.mjs tools/search-line-selection.test.mjs tools/search-ranking.test.mjs tools/search-excerpt-windows.test.mjs tools/graphemes.test.mjs tools/lyric-contracts.test.mjs tools/unicode.test.mjs tools/transliteration.test.mjs tools/native-transliteration.test.mjs",
+    "test": "node --test tools/contracts.test.mjs tools/personal-contracts.test.mjs tools/full-backup.test.mjs tools/download-planner.test.mjs tools/snapshot.test.mjs tools/search-tables.test.mjs tools/search-candidates.test.mjs tools/search-matches.test.mjs tools/search-witnesses.test.mjs tools/search-line-selection.test.mjs tools/search-ranking.test.mjs tools/search-excerpt-windows.test.mjs tools/graphemes.test.mjs tools/normalization-provenance.test.mjs tools/lyric-contracts.test.mjs tools/unicode.test.mjs tools/transliteration.test.mjs tools/native-transliteration.test.mjs",
     "check": "npm run build && npm test"
   },
   "dependencies": { "ajv": "8.20.0", "yaml": "2.9.1" }

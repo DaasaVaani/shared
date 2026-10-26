@@ -53,6 +53,8 @@ registries, UI catalogs, personal state and secrets retain their separate owners
 | Shared settings/personal-transfer.yml | Personal text/collection/byte bounds and transfer policy; consumer build, not silent content-refresh replacement |
 | Shared settings/full-backup.yml | Frozen v1 webv8/nativeRoom7 adapter font units and stored acceptance domains; no new runtime defaults |
 | Shared settings/unicode.yml | Pinned official Unicode16 personal-name matching profile, pipeline and upstream byte provenance; consumer build and explicit key-profile migration |
+| Shared settings/graphemes.yml | Independently approved Unicode16 default extended-grapheme data/profile and official byte identities; consumer boundary-profile adoption |
+| Shared settings/normalization-provenance.yml | Independently approved Unicode16 NFC-only per-code-point source mapping and existing resource/manifest binding; bounded excerpt tooling, no alias/cross-script approval |
 | Shared settings/ui-catalog.yml, defaults.yml | Catalog generation, supported UI languages, portable initial preferences and allowed choices |
 | Library settings/catalog.yml, ingestion.yml, images.yml, publication.yml | Branding/catalog/filter/profile selection, local import/extraction/network, image processing, hosting/publication |
 | Website settings/web.yml | Public bases/endpoints, routes, feature availability, UI tokens and platform worker/network/storage budgets |
@@ -225,6 +227,12 @@ The [normalized-token witness rule](search-tables.md#exact-normalized-token-witn
 selects minimum restricted-OSA edits, then leftmost start, then shortest at that
 start, in half-open code-point coordinates. Those offsets are not display spans;
 reviewed projection and grapheme-safe rendering remain required.
+The separately approved [Unicode16 NFC provenance stage](normalization-provenance.md)
+retains exact original range lists per normalized code point through canonical
+decomposition/reordering/composition and supplies a strict span projector.
+It reuses pinned NFC/NFD resources without personal-name folding or changing
+display text. It is temporary excerpt-stage tooling, not global all-rendering
+index copies, reviewed token grammar/aliases or cross-script source alignment.
 
 Metadata-containing bucket always precedes lyrics-only. Sum the best field weight
 per distinct term: title100; composer/ankita80; deity60; tags/form/category40;
@@ -252,7 +260,7 @@ ranges and grapheme boundaries, counting edge ellipses within the code-point cap
 and preserving omitted matches. The separately approved
 [Unicode16 default extended-grapheme profile](graphemes.md) supplies official
 hash-pinned data and a conformant tooling reference, not host segmentation.
-Actual projection, packaged profile/client adoption, text rendering/highlighting
+Full transformation/source projection, packaged profile/client adoption, text rendering/highlighting
 and client error/navigation handling remain open.
 
 Unprepared PWA requires explicit Load search with size before missing/new index

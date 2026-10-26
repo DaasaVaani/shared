@@ -1,0 +1,7 @@
+formatVersion: 1
+profile: unicode16-nfc-provenance-v1
+unicodeVersion: 16.0.0
+operation: NFC
+mapping: per-codepoint-source-ranges
+resource: generated/unicode/unicode16.json
+manifest: generated/unicode/manifest.json

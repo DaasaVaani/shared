@@ -36,6 +36,12 @@ GCB/emoji/InCB data and the complete upstream corpus. It composes with the
 window reference without host Unicode drift. Personal-name matching stays
 unchanged; linguistic source projection and packaged client adoption remain open.
 
+The separately approved [Unicode16 NFC provenance stage](docs/normalization-provenance.md)
+maps each normalized code point to exact original source ranges, including
+canonical reordering, composition and expansion. Its captured span projector
+composes actual indexed witnesses with literal grapheme-safe windows; it does
+not approve aliases/transliteration, cross-script alignment or client adoption.
+
 The [staged canonical snapshot envelope](docs/snapshot-publication.md) defines
 strict public descriptor/sequence, manifest object/date/bundle maps and exact
 transfer-policy binding for the existing canonical text-only projection.

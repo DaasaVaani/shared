@@ -34,6 +34,10 @@ offsets directly as display positions or use a host Unicode/UTF-16 fallback.
 The separate approved [Unicode16 grapheme reference](graphemes.md) now produces
 these boundaries from actual scalar text with pinned default UAX #29 rules.
 Consumers still need their own verified resource/profile adoption and adapters.
+For NFC-only transformations, the separately approved
+[source provenance stage](normalization-provenance.md) now supplies exact
+normalized-to-original ranges and actual indexed-witness/window composition.
+It does not establish mappings for aliases, transliteration or Source Latin.
 
 All ranges refer to the same exact display line. An adapter with alignment across
 multiple original physical lines must provide truthful line-level evidence or
@@ -128,6 +132,6 @@ caller data and schema-validation machinery. These are not actual client memory,
 cancellation or latency measurements.
 
 Use [all configured checks](data-contracts.md#validation-and-finalization) before
-finalization/push. Real profile/source projection, packaged grapheme-profile
+finalization/push. Full transformation/source projection, packaged grapheme-profile
 adoption, selected-script item reads, reliable highlighting, caption/error
 handling, verse navigation and independent client integration remain gates.

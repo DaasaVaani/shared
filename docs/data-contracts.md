@@ -28,6 +28,11 @@ implementation is authorized, not global production readiness.
   complete upstream-conformant Node reference for preview boundary production.
   It neither changes personal-name matching nor approves linguistic mappings,
   font shaping or packaged consumer adapters.
+- The separately approved [Unicode16 NFC provenance stage](normalization-provenance.md)
+  supplies exact original ranges per normalized code point, a captured span
+  projector and actual normalized-witness/literal-grapheme-window composition.
+  It preserves display text and the personal-name profile; reviewed token/alias
+  transformations, cross-script source mapping and packaged adapters remain open.
 - Language: Kannada canonical, five Latin/nine non-Latin outputs, reviewed digit/
   approximation/alias/Unicode/technical-marker tables. Global corrections only.
   The [provisional multi-script prerequisite](transliteration.md) has
@@ -184,6 +189,13 @@ all-substring oracle distance/start/end equality over23,436 cases, longer positi
 gram bounds and actual starts beyond65,535 code points. Run
 `node --test tools\search-witnesses.test.mjs` incrementally. The distance-only
 API's shape/quality remains covered independently; display mapping is not guessed.
+The NFC provenance suite checks all99,825 official normalization inputs against
+prescribed NFC text and an independent tagged-normalization oracle, portable exact
+origins, repeated/reordered marks, strict map/span failures, capture independence,
+large offsets and the actual normalized-index-to-literal-window pipeline. Run
+`node --test tools\normalization-provenance.test.mjs` incrementally. This supplies
+NFC-stage provenance only, not alias/transliteration/source alignment, enclosing
+index/capability integration or measured consumer memory/cancellation behavior.
 The full-backup suite additionally validates both complete current logical
 platform allowlists, collection/identity/byte boundaries, single-member gzip/
 fatal UTF8/duplicate JSON rejection and exact synthetic round trips using

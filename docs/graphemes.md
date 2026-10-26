@@ -106,6 +106,10 @@ refer reliably to that selected-script line; segmentation does not manufacture
 source correspondence. Slice by code points at returned boundaries and count
 U+2026 edge markers within the existing budget. A cluster too large to fit still
 requires explicit preview-unavailable/Open match.
+The independently approved [NFC provenance stage](normalization-provenance.md)
+supplies exact original ranges for NFC-only normalization and tests the actual
+indexed-witness/projection/grapheme/window pipeline over unchanged literal text.
+Other transformations and cross-script source correspondence remain separate.
 
 ```powershell
 node --test tools\graphemes.test.mjs tools\search-excerpt-windows.test.mjs

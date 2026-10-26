@@ -1,0 +1,12 @@
+{
+  "profile": "unicode16-nfc-provenance-v1",
+  "vectors": [
+    { "input": [], "normalized": [], "origins": [] },
+    { "input": [101, 769], "normalized": [233], "origins": [[[0, 2]]] },
+    { "input": [233], "normalized": [233], "origins": [[[0, 1]]] },
+    { "input": [836], "normalized": [776, 769], "origins": [[[0, 1]], [[0, 1]]] },
+    { "input": [101, 769, 803], "normalized": [7865, 769], "origins": [[[0, 1], [2, 3]], [[1, 2]]] },
+    { "input": [4352, 4449, 4520], "normalized": [44033], "origins": [[[0, 3]]] },
+    { "input": [128512, 101, 769], "normalized": [128512, 233], "origins": [[[0, 1]], [[1, 3]]] }
+  ]
+}
