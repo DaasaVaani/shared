@@ -53,6 +53,10 @@ implementation is authorized, not global production readiness.
   without claiming text/span rendering or ranking.
   Normalized-token witnesses select minimum edits/leftmost/shortest with exact
   half-open code-point spans; they do not infer display/profile projections.
+  The [verified-evidence ranking contract](search-ranking.md) separately fixes
+  complete AND admission, best-weight per-term edit quality, duplicate-invariant
+  scores and metadata/score/worst/total/ASCII ordering. It does not supply
+  reviewed term equivalence, actual evidence, previews or client integration.
 - Publication/offline: durable state/receipts/sequence, deterministic ZIP planner,
   host/resource bounds, current-only remote, complete atomic activation, safe
   pins/fences/GC, resume/degradation/repair and explicit manual refresh.

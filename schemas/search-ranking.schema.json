@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/input",
+  "$defs": {
+    "integer": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+    "edits": { "type": "integer", "minimum": 0, "maximum": 2 },
+    "policy": {
+      "type": "object", "additionalProperties": false, "required": ["maxTerms", "weights"],
+      "properties": {
+        "maxTerms": { "$ref": "search-policy#/properties/maxTerms" },
+        "weights": { "$ref": "search-policy#/properties/weights" }
+      }
+    },
+    "input": {
+      "type": "object", "additionalProperties": false, "required": ["termCount", "items", "evidence"],
+      "properties": {
+        "termCount": { "$ref": "#/$defs/integer" },
+        "items": { "type": "array", "uniqueItems": true, "items": { "$ref": "search-tables#/$defs/uuid" } },
+        "evidence": {
+          "type": "array", "items": {
+            "type": "object", "additionalProperties": false, "required": ["lyricId", "term", "field", "edits"],
+            "properties": {
+              "lyricId": { "$ref": "search-tables#/$defs/uuid" },
+              "term": { "$ref": "#/$defs/integer" },
+              "field": { "$ref": "search-policy#/properties/weights/propertyNames" },
+              "edits": { "$ref": "#/$defs/edits" }
+            }
+          }
+        }
+      }
+    },
+    "term": {
+      "type": "object", "additionalProperties": false, "required": ["term", "weight", "edits"],
+      "properties": {
+        "term": { "$ref": "#/$defs/integer" }, "weight": { "$ref": "#/$defs/integer" }, "edits": { "$ref": "#/$defs/edits" }
+      }
+    },
+    "ranking": {
+      "type": "object", "additionalProperties": false, "required": ["format", "formatVersion", "hits"],
+      "properties": {
+        "format": { "const": "daasavaani-search-ranking" }, "formatVersion": { "const": 1 },
+        "hits": {
+          "type": "array", "items": {
+            "type": "object", "additionalProperties": false,
+            "required": ["lyricId", "metadata", "score", "worstEdits", "totalEdits", "terms"],
+            "properties": {
+              "lyricId": { "$ref": "search-tables#/$defs/uuid" },
+              "metadata": { "type": "boolean" },
+              "score": { "$ref": "#/$defs/integer" }, "worstEdits": { "$ref": "#/$defs/edits" },
+              "totalEdits": { "$ref": "#/$defs/integer" },
+              "terms": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/term" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}

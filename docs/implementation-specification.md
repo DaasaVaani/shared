@@ -232,6 +232,10 @@ context labels20; context description10; lyrics5. No repeated alias/rendering/
 occurrence or cross-field bonus per term. Then worst term edits, total term edits,
 ASCII canonical lyric ID. Quality uses minimum edits in that term's winning-weight field,
 never borrowed from a lower-weight field. No whole-word/prefix bonus.
+The [verified-evidence ranking contract](search-ranking.md) supplies strict
+portable inputs, complete AND selection, per-term contributions and the exact
+bucket/score/edit/ASCII order. It assumes already-verified eligible evidence and
+complete term signatures; it is not an integrated production query engine.
 
 Index carries anchors, not all display-rendering excerpts. Selected-script text
 comes from bounded item reads: local active snapshot when prepared, online before

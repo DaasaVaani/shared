@@ -1,0 +1,43 @@
+{
+  "input": {
+    "termCount": 2,
+    "items": [
+      "10000000-0000-4000-8000-000000000001",
+      "10000000-0000-4000-8000-000000000002",
+      "10000000-0000-4000-8000-000000000003",
+      "10000000-0000-4000-8000-000000000004"
+    ],
+    "evidence": [
+      { "lyricId": "10000000-0000-4000-8000-000000000001", "term": 0, "field": "title", "edits": 2 },
+      { "lyricId": "10000000-0000-4000-8000-000000000001", "term": 0, "field": "lyrics", "edits": 0 },
+      { "lyricId": "10000000-0000-4000-8000-000000000001", "term": 1, "field": "lyrics", "edits": 1 },
+      { "lyricId": "10000000-0000-4000-8000-000000000002", "term": 0, "field": "composer", "edits": 2 },
+      { "lyricId": "10000000-0000-4000-8000-000000000002", "term": 0, "field": "ankita", "edits": 1 },
+      { "lyricId": "10000000-0000-4000-8000-000000000002", "term": 1, "field": "deity", "edits": 0 },
+      { "lyricId": "10000000-0000-4000-8000-000000000003", "term": 0, "field": "lyrics", "edits": 0 },
+      { "lyricId": "10000000-0000-4000-8000-000000000003", "term": 1, "field": "lyrics", "edits": 0 },
+      { "lyricId": "10000000-0000-4000-8000-000000000004", "term": 0, "field": "title", "edits": 0 }
+    ]
+  },
+  "ranking": {
+    "format": "daasavaani-search-ranking",
+    "formatVersion": 1,
+    "hits": [
+      {
+        "lyricId": "10000000-0000-4000-8000-000000000002", "metadata": true,
+        "score": 140, "worstEdits": 1, "totalEdits": 1,
+        "terms": [{ "term": 0, "weight": 80, "edits": 1 }, { "term": 1, "weight": 60, "edits": 0 }]
+      },
+      {
+        "lyricId": "10000000-0000-4000-8000-000000000001", "metadata": true,
+        "score": 105, "worstEdits": 2, "totalEdits": 3,
+        "terms": [{ "term": 0, "weight": 100, "edits": 2 }, { "term": 1, "weight": 5, "edits": 1 }]
+      },
+      {
+        "lyricId": "10000000-0000-4000-8000-000000000003", "metadata": false,
+        "score": 10, "worstEdits": 0, "totalEdits": 0,
+        "terms": [{ "term": 0, "weight": 5, "edits": 0 }, { "term": 1, "weight": 5, "edits": 0 }]
+      }
+    ]
+  }
+}

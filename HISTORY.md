@@ -1,5 +1,32 @@
 # Documentation history
 
+## 2026-10-26: explicit verified-evidence AND ranking
+
+- Continued the already-approved SEARCH-02/03 ranking prerequisite after
+  publishing normalized-token witnesses at `509911c` and Library's independent
+  canonical host gate at `20f4416`. No additional product choice was needed.
+- Added strict portable input/policy/result types/schema, a Node-only pure
+  reference and synthetic golden vector. Reused owning field/term-policy
+  domains; followed Website fixture ranking as prior art without changing it.
+- Complete AND results use one winning field weight per distinct term, minimum
+  edits only at that winning weight, semantic metadata bucket then descending
+  score/ascending worst/total/ASCII UUID. Duplicates never boost scores.
+  Zero-term queries preserve existing no-hit behavior; invalid input and unsafe
+  weight/score arithmetic fail explicitly.
+- This is asserted verified-evidence tooling, not inferred normalized-term
+  equivalence, a new production index/capability or app integration. Existing
+  fixture behavior, all consumer pins, real sources and publication state stay
+  unchanged. Excerpt selection and display projections remain independent.
+- `node --test tools\search-ranking.test.mjs` passed10/10, including1,000
+  independent scan/key-order cases and repeated/reversed variants. Final
+  `npm run check` passed all generation and194/194 tests, zero failed, cancelled
+  or skipped. Log: `shared-search-ranking-full-validation.log`.
+- `python tools\check_repository.py` passed136 tracked paths. Strict YAML13,
+  actionlint1.7.12 with explicit ShellCheck0.11.0, working/staged whitespace
+  and `git --no-pager diff --exit-code -- generated schemas` passed. Generated
+  resources/schema bytes stayed unchanged; only Windows LF/CRLF warnings occurred.
+  No dependencies/toolchains or app runtime changes were introduced.
+
 ## 2026-10-26: owner-selected exact fragment witnesses
 
 - Following representative-line publication

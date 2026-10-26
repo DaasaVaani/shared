@@ -18,6 +18,12 @@ best edit match per distinct term, breaking ties by canonical reading order,
 merges selected lines and explicitly reports bounded-preview omissions.
 It does not render/clamp text, infer spans or change item ranking.
 
+The [verified-evidence ranking contract](docs/search-ranking.md) implements
+complete AND admission, one best-field contribution per distinct term and
+metadata/score/winning-field edit/ASCII ordering without duplicate bonuses.
+It takes explicit compatible policy and eligible verified evidence; it does not
+infer term equivalence, profile/source mappings or display previews.
+
 The [staged canonical snapshot envelope](docs/snapshot-publication.md) defines
 strict public descriptor/sequence, manifest object/date/bundle maps and exact
 transfer-policy binding for the existing canonical text-only projection.
