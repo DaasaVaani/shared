@@ -48,6 +48,9 @@ implementation is authorized, not global production readiness.
   bounded exhaustive independent fragment-OSA completeness checks; it is not
   a client query engine. The separate exact verifier checks accepted minimum
   fragment edits with three query-length rows and complete indexed/scan parity.
+  The [representative-line contract](search-excerpts.md) separately fixes
+  per-term best edits/canonical-order ties, merged lines and explicit omissions
+  without claiming text/span rendering or ranking.
 - Publication/offline: durable state/receipts/sequence, deterministic ZIP planner,
   host/resource bounds, current-only remote, complete atomic activation, safe
   pins/fences/GC, resume/degradation/repair and explicit manual refresh.
@@ -156,6 +159,11 @@ plus false positives, later better fragments, restricted transpositions,
 Unicode and working-row boundaries. Run
 `node --test tools\search-matches.test.mjs` incrementally. This is not display
 span/representative-witness selection, linguistic or platform conformance.
+The representative-line suite validates the selected per-term rule, canonical
+order rather than UUID/evidence order, merged matches, complete retained anchors,
+explicit visible-cap omissions and exact16/17 admission. Run
+`node --test tools\search-line-selection.test.mjs` incrementally. Actual
+selected-script text/span projection and240-code-point clipping remain open.
 The full-backup suite additionally validates both complete current logical
 platform allowlists, collection/identity/byte boundaries, single-member gzip/
 fatal UTF8/duplicate JSON rejection and exact synthetic round trips using

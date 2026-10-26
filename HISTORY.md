@@ -1,5 +1,29 @@
 # Documentation history
 
+## 2026-10-26: owner-selected representative lyric lines
+
+- After exact verification publication `d6dd2527cc12ee204593cb653a6c1ff8f618bad8`,
+  presented the unresolved representative-line choice: best edit quality then
+  canonical order; earliest canonical line regardless of edits; or shared-lines-
+  first consolidation. Owner chose `best-edits-then-canonical-order`, for previews
+  only, preserving ranking, line merging and existing limits.
+- Added strict schemas/types and isolated Node-only selection over declared
+  canonical item line order and verified per-term lyric evidence. Keeps complete
+  selected anchors/quality, merges lines, identifies terms without lyric evidence
+  and reports omissions under a smaller visible cap without altering full matches.
+  No UUID-order inference, fabricated text/location, normalization or UI/pin change.
+- Added complete portable golden vector, permutations/duplicate evidence,
+  best-quality and reading-order ties, exact16/17 admission/16-line equality,
+  explicit omissions and strict invalid-input/nonmutation tests. Actual text/
+  span projection, grapheme clipping, evidence authentication and consumer
+  integration remain explicit current gates.
+- Full `npm run check` passed generation and179/179 tests with no failures,
+  cancellations or skips. Hygiene passed127 tracked paths; working/staged
+  whitespace, generated/schema stability, strict YAML13 and actionlint1.7.12
+  with explicit ShellCheck0.11.0 passed. Log:
+  `shared-search-line-selection-full-validation.log`. No consumer pin,
+  live publication, actual lyric variant or deployment was changed/generated.
+
 ## 2026-10-26: exact indexed restricted-OSA fragment reference
 
 - Continued after candidate publication `9196cc53a3ab9c08ae0c26ec0ca304a52a19cbe2`.

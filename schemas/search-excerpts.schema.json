@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/input",
+  "$defs": {
+    "integer": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+    "uuid": { "type": "string", "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$" },
+    "edits": { "type": "integer", "minimum": 0, "maximum": 2 },
+    "lineIds": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/uuid" } },
+    "termMatch": {
+      "type": "object", "additionalProperties": false, "required": ["term", "edits"],
+      "properties": { "term": { "$ref": "#/$defs/integer" }, "edits": { "$ref": "#/$defs/edits" } }
+    },
+    "limits": {
+      "type": "object", "additionalProperties": false, "required": ["maxTerms", "maxExcerptLines"],
+      "properties": {
+        "maxTerms": { "$ref": "search-policy#/properties/maxTerms" },
+        "maxExcerptLines": { "$ref": "search-policy#/properties/maxExcerptLines" }
+      }
+    },
+    "input": {
+      "type": "object", "additionalProperties": false, "required": ["termCount", "canonicalLineIds", "evidence"],
+      "properties": {
+        "termCount": { "$ref": "#/$defs/integer" },
+        "canonicalLineIds": { "$ref": "#/$defs/lineIds" },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false, "required": ["term", "lineId", "edits"],
+            "properties": {
+              "term": { "$ref": "#/$defs/integer" }, "lineId": { "$ref": "#/$defs/uuid" }, "edits": { "$ref": "#/$defs/edits" }
+            }
+          }
+        }
+      }
+    },
+    "selection": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "formatVersion", "lines", "previewLineIds", "omittedLineIds", "withoutLyricLine"],
+      "properties": {
+        "format": { "const": "daasavaani-search-line-selection" },
+        "formatVersion": { "const": 1 },
+        "lines": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false, "required": ["lineId", "terms"],
+            "properties": {
+              "lineId": { "$ref": "#/$defs/uuid" },
+              "terms": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/termMatch" } }
+            }
+          }
+        },
+        "previewLineIds": { "$ref": "#/$defs/lineIds" },
+        "omittedLineIds": { "$ref": "#/$defs/lineIds" },
+        "withoutLyricLine": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/integer" } }
+      }
+    }
+  }
+}

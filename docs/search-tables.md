@@ -181,6 +181,10 @@ representative line. The existing table witnesses still identify all declared
 item/field/line evidence. Display/span projection, witness selection and best-
 field-per-term quality must be specified/implemented separately; the exact
 minimum here cannot be substituted for a match in a different winning field.
+The separate [representative-line selector](search-excerpts.md) defines the
+per-term best-edit/canonical-order rule over already-verified line evidence.
+Its canonical order comes from the actual item, not this UUID-sorted dictionary;
+it does not supply missing display spans or normalization.
 
 Focused: `node --test tools\search-tables.test.mjs`.
 Candidate completeness: `node --test tools\search-candidates.test.mjs`.

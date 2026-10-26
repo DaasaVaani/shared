@@ -10,6 +10,11 @@ minimum internal-fragment edits using three query-length working rows and comple
 indexed-versus-scan parity. Production normalization/ranking/span projection,
 adapters and real memory budgets remain separate gates.
 
+The [representative lyric-line contract](docs/search-excerpts.md) chooses the
+best edit match per distinct term, breaking ties by canonical reading order,
+merges selected lines and explicitly reports bounded-preview omissions.
+It does not render/clamp text, infer spans or change item ranking.
+
 The [staged canonical snapshot envelope](docs/snapshot-publication.md) defines
 strict public descriptor/sequence, manifest object/date/bundle maps and exact
 transfer-policy binding for the existing canonical text-only projection.

@@ -235,6 +235,10 @@ PWA preparation. One representative line per distinct term, merge duplicates,
 max16 lines/result;240 code points/line, grapheme-safe ellipses. Preserve full match
 anchors, explain more matches; explicit preview-unavailable/Open match if no safe
 nonempty preview fits. Metadata-only hits show truthful metadata context.
+The [representative-line contract](search-excerpts.md) selects smallest lyric
+edit distance then earliest canonical reading-order line for each term, without
+changing ranking. Its isolated selector preserves all chosen anchors and reports
+visible-cap omissions; actual text/span projection and clipping remain open.
 
 Unprepared PWA requires explicit Load search with size before missing/new index
 transfer; Search entry/typing is not consent. Reuse matching verified cache.
