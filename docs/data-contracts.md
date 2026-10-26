@@ -262,6 +262,14 @@ actual indexed-witness-to-literal-grapheme-window composition. The explicit
 wrapper/projector keeps pure NFC and lexical identities unchanged. This closes
 the local mechanical joiner/provenance prerequisite, not production query
 admission, conversion/alias truth, all-transform alignment or consumer adoption.
+The [original-query budget wrapper](search-query-budget.md) reuses the existing
+strict policy limit before joiner/NFC/lexical processing. Run
+`node --test tools\search-query-budget.test.mjs` incrementally. Portable vectors,
+all1..256 exact cutovers, independent UTF-16 scanner comparisons, deletion/
+contraction-before-limit refusal, normalized expansion, strict failures and
+capture check the original-length subgate only. Field primitives, later
+category/script admission, complete signatures/aliases and consumer pins remain
+unchanged; no partial-query truncation or normalized-token cap is introduced.
 The literal-vocabulary suite checks complete synthetic results, all32,258 bounded
 vocabulary/word combinations against independent whole-word generation, greedy
 failure/ambiguous coverage, exact scalar/case/marker handling, malformed inputs,

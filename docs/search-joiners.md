@@ -161,6 +161,9 @@ readable/provenance copies in the global index. Apply original-query admission
 **before** this work: count the original joiners too when enforcing the
 owning256-point query limit. Neither helper imposes that query cap on field
 text or substitutes it for normalized edit lengths.
+The explicit [original-query budget wrapper](search-query-budget.md) supplies
+that ordering for queries using the trusted owning policy's limit; it does not
+replace broader production admission or change these field primitives.
 
 ## Checks, complexity and remaining gates
 

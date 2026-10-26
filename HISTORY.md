@@ -1,5 +1,44 @@
 # Documentation history
 
+## 2026-10-26: original search-query budget before transformations
+
+- Continued directly from the Kannada joiner slice. Its local commit
+  `0a43045` passed the full recorded checks, but two HTTPS Git pushes were
+  rejected with GitHub Internal Server Error before branch publication.
+  The public status endpoint reported all systems operational. Preserved that
+  commit and began the next isolated review branch without main/pin changes.
+- Applied the already-approved owning `maxQueryCodePoints` policy before
+  joiner deletion, NFC contraction/expansion or lexical splitting. Reused the
+  existing strict1..256 schema domain and configured256 value rather than
+  introducing another setting/default. Added a bounded scalar guard and an
+  explicit query-only wrapper over the unchanged joiner-aware field primitive.
+- The guard stops at the first over-budget original point, rejects encountered
+  malformed scalars, counts supplementary characters once and counts whitespace,
+  marks/punctuation/joiners literally. It neither truncates nor normalizes to
+  manufacture an admissible query. Later lexical errors still propagate.
+  Over-budget prefix errors do not claim to inspect an invalid suffix.
+- Added portable vectors, declarations, exact source-order/limit tests and
+  build/test registration. No new serialized family or production signature
+  is inferred. Empty input/category/script admission remains separate.
+- Focused `node --test tools\search-query-budget.test.mjs` passed9/9, including
+  all3,840 limit/alphabet cutovers and32,766 independent UTF-16 scanner cases,
+  exact257-original-to256-prepared refusal, NFC contraction refusal and
+  256-original-to512-normalized acceptance with existing two-edit allowance.
+  Evidence: `shared-raw-query-budget-focused-validation.log`.
+- Final `npm run check` passed all build checks and317/317 registered tests,
+  zero failures/cancellations/skips. Evidence:
+  `shared-raw-query-budget-full-validation.log`.
+  `python tools\check_repository.py` passed238 tracked files; inline Node
+  strictYaml validation passed all19 tracked YAML files. actionlint1.7.12 with
+  explicit ShellCheck0.11.0, `git --no-pager diff --check`,
+  `git --no-pager diff --cached --check` and
+  `git --no-pager diff --exit-code -- generated schemas` passed.
+  Only existing LF/CRLF warnings occurred.
+- No dependency/toolchain, configurable limit, actual content, consumer pin,
+  application runtime, main merge, production publication activation or
+  deployment changed. The scalar-budget reference and its composition do not
+  establish full query/linguistic/device/release conformance.
+
 ## 2026-10-26: source-backed Kannada search joiner preprocessing
 
 - Continued the owner's recommendation authority without further product prompts.

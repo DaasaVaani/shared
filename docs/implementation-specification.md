@@ -208,6 +208,11 @@ counts the fully normalized token's code points with explicit compatible policy
 bands before complete-profile grouping/querying. The terminal9+ rule remains
 open-ended even if an admitted raw query expands during normalization; the
 raw256-point admission limit is not an implicit normalized-token cap.
+The [original-query budget wrapper](search-query-budget.md) enforces the
+explicit owning raw scalar limit before joiner removal/NFC/lexical processing.
+It counts every original point, rejects rather than truncates oversized input,
+and preserves longer field primitives and admitted normalization expansion.
+Full query error UX and script/field/profile eligibility remain separate gates.
 
 NFC preserves significant technical case/diacritics. Ordinary tokens are Unicode
 letters/marks/decimal runs; reviewed technical grammar preserves meaningful marker

@@ -64,6 +64,10 @@ between the original Kannada virama and a source-backed consonant, preserving
 a complete deletion ledger and exact original ranges through NFC/lexing.
 Production query admission, eligibility and all-transform source projection
 remain separate gates; the low-level lexer and pure NFC contracts stay unchanged.
+The explicit [original-query budget wrapper](docs/search-query-budget.md) now
+checks the owning raw scalar limit before any joiner deletion/NFC/lexing,
+without imposing that query cap on fields or normalization-expanded tokens.
+It does not supply full query admission or profile eligibility.
 
 The [contiguous excerpt-window contract](docs/search-excerpt-windows.md) chooses
 best-fitting edits/leftmost/shortest focus over explicit verified display ranges

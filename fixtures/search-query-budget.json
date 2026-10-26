@@ -1,0 +1,17 @@
+{
+  "vectors": [
+    { "text": "", "limit": 1, "accepted": true },
+    { "text": "a", "limit": 1, "accepted": true },
+    { "text": " a ", "limit": 2, "accepted": false },
+    { "text": "a\u0301", "limit": 1, "accepted": false },
+    { "text": "\ud83d\ude00", "limit": 1, "accepted": true },
+    { "text": "\ud83d\ude00a", "limit": 1, "accepted": false },
+    { "text": "\u0ccd\u200d\u0c95", "limit": 2, "accepted": false },
+    { "text": "\u0ccd\u200d\u0c95", "limit": 3, "accepted": true },
+    { "text": "\u0344", "limit": 1, "accepted": true },
+    { "text": "\ud800", "limit": 1, "accepted": false },
+    { "text": "\udc00", "limit": 1, "accepted": false },
+    { "text": "\u200d", "limit": 1, "accepted": true },
+    { "text": "\u0000", "limit": 1, "accepted": true }
+  ]
+}
