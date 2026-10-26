@@ -1,0 +1,17 @@
+{
+  "profile": "unicode16-parsed-search-fields-v1",
+  "text": "\t𐐀 A\n\nJ̌\ta.a\n",
+  "sourceCodePoints": 13,
+  "boundaries": [
+    { "index": 0, "codePoint": "0009" },
+    { "index": 4, "codePoint": "000A" },
+    { "index": 5, "codePoint": "000A" },
+    { "index": 8, "codePoint": "0009" },
+    { "index": 12, "codePoint": "000A" }
+  ],
+  "segments": [
+    { "start": 1, "end": 4, "terms": ["𐐀", "A"] },
+    { "start": 6, "end": 8, "terms": ["J̌"] },
+    { "start": 9, "end": 12, "terms": ["a.a"] }
+  ]
+}

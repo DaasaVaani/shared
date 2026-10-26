@@ -61,6 +61,7 @@ registries, UI catalogs, personal state and secrets retain their separate owners
 | Shared settings/search-joiners.yml | Exact source-backed Unicode16 Kannada consonants, original-adjacency joiner deletion ledger and NFC/lexical original-span composition; build/reference adoption, no source rewrite or production activation |
 | Shared settings/search-case.yml | Explicit common/compact ASCII-only folding, technical preservation and post-fold NFC token-local provenance; no alias, full-profile or consumer activation |
 | Shared settings/search-scripts.yml | Pinned Unicode16 Script/Script_Extensions and canonical UCD value aliases, exact source/license provenance and normative missing defaults; property data only, no query-language eligibility activation |
+| Shared settings/search-fields.yml | Parsed-field-only TAB/LF structural boundaries, independent lexical segments and original-coordinate accounting; unchanged raw-query controls/budget and no inferred field eligibility |
 | Shared settings/ui-catalog.yml, defaults.yml | Catalog generation, supported UI languages, portable initial preferences and allowed choices |
 | Library settings/catalog.yml, ingestion.yml, images.yml, publication.yml | Branding/catalog/filter/profile selection, local import/extraction/network, image processing, hosting/publication |
 | Website settings/web.yml | Public bases/endpoints, routes, feature availability, UI tokens and platform worker/network/storage budgets |
@@ -222,6 +223,12 @@ explicit owning raw scalar limit before joiner removal/NFC/lexical processing.
 It counts every original point, rejects rather than truncates oversized input,
 and preserves longer field primitives and admitted normalization expansion.
 Full query error UX and script/field/profile eligibility remain separate gates.
+The separate [parsed field composition](search-fields.md) handles literal
+TAB/LF as explicit hard boundaries before independently invoking the existing
+unbounded joiner/NFC/technical lexer. Its full source ledger and captured
+projector compose into Source Latin supplied-text ranges. Raw queries and the
+low-level lexer still reject those Cc characters; fields do not inherit the
+query-only original256-point budget. Other admission/eligibility gates remain.
 
 NFC preserves significant technical case/diacritics. Ordinary tokens are Unicode
 letters/marks/decimal runs; reviewed technical grammar preserves meaningful marker

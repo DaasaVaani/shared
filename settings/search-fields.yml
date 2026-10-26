@@ -1,0 +1,8 @@
+formatVersion: 1
+profile: unicode16-parsed-search-fields-v1
+unicodeVersion: 16.0.0
+input: parsed-field-text
+structuralBoundaries: ["0009", "000A"]
+boundaryTreatment: independent-segments
+lexerProfile: unicode16-protected-search-lexing-v1
+joinerProfile: unicode16-kannada-search-joiners-v1

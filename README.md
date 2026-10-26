@@ -89,6 +89,13 @@ search approval/status and supplies disjoint literal segments with captured
 supplied-text projection. It never invents missing alignment, joins gaps or
 claims canonical-character correspondence; production adapters remain open.
 
+The [parsed field lexical composition](docs/search-fields.md) treats literal
+TAB/LF as explicit field-only boundaries with complete original accounting.
+It composes existing unbounded joiner/NFC/technical lexing and captured field/
+Source Latin projections without joining structural gaps. Raw queries still
+reject those controls and retain their original budget; eligibility and
+production adoption remain separate gates.
+
 The [contiguous excerpt-window contract](docs/search-excerpt-windows.md) chooses
 best-fitting edits/leftmost/shortest focus over explicit verified display ranges
 and grapheme boundaries. Its single-window geometry counts ellipses inside the

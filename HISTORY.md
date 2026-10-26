@@ -1,5 +1,50 @@
 # Documentation history
 
+## 2026-10-26: explicit parsed-field structural lexical composition
+
+- Verified the prior Source Latin commit
+  `1ff119e4aa706734570d29f89b5e0e4fb21d94c3` was already committed/published
+  at its exact remote SHA with a clean Shared worktree.
+- Closed the documented literal multiline-field mechanical gap using the
+  existing source grammar's TAB/LF structure. Added owning settings/schema/
+  types, a field-only wrapper, portable synthetic vector and strict tests.
+  These controls split independent field segments with an exact source ledger;
+  the low-level/query lexers still reject them and no query limit is copied to
+  fields. Other unsupported categories/invalid joiners still fail explicitly.
+- Retained complete per-segment joiner/NFC/technical results and captured original
+  field offsets. Reused the existing numeric projection utility at its
+  single-span-list level rather than inventing field/line IDs or duplicating
+  capture/guards. Existing exclusion and Source Latin APIs remain unchanged.
+- Archived the Source Latin guide's statement that physical LF still needed a
+  future field-tokenization helper. Its LF parsing/source-coordinate requirement,
+  prohibition on raw-query misuse/control stripping and uncapped field rule
+  remain current and are now linked to the explicit field component.
+- Focused `node --test tools\search-fields.test.mjs tools\source-latin-alignment.test.mjs tools\search-exclusions.test.mjs`
+  passed22/22. The new eight tests include all1,365 bounded fields against an
+  independent UTF-16 scanner and5,070 exact projected spans, query refusal,
+  300-original-point fields expanding to600 normalized points, strict settings/
+  vocabulary/control failures and immutable capture.
+  Actual indexed OSA rejects LF-invented words; Source Latin/case/NFC/joiner
+  projection retains exact supplied intervals, excluding the removed joiner.
+- Full `npm run check` passed generation and359/359 tests with no failures,
+  skips or cancellations. `python tools\check_repository.py` passed283 tracked
+  files; `node --input-type=module` using existing strictYaml over
+  `git ls-files -z` passed all22 tracked YAML files.
+  Workflow actionlint/ShellCheck passed with:
+  ```powershell
+  & "$env:LOCALAPPDATA\DaasaVaani\toolchains\actionlint-1.7.12\actionlint.exe" `
+    -shellcheck "$env:LOCALAPPDATA\DaasaVaani\toolchains\shellcheck-0.11.0\shellcheck.exe"
+  ```
+  `git --no-pager diff --check`, `git --no-pager diff --cached --check` and
+  `git --no-pager diff --exit-code -- generated schemas` passed.
+  Evidence: `shared-parsed-search-fields-focused-validation.log` and
+  `shared-parsed-search-fields-full-validation.log`.
+- This is an isolated field-only reference, not full query grammar or production
+  field/profile eligibility. No source annotations, real generated variants,
+  consumer pins, main merge, deployment or publication-state changes.
+  Source/review authentication, linguistic truth, actual publisher/client
+  integration, error UX and device/capacity evidence remain open.
+
 ## 2026-10-26: complete reviewed Source Latin alignment reference
 
 - Verified the previous exclusion commit

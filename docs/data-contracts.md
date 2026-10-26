@@ -260,6 +260,13 @@ global ordered bounds, exact adjacency/gap handling, captured projection,
 independent bounded position oracles and actual indexed/NFC composition.
 Line correspondence does not establish canonical-character alignment,
 linguistic suitability, source-review authentication or client adoption.
+The [parsed field suite](search-fields.md) runs with
+`node --test tools\search-fields.test.mjs tools\source-latin-alignment.test.mjs tools\search-exclusions.test.mjs`
+incrementally and in the full check. It checks complete field boundary accounting,
+unchanged query control/budget rules, strict settings, unbounded field expansion,
+independent UTF-16 partition/span oracles, explicit failures and actual indexed/
+Source Latin/case/joiner source composition. This is field-only reference
+processing, not a new query language, publisher adapter or client capability.
 The [protected-marker lexical stage](search-lexing.md) validates owning settings/
 resource identity during `npm run build`. Run
 `node --test tools\search-lexing.test.mjs` incrementally. Portable inventory cases,

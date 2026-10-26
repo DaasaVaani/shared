@@ -121,6 +121,9 @@ original-human-input coordinates. All-transform projection remains open.
 
 This helper has no original-query admission limit, script eligibility filter or
 UI error protocol. A producer can also lex longer admitted field text.
+For parsed fields containing structural TAB/LF, use the separate
+[field composition](search-fields.md), which partitions and accounts for those
+positions before invoking this unchanged low-level lexer per segment.
 The caller must apply the owning raw256-point query admission policy before
 expensive query work; do not apply256 as a normalized-token cap. Scalar/category
 acceptance does not make every script an eligible initial lyric query language.

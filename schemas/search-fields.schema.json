@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/result",
+  "$defs": {
+    "settings": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formatVersion", "profile", "unicodeVersion", "input", "structuralBoundaries", "boundaryTreatment", "lexerProfile", "joinerProfile"],
+      "properties": {
+        "formatVersion": { "const": 1 },
+        "profile": { "const": "unicode16-parsed-search-fields-v1" },
+        "unicodeVersion": { "const": "16.0.0" },
+        "input": { "const": "parsed-field-text" },
+        "structuralBoundaries": { "const": ["0009", "000A"] },
+        "boundaryTreatment": { "const": "independent-segments" },
+        "lexerProfile": { "const": "unicode16-protected-search-lexing-v1" },
+        "joinerProfile": { "const": "unicode16-kannada-search-joiners-v1" }
+      }
+    },
+    "result": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "formatVersion", "profile", "text", "sourceCodePoints", "boundaries", "segments"],
+      "properties": {
+        "format": { "const": "daasavaani-search-field-lexing" },
+        "formatVersion": { "const": 1 },
+        "profile": { "$ref": "#/$defs/settings/properties/profile" },
+        "text": { "type": "string" },
+        "sourceCodePoints": { "$ref": "search-joiners#/$defs/integer" },
+        "boundaries": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false, "required": ["index", "codePoint"],
+            "properties": {
+              "index": { "$ref": "search-joiners#/$defs/integer" },
+              "codePoint": { "enum": ["0009", "000A"] }
+            }
+          }
+        },
+        "segments": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false, "required": ["start", "end", "lexing"],
+            "properties": {
+              "start": { "$ref": "search-joiners#/$defs/integer" },
+              "end": { "$ref": "search-joiners#/$defs/integer" },
+              "lexing": { "$ref": "search-joiners#/$defs/composition" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

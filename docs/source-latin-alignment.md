@@ -93,10 +93,11 @@ Within one continuous same-line source span, adjacent annotation boundaries do
 not manufacture artificial token/NFC boundaries. Original review ranges remain
 unchanged in the ledger. This segmentation rule is part of the component's
 versioned semantics and must be bound in future compatible profile packaging.
-Physical LF inside a mapped segment remains literal; future field tokenization
-must handle field line breaks explicitly, not pass multiline text as a raw query
-or silently strip controls. Field processing is not limited by the query-only
-256-point budget.
+Physical LF inside a mapped segment remains literal. The separate
+[parsed field composition](search-fields.md) treats LF/TAB as explicit
+field-only boundaries and retains their original positions. Use it rather than
+passing multiline text as a raw query or silently stripping controls.
+Field processing is not limited by the query-only256-point budget.
 
 `createSourceLatinAlignmentReference(input)` returns `{data,project}`.
 `project(lineId,segmentIndex,start,end)` accepts a nonempty half-open
