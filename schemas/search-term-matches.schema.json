@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/result",
+  "$defs": {
+    "policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["maxTerms", "editBands"],
+      "properties": {
+        "maxTerms": { "$ref": "search-policy#/properties/maxTerms" },
+        "editBands": { "$ref": "search-policy#/properties/editBands" }
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["equivalence", "rankingInput"],
+      "properties": {
+        "equivalence": { "$ref": "search-term-equivalence#/$defs/result" },
+        "rankingInput": { "$ref": "search-ranking#/$defs/input" }
+      }
+    }
+  }
+}

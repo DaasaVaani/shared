@@ -17,11 +17,14 @@ export function assertNormalizedSearchToken(text) {
   if (typeof text !== "string" || !text.length || !text.isWellFormed() ||
       /[\s\u0000-\u001f\u007f-\u009f]/u.test(text)) fail("invalid normalized token text");
 }
-export function normalizedSearchEditAllowance(text, editBands) {
-  assertNormalizedSearchToken(text);
+export function assertSearchEditBands(editBands) {
   if (!editBandShape(editBands) || editBands.some((band, index) =>
     !Number.isSafeInteger(band.maxLength) || band.edits !== index ||
     (index > 0 && band.maxLength <= editBands[index - 1].maxLength))) fail("invalid edit bands");
+}
+export function normalizedSearchEditAllowance(text, editBands) {
+  assertNormalizedSearchToken(text);
+  assertSearchEditBands(editBands);
   let length = 0;
   for (const char of text) length++;
   for (let index = 0; index < editBands.length - 1; index++) {

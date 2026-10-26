@@ -241,6 +241,14 @@ first-occurrence groups and every input-to-distinct reference. It enforces the
 distinct-term cap after grouping, never using per-item evidence to merge terms.
 Callers must bind the entire trusted context inventory and produce reviewed
 normalization results; the helper does not infer either.
+The [complete-field term matcher](search-term-matches.md) requires every
+component token from one complete context in the same item and exact field,
+with worst component edit quality. Alternative incomplete contexts/fields
+cannot donate complementary matches or quality. Lyric components may be on
+different lines; there is no phrase/order restriction. Distinct original terms
+may still match different fields. Only complete-field evidence enters existing
+best-field/metadata-bucket/AND ranking; incomplete title fragments confer no
+metadata promotion or title weight.
 
 Publisher builds one global compact JSON/gzip index with multiset code-point
 1/2/3-gram counted postings, no boundary sentinels. The

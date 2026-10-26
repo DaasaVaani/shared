@@ -107,10 +107,12 @@ but their global technical distinction still prevents merging. Duplicate
 complete signatures contribute only once. This is mechanical evidence,
 not an approved Latin mapping or production query adapter.
 
-The helper does not decide how multi-token profile results combine in the future
-query engine, whether an alias branch is eligible, or what technical syntax means.
-Those semantics belong in the reviewed complete profile contract before actual
-matrix production. It cannot certify truthful caller-supplied normalization.
+The separate [complete-field matching reference](search-term-matches.md) requires
+all component tokens of one context to match the same item/field, using worst
+component edits and alternatives only between complete contexts. Different
+original terms remain AND across fields. The partition helper itself does not
+match items, decide alias eligibility or interpret technical syntax, and cannot
+certify truthful caller-supplied normalization.
 Outer publication/capability binding, linguistic fixtures, token/excerpt
 projection and independent Website/Android integration remain open.
 

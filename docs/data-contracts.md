@@ -236,6 +236,15 @@ distinctions, inactive contexts, all strict failures, complete input references,
 Run `node --test tools\search-term-equivalence.test.mjs tools\search-tables.test.mjs`
 incrementally. These are asserted signature results, not reviewed linguistic
 normalization, item-dependent deduplication or production query integration.
+The [complete-field matcher](search-term-matches.md) connects strict complete
+context matrices, policy-derived allowances and actual indexed OSA to existing
+AND ranking. Run `node --test tools\search-term-matches.test.mjs` incrementally.
+Its synthetic scenarios and1,000 independent full-matrix occurrence-scan cases
+cover same-context/same-field completeness, worst component quality, all ten
+fields, cross-line lyrics, incomplete metadata nonpromotion, no mixed-context
+quality, identity/allowance failures and capture independence. They do not
+supply raw grammar, reviewed mappings, selected-script excerpts or client
+resource/cancellation evidence.
 The literal-vocabulary suite checks complete synthetic results, all32,258 bounded
 vocabulary/word combinations against independent whole-word generation, greedy
 failure/ambiguous coverage, exact scalar/case/marker handling, malformed inputs,

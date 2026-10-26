@@ -1,5 +1,56 @@
 # Documentation history
 
+## 2026-10-26: complete-context and same-field compound-term decisions
+
+- Owner selected complete-context combination: all component tokens of one
+  admitted term must match under at least one single matching profile/context.
+  Incomplete contexts cannot donate complementary matches or quality. Distinct
+  original query terms remain AND; profiles are alternatives, not query OR fallback.
+- Owner then selected complete-field-worst-edits: all components of that context
+  must match the same eligible field. Different lyric lines are allowed within
+  the lyrics field, with no phrase/order requirement. Highest complete field
+  wins under existing weights; its quality is the worst component distance.
+  Single-term title-plus-lyrics fragments alone do not complete a term, while
+  different original terms may still match different fields.
+- Archived replaced open status from the term-equivalence guide: "The helper
+  does not decide how multi-token profile results combine in the future query
+  engine". The partition helper still does not perform matching, but combination/
+  field-quality semantics now have these explicit owner decisions and a separate
+  composition reference. Raw grammar, profile/alias rules and production adapter
+  readiness are not approved by these choices.
+- Implemented strict composition schema/types, captured indexed matcher,
+  per-call component-field caches/intersections, complete-field evidence for
+  existing ranking and a self-contained synthetic query/scenario fixture.
+  Exact index/query policy and complete profile identities must agree; every
+  component allowance is validated before matching, including components after
+  an early failure. Empty contexts never vacuously qualify fields.
+- The initial focused new-suite run passed10/11; its failing test had incorrectly
+  assumed the inherited flat schema admitted an empty catalog. Preserved the
+  existing nonempty-catalog gate and corrected coverage to a declared item with
+  no searchable occurrences, plus explicit empty-catalog refusal.
+  `node --test tools\search-term-matches.test.mjs tools\search-tables.test.mjs tools\search-term-equivalence.test.mjs tools\search-ranking.test.mjs`
+  then passed51/51. Added coverage for all ten exact fields, equal-weight field
+  separation, cross-line lyrics, repeated components, no cross-profile/field
+  quality donation, incomplete-metadata nonpromotion, zero/one/two edits,
+  capture/identity/policy failures and actual supplementary/NFC expansion.
+  One thousand independent original-occurrence/full-matrix OSA scans matched
+  complete-field results, with qualifying and nonqualifying cases.
+- Final `npm run check` passed all generators and290/290 registered tests,
+  zero failures, cancellations or skips, after completing the portable query
+  fixture. Full evidence: `shared-complete-context-term-matches-full-validation.log`;
+  focused evidence: `shared-complete-context-term-matches-focused-validation.log`.
+  `python tools\check_repository.py` passed216 tracked files; Node strictYaml
+  parsed all17 tracked YAML files. actionlint1.7.12 with explicit ShellCheck0.11.0
+  passed. `git --no-pager diff --check`,
+  `git --no-pager diff --cached --check` and
+  `git --no-pager diff --exit-code -- generated schemas` passed.
+  Only existing LF/CRLF conversion warnings occurred.
+- No configurable threshold/weight, dependency/toolchain, source/conversion
+  output, consumer pin/runtime, main merge, deployment or publication-state
+  activation changed. No profile grammar, real source alignment, selected-script
+  highlights, filter adapter or measured client cancellation/resource capability
+  is manufactured by complete-field qualification.
+
 ## 2026-10-26: normalized query-token edit allowances
 
 - Continued SEARCH-02/12/13 with an additive helper in the existing flat-search

@@ -1,0 +1,79 @@
+{
+  "query": {
+    "policySha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "profiles": [
+      { "id": "synthetic-a", "signature": "1111111111111111111111111111111111111111111111111111111111111111" },
+      { "id": "synthetic-b", "signature": "2222222222222222222222222222222222222222222222222222222222222222" },
+      { "id": "synthetic-empty", "signature": "3333333333333333333333333333333333333333333333333333333333333333" }
+    ],
+    "terms": [
+      { "profiles": [
+        { "profileId": "synthetic-a", "tokens": [{ "text": "p", "edits": 0 }, { "text": "q", "edits": 0 }] },
+        { "profileId": "synthetic-b", "tokens": [{ "text": "x", "edits": 0 }, { "text": "y", "edits": 0 }] },
+        { "profileId": "synthetic-empty", "tokens": [] }
+      ] },
+      { "profiles": [
+        { "profileId": "synthetic-a", "tokens": [{ "text": "p", "edits": 0 }, { "text": "q", "edits": 0 }] },
+        { "profileId": "synthetic-b", "tokens": [{ "text": "x", "edits": 0 }, { "text": "y", "edits": 0 }] },
+        { "profileId": "synthetic-empty", "tokens": [] }
+      ] },
+      { "profiles": [
+        { "profileId": "synthetic-a", "tokens": [{ "text": "z", "edits": 0 }] },
+        { "profileId": "synthetic-b", "tokens": [] },
+        { "profileId": "synthetic-empty", "tokens": [] }
+      ] }
+    ]
+  },
+  "cases": [
+    {
+      "item": 1,
+      "occurrences": [
+        ["a", "title", "p", 0], ["a", "title", "q", 0], ["a", "lyrics", "z", 1]
+      ],
+      "evidence": [[0, "title", 0], [1, "lyrics", 0]],
+      "hit": { "metadata": true, "score": 105 }
+    },
+    {
+      "item": 2,
+      "occurrences": [
+        ["a", "title", "p", 0], ["a", "lyrics", "q", 1], ["a", "lyrics", "z", 1]
+      ],
+      "evidence": [[1, "lyrics", 0]],
+      "hit": null
+    },
+    {
+      "item": 3,
+      "occurrences": [
+        ["a", "title", "p", 0], ["b", "title", "y", 0], ["a", "lyrics", "z", 1]
+      ],
+      "evidence": [[1, "lyrics", 0]],
+      "hit": null
+    },
+    {
+      "item": 4,
+      "occurrences": [
+        ["b", "tags", "x", 0], ["b", "tags", "y", 0], ["a", "title", "z", 0]
+      ],
+      "evidence": [[0, "tags", 0], [1, "title", 0]],
+      "hit": { "metadata": true, "score": 140 }
+    },
+    {
+      "item": 5,
+      "occurrences": [
+        ["a", "lyrics", "p", 1], ["a", "lyrics", "q", 2], ["a", "lyrics", "z", 2]
+      ],
+      "evidence": [[0, "lyrics", 0], [1, "lyrics", 0]],
+      "hit": { "metadata": false, "score": 10 }
+    },
+    {
+      "item": 6,
+      "occurrences": [
+        ["a", "title", "p", 0], ["a", "lyrics", "p", 1],
+        ["a", "lyrics", "q", 2], ["a", "lyrics", "z", 1]
+      ],
+      "evidence": [[0, "lyrics", 0], [1, "lyrics", 0]],
+      "hit": { "metadata": false, "score": 10 }
+    }
+  ],
+  "rankedItems": [4, 1, 5, 6]
+}

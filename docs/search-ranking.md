@@ -24,6 +24,10 @@ not a client search engine or evidence of linguistic/profile correctness.
   not a gram overlap estimate. Field names come from the owning search-policy
   schema. Profile eligibility, query allowance and exact item/witness binding
   are caller obligations, not inferred from these assertions.
+  The [complete-field term matcher](search-term-matches.md) supplies evidence
+  only after all components of one profile interpretation match the same field,
+  using worst component distance. Partial metadata or complementary incomplete
+  contexts cannot qualify a field or donate better quality.
 - `policy`: exact `maxTerms` and complete `weights` from the compatible snapshot's
   search policy. Their schema domains reference the owning policy schema, not
   copied limits/defaults. All weights and computed scores must be safe integers.
