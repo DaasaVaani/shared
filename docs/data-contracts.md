@@ -270,6 +270,17 @@ contraction-before-limit refusal, normalized expansion, strict failures and
 capture check the original-length subgate only. Field primitives, later
 category/script admission, complete signatures/aliases and consumer pins remain
 unchanged; no partial-query truncation or normalized-token cap is introduced.
+The explicit [ASCII-only case stage](search-case.md) validates its owned settings
+during build. Run `node --test tools\search-case.test.mjs` incrementally. Its
+full-scalar numeric oracle, fixed post-fold NFC origins, protected technical
+role guards, strict input/map/capture failures and actual indexed AND/window
+composition cover the case prerequisite only. Full aliases, eligibility,
+matching signatures, all-transform source alignment and client adoption remain
+open; personal-name Unicode full folding is not used for search.
+Its bound parent projector additionally checks actual lexical term membership/
+text/spans, strict shared source-range union and all26,494 exact span compositions
+over1,555 bounded words against a separate original-position membership oracle.
+This closes the case/NFC/joiner composition only, not alias/cross-script alignment.
 The literal-vocabulary suite checks complete synthetic results, all32,258 bounded
 vocabulary/word combinations against independent whole-word generation, greedy
 failure/ambiguous coverage, exact scalar/case/marker handling, malformed inputs,

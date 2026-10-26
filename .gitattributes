@@ -20,3 +20,4 @@ settings/search-characters.yml text eol=lf
 generated/search-characters/* text eol=lf
 settings/search-lexing.yml text eol=lf
 settings/search-joiners.yml text eol=lf
+settings/search-case.yml text eol=lf

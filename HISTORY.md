@@ -1,5 +1,64 @@
 # Documentation history
 
+## 2026-10-26: explicit ASCII-only search case and post-fold provenance
+
+- Verified the previous query-budget branch was already published at
+  `80767852d8ffb1afbcc9d9a3c98c6a1710e73eff` with a clean worktree.
+  Continued under the owner's recommended-options authority. Eligibility still
+  needs complete reviewed mappings; selected the unambiguous existing ASCII
+  branch rule rather than inventing aliases or linguistic/script eligibility.
+- Added owned settings/schema/types, portable vectors and a branch-specific
+  case reference. Common/compact roles change exactly A-Z to a-z; technical
+  preserves literal case. Protected technical terms cannot enter ordinary
+  branches. Explicit roles are not production profile IDs/signatures.
+- Selected post-fold pinned NFC to preserve normalized-token semantics:
+  already-NFC `J\u030c` becomes `j\u030c` under ASCII substitution and then
+  U+01F0 under canonical composition. Added exact token-local source provenance,
+  including discontinuous origins around an intervening combining mark.
+  No non-ASCII case folding or display/source rewriting is introduced.
+- Archived the technical-token guide's stale statement that its separate
+  lexer does not supply "reviewed joiner preprocessing". The low-level lexer
+  still does not delete joiners; the explicit source-backed joiner wrapper
+  now supplies that prerequisite. Full query/profile eligibility remains open.
+- The initial focused run passed6/7. The integration test incorrectly passed
+  the full owning policy to the ranker's strict `{maxTerms,weights}` interface
+  and expected an `items` field instead of its existing `hits`. Corrected the
+  test to the documented existing API, without changing ranking/normalization
+  behavior. The final focused `node --test tools\search-case.test.mjs` passed7/7,
+  including every1,112,064 scalar with exactly26 ASCII changes, protected actual
+  atom readings, strict failures/capture, actual complete-context/indexed AND
+  ranking and literal grapheme-safe witness projection.
+  Evidence: `shared-search-ascii-case-focused-validation.log` and
+  `shared-search-ascii-case-focused-validation-final.log`.
+- Before finalization, closed the tightly coupled parent-map integration gap:
+  individually valid projections can concatenate into adjacent/overlapping/
+  reordered ranges after canonical reordering. Added a validated public wrapper
+  around the existing NFC union implementation, without changing NFC behavior,
+  and a case-source projector checking actual parent term membership/text/span
+  before composing case, NFC and joiner maps into exact original ranges.
+- `node --test tools\search-case.test.mjs tools\normalization-provenance.test.mjs`
+  passed18/18, including unchanged all99,825 official normalization inputs and
+  all26,494 source-span comparisons over1,555 bounded words against a separate
+  original-position membership oracle. Checked the earlier deletion, Unicode
+  expansion/reordering, protected terms, parent mismatch, same-length forged
+  text, wrong offsets, source-union failures and mutation independence.
+  Evidence: `shared-search-ascii-case-source-composition-focused-validation.log`.
+- Final `npm run check` passed all generators/build checks and328/328 registered
+  tests, zero failures/cancellations/skips, including explicit sparse-array
+  refusal in the new source-union validator. Full evidence:
+  `shared-search-ascii-case-full-validation.log`.
+  `python tools\check_repository.py` passed246 tracked files; inline Node
+  strictYaml parsing passed all20 tracked YAML files. actionlint1.7.12 with
+  explicit ShellCheck0.11.0, `git --no-pager diff --check`,
+  `git --no-pager diff --cached --check` and
+  `git --no-pager diff --exit-code -- generated schemas` passed.
+  Only existing/declared LF/CRLF warnings occurred.
+- No dependencies/toolchains, actual content, conversion/alias mappings,
+  consumer pins/runtime, main merge, publication activation or deployment changed.
+  Complete script/field/profile eligibility, linguistic expectations,
+  alias/conversion correspondence and independent client adoption remain open;
+  these reference results do not establish full production or release readiness.
+
 ## 2026-10-26: original search-query budget before transformations
 
 - Continued directly from the Kannada joiner slice. Its local commit

@@ -59,6 +59,7 @@ registries, UI catalogs, personal state and secrets retain their separate owners
 | Shared settings/search-characters.yml | Exact Unicode16 general-category data, fixed L*/M*/Nd ordinary membership and independent official oracle identity; build/reference adoption, no raw tokenizer activation |
 | Shared settings/search-lexing.yml | Pinned NFC/category lexical stage, maximal ordinary/marker candidates, protected whole technical readings and ordinary fallback; explicit unsupported categories, no production query/alias activation |
 | Shared settings/search-joiners.yml | Exact source-backed Unicode16 Kannada consonants, original-adjacency joiner deletion ledger and NFC/lexical original-span composition; build/reference adoption, no source rewrite or production activation |
+| Shared settings/search-case.yml | Explicit common/compact ASCII-only folding, technical preservation and post-fold NFC token-local provenance; no alias, full-profile or consumer activation |
 | Shared settings/ui-catalog.yml, defaults.yml | Catalog generation, supported UI languages, portable initial preferences and allowed choices |
 | Library settings/catalog.yml, ingestion.yml, images.yml, publication.yml | Branding/catalog/filter/profile selection, local import/extraction/network, image processing, hosting/publication |
 | Website settings/web.yml | Public bases/endpoints, routes, feature availability, UI tokens and platform worker/network/storage budgets |
@@ -220,6 +221,13 @@ syntax; other punctuation/symbols/separators are boundaries. Reject unexpected
 controls explicitly. Ignore ZWJ/ZWNJ only between Kannada virama U+0CCD and a
 reviewed Kannada consonant, search-only. Common/compact ASCII alias branches fold
 A-Z only; technical branches preserve case. Display/source text stays unchanged.
+The explicit [ASCII case stage](search-case.md) applies this rule only after
+NFC lexical/technical recognition, rejects protected technical terms in
+ordinary roles, and canonically normalizes the working result with exact
+token-local origins. Post-fold NFC handles cases such as `J\u030c` becoming
+U+01F0; it does not apply Unicode full folding or approve aliases/eligibility.
+Its parent-bound projector verifies the actual lexical term and composes exact
+case/NFC/joiner origins with canonical range union, never gap-filled envelopes.
 The [Kannada joiner stage](search-joiners.md) pins the36 Unicode16
 Indic_Syllabic_Category consonants, removes exactly one joiner only under
 original immediate adjacency, and retains complete deleted/surviving accounting.

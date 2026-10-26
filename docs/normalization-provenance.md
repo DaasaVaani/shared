@@ -97,6 +97,14 @@ deduplicate; neither caller mutations nor mutations of returned ranges affect
 later results. Invalid maps/spans throw explicit errors, not an empty successful
 projection or guessed identity/UTF-16 offset.
 
+`unionCodePointRanges(ranges)` exposes the same range-union algorithm behind
+an explicit safe-integer/nonnegative/nonempty-extent validator. It accepts an
+empty list, unordered/overlapping/adjacent ranges, and returns an independent
+sorted/coalesced exact union without filling gaps. Source bounds and authentic
+correspondence remain the owning map's responsibility. The
+[bound case/source projector](search-case.md) reuses it when composing maps;
+this does not change NFC result identity, coverage or normalization behavior.
+
 Structural validation cannot authenticate arbitrary caller-supplied text/origin
 claims or bind a map to an external original string. Use the map produced from
 the **exact** original input under the trusted profile, or recompute and compare
@@ -132,6 +140,14 @@ The distinct [Kannada joiner composition](search-joiners.md) now supplies
 original-adjacency deletion accounting before this unchanged NFC stage.
 Its wrapper projects through both maps, excluding deleted joiners from exact
 matches without violating this map's full prepared-input coverage contract.
+The explicit [ASCII case stage](search-case.md) separately preserves technical
+case and applies common/compact ASCII substitution followed by pinned NFC.
+Its nested NFC map truthfully refers to that working folded text; one-to-one
+substitution supplies token-local positional correspondence to the original
+NFC lexical term. It is not a full source/alias transformation contract.
+Its parent-bound projector now composes the case, lexical NFC and joiner maps,
+verifying the actual lexical term and canonicalizing exact original ranges.
+Alias/conversion/cross-script correspondence is not inferred by that composition.
 
 ## Validation, complexity and remaining gates
 

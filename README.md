@@ -68,6 +68,10 @@ The explicit [original-query budget wrapper](docs/search-query-budget.md) now
 checks the owning raw scalar limit before any joiner deletion/NFC/lexing,
 without imposing that query cap on fields or normalization-expanded tokens.
 It does not supply full query admission or profile eligibility.
+The explicit [ASCII-only case stage](docs/search-case.md) folds A-Z only for
+common/compact roles, preserves technical literals, protects recognized marked
+terms and retains exact post-fold NFC source correspondence. It is not a
+common/compact alias mapping or complete eligible matching profile.
 
 The [contiguous excerpt-window contract](docs/search-excerpt-windows.md) chooses
 best-fitting edits/leftmost/shortest focus over explicit verified display ranges

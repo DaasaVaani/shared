@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/result",
+  "$defs": {
+    "branch": { "enum": ["common-ascii", "compact-ascii", "technical"] },
+    "settings": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formatVersion", "profile", "unicodeVersion", "input", "finalNormalization", "uppercase", "lowercase", "branches"],
+      "properties": {
+        "formatVersion": { "const": 1 },
+        "profile": { "const": "unicode16-search-ascii-case-v1" },
+        "unicodeVersion": { "const": "16.0.0" },
+        "input": { "const": "nfc-lexical-term" },
+        "finalNormalization": { "const": "NFC" },
+        "uppercase": { "const": "ABCDEFGHIJKLMNOPQRSTUVWXYZ" },
+        "lowercase": { "const": "abcdefghijklmnopqrstuvwxyz" },
+        "branches": { "const": { "common-ascii": "ascii-only", "compact-ascii": "ascii-only", "technical": "preserve" } }
+      }
+    },
+    "result": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "formatVersion", "profile", "branch", "term", "foldedText", "normalization"],
+      "properties": {
+        "format": { "const": "daasavaani-search-case-stage" },
+        "formatVersion": { "const": 1 },
+        "profile": { "$ref": "#/$defs/settings/properties/profile" },
+        "branch": { "$ref": "#/$defs/branch" },
+        "term": { "$ref": "search-lexing#/$defs/term" },
+        "foldedText": { "$ref": "search-tables#/$defs/text" },
+        "normalization": { "$ref": "normalization-provenance#/$defs/provenance" }
+      }
+    }
+  }
+}

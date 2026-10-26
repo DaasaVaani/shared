@@ -22,7 +22,11 @@ ordinary L*/M*/Nd membership. Nonordinary symbols can still be technical atoms;
 category lookup neither discards them nor establishes raw scanning precedence.
 The [protected-marker lexer](search-lexing.md) supplies the selected maximal
 candidate/whole-recognition precedence and ordinary-boundary fallback. It does
-not supply production admission, reviewed joiner preprocessing or profile eligibility.
+not supply production admission or profile eligibility. The explicit
+[source-backed Kannada joiner wrapper](search-joiners.md) handles its selected
+pre-lexical context separately. The [ASCII case stage](search-case.md) runs
+after lexical recognition and prevents protected technical terms from entering
+common/compact folding roles; it does not approve alias or conversion mappings.
 
 ## Vocabulary and trust boundary
 

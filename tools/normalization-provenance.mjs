@@ -25,6 +25,14 @@ function union(ranges) {
   }
   return result;
 }
+export function unionCodePointRanges(ranges) {
+  if (!Array.isArray(ranges)) fail("source range union");
+  for (const range of ranges) {
+    if (!Array.isArray(range) || range.length !== 2 || !Number.isSafeInteger(range[0]) ||
+        !Number.isSafeInteger(range[1]) || range[0] < 0 || range[0] >= range[1]) fail("source range union");
+  }
+  return union(ranges);
+}
 function validate(provenance) {
   if (!shape(provenance) || provenance.normalizationDataSha256 !== manifest.data.sha256 ||
       !provenance.normalizedText.isWellFormed() || [...provenance.normalizedText].length !== provenance.origins.length) fail("schema/profile/length");
