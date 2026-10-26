@@ -23,6 +23,12 @@ truthful metadata context; no lyric evidence or line is manufactured. A better
 preview lyric match must not replace ranking quality from a different winning
 field. No source/profile/term equivalence is inferred.
 
+Within a matched normalized token, the separate
+[fragment witness contract](search-tables.md#exact-normalized-token-witnesses)
+chooses minimum edits, then leftmost start, then shortest at that start.
+Its code-point offsets are not display offsets: they still need verified
+profile-to-line projection before this evidence can be highlighted.
+
 ## Inputs and policy
 
 `selectRepresentativeLines(input, limits)` requires:

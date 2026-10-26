@@ -51,6 +51,8 @@ implementation is authorized, not global production readiness.
   The [representative-line contract](search-excerpts.md) separately fixes
   per-term best edits/canonical-order ties, merged lines and explicit omissions
   without claiming text/span rendering or ranking.
+  Normalized-token witnesses select minimum edits/leftmost/shortest with exact
+  half-open code-point spans; they do not infer display/profile projections.
 - Publication/offline: durable state/receipts/sequence, deterministic ZIP planner,
   host/resource bounds, current-only remote, complete atomic activation, safe
   pins/fences/GC, resume/degradation/repair and explicit manual refresh.
@@ -164,6 +166,11 @@ order rather than UUID/evidence order, merged matches, complete retained anchors
 explicit visible-cap omissions and exact16/17 admission. Run
 `node --test tools\search-line-selection.test.mjs` incrementally. Actual
 selected-script text/span projection and240-code-point clipping remain open.
+The witness suite checks the manually fixed tie vectors and complete indexed/
+all-substring oracle distance/start/end equality over23,436 cases, longer positive
+gram bounds and actual starts beyond65,535 code points. Run
+`node --test tools\search-witnesses.test.mjs` incrementally. The distance-only
+API's shape/quality remains covered independently; display mapping is not guessed.
 The full-backup suite additionally validates both complete current logical
 platform allowlists, collection/identity/byte boundaries, single-member gzip/
 fatal UTF8/duplicate JSON rejection and exact synthetic round trips using

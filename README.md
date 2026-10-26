@@ -9,6 +9,9 @@ against an independent bounded fragment-OSA oracle. Its exact verifier then chec
 minimum internal-fragment edits using three query-length working rows and complete
 indexed-versus-scan parity. Production normalization/ranking/span projection,
 adapters and real memory budgets remain separate gates.
+Normalized-token witnesses separately choose minimum edits, then leftmost start,
+then shortest at that start, with exact half-open code-point offsets. They are not
+display spans or permission to guess a missing profile projection.
 
 The [representative lyric-line contract](docs/search-excerpts.md) chooses the
 best edit match per distinct term, breaking ties by canonical reading order,

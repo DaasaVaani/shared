@@ -13,6 +13,10 @@ export interface SearchTokenMatch {
   token: number;
   edits: 0 | 1 | 2;
 }
+export interface SearchTokenWitness extends SearchTokenMatch {
+  start: number;
+  end: number;
+}
 export interface NormalizedSearchInput {
   policySha256: string;
   profiles: MatchingProfileIdentity[];

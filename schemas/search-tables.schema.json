@@ -16,6 +16,15 @@
         "edits": { "type": "integer", "minimum": 0, "maximum": 2 }
       }
     },
+    "witness": {
+      "type": "object", "additionalProperties": false, "required": ["token", "edits", "start", "end"],
+      "properties": {
+        "token": { "$ref": "#/$defs/integer" },
+        "edits": { "type": "integer", "minimum": 0, "maximum": 2 },
+        "start": { "$ref": "#/$defs/integer" },
+        "end": { "$ref": "#/$defs/count" }
+      }
+    },
     "profiles": {
       "type": "array", "minItems": 1,
       "items": {

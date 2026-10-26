@@ -32,3 +32,16 @@ export function fragmentDistance(query, token) {
   }
   return best;
 }
+
+export function fragmentWitness(query, token) {
+  const q = [...query], t = [...token];
+  let best = null;
+  for (let start = 0; start < t.length; start++) {
+    for (let end = start + 1; end <= t.length; end++) {
+      const edits = osaDistance(q, t.slice(start, end));
+      if (!best || edits < best.edits || (edits === best.edits &&
+          (start < best.start || (start === best.start && end < best.end)))) best = { edits, start, end };
+    }
+  }
+  return best;
+}

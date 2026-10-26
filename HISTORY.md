@@ -1,5 +1,33 @@
 # Documentation history
 
+## 2026-10-26: owner-selected exact fragment witnesses
+
+- Following representative-line publication
+  `a4e0e2f8492214cf843aadced02fbad9aa5362fd`, presented the remaining equal-edit
+  span choice: leftmost then shortest at that start; closest query length then
+  leftmost; or all minimum spans. Owner selected `leftmost-then-shortest`.
+  Ranking/representative-line rules and existing product limits remain unchanged.
+- Added a separate normalized-token witness API with strict result schema/type
+  and half-open code-point spans. The shared core tracks three byte cost rows
+  and three Float64 start rows, preserving safe-integer offsets and selected
+  distance/start/end tuple order. Empty spans never win; only an unbeatable
+  first exact match can stop early. No display/profile projection is invented.
+- Preserved the public distance-only result shape/quality by projecting from
+  the shared witness core instead of maintaining a second OSA implementation.
+  Archived its previous three-byte-row-only allocation description; start
+  tracking and temporary witness results add bounded working/output allocations,
+  not an asserted client memory-budget pass.
+- Added manual deletion/transposition/shortest/leftmost/Unicode vectors,
+  independent exhaustive23,436 distance/start/end comparisons, actual offsets
+  beyond65,535 and longer positive gram-bound cases. Focused pre-extension
+  exact/witness10/10 cases passed; full validation includes the added cases.
+- Full `npm run check` passed generation and184/184 tests, zero failed,
+  cancelled or skipped. Hygiene passed129 tracked paths; working/staged Git
+  whitespace, generated/schema stability, strict YAML13 and actionlint1.7.12
+  with explicit ShellCheck0.11.0 passed. Full log:
+  `shared-search-fragment-witnesses-full-validation.log`. No consumer pins,
+  actual source variants, production state, main merge or deployment changed.
+
 ## 2026-10-26: owner-selected representative lyric lines
 
 - After exact verification publication `d6dd2527cc12ee204593cb653a6c1ff8f618bad8`,

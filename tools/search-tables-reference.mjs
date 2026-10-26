@@ -174,41 +174,72 @@ function candidateLookup(snapshot) {
   };
 }
 
-function boundedFragmentDistance(query, token, edits) {
+function boundedFragmentWitness(query, token, edits) {
   const ceiling = edits + 1;
   let previous = new Uint8Array(query.length + 1), earlier = new Uint8Array(query.length + 1),
-    current = new Uint8Array(query.length + 1), best = Math.min(query.length, ceiling), previousPoint;
+    current = new Uint8Array(query.length + 1);
+  let previousStarts = new Float64Array(query.length + 1), earlierStarts = new Float64Array(query.length + 1),
+    currentStarts = new Float64Array(query.length + 1), best = null, previousPoint, end = 0;
   for (let i = 0; i <= query.length; i++) previous[i] = Math.min(i, ceiling);
   for (const point of token) {
+    end++;
     current[0] = 0;
+    currentStarts[0] = end;
     for (let i = 1; i <= query.length; i++) {
-      let cost = Math.min(ceiling, previous[i] + 1, current[i - 1] + 1,
-        previous[i - 1] + (query[i - 1] === point ? 0 : 1));
+      let cost = Math.min(ceiling, previous[i] + 1), start = previousStarts[i];
+      let alternative = Math.min(ceiling, current[i - 1] + 1);
+      if (alternative < cost || (alternative === cost && currentStarts[i - 1] < start)) {
+        cost = alternative;
+        start = currentStarts[i - 1];
+      }
+      alternative = Math.min(ceiling, previous[i - 1] + (query[i - 1] === point ? 0 : 1));
+      if (alternative < cost || (alternative === cost && previousStarts[i - 1] < start)) {
+        cost = alternative;
+        start = previousStarts[i - 1];
+      }
       if (i > 1 && previousPoint !== undefined && query[i - 1] === previousPoint && query[i - 2] === point) {
-        cost = Math.min(cost, earlier[i - 2] + 1);
+        alternative = Math.min(ceiling, earlier[i - 2] + 1);
+        if (alternative < cost || (alternative === cost && earlierStarts[i - 2] < start)) {
+          cost = alternative;
+          start = earlierStarts[i - 2];
+        }
       }
       current[i] = cost;
+      currentStarts[i] = start;
     }
-    best = Math.min(best, current[query.length]);
-    if (best === 0) return 0;
+    const distance = current[query.length], start = currentStarts[query.length];
+    if (distance <= edits && start < end && (!best || distance < best.edits ||
+        (distance === best.edits && (start < best.start || (start === best.start && end < best.end))))) {
+      best = { edits: distance, start, end };
+      if (distance === 0) return best;
+    }
     const reusable = earlier;
     earlier = previous;
     previous = current;
     current = reusable;
+    const reusableStarts = earlierStarts;
+    earlierStarts = previousStarts;
+    previousStarts = currentStarts;
+    currentStarts = reusableStarts;
     previousPoint = point;
   }
   return best;
 }
 
 export function createFlatSearchMatches(tables) {
+  const witnesses = createFlatSearchWitnesses(tables);
+  return query => witnesses(query).map(({ token, edits }) => ({ token, edits }));
+}
+
+export function createFlatSearchWitnesses(tables) {
   assertFlatSearchTables(tables);
   const snapshot = structuredClone(tables), candidates = candidateLookup(snapshot);
   return query => {
-    const ids = candidates(query), points = [...query.text], matches = [];
+    const ids = candidates(query), points = [...query.text], witnesses = [];
     for (const token of ids) {
-      const edits = boundedFragmentDistance(points, snapshot.tokens[token].text, query.edits);
-      if (edits <= query.edits) matches.push({ token, edits });
+      const witness = boundedFragmentWitness(points, snapshot.tokens[token].text, query.edits);
+      if (witness) witnesses.push({ token, ...witness });
     }
-    return matches;
+    return witnesses;
   };
 }

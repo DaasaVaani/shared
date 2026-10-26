@@ -221,6 +221,10 @@ apply positive necessary overlap bounds n-k, n-1-3k, n-2-4k. Whole-token extra g
 only broaden candidates. Then exact token-internal fragment OSA verification.
 Formalize completeness and scan-oracle parity; no lossy cutoff, production full
 scan substitute or silent sharding.
+The [normalized-token witness rule](search-tables.md#exact-normalized-token-witnesses)
+selects minimum restricted-OSA edits, then leftmost start, then shortest at that
+start, in half-open code-point coordinates. Those offsets are not display spans;
+reviewed projection and grapheme-safe rendering remain required.
 
 Metadata-containing bucket always precedes lyrics-only. Sum the best field weight
 per distinct term: title100; composer/ankita80; deity60; tags/form/category40;

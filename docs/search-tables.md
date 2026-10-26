@@ -166,9 +166,11 @@ use unrestricted Damerau scripts. No first-acceptable early exit is allowed:
 later fragments may have fewer edits. Only a zero-distance match can return
 immediately because no later match can improve it.
 
-The Node-only implementation rotates three query-length byte rows, with each
-cell capped at `allowance + 1` (at most3), plus the query's code points and previous
-target code point. All transition costs are nonnegative; a path already beyond
+The shared Node-only verification core rotates three query-length byte cost rows,
+with each cell capped at `allowance + 1` (at most3), and three query-length
+Float64 start-offset rows, plus the query's code points and previous target
+code point. Float64 retains safe-integer code-point positions without a16-/32-bit
+offset truncation. All transition costs are nonnegative; a path already beyond
 the allowance cannot later yield an accepted path, so this cap preserves every
 accepted minimum. It avoids a full token-code-point buffer or full DP matrix.
 For query length n and selected token length m, verification is O(n*m) work and
@@ -186,9 +188,42 @@ per-term best-edit/canonical-order rule over already-verified line evidence.
 Its canonical order comes from the actual item, not this UUID-sorted dictionary;
 it does not supply missing display spans or normalization.
 
+### Exact normalized-token witnesses
+
+`createFlatSearchWitnesses(tables)` is a separate API returning
+`{token,edits,start,end}`. The token is the same dictionary ID; `start`/`end` are
+half-open **Unicode-code-point** offsets in that exact normalized token text.
+Require `0 <= start < end <= token code-point length`; empty spans are never
+selected. These are not UTF16/byte offsets, canonical/display text offsets or
+grapheme boundaries, and cannot be applied directly to an item line.
+
+Choose minimum edit distance, then smallest start, then smallest end (shortest
+at that start). Do not prefer closeness to query length, consolidate other terms
+or retain every tied span. A deletion-based short span may legitimately win
+over a longer equally good fragment. This affects highlight evidence only,
+not ranking or the selected representative line.
+
+Each DP cell retains the earliest start among equal-cost paths; fixed-cell
+transitions preserve that preference. Completed-query cells compete on the
+full distance/start/end tuple. A zero-cost fragment is exactly query-length,
+so its first ending position is already the leftmost/shortest zero-cost witness.
+Only that unbeatable case returns early. Cost capping preserves all accepted
+paths; offsets are never capped. All other target positions remain eligible.
+
+The distance-only API now projects `{token,edits}` from this same verified core,
+preserving its result shape/quality and avoiding a duplicate OSA algorithm.
+Start tracking adds three Float64 rows; projecting distance-only results also
+temporarily retains the witness result array. O(n) working space still applies,
+but this is not a measured retained/peak budget or a client allocation claim.
+The separate [golden witness cases](../fixtures/search-witnesses.json) fix
+minimum-edit/leftmost/shortest ties and literal supplementary/combining offsets.
+Display projection must verify the matching profile's complete mapping before
+any clipping/highlighting; no identity/offset fallback is supplied.
+
 Focused: `node --test tools\search-tables.test.mjs`.
 Candidate completeness: `node --test tools\search-candidates.test.mjs`.
 Exact parity: `node --test tools\search-matches.test.mjs`.
+Witness parity: `node --test tools\search-witnesses.test.mjs`.
 Full validation remains [the contract checklist](data-contracts.md#validation-and-finalization).
 Tests compare a manually fixed complete vector, exact JSON/gzip byte roundtrip,
 permutations/repeated evidence, all field codes/lyric-scoped lines, multiple
@@ -210,6 +245,10 @@ same23,436 combinations, not merely candidate-superset acceptance. Targeted
 vectors cover candidate false positives, later better fragments, all three
 allowances, overlap-restricted versus unrestricted transpositions, literal/
 supplementary Unicode, mutable caller/results and256-code-point positions.
+The witness suite requires exact distance/start/end equality with the independent
+complete-substring matrix oracle over23,436 combinations. Manual nonempty/deletion/
+transposition/tie cases, longer positive gram bounds and actual starts beyond65,535
+code points verify coordinate semantics and preserve the distance-only API.
 
 Next gates: exact reviewed policy/profile/tokenization/range-projection contracts,
 production span/witness projection, multi-term equivalence/ranking/excerpt
