@@ -55,6 +55,11 @@ The [complete-context term matcher](docs/search-term-matches.md) qualifies
 same-field all-component interpretations before the existing AND ranker,
 without combining incomplete profiles or rewarding partial metadata matches.
 This is post-normalization reference composition, not production raw search.
+The [protected-marker lexical stage](docs/search-lexing.md) now supplies selected
+NFC/category boundaries, retaining whole recognized technical markers without
+ordinary stripped alternatives and using ordinary runs otherwise. Remaining
+controls/formats fail explicitly; reviewed joiner preprocessing, production
+query admission, eligibility and full source projection remain separate gates.
 
 The [contiguous excerpt-window contract](docs/search-excerpt-windows.md) chooses
 best-fitting edits/leftmost/shortest focus over explicit verified display ranges

@@ -124,8 +124,8 @@ implement or approve a scanning precedence rule.
 
 Still required before a production tokenizer/query adapter:
 
-- Raw ordinary-versus-technical boundary/classification semantics, including
-  ambiguous punctuation and explicit unsupported-input handling.
+- Production integration of the selected [protected-marker lexical rules](search-lexing.md),
+  including explicit user-facing unsupported-input handling.
 - Scalar/query admission, controls and reviewed Kannada joiner context rules.
 - Field/script/Source Latin eligibility, terminal-label exclusions, reviewed
   common/compact aliases and complete profile/policy/signature binding.

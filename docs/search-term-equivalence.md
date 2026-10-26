@@ -48,8 +48,11 @@ derives each already-normalized token's allowance from explicit compatible
 policy bands before matrix construction. Raw counts cannot replace normalized
 counts; the terminal9+ allowance covers normalization-expanded tokens as well.
 The [technical vocabulary checker](technical-tokens.md) can validate a declared
-whole technical literal without changing it. Its synthetic mechanics supply
-neither actual reviewed atom entries nor raw-query boundary discovery.
+whole technical literal without changing it. Atom approval comes from the owning
+reviewed settings, not from the checker; recognition alone does not discover boundaries.
+The separate [protected-marker lexer](search-lexing.md) now supplies selected
+mechanical boundaries using explicitly supplied vocabularies; it does not
+create completed eligible normalization matrices or approved alias rules.
 
 Callers must validate the complete inventory, rule bytes and policy identity
 against the compatible index before grouping, including contexts absent from

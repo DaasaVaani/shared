@@ -245,6 +245,13 @@ fields, cross-line lyrics, incomplete metadata nonpromotion, no mixed-context
 quality, identity/allowance failures and capture independence. They do not
 supply raw grammar, reviewed mappings, selected-script excerpts or client
 resource/cancellation evidence.
+The [protected-marker lexical stage](search-lexing.md) validates owning settings/
+resource identity during `npm run build`. Run
+`node --test tools\search-lexing.test.mjs` incrementally. Portable inventory cases,
+all19,608 bounded atom-language/boundary comparisons, exact NFC/source spans,
+strict unsupported categories and actual indexed complete-field/AND-ranking
+composition do not establish production admission, reviewed Kannada joiner
+preprocessing, script/alias eligibility or client memory/cancellation.
 The literal-vocabulary suite checks complete synthetic results, all32,258 bounded
 vocabulary/word combinations against independent whole-word generation, greedy
 failure/ambiguous coverage, exact scalar/case/marker handling, malformed inputs,

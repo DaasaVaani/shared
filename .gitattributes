@@ -18,3 +18,4 @@ resources/latin-reference-audit/ITRANS-DEFAULT.tsv -text whitespace=-blank-at-eo
 resources/latin-reference-audit/kannada.toml whitespace=-blank-at-eof
 settings/search-characters.yml text eol=lf
 generated/search-characters/* text eol=lf
+settings/search-lexing.yml text eol=lf

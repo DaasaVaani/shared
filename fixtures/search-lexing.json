@@ -1,0 +1,25 @@
+{
+  "vectors": [
+    { "text": "a.a,word.", "terms": [
+      ["technical", "a.a", 0, 3, ["synthetic-itrans-kn"]],
+      ["ordinary", "word", 4, 8, []]
+    ] },
+    { "text": "a.x", "terms": [["ordinary", "a", 0, 1, []], ["ordinary", "x", 2, 3, []]] },
+    { "text": "a.a@av", "terms": [
+      ["ordinary", "a", 0, 1, []], ["ordinary", "a", 2, 3, []], ["ordinary", "av", 4, 6, []]
+    ] },
+    { "text": "a\u2019a", "terms": [["technical", "a\u2019a", 0, 3, ["synthetic-iso15919"]]] },
+    { "text": "@av", "terms": [["technical", "@av", 0, 3, ["synthetic-baraha-kn"]]] },
+    { "text": "e\u0301,a.a", "terms": [
+      ["ordinary", "\u00e9", 0, 1, []], ["technical", "a.a", 2, 5, ["synthetic-itrans-kn"]]
+    ] },
+    { "text": "\ud801\udc00\ud801\udc00,\u0c95\u0ccd", "terms": [
+      ["ordinary", "\ud801\udc00\ud801\udc00", 0, 2, []], ["ordinary", "\u0c95\u0ccd", 3, 5, []]
+    ] },
+    { "text": "\u2160\u00b2:a", "terms": [["ordinary", "a", 3, 4, []]] },
+    { "text": "\u0ce6\u0ce7", "terms": [["ordinary", "\u0ce6\u0ce7", 0, 2, []]] },
+    { "text": "\u0344", "terms": [["ordinary", "\u0308\u0301", 0, 2, []]] },
+    { "text": "", "terms": [] },
+    { "text": " ,... ", "terms": [] }
+  ]
+}

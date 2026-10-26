@@ -1,0 +1,10 @@
+formatVersion: 1
+profile: unicode16-protected-search-lexing-v1
+unicodeVersion: 16.0.0
+normalization: NFC
+candidateRuns: ordinary-or-reviewed-marker
+recognizedMarked: technical-only
+unrecognizedMarked: ordinary-runs
+rejectedCategories: [Cc, Cf, Cs, Co, Cn]
+categoryResource: generated/search-characters/unicode16.json
+categoryManifest: generated/search-characters/manifest.json

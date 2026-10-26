@@ -1,5 +1,57 @@
 # Documentation history
 
+## 2026-10-26: recommended protected-marker lexical decisions
+
+- Owner explicitly selected protected technical interpretation for fully
+  recognized marked chunks, then directed: "do not ask any question. go with
+  recommended option for all". Applied recommended remaining mechanical
+  lexical decisions without additional prompts.
+- Select maximal NFC code-point runs containing ordinary L*/M*/Nd characters
+  or nonordinary punctuation/symbol characters actually present in the
+  declared reviewed atom vocabularies. Test the complete marked run under
+  every declared profile; retain all complete technical interpretations only.
+  Do not add punctuation-stripped ordinary alternatives or salvage a guessed
+  technical prefix. When none recognizes the whole marked run, ordinary
+  punctuation boundaries emit its maximal ordinary runs.
+- Recommended strict stage admission rejects malformed scalar strings and
+  Cc/Cf/Cs/Co/Cn, including remaining joiners, rather than silently discarding
+  opaque characters. This is a bounded lexical-stage precondition, not approval
+  of a production query-admission policy or Kannada consonant/joiner transform.
+  The separately reviewed search-only joiner preprocessing and its provenance
+  remain required before affected real input can use this stage.
+- Archived replaced blanket open status for raw marker placement/classification
+  in the technical-vocabulary, character and term-equivalence guides. The
+  mechanical boundaries now have selected rules/reference composition, but
+  actual query admission, reviewed profile/alias eligibility, complete signatures,
+  joiner handling and consumer wiring remain open.
+- Implemented owning settings/schema/types, captured NFC/category lexer,
+  portable vectors and build-time settings/resource validation. Returned terms
+  retain exact normalized scalar spans and complete original-stage-input NFC
+  provenance. No query-size cap is silently applied to field text or expanded
+  tokens; original-query admission remains a separate mandatory caller step.
+- The initial focused run passed7/8: a test incorrectly expected `~M` to have
+  only a Harvard-Kyoto reading. The already-approved Baraha inventory also
+  contains `~M`; corrected the test to retain both, without changing any atom.
+  `node --test tools\search-lexing.test.mjs` then passed8/8, including all19,608
+  independently generated bounded atom-language/boundary cases. Actual
+  lexical-to-allowance-to-complete-field/AND-ranking composition rejects a
+  punctuation-stripped substitute for a protected technical term.
+- Final `npm run check` passed all generators/build-time checks and298/298
+  registered tests, zero failed/cancelled/skipped. Evidence:
+  `shared-protected-search-lexing-focused-validation.log` and
+  `shared-protected-search-lexing-full-validation.log`.
+  `python tools\check_repository.py` passed224 tracked files; strict Node YAML
+  parsing passed18 tracked YAML files. actionlint1.7.12 with explicit
+  ShellCheck0.11.0, `git --no-pager diff --check`,
+  `git --no-pager diff --cached --check` and
+  `git --no-pager diff --exit-code -- generated schemas` passed.
+  Only declared/existing LF/CRLF warnings occurred.
+- No dependency/toolchain, source/conversion mapping, actual content, consumer
+  pin/runtime, main merge, publication activation or deployment changed.
+  Ordinary output's empty profile list means eligibility is not yet assigned,
+  not an inactive completed matrix. Raw lexical eligibility/provenance cannot
+  stand in for linguistic truth, reviewed joiner equivalence or release evidence.
+
 ## 2026-10-26: complete-context and same-field compound-term decisions
 
 - Owner selected complete-context combination: all component tokens of one

@@ -20,6 +20,9 @@ Its passing discrepancy checks are not linguistic approval.
 The separate [Unicode16 character reference](search-characters.md) defines
 ordinary L*/M*/Nd membership. Nonordinary symbols can still be technical atoms;
 category lookup neither discards them nor establishes raw scanning precedence.
+The [protected-marker lexer](search-lexing.md) supplies the selected maximal
+candidate/whole-recognition precedence and ordinary-boundary fallback. It does
+not supply production admission, reviewed joiner preprocessing or profile eligibility.
 
 ## Vocabulary and trust boundary
 
@@ -39,8 +42,8 @@ are allowed. Atom declaration order is irrelevant. Duplicate declarations are
 invalid rather than silently repaired. Case/diacritics/markers are exact scalar
 distinctions. A composed/decomposed representation is not silently substituted.
 
-Entries outside the approved inventory, meaningful-marker placement in raw queries,
-rare extensions and profile eligibility still require review, pinned complete
+Entries outside the approved inventory, rare extensions and profile eligibility
+still require review, pinned complete
 rules and independent permitted expectations before production use.
 The [provisional transliteration tables](transliteration.md) are not implicitly
 approved search vocabularies. A settings change must include its schema,

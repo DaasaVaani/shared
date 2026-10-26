@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/result",
+  "$defs": {
+    "settings": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formatVersion", "profile", "unicodeVersion", "normalization", "candidateRuns", "recognizedMarked", "unrecognizedMarked", "rejectedCategories", "categoryResource", "categoryManifest"],
+      "properties": {
+        "formatVersion": { "const": 1 },
+        "profile": { "const": "unicode16-protected-search-lexing-v1" },
+        "unicodeVersion": { "const": "16.0.0" },
+        "normalization": { "const": "NFC" },
+        "candidateRuns": { "const": "ordinary-or-reviewed-marker" },
+        "recognizedMarked": { "const": "technical-only" },
+        "unrecognizedMarked": { "const": "ordinary-runs" },
+        "rejectedCategories": { "const": ["Cc", "Cf", "Cs", "Co", "Cn"] },
+        "categoryResource": { "const": "generated/search-characters/unicode16.json" },
+        "categoryManifest": { "const": "generated/search-characters/manifest.json" }
+      }
+    },
+    "vocabularies": {
+      "type": "array", "minItems": 1,
+      "items": { "$ref": "technical-tokens#/$defs/vocabulary" }
+    },
+    "term": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "text", "start", "end", "profiles"],
+      "properties": {
+        "kind": { "enum": ["ordinary", "technical"] },
+        "text": { "$ref": "search-tables#/$defs/text" },
+        "start": { "$ref": "search-tables#/$defs/integer" },
+        "end": { "$ref": "search-tables#/$defs/integer" },
+        "profiles": { "type": "array", "items": { "$ref": "search-tables#/$defs/profiles/items" } }
+      }
+    },
+    "result": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "formatVersion", "profile", "characterDataSha256", "technicalProfiles", "normalization", "terms"],
+      "properties": {
+        "format": { "const": "daasavaani-search-lexing" },
+        "formatVersion": { "const": 1 },
+        "profile": { "$ref": "#/$defs/settings/properties/profile" },
+        "characterDataSha256": { "$ref": "search-tables#/$defs/hash" },
+        "technicalProfiles": { "$ref": "search-tables#/$defs/profiles" },
+        "normalization": { "$ref": "normalization-provenance#/$defs/provenance" },
+        "terms": { "type": "array", "items": { "$ref": "#/$defs/term" } }
+      }
+    }
+  }
+}
