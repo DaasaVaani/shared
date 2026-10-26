@@ -250,8 +250,18 @@ resource identity during `npm run build`. Run
 `node --test tools\search-lexing.test.mjs` incrementally. Portable inventory cases,
 all19,608 bounded atom-language/boundary comparisons, exact NFC/source spans,
 strict unsupported categories and actual indexed complete-field/AND-ranking
-composition do not establish production admission, reviewed Kannada joiner
-preprocessing, script/alias eligibility or client memory/cancellation.
+composition do not establish production admission, script/alias eligibility or
+client memory/cancellation.
+The separate [Kannada joiner stage](search-joiners.md) validates source-bound
+settings and the exact36 official consonants during build. Run
+`node --test tools\search-joiners.test.mjs` incrementally. It checks both joiners
+against every following scalar, all19,608 bounded independent original-string
+oracle cases, strict complete deletion/retention accounting, exact original
+adjacency, unchanged low-level Cf rejection, NFC reordering/expansion and
+actual indexed-witness-to-literal-grapheme-window composition. The explicit
+wrapper/projector keeps pure NFC and lexical identities unchanged. This closes
+the local mechanical joiner/provenance prerequisite, not production query
+admission, conversion/alias truth, all-transform alignment or consumer adoption.
 The literal-vocabulary suite checks complete synthetic results, all32,258 bounded
 vocabulary/word combinations against independent whole-word generation, greedy
 failure/ambiguous coverage, exact scalar/case/marker handling, malformed inputs,

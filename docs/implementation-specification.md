@@ -57,7 +57,8 @@ registries, UI catalogs, personal state and secrets retain their separate owners
 | Shared settings/normalization-provenance.yml | Independently approved Unicode16 NFC-only per-code-point source mapping and existing resource/manifest binding; bounded excerpt tooling, no alias/cross-script approval |
 | Shared settings/technical-token-vocabularies.yml | Exact reviewed literal-search atoms: five Latin directions/275 declarations, explicit compatibility/adaptation scopes, build-time validation; no complete matching signature or transliteration approval |
 | Shared settings/search-characters.yml | Exact Unicode16 general-category data, fixed L*/M*/Nd ordinary membership and independent official oracle identity; build/reference adoption, no raw tokenizer activation |
-| Shared settings/search-lexing.yml | Pinned NFC/category lexical stage, maximal ordinary/marker candidates, protected whole technical readings and ordinary fallback; explicit unsupported categories, no production query/joiner/alias activation |
+| Shared settings/search-lexing.yml | Pinned NFC/category lexical stage, maximal ordinary/marker candidates, protected whole technical readings and ordinary fallback; explicit unsupported categories, no production query/alias activation |
+| Shared settings/search-joiners.yml | Exact source-backed Unicode16 Kannada consonants, original-adjacency joiner deletion ledger and NFC/lexical original-span composition; build/reference adoption, no source rewrite or production activation |
 | Shared settings/ui-catalog.yml, defaults.yml | Catalog generation, supported UI languages, portable initial preferences and allowed choices |
 | Library settings/catalog.yml, ingestion.yml, images.yml, publication.yml | Branding/catalog/filter/profile selection, local import/extraction/network, image processing, hosting/publication |
 | Website settings/web.yml | Public bases/endpoints, routes, feature availability, UI tokens and platform worker/network/storage budgets |
@@ -214,6 +215,11 @@ syntax; other punctuation/symbols/separators are boundaries. Reject unexpected
 controls explicitly. Ignore ZWJ/ZWNJ only between Kannada virama U+0CCD and a
 reviewed Kannada consonant, search-only. Common/compact ASCII alias branches fold
 A-Z only; technical branches preserve case. Display/source text stays unchanged.
+The [Kannada joiner stage](search-joiners.md) pins the36 Unicode16
+Indic_Syllabic_Category consonants, removes exactly one joiner only under
+original immediate adjacency, and retains complete deleted/surviving accounting.
+It supplies explicit deletion-aware NFC/lexical projection without changing
+pure NFC coverage or the low-level lexer's rejection of remaining formats.
 Exclude terminal verse labels/numbers only through explicit reviewed ranges on
 declared ending lines; no annotation means no inferred exclusion.
 The [pinned Unicode16 character component](search-characters.md) supplies exact
@@ -226,15 +232,16 @@ covers it. Neither a unique phonetic parse nor greedy longest-prefix recognition
 is required. The isolated trie/reachability reference has synthetic conformance
 vectors and owned settings for275 approved declarations across five Latin directions.
 Independent attested linguistic expectations, complete profile rules,
-production admission/joiner/eligibility and unsupported-input integration remain gates,
+production admission/eligibility and unsupported-input integration remain gates,
 not inferred from provisional tables.
 The [protected-marker lexical stage](search-lexing.md) supplies mechanical
 maximal ordinary-or-reviewed-marker runs. A completely recognized marked run
 retains all complete technical contexts without punctuation-stripped ordinary
 alternatives; otherwise ordinary boundaries emit maximal ordinary runs. No
 guessed technical prefix/mixed-profile parse is salvaged. Its strict Cc/Cf/Cs/
-Co/Cn rejection is a stage precondition, not completed query admission or the
-reviewed Kannada joiner transform. Production integration and profile eligibility
+Co/Cn rejection is a stage precondition, not completed query admission. Use the
+explicit joiner-aware wrapper for reviewed Kannada contexts rather than silently
+changing the low-level lexical profile. Production integration and profile eligibility
 remain gates even though these mechanical boundaries are now selected/executable.
 The [reference audit](latin-reference-audit.md) supplies independent pinned
 character/sign comparisons and documents primary/secondary disagreements for

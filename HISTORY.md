@@ -1,5 +1,55 @@
 # Documentation history
 
+## 2026-10-26: source-backed Kannada search joiner preprocessing
+
+- Continued the owner's recommendation authority without further product prompts.
+  Selected Unicode16 `Indic_Syllabic_Category=Consonant` within the Kannada block,
+  independently cross-checked with UnicodeData Kannada-letter names/Lo categories:
+  U+0C95..0CA8, U+0CAA..0CB3, U+0CB5..0CB9 and U+0CDE, exactly36.
+  This includes RRA and FA, not just the provisional34 conversion consonants.
+  This is search-context membership only, not phonetic/conversion certification.
+- Pinned the unmodified official IndicSyllabicCategory source,85,247 bytes,
+  SHA256 `615f1b92ba7ec76e18c5b5c05d2e1836e4b98bc791eb9e27946c7621fc047ae7`,
+  under the existing verified Unicode License V3/source provenance.
+- Selected exact original adjacency: U+0CCD + one ZWJ/ZWNJ + one selected
+  consonant. No extra preceding-consonant rule, recursive deletion, format
+  stripping, other-script joiner rule or source/display rewrite is introduced.
+- Archived replaced current warnings: the lexer guide said "The approved
+  context-specific Kannada joiner equivalence is not implemented here" and
+  required a separately reviewed consonant/context transform before affected
+  input could reach it. README/specification/contract registry likewise listed
+  joiner preprocessing/provenance as a missing mechanical prerequisite. The
+  low-level lexer still rejects every remaining Cf; the new explicit wrapper
+  supplies preprocessing and original-coordinate projection. Production query
+  admission, full profile/alias mappings and client adoption remain open.
+- Added a distinct preparation identity, complete retained/deleted scalar ledger,
+  strict context-reconstructing validation, independent captured projector and
+  explicit lexical/NFC composition. Pure NFC full-source-coverage semantics and
+  the existing lexical family remain unchanged. The composite projector checks
+  exact recomputed NFC text/origins rather than trusting equal source lengths.
+- Initial focused `node --test tools\search-joiners.test.mjs` passed10/10.
+  Checked both joiners against every1,112,064 following scalar values
+  (2,224,128 inputs, exactly72 deletions), all19,608 independent bounded
+  original-string regex-oracle words, literal source offsets, NFC reordering/
+  expansion, strict failures/capture and actual indexed-witness-to-original
+  grapheme-safe excerpt composition. Only a descriptive test-title count was
+  corrected afterward; its asserted19,608 count already passed.
+  Evidence: `shared-kannada-search-joiners-focused-validation.log`.
+- Final `npm run check` passed all build/source checks and308/308 registered
+  tests, zero failures/cancellations/skips. Full evidence:
+  `shared-kannada-search-joiners-full-validation.log`.
+  `python tools\check_repository.py` passed233 tracked files; inline Node
+  strictYaml validation passed all19 tracked YAML files and exact
+  `git show :resources/unicode16/IndicSyllabicCategory.txt` versus working-copy
+  bytes/length/pinned hash passed. actionlint1.7.12 with explicit ShellCheck0.11.0,
+  `git --no-pager diff --check`, `git --no-pager diff --cached --check` and
+  `git --no-pager diff --exit-code -- generated schemas` passed.
+  Only declared/existing LF/CRLF warnings occurred.
+- No dependencies/toolchains, conversion rules, real content, consumer pins,
+  runtime search capabilities, main merge, publication activation or deployment
+  changed. Shared reference validation does not imply consumer/device,
+  linguistic, complete production-search or release conformance.
+
 ## 2026-10-26: recommended protected-marker lexical decisions
 
 - Owner explicitly selected protected technical interpretation for fully

@@ -58,8 +58,12 @@ This is post-normalization reference composition, not production raw search.
 The [protected-marker lexical stage](docs/search-lexing.md) now supplies selected
 NFC/category boundaries, retaining whole recognized technical markers without
 ordinary stripped alternatives and using ordinary runs otherwise. Remaining
-controls/formats fail explicitly; reviewed joiner preprocessing, production
-query admission, eligibility and full source projection remain separate gates.
+controls/formats fail explicitly. The explicit
+[Kannada joiner composition](docs/search-joiners.md) removes only one joiner
+between the original Kannada virama and a source-backed consonant, preserving
+a complete deletion ledger and exact original ranges through NFC/lexing.
+Production query admission, eligibility and all-transform source projection
+remain separate gates; the low-level lexer and pure NFC contracts stay unchanged.
 
 The [contiguous excerpt-window contract](docs/search-excerpt-windows.md) chooses
 best-fitting edits/leftmost/shortest focus over explicit verified display ranges

@@ -128,6 +128,10 @@ alone does not project case/alias/joiner filtering or generated/Source Latin
 tokens into Kannada/another script. Those transformations require independently
 reviewed mappings and composition rules. Missing reliable correspondence remains
 explicit preview-unavailable/Open match, never fabricated highlights.
+The distinct [Kannada joiner composition](search-joiners.md) now supplies
+original-adjacency deletion accounting before this unchanged NFC stage.
+Its wrapper projects through both maps, excluding deleted joiners from exact
+matches without violating this map's full prepared-input coverage contract.
 
 ## Validation, complexity and remaining gates
 

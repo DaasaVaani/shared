@@ -19,3 +19,4 @@ resources/latin-reference-audit/kannada.toml whitespace=-blank-at-eof
 settings/search-characters.yml text eol=lf
 generated/search-characters/* text eol=lf
 settings/search-lexing.yml text eol=lf
+settings/search-joiners.yml text eol=lf

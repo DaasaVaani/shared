@@ -1,0 +1,19 @@
+{
+  "profile": "unicode16-kannada-search-joiners-v1",
+  "vectors": [
+    { "text": "", "prepared": "", "retained": [], "removed": [] },
+    { "text": "\u0ccd\u200c\u0c95", "prepared": "\u0ccd\u0c95", "retained": [0, 2], "removed": [{ "index": 1, "joiner": "200C" }] },
+    { "text": "\u0ccd\u200d\u0cb1", "prepared": "\u0ccd\u0cb1", "retained": [0, 2], "removed": [{ "index": 1, "joiner": "200D" }] },
+    { "text": "\u0ccd\u200c\u0cde", "prepared": "\u0ccd\u0cde", "retained": [0, 2], "removed": [{ "index": 1, "joiner": "200C" }] },
+    { "text": "\ud83d\ude00\u0ccd\u200d\u0c95\u0ccd\u200c\u0cb9", "prepared": "\ud83d\ude00\u0ccd\u0c95\u0ccd\u0cb9", "retained": [0, 1, 3, 4, 6], "removed": [{ "index": 2, "joiner": "200D" }, { "index": 5, "joiner": "200C" }] },
+    { "text": "\u0ccd\u200d\u200c\u0c95", "prepared": "\u0ccd\u200d\u200c\u0c95", "retained": [0, 1, 2, 3], "removed": [] },
+    { "text": "\u0ccd\u200d\u0c85", "prepared": "\u0ccd\u200d\u0c85", "retained": [0, 1, 2], "removed": [] },
+    { "text": "\u094d\u200d\u0c95", "prepared": "\u094d\u200d\u0c95", "retained": [0, 1, 2], "removed": [] },
+    { "text": "\u0ccd\u200c\u0915", "prepared": "\u0ccd\u200c\u0915", "retained": [0, 1, 2], "removed": [] },
+    { "text": "\u0ccd\u200c\u0c80", "prepared": "\u0ccd\u200c\u0c80", "retained": [0, 1, 2], "removed": [] },
+    { "text": "\u0ccd\u200d\u0cbd", "prepared": "\u0ccd\u200d\u0cbd", "retained": [0, 1, 2], "removed": [] },
+    { "text": "\u0ccd\u200c\u0cb4", "prepared": "\u0ccd\u200c\u0cb4", "retained": [0, 1, 2], "removed": [] },
+    { "text": "\u0ccd\u200d\u0301\u0c95", "prepared": "\u0ccd\u200d\u0301\u0c95", "retained": [0, 1, 2, 3], "removed": [] },
+    { "text": "\u0ccd\u200d \u0c95", "prepared": "\u0ccd\u200d \u0c95", "retained": [0, 1, 2, 3], "removed": [] }
+  ]
+}

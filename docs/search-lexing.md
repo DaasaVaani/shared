@@ -5,7 +5,8 @@ boundaries using pinned Unicode16 NFC, exact general categories and explicit
 reviewed technical vocabularies. It preserves case/diacritics, source coordinates
 and all complete technical interpretations. It does not activate client search,
 approve transliteration/aliases, select query languages or replace production
-query admission and reviewed Kannada joiner preprocessing.
+query admission. The explicit [Kannada joiner composition](search-joiners.md)
+preprocesses eligible original contexts before this unchanged low-level stage.
 
 [Settings](../settings/search-lexing.yml),
 [schema](../schemas/search-lexing.schema.json),
@@ -110,12 +111,13 @@ Private-use/unassigned characters and ill-formed surrogate strings also fail.
 The property lookup can report `Cs`; this text API does not admit surrogate text.
 Errors identify category/coordinate, not copied text/payload.
 
-**The approved context-specific Kannada joiner equivalence is not implemented
-here.** A separately reviewed consonant/context transform with correct provenance
-must handle permitted joiners before affected input reaches this stage.
-Do not claim that rejecting all remaining formats completes that requirement.
-Returned original coordinates refer to the actual supplied stage input, not an
-invented pre-preprocessing source. All-transform projection remains open.
+**This low-level lexer does not delete joiners.** Use the explicit
+[joiner-aware wrapper and projector](search-joiners.md) to handle the reviewed
+original Kannada context, retaining deleted positions separately from pure NFC
+coverage. Invalid-context joiners still reach this stage and fail explicitly.
+Directly returned NFC origins always refer to the actual supplied stage input;
+when that input is preprocessed, compose through its ledger before claiming
+original-human-input coordinates. All-transform projection remains open.
 
 This helper has no original-query admission limit, script eligibility filter or
 UI error protocol. A producer can also lex longer admitted field text.

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/preparation",
+  "$defs": {
+    "composition": {
+      "type": "object", "additionalProperties": false, "required": ["preparation", "lexical"],
+      "properties": {
+        "preparation": { "$ref": "#/$defs/preparation" },
+        "lexical": { "$ref": "search-lexing" }
+      }
+    },
+    "integer": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+    "hex": { "type": "string", "pattern": "^[0-9A-F]{4}$" },
+    "settings": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formatVersion", "profile", "unicodeVersion", "context", "virama", "joiners", "kannadaBlock", "consonants", "unicodeSourceSettings", "syllabicSource"],
+      "properties": {
+        "formatVersion": { "const": 1 },
+        "profile": { "const": "unicode16-kannada-search-joiners-v1" },
+        "unicodeVersion": { "const": "16.0.0" },
+        "context": { "const": "original-immediate-neighbors" },
+        "virama": { "const": "0CCD" },
+        "joiners": { "const": ["200C", "200D"] },
+        "kannadaBlock": { "const": ["0C80", "0CFF"] },
+        "consonants": { "type": "array", "minItems": 36, "maxItems": 36, "uniqueItems": true, "items": { "$ref": "#/$defs/hex" } },
+        "unicodeSourceSettings": { "const": "settings/unicode.yml" },
+        "syllabicSource": {
+          "type": "object", "additionalProperties": false, "required": ["path", "url", "bytes", "sha256"],
+          "properties": {
+            "path": { "const": "resources/unicode16/IndicSyllabicCategory.txt" },
+            "url": { "const": "https://www.unicode.org/Public/16.0.0/ucd/IndicSyllabicCategory.txt" },
+            "bytes": { "type": "integer", "minimum": 1 },
+            "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+          }
+        }
+      }
+    },
+    "preparation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "formatVersion", "profile", "indicDataSha256", "sourceCodePoints", "preparedText", "retained", "removed"],
+      "properties": {
+        "format": { "const": "daasavaani-search-joiner-preparation" },
+        "formatVersion": { "const": 1 },
+        "profile": { "$ref": "#/$defs/settings/properties/profile" },
+        "indicDataSha256": { "$ref": "#/$defs/settings/properties/syllabicSource/properties/sha256" },
+        "sourceCodePoints": { "$ref": "#/$defs/integer" },
+        "preparedText": { "type": "string" },
+        "retained": { "type": "array", "items": { "$ref": "#/$defs/integer" } },
+        "removed": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false, "required": ["index", "joiner"],
+            "properties": { "index": { "$ref": "#/$defs/integer" }, "joiner": { "enum": ["200C", "200D"] } }
+          }
+        }
+      }
+    }
+  }
+}
