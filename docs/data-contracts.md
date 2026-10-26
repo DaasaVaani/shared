@@ -33,6 +33,10 @@ implementation is authorized, not global production readiness.
   projector and actual normalized-witness/literal-grapheme-window composition.
   It preserves display text and the personal-name profile; reviewed token/alias
   transformations, cross-script source mapping and packaged adapters remain open.
+- The [pinned Unicode16 search-character component](search-characters.md)
+  supplies exact general categories and ordinary L*/M*/Nd membership with
+  exhaustive official derived-property comparison. It does not implement raw
+  ordinary/technical precedence, control/joiner policy or query-language eligibility.
 - Language: Kannada canonical, five Latin/nine non-Latin outputs, reviewed digit/
   approximation/alias/Unicode/technical-marker tables. Global corrections only.
   The [provisional multi-script prerequisite](transliteration.md) has
@@ -212,6 +216,14 @@ large offsets and the actual normalized-index-to-literal-window pipeline. Run
 `node --test tools\normalization-provenance.test.mjs` incrementally. This supplies
 NFC-stage provenance only, not alias/transliteration/source alignment, enclosing
 index/capability integration or measured consumer memory/cancellation behavior.
+The [search-character suite](search-characters.md) checks all1,114,112 exact
+Unicode16 general categories and ordinary L*/M*/Nd membership against an
+independently parsed official derived-property oracle, strict inputs/ranges,
+all30 portable category cases, source/manifest identity, deterministic generation
+and actual NFC/indexed/technical composition. Run
+`node --test tools\search-characters.test.mjs` incrementally. This supplies
+property data, not raw tokenization, script eligibility, control/joiner decisions
+or a complete profile/client conformance result.
 The term-equivalence suite checks complete matrices against an independent
 pairwise oracle, context permutations, exact text/allowance/token-order/count
 distinctions, inactive contexts, all strict failures, complete input references,

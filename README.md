@@ -42,6 +42,12 @@ sources and checks270 basic cells plus2,720 derived vowel-sign contexts. It reco
 primary/secondary disagreements explicitly; passing an audit is not a claim
 that discrepant conversion profiles conform or normative standards are certified.
 
+The [pinned search-character data](docs/search-characters.md) supplies exact
+Unicode16 general categories and ordinary letter/mark/decimal membership,
+checked against an independent official derived-property oracle over every
+code point. It does not decide raw technical punctuation, control/joiner handling,
+script eligibility or activate a tokenizer/client capability.
+
 The [contiguous excerpt-window contract](docs/search-excerpt-windows.md) chooses
 best-fitting edits/leftmost/shortest focus over explicit verified display ranges
 and grapheme boundaries. Its single-window geometry counts ellipses inside the

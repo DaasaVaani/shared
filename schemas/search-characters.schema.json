@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/data",
+  "$defs": {
+    "hash": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "point": { "type": "integer", "minimum": 0, "maximum": 1114111 },
+    "category": {
+      "enum": ["Lu", "Ll", "Lt", "Lm", "Lo", "Mn", "Mc", "Me", "Nd", "Nl", "No", "Pc", "Pd", "Ps", "Pe", "Pi", "Pf", "Po", "Sm", "Sc", "Sk", "So", "Zs", "Zl", "Zp", "Cc", "Cf", "Cs", "Co", "Cn"]
+    },
+    "settings": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formatVersion", "profile", "unicodeVersion", "unicodeSourceSettings", "ordinaryCategories", "oracle"],
+      "properties": {
+        "formatVersion": { "const": 1 },
+        "profile": { "const": "unicode16-search-characters-v1" },
+        "unicodeVersion": { "const": "16.0.0" },
+        "unicodeSourceSettings": { "const": "settings/unicode.yml" },
+        "ordinaryCategories": { "const": ["Lu", "Ll", "Lt", "Lm", "Lo", "Mn", "Mc", "Me", "Nd"] },
+        "oracle": {
+          "type": "object", "additionalProperties": false, "required": ["path", "url", "sha256"],
+          "properties": {
+            "path": { "const": "resources/unicode16/DerivedGeneralCategory.txt" },
+            "url": { "const": "https://www.unicode.org/Public/16.0.0/ucd/extracted/DerivedGeneralCategory.txt" },
+            "sha256": { "$ref": "#/$defs/hash" }
+          }
+        }
+      }
+    },
+    "data": {
+      "type": "object", "additionalProperties": false,
+      "required": ["formatVersion", "profile", "unicodeVersion", "ordinaryCategories", "defaultCategory", "unicodeDataSha256", "licenseSha256", "ranges"],
+      "properties": {
+        "formatVersion": { "$ref": "#/$defs/settings/properties/formatVersion" },
+        "profile": { "$ref": "#/$defs/settings/properties/profile" },
+        "unicodeVersion": { "$ref": "#/$defs/settings/properties/unicodeVersion" },
+        "ordinaryCategories": { "$ref": "#/$defs/settings/properties/ordinaryCategories" },
+        "defaultCategory": { "const": "Cn" },
+        "unicodeDataSha256": { "$ref": "#/$defs/hash" },
+        "licenseSha256": { "$ref": "#/$defs/hash" },
+        "ranges": {
+          "type": "array", "minItems": 1,
+          "items": {
+            "type": "array", "minItems": 3, "maxItems": 3,
+            "prefixItems": [{ "$ref": "#/$defs/point" }, { "$ref": "#/$defs/point" }, { "$ref": "#/$defs/category" }]
+          }
+        }
+      }
+    }
+  }
+}

@@ -56,6 +56,7 @@ registries, UI catalogs, personal state and secrets retain their separate owners
 | Shared settings/graphemes.yml | Independently approved Unicode16 default extended-grapheme data/profile and official byte identities; consumer boundary-profile adoption |
 | Shared settings/normalization-provenance.yml | Independently approved Unicode16 NFC-only per-code-point source mapping and existing resource/manifest binding; bounded excerpt tooling, no alias/cross-script approval |
 | Shared settings/technical-token-vocabularies.yml | Exact reviewed literal-search atoms: five Latin directions/275 declarations, explicit compatibility/adaptation scopes, build-time validation; no complete matching signature or transliteration approval |
+| Shared settings/search-characters.yml | Exact Unicode16 general-category data, fixed L*/M*/Nd ordinary membership and independent official oracle identity; build/reference adoption, no raw tokenizer activation |
 | Shared settings/ui-catalog.yml, defaults.yml | Catalog generation, supported UI languages, portable initial preferences and allowed choices |
 | Library settings/catalog.yml, ingestion.yml, images.yml, publication.yml | Branding/catalog/filter/profile selection, local import/extraction/network, image processing, hosting/publication |
 | Website settings/web.yml | Public bases/endpoints, routes, feature availability, UI tokens and platform worker/network/storage budgets |
@@ -209,6 +210,10 @@ reviewed Kannada consonant, search-only. Common/compact ASCII alias branches fol
 A-Z only; technical branches preserve case. Display/source text stays unchanged.
 Exclude terminal verse labels/numbers only through explicit reviewed ranges on
 declared ending lines; no annotation means no inferred exclusion.
+The [pinned Unicode16 character component](search-characters.md) supplies exact
+general categories and the L*/M*/Nd ordinary-membership predicate. It is checked
+against all official derived-property assignments; category lookup alone does
+not implement raw boundaries, control/joiner handling or script eligibility.
 Technical recognition uses [reviewed literal vocabularies](technical-tokens.md)
 per profile, accepting a whole unchanged token if any complete atom sequence
 covers it. Neither a unique phonetic parse nor greedy longest-prefix recognition

@@ -17,6 +17,9 @@ complete production matching profiles or approved transliteration rules.
 The [reference audit](latin-reference-audit.md) independently checks five Latin
 directions and identifies unresolved primary/secondary convention disagreements.
 Its passing discrepancy checks are not linguistic approval.
+The separate [Unicode16 character reference](search-characters.md) defines
+ordinary L*/M*/Nd membership. Nonordinary symbols can still be technical atoms;
+category lookup neither discards them nor establishes raw scanning precedence.
 
 ## Vocabulary and trust boundary
 

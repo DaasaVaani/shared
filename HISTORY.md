@@ -1,5 +1,47 @@
 # Documentation history
 
+## 2026-10-26: exact Unicode16 search-character prerequisite
+
+- Continued the already-selected SEARCH-02/08/12/13 ordinary L*/M*/Nd
+  membership prerequisite, without resolving raw technical punctuation,
+  control/joiner admission, query-script eligibility or production activation.
+- Added strict owning settings/schema/types, a verified offline UnicodeData
+  First/Last parser/generator, captured binary-search reference, committed
+  resource/manifest and portable category vectors. The resource has3,368
+  coalesced ranges and60,648 bytes; normative unassigned gaps are `Cn`, not
+  silent malformed-input defaults. Numeric surrogate code points report `Cs`;
+  this does not admit ill-formed query strings.
+- Preserved the official DerivedGeneralCategory16.0.0 oracle,274,423 original
+  bytes, SHA2567676ab755a41ef82108460238569e60ad65c191ddafe61b36c6765ec1353f293.
+  It is an independent official derivation/parser oracle for the same UCD,
+  not an independent linguistic authority. Original notices/license remain.
+- `node --test tools\search-characters.test.mjs` passed9/9. Exact categories
+  and ordinary eligibility matched every one of1,114,112 code points with
+  complete, duplicate-free official oracle coverage. Additional tests cover
+  all30 categories, supplementary letters/decimal digits, First/Last edges,
+  controls/joiners/private-use/surrogates/noncharacters, Unicode16 additions,
+  strict failures, captured independence, exact source/manifest bytes,
+  deterministic regeneration and actual NFC/indexed/technical composition.
+- `npm run check` passed all generators and270/270 registered tests, zero
+  failures, cancellations or skips. Full evidence:
+  `shared-unicode16-search-categories-full-validation.log`.
+  `python tools\check_repository.py` passed209 tracked files; Node strictYaml
+  parsed all17 tracked YAML files. actionlint1.7.12 ran with explicit
+  ShellCheck0.11.0 and passed. `git --no-pager diff --check`,
+  `git --no-pager diff --cached --check` and
+  `git --no-pager diff --exit-code -- generated schemas` passed.
+  Exact staged oracle/resource hashes and byte lengths matched pins/manifest.
+  Only existing/declared LF/CRLF conversion warnings occurred.
+- Updated the settings inventory, contract/check registry and authoritative
+  character/technical-recognition guides. No previously approved behavior was
+  removed. Category data does not choose raw scanning precedence, discard
+  technical symbols, delete joiners, infer aliases or broaden name matching.
+  Structure validation does not authenticate arbitrary caller-supplied tables.
+  No dependency/toolchain, source/conversion output, consumer pin/runtime,
+  main merge, publication-state activation or deployment changed. Client
+  packaging, full normalization/projection and actual memory/cancellation/
+  platform/release evidence remain open.
+
 ## 2026-10-26: resolved five-profile literal-recognition inventories
 
 - After the reference audit, owner chose documented-plus-approved-project Baraha

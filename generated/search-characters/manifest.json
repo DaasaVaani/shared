@@ -1,0 +1,28 @@
+{
+  "formatVersion": 1,
+  "profile": "unicode16-search-characters-v1",
+  "unicodeVersion": "16.0.0",
+  "data": {
+    "path": "unicode16.json",
+    "bytes": 60648,
+    "sha256": "6cdcee1cc5f7301b22c0d4d78ed51d89f4a7fc962e66dc1b3648e7a7d59ab967"
+  },
+  "unicodeData": {
+    "path": "resources/unicode16/UnicodeData.txt",
+    "url": "https://www.unicode.org/Public/16.0.0/ucd/UnicodeData.txt",
+    "sha256": "ff58e5823bd095166564a006e47d111130813dcf8bf234ef79fa51a870edb48f",
+    "bytes": 2175362
+  },
+  "oracle": {
+    "path": "resources/unicode16/DerivedGeneralCategory.txt",
+    "url": "https://www.unicode.org/Public/16.0.0/ucd/extracted/DerivedGeneralCategory.txt",
+    "sha256": "7676ab755a41ef82108460238569e60ad65c191ddafe61b36c6765ec1353f293",
+    "bytes": 274423
+  },
+  "license": {
+    "path": "resources/unicode16/LICENSE.txt",
+    "url": "https://www.unicode.org/license.txt",
+    "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+    "bytes": 1995
+  }
+}

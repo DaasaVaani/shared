@@ -1,0 +1,21 @@
+{
+  "profile": "unicode16-search-characters-v1",
+  "vectors": [
+    ["0041", "Lu", true], ["0061", "Ll", true], ["01C5", "Lt", true],
+    ["02B0", "Lm", true], ["0C95", "Lo", true], ["0301", "Mn", true],
+    ["0903", "Mc", true], ["20DD", "Me", true], ["0030", "Nd", true],
+    ["0CE6", "Nd", true], ["2160", "Nl", false], ["00B2", "No", false],
+    ["005F", "Pc", false], ["002D", "Pd", false], ["0028", "Ps", false],
+    ["0029", "Pe", false], ["2018", "Pi", false], ["2019", "Pf", false],
+    ["0040", "Po", false], ["002B", "Sm", false], ["0024", "Sc", false],
+    ["005E", "Sk", false], ["1F600", "So", false], ["0020", "Zs", false],
+    ["2028", "Zl", false], ["2029", "Zp", false], ["0000", "Cc", false],
+    ["200D", "Cf", false], ["200C", "Cf", false], ["D800", "Cs", false],
+    ["E000", "Co", false], ["0378", "Cn", false], ["10FFFF", "Cn", false],
+    ["1C89", "Lu", true], ["1C8A", "Ll", true], ["0CCD", "Mn", true],
+    ["10400", "Lu", true], ["10428", "Ll", true], ["1D7CE", "Nd", true],
+    ["3400", "Lo", true], ["4DBF", "Lo", true], ["4DC0", "So", false],
+    ["AC00", "Lo", true], ["D7A3", "Lo", true], ["D7A4", "Cn", false],
+    ["10FFFD", "Co", false], ["10FFFE", "Cn", false], ["FFFF", "Cn", false]
+  ]
+}

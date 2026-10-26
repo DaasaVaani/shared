@@ -1,0 +1,9 @@
+formatVersion: 1
+profile: unicode16-search-characters-v1
+unicodeVersion: 16.0.0
+unicodeSourceSettings: settings/unicode.yml
+ordinaryCategories: [Lu, Ll, Lt, Lm, Lo, Mn, Mc, Me, Nd]
+oracle:
+  path: resources/unicode16/DerivedGeneralCategory.txt
+  url: https://www.unicode.org/Public/16.0.0/ucd/extracted/DerivedGeneralCategory.txt
+  sha256: 7676ab755a41ef82108460238569e60ad65c191ddafe61b36c6765ec1353f293
