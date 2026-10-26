@@ -1,0 +1,22 @@
+{
+  "input": {
+    "format": "daasavaani-search-exclusions",
+    "formatVersion": 1,
+    "lyricId": "10000000-0000-4000-8000-000000000001",
+    "lines": [
+      { "kind": "line", "lineId": "20000000-0000-4000-8000-000000000001", "text": "keep 1 | unchanged" },
+      { "kind": "layout", "text": " \t" },
+      { "kind": "line", "lineId": "20000000-0000-4000-8000-000000000002", "text": "A𐐀B || 12 ||  " }
+    ],
+    "verses": [
+      { "id": "30000000-0000-4000-8000-000000000001", "endsAt": "20000000-0000-4000-8000-000000000002" }
+    ],
+    "exclusions": [
+      { "lineId": "20000000-0000-4000-8000-000000000002", "ranges": [[7, 9]] }
+    ]
+  },
+  "endingSegments": [
+    { "start": 0, "end": 7, "text": "A𐐀B || " },
+    { "start": 9, "end": 14, "text": " ||  " }
+  ]
+}

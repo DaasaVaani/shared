@@ -236,6 +236,11 @@ It supplies explicit deletion-aware NFC/lexical projection without changing
 pure NFC coverage or the low-level lexer's rejection of remaining formats.
 Exclude terminal verse labels/numbers only through explicit reviewed ranges on
 declared ending lines; no annotation means no inferred exclusion.
+The standalone [reviewed exclusion component](search-exclusions.md) validates
+exact line/verse identities, complete declared verse coverage and ordered bounded
+code-point ranges. It returns separate kept segments and captured original-line
+projection; normalization/tokenization must not bridge excluded gaps. This is not
+a source-schema migration, annotation review or generated/Source Latin alignment.
 The [pinned Unicode16 character component](search-characters.md) supplies exact
 general categories and the L*/M*/Nd ordinary-membership predicate. It is checked
 against all official derived-property assignments; category lookup alone does

@@ -1,5 +1,41 @@
 # Documentation history
 
+## 2026-10-26: explicit reviewed terminal-label exclusion prerequisite
+
+- Published the script-property prerequisite at
+  `f19f79b3ed7af1db846769a4d0e265f2c39b92d2`; verified exact remote SHA and
+  clean synchronization. Whole-term linguistic eligibility remains open, so
+  continued with the independent already-approved explicit ending-label rule.
+- Added a strict portable schema/type/reference and permitted synthetic vector.
+  Reused existing canonical line/layout, verse and UUID definitions rather than
+  changing Library source/publication schemas or guessing new annotations.
+  Validate complete ordered declared verse coverage and reviewed nonempty
+  nonoverlapping code-point ranges only on actual ending lines.
+- Preserve complete original text/layout, copied exclusion accounting and
+  independent kept segments. Never concatenate across removed ranges before
+  normalization/lexing. Captured projection composes segment-input spans back
+  to original line coordinates without filling gaps or aliasing caller state.
+  Structural validation does not authenticate review or linguistic label truth.
+- Focused `node --test tools\search-exclusions.test.mjs` passed7/7.
+  Independent membership/slice oracles check all508 bounded masks and2,582
+  projected spans, including supplementary/combining/Kannada scalars. Actual
+  flat indexed OSA rejects words/technical literals invented by gap joining;
+  separate normalization does not compose marks across excluded text.
+  Actual case/NFC provenance maps back through the segment to the original line.
+- Full `npm run check` passed generation and344/344 tests without failures,
+  skips or cancellations. `python tools\check_repository.py` passed267 tracked
+  files; existing strictYaml parsing passed all21 tracked YAML files.
+  `actionlint.exe -shellcheck <installed-shellcheck.exe>` passed with the
+  existing pinned1.7.12/0.11.0 tools. `git --no-pager diff --check`,
+  `git --no-pager diff --cached --check` and
+  `git --no-pager diff --exit-code -- generated schemas` passed.
+  Evidence: `shared-reviewed-search-exclusions-focused-validation.log` and
+  `shared-reviewed-search-exclusions-full-validation.log`.
+- No actual source annotations, source/publication schema migration, consumer
+  pins, main merge, deployment or publication-state changes. Review/source
+  authentication, production adapters, linguistic eligibility and generated/
+  Source Latin alignment remain open; this is not release conformance.
+
 ## 2026-10-26: pinned Unicode16 Script and Script_Extensions prerequisite
 
 - Verified the previous case/source projection branch was clean and already

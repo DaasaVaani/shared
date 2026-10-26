@@ -245,6 +245,13 @@ fields, cross-line lyrics, incomplete metadata nonpromotion, no mixed-context
 quality, identity/allowance failures and capture independence. They do not
 supply raw grammar, reviewed mappings, selected-script excerpts or client
 resource/cancellation evidence.
+The independent
+[reviewed exclusion suite](search-exclusions.md) runs with
+`node --test tools\search-exclusions.test.mjs` incrementally and in the full check.
+It covers exact source/layout retention, ending/coverage/range failures,
+independent bounded position/span oracles, captured projection and actual indexed
+nonbridging/NFC source composition. It does not authenticate review or provide
+source/publisher adapters, cross-rendering alignment or linguistic eligibility.
 The [protected-marker lexical stage](search-lexing.md) validates owning settings/
 resource identity during `npm run build`. Run
 `node --test tools\search-lexing.test.mjs` incrementally. Portable inventory cases,

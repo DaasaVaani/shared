@@ -125,6 +125,10 @@ The caller must apply the owning raw256-point query admission policy before
 expensive query work; do not apply256 as a normalized-token cap. Scalar/category
 acceptance does not make every script an eligible initial lyric query language.
 Reviewed field eligibility and terminal-label exclusions remain upstream gates.
+The separate [exclusion reference](search-exclusions.md) validates explicit
+reviewed ranges and produces independent kept segments; callers must lex those
+separately and compose their source offsets rather than joining across gaps.
+It does not authenticate review or alter this low-level lexical profile.
 The explicit [budgeted query wrapper](search-query-budget.md) enforces that
 original bound before the joiner-aware composition. This low-level field stage
 remains uncapped by query length.

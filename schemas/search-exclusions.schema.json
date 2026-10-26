@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$ref": "#/$defs/input",
+  "$defs": {
+    "range": {
+      "type": "array", "minItems": 2, "maxItems": 2,
+      "items": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 }
+    },
+    "input": {
+      "type": "object", "additionalProperties": false,
+      "required": ["format", "formatVersion", "lyricId", "lines", "verses", "exclusions"],
+      "properties": {
+        "format": { "const": "daasavaani-search-exclusions" },
+        "formatVersion": { "const": 1 },
+        "lyricId": { "$ref": "lyric-publication#/$defs/uuid" },
+        "lines": { "$ref": "lyric-publication#/$defs/item/properties/lines" },
+        "verses": { "$ref": "lyric-source#/properties/public/properties/verses" },
+        "exclusions": {
+          "type": "array",
+          "items": {
+            "type": "object", "additionalProperties": false, "required": ["lineId", "ranges"],
+            "properties": {
+              "lineId": { "$ref": "lyric-publication#/$defs/uuid" },
+              "ranges": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/range" } }
+            }
+          }
+        }
+      }
+    }
+  }
+}

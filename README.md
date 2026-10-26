@@ -77,6 +77,12 @@ Script and Script_Extensions values, canonical property IDs and normative
 missing-value semantics with exhaustive source-parser comparisons. They do not
 decide whole-query script/field/profile eligibility or broaden Kannada/Latin scope.
 
+The [reviewed terminal-label exclusion reference](docs/search-exclusions.md)
+validates explicit ranges against actual declared verse-ending lines and retains
+separate literal kept segments with captured original-line projection. It never
+infers labels or concatenates across excluded text. Source/publisher adapters,
+review authentication and cross-rendering alignment remain separate gates.
+
 The [contiguous excerpt-window contract](docs/search-excerpt-windows.md) chooses
 best-fitting edits/leftmost/shortest focus over explicit verified display ranges
 and grapheme boundaries. Its single-window geometry counts ellipses inside the
