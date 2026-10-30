@@ -18,13 +18,25 @@
   <string name="back_to_list" formatted="false">ಪಟ್ಟಿಗೆ ಹಿಂತಿರುಗಿ</string>
   <string name="backup_cancelled" formatted="false">ಬ್ಯಾಕಪ್ ಮರುಸ್ಥಾಪನೆ ರದ್ದಾಗಿದೆ. ಹಳೆಯ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಬದಲಾಗಿಲ್ಲ.</string>
   <string name="backup_choose" formatted="false">ವೈಯಕ್ತಿಕ ಬ್ಯಾಕಪ್ ಕಡತ ಆಯ್ಕೆಮಾಡಿ</string>
+  <string name="backup_counts" formatted="false">ಮೆಚ್ಚಿನವುಗಳು: {favorites}; ಪಟ್ಟಿಗಳು: {lists}; ನಮೂದುಗಳು: {occurrences}; ಇತ್ತೀಚಿನ ನಮೂದುಗಳು: {recents}; ಕಲಿಕೆಯ ಗುರುತುಗಳು: {learning}.</string>
+  <string name="backup_duplicate_names" formatted="false">Unicode16 ಹೋಲಿಕೆಯಲ್ಲಿ ಕೆಲವು ಪಟ್ಟಿಗಳ ಹೆಸರುಗಳು ಸಮಾನವಾಗಿವೆ. ಅವು ಮೂಲ ಗುರುತುಗಳೊಂದಿಗೆ ಪ್ರತ್ಯೇಕ ಪಟ್ಟಿಗಳಾಗಿಯೇ ಉಳಿಯುತ್ತವೆ.</string>
   <string name="backup_export" formatted="false">ವೈಯಕ್ತಿಕ ಬ್ಯಾಕಪ್ ರಫ್ತುಮಾಡಿ</string>
+  <string name="backup_export_cancelled" formatted="false">ಬ್ಯಾಕಪ್ ರಫ್ತು ರದ್ದಾಗಿದೆ. ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಬದಲಾಗಿಲ್ಲ. ಆಯ್ಕೆಮಾಡಿದ ಸೇವೆಯಲ್ಲಿ ಅಪೂರ್ಣ ಕಡತ ಉಳಿದಿರಬಹುದು.</string>
+  <string name="backup_exported" formatted="false">ವೈಯಕ್ತಿಕ ಬ್ಯಾಕಪ್ ಕಡತವನ್ನು ಆಯ್ಕೆಮಾಡಿದ ಸ್ಥಳಕ್ಕೆ ಬರೆಯಲಾಗಿದೆ. ತಲುಪಿರುವುದು ದೃಢಪಟ್ಟಿಲ್ಲ.</string>
+  <string name="backup_exported_at" formatted="false">ರಫ್ತು ದಿನಾಂಕ (UTC)</string>
   <string name="backup_failed" formatted="false">ಮರುಸ್ಥಾಪನೆ ವಿಫಲವಾಗಿದೆ. ಹಿಂದಿನ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಉಳಿದಿದೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
+  <string name="backup_fallback" formatted="false">ಉಳಿಸಿದ ಪರ್ಯಾಯ ಪಠ್ಯ</string>
   <string name="backup_invalid" formatted="false">ಅಮಾನ್ಯ ಅಥವಾ ಬೆಂಬಲವಿಲ್ಲದ ವೈಯಕ್ತಿಕ ಬ್ಯಾಕಪ್. ಹಳೆಯ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಬದಲಾಗಿಲ್ಲ.</string>
   <string name="backup_language_retry" formatted="false">ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಮರುಸ್ಥಾಪಿಸಲಾಗಿದೆ, ಆದರೆ ಪರದೆಯ ಭಾಷೆಯನ್ನು ಅನ್ವಯಿಸಲಾಗಿಲ್ಲ. ಭಾಷೆಯನ್ನು ಅನ್ವಯಿಸಲು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.</string>
+  <string name="backup_list_id" formatted="false">ಪಟ್ಟಿಯ ಗುರುತು</string>
+  <string name="backup_no_position" formatted="false">ಉಳಿಸಿದ ಪಠಣ ಸ್ಥಾನವಿಲ್ಲ</string>
+  <string name="backup_occurrence_id" formatted="false">ನಮೂದಿನ ಗುರುತು</string>
   <string name="backup_offer_export" formatted="false">ಬದಲಿಸುವ ಮೊದಲು ಈಗಿನ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ರಫ್ತುಮಾಡಿ.</string>
+  <string name="backup_platform" formatted="false">ವೇದಿಕೆ</string>
+  <string name="backup_position" formatted="false">ಇತ್ತೀಚಿನ ನಿಖರ ಪಠಣ ಸ್ಥಾನ</string>
   <string name="backup_preview" formatted="false">ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ಬದಲಿಸುವ ಮೊದಲು ಸಂಪೂರ್ಣ ಬ್ಯಾಕಪ್ ಪರಿಶೀಲಿಸಿ.</string>
   <string name="backup_privacy" formatted="false">ಈ gzip ಕಡತವನ್ನು ಗೂಢಲಿಪೀಕರಿಸಿಲ್ಲ. ಇದನ್ನು ಪಡೆಯುವವರು ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಸೆಟ್ಟಿಂಗ್‌ಗಳು, ಪಟ್ಟಿಗಳು ಮತ್ತು ಚಟುವಟಿಕೆಯನ್ನು ಓದಬಹುದು.</string>
+  <string name="backup_reference" formatted="false">ಉಳಿಸಿದ ಉಲ್ಲೇಖ</string>
   <string name="backup_replace" formatted="false">ಎಲ್ಲ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯ ಬದಲಾವಣೆಯನ್ನು ದೃಢಪಡಿಸಿ</string>
   <string name="backup_replacement_notice" formatted="false">ಈ ಬದಲಾವಣೆ ಪಟ್ಟಿಗಳನ್ನು ವಿಲೀನಗೊಳಿಸುವುದಿಲ್ಲ. ಯಶಸ್ವಿಯಾಗಿ ಉಳಿಸಿದ ನಂತರವೇ ಹಳೆಯ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಬದಲಾಗುತ್ತದೆ.</string>
   <string name="backup_restored" formatted="false">ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಮರುಸ್ಥಾಪಿಸಲಾಗಿದೆ. ಸಾಹಿತ್ಯ ಅಥವಾ ಆಫ್‌ಲೈನ್ ಸಿದ್ಧತೆಯನ್ನು ಮರುಸ್ಥಾಪಿಸಿಲ್ಲ.</string>
@@ -179,6 +191,8 @@
   <string name="show_reading_controls" formatted="false">ಓದುವ ನಿಯಂತ್ರಣಗಳನ್ನು ತೋರಿಸಿ</string>
   <string name="skip_to_content" formatted="false">ವಿಷಯಕ್ಕೆ ಹೋಗಿ</string>
   <string name="start_again" formatted="false">ಸಿದ್ಧತೆಗೆ ಹಿಂತಿರುಗಿ</string>
+  <string name="system_backup_manual_notice" formatted="false">ಕ್ಲೌಡ್ ಸಂಗ್ರಹಣೆಯ ಮಿತಿಗಳು, ಸಾಧನದ ಆಯ್ಕೆಗಳು ಮತ್ತು ವೇಳಾಪಟ್ಟಿ ಬ್ಯಾಕಪ್ ನಡೆಯದಂತೆ ಮಾಡಬಹುದು. ವೈಯಕ್ತಿಕ ಬ್ಯಾಕಪ್ ಕಡತವನ್ನು ಪ್ರತ್ಯೇಕವಾಗಿ ಉಳಿಸಿಕೊಳ್ಳಿ; ಕಡತ ರಫ್ತಾದರೆ ವ್ಯವಸ್ಥೆಯ ಬ್ಯಾಕಪ್ ಆಗಿದೆ ಎಂದರ್ಥವಲ್ಲ.</string>
+  <string name="system_backup_notice" formatted="false">ಸಾಧನದ ಬ್ಯಾಕಪ್ ಸಕ್ರಿಯವಾಗಿದ್ದಾಗ Android Auto Backup ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ನಿಮ್ಮ Google ಖಾತೆಗೆ ನಕಲಿಸಬಹುದು. ವ್ಯವಸ್ಥೆಯ ಬ್ಯಾಕಪ್ ಮತ್ತು ಸಾಧನ ವರ್ಗಾವಣೆ ಖಚಿತವಾಗಿ ನಡೆಯುತ್ತವೆ ಎಂಬ ಭರವಸೆಯಿಲ್ಲ. ಅವು ವೈಯಕ್ತಿಕ ಮಾಹಿತಿಯನ್ನು ಮಾತ್ರ ಒಳಗೊಂಡಿರುತ್ತವೆ; ಸಾಹಿತ್ಯ, ಮಾಧ್ಯಮ, ಡೌನ್‌ಲೋಡ್ ಸ್ಥಿತಿ ಅಥವಾ ಆಫ್‌ಲೈನ್ ಸಿದ್ಧತೆಯನ್ನು ಒಳಗೊಳ್ಳುವುದಿಲ್ಲ.</string>
   <string name="tagline" formatted="false">ಓದಿಗಾಗಿ ಒಂದು ಶಾಂತ ತಾಣ</string>
   <string name="transfer_cancelled" formatted="false">ಪಟ್ಟಿಯ ಕಾರ್ಯ ರದ್ದಾಗಿದೆ. ಏನನ್ನೂ ಉಳಿಸಿಲ್ಲ.</string>
   <string name="transfer_create_link" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ ರಚಿಸಿ</string>

@@ -260,6 +260,14 @@ Consumers include this repository at `shared/` as a Git submodule and pin commit
 independently. Contract changes must describe compatibility and conformance
 impact; updates are not forced into lockstep.
 
+Personal-backup export-status and complete read-only preview captions are
+distinct from list transfer and restore outcomes. Their
+[scope and identity-preservation wording](docs/full-personal-backup.md#consumer-implementation-and-recoverable-replacement)
+do not activate consumer backup UI or change the v1 wire format.
+Separate [system-backup privacy captions](docs/full-personal-backup.md#system-backup-privacy-captions)
+disclose Google-account copying and best-effort personal-only scope without
+enabling Android backup or claiming transport success.
+
 ## Contributing and validation
 
 Keep changes focused and obtain agreement before implementing open design choices.
@@ -274,9 +282,11 @@ applicable builds/all configured suites. Documentation-only work may use all
 available documentation/bootstrap checks while app tooling is absent; never
 report absent app checks as passed. See the [full gate](docs/data-contracts.md#validation-and-finalization).
 
-CI also checks `validation/**` branches so an exact commit can pass the required
-hosted checks before an authorized direct-main push. This does not grant push
-permission or waive main protection, review/release policy or validation.
+Until final release, authorized implementation pushes use only `main` after full
+validation under the owner-approved
+[temporary workflow](https://github.com/DaasaVaani/DaasaVaani.github.io/blob/main/docs/maintenance.md#current-operating-policy).
+Existing validation-branch CI support is not permission to push new branches,
+waive checks, alter protections or update consumer pins.
 
 Keep current documentation synchronized with changes. Put past decisions,
 chronology and completed validation records only in [HISTORY.md](HISTORY.md).
