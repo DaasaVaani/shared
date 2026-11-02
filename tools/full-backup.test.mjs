@@ -31,6 +31,22 @@ const changed = (base, path, value) => {
 const uuid = index => `${index.toString(16).padStart(8, "0")}-1111-4111-8111-111111111111`;
 const ref = index => ({ kind: "legacyVideo", videoId: `synthetic-${index}` });
 
+test("web backup v2 requires explicit setup status without changing v1 or Android", async () => {
+  const schema = fullBackupSchema(limits, profiles, 2);
+  assert.deepEqual(JSON.parse(await load("schemas/full-personal-backup-v2.schema.json")), schema);
+  const validate = new Ajv2020({ strict: true }).compile(schema);
+  const web = sample(0);
+  for (const setupStatus of ["pending", "completed", "skipped"]) {
+    assert.equal(validate({ ...web, formatVersion: 2, data: { ...web.data, setupStatus } }), true);
+  }
+  for (const setupStatus of [null, true, "ready", "", { completed: true }]) {
+    assert.equal(validate({ ...web, formatVersion: 2, data: { ...web.data, setupStatus } }), false);
+  }
+  assert.equal(validate({ ...web, formatVersion: 2 }), false);
+  assert.equal(validate({ ...web, formatVersion: 2, platform: "android", data: { ...web.data, setupStatus: "pending" } }), false);
+  assert.equal(validate(web), false);
+});
+
 test("generated strict platform allowlists and approved profile identities are deterministic", async () => {
   assert.deepEqual(JSON.parse(await load("schemas/full-personal-backup.schema.json")), fullBackupSchema(limits, profiles));
   new Ajv2020({ strict: true }).compile(fullBackupSchema(limits, profiles));

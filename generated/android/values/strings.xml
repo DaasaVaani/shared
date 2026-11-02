@@ -76,6 +76,21 @@
   <string name="exit_recite" formatted="false">Exit Recite</string>
   <string name="fallback_label" formatted="false">User fallback label (optional; leave empty to remove)</string>
   <string name="favorites" formatted="false">Favorites</string>
+  <string name="first_use_cancel" formatted="false">Cancel setup changes</string>
+  <string name="first_use_completed" formatted="false">Completed</string>
+  <string name="first_use_failed" formatted="false">Setup could not be saved. Your previous choices are unchanged. Retry, or cancel to review the latest choices.</string>
+  <string name="first_use_limits" formatted="false">Only canonical Kannada is available in this reader. Other lyric scripts, Latin variants and helper text are not available yet. No lyric preview is loaded by setup.</string>
+  <string name="first_use_notice" formatted="false">Optional setup saves choices only on this device. You can keep browsing now and change preferences later in Settings.</string>
+  <string name="first_use_offline" formatted="false">Completing or skipping setup does not download lyrics. Complete offline download and its size information are not available yet; online reading remains available.</string>
+  <string name="first_use_pending" formatted="false">Not finished</string>
+  <string name="first_use_save" formatted="false">Save and finish setup</string>
+  <string name="first_use_saved" formatted="false">Reading setup saved.</string>
+  <string name="first_use_skip" formatted="false">Skip setup</string>
+  <string name="first_use_skipped" formatted="false">Setup skipped. Your previous reading choices are unchanged.</string>
+  <string name="first_use_skipped_status" formatted="false">Skipped</string>
+  <string name="first_use_start" formatted="false">Set up reading preferences</string>
+  <string name="first_use_status" formatted="false">Setup status</string>
+  <string name="first_use_title" formatted="false">Make reading comfortable</string>
   <string name="fixture_notice" formatted="false">Development demo — synthetic test records, not reviewed sahitya or verified video metadata.</string>
   <string name="follow_device" formatted="false">Follow device</string>
   <string name="font_size_value" formatted="false">{size} {unit}</string>

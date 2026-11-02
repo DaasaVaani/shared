@@ -6,8 +6,28 @@ or offline-content backup. Consumers pin and adopt independently. Website v8
 and Android Room7 are the source adapters for this version, not wire versions.
 Newly implemented personal features require a new backup version and explicit
 preserving adapters; never silently omit their state from a claimed full backup.
-Bookmarks, reviewed-verse Practice and separate setup records are not implemented
-in these stores and have **no reserved fields** in v1.
+Bookmarks and reviewed-verse Practice have no reserved fields in v1. The frozen
+v1 setup exclusion remains unchanged; Website first-use state uses the separate
+web-only v2 extension below.
+
+## Website first-use extension v2
+
+[The generated v2 schema](../schemas/full-personal-backup-v2.schema.json) and
+`FullPersonalBackupV2` cover Website personal database v9 only. The envelope is
+the same as v1 except `formatVersion:2`, `platform:"web"` exclusively and one
+additional required `data.setupStatus` enum: `pending`, `completed`, `skipped`.
+Every v1 Website collection/preference and its strict domain is preserved.
+Android stays on v1; v2 is not a native adapter, interoperability claim or
+instruction to update any consumer pin.
+
+Website exports v2 and accepts both unchanged v1 and v2. Importing v1 explicitly
+adapts the absent setup state to `pending`, never completed or skipped; v2 restores
+the exact state. Old consumers refuse v2 rather than silently omitting setup.
+Completion/skip is a personal preference, not download consent, a receipt or
+proof of usable content. It must not be used to gate PWA online navigation.
+All existing validation, independent codec/byte ceilings and explicit fenced
+atomic replacement obligations apply. No script/helper/Latin preference fields
+or content readiness fields are introduced by this bounded extension.
 
 ## Exact wire shape
 

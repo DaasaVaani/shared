@@ -1,5 +1,18 @@
 # Documentation history
 
+## 2026-10-31: owner-approved Website first-use compatibility
+
+- Added a separately generated web-only full-personal-backup v2 schema and type,
+  retaining the frozen v1 schema, profile domains, reference codec and Android
+  contract unchanged. V2 adds only required pending/completed/skipped setup state;
+  Website's preserving adapter accepts v1 as pending and exports v2.
+- Added bilingual first-use labels and generated web/Android resources. No native
+  runtime adoption, automatic consumer repin, new lyric truth or download/readiness
+  claim. Maps to UX-12/14, SET-04 and XFER-09.
+- Focused `node --test tools\full-backup.test.mjs` passed11/11, with zero
+  failures/skips/cancellations. Full `npm run check` and repository hygiene follow
+  on the final Shared tree; this record is not a claim that those checks passed.
+
 ## 2026-10-30: completed implementation integration and temporary main-only workflow
 
 - The owner approved integrating completed implementation branches into main,

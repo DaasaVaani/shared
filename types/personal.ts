@@ -59,3 +59,11 @@ export type FullPersonalBackupV1 = {
   | { platform: "web"; data: WebBackupDataV1 }
   | { platform: "android"; data: AndroidBackupDataV1 }
 );
+export type FirstUseStatus = "pending" | "completed" | "skipped";
+export type FullPersonalBackupV2 = {
+  format: "daasavaani-personal-backup";
+  formatVersion: 2;
+  platform: "web";
+  exportedAt: string;
+  data: WebBackupDataV1 & { setupStatus: FirstUseStatus };
+};

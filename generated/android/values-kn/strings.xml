@@ -76,6 +76,21 @@
   <string name="exit_recite" formatted="false">ಪಠಣದಿಂದ ನಿರ್ಗಮಿಸಿ</string>
   <string name="fallback_label" formatted="false">ಬಳಕೆದಾರರ ಪರ್ಯಾಯ ಹೆಸರು (ಐಚ್ಛಿಕ; ತೆಗೆದುಹಾಕಲು ಖಾಲಿ ಬಿಡಿ)</string>
   <string name="favorites" formatted="false">ಮೆಚ್ಚಿನವು</string>
+  <string name="first_use_cancel" formatted="false">ಸಿದ್ಧತೆಯ ಬದಲಾವಣೆಗಳನ್ನು ರದ್ದುಮಾಡಿ</string>
+  <string name="first_use_completed" formatted="false">ಪೂರ್ಣಗೊಂಡಿದೆ</string>
+  <string name="first_use_failed" formatted="false">ಸಿದ್ಧತೆಯನ್ನು ಉಳಿಸಲಾಗಲಿಲ್ಲ. ಹಿಂದಿನ ಆಯ್ಕೆಗಳು ಬದಲಾಗಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ ಅಥವಾ ಇತ್ತೀಚಿನ ಆಯ್ಕೆಗಳನ್ನು ಪರಿಶೀಲಿಸಲು ರದ್ದುಮಾಡಿ.</string>
+  <string name="first_use_limits" formatted="false">ಈ ಓದುಗದಲ್ಲಿ ಮೂಲ ಕನ್ನಡ ಮಾತ್ರ ಲಭ್ಯವಿದೆ. ಇತರ ಲಿಪಿಗಳು, ಲ್ಯಾಟಿನ್ ರೂಪಗಳು ಮತ್ತು ಸಹಾಯಕ ಪಠ್ಯ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ. ಸಿದ್ಧತೆಗಾಗಿ ಸಾಹಿತ್ಯದ ಮುನ್ನೋಟವನ್ನು ಲೋಡ್ ಮಾಡುವುದಿಲ್ಲ.</string>
+  <string name="first_use_notice" formatted="false">ಈ ಐಚ್ಛಿಕ ಸಿದ್ಧತೆ ನಿಮ್ಮ ಆಯ್ಕೆಗಳನ್ನು ಈ ಸಾಧನದಲ್ಲಿ ಮಾತ್ರ ಉಳಿಸುತ್ತದೆ. ಈಗಲೇ ಓದುವುದನ್ನು ಮುಂದುವರಿಸಬಹುದು; ನಂತರ ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಆದ್ಯತೆಗಳನ್ನು ಬದಲಿಸಬಹುದು.</string>
+  <string name="first_use_offline" formatted="false">ಸಿದ್ಧತೆಯನ್ನು ಪೂರ್ಣಗೊಳಿಸುವುದು ಅಥವಾ ಬಿಟ್ಟುಬಿಡುವುದು ಸಾಹಿತ್ಯವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡುವುದಿಲ್ಲ. ಸಂಪೂರ್ಣ ಆಫ್‌ಲೈನ್ ಡೌನ್‌ಲೋಡ್ ಮತ್ತು ಅದರ ಗಾತ್ರದ ಮಾಹಿತಿ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ; ಆನ್‌ಲೈನ್ ಓದು ಲಭ್ಯವಿದೆ.</string>
+  <string name="first_use_pending" formatted="false">ಮುಗಿದಿಲ್ಲ</string>
+  <string name="first_use_save" formatted="false">ಉಳಿಸಿ ಸಿದ್ಧತೆಯನ್ನು ಮುಗಿಸಿ</string>
+  <string name="first_use_saved" formatted="false">ಓದುವ ಸಿದ್ಧತೆಯನ್ನು ಉಳಿಸಲಾಗಿದೆ.</string>
+  <string name="first_use_skip" formatted="false">ಸಿದ್ಧತೆಯನ್ನು ಬಿಟ್ಟುಬಿಡಿ</string>
+  <string name="first_use_skipped" formatted="false">ಸಿದ್ಧತೆಯನ್ನು ಬಿಟ್ಟುಬಿಡಲಾಗಿದೆ. ಹಿಂದಿನ ಓದುವ ಆಯ್ಕೆಗಳು ಬದಲಾಗಿಲ್ಲ.</string>
+  <string name="first_use_skipped_status" formatted="false">ಬಿಟ್ಟುಬಿಡಲಾಗಿದೆ</string>
+  <string name="first_use_start" formatted="false">ಓದುವ ಆದ್ಯತೆಗಳನ್ನು ಹೊಂದಿಸಿ</string>
+  <string name="first_use_status" formatted="false">ಸಿದ್ಧತೆಯ ಸ್ಥಿತಿ</string>
+  <string name="first_use_title" formatted="false">ಓದನ್ನು ಅನುಕೂಲವಾಗಿಸಿಕೊಳ್ಳಿ</string>
   <string name="fixture_notice" formatted="false">ಅಭಿವೃದ್ಧಿ ಪ್ರಾತ್ಯಕ್ಷಿಕೆ — ಕೃತಕ ಪರೀಕ್ಷಾ ದಾಖಲೆಗಳು; ಪರಿಶೀಲಿಸಿದ ಸಾಹಿತ್ಯ ಅಥವಾ ವೀಡಿಯೊ ವಿವರಗಳಲ್ಲ.</string>
   <string name="follow_device" formatted="false">ಸಾಧನದಂತೆ</string>
   <string name="font_size_value" formatted="false">{size} {unit}</string>
