@@ -54,6 +54,7 @@
   <string name="confirm_duplicate" formatted="false">Save with same name</string>
   <string name="continue_recitation" formatted="false">Continue recitation</string>
   <string name="copy_list_link" formatted="false">Copy snapshot link</string>
+  <string name="copy_lyric_link" formatted="false">Copy lyric link</string>
   <string name="create_list" formatted="false">Create empty list</string>
   <string name="dark" formatted="false">Dark</string>
   <string name="decrease_lyric_font_size" formatted="false">Decrease lyric font size</string>
@@ -134,6 +135,10 @@
   <string name="lyric_catalog_pending" formatted="false">Prepare the reading library to resolve lyric references.</string>
   <string name="lyric_font_size" formatted="false">Lyric font size</string>
   <string name="lyric_identifier" formatted="false">Lyric UUID</string>
+  <string name="lyric_link" formatted="false">Public lyric link</string>
+  <string name="lyric_link_copied" formatted="false">Lyric link copied.</string>
+  <string name="lyric_link_notice" formatted="false">This link includes no lyric text or personal data. Opening it depends on an available connection or actual prepared content.</string>
+  <string name="lyric_link_shared" formatted="false">Link handed to system sharing. Delivery is not confirmed.</string>
   <string name="lyric_no_media" formatted="false">No video or image is needed to read this lyric.</string>
   <string name="lyric_online_catalog_pending" formatted="false">Open the lyric catalog to resolve lyric references.</string>
   <string name="lyric_online_limits" formatted="false">Canonical Kannada only. Online browsing loads catalog metadata; opening a lyric downloads just that lyric. Verified content stays in memory, not persistent offline storage. Personal data stays on this device; full linguistic search is not implemented.</string>
@@ -141,6 +146,8 @@
   <string name="lyric_preview_limits" formatted="false">Canonical Kannada only. Complete-library download requires your consent. Prepared lyrics are kept only in memory, not persistent offline storage. Favorites, lists and full search for these lyric IDs are not implemented yet.</string>
   <string name="lyric_preview_notice" formatted="false">Prelaunch lyrics — product implementation and release checks are still in progress. This is not the public launch.</string>
   <string name="lyric_reference" formatted="false">Lyric reference</string>
+  <string name="lyric_share_cancelled" formatted="false">Sharing cancelled. The link is still available.</string>
+  <string name="lyric_share_failed" formatted="false">Could not share or copy the link. Select the link manually instead.</string>
   <string name="lyric_title_filter" formatted="false">Filter lyric titles</string>
   <string name="lyrics_unavailable" formatted="false">Lyrics unavailable in DaasaVaani.</string>
   <string name="move_down" formatted="false">Move down</string>
@@ -203,6 +210,7 @@
   <string name="settings" formatted="false">Settings</string>
   <string name="share_list_file" formatted="false">Share list file</string>
   <string name="share_list_link" formatted="false">Share snapshot link</string>
+  <string name="share_lyric_link" formatted="false">Share lyric link</string>
   <string name="show_another_lyric" formatted="false">Show another lyric</string>
   <string name="show_more_results" formatted="false">Show more results</string>
   <string name="show_reading_controls" formatted="false">Show reading controls</string>

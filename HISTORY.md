@@ -1,5 +1,19 @@
 # Documentation history
 
+## 2026-11-02: approved public lyric-link sharing labels
+
+- After Website/native setup publication, the owner approved Website-first
+  lyric-link sharing followed by native parity, including bilingual resources
+  and independently validated consumer-pin updates. Reuse configured canonical
+  URLs, preserve manual selection, report cancellation/failure and do not claim
+  delivery, copied lyrics/personal state or verified native App Links.
+- Added eight bilingual catalog entries and regenerated both consumer resources.
+  These are additive captions, not new publication/personal/backup capabilities.
+  `npm run check` passed370/370 without failures/skips/cancellations;
+  `python tools\check_repository.py` passed287 tracked files, and installed
+  actionlint1.7.12/ShellCheck0.11.0, strict YAML and whitespace checks passed.
+  Consumer adoption remains independently validated.
+
 ## 2026-11-02: approved Android first-use contract parity
 
 - After committing Website setup as22718e0, the owner explicitly approved native

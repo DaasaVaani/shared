@@ -1,5 +1,10 @@
 # DaasaVaani Shared
 
+The UI catalog includes public lyric-link sharing/copy/fallback notices for
+UX-01/07. Consumers independently build their configured canonical lyric URL;
+sharing includes neither lyric text nor personal data and never confirms delivery,
+content readiness or verified native App Links.
+
 The [flat counted search-table prerequisite](docs/search-tables.md) defines exact
 dictionary IDs, contiguous integer witness/posting regions and complete overlapping
 code-point gram multiplicities for declared normalized tokens. It is not a

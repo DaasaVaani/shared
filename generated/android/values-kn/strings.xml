@@ -54,6 +54,7 @@
   <string name="confirm_duplicate" formatted="false">ಅದೇ ಹೆಸರಿನಲ್ಲಿ ಉಳಿಸಿ</string>
   <string name="continue_recitation" formatted="false">ಪಠಣ ಮುಂದುವರಿಸಿ</string>
   <string name="copy_list_link" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ ನಕಲಿಸಿ</string>
+  <string name="copy_lyric_link" formatted="false">ಸಾಹಿತ್ಯದ ಕೊಂಡಿ ನಕಲಿಸಿ</string>
   <string name="create_list" formatted="false">ಖಾಲಿ ಪಟ್ಟಿ ರಚಿಸಿ</string>
   <string name="dark" formatted="false">ಗಾಢ</string>
   <string name="decrease_lyric_font_size" formatted="false">ಸಾಹಿತ್ಯದ ಅಕ್ಷರ ಗಾತ್ರ ಕಡಿಮೆ ಮಾಡಿ</string>
@@ -134,6 +135,10 @@
   <string name="lyric_catalog_pending" formatted="false">ಸಾಹಿತ್ಯದ ಉಲ್ಲೇಖಗಳನ್ನು ತಿಳಿಯಲು ಓದುವ ಗ್ರಂಥಾಲಯವನ್ನು ಸಿದ್ಧಪಡಿಸಿ.</string>
   <string name="lyric_font_size" formatted="false">ಸಾಹಿತ್ಯದ ಅಕ್ಷರ ಗಾತ್ರ</string>
   <string name="lyric_identifier" formatted="false">ಸಾಹಿತ್ಯದ UUID</string>
+  <string name="lyric_link" formatted="false">ಸಾಹಿತ್ಯದ ಸಾರ್ವಜನಿಕ ಕೊಂಡಿ</string>
+  <string name="lyric_link_copied" formatted="false">ಸಾಹಿತ್ಯದ ಕೊಂಡಿ ನಕಲಿಸಲಾಗಿದೆ.</string>
+  <string name="lyric_link_notice" formatted="false">ಈ ಕೊಂಡಿಯಲ್ಲಿ ಸಾಹಿತ್ಯದ ಪಠ್ಯ ಅಥವಾ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಇಲ್ಲ. ಇದನ್ನು ತೆರೆಯಲು ಸಂಪರ್ಕ ಅಥವಾ ನಿಜವಾಗಿ ಸಿದ್ಧಪಡಿಸಿದ ವಿಷಯ ಬೇಕಾಗುತ್ತದೆ.</string>
+  <string name="lyric_link_shared" formatted="false">ಕೊಂಡಿಯನ್ನು ವ್ಯವಸ್ಥೆಯ ಹಂಚಿಕೆ ಸೌಲಭ್ಯಕ್ಕೆ ನೀಡಲಾಗಿದೆ. ತಲುಪಿರುವುದು ದೃಢಪಟ್ಟಿಲ್ಲ.</string>
   <string name="lyric_no_media" formatted="false">ಈ ಸಾಹಿತ್ಯವನ್ನು ಓದಲು ವೀಡಿಯೊ ಅಥವಾ ಚಿತ್ರದ ಅಗತ್ಯವಿಲ್ಲ.</string>
   <string name="lyric_online_catalog_pending" formatted="false">ಸಾಹಿತ್ಯದ ಉಲ್ಲೇಖಗಳನ್ನು ತಿಳಿಯಲು ಸಾಹಿತ್ಯದ ಪಟ್ಟಿಯನ್ನು ತೆರೆಯಿರಿ.</string>
   <string name="lyric_online_limits" formatted="false">ಕನ್ನಡ ಪಠ್ಯವನ್ನು ಓದಲು ಮಾತ್ರ. ಆನ್‌ಲೈನ್‌ನಲ್ಲಿ ಪಟ್ಟಿಯ ಮಾಹಿತಿಯನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತದೆ; ಸಾಹಿತ್ಯವನ್ನು ತೆರೆದಾಗ ಆ ಸಾಹಿತ್ಯ ಮಾತ್ರ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತದೆ. ಪರಿಶೀಲಿಸಿದ ಪಠ್ಯವು ಮೆಮೊರಿಯಲ್ಲಿ ಮಾತ್ರ ಉಳಿಯುತ್ತದೆ, ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹವಲ್ಲ. ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಈ ಸಾಧನದಲ್ಲೇ ಉಳಿಯುತ್ತದೆ; ಸಂಪೂರ್ಣ ಭಾಷಾಧಾರಿತ ಹುಡುಕಾಟ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
@@ -141,6 +146,8 @@
   <string name="lyric_preview_limits" formatted="false">ಕನ್ನಡ ಪಠ್ಯವನ್ನು ಓದಲು ಮಾತ್ರ. ಎಲ್ಲ ಸಾಹಿತ್ಯವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ನಿಮ್ಮ ಒಪ್ಪಿಗೆ ಅಗತ್ಯ. ಸಿದ್ಧಪಡಿಸಿದ ಸಾಹಿತ್ಯವು ಮೆಮೊರಿಯಲ್ಲಿ ಮಾತ್ರ ಉಳಿಯುತ್ತದೆ; ಶಾಶ್ವತ ಆಫ್‌ಲೈನ್ ಸಂಗ್ರಹವಲ್ಲ. ಈ ಸಾಹಿತ್ಯಕ್ಕೆ ಮೆಚ್ಚಿನವುಗಳು, ವೈಯಕ್ತಿಕ ಪಟ್ಟಿಗಳು ಮತ್ತು ಸಂಪೂರ್ಣ ಹುಡುಕಾಟ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="lyric_preview_notice" formatted="false">ಪೂರ್ವಪ್ರಕಟಣೆ — ಅಪ್ಲಿಕೇಶನ್ ಅಭಿವೃದ್ಧಿ ಮತ್ತು ಬಿಡುಗಡೆ ಪರಿಶೀಲನೆಗಳು ಇನ್ನೂ ನಡೆಯುತ್ತಿವೆ. ಇದು ಸಾರ್ವಜನಿಕ ಬಿಡುಗಡೆಯಲ್ಲ.</string>
   <string name="lyric_reference" formatted="false">ಸಾಹಿತ್ಯದ ಉಲ್ಲೇಖ</string>
+  <string name="lyric_share_cancelled" formatted="false">ಹಂಚಿಕೆ ರದ್ದಾಗಿದೆ. ಕೊಂಡಿ ಇನ್ನೂ ಲಭ್ಯವಿದೆ.</string>
+  <string name="lyric_share_failed" formatted="false">ಕೊಂಡಿಯನ್ನು ಹಂಚಲು ಅಥವಾ ನಕಲಿಸಲು ಆಗಲಿಲ್ಲ. ಬದಲಾಗಿ ಕೊಂಡಿಯನ್ನು ಕೈಯಾರೆ ಆಯ್ಕೆಮಾಡಿ.</string>
   <string name="lyric_title_filter" formatted="false">ಸಾಹಿತ್ಯದ ಶೀರ್ಷಿಕೆಗಳನ್ನು ಹುಡುಕಿ</string>
   <string name="lyrics_unavailable" formatted="false">ದಾಸವಾಣಿಯಲ್ಲಿ ಸಾಹಿತ್ಯ ಲಭ್ಯವಿಲ್ಲ.</string>
   <string name="move_down" formatted="false">ಕೆಳಕ್ಕೆ ಸರಿಸಿ</string>
@@ -203,6 +210,7 @@
   <string name="settings" formatted="false">ಆಯ್ಕೆಗಳು</string>
   <string name="share_list_file" formatted="false">ಪಟ್ಟಿಯ ಕಡತ ಹಂಚಿ</string>
   <string name="share_list_link" formatted="false">ಪಟ್ಟಿಯ ಪ್ರತಿಯ ಕೊಂಡಿ ಹಂಚಿ</string>
+  <string name="share_lyric_link" formatted="false">ಸಾಹಿತ್ಯದ ಕೊಂಡಿ ಹಂಚಿ</string>
   <string name="show_another_lyric" formatted="false">ಇನ್ನೊಂದು ಸಾಹಿತ್ಯವನ್ನು ತೋರಿಸಿ</string>
   <string name="show_more_results" formatted="false">ಇನ್ನಷ್ಟು ಫಲಿತಾಂಶ ತೋರಿಸಿ</string>
   <string name="show_reading_controls" formatted="false">ಓದುವ ನಿಯಂತ್ರಣಗಳನ್ನು ತೋರಿಸಿ</string>

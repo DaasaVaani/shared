@@ -75,6 +75,14 @@ en:
   densityRelaxed: Relaxed
   lyricBack: Back to lyrics
   lyricNoMedia: No video or image is needed to read this lyric.
+  lyricLink: Public lyric link
+  lyricLinkNotice: This link includes no lyric text or personal data. Opening it depends on an available connection or actual prepared content.
+  copyLyricLink: Copy lyric link
+  shareLyricLink: Share lyric link
+  lyricLinkCopied: Lyric link copied.
+  lyricLinkShared: Link handed to system sharing. Delivery is not confirmed.
+  lyricShareCancelled: Sharing cancelled. The link is still available.
+  lyricShareFailed: Could not share or copy the link. Select the link manually instead.
   favorites: Favorites
   recentHistory: Recently opened
   learning: Learning
@@ -313,6 +321,14 @@ kn:
   densityRelaxed: ಹೆಚ್ಚಿನ ಅಂತರ
   lyricBack: ಸಾಹಿತ್ಯಕ್ಕೆ ಹಿಂತಿರುಗಿ
   lyricNoMedia: ಈ ಸಾಹಿತ್ಯವನ್ನು ಓದಲು ವೀಡಿಯೊ ಅಥವಾ ಚಿತ್ರದ ಅಗತ್ಯವಿಲ್ಲ.
+  lyricLink: ಸಾಹಿತ್ಯದ ಸಾರ್ವಜನಿಕ ಕೊಂಡಿ
+  lyricLinkNotice: ಈ ಕೊಂಡಿಯಲ್ಲಿ ಸಾಹಿತ್ಯದ ಪಠ್ಯ ಅಥವಾ ವೈಯಕ್ತಿಕ ಮಾಹಿತಿ ಇಲ್ಲ. ಇದನ್ನು ತೆರೆಯಲು ಸಂಪರ್ಕ ಅಥವಾ ನಿಜವಾಗಿ ಸಿದ್ಧಪಡಿಸಿದ ವಿಷಯ ಬೇಕಾಗುತ್ತದೆ.
+  copyLyricLink: ಸಾಹಿತ್ಯದ ಕೊಂಡಿ ನಕಲಿಸಿ
+  shareLyricLink: ಸಾಹಿತ್ಯದ ಕೊಂಡಿ ಹಂಚಿ
+  lyricLinkCopied: ಸಾಹಿತ್ಯದ ಕೊಂಡಿ ನಕಲಿಸಲಾಗಿದೆ.
+  lyricLinkShared: ಕೊಂಡಿಯನ್ನು ವ್ಯವಸ್ಥೆಯ ಹಂಚಿಕೆ ಸೌಲಭ್ಯಕ್ಕೆ ನೀಡಲಾಗಿದೆ. ತಲುಪಿರುವುದು ದೃಢಪಟ್ಟಿಲ್ಲ.
+  lyricShareCancelled: ಹಂಚಿಕೆ ರದ್ದಾಗಿದೆ. ಕೊಂಡಿ ಇನ್ನೂ ಲಭ್ಯವಿದೆ.
+  lyricShareFailed: ಕೊಂಡಿಯನ್ನು ಹಂಚಲು ಅಥವಾ ನಕಲಿಸಲು ಆಗಲಿಲ್ಲ. ಬದಲಾಗಿ ಕೊಂಡಿಯನ್ನು ಕೈಯಾರೆ ಆಯ್ಕೆಮಾಡಿ.
   favorites: ಮೆಚ್ಚಿನವು
   recentHistory: ಇತ್ತೀಚೆಗೆ ತೆರೆದವು
   learning: ಕಲಿಕೆ
