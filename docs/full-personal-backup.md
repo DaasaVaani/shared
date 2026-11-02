@@ -17,7 +17,7 @@ web-only v2 extension below.
 the same as v1 except `formatVersion:2`, `platform:"web"` exclusively and one
 additional required `data.setupStatus` enum: `pending`, `completed`, `skipped`.
 Every v1 Website collection/preference and its strict domain is preserved.
-Android stays on v1; v2 is not a native adapter, interoperability claim or
+Android does not use v2; its distinct v3 extension is defined below. V2 is not a native adapter, interoperability claim or
 instruction to update any consumer pin.
 
 Website exports v2 and accepts both unchanged v1 and v2. Importing v1 explicitly

@@ -252,7 +252,8 @@ require a new version/adapter; v1 invents no bookmark/Practice/setup records.
 Consumer pins and adoption remain independent.
 The [web-only backup v2 extension](docs/full-personal-backup.md#website-first-use-extension-v2)
 adds Website v9 first-use pending/completed/skipped status, with unchanged v1
-import mapped explicitly to pending. V1 and Android remain frozen and independent.
+import mapped explicitly to pending. V1 and the independent native adapter do not
+silently gain web v2 support.
 Generated bilingual setup captions describe only currently available controls,
 not content preparation, linguistic approval or offline readiness.
 The [Android-only backup v3 extension](docs/full-personal-backup.md#android-first-use-extension-v3)
