@@ -126,8 +126,9 @@ implementation is authorized, not global production readiness.
   collection/aggregate-byte semantics and replacement/recovery protocol.
   Generated schema/types/fixtures, bounded Node-only reference gzip/JSON codec
   and captions are prerequisites, not consumer implementation or release proof.
-  No future bookmark/Practice/setup reservations exist; new stored features
-  require a new backup version and preserving adapters.
+  V1 has no bookmark/Practice/setup reservations. The separate web-only v2 schema
+  adds Website v9 first-use status and the explicit v1-to-pending adapter contract;
+  Android stays on v1. Other new stored features require new versions/adapters.
 - Platform: independent UI/script preferences, system-font limitations, static
   routes/App Links, safe shell updates and verified local-signing handoff.
   Additive Recite captions cover only explicit focused reading/control

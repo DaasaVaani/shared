@@ -250,6 +250,11 @@ types, synthetic fixtures, bilingual captions and bounded Node-only conformance
 codec are supplied, not consumer backup UI/transactions. Future personal features
 require a new version/adapter; v1 invents no bookmark/Practice/setup records.
 Consumer pins and adoption remain independent.
+The [web-only backup v2 extension](docs/full-personal-backup.md#website-first-use-extension-v2)
+adds Website v9 first-use pending/completed/skipped status, with unchanged v1
+import mapped explicitly to pending. V1 and Android remain frozen and independent.
+Generated bilingual setup captions describe only currently available controls,
+not content preparation, linguistic approval or offline readiness.
 
 Start with [AGENTS.md](AGENTS.md) and the [current implementation specification](docs/implementation-specification.md)
 for settings ownership, cross-repository contracts,

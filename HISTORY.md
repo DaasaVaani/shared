@@ -12,6 +12,11 @@
 - Focused `node --test tools\full-backup.test.mjs` passed11/11, with zero
   failures/skips/cancellations. Full `npm run check` and repository hygiene follow
   on the final Shared tree; this record is not a claim that those checks passed.
+- Subsequent full `npm run check` passed369/369 with zero failures/skips/
+  cancellations; repository hygiene286, strict YAML and whitespace passed.
+  Synchronized README/specification/checklist with the distinct v2 extension
+  without altering the frozen v1 contract; the full check follows that
+  documentation-only synchronization as well.
 
 ## 2026-10-30: completed implementation integration and temporary main-only workflow
 
