@@ -80,6 +80,8 @@
   <string name="first_use_completed" formatted="false">Completed</string>
   <string name="first_use_failed" formatted="false">Setup could not be saved. Your previous choices are unchanged. Retry, or cancel to review the latest choices.</string>
   <string name="first_use_limits" formatted="false">Only canonical Kannada is available in this reader. Other lyric scripts, Latin variants and helper text are not available yet. No lyric preview is loaded by setup.</string>
+  <string name="first_use_native_notice" formatted="false">Optional setup saves choices only on this device. Settings and list previews remain available. Change these preferences later in Settings.</string>
+  <string name="first_use_native_offline" formatted="false">Completing or skipping setup does not download lyrics or prepare the library. Reading still requires explicit complete library preparation. Prepared lyrics are kept only in memory, not persistent offline storage; durable offline download and its size information are not available yet.</string>
   <string name="first_use_notice" formatted="false">Optional setup saves choices only on this device. You can keep browsing now and change preferences later in Settings.</string>
   <string name="first_use_offline" formatted="false">Completing or skipping setup does not download lyrics. Complete offline download and its size information are not available yet; online reading remains available.</string>
   <string name="first_use_pending" formatted="false">Not finished</string>

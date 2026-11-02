@@ -1,5 +1,28 @@
 # Documentation history
 
+## 2026-11-02: approved Android first-use contract parity
+
+- After committing Website setup as22718e0, the owner explicitly approved native
+  language/theme/font/density setup, preserving contract/Room/independent-pin
+  updates and Android-only backupv3. No new push authorization was requested.
+- V1 and web-only v2 remain frozen. New native v3 requires exact setupStatus;
+  native v1 imports adapt to pending. Archived current claim "Android stays
+  on v1" for the newly approved native adapter only. Existing native receipts
+  remain local control; neither status nor backup grants content readiness.
+- Generated native-specific bilingual notices retain complete explicit preparation
+  and memory-only content limitations; no setup sample, script/helper capability,
+  system-backup activation or raw lyric truth is introduced.
+- Full checks follow on the final contract tree; native adoption is independent
+  and must be validated before any completion or publication claim.
+- `npm run check` passed370/370 without failures/skips/cancellations after fixing
+  the new test's duplicate Ajv schema registration; generated schemas/resources
+  were regenerated, and repository hygiene/whitespace passed. V1 and web-v2
+  generated schemas remain byte-for-byte unchanged.
+- Earlier validated Sharedc1c3086 was pushed to main under the owner's subsequent
+  explicit continuing-publication authorization; exact hosted hygiene41479066425
+  passed, including full369-test contract checks. Website22718e0 was then pushed
+  independently; its hosted check/deployment is being verified separately.
+
 ## 2026-10-31: owner-approved Website first-use compatibility
 
 - Added a separately generated web-only full-personal-backup v2 schema and type,

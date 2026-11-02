@@ -561,14 +561,15 @@ currently implemented Website v8/Android Room7 logical fields, independent of
 database wrappers, and includes the exact latest recitation pair. Preserve absent
 web saved preferences and native device sentinels/font domains. Unimplemented
 bookmark/Practice records have no reserved fields. The separate web-only v2
-extension adds Website v9 first-use status; v1 imports adapt to pending, not
-completion/readiness. Other new fields need new versions/adapters, not silent
+extension adds Website v9 first-use status; Android-only v3 separately covers
+Room9 setup state. V1 imports adapt to pending, not completion/readiness. Native
+setup does not bypass complete explicit preparation. Other new fields need new versions/adapters, not silent
 omission. Node-only reference conformance
 does not implement consumer replacement or establish interoperability.
 
 Gzip UTF8 JSON files: .dvlist.json.gz / .dvbackup.json.gz, identifiers
 daasavaani-list v1/v2 / daasavaani-personal-backup independently version1 for
-android/web and version2 for web setup state. Lyric-reference lists require v2,
+android/web, version2 for web setup state and version3 for native setup state. Lyric-reference lists require v2,
 never silent downgrade.
 Encoded list/backup9/65MiB, decoded JSON8/64MiB. One valid gzip member/checksum/
 length, no trailing data or ratio cap; bounded off-UI decode/validation. Emit

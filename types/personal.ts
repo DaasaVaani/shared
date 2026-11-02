@@ -67,3 +67,10 @@ export type FullPersonalBackupV2 = {
   exportedAt: string;
   data: WebBackupDataV1 & { setupStatus: FirstUseStatus };
 };
+export type FullPersonalBackupV3 = {
+  format: "daasavaani-personal-backup";
+  formatVersion: 3;
+  platform: "android";
+  exportedAt: string;
+  data: AndroidBackupDataV1 & { setupStatus: FirstUseStatus };
+};

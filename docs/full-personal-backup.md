@@ -31,6 +31,30 @@ or content readiness fields are introduced by this bounded extension.
 
 ## Exact wire shape
 
+The frozen v1 wire shape below is unchanged. Current consumers independently use
+web-only v2 or the Android-only v3 extension.
+
+## Android first-use extension v3
+
+[The generated v3 schema](../schemas/full-personal-backup-v3.schema.json) and
+`FullPersonalBackupV3` cover native Room9 personal state. Version2 remains
+web-only; version3 is Android-only. V3 retains every frozen native v1 field and
+adds required `data.setupStatus`: `pending`, `completed` or `skipped`.
+Native new exports use v3. Native accepts unchanged v1 with setup explicitly
+adapted to pending, or v3 restoring its exact status. It refuses web v2 and future
+versions. Old clients refuse v3 instead of silently omitting setup.
+
+Preserving Room8-to-Room9 migration adds only pending setup; the existing
+postcommit language-recovery receipt remains local control, not a wire field.
+One fenced transaction saves language/theme/native font/density plus completion,
+or records skip without changing preferences. Cancel changes nothing. Optional
+setup never replaces destinations, prepares lyrics or changes the explicit
+complete-library gate. Settings permits revisiting setup before preparation.
+Script/helper/Latin controls, lyric preview and durable offline download/size
+remain unavailable. Android system-backup activation remains blocked independently.
+
+## Frozen v1 fields
+
 The generated [schema](../schemas/full-personal-backup.schema.json) and
 [types](../types/personal.ts) define exactly:
 

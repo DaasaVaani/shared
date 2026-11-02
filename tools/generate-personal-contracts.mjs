@@ -162,7 +162,7 @@ export function listRecordSchema(settings, version = 1) {
 }
 
 export function fullBackupSchema(settings, profiles, version = 1) {
-  if (version !== 1 && version !== 2) throw new Error("Unsupported full-backup version");
+  if (version !== 1 && version !== 2 && version !== 3) throw new Error("Unsupported full-backup version");
   validateLimits(settings);
   if (!validateBackupSettings(profiles)) throw new Error("Invalid full-backup settings");
   for (const [platform, model, unit] of [["web", "webv8", "cssPx"], ["android", "nativeRoom7", "sp"]]) {
@@ -182,7 +182,7 @@ export function fullBackupSchema(settings, profiles, version = 1) {
     $schema: "https://json-schema.org/draft/2020-12/schema",
     $id: `https://daasavaani.github.io/contracts/full-personal-backup-v${version}.schema.json`,
     $comment: comment + " Platform profiles: settings/full-backup.yml.",
-    oneOf: (version === 1 ? ["web", "android"] : ["web"]).map(platform => {
+    oneOf: (version === 1 ? ["web", "android"] : version === 2 ? ["web"] : ["android"]).map(platform => {
       const profile = profiles[platform];
       const preferences = object({
         language: choice(platform === "web" ? ["en", "kn"] : ["device", "en", "kn"]),
@@ -199,7 +199,7 @@ export function fullBackupSchema(settings, profiles, version = 1) {
         [platform === "web" ? "history" : "recentHistory"]: embedded(recentHistorySchema(settings)),
         learning: embedded(learningLabelsSchema(settings)),
         recitation: embedded(recitationPositionSchema()),
-        ...(version === 2 ? { setupStatus: choice(["pending", "completed", "skipped"]) } : {}),
+        ...(version >= 2 ? { setupStatus: choice(["pending", "completed", "skipped"]) } : {}),
       });
       if (platform === "web") data.allOf = [{
         if: { properties: { preferences: { type: "null" } } },
@@ -229,6 +229,7 @@ export async function generatePersonalContracts() {
   await writeFile(resolve(root, "schemas/recitation-position.schema.json"), JSON.stringify(recitationPositionSchema(), null, 2) + "\n");
   await writeFile(resolve(root, "schemas/full-personal-backup.schema.json"), JSON.stringify(fullBackupSchema(settings, profiles), null, 2) + "\n");
   await writeFile(resolve(root, "schemas/full-personal-backup-v2.schema.json"), JSON.stringify(fullBackupSchema(settings, profiles, 2), null, 2) + "\n");
+  await writeFile(resolve(root, "schemas/full-personal-backup-v3.schema.json"), JSON.stringify(fullBackupSchema(settings, profiles, 3), null, 2) + "\n");
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) await generatePersonalContracts();

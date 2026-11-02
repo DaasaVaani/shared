@@ -47,6 +47,29 @@ test("web backup v2 requires explicit setup status without changing v1 or Androi
   assert.equal(validate(web), false);
 });
 
+test("Android backup v3 requires exact setup state and leaves web v2 and frozen v1 unchanged", async () => {
+  const schema = fullBackupSchema(limits, profiles, 3);
+  assert.deepEqual(JSON.parse(await load("schemas/full-personal-backup-v3.schema.json")), schema);
+  const ajv = new Ajv2020({ strict: true });
+  const validate = ajv.compile(schema);
+  const validateV1 = ajv.compile(fullBackupSchema(limits, profiles));
+  const validateV2 = ajv.compile(fullBackupSchema(limits, profiles, 2));
+  const native = sample(2);
+  for (const setupStatus of ["pending", "completed", "skipped"]) {
+    const value = { ...native, formatVersion: 3, data: { ...native.data, setupStatus } };
+    assert.equal(validate(value), true);
+    assert.equal(validateV1(value), false);
+    assert.equal(validateV2(value), false);
+  }
+  for (const setupStatus of [null, true, "ready", "", { completed: true }]) {
+    assert.equal(validate({ ...native, formatVersion: 3, data: { ...native.data, setupStatus } }), false);
+  }
+  assert.equal(validate({ ...native, formatVersion: 3 }), false);
+  assert.equal(validate({ ...native, formatVersion: 3, platform: "web", data: { ...native.data, setupStatus: "pending" } }), false);
+  assert.equal(validate(native), false);
+  assert.throws(() => fullBackupSchema(limits, profiles, 4));
+});
+
 test("generated strict platform allowlists and approved profile identities are deterministic", async () => {
   assert.deepEqual(JSON.parse(await load("schemas/full-personal-backup.schema.json")), fullBackupSchema(limits, profiles));
   new Ajv2020({ strict: true }).compile(fullBackupSchema(limits, profiles));

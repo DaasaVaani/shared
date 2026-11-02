@@ -255,6 +255,10 @@ adds Website v9 first-use pending/completed/skipped status, with unchanged v1
 import mapped explicitly to pending. V1 and Android remain frozen and independent.
 Generated bilingual setup captions describe only currently available controls,
 not content preparation, linguistic approval or offline readiness.
+The [Android-only backup v3 extension](docs/full-personal-backup.md#android-first-use-extension-v3)
+independently covers native Room9 setup state; v1 imports become pending and web
+v2 stays unchanged. Native-specific setup captions preserve its complete explicit
+preparation gate and disclose memory-only content, not durable offline readiness.
 
 Start with [AGENTS.md](AGENTS.md) and the [current implementation specification](docs/implementation-specification.md)
 for settings ownership, cross-repository contracts,

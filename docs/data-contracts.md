@@ -127,8 +127,10 @@ implementation is authorized, not global production readiness.
   Generated schema/types/fixtures, bounded Node-only reference gzip/JSON codec
   and captions are prerequisites, not consumer implementation or release proof.
   V1 has no bookmark/Practice/setup reservations. The separate web-only v2 schema
-  adds Website v9 first-use status and the explicit v1-to-pending adapter contract;
-  Android stays on v1. Other new stored features require new versions/adapters.
+  adds Website v9 first-use status and the explicit v1-to-pending adapter contract.
+  The distinct Android-only v3 extends native Room9 with the same status, while
+  preserving native v1 imports as pending and the complete preparation gate.
+  Other new stored features require new versions/adapters.
 - Platform: independent UI/script preferences, system-font limitations, static
   routes/App Links, safe shell updates and verified local-signing handoff.
   Additive Recite captions cover only explicit focused reading/control
