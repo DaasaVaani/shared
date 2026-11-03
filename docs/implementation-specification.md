@@ -452,7 +452,14 @@ rechecks. Without safe writer locking, disable preparation/update explicitly,
 not online reading. Shared snapshot reader pins protect GC; exclusive nonblocking
 GC defers busy readers, never time-expires suspended tabs. Context death releases
 Web Locks; Android uses coordinated pins plus durable active/staging roots.
-Lock ordering/deadlock/crash protocols still need exact specification.
+The isolated [durable-content protocol](durable-content.md) defines dedicated
+Website content storage, whole-operation exclusive writer locking with
+`ifAvailable`, exact epoch/revision fences, writer-before-exclusive-retired-pin
+cleanup ordering, preserved busy roots and atomic validation/commit boundaries.
+Shared supplies strict portable metadata/types, exact whole-envelope accounting
+and non-mutating transition candidates only. Website independently implements
+actual IndexedDB/Web Locks/immutable-byte checks; Android/Library integration,
+live adapters and device/crash evidence remain separate gates.
 
 Verify on use plus opportunistic foreground-idle audit:4MiB/~50ms slice, at least30s
 apart; pause for search/transfers/available low-power signals. Cooperative timing,
@@ -712,7 +719,7 @@ These are required coverage, not executed test results.
 | Language | Reviewed native/Latin/alias/Unicode/technical-marker/digit tables, independent expectations, permitted samples before Latin default |
 | Public/search | Exact packed postings/witnesses/signatures/envelopes/capabilities/hash exclusions/path rules and fixture/proof specification |
 | Personal | Minimal-list and current-state full-backup logical schemas/reference tooling exist; consumer codecs/adapters, database migration/version matrix and actual preview/fence/postcommit locale implementation remain |
-| Lifecycle/publication | Planner metadata/reference prerequisite exists; actual packing/manifest/policy adapters, state/receipt/journal/activation/GC lock order, crash boundaries and storage accounting schemas remain |
+| Lifecycle/publication | Planner and isolated durable-content metadata/types/accounting/fenced-transition prerequisites exist; actual packing/manifest/policy/download adapters, independently validated content storage/byte validation, live integration and device/crash/physical-space evidence remain |
 | Ingestion | Exact extraction/channel/batch/quota/runbook plus external provider clarification |
 | UI/release | Owned UI/default/capability tokens, routing/shell/signing procedures and normal-protection restoration |
 

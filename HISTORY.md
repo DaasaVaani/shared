@@ -1,5 +1,64 @@
 # Documentation history
 
+## 2026-11-03: isolated portable durable-content protocol
+
+- The owner approved protocol-first isolated Shared/Website implementation,
+  a dedicated separate content IndexedDB/Dexie database, whole-operation
+  exclusive nonblocking writer Web Locks and independent Website Shared-pin
+  adoption after validation. This Shared slice does not modify Website,
+  Android, Library, source attribution, live UI or publisher activation.
+  Standing authorization permits validated fast-forward main publication
+  through the existing administrator exception, not protection changes.
+- Added the authoritative durable-content contract, ContentDataset-root
+  draft2020 schema/named definitions, portable types, browser-safe Ajv2020/JSON
+  import-attribute module and strong `.d.mts` assertion/transition declarations.
+  All thirteen approved API names and parameter ordering are preserved.
+  Positive limits have no defaults; all retained metadata and actual encoded
+  lengths count with safe-integer arithmetic. Pure activation remains only
+  a candidate. Neither metadata nor injected validators prove readiness.
+- Current guides now link the isolated contract instead of leaving its
+  exact protocol/schema/accounting prerequisite unspecified. Previously the
+  lifecycle section said “Lock ordering/deadlock/crash protocols still need
+  exact specification,” and the gate table included state/receipt/journal/
+  activation/GC ordering and storage-accounting schemas as wholly remaining.
+  Those metadata/protocol portions are superseded only for this isolated
+  prerequisite. Actual physical, live-adapter and device/crash evidence remain
+  owning integration gates; broader lifecycle behavior is preserved.
+- Targeted Node checks exposed one test assumption that activation necessarily
+  grows metadata; it actually replaces the larger target envelope with a
+  retired reference. The corrected independent accounting assertions preserve
+  every old protected root and test exact/+1 admission of the next target.
+  No accounting or pin-retention rule was weakened.
+- Requirement coverage: OFF-01/03/04/06/07/08/11/12/15/16, ALG-08 and SET-01/02.
+  Synthetic metadata/reference checks are not actual-byte/schema/capability/
+  readiness, publisher, linguistic or release conformance. No Shared pin is
+  changed here; Website independently adopts a published revision and validates
+  its real browser implementation. Android/Library remain unchanged.
+- Shared validation:
+  - `node --test --test-reporter=dot tools\content-state.test.mjs`: passed all40
+    focused tests; strict future/unknown/non-JSON shapes, exact hash/UUID anchors,
+    all limits/safe-integer boundaries, plan/root/length identities, canonical
+    independent byte oracle, complete candidates, stale fences, immutable
+    results, reader-safe removal/retirement and explicit collection covered.
+  - `npm run check`: passed complete generation and410/410 tests, zero failures,
+    skipped tests or cancellations. No dependency/toolchain changes or installs.
+  - `python tools\check_repository.py`: passed293 tracked files after staging
+    all11 intended changed/new files.
+  - Strict Node `yaml` parsing of all22 `.github`/`settings`/`locales` YAML files:
+    passed single-document YAML1.2/string-key/no-duplicate/no-alias/no-anchor/
+    no-merge/no-custom-tag checks.
+  - `C:\Users\pots\AppData\Local\DaasaVaani\toolchains\actionlint-1.7.12\actionlint.exe .github\workflows\hygiene.yml`:
+    passed with sibling ShellCheck0.11.0 on PATH.
+  - `git --no-pager diff --check`, `git --no-pager diff --cached --check` and
+    `git --no-pager diff --exit-code -- generated schemas`: passed.
+  - Inline Python changed-current-guide local file links, anchors and balanced
+    Markdown fences: passed README and all three affected current guides.
+- Read-only live repository checks confirmed administrator permission and
+  repository-role5 always-bypass PR/check ruleset25526641, plus force/delete
+  ruleset25526636 without any bypass. This is not a protection change or a
+  standing exemption for publisher/source-review gates. Hosted validation and
+  remote identity are verified after the authorized fast-forward main push.
+
 ## 2026-11-02: approved public lyric-link sharing labels
 
 - After Website/native setup publication, the owner approved Website-first

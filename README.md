@@ -1,5 +1,17 @@
 # DaasaVaani Shared
 
+The isolated [durable-content protocol](docs/durable-content.md) supplies strict
+portable metadata/schema/types, exact logical accounting and immutable fenced
+transitions for OFF-01/03/04/06/07/08/11/12/15/16, ALG-08 and SET-01/02.
+Import `tools/content-state.mjs` with its `content-state.d.mts` declarations;
+Node22.15+ and browser/Vite JSON import attributes are supported using existing
+Ajv2020. All four limits are explicit. Activation produces only a metadata
+candidate, not actual-byte verification or readiness. Dedicated content storage,
+whole-operation Web Locks and physical validation belong to the independently
+validated Website adapter; Android/Library adoption and live integration remain
+separate. Run `node --test tools\content-state.test.mjs` incrementally or
+`npm run check` for complete Shared validation.
+
 The UI catalog includes public lyric-link sharing/copy/fallback notices for
 UX-01/07. Consumers independently build their configured canonical lyric URL;
 sharing includes neither lyric text nor personal data and never confirms delivery,

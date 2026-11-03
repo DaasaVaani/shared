@@ -94,6 +94,13 @@ implementation is authorized, not global production readiness.
 - Publication/offline: durable state/receipts/sequence, deterministic ZIP planner,
   host/resource bounds, current-only remote, complete atomic activation, safe
   pins/fences/GC, resume/degradation/repair and explicit manual refresh.
+  The isolated [durable-content protocol](durable-content.md) supplies strict
+  ContentDataset/control/reference/plan/receipt/limit schemas and types, exact
+  complete logical accounting and pure fenced transition/collection candidates.
+  Receipts, schema acceptance and activation candidates are not byte/decoded/
+  capability/readiness proof. Website owns dedicated transactional content
+  storage, whole-operation exclusive nonblocking writer locks and actual-byte/
+  full-validation checks; Android/Library/source publication remain unchanged.
   The [download-planning prerequisite](download-planning.md) supplies strict
   portable metadata/types, owned settings, exact-integer Node reference and
   synthetic conformance vectors. Selected bundles are fully member-disjoint,
@@ -168,6 +175,14 @@ minimal-list and logical list-record JSON schemas/fixtures. Check
 `git diff --exit-code -- generated schemas`
 after generation with the intended generated outputs staged or committed.
 It is not full production-schema/language or consumer transfer-codec conformance.
+The durable-content suite checks strict/future metadata and limits, full-match
+hashes/UUIDs, sorted exact plan/root identities, monotonic targets, immutable
+receipts, epoch/revision fencing, safe arithmetic, complete candidate activation,
+pause/removal and protected-root collection. An independent canonical-envelope
+oracle checks all metadata and unique encoded bytes, exact capacity/+1 and
+prospective revision growth. Run `node --test tools\content-state.test.mjs`
+incrementally. These permitted synthetic metadata vectors do not verify actual
+stored bytes, prove complete supported snapshots or exercise a physical database.
 The download-planner suite additionally checks metadata coverage/cost identities,
 full-member disjointness, configured count/byte/extra boundaries, percentage
 flooring, deterministic exact-ratio ordering, reuse, invalid/overflow refusal
