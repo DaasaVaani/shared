@@ -379,6 +379,11 @@ artifacts/minimal list/each platform full backup. The
 [staged canonical snapshot envelope](snapshot-publication.md) fixes its narrow
 descriptor/manifest/policy capabilities and metadata validation. Full production
 multilingual/search/index capability names and contracts remain open.
+Its isolated [consumer assertions](snapshot-publication.md#portable-consumer-api)
+share strict producer schema/semantic definitions while tolerating unknown optional
+object fields. Envelope validation precedes policy reads; the policy-bound check
+applies the decoded policy's limits. These are metadata-only prerequisites, not
+byte integrity, live capability activation or complete offline conformance.
 
 RFC8785 canonical JSON for generated JSON/logical hashes, initially safe integers
 only in [-9007199254740991,9007199254740991], no floats. Preserve string values,

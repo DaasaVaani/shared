@@ -1,7 +1,8 @@
 # Staged canonical snapshot envelope v1
 
 Coverage: ALG-07/08, GEN-02/03/05, EXP-03 and SET-01/02. This is the first
-producer-facing snapshot contract, **not the complete production multilingual
+staged snapshot contract with strict producer and isolated tolerant consumer
+assertions, **not the complete production multilingual
 publication**. It uses the existing canonical text-only item v1 without changing
 the live `daasavaani-lyrics` feed or `fixture-catalog-v1`. No consumer capability,
 settings support list, pin, active ledger or deployment is enabled by this contract.
@@ -9,7 +10,7 @@ settings support list, pin, active ledger or deployment is enabled by this contr
 ## Exact families and identities
 
 [Types](../types/snapshot.ts), [schema](../schemas/snapshot-publication.schema.json)
-and [Node-only producer conformance checks](../tools/snapshot-reference.mjs) define:
+and [strict producer conformance checks](../tools/snapshot-reference.mjs) define:
 
 - `daasavaani-snapshot-feed` v1: a plain canonical-JSON-plus-LF descriptor with
   positive safe-integer `sequence` and exact manifest gzip reference.
@@ -51,8 +52,9 @@ are rejected. This narrow allowlist excludes offline images/video by constructio
 
 `catalog` is nonempty and strictly UUID-sorted. Each entry preserves title/ordered
 tags and looks up `item` by encoded hash, with canonical UTC-millisecond
-`firstPublishedAt <= changedAt`. Publisher must separately prove exact item UUID,
-title, tag, logical-hash and ledger-plan binding; metadata validation cannot do so.
+`firstPublishedAt <= changedAt`. The consumer item assertion separately proves actual item UUID/title/ordered-tag
+binding. Publisher must additionally prove logical-hash and ledger-plan binding;
+manifest metadata alone cannot do so.
 Tombstones remain private and never appear as present catalog entries.
 
 `bundles` is keyed by encoded ZIP SHA256, with exact
@@ -88,27 +90,87 @@ discard, sorting of lyric data or unknown-field fallback. Schema references
 schemas by the caller. The reference assertions validate metadata only and do
 not authenticate policy bytes, inspect archives or authorize publication.
 
-Future consumers tolerate unknown optional fields within supported majors but
+Consumers tolerate unknown optional fields within supported majors but
 reject unsupported required capabilities/major versions before affected use.
-The producer-only assertions are not a substitute for that tolerant reader.
+The strict producer assertions are not a substitute for the tolerant reader below.
 Fetched canonical JSON/gzip must independently pass fatal UTF8, canonical-byte,
 hash/actual-length/decoded-length checks and trusted platform bounds. Compare the
 policy bytes to its manifest hash; validate all required objects and completeness
 before activation. Old clients stay on the old feed until an independently
 reviewed adapter/pin explicitly supports the new one. No auto-migration is supplied.
 
+## Portable consumer API
+
+Import [snapshot-consumer.mjs](../tools/snapshot-consumer.mjs) and its matching
+[declarations](../tools/snapshot-consumer.d.mts). Node22.15+ and browser/Vite JSON
+import attributes are supported using existing Ajv2020; this runtime imports no
+filesystem, network or Node API. Associated snapshot types and `LyricItem`/
+`LyricObjectReference` are re-exported for callers.
+
+- `SnapshotConsumerError extends Error` has readonly `code: "invalid" |
+  "unsupported"` and constructor `(code, message)`. Malformed supported data is
+  `invalid`; a positive safe unsupported major or unsupported required capability
+  is `unsupported`. Different/malformed families are invalid, not legacy migration.
+- `assertConsumerDescriptor(value: unknown): asserts value is SnapshotDescriptor`
+  validates the real positive safe sequence and exact manifest encoded reference.
+- `assertConsumerPolicy(value: unknown): asserts value is SnapshotPolicy`
+  validates the complete known policy shape; no defaults or settings reread.
+- `assertConsumerManifestEnvelope(value: unknown, supportedCapabilities: readonly
+  string[]): asserts value is SnapshotManifest` validates the supported major,
+  required capabilities, known shape and all policy-independent role/hash/path/
+  catalog identity/order/date/reference and bundle cohort/size-overhead semantics.
+  Call this **before looking up or fetching the declared policy**. Its type
+  narrowing is structural, not proof that policy limits or bytes have passed.
+- `assertConsumerManifest(value: unknown, policy: SnapshotPolicy,
+  supportedCapabilities: readonly string[]): asserts value is SnapshotManifest`
+  includes the envelope assertion, validates the supplied decoded policy and binds
+  its projection and bundle member/encoded-size limits. Caller must independently
+  authenticate the supplied policy bytes against the declared encoded reference.
+- `assertConsumerItem(value: unknown, entry: SnapshotCatalogEntry): asserts value
+  is LyricItem` validates the canonical known item and catalog entry, then binds
+  actual UUID/title/**ordered** tags. Text rejects malformed Unicode and unsupported
+  controls without normalization or translation. Lyric lines cannot be blank,
+  must include at least one Kannada-script line, and have unique IDs distinct
+  from the item's lyric UUID. Layout has no `lineId`. The caller additionally
+  enforces **global** line-vs-catalog/other-item identity uniqueness across the
+  complete snapshot.
+
+All assertions are non-mutating, accept finite acyclic plain JSON data only and
+leave unknown optional fields intact, including fields nested in known objects.
+Dynamic hash maps, required fields, known arrays, identities, paths and roles
+remain strict. Known text/UUID/hash/path constraints cannot be escaped with final
+newlines. Unknown optional data is inert, not adopted as new source semantics.
+The schemas and semantic checks are [shared](../tools/snapshot-validation.mjs):
+consumer schemas derive only object-field tolerance from the strict owning
+schemas; producer unknown-field rejection is preserved and tested.
+
+Manifest and per-object required capabilities must be supported by **both** this
+implementation and the explicit caller. The implementation knows only this
+family's `snapshot-envelope-v1`, `lyric-preview-v1` and `snapshot-policy-v1`;
+arbitrary caller strings cannot grant support for unknown semantics. Existing
+fixed capability arrays/order and role-specific requirements remain strict.
+These are not a product support list, settings activation or permission to fetch
+objects advertising unknown requirements.
+
+Byte integrity, fatal UTF8, canonical JSON encoding (including descriptor LF),
+actual encoded/decoded lengths, trusted bounds, gzip framing and complete object
+verification remain caller obligations. No assertion infers them from declared
+metadata. No live publication, downloader, ContentStore readiness, multilingual
+approval or full offline lifecycle is implemented here.
+
 ## Validation and remaining gates
 
 The [synthetic metadata vector](../fixtures/snapshot.json) is not an actual
 gzip/ZIP publication; its placeholder hashes/sizes make no integrity claim.
-`node --test tools\snapshot.test.mjs` checks strict schemas/role/path/reference
+`node --test tools\snapshot.test.mjs tools\snapshot-consumer.test.mjs` checks strict schemas/role/path/reference
 binding, safe sequences, exact dates/order/cohorts, complete policy,100/101 and
-32MiB/+1 archive boundaries, and no mutation. Run the
+32MiB/+1 archive boundaries, tolerant nested optional fields versus unsupported
+requirements, pre-policy envelope checks, actual item/text/line binding and no mutation. Run the
 [full validation gate](data-contracts.md#validation-and-finalization) before push.
 
 Still open: the full multilingual item/profile/verse/metadata projection,
 registry/group/video lookups, exact search/index envelope and policy binding,
-compatible tolerant client adapters, actual deployment/sequence authentication,
+live client adapters and independent consumer byte verification, actual deployment/sequence authentication,
 protected state initialization/recovery and complete offline lifecycle/device/
 release evidence. A new required capability/version and reviewed projection
 migration must precede expanding this narrow family; no extra populated source

@@ -1,5 +1,72 @@
 # Documentation history
 
+## 2026-11-04: isolated tolerant staged snapshot metadata assertions
+
+- The owner approved Shared/Website only, independent Website adoption after
+  Shared full validation/hosted success, and validated fast-forward main publication
+  under the existing administrator exception. No Website, Android or Library
+  files/pins, product support list, live feed or publisher capability changed here.
+- Added `snapshot-consumer.mjs`/`.d.mts`: readonly-coded
+  `SnapshotConsumerError`, descriptor/policy/manifest/item assertions and the
+  additionally approved `assertConsumerManifestEnvelope(value, capabilities)`
+  pre-policy-read assertion. The full manifest assertion also validates the
+  supplied policy/projection/bundle limits. Actual encoded bytes, bounded
+  gzip/fatal UTF8/canonical JSON/hash/length proof and global line-vs-catalog/
+  other-item identity uniqueness remain Website caller responsibilities.
+- Extracted schema compilation and independent/policy-bound semantics from the
+  strict producer reference into one pure JSON-import/Ajv helper. Consumer schema
+  derivation relaxes only unknown object fields, preserving maps/known arrays/
+  required fields/roles/paths/catalog/cohort references. Producers still reject
+  unknown fields. Exact regex-end anchoring closes trailing-newline escapes.
+  Canonical item text/line checks match the existing Website consumer semantics,
+  including malformed Unicode/controls, nonblank Kannada lines, layout without
+  lineId and local lyric/line identity collision rejection. Optional JSON remains
+  intact; no normalization, translation or source-field reinterpretation occurs.
+- Current docs previously described this as producer-facing/Node-only and deferred
+  the tolerant reader entirely. That wording is superseded only for this isolated
+  portable API; live adapters, actual byte integrity, sequence authentication,
+  production multilingual/search/registry contracts and complete lifecycle/release
+  evidence remain open. No downloader or readiness guarantee is introduced.
+- Requirement coverage: ALG-07/08, GEN-02/03/05, EXP-03 and SET-01/02.
+  Focused metadata checks are permitted synthetic vectors, not lyric truth,
+  linguistic approval, actual archives or complete production/offline conformance.
+- Final-tree validation commands/results:
+  - `node --test --test-reporter=dot tools\snapshot.test.mjs tools\snapshot-consumer.test.mjs`:
+    passed29 focused tests (19 new consumer tests and10 existing producer tests).
+  - `npm run check`: complete generation and429/429 tests passed; zero failures,
+    skipped tests or cancellations. No dependencies/toolchains were added/installed.
+  - `python tools\check_repository.py`: passed297 tracked files after staging
+    all11 intended changed/new files, including this history update.
+  - `node --input-type=module` with the following inline program: passed all22
+    tracked YAML files, including workflow/settings/catalog YAML, using the
+    existing strict YAML1.2/no-duplicate/string-key/no-alias/no-anchor/no-custom-tag
+    parser. Local Ruby is unavailable; this stronger existing parser is the
+    local equivalent, and hosted CI runs its configured Ruby YAML step.
+
+    ```javascript
+    import { execFileSync } from 'node:child_process';
+    import { readFileSync } from 'node:fs';
+    import { strictYaml } from './tools/generate-catalog.mjs';
+    const paths = execFileSync('git', ['ls-files', '-z'], {encoding:'utf8'}).split('\0').filter(path => /\.ya?ml$/.test(path));
+    for (const path of paths) strictYaml(readFileSync(path, 'utf8'));
+    console.log(`Strict YAML passed: ${paths.length} tracked files`);
+    ```
+
+  - `C:\Users\pots\AppData\Local\DaasaVaani\toolchains\actionlint-1.7.12\actionlint.exe .github\workflows\hygiene.yml`:
+    passed with existing sibling ShellCheck0.11.0 on PATH.
+  - `git --no-pager diff --check`, `git --no-pager diff --cached --check` and
+    `git --no-pager diff --exit-code -- generated schemas`: passed.
+  - Inline Python over changed current guides: local links/anchors and balanced
+    Markdown fences passed. The repository hygiene check independently validates
+    every tracked Markdown file's local file links.
+- Fresh read-only GitHub checks confirmed administrator/push permission,
+  role5 always-bypass PR/check ruleset25526641, force/delete ruleset25526636
+  without bypass, and clean published main ancestry at
+  `9b34aa59a8d71bfa2c073a21c5a88a011dbf1212` before this change. Classic branch
+  protection returns404 because these protections are ruleset-owned; no protection
+  was changed. The authorized publication uses no force/amend. Exact final remote
+  SHA and hosted check outcome are verified after push and reported in the handoff.
+
 ## 2026-11-03: isolated portable durable-content protocol
 
 - The owner approved protocol-first isolated Shared/Website implementation,

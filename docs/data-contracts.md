@@ -53,8 +53,10 @@ implementation is authorized, not global production readiness.
   policy binding. Producers strict, compatible optional-field consumers.
   The [staged canonical snapshot envelope](snapshot-publication.md) supplies
   descriptor/sequence, role/hash/path/date/bundle maps and transfer-policy
-  schema/types/producer semantic checks. It preserves existing item/feed formats;
-  full multilingual/registry/search-index contracts and client adapters remain open.
+  schema/types/producer semantic checks and isolated browser-safe tolerant
+  consumer assertions, including pre-policy envelope validation and actual
+  item/catalog binding. It preserves existing item/feed formats;
+  full multilingual/registry/search-index contracts and live client adapters remain open.
 - Search: global publisher-counted q-gram accelerator plus exact OSA fragments,
   AND, metadata-first best-field-per-term weights, deterministic edit/ID ties,
   all-profile dedup, selected-script bounded item reads and honest errors.
@@ -190,12 +192,17 @@ and small exhaustive oracle comparisons including a non-optimal greedy example.
 Run `node --test tools\download-planner.test.mjs` incrementally. These metadata
 vectors do not establish physical ZIP/gzip integrity, real transfer/storage
 admission, consumer adoption or complete ALG-08 lifecycle conformance.
-The snapshot suite checks the staged canonical producer envelope, exact
+The snapshot suites check the staged canonical producer envelope, exact
 role/hash/path lookups, sequence domains, historical date/order/cohort semantics,
-complete policy and100/101,32MiB/+1 metadata bounds. Run
-`node --test tools\snapshot.test.mjs` incrementally. Its synthetic metadata vector
-does not prove actual encoded bytes, authenticated receipts, activation or client
-compatibility. See [the exact contract](snapshot-publication.md).
+complete policy and100/101,32MiB/+1 metadata bounds. Consumer tests additionally
+check nested unknown-optional tolerance without weakening strict producers,
+unsupported majors/required capabilities before policy access, caller/implementation
+support intersection, exact regex ends, finite plain JSON, frozen inputs, actual
+item/catalog/ordered-tag binding, canonical text/line semantics and pure imports.
+Run `node --test tools\snapshot.test.mjs tools\snapshot-consumer.test.mjs`
+incrementally; both are included in `npm run check`. Synthetic metadata does not
+prove actual encoded bytes, authenticated receipts, activation or full production
+client compatibility. See [the exact contract](snapshot-publication.md).
 It also checks the metadata-to-existing-planner bridge, policy-object completeness,
 exact expected cost/coverage totals, complete reuse and snapshot-policy changes.
 This bridge does not make unverified input hashes trustworthy.

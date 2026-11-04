@@ -134,9 +134,15 @@ not approve aliases/transliteration, cross-script alignment or client adoption.
 The [staged canonical snapshot envelope](docs/snapshot-publication.md) defines
 strict public descriptor/sequence, manifest object/date/bundle maps and exact
 transfer-policy binding for the existing canonical text-only projection.
-Types, metadata schemas, synthetic vectors and Node-only producer checks are
+Types, metadata schemas, synthetic vectors and strict producer checks are
 prerequisites, not complete multilingual/search contracts, consumer capability
 activation or a replacement of the current prelaunch feed.
+The isolated browser-safe `tools/snapshot-consumer.mjs` and matching `.d.mts`
+provide non-mutating optional-field-tolerant assertions for descriptor, policy,
+manifest envelope, policy-bound manifest and catalog-bound item. Envelope checks
+reject unsupported majors/required capabilities before any policy lookup; callers
+still own bounded byte/UTF8/canonical-JSON/hash/length proof and global line identity
+uniqueness. No live feed, downloader or settings support list is enabled.
 
 An isolated [provisional global transliteration prerequisite](docs/transliteration.md)
 provides Kannada-to-five-Latin and nine-native reference tables/conversion,
