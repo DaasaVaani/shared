@@ -17,6 +17,8 @@ const typedArray = Object.getPrototypeOf(Uint8Array.prototype);
 const bufferOf = Object.getOwnPropertyDescriptor(typedArray, "buffer").get;
 const offsetOf = Object.getOwnPropertyDescriptor(typedArray, "byteOffset").get;
 const lengthOf = Object.getOwnPropertyDescriptor(typedArray, "byteLength").get;
+const arrayBufferLength = Object.getOwnPropertyDescriptor(ArrayBuffer.prototype, "byteLength").get;
+const arrayBufferResizable = Object.getOwnPropertyDescriptor(ArrayBuffer.prototype, "resizable")?.get;
 function field(value, key) {
   if (!value || typeof value !== "object" ||
       ![Object.prototype, null].includes(Object.getPrototypeOf(value))) invalid("Expected plain reference/limit records");
@@ -41,10 +43,15 @@ export async function admitSnapshotZipStore(input, expected, limits) {
     byteOffset = offsetOf.call(input);
     byteLength = lengthOf.call(input);
   } catch { invalid("Expected actual Uint8Array ZIP bytes"); }
+  let resizable;
+  try {
+    // The intrinsic ArrayBuffer brand check rejects SABs across realms too.
+    arrayBufferLength.call(buffer);
+    resizable = arrayBufferResizable?.call(buffer) ?? false;
+  } catch { invalid("Shared ZIP buffers are not supported"); }
+  if (resizable) invalid("Resizable ZIP buffers are not supported");
   if (byteLength > maxArchiveBytes) limited("ZIP encoded byte limit exceeded");
   if (byteLength < 22) integrity("Truncated ZIP archive");
-  if ((typeof SharedArrayBuffer !== "undefined" && buffer instanceof SharedArrayBuffer) ||
-      buffer.resizable) invalid("Shared or resizable ZIP buffers are not supported");
   const sha256 = field(expected, "sha256"), path = field(expected, "path");
   const encodedBytes = field(expected, "encodedBytes"), originals = field(expected, "members");
   if (!hash(sha256) || path !== `bundles/${sha256}.zip` ||
@@ -73,11 +80,11 @@ export async function admitSnapshotZipStore(input, expected, limits) {
   }
   if (archiveSize !== encodedBytes) integrity("ZIP reference framing length mismatch");
   const source = new Uint8Array(buffer, byteOffset, byteLength);
-  const extents = inspectZipStore(source, members, integrity);
-  // Capture before the first await: callers cannot mutate the archive/references
-  // while Web Crypto hashes it. Bounds and actual extents were checked first.
+  // Capture exactly the preflighted length before any byte proofs. Even native
+  // asynchronous writers to caller buffers cannot change this private snapshot.
   const bytes = new Uint8Array(byteLength);
   bytes.set(source);
+  const extents = inspectZipStore(bytes, members, integrity);
   const digest = async value => {
     const result = new Uint8Array(await globalThis.crypto.subtle.digest("SHA-256", value));
     return Array.from(result, byte => byte.toString(16).padStart(2, "0")).join("");

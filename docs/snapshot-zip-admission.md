@@ -78,17 +78,22 @@ ceilings before calling. Every supplied limit must be a positive safe integer;
 classic ZIP archive/member sizes cannot reach the ZIP64 sentinel. A count limit
 of1 is valid but cannot admit a snapshot bundle.
 
-Before any archive/payload copy or hashing, admission bounds actual encoded
+Before any archive/payload copy or byte proof, admission bounds actual encoded
 length, captures/validates bounded references and aggregate arithmetic, proves
 exact expected framing size
-`22 + sum(30 + 46 + 2 * ASCII-path-length + encoded-member-length)`,
-and scans all actual extents/headers/CRCs. It uses intrinsic typed-array getters
+`22 + sum(30 + 46 + 2 * ASCII-path-length + encoded-member-length)`.
+It uses intrinsic typed-array getters
 and a plain view, not caller-overridden byte access/copy hooks. Fixed, nonshared
-Uint8Array views with nonzero byte offsets are supported; shared/resizable buffers
-are rejected because they cannot provide stable admission bytes.
+Uint8Array views with nonzero byte offsets are supported. Intrinsic ArrayBuffer
+brand/resizability getters reject shared/growable backing stores across realms
+and resizable ArrayBuffers, without relying on `instanceof SharedArrayBuffer`
+or overridable buffer properties.
 
-The whole bounded archive is then copied synchronously before the first await;
-references/limits are already captured. Browser Web Crypto
+Exactly that admitted fixed length is then copied into a private Uint8Array
+before any actual framing/CRC/hash proof or await; references/limits are already
+captured. The source view and destination both have that explicit preflighted
+length, never a later grown source length. All actual extents/headers/CRCs are
+validated on the private copy. Browser Web Crypto
 `crypto.subtle.digest("SHA-256", ...)` checks the **entire original ZIP** against
 its expected encoded hash and every original member against its expected encoded
 hash/length. Only after every check succeeds are independent encoded member
@@ -96,6 +101,14 @@ copies returned in canonical order. Any failure rejects the operation, exposing
 no partial member collection. No inflation/recompression or gzip interpretation
 occurs; even gzip validity belongs to the existing owning artifact validator.
 Run off the UI thread when integrating: the framing/CRC pass is synchronous.
+All framing, CRC, whole/member SHA and returned bytes bind the same private
+snapshot; none relies on caller bytes staying stable, including ordinary Buffers
+that native asynchronous I/O may fill. Such writes during capture may produce
+an invalid snapshot, which must fail its own complete byte checks. Per-member
+hash views and returned copies refer only to the private capture, never caller
+input after the first await. This is not a general concurrent shared-memory
+snapshot algorithm. There is no AbortSignal or cancellation API; native Web
+Crypto failures propagate without conversion to the typed error class.
 
 Runtime is O(B + N), memory O(B + N), including bounded archive capture, member
 results and Web Crypto's implementation-owned input copying; B is archive size,
@@ -113,8 +126,18 @@ They check independent known CRC vectors, exact producer-header equivalence,
 actual encoded originals, inclusive/+1 limits, complete references, every
 single-byte corruption and truncation with rehashed ZIP references, fixed
 metadata/ZIP64 restrictions, CRC-valid member hash mismatch, whole-hash mismatch,
-offset views, asynchronous caller mutation and absence of Node/network/gzip APIs
+offset views, cross-realm/shared/growable/resizable refusal, private-copy race
+regressions, asynchronous caller mutation and absence of Node/network/gzip APIs
 from both portable modules.
+
+Fixture prior art: [snapshot-zip-consumer.test.mjs](../tools/snapshot-zip-consumer.test.mjs)
+contains test-local `build`, `nodeHeader`, `nodeCrc`, `original` and `reference`
+helpers. They build independently hashed actual synthetic archives; they are
+not exports or a supported runtime import boundary. Library's existing Node-only
+`tools/zip-store.ts` exports `encodeZipStore(objects, limits): Buffer` for its
+own producer tooling. No public Shared ZIP builder API is introduced. Consumer
+runtime code imports only the admission API; fixtures may reuse the documented
+synthetic construction pattern without duplicating parsing.
 
 Consumer adoption/pins, bounded downloader/cancellation, gzip/lyric admission,
 consent/storage/activation/UI and device/browser integration remain independent

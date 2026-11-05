@@ -1,5 +1,65 @@
 # Documentation history
 
+## 2026-11-05: ZIP admission private-snapshot and backing-store identity hardening
+
+- The owner requested concrete byte-identity proof before consumer adoption and
+  authorized a tightly coupled correctness fix with full validation/publication.
+  The existing `instanceof SharedArrayBuffer` guard rejected ordinary shared
+  inputs but could miss a foreign-realm SAB wrapped in a local Uint8Array.
+  The old direct `buffer.resizable` read was also caller-overridable.
+- Replaced those checks with captured intrinsic ArrayBuffer byteLength/
+  resizable getters. The ArrayBuffer brand check rejects all SABs, including
+  foreign-realm and growable stores, without relying on global SAB availability
+  or caller properties. Resizability is checked intrinsically. Unsupported
+  backing stores fail with typed `invalid` before parsing/copying/hashing.
+  The API/types, limits, ZIP policy, ordinary fixed Uint8Array semantics,
+  producer, dependencies and independent consumer pins are unchanged.
+- Added actual-byte tests for same/foreign-realm shared/growable and resizable
+  buffers, including valid archive payloads and shadowed throwing resizable
+  getters. A foreign fixed ArrayBuffer still admits correctly without invoking
+  its shadow getter. Existing async input-mutation and independent member-copy
+  regressions remain in the full suite. A copy-boundary mutation test gives the
+  copied archive its correct SHA but corrupt fixed metadata, proving that
+  pre-copy framing success cannot authorize another captured byte version.
+  Its digest hook also verifies whole/member hash views never use caller memory,
+  even while the caller buffer is overwritten during hashing.
+- The owner refined the requirement to account for native asynchronous I/O
+  writing even ordinary caller Buffers: preflight explicit actual/declared byte
+  lengths, counts, members and aggregate/overhead limits, allocate/copy only
+  that admitted fixed length, then run all framing/CRC/hash proofs against the
+  private copy. This supersedes the earlier framing-before-copy ordering.
+  All member hash views and returned payload copies use that same private
+  snapshot; no proof relies on caller bytes remaining stable. No shared-memory
+  snapshot, cancellation API, native crypto error wrapping or consumer
+  integration is implied. Archived the replaced generic wording:
+  "shared/resizable buffers
+  are rejected because they cannot provide stable admission bytes"; the current
+  guide now specifies the intrinsic brand/resizability guards and private proof
+  snapshot. The superseded synchronous-only proof relied on "no await or caller
+  hook ... between the actual framing/CRC scan and synchronous capture"; it
+  could not cover native I/O writes and is no longer the admission algorithm.
+- Final validation commands/results:
+  - `node --test tools\snapshot-zip-consumer.test.mjs`: initially12/12 before the
+    private-copy refinement; then13/13 with the full private-snapshot regression.
+  - `npm run check`: complete configured generation and452/452 tests passed,
+    with zero failures, skipped or cancelled tests.
+  - `python tools\check_repository.py`: passed303 tracked files.
+  - `node --input-type=module` using the existing archived strict-YAML program:
+    all22 tracked workflow/settings/catalog YAML files passed.
+  - `C:\Users\pots\AppData\Local\DaasaVaani\toolchains\actionlint-1.7.12\actionlint.exe
+    -shellcheck C:\Users\pots\AppData\Local\DaasaVaani\toolchains\shellcheck-0.11.0\shellcheck.exe
+    .github\workflows\hygiene.yml`: passed with existing installed tools.
+  - `git --no-pager diff --check`, `git --no-pager diff --cached --check` and
+    `git --no-pager diff --exit-code -- generated schemas`: passed.
+  - Inline Python over both changed Markdown documents: balanced fences,
+    local file links and anchors passed24 local links.
+- Publication uses the existing owner-authorized fast-forward main administrator
+  route after fresh remote rules/ancestry checks; exact SHA and exact hosted
+  results are reported in the handoff. No Website/Android/Library files or pins
+  change. Shared has no configured browser/device suite or TypeScript declaration
+  compiler check; none is claimed. Consumer cancellation/browser proof remains
+  parent-owned.
+
 ## 2026-11-05: exact producer-profile browser ZIP byte admission prerequisite
 
 - The owner explicitly chose the exact existing deterministic producer profile

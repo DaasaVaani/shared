@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { gzipSync } from "node:zlib";
 import { readFile } from "node:fs/promises";
+import { runInNewContext } from "node:vm";
 import { admitSnapshotZipStore, SnapshotZipConsumerError } from "./snapshot-zip-consumer.mjs";
 import { crc32, zipStoreHeader } from "./zip-store-profile.mjs";
 
@@ -208,6 +209,75 @@ test("input/reference mutation during async hashing cannot change admitted origi
   assert.deepEqual(result.map(value => value.bytes), objects.map(value => new Uint8Array(value.bytes)));
   if (typeof SharedArrayBuffer !== "undefined") await rejects(new Uint8Array(new SharedArrayBuffer(archive.length)), expected, bounds, "invalid");
   await rejects(new Uint8Array(new ArrayBuffer(archive.length, { maxByteLength: 4096 })), expected, bounds, "invalid");
+});
+
+test("intrinsic buffer checks reject cross-realm shared/growable and disguised resizable backing stores", async () => {
+  const foreignShared = runInNewContext("new SharedArrayBuffer(size)", { size: archive.length });
+  assert.equal(foreignShared instanceof SharedArrayBuffer, false);
+  const foreignGrowable = runInNewContext("new SharedArrayBuffer(size, {maxByteLength: 4096})", { size: archive.length });
+  assert.equal(foreignGrowable.growable, true);
+  const localGrowable = new SharedArrayBuffer(archive.length, { maxByteLength: 4096 });
+  const foreignResizable = runInNewContext("new ArrayBuffer(size, {maxByteLength: 4096})", { size: archive.length });
+  const localResizable = new ArrayBuffer(archive.length, { maxByteLength: 4096 });
+  for (const backing of [foreignShared, foreignGrowable, localGrowable, foreignResizable, localResizable]) {
+    const input = new Uint8Array(backing);
+    input.set(archive);
+    await rejects(input, expected, bounds, "invalid");
+    Object.defineProperty(backing, "resizable", { get() { throw Error("Must not use overridable buffer properties"); } });
+    await rejects(input, expected, bounds, "invalid");
+  }
+  for (const size of [0, bounds.maxArchiveBytes + 1]) {
+    await rejects(new Uint8Array(new SharedArrayBuffer(size)), expected, bounds, "invalid");
+    await rejects(new Uint8Array(new ArrayBuffer(size, { maxByteLength: size + 1 })), expected, bounds, "invalid");
+  }
+  const fixed = runInNewContext("new ArrayBuffer(size)", { size: archive.length });
+  Object.defineProperty(fixed, "resizable", { get() { throw Error("Must use intrinsic getter"); } });
+  const input = new Uint8Array(fixed);
+  input.set(archive);
+  assert.equal((await admitSnapshotZipStore(input, expected, bounds)).length, 2);
+});
+
+test("framing, CRC, hashes and returned bytes bind only the bounded private capture", async () => {
+  const input = Buffer.from(archive), changed = Buffer.from(archive);
+  changed[10] ^= 1;
+  const set = Uint8Array.prototype.set;
+  let changedAtCopy = false;
+  Uint8Array.prototype.set = function(source, offset) {
+    if (source.buffer === input.buffer && source.byteOffset === input.byteOffset && source.byteLength === input.length) {
+      source[10] ^= 1;
+      changedAtCopy = true;
+    }
+    return set.call(this, source, offset);
+  };
+  try {
+    // The copied ZIP's hash is correct, but its timestamp/framing is not.
+    // Scanning caller bytes before copying would wrongly accept this archive.
+    await rejects(input, rehashed(changed), bounds, "integrity");
+    assert.equal(changedAtCopy, true);
+  } finally { Uint8Array.prototype.set = set; }
+  const fresh = Buffer.from(archive), subtle = globalThis.crypto.subtle;
+  const digest = subtle.digest, ownDigest = Object.getOwnPropertyDescriptor(subtle, "digest");
+  let calls = 0, capturedBuffer;
+  globalThis.crypto.subtle.digest = function(algorithm, value) {
+    calls++;
+    assert.notEqual(value.buffer, fresh.buffer);
+    capturedBuffer ??= value.buffer;
+    assert.equal(value.buffer, capturedBuffer);
+    fresh.fill(0);
+    return digest.call(this, algorithm, value);
+  };
+  try {
+    const result = await admitSnapshotZipStore(fresh, expected, bounds);
+    assert.equal(calls, 1 + objects.length);
+    assert.deepEqual(result.map(value => value.bytes), objects.map(value => new Uint8Array(value.bytes)));
+    result.forEach(value => {
+      assert.notEqual(value.bytes.buffer, fresh.buffer);
+      assert.notEqual(value.bytes.buffer, capturedBuffer);
+    });
+  } finally {
+    if (ownDigest) Object.defineProperty(subtle, "digest", ownDigest);
+    else delete subtle.digest;
+  }
 });
 
 test("typed-array subclasses cannot replace the actual bytes or extent getters used for admission", async () => {
