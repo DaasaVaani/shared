@@ -1,5 +1,77 @@
 # Documentation history
 
+## 2026-11-05: exact producer-profile browser ZIP byte admission prerequisite
+
+- The owner explicitly chose the exact existing deterministic producer profile
+  for consumers rather than a compatible ZIP alternative or deferral. This
+  closes only that compatibility choice and authorizes this isolated Shared
+  prerequisite plus fully validated fast-forward main publication through the
+  existing administrator routing. No Website/Android/Library file or pin changes.
+- Extracted Library `tools/zip-store.ts` at
+  `c2a027f1f3207dc9cf4110c8b88ceb8ea908e102` into portable internal
+  `tools/zip-store-profile.mjs`. Retained its local extent scan and exact producer
+  header construction/CRC semantics; byte-comparing canonical local/central
+  headers replaces full archive re-encoding. Existing Library producer code,
+  empty-archive support and independently pinned consumers remain unchanged.
+  The snapshot-facing API requires the existing minimum two bundle members.
+- Added `tools/snapshot-zip-consumer.mjs` and matching `.d.mts` with
+  `admitSnapshotZipStore(input, expected, limits)`, reference/result interfaces
+  and immutable `SnapshotZipConsumerError.code` invalid/limit/integrity.
+  All four limits are explicit and independent. Actual/archive/reference,
+  count/member/aggregate and canonical overhead bounds plus actual extents,
+  headers and CRC are checked before copying/hashing. A synchronous bounded
+  copy/captured references precede Web Crypto awaits; whole ZIP and every
+  encoded original SHA/length must pass before any independent member results
+  are returned. Shared/resizable buffers fail; fixed offset views work.
+- Preserved exact STORE/version20/DOS creator/zero flags/1980 timestamp/order/
+  attributes/framing rules. No compatibility relaxation, trailing/partial result,
+  ZIP64, gzip decoder, network, download, storage, activation, UI, defaults,
+  dependencies/toolchains or consumer pins were added.
+- Archived superseded wording from `docs/snapshot-publication.md`: metadata
+  checks "do not prove ZIP framing/CRC, STORE mode, original gzip bytes or
+  physical overhead; Library's actual archive verifier must." Metadata still
+  does not prove those properties; the separately approved exact-profile byte
+  admission now supplies portable consumer verification. Added the authoritative
+  `docs/snapshot-zip-admission.md` contract and updated README, specification,
+  checklist and test command registry. Requirement coverage: isolated
+  ALG-08/GEN-03 and OFF-01/03 integrity prerequisite, not complete lifecycle.
+- Added11 actual-byte tests using the permitted existing synthetic Node builder
+  pattern, independent Node headers/CRC and known vectors, full byte-corruption/
+  truncation sweeps with rehashed ZIP references, fixed metadata/ZIP64 refusal,
+  CRC-valid member SHA mismatch, independent whole SHA, equal-total/wrong-member
+  lengths, explicit limit cutovers, complete membership, offset/subclass views,
+  no-hashing resource refusal and caller-mutation/result independence.
+- Validation: initial `node --test tools\snapshot-zip-consumer.test.mjs` passed
+  9/10; the missing-limits test helper incorrectly substituted its own default
+  bounds. Corrected it to call the API directly with omitted limits. Subsequent
+  complete `npm run check` passed configured generation and450/450 tests with
+  zero failures, skipped or cancelled tests.
+- Final-tree local validation commands/results:
+  - `npm run check`: full configured generation and450/450 tests passed;
+    zero failed, skipped or cancelled tests.
+  - `python tools\check_repository.py`: passed303 tracked files after explicitly
+    staging all five new files; UTF8, local links, action pins and whitespace pass.
+  - `node --input-type=module` using the existing inline strict-YAML program
+    archived below: all22 tracked workflow/settings/catalog YAML files passed.
+  - `C:\Users\pots\AppData\Local\DaasaVaani\toolchains\actionlint-1.7.12\actionlint.exe
+    -shellcheck C:\Users\pots\AppData\Local\DaasaVaani\toolchains\shellcheck-0.11.0\shellcheck.exe
+    .github\workflows\hygiene.yml`: passed with the existing installed tools.
+  - `git --no-pager diff --check`, `git --no-pager diff --cached --check` and
+    `git --no-pager diff --exit-code -- generated schemas`: passed.
+  - Inline Python over all six changed Markdown documents: balanced fences,
+    local file links and anchors passed161 local links.
+- Fresh remote checks confirmed admin/push permission, active ruleset25526641
+  with the existing RepositoryRole5 `always` PR/check bypass, and rule25526636
+  forbidding force pushes/deletion without bypass. The legacy protection API's
+  404 is not the active ruleset configuration. Starting main is
+  `f5cea0de` (full identity/zero divergence rechecked before publication).
+  Exact remote SHA and exact hosted full-workflow proof are reported in the
+  publication handoff; protections are not changed and no force push is used.
+- Shared has no configured browser/device application suite or TypeScript
+  declaration compiler check; none is claimed as passed. Browser integration,
+  authenticated upstream admission, gzip/lyric validation, bounded transport,
+  staging-space admission and all lifecycle/UI/consumer adoption remain open.
+
 ## 2026-11-05: browser-consumable deterministic download planner prerequisite
 
 - The owner approved this isolated Shared-only prerequisite and fully validated

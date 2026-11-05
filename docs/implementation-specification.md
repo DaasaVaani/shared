@@ -409,6 +409,12 @@ Individual hash-addressed gzip objects plus deterministic ZIP STORE bundles of
 original gzip bytes, up to100 members/32MiB; no images/video. Group by changedAt/path.
 Repacking never invalidates unchanged verified members. Individually fetch oversize
 objects within role bounds. Distinguish artifact gzip from HTTP Content-Encoding.
+The isolated [Shared actual-byte ZIP admission](snapshot-zip-admission.md)
+requires exactly the existing deterministic producer profile for consumers,
+including fixed timestamp/order/flags/framing rather than general ZIP tolerance.
+It bounds whole/member/aggregate encoded bytes and count, proves full framing/
+CRC/membership and whole/original SHA/length, then returns encoded originals.
+No gzip decoder, network, consumer pin, storage or activation is included.
 
 Planner cost = encoded bytes +128KiB/request. Select positive-gain bundles by
 savings/extra byte, then gain/hash, exact comparisons; zero-extra gains first.

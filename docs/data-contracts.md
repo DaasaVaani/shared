@@ -96,6 +96,12 @@ implementation is authorized, not global production readiness.
 - Publication/offline: durable state/receipts/sequence, deterministic ZIP planner,
   host/resource bounds, current-only remote, complete atomic activation, safe
   pins/fences/GC, resume/degradation/repair and explicit manual refresh.
+  The isolated [snapshot ZIP admission](snapshot-zip-admission.md) accepts actual
+  Uint8Array bytes against admitted complete bundle/original references and four
+  explicit trusted limits. Consumers use exactly the deterministic producer
+  profile, with whole/member encoded SHA/length, framing and CRC verification
+  before returning independent encoded originals; no gzip decoder, downloader,
+  consumer pin, storage or activation is supplied.
   The isolated [durable-content protocol](durable-content.md) supplies strict
   ContentDataset/control/reference/plan/receipt/limit schemas and types, exact
   complete logical accounting and pure fenced transition/collection candidates.
@@ -208,6 +214,12 @@ the snapshot producer bridge retains its exact policy/coverage/cost checks.
 Run `node --test tools\download-planner.test.mjs` incrementally. These metadata
 vectors do not establish physical ZIP/gzip integrity, real transfer/storage
 admission, consumer adoption or complete ALG-08 lifecycle conformance.
+The separate actual-byte ZIP suite runs with
+`node --test tools\snapshot-zip-consumer.test.mjs`. It checks the approved exact
+producer profile, independent synthetic Node construction/CRC vectors, all four
+trusted-bound cutovers, complete membership, every byte corruption/truncation,
+rehashed framing/CRC attacks, whole/member SHA failures and independent capture/
+results. These ZIP checks do not decode gzip or establish downstream readiness.
 The snapshot suites check the staged canonical producer envelope, exact
 role/hash/path lookups, sequence domains, historical date/order/cohort semantics,
 complete policy and100/101,32MiB/+1 metadata bounds. Consumer tests additionally

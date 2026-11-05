@@ -79,7 +79,11 @@ All members must be declared items in that exact date cohort. Archive identities
 cannot collide with object identities. Full archive bytes must exceed original
 member-byte sum and satisfy the snapshot policy's count/byte limits. These checks
 do not prove ZIP framing/CRC, STORE mode, original gzip bytes or physical overhead;
-Library's actual archive verifier must. Candidate bundles may overlap; the
+actual archives require byte verification. The isolated browser-safe
+[exact producer-profile ZIP admission](snapshot-zip-admission.md) checks those
+bytes against admitted bundle/original references and explicit trusted limits,
+without gzip decoding or consumer activation. Library's producer verifier remains
+unchanged. Candidate bundles may overlap; the
 [existing planner](download-planning.md) selects fully member-disjoint bundles.
 Singletons/oversize members remain individual objects within their role ceilings.
 Policy is an individual required object, not assigned a fabricated semantic date.

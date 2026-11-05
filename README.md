@@ -1,5 +1,12 @@
 # DaasaVaani Shared
 
+The isolated [actual-byte snapshot ZIP admission](docs/snapshot-zip-admission.md)
+provides browser-safe `admitSnapshotZipStore` with matching `.d.mts` types.
+It accepts exactly the existing deterministic producer profile, admitted complete
+bundle/original references and four explicit trusted limits, and verifies all
+framing/CRC/encoded SHA/lengths before returning independent encoded originals.
+No network, gzip decoder, storage, activation or consumer pin is enabled.
+
 The isolated [durable-content protocol](docs/durable-content.md) supplies strict
 portable metadata/schema/types, exact logical accounting and immutable fenced
 transitions for OFF-01/03/04/06/07/08/11/12/15/16, ALG-08 and SET-01/02.
