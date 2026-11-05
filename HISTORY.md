@@ -1,5 +1,78 @@
 # Documentation history
 
+## 2026-11-05: original-descriptor admission-evidence recovery prerequisite
+
+- The owner approved this isolated Shared recovery slice and main-only
+  fast-forward publication using the existing administrator role5 always-bypass
+  PR/check exception after full validation. The selected design retains the
+  ORIGINAL admitted descriptor, not a reconstruction or a current-feed
+  dependency. No force/amend/protection changes are authorized or performed.
+- Updated `docs/durable-content.md`, `docs/snapshot-publication.md`, the current
+  contract checklist and README. The Website consumer profile requires exactly
+  manifest + policy + all original items + one locally hashed copy of the
+  original plain canonical-JSON-plus-LF descriptor. Trusted role bounds,
+  exact raw sequence/manifest/plan/length binding, independent stored-byte
+  revalidation, durable evidence before crash-resumable progress, preliminary
+  bounded-manifest decode versus full proof, partial-target refusal and an
+  explicit admission/restart path for older plans are documented.
+- Additional opaque required hashes already fit exactly `{reference, required}`;
+  no runtime/type/schema/version/store/default changes were needed. The
+  descriptor has ordinary immutable receipt/count/planned-size/prospective
+  metadata/payload accounting and generic active/target/retired reachability.
+  Existing acquisition totals count the descriptor once, not twice or zero.
+  Older generic plans remain valid, immutable and non-destructively recoverable
+  through an explicit original-evidence admission/restart path; they cannot claim
+  evidence-backed recovery without the original bytes. Hashing does not
+  authenticate the provider/ledger.
+- Added six focused pure content-state conformance tests covering the opaque
+  extra receipt, legacy-plan immutability, every missing original/evidence
+  receipt, wrong lengths, exact maxObjects/maxObjectBytes cutovers,
+  independent complete canonical-envelope accounting and exact/+1 admission,
+  idempotent recording, activation, target abandonment, protected retirement,
+  reader-safe removal and eventual collection of evidence.
+  Requirement coverage: OFF-01/03/04/06/07/08/11/12/15/16, ALG-08 and SET-01/02.
+  These permitted synthetic tests prove metadata behavior only, not encoded
+  descriptor/item bytes, provider/source authentication, physical durability,
+  readiness or release conformance.
+- Final-tree local validation commands/results:
+  - `node --test --test-reporter=dot tools\content-state.test.mjs`: passed46/46
+    focused tests, including the six new admission-evidence vectors.
+  - `npm run check`: complete configured generation and435/435 tests passed;
+    zero failed, skipped or cancelled tests. No dependencies/toolchains added.
+  - `python tools\check_repository.py`: passed297 tracked files after staging
+    all intended changes; no new files were introduced.
+  - `node --input-type=module` with the inline strict-YAML program below:
+    passed all22 tracked YAML files, including workflow/settings/catalog YAML.
+    This uses the existing strict YAML1.2 parser rather than assuming Ruby.
+
+    ```javascript
+    import { execFileSync } from 'node:child_process';
+    import { readFileSync } from 'node:fs';
+    import { strictYaml } from './tools/generate-catalog.mjs';
+    const paths = execFileSync('git', ['ls-files', '-z'], {encoding:'utf8'}).split('\0').filter(path => /\.ya?ml$/.test(path));
+    for (const path of paths) strictYaml(readFileSync(path, 'utf8'));
+    console.log(`Strict YAML passed: ${paths.length} tracked files`);
+    ```
+
+  - `C:\Users\pots\AppData\Local\DaasaVaani\toolchains\actionlint-1.7.12\actionlint.exe .github\workflows\hygiene.yml`:
+    passed with existing ShellCheck0.11.0 on PATH.
+  - `git --no-pager diff --check`, `git --no-pager diff --cached --check` and
+    `git --no-pager diff --exit-code -- generated schemas`: passed.
+  - Inline Python over the four changed current guides: local links/anchors
+    and balanced Markdown fences passed. Repository hygiene independently
+    validates all tracked Markdown local file links.
+- Fresh GitHub checks confirmed administrator/push permission, active ruleset
+  25526641 with RepositoryRole5 `always` PR/check bypass, and ruleset25526636
+  prohibiting force pushes/deletion without bypass. Fetched main matched clean
+  starting commit `cc39b39b29fdb7b1ed92591943e98fe72e62b2e5` (zero divergence).
+  Exact remote SHA and exact hosted full-check success are required after push
+  and reported in the publication handoff.
+- No Website/Android/Library files or pins, live feed/downloader/configuration,
+  provider ingestion or readiness activation changed. Website owns the actual
+  descriptor Blob retention/recovery/decoder and context-death/browser/unit
+  proof; its independent adoption follows this prerequisite's hosted pass.
+  Shared has no application/browser/device suite to claim as passed.
+
 ## 2026-11-04: isolated tolerant staged snapshot metadata assertions
 
 - The owner approved Shared/Website only, independent Website adoption after

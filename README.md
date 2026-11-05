@@ -12,6 +12,14 @@ validated Website adapter; Android/Library adoption and live integration remain
 separate. Run `node --test tools\content-state.test.mjs` incrementally or
 `npm run check` for complete Shared validation.
 
+The [Website admission-evidence profile](docs/durable-content.md#website-staged-snapshot-admission-evidence-profile)
+roots one copy of the original plain descriptor bytes alongside the manifest,
+policy and original items through existing opaque required receipts. It defines
+exact accounting and context-death recovery without a current feed or invented
+descriptor; generic older plans remain valid but cannot claim evidence-backed
+recovery. Pure metadata tests do not prove actual bytes, source authentication
+or readiness. No schema/store/default, live downloader or consumer pin changes.
+
 The UI catalog includes public lyric-link sharing/copy/fallback notices for
 UX-01/07. Consumers independently build their configured canonical lyric URL;
 sharing includes neither lyric text nor personal data and never confirms delivery,

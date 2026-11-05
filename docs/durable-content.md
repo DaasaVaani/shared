@@ -36,8 +36,10 @@ a clock, random number, cached title or client-created publication counter.
 strictly hash-sorted array of `{sha256, encodedBytes}` with unique lower-case hashes
 and positive safe-integer actual encoded lengths. It includes the manifest itself,
 the policy and every required original object. Bundles are transfer containers,
-not activated content objects. A future adapter must prove complete supported
-manifest/plan binding; schema acceptance is not that proof.
+not activated content objects. Additional opaque required hashes are permitted;
+the consumer profile below requires one original descriptor evidence object.
+The adapter must prove complete supported manifest/plan binding; schema
+acceptance is not that proof.
 
 `ContentState` has only:
 
@@ -61,6 +63,56 @@ stored bytes. It is not decoded-schema, capability, complete-snapshot or readine
 proof. The actual backend additionally retains immutable Blob bytes and rejects
 receipt/body length disagreement. It never stores source Markdown, images, videos,
 decoded lyric copies, guessed identities or a `ready` flag.
+
+## Website staged-snapshot admission-evidence profile
+
+For the staged canonical snapshot family, the Website plan's required set is
+the **exact union** of the encoded manifest, its policy, every original item
+object and **one additional locally SHA256-addressed copy of the original
+received descriptor bytes**. The descriptor is plain canonical JSON plus LF,
+bounded by the trusted descriptor-role ceiling. Its hash and actual length
+come from those original bytes, not a reconstruction or reserialization.
+It is public admission evidence, not decoded lyrics, a ZIP, a generated producer
+object or a fabricated `objects/<hash>.json.gz` URL. Local hashing proves byte
+identity only; it does not authenticate the provider or publication ledger.
+
+This is a consumer admission-evidence profile, not a new ContentPlan field,
+schema/version, store or product default. The existing generic Blob store
+retains the evidence through its ordinary immutable receipt and `required`
+reachability. Older opaque plans remain valid generic plans. Without retained
+original evidence they cannot claim this recovery capability: expose an explicit
+original-descriptor admission/restart path instead of inventing provenance,
+grafting a different immutable plan or deleting usable data.
+
+The original descriptor's raw sequence and manifest reference must bind exactly
+to the retained ContentReference and the actual manifest bytes, including
+declared encoded/decoded lengths. The full required hash/length set must match
+that manifest plus the one evidence receipt exactly; reject missing, extra or
+conflicting entries. Every actual stored object must be independently rehashed
+and length-checked before complete validation. No remembered validation flag,
+receipt or preliminary decode establishes readiness.
+
+After context death, recovery may first independently hash/check a retained
+manifest under trusted manifest-role limits and perform a bounded decode to
+identify the exact manifest/policy/item set and the one extra evidence receipt.
+This preliminary step is **not** full declared-length or source/admission proof.
+Then read/hash/decode the retained original descriptor, redo complete exact
+metadata, byte and plan binding, and validate policy and all original items
+before activation. No current-feed availability or fabricated reference is
+required. The descriptor must exist durably before relevant progress is
+represented as crash-resumable. Partial targets still need all remaining
+original objects; neither partial activation nor automatic network resume is
+authorized.
+
+The descriptor contributes one required entry to plan metadata, one retained
+receipt toward `maxObjects`, and its actual length toward `maxObjectBytes`
+(including the planned-length check). Its complete prospective metadata and
+payload count under `maxLogicalBytes` exactly like every other object. Existing
+byte-admission totals already include the received descriptor once: do not
+double count that acquisition or silently treat retained evidence as zero-cost.
+No new limit default is selected. Active, target and protected retired roots
+automatically protect this receipt; ordinary reader-safe removal and collection
+reclaim it only when no required reachability remains.
 
 ## Limits and accounting
 
@@ -247,7 +299,11 @@ unchanged; neither removal nor reopening automatically downloads content.
 Portable tests cover strict/future shapes, genuine reference/plan binding,
 monotonic identity rules, fencing, safe revisions, exact capacity/+1, immutable
 receipt conflicts, complete activation candidates, pause/resume, removal and
-protected-root collection. They are metadata/reference tests, not byte/storage proof.
+protected-root collection. Additional admission-evidence vectors cover the
+opaque required receipt, exact count/size/prospective accounting, incomplete
+targets and activation/retirement/collection reachability without changing
+generic plan semantics. They are metadata/reference tests, not byte/storage,
+descriptor-source authentication or actual encoded-data proof.
 
 Real browser tests must execute the actual IndexedDB implementation with actual
 Web Locks and synthetic permitted byte fixtures: reopen/partial target, byte

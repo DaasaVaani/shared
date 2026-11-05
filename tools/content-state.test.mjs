@@ -560,6 +560,153 @@ test("revision exhaustion refuses changes, allows exact no-ops and fresh fenced 
   assert.equal(result.control.revision, 0);
 });
 
+// Synthetic opaque metadata only: no descriptor bytes, hashes or sources are authenticated here.
+const originalObjects = [receipt("b", 13), receipt("c", 17), receipt("d", 19)];
+const descriptorEvidence = receipt("e", 257);
+const recoveryPlan = () => plan(1, "a", [...originalObjects, descriptorEvidence]);
+
+test("descriptor evidence uses the existing opaque required shape without retrofitting older plans", () => {
+  const p = recoveryPlan();
+  assertContentPlan(p);
+  assert.deepEqual(Object.keys(p).sort(), ["reference", "required"]);
+  assert.equal(p.required.length, 5);
+  assert.deepEqual(p.required.find(object => object.sha256 === descriptorEvidence.sha256), descriptorEvidence);
+  assert.equal(new Ajv2020({ strict: true }).compile(schema)(start(p)), true);
+
+  const legacy = plan(1, "a", originalObjects);
+  assertContentPlan(legacy);
+  const dataset = active(legacy);
+  assertContent(dataset, limits);
+  error("integrity", () => beginContentTarget(dataset, fence(dataset), p, limits));
+  assert.deepEqual(dataset.snapshots, [legacy]);
+});
+
+test("evidence and every original receipt are required even for a paused activation candidate", () => {
+  const p = recoveryPlan();
+  for (const missing of p.required) {
+    let dataset = start(p);
+    for (const object of p.required.filter(object => object.sha256 !== missing.sha256)) {
+      dataset = recordContentObject(dataset, fence(dataset), object, limits);
+    }
+    dataset = setContentTargetPhase(dataset, fence(dataset), "paused", limits);
+    error("unprepared", () => planContentActivation(dataset, fence(dataset), limits));
+    error("integrity", () => recordContentObject(dataset, fence(dataset),
+      { ...missing, encodedBytes: missing.encodedBytes + 1 }, limits));
+    assert.equal(dataset.control.active, null);
+    dataset = recordContentObject(dataset, fence(dataset), missing, limits);
+    const candidate = planContentActivation(dataset, fence(dataset), limits);
+    assert.deepEqual(candidate.control.active, p.reference);
+    assert.deepEqual(candidate.objects, p.required);
+    assert.equal(Object.hasOwn(candidate.control, "ready"), false);
+  }
+});
+
+test("descriptor evidence has the same exact planned and stored per-object size ceiling", () => {
+  const empty = frozen(initialContent(epoch));
+  const p = recoveryPlan();
+  const exact = { ...limits, maxObjectBytes: descriptorEvidence.encodedBytes };
+  const dataset = beginContentTarget(empty, fence(empty), p, exact);
+  error("capacity", () => beginContentTarget(empty, fence(empty), p,
+    { ...exact, maxObjectBytes: descriptorEvidence.encodedBytes - 1 }));
+  const stored = recordContentObject(dataset, fence(dataset), descriptorEvidence, exact);
+  assertContent(stored, exact);
+  error("capacity", () => assertContent(stored,
+    { ...exact, maxObjectBytes: descriptorEvidence.encodedBytes - 1 }));
+  assert.deepEqual(empty, initialContent(epoch));
+});
+
+test("descriptor evidence is one retained receipt toward the exact object-count boundary", () => {
+  const p = recoveryPlan();
+  let dataset = start(p);
+  for (const object of p.required.filter(object => object.sha256 !== descriptorEvidence.sha256)) {
+    dataset = recordContentObject(dataset, fence(dataset), object, limits);
+  }
+  assert.equal(dataset.objects.length, 4);
+  const saved = clone(dataset);
+  const exact = { ...limits, maxObjects: 5 };
+  error("capacity", () => recordContentObject(dataset, fence(dataset), descriptorEvidence,
+    { ...exact, maxObjects: 4 }));
+  assert.deepEqual(dataset, saved);
+  const stored = recordContentObject(dataset, fence(dataset), descriptorEvidence, exact);
+  assert.equal(stored.objects.length, 5);
+  const repeated = recordContentObject(stored, fence(stored), descriptorEvidence, exact);
+  assert.deepEqual(repeated, stored);
+  assertContent(planContentActivation(stored, fence(stored), exact), exact);
+});
+
+test("descriptor plan and receipt metadata plus its payload count exactly once in prospective checkpoints", () => {
+  const empty = frozen(initialContent(epoch));
+  const p = recoveryPlan();
+  const target = beginContentTarget(empty, fence(empty), p, limits);
+  assert.equal(BigInt(contentLogicalBytes(target)), oracle(target));
+  const targetExact = { ...limits, maxLogicalBytes: Number(oracle(target)) };
+  assert.deepEqual(beginContentTarget(empty, fence(empty), p, targetExact), target);
+  error("capacity", () => beginContentTarget(empty, fence(empty), p,
+    { ...targetExact, maxLogicalBytes: targetExact.maxLogicalBytes - 1 }));
+  const withoutEvidencePlan = start(plan(1, "a", originalObjects));
+  const receiptMetadata = Buffer.byteLength(JSON.stringify(descriptorEvidence), "utf8") + 1;
+  assert.equal(contentLogicalBytes(target) - contentLogicalBytes(withoutEvidencePlan), receiptMetadata);
+
+  let partial = target;
+  for (const object of p.required.filter(object => object.sha256 !== descriptorEvidence.sha256)) {
+    partial = recordContentObject(partial, fence(partial), object, limits);
+  }
+  partial = frozen(partial);
+  const stored = recordContentObject(partial, fence(partial), descriptorEvidence, limits);
+  assert.equal(BigInt(contentLogicalBytes(stored)), oracle(stored));
+  assert.equal(contentLogicalBytes(stored) - contentLogicalBytes(partial),
+    receiptMetadata + descriptorEvidence.encodedBytes);
+  const exact = { ...limits, maxLogicalBytes: Number(oracle(stored)) };
+  assert.deepEqual(recordContentObject(partial, fence(partial), descriptorEvidence, exact), stored);
+  error("capacity", () => recordContentObject(partial, fence(partial), descriptorEvidence,
+    { ...exact, maxLogicalBytes: exact.maxLogicalBytes - 1 }));
+  const repeated = recordContentObject(stored, fence(stored), descriptorEvidence, exact);
+  assert.equal(contentLogicalBytes(repeated), contentLogicalBytes(stored));
+  const candidate = planContentActivation(stored, fence(stored), limits);
+  assert.equal(BigInt(contentLogicalBytes(candidate)), oracle(candidate));
+  const removed = removeContentRoots(candidate, fence(candidate), limits);
+  assert.equal(BigInt(contentLogicalBytes(removed)), oracle(removed));
+});
+
+test("ordinary target, active and reader-retired reachability protect and reclaim descriptor evidence", () => {
+  const first = recoveryPlan();
+  const secondEvidence = receipt("9", 263);
+  const second = plan(2, "f", [...originalObjects, secondEvidence]);
+  const thirdEvidence = receipt("7", 269);
+  const third = plan(3, "8", [...originalObjects, thirdEvidence]);
+  let dataset = active(first);
+  dataset = complete(beginContentTarget(dataset, fence(dataset), second, limits));
+  dataset = planContentActivation(dataset, fence(dataset), limits);
+  dataset = beginContentTarget(dataset, fence(dataset), third, limits);
+  dataset = recordContentObject(dataset, fence(dataset), third.required.find(object => object.sha256 === hash("8")), limits);
+  dataset = recordContentObject(dataset, fence(dataset), thirdEvidence, limits);
+  const busy = collectContent(dataset, fence(dataset), [], limits);
+  assert.deepEqual(busy, dataset);
+  for (const evidence of [descriptorEvidence, secondEvidence, thirdEvidence]) {
+    assert.deepEqual(busy.objects.find(object => object.sha256 === evidence.sha256), evidence);
+  }
+
+  dataset = collectContent(busy, fence(busy), [first.reference], limits);
+  assert.equal(dataset.objects.some(object => object.sha256 === descriptorEvidence.sha256), false);
+  assert.deepEqual(dataset.snapshots, [second, third]);
+  assert.deepEqual(dataset.objects, [...second.required, thirdEvidence, receipt("8")]
+    .sort((a, b) => a.sha256 < b.sha256 ? -1 : 1));
+  dataset = dropContentTarget(dataset, fence(dataset), limits);
+  assert.ok(dataset.objects.some(object => object.sha256 === thirdEvidence.sha256));
+  dataset = collectContent(dataset, fence(dataset), [], limits);
+  assert.deepEqual(dataset.snapshots, [second]);
+  assert.deepEqual(dataset.objects, second.required);
+  assert.equal(BigInt(contentLogicalBytes(dataset)), oracle(dataset));
+
+  dataset = removeContentRoots(dataset, fence(dataset), limits);
+  assert.deepEqual(collectContent(dataset, fence(dataset), [], limits), dataset);
+  assert.ok(dataset.objects.some(object => object.sha256 === secondEvidence.sha256));
+  dataset = collectContent(dataset, fence(dataset), [second.reference], limits);
+  assert.deepEqual(dataset.objects, []);
+  assert.deepEqual(dataset.snapshots, []);
+  assert.equal(BigInt(contentLogicalBytes(dataset)), oracle(dataset));
+});
+
 test("all transitions return isolated copies and never modify frozen arguments", () => {
   const p = frozen(plan(2, "b"));
   const dataset = frozen(active());

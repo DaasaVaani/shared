@@ -40,6 +40,21 @@ baseline evidence never enters public artifacts. Historical first/change dates
 retain their verified observation meaning; future dates use the ledger's
 reserved logical marker, committed only on genuine confirmed publication.
 
+### Retained consumer admission evidence
+
+The Website staged-snapshot recovery profile retains the **original received**
+plain canonical-JSON-plus-LF descriptor as one additional immutable local
+SHA256-addressed Blob, alongside the manifest, policy and all original items.
+The [owning durable-content profile](durable-content.md#website-staged-snapshot-admission-evidence-profile)
+defines the exact required union, accounting, recovery ordering and compatibility
+path for plans without this evidence. The descriptor is bounded public admission
+evidence, not a new producer object/manifest role, gzip path, decoded lyric copy
+or schema/version. Its actual original bytes, raw sequence and manifest reference
+must be reverified and exactly bound to the retained reference and manifest;
+hashing alone does not authenticate the provider/ledger. Recovery never
+reconstructs a descriptor or requires the current feed. Metadata conformance
+tests do not establish this actual-byte/source proof or readiness.
+
 ## Manifest maps and semantic validation
 
 `objects` is keyed by lower-case encoded SHA256. Each record requires `role`,

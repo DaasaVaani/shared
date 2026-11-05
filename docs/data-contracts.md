@@ -103,6 +103,12 @@ implementation is authorized, not global production readiness.
   capability/readiness proof. Website owns dedicated transactional content
   storage, whole-operation exclusive nonblocking writer locks and actual-byte/
   full-validation checks; Android/Library/source publication remain unchanged.
+  The [Website admission-evidence profile](durable-content.md#website-staged-snapshot-admission-evidence-profile)
+  additionally roots the original plain descriptor bytes through the existing
+  opaque required receipt, with exact count/size/accounting and reader-safe
+  reachability. It changes no generic schema/store/default; older plans need an
+  explicit original-descriptor admission/restart path to gain recovery, never
+  fabricated provenance. Actual byte/source proof belongs to the consumer.
   The [download-planning prerequisite](download-planning.md) supplies strict
   portable metadata/types, owned settings, exact-integer Node reference and
   synthetic conformance vectors. Selected bundles are fully member-disjoint,
@@ -183,8 +189,13 @@ receipts, epoch/revision fencing, safe arithmetic, complete candidate activation
 pause/removal and protected-root collection. An independent canonical-envelope
 oracle checks all metadata and unique encoded bytes, exact capacity/+1 and
 prospective revision growth. Run `node --test tools\content-state.test.mjs`
-incrementally. These permitted synthetic metadata vectors do not verify actual
-stored bytes, prove complete supported snapshots or exercise a physical database.
+incrementally. Admission-evidence vectors additionally check an opaque descriptor
+receipt's required completeness, exact count/planned-size boundaries, complete
+prospective metadata plus one payload and active/target/retired GC reachability.
+Existing generic plans remain valid and immutable; these tests do not authenticate
+descriptor bytes or source provenance. These permitted synthetic metadata vectors
+do not verify actual stored bytes, prove complete supported snapshots or exercise
+a physical database.
 The download-planner suite additionally checks metadata coverage/cost identities,
 full-member disjointness, configured count/byte/extra boundaries, percentage
 flooring, deterministic exact-ratio ordering, reuse, invalid/overflow refusal
