@@ -200,6 +200,11 @@ The download-planner suite additionally checks metadata coverage/cost identities
 full-member disjointness, configured count/byte/extra boundaries, percentage
 flooring, deterministic exact-ratio ordering, reuse, invalid/overflow refusal
 and small exhaustive oracle comparisons including a non-optimal greedy example.
+The same browser-safe entrypoint and `.d.mts` declarations use JSON import
+attributes/existing Ajv2020 without Node filesystem loading. Focused vectors
+check finite plain JSON before schema/copying, accessor/cycle/sparse-array refusal,
+exact hash ends, frozen inputs and independently mutable plan copies, while
+the snapshot producer bridge retains its exact policy/coverage/cost checks.
 Run `node --test tools\download-planner.test.mjs` incrementally. These metadata
 vectors do not establish physical ZIP/gzip integrity, real transfer/storage
 admission, consumer adoption or complete ALG-08 lifecycle conformance.

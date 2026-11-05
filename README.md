@@ -251,7 +251,11 @@ every declared field is required, artifact/time bounds are positive safe integer
 and capabilities name only implemented fixture support. The separate strict
 [download-planning prerequisite](docs/download-planning.md) adds configurable
 request cost/extra budgets (which may be zero), portable metadata schemas/types,
-synthetic vectors and a Node-only exact-integer reference. It does not implement
+synthetic vectors and a browser-safe exact-integer reference. Import
+`tools/download-planner-reference.mjs` with its matching `.d.mts` declarations;
+Node22.15+ and browser/Vite JSON import attributes use the existing Ajv2020.
+The existing factory requires explicit policy and returns a synchronous planner;
+weighted ZIP/object selection and producer callers are unchanged. It does not implement
 packing, transfers, storage, activation or a new production capability.
 Request timeout cannot
 exceed the platform timer's signed32-bit millisecond ceiling. This schema does not validate a

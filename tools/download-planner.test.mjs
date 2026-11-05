@@ -74,6 +74,118 @@ test("portable golden arithmetic, strict schema and non-mutating policy/input", 
   }
 });
 
+test("browser-safe schema imports and declarations preserve the existing producer entrypoint", async () => {
+  const source = await load("tools/download-planner-reference.mjs");
+  assert.doesNotMatch(source, /node:|readFile|fetch\s*\(|XMLHttpRequest|process\.|Buffer\b|require\s*\(/);
+  const imports = [...source.matchAll(/import\s+(?:[\s\S]*?)\s+from\s+"([^"]+)"([^;]*);/g)];
+  assert.deepEqual(imports.map(match => match[1]), [
+    "ajv/dist/2020.js", "../schemas/publication-policy-settings.schema.json", "../schemas/download-plan.schema.json",
+  ]);
+  for (const match of imports.slice(1)) assert.match(match[2], /with\s*\{\s*type:\s*"json"\s*\}/);
+  const declarations = await load("tools/download-planner-reference.d.mts");
+  assert.match(declarations, /from "\.\.\/types\/download-plan\.js"/);
+  assert.match(declarations, /readonly code: "invalid" \| "overflow"/);
+  assert.match(declarations, /createDownloadPlanner\(policy: TransferPlanningPolicy\): \(input: DownloadPlanInput\) => DownloadPlan/);
+  assert.doesNotMatch(declarations, /\bany\b|node:/);
+  assert.deepEqual(planFor(fixture.input), fixture.expected);
+  for (const code of ["invalid", "overflow"]) {
+    const error = new DownloadPlanningError(code, "synthetic failure");
+    assert.ok(error instanceof Error);
+    assert.equal(error.name, "DownloadPlanningError");
+    assert.equal(error.code, code);
+    assert.equal(error.message, "synthetic failure");
+  }
+});
+
+test("finite plain JSON is required before validation, copying or executing accessors", () => {
+  const planner = createDownloadPlanner(fixture.policy);
+  for (const value of [undefined, () => {}, Symbol("metadata"), 1n, NaN, Infinity, new Date(), new Map(),
+    Object.create(fixture.policy), Object.create(fixture.input)]) {
+    rejects(() => createDownloadPlanner(value));
+    rejects(() => planner(value));
+  }
+  for (const base of [fixture.policy, fixture.input]) {
+    const reject = value => rejects(() => base === fixture.policy ? createDownloadPlanner(value) : planner(value));
+    for (const value of [undefined, NaN, Infinity, 1n, () => {}]) reject({ ...base, extra: value });
+    const cycle = { ...base }; cycle.extra = cycle;
+    reject(cycle);
+    const symbol = { ...base, [Symbol("metadata")]: 1 };
+    reject(symbol);
+    const hidden = { ...base };
+    Object.defineProperty(hidden, "extra", { value: 1 });
+    reject(hidden);
+    const accessor = { ...base };
+    Object.defineProperty(accessor, Object.keys(base)[0], {
+      enumerable: true, get() { assert.fail("Metadata getter must not run"); },
+    });
+    reject(accessor);
+    reject({ ...base, toJSON() { assert.fail("Metadata toJSON must not run"); } });
+  }
+  for (const key of ["objects", "required", "verified", "bundles"]) {
+    for (const array of [Array(1), Object.assign([], { extra: true }),
+      Object.assign([], { [Symbol("metadata")]: true })]) rejects(() => planner({ ...fixture.input, [key]: array }));
+  }
+  const nested = structuredClone(fixture.input);
+  Object.defineProperty(nested.bundles[0].members, "0", {
+    enumerable: true, get() { assert.fail("Nested metadata getter must not run"); },
+  });
+  rejects(() => planner(nested));
+  assert.deepEqual(createDownloadPlanner(Object.assign(Object.create(null), fixture.policy))(
+    Object.assign(Object.create(null), fixture.input)), fixture.expected);
+});
+
+test("hash boundaries and every nested metadata shape stay strict even without missing work", () => {
+  const base = { ...structuredClone(fixture.input), required: [] };
+  for (const suffix of ["\n", "\r", "\r\n", "\u2028", "\u2029", " "]) {
+    const sha256 = hash(1) + suffix;
+    for (const value of [
+      { ...base, objects: [{ ...base.objects[0], sha256 }] },
+      { ...base, required: [sha256] }, { ...base, verified: [sha256] },
+      { ...base, bundles: [{ ...base.bundles[0], sha256 }] },
+      { ...base, bundles: [{ ...base.bundles[0], members: [sha256] }] },
+    ]) rejects(() => planFor(value));
+  }
+  for (const value of [
+    { ...base, objects: [{ ...base.objects[0], extra: true }] },
+    { ...base, bundles: [{ ...base.bundles[0], extra: true }] },
+    { ...base, objects: [{ sha256: hash(1) }] },
+    { ...base, bundles: [{ sha256: hash(99), encodedBytes: 200 }] },
+    { ...base, bundles: [{ ...base.bundles[0], members: [] }] },
+    { ...base, objects: [{ ...base.objects[0], encodedBytes: 0 }] },
+    { ...base, objects: [{ ...base.objects[0], encodedBytes: 1.5 }] },
+    { ...base, bundles: [{ ...base.bundles[0], encodedBytes: "200" }] },
+  ]) rejects(() => planFor(value));
+});
+
+test("frozen input and captured policy have no aliases into independent returned plans", () => {
+  const freeze = value => {
+    if (value !== null && typeof value === "object") {
+      Object.values(value).forEach(freeze);
+      Object.freeze(value);
+    }
+    return value;
+  };
+  const limits = freeze(structuredClone(fixture.policy)), input = freeze(structuredClone(fixture.input));
+  const planner = createDownloadPlanner(limits), first = planner(input), second = planner(input);
+  assert.deepEqual(first, fixture.expected);
+  assert.notEqual(first.requests, second.requests);
+  for (let i = 0; i < first.requests.length; i++) {
+    assert.notEqual(first.requests[i], second.requests[i]);
+    assert.notEqual(first.requests[i].covers, second.requests[i].covers);
+    assert.ok(input.bundles.every(bundle => bundle.members !== first.requests[i].covers));
+  }
+  first.requests[0].covers.push(hash(900));
+  first.requests[0].encodedBytes = 1;
+  first.requests.length = 0;
+  assert.deepEqual(second, fixture.expected);
+  assert.deepEqual(planner(input), fixture.expected);
+  const mutable = structuredClone(fixture.input), before = planner(mutable);
+  mutable.objects[0].encodedBytes++;
+  mutable.required.length = 0;
+  mutable.bundles[0].members.length = 0;
+  assert.deepEqual(before, fixture.expected);
+});
+
 test("planning policy rejects omissions, unknowns, malformed and out-of-domain values", () => {
   for (const key of Object.keys(fixture.policy)) {
     const missing = { ...fixture.policy }; delete missing[key];

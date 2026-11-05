@@ -1,5 +1,68 @@
 # Documentation history
 
+## 2026-11-05: browser-consumable deterministic download planner prerequisite
+
+- The owner approved this isolated Shared-only prerequisite and fully validated
+  fast-forward main publication through the existing administrator permission.
+  No Website/Android/Library files or independent consumer pins changed.
+- Superseded limitation archived from README, the implementation specification
+  and `docs/download-planning.md`: the planner was described as a Node-only
+  arithmetic/conformance reference because it loaded schemas through
+  `node:fs/promises` and top-level await. It now imports the same JSON schemas
+  with import attributes and uses the existing Ajv2020, matching the isolated
+  snapshot/content module patterns. Node22.15+ and compatible browser bundlers
+  can import the same entrypoint; no dependencies were added.
+- Added `tools/download-planner-reference.d.mts`, reusing/re-exporting the
+  existing policy/input/request/plan types and declaring the synchronous
+  `createDownloadPlanner(policy)(input)` and existing invalid/overflow error
+  class. The weighted ZIP/object selection loop, exact BigInt accounting,
+  positive-gain/ratio/gain/hash ordering, full-member disjointness, budgets,
+  object fallback, golden outputs and producer callers remain unchanged.
+  No schema, policy, version, settings, defaults or capabilities changed.
+- Applied the existing finite-plain-JSON boundary before schema/copy operations
+  and the snapshot validator's actual-regex-end interpretation for hash shape.
+  Accessors, cycles, sparse/extended arrays, symbols, nonfinite/non-JSON values,
+  custom object prototypes and trailing-newline hashes are invalid rather than
+  executable metadata or lossy substitutes. Null-prototype JSON records remain
+  accepted. This enforces the approved strict shape, not a new planning policy.
+- Added four focused tests for pure JSON-schema imports/declarations, existing
+  error identity/codes, malformed/nested JSON and hash ends, frozen inputs,
+  captured policy and independent mutable result/coverage copies. Existing
+  duplicate/membership, explicit-zero, exact ratio, permutation, safe-overflow,
+  configured-boundary and nonoptimal-greedy oracle vectors remain in place.
+  The snapshot producer bridge still checks exact policy/cost/coverage/reuse.
+  Requirement coverage: ALG-08, GEN-03, OFF-02/04/06/15, CI-06 and SET-01/02.
+- Local validation commands/results:
+  - `node --test tools\download-planner.test.mjs tools\snapshot.test.mjs`:
+    passed27/27 focused planner/producer-bridge tests.
+  - `npm run check`: complete configured generation and439/439 tests passed;
+    zero failed, skipped or cancelled tests.
+  - `python tools\check_repository.py`: passed298 tracked files with the new
+    declaration explicitly staged; required files, UTF8, whitespace, local
+    Markdown links and workflow action pins passed.
+  - `node --input-type=module` using the inline strict-YAML program recorded in
+    the previous entry: all22 tracked YAML files passed, including workflow,
+    settings and catalogs, with the existing strict YAML1.2 parser.
+  - `C:\Users\pots\AppData\Local\DaasaVaani\toolchains\actionlint-1.7.12\actionlint.exe .github\workflows\hygiene.yml`:
+    passed with existing ShellCheck0.11.0 on PATH.
+  - `git --no-pager diff --check`, `git --no-pager diff --cached --check` and
+    `git --no-pager diff --exit-code -- generated schemas`: passed.
+  - Inline Python over the four changed current guides: local links/anchors
+    and balanced Markdown fences passed.
+- Fresh remote checks confirmed admin/push permission, active ruleset25526641
+  with RepositoryRole5 `always` PR/check bypass and ruleset25526636 preventing
+  force pushes/deletion without bypass. Legacy branch-protection API returns
+  404; the active rulesets are authoritative. Fetched main matched starting
+  `40f3c403b664ccd23cbb123617b8381bc88cf648` with zero divergence.
+  Publication requires another fresh ancestry/rules check, exact remote SHA and
+  exact hosted full-workflow success, reported in the handoff.
+- This is portable metadata planning only. Actual ZIP/gzip integrity,
+  authenticated policy/manifest binding, network/downloader/consent/retry/resume,
+  storage/activation/UI and independent consumer adoption remain owning gates.
+  Shared has no configured application/browser/device suite or TypeScript
+  declaration compiler check; none is claimed as passed. No new algorithm or
+  production/language/release readiness is asserted.
+
 ## 2026-11-05: original-descriptor admission-evidence recovery prerequisite
 
 - The owner approved this isolated Shared recovery slice and main-only

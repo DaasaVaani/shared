@@ -3,8 +3,25 @@
 Requirement coverage: ALG-08, GEN-03, OFF-02/04/06/15, CI-06 and SET-01/02.
 The [publication specification](implementation-specification.md#8-publication-transport-and-compatibility)
 owns the broader lifecycle. This prerequisite supplies portable metadata shapes,
-one synthetic golden vector and a Node-only arithmetic reference. It is not an
+one synthetic golden vector and a browser-safe arithmetic reference. It is not an
 application runtime, publisher packer, network client or offline-ready snapshot.
+
+## Portable API
+
+Import `createDownloadPlanner` and `DownloadPlanningError` from
+[`tools/download-planner-reference.mjs`](../tools/download-planner-reference.mjs).
+The matching [`.d.mts` declarations](../tools/download-planner-reference.d.mts)
+reuse/re-export the existing `TransferPlanningPolicy`, `DownloadPlanInput`,
+`DownloadRequest` and `DownloadPlan` types. The existing producer entrypoint is
+unchanged: `createDownloadPlanner(policy)` synchronously captures a validated
+policy copy and returns `(input) => plan`. No settings are implicitly loaded.
+
+The module imports the existing JSON schemas with JSON import attributes and
+uses the existing Ajv2020 dependency, as do the snapshot/content prerequisites.
+Use Node22.15+ or a browser bundler supporting those imports (including Vite);
+the module has no Node, filesystem or network dependency. Browser support is a
+portable module surface, not a packaged browser/native adapter or adoption claim.
+Modern JavaScript `BigInt` and `structuredClone` are required.
 
 ## Settings and compatibility
 
@@ -35,6 +52,11 @@ define separate version1 input/plan shapes through `$defs/input` and `$defs/plan
 Producers are strict. All hashes are lower-case64-hex encoded-byte SHA256
 identities; all byte values are safe integers, with positive object/archive sizes.
 Schema acceptance alone does not establish semantic correctness.
+Both policy and input must be finite acyclic plain JSON data: dense arrays,
+enumerable own string-keyed data properties, no executable accessors, symbols,
+non-JSON values or custom object prototypes. Null-prototype JSON records are
+accepted. Checks precede schema validation and policy copying. Hash validation
+requires the actual string end, not the JavaScript regex pre-final-newline match.
 
 - `objects` declares unique original gzip hashes and their encoded sizes.
 - `required` uniquely names the target objects; each must be declared.
@@ -82,6 +104,9 @@ outside the safe-integer range is an explicit `DownloadPlanningError` with
 `code: "overflow"`; malformed metadata/policy uses `code: "invalid"`.
 There is no truncation, partial-success result, mutation or hidden default.
 The reference captures a validated policy copy at factory creation.
+Frozen metadata is accepted without mutation. Returned requests/coverage arrays
+are independent of caller metadata and subsequent plans; callers may mutate
+their own returned plan without changing later results.
 
 Coverage is exactly once over missing required objects. Full member-disjointness
 makes selected gains/extra additive; each positive gain reduces baseline cost.
@@ -106,6 +131,11 @@ reuse, overflow and exact-ratio ordering. Metadata boundaries cover configured
 flooring. A bounded exhaustive subset oracle checks feasible costs and an
 explicit greedy counterexample; this is not an optimality guarantee or a
 measurement of physical archives, performance or device capacity.
+Focused portability vectors check the schema import/declaration surface,
+strict JSON and nested shape/hash boundaries, error identity/codes and frozen/
+captured/independent copies. The existing snapshot producer bridge remains in
+the full Shared suite. These tests run in Node; Shared has no configured
+application/browser/device suite or TypeScript declaration compiler check.
 
 Focused command: `node --test tools\download-planner.test.mjs`.
 Full Shared validation remains

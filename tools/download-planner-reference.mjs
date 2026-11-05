@@ -1,12 +1,13 @@
-import { readFile } from "node:fs/promises";
 import Ajv2020 from "ajv/dist/2020.js";
+import policySchema from "../schemas/publication-policy-settings.schema.json" with { type: "json" };
+import schema from "../schemas/download-plan.schema.json" with { type: "json" };
 
-const load = async name => JSON.parse(await readFile(new URL("../schemas/" + name, import.meta.url), "utf8"));
-const policySchema = await load("publication-policy-settings.schema.json");
-const schema = await load("download-plan.schema.json");
 const ajv = new Ajv2020({ strict: true }).addSchema(policySchema, "publication-policy");
 const validPolicy = ajv.compile({ $ref: "publication-policy#/$defs/transferPlanning" });
-const validInput = ajv.compile({ ...schema, $ref: "#/$defs/input" });
+// As in snapshot validation, require the actual end, not JS's pre-final-LF "$".
+const validInput = ajv.compile({ ...schema, $defs: { ...schema.$defs,
+  hash: { ...schema.$defs.hash, pattern: schema.$defs.hash.pattern.slice(0, -1) + "(?![\\s\\S])" },
+}, $ref: "#/$defs/input" });
 const maximum = BigInt(Number.MAX_SAFE_INTEGER);
 
 export class DownloadPlanningError extends Error {
@@ -18,6 +19,29 @@ export class DownloadPlanningError extends Error {
 }
 
 function invalid(message) { throw new DownloadPlanningError("invalid", message); }
+function json(value, ancestors = new Set()) {
+  if (value === null || typeof value === "string" || typeof value === "boolean") return;
+  if (typeof value === "number" && Number.isFinite(value)) return;
+  if (typeof value !== "object" || ancestors.has(value)) invalid("Expected finite acyclic JSON metadata");
+  const array = Array.isArray(value);
+  if (!array && Object.getPrototypeOf(value) !== Object.prototype && Object.getPrototypeOf(value) !== null) {
+    invalid("Expected plain JSON objects");
+  }
+  const names = Reflect.ownKeys(value);
+  if (names.some(name => typeof name !== "string")) invalid("JSON metadata cannot have symbol keys");
+  if (array && (names.length !== value.length + 1 ||
+      names.some(name => name !== "length" && !/^(0|[1-9][0-9]*)$/.test(name)))) {
+    invalid("Expected dense JSON arrays");
+  }
+  ancestors.add(value);
+  for (const name of names) {
+    if (array && name === "length") continue;
+    const property = Object.getOwnPropertyDescriptor(value, name);
+    if (!property.enumerable || !Object.hasOwn(property, "value")) invalid("Expected JSON data properties");
+    json(property.value, ancestors);
+  }
+  ancestors.delete(value);
+}
 function safe(value) {
   if (value < 0n || value > maximum) throw new DownloadPlanningError("overflow", "Download plan exceeds safe integer accounting");
   return Number(value);
@@ -25,10 +49,12 @@ function safe(value) {
 const compareHash = (a, b) => a < b ? -1 : a > b ? 1 : 0;
 
 export function createDownloadPlanner(policy) {
+  json(policy);
   if (!validPolicy(policy)) invalid("Invalid transfer-planning policy: " + JSON.stringify(validPolicy.errors));
   const limits = structuredClone(policy);
   const requestCost = BigInt(limits.requestCostBytes);
   return input => {
+    json(input);
     if (!validInput(input)) invalid("Invalid download-plan input: " + JSON.stringify(validInput.errors));
     const objects = new Map();
     for (const object of input.objects) {

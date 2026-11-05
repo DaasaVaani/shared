@@ -418,7 +418,9 @@ bundles plus remaining individual objects cover missing requirements exactly onc
 extra<=min(8MiB,25% missing required encoded bytes), including ZIP overhead/reused
 members. Show selected transfer size before consent; no global-optimality claim.
 The [portable planner prerequisite](download-planning.md) defines exact metadata
-shapes/accounting, settings and a Node-only conformance reference. It does not
+shapes/accounting, settings and a browser-safe conformance reference with matching
+`.d.mts` declarations. Its explicit-policy synchronous factory preserves the same
+weighted ZIP/object algorithm and strict producer entrypoint. It does not
 verify physical archives, pack/publish, transfer, reserve storage or activate
 content; production integration remains separate.
 
